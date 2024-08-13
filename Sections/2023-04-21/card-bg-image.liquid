@@ -1,0 +1,214 @@
+<style>
+  #shopify-section-{{ section.id }} #cardbgImage210423  {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 40px;
+      background-color: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }} !important;
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .head_text {
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 40px;
+      margin-top: 0px;
+      max-width: 100%;
+      padding: 40px 0px;
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .card {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      min-height: 280px;
+      text-decoration: none;
+      color: {{ section.settings.card_text_color }};
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .card_link {
+      display: block;
+      font-size: 10px;
+      padding-bottom: 0px;
+      line-height: normal;
+      border-bottom: 1px solid #637381;
+      font-weight: 500;
+      border-bottom-color: {{section.settings.card_text_color}};
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .description {
+      font-size: 15px;
+      font-style: normal;
+      line-height: normal;
+      font-weight: 400;
+      margin-top: 20px;
+      color: {{ section.settings.text_color }} !important;
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .title {
+      font-size: 24px;
+      font-style: normal;
+      line-height: normal;
+      font-weight: 700;
+      color: {{ section.settings.text_color }} !important;
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .card_sup_title {
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 3px;
+      padding-bottom: 0px;
+      font-weight: 500;
+      line-height: 1.3em;
+      letter-spacing: .08em;
+      color: {{ section.settings.card_text_color }} !important;
+      font-style: normal;
+  }
+  #shopify-section-{{ section.id }} #cardbgImage210423  .card_title {
+      color: {{ section.settings.card_text_color }} !important;
+        margin-bottom: 10px;
+  }
+  @media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #cardbgImage210423  .description {
+      font-size: 13px;
+      line-height: normal;
+      font-style: normal;
+      font-weight: 400;
+      margin-top: 0px;
+    }
+      #shopify-section-{{ section.id }} #cardbgImage210423  {
+          padding: 30px 0;
+          padding-bottom: 0;
+      }
+      #shopify-section-{{ section.id }} #cardbgImage210423  .wrapper {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          gap: 0;
+          margin-top: 0px;
+          padding: 15px 0px;
+      }
+      #shopify-section-{{ section.id }} #cardbgImage210423  .card {
+          padding: 30px;
+      }
+      #shopify-section-{{ section.id }} #cardbgImage210423  .title {
+          font-size: 18px;
+      }
+      #shopify-section-{{ section.id }} #cardbgImage210423  .card_sup_title {
+          font-size: 12px;
+      }
+  }
+</style>
+
+<section id="cardbgImage210423">
+  <div class="head_text">
+    <h3 class="title">{{ section.settings.title }}</h3>
+    <p class="description">
+      {{ section.settings.description }}
+    </p>
+  </div>
+
+  <div class="wrapper">
+    {% for block in section.blocks %}
+      <a
+        href="{{ section.settings.link }}"
+        class="card"
+        style="background-image: url('{{ block.settings.bg_image | img_url: 'master' }}');"
+      >
+        <p class="card_sup_title">{{ block.settings.sup_title }}</p>
+        <h4 class="card_title">{{ block.settings.title }}</h4>
+        <span class="card_link">{{ block.settings.link_label }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Card Bg Image",
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+          {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Image Fond"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Lien carte"
+          },
+          {
+            "type": "text",
+            "id": "sup_title",
+            "label": "Sup Titre",
+            "default":"Lorem ipsum"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre",
+            "default":"Lorem ipsum"
+          },
+          {
+            "type": "text",
+            "id": "link_label",
+            "label": "libelle lien",
+            "default":"decouvrir"
+          }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#637381"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Couleur de texte carte",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre section",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default":"lorem ipsum..."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Bg Image"
+    }
+  ]
+}
+{% endschema %}

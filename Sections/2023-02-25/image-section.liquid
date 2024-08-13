@@ -1,0 +1,46 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    #shopify-section-{{ section.id }} #imagesection230224 {
+        width: 100%;
+        height: auto;
+    }
+    
+    #shopify-section-{{ section.id }} #imagesection230224 .containerr {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    
+    #shopify-section-{{ section.id }} #imagesection230224 .containerr img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+  </style>
+  <section id="imagesection230224">
+      <div class="containerr">
+          <img alt="Diagram" class="img-fluid w-100 lazyloaded" src="{{ section.settings.image-src | img_url:"master" }}" width="1920" height="903"> 
+      </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Image Section",
+      "settings": [
+        {
+          "type":"image_picker",
+          "id":"image-src",
+          "label":"Image"
+        }
+      ],
+      "presets":[
+        {
+          "name":"Image Section"
+        }
+      ]
+    }
+  {% endschema %}

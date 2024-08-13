@@ -1,0 +1,121 @@
+<style>
+  #textimgdescbomsx {
+      width: 100%;
+
+      position: relative;
+      background-color: {{ section.settings.bg_color }};
+  }
+  #textimgdescbomsx  .textimgdescbomsx_container {
+      padding: 27px 24px;
+      margin: 0 auto;
+      max-width: 1200px;
+      width: 100%;
+  }
+  #textimgdescbomsx img {
+      max-width: 100%;
+  }
+  #textimgdescbomsx .textimgdescbomsx_title {
+      font-size: 20px;
+      text-align: left;
+      font-style: normal;
+      font-weight: 500;
+      color: {{ section.settings.text_color }};
+      font-weight: normal;
+      word-break: break-word;
+      margin: 25px 0;
+  }
+  #textimgdescbomsx  .textimgdescbomsx_wrapper {
+      display: flex;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      row-gap: 4px;
+          column-gap: 16px;
+  }
+  #textimgdescbomsx  .textimgdescbomsx_card {
+      width: 70%;
+      flex-shrink: 0;
+      flex-grow: 1;
+  }
+  #textimgdescbomsx  .textimgdescbomsx_card  img {
+      width: 100%;
+      height: auto;
+  }
+  @media screen and (min-width: 750px) {
+      #textimgdescbomsx .textimgdescbomsx_container {
+          padding: 36px 80px;
+      }
+      #textimgdescbomsx  .textimgdescbomsx_card {
+          width: 100%;
+      }
+      #textimgdescbomsx  .textimgdescbomsx_title {
+          margin: 33px 0;
+          font-size: 32px;
+      }
+      #textimgdescbomsx .textimgdescbomsx_wrapper {
+
+              flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 8px;
+    column-gap: 32px;
+    overflow-x: hidden;
+      }
+
+  }
+</style>
+
+<section id="textimgdescbomsx">
+  <div class="textimgdescbomsx_container">
+    <h2 class="textimgdescbomsx_title fade-down h2--1  h3">{{ section.settings.title }}</h2>
+    <div class="textimgdescbomsx_wrapper">
+      {% for block in section.blocks %}
+        <div class="textimgdescbomsx_card">
+          <img src="{{ block.settings.image | img_url: "1000x" }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Title Img Slide",
+  "blocks": [
+    {
+    "type": "icon-text",
+      "name": "icon",
+      "settings": [
+    {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image"
+      }
+  ]}
+  ],
+  "settings": [
+    {
+    "type": "color",
+    "id": "text_color",
+    "label": "Couleur de texte",
+    "default":"#000"
+  },
+  {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur de fond",
+    "default":"#fff"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Titre",
+    "default":"Lorem ipsun..."
+  }
+  ],
+  "presets": [
+    {
+      "name": "Title Img Slide"
+    }
+  ]
+}
+{% endschema %}

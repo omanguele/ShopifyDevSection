@@ -1,0 +1,183 @@
+<style>
+  #shopify-section-{{ section.id }} #faq110323 {
+  background-color: {{ section.settings.bg-color }};
+  height: 100%;
+  width: 100%;
+  color: {{ section.settings.text-color }};
+  padding: 0;
+  margin: 0;
+}
+#shopify-section-{{ section.id }} #faq110323 p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+#shopify-section-{{ section.id }} #faq110323 .container {
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 50%;
+  position: relative;
+  margin: auto;
+}
+
+#shopify-section-{{ section.id }} #faq110323 .title {
+  text-transform: uppercase;
+  color: {{ section.settings.bg-color }};
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
+  font-size: 35px;
+  padding-bottom: 30px;
+}
+
+#shopify-section-{{ section.id }} #faq110323 .accordion {
+  color: {{ section.settings.text-color }};
+  cursor: pointer;
+  width: 100%;
+  border-bottom: 1.5px solid #fff;
+  padding: 15px 0;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+#shopify-section-{{ section.id }} #faq110323 .accordion:last-child {
+  border-bottom: 0px;
+}
+
+#shopify-section-{{ section.id }} #faq110323 .accordion:after {
+  content: "\002B";
+  color: #ffffff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+#shopify-section-{{ section.id }} #faq110323 .active:after {
+  content: "\2212";
+}
+
+#shopify-section-{{ section.id }} #faq110323 .panel {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+#shopify-section-{{ section.id }} #faq110323 .panel p {
+  padding: 10px 0 10px;
+}
+
+#shopify-section-{{ section.id }} #faq110323 .footer-text {
+  padding-top: 20px;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff
+}
+
+@media (max-width: 1100px) {
+  #shopify-section-{{ section.id }} #faq110323 .container {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 85%;
+    position: relative;
+    margin: auto;
+  }
+}
+
+
+</style>
+
+    <section id="faq110323">
+      <div class="container">
+        <h1 class="title">{{ section.settings.title }}</h1>
+        {% for block in section.blocks %}
+          <div class="accordion">{{ block.settings.question }}</div>
+          <div class="panel">
+            <p>
+             {{ block.settings.answer }}
+            </p>
+          </div>
+        {% endfor %}
+        
+        <a href='#' class="footer-text">What's next ></p>
+      </div>
+    </section>
+    <script>
+      let acc = document.getElementsByClassName("accordion");
+      let i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          let panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+
+{% schema %}
+{
+  "name": "Section FAQ",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Entrez la question",
+          "default": "Question 1"
+        },
+        {
+          "type": "text",
+          "id": "answer",
+          "label": "Entrez la reponse",
+          "default": "Reponse"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Couleur de fond",
+      "default": "#3f0691"
+    },
+      {
+      "type": "color",
+      "id": "text-color",
+      "label": "Couleur du texte",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Frequently asked question"
+    }
+    
+  ],
+     "presets":[
+        {
+          "name":"Section FAQ"
+        }
+     ]
+}
+{% endschema %}

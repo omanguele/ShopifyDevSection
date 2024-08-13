@@ -1,0 +1,123 @@
+<style>
+  #shopify-section-{{ section.id }} #amfaqfirst  {
+      width: 100%;
+      padding: 40px 20px;
+      background-color: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #amfaqfirst   .faq-container0001{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      }
+
+  #shopify-section-{{ section.id }} #amfaqfirst   .faq-head0002{
+      font-size: 52px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    color: {{ section.settings.text_color }} !important;
+  }
+
+
+  #shopify-section-{{ section.id }} #amfaqfirst   .faq-title0003 {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 20px;
+    color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #amfaqfirst   .faq-body0004{
+      font-size: 16px;
+    font-weight: 500;
+    color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #amfaqfirst   .faq-content0001 {
+      margin-bottom: 20px;
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #amfaqfirst   .faq-title0003 {
+      font-size: 14px;
+  }
+
+  #shopify-section-{{ section.id }} #amfaqfirst   .faq-body0004{
+      font-size: 12px;
+  }
+
+  #shopify-section-{{ section.id }} #amfaqfirst   .faq-head0002{
+      font-size: 32px;
+      margin-bottom: 30px;
+  }
+  }
+</style>
+
+<section id="amfaqfirst">
+  <div class="faq-container0001">
+    <h1 class="faq-head0002">{{ section.settings.title }}</h1>
+
+    {% for block in section.blocks %}
+      <div class="faq-content0001">
+        <p class="faq-title0003">{{ block.settings.text }}</p>
+
+        <div class="faq-body0004">
+          <p>{{ block.settings.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Faq item",
+  "blocks": [
+  {
+    "type": "faq",
+    "name": "Faq",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Texte",
+        "default":"Lorem ipsun..."
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default":"Lorem ipsun..."
+      }
+    ]
+  }
+],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#A37D5F"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre section",
+      "default":"faq"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Faq Bloc"
+    }
+  ]
+}
+{% endschema %}

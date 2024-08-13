@@ -1,0 +1,768 @@
+<script
+  src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+  crossorigin="anonymous"
+></script>
+
+<script>
+  const steps = Array.from(document.querySelectorAll('#newbcustomizeralienx .newbcustomizeralienx_step'));
+const sponsorInputs = Array.from(document.querySelectorAll('#newbcustomizeralienx .sponsor_in'));
+const btnSponsorInputs = Array.from(document.querySelectorAll('#newbcustomizeralienx .sponsor_in-clear-button'));
+const INIT_PRICE = {{ product.price | divided_by: 100.00 }};
+let CARREANAGE_PRICE = 0;
+let KIT_MATERIEL_PRICE = 0;
+let KIT_FINISH_PRICE = 0;
+let KIT_BONUS_PRICE = 0;
+let currentStep = 0;
+let indications = [];
+let images = [];
+
+
+// Open / Close modal
+window.addEventListener('load', function(e){
+    document.querySelector('#newbcustomizeralienx_open_modalx').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#newbcustomizeralienx').classList.add('open');
+    });
+
+    document.querySelector('#newbcustomizeralienx .newbcustomizeralienx_btn_close').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#newbcustomizeralienx').classList.remove('open');
+    });  
+});
+
+
+// Set price
+function setPrice() {
+    steps[7].querySelector('.newbcustomizeralienx_price').innerHTML = `Total à payer: ${(INIT_PRICE + CARREANAGE_PRICE + KIT_MATERIEL_PRICE + KIT_BONUS_PRICE + KIT_FINISH_PRICE).toFixed(2)} €`; 
+}
+
+// Handle verification step 1
+const step1Input = Array.from(steps[0].querySelectorAll('input[type="text"]'));
+step1Input.forEach((input, index) => {
+    input.addEventListener('input', function(e) {
+        verificationStep1();
+    });
+});
+
+// Handle verification step 2
+const step2Input = Array.from(steps[1].querySelectorAll('input[type="radio"]'));
+const step2OtherInput = Array.from(steps[1].querySelectorAll('.step_input'));
+step2Input.forEach((input, index) => {
+    input.addEventListener('click', function(e) {
+        CARREANAGE_PRICE = parseFloat(e.target.getAttribute('data-price'));
+        setPrice();
+        if(e.target.checked && e.target.id == 'step_2_4'){
+            step2OtherInput[0].classList.add('hide');
+            step2OtherInput[1].classList.add('hide');
+            step2OtherInput[2].classList.add('hide');
+            step2OtherInput[3].classList.add('hide');
+            resetOtherInputStep2();
+        }else if(e.target.id == 'step_2_1'){
+            step2OtherInput[0].classList.remove('hide');
+            step2OtherInput[1].classList.add('hide');
+            step2OtherInput[2].classList.add('hide');
+            step2OtherInput[3].classList.add('hide');
+            resetOtherInputStep2();
+        }else if(e.target.id == 'step_2_2'){
+            step2OtherInput[0].classList.add('hide');
+            step2OtherInput[1].classList.add('hide');
+            step2OtherInput[2].classList.remove('hide');
+            step2OtherInput[3].classList.add('hide');
+            resetOtherInputStep2();
+        }else{
+            step2OtherInput[0].classList.remove('hide');
+            step2OtherInput[1].classList.add('hide');
+            step2OtherInput[2].classList.remove('hide');
+            step2OtherInput[3].classList.add('hide');
+            resetOtherInputStep2();
+        }
+        verificationStep2();
+    });
+});
+
+function resetOtherInputStep2 () {
+    step2OtherInput[0].querySelector('select').value = '';
+    step2OtherInput[1].querySelector('input[type="text"]').value = '';
+    step2OtherInput[2].querySelector('select').value = '';
+    step2OtherInput[3].querySelector('input[type="text"]').value = '';
+}
+
+step2OtherInput[0].querySelector('select').addEventListener('change', function(e) {
+    if(e.target.value == 'other'){
+        step2OtherInput[1].classList.remove('hide');
+    }else{
+        step2OtherInput[1].classList.add('hide');
+        step2OtherInput[1].querySelector('input[type="text"]').value = '';
+    }
+    verificationStep2();
+});
+
+step2OtherInput[1].querySelector('input[type="text"]').addEventListener('input', function(e) {
+    verificationStep2();
+});
+
+step2OtherInput[2].querySelector('select').addEventListener('change', function(e) {
+    if(e.target.value == 'other'){
+        step2OtherInput[3].classList.remove('hide');
+    }else{
+        step2OtherInput[3].classList.add('hide');
+        step2OtherInput[3].querySelector('input[type="text"]').value = '';
+    }
+    verificationStep2();
+});
+
+step2OtherInput[3].querySelector('input[type="text"]').addEventListener('input', function(e) {
+    verificationStep2();
+});
+
+// Handle verification step 3 - 1
+const step3_1Input = Array.from(steps[2].querySelectorAll('input[type="text"]'));
+step3_1Input.forEach((input, index) => {
+    input.addEventListener('input', function(e) {
+        verificationStep3_1();
+    });
+});
+
+// Handle verification step 3 - 2
+const step3_2CtnInput = Array.from(steps[3].querySelectorAll('.newbcustomizeralienx_step-flex_color'));
+const step3_2LblColor = Array.from(steps[3].querySelectorAll('.newbcustomizeralienx_h_description_color'));
+step3_2CtnInput.forEach((ctn, ctn_index) => {
+    ctn.querySelectorAll('input[type="radio"]').forEach((input, index) => {
+        input.addEventListener('click', function(e) {
+            if(e.target.checked){
+                step3_2LblColor[ctn_index].innerHTML = e.target.getAttribute('data-lbl');
+            }
+            verificationStep3_2();
+        });  
+    })
+});
+
+// Handle verification step 3 - 3
+const step3_3Input = steps[4].querySelector('.in_add_indic');
+steps[4].querySelector('#form_add_indic').addEventListener('submit', function(e) {
+    e.preventDefault();
+    indications.push(step3_3Input.value.trim());
+    step3_3Input.value = '';
+    renderIndications();
+    verificationStep3_3();
+});
+
+steps[4].querySelector('#cust_upload').addEventListener('change', function(e) {
+    images = Array.from(e.target.files);
+    steps[4].querySelector('.lbl_cust_upload').innerHTML = images.length > 0 ? `${images.length} images chargée(s)` : 'Charger des images (.jpg, .png,..)';
+    renderImages();
+});
+
+// Handle verification step 3 - 4
+const step3_4InptSelect = Array.from(steps[5].querySelectorAll('.newbcustomizeralienx_step-flex_select_font'));
+const step3_4DisplayText = steps[5].querySelector('.newbcustomizeralienx_step-display_text');
+step3_4InptSelect[0].querySelector('input[type="text"]').addEventListener('input', function(e) {
+    step3_4DisplayText.innerHTML = `
+        <p class="big_text">${e.target.value}</p>
+        <p class="medium_text">${e.target.value}</p>
+        <p class="small_text">${e.target.value}</p>
+    `;
+});
+
+step3_4InptSelect[1].querySelector('select').addEventListener('change', function(e) {
+    font_sizes = e.target.value.split('|');
+    sizes = font_sizes[1].split(',');
+    step3_4DisplayText.style.fontFamily = font_sizes[0];
+    step3_4DisplayText.style.fontWeight = sizes[0];
+    let html = '';
+    sizes.forEach((size, index) => {
+        html += `<option value="${size}">${size}</option>`;
+    });
+    step3_4InptSelect[2].querySelector('select').innerHTML = html;
+});
+
+step3_4InptSelect[2].querySelector('select').addEventListener('change', function(e) {
+    step3_4DisplayText.style.fontWeight = e.target.value;
+});
+
+// Handle verification step 4
+const step4CtnInpt = Array.from(steps[7].querySelectorAll('.newbcustomizeralienx_step-grid_inpt_rad'));
+step4CtnInpt.forEach((ctn, index) => {
+    ctn.querySelectorAll('input').forEach((input, index) => {
+        input.addEventListener('click', function(e) {
+            if(e.target.name == 'step_4_1'){
+                KIT_MATERIEL_PRICE = parseFloat(e.target.getAttribute('data-price'));
+            }else if(e.target.name == 'step_4_2'){
+                KIT_FINISH_PRICE = parseFloat(e.target.getAttribute('data-price'));
+            }else{
+                KIT_BONUS_PRICE = e.target.checked ? KIT_BONUS_PRICE + parseFloat(e.target.getAttribute('data-price')) : KIT_BONUS_PRICE - parseFloat(e.target.getAttribute('data-price'));
+            }
+            verificationStep4();
+            setPrice();
+        });
+    });
+});
+
+//Intialize Navigation Buttons
+steps.forEach((step, index) => {
+    step.querySelector('.action_btn.next').addEventListener('click', function(e) {
+        e.preventDefault();
+        switch (currentStep) {
+            case 0:
+                if(verificationStep1(true)){
+                    currentStep = index + 1;
+                    steps[index].classList.add('finish');
+                    steps[currentStep].classList.add('active');
+                }
+                break;
+            case 1:
+                if(verificationStep2(true)){
+                    currentStep = index + 1;
+                    steps[index].classList.add('finish');
+                    steps[currentStep].classList.add('active');
+                }
+                break;
+            case 2:
+                if(verificationStep3_1(true)){
+                    currentStep = index + 1;
+                    steps[index].classList.add('finish');
+                    steps[currentStep].classList.add('active');
+                }
+                break;
+            case 3:
+                if(verificationStep3_2(true)){
+                    currentStep = index + 1;
+                    steps[index].classList.add('finish');
+                    steps[currentStep].classList.add('active');
+                }
+                break;
+            case 4:
+                if(verificationStep3_3(true)){
+                    currentStep = index + 1;
+                    steps[index].classList.add('finish');
+                    steps[currentStep].classList.add('active');
+                }
+                break;
+            case 5:
+                currentStep = index + 1;
+                steps[index].classList.add('finish');
+                steps[currentStep].classList.add('active');
+                break;
+            case 6:
+                currentStep = index + 1;
+                steps[index].classList.add('finish');
+                steps[currentStep].classList.add('active');
+                break;
+            case 7:
+                if(verificationStep4(true)){
+                    addTocart();
+                }
+                break;
+          }
+        setPrice();
+    });
+    step.querySelector('.action_btn.prev').addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log(currentStep)
+        if(currentStep > 0) {
+            steps[currentStep].classList.remove('active');
+            currentStep = currentStep - 1;
+            steps[currentStep].classList.remove('finish');
+        }
+        setPrice();
+    });
+});
+
+
+// Intialize Sponsor Input 
+sponsorInputs.forEach((inpt, index) => {
+    inpt.addEventListener('input', function(e) {
+        if (e.target.value && !inpt.classList.contains("sponsor_in--touched")) {
+            inpt.classList.add("sponsor_in--touched")
+        } else if (!e.target.value && inpt.classList.contains("sponsor_in--touched")) {
+            inpt.classList.remove("sponsor_in--touched")
+        }
+    });
+});
+
+btnSponsorInputs.forEach((btn, index) => {
+    btn.addEventListener('click', function(e) {
+        sponsorInputs[index].value = ''
+        sponsorInputs[index].focus()
+        sponsorInputs[index].classList.remove("sponsor_in--touched")
+    });
+});
+
+// Handle errors messages
+function displayError(message) {
+    document.querySelectorAll('#newbcustomizeralienx .newbcustomizeralienx_step_error').forEach((stepError) => {
+        stepError.innerHTML = message;
+        stepError.classList.remove('hide_error');
+    });
+}
+  
+function cleanError() {
+    document.querySelectorAll('#newbcustomizeralienx .newbcustomizeralienx_step_error').forEach((stepError) => {
+        stepError.classList.add('hide_error');    
+        stepError.innerHTML = '';
+    });
+}
+
+// Verification functions
+// Verification step 1
+function verificationStep1(withError = false) {
+    step1Input[0].classList.remove('error');
+    step1Input[1].classList.remove('error');
+    cleanError();
+    if(step1Input[0].value != "" && step1Input[1].value != ""){
+        steps[0].classList.add('complete');
+        return true;
+    }else{
+        steps[0].classList.remove('complete');
+        if(withError){
+            let html = '';
+            if(step1Input[0].value == ""){
+                step1Input[0].classList.add('error');
+                html += `<p>- ${step1Input[0].getAttribute('data-lbl')} est requis</p>`;
+            }
+            if(step1Input[1].value == ""){
+                step1Input[1].classList.add('error');
+                html += `<p>- ${step1Input[1].getAttribute('data-lbl')} est requis</p>`;
+            }
+            displayError(html);
+            steps[0].scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+        return false;
+    }
+}
+
+// Verification step 3 - 1
+function verificationStep3_1(withError = false) {
+    step3_1Input[0].classList.remove('error');
+    step3_1Input[1].classList.remove('error');
+    cleanError();
+    if(step3_1Input[0].value != "" && step3_1Input[1].value != ""){
+        steps[2].classList.add('complete');
+        return true;
+    }else{
+        steps[2].classList.remove('complete');
+        if(withError){
+            let html = '';
+            if(step3_1Input[0].value == ""){
+                step3_1Input[0].classList.add('error');
+                html += `<p>- ${step3_1Input[0].getAttribute('data-lbl')} est requis</p>`;
+            }
+            if(step3_1Input[1].value == ""){
+                step3_1Input[1].classList.add('error');
+                html += `<p>- ${step3_1Input[1].getAttribute('data-lbl')} est requis</p>`;
+            }
+            displayError(html);
+            steps[2].scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+        return false;
+    }
+}
+
+// Verification step 3 - 2
+function verificationStep3_2(withError = false) {
+    let selectItem1 = step3_2CtnInput[0].querySelector('input[type="radio"]:checked');
+    let selectItem2 = step3_2CtnInput[1].querySelector('input[type="radio"]:checked');
+    cleanError();
+    if(selectItem1 && selectItem2){
+        steps[3].classList.add('complete');
+        return true;
+    }else{
+        steps[3].classList.remove('complete');
+        if(withError){
+            let html = '';
+            if(!selectItem1){
+                html += `<p>- La Couleur principale est requise</p>`;
+            }
+            if(!selectItem2){
+                html += `<p>- La couleur secondaire est requise</p>`;
+            }
+            displayError(html);
+            steps[3].scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+        return false;
+    }
+}
+
+// Verification step 3 - 3
+function verificationStep3_3(withError = false) {
+    step3_3Input.classList.remove('error');
+    cleanError();
+    if(indications.length > 0){
+        steps[4].classList.add('complete');
+        return true;
+    }else{
+        steps[4].classList.remove('complete');
+        if(withError){
+            step3_3Input.classList.add('error');
+            html = `<p>- Veillez entrer au moins une indication</p>`;
+            displayError(html);
+            steps[4].scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+        return false;
+    }
+}
+
+// Verification step 4
+function verificationStep4(withError = false) {
+    let quest1IsChecked = step4CtnInpt[0].querySelector('input[type="radio"]:checked');
+    let quest2IsChecked = step4CtnInpt[1].querySelector('input[type="radio"]:checked');
+    cleanError();
+    if(quest2IsChecked && quest1IsChecked ){
+        steps[7].classList.add('complete');
+        return true;
+    }else{
+        steps[7].classList.remove('complete');
+        if(withError){
+              let html = '';
+              if(!quest1IsChecked){
+                  html += `<p>- Matiere de votre kit déco requis</p>`;
+              }
+              if(!quest2IsChecked){
+                  html += `<p>- Finition de votre kit déco requis</p>`;
+              }
+              displayError(html);
+              steps[7].scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+              });
+        }
+        return false;
+    }
+  }
+
+// Verification step 2
+function verificationStep2(withError = false) {
+    let selectItem = steps[1].querySelector('input[type="radio"]:checked');
+    step2OtherInput[0].querySelector('select').classList.remove('error');
+    step2OtherInput[1].querySelector('input[type="text"]').classList.remove('error');
+    step2OtherInput[2].querySelector('select').classList.remove('error');
+    step2OtherInput[3].querySelector('input[type="text"]').classList.remove('error');
+    cleanError();
+    if(!selectItem)  {
+        if(withError){
+            let html = `<p>- Veillez selectionner un élément</p>`;
+            displayError(html);
+            steps[1].scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+        return false;
+    }
+    else if(selectItem.id === 'step_2_3') {
+        if(step2OtherInput[0].querySelector('select').value == "" && step2OtherInput[2].querySelector('select').value == "")
+        {
+            steps[1].classList.remove('complete');
+                if(withError){
+                    let html = '';
+                    step2OtherInput[0].querySelector('select').classList.add('error');
+                    html += `<p>- ${step2OtherInput[0].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+
+                    step2OtherInput[2].querySelector('select').classList.add('error');
+                    html += `<p>- ${step2OtherInput[2].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+                    displayError(html);
+                    steps[1].scroll({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+                return false;
+        }
+        else if (step2OtherInput[0].querySelector('select').value == "other" && step2OtherInput[2].querySelector('select').value == "other") 
+        {
+            if(step2OtherInput[1].querySelector('input[type="text"]').value != "" && step2OtherInput[3].querySelector('input[type="text"]').value != "" )
+            {
+                steps[1].classList.add('complete');
+                return true;
+            }else{
+                steps[1].classList.remove('complete');
+                if(withError){
+                    let html = '';
+                    if(step2OtherInput[1].querySelector('input[type="text"]').value == ""){
+                        step2OtherInput[0].querySelector('select').classList.add('error');
+                        step2OtherInput[1].querySelector('input[type="text"]').classList.add('error');
+                        html += `<p>- ${step2OtherInput[0].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+                    }
+                    if(step2OtherInput[3].querySelector('input[type="text"]').value == ""){
+                        step2OtherInput[2].querySelector('select').classList.add('error');
+                        step2OtherInput[3].querySelector('input[type="text"]').classList.add('error');
+                        html += `<p>- ${step2OtherInput[2].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+                    }
+                    displayError(html);
+                    steps[1].scroll({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+                return false;
+            }
+        }
+        else if (step2OtherInput[0].querySelector('select').value == "other") 
+        {
+            if(step2OtherInput[1].querySelector('input[type="text"]').value != "")
+            {
+                steps[1].classList.add('complete');
+                return true;
+            }else{
+                steps[1].classList.remove('complete');
+                if(withError){
+                    let html = '';
+                    step2OtherInput[0].querySelector('select').classList.add('error');
+                    step2OtherInput[1].querySelector('input[type="text"]').classList.add('error');
+                    html += `<p>- ${step2OtherInput[0].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+
+                    displayError(html);
+                    steps[1].scroll({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+                return false;
+            }
+        }
+        else if (step2OtherInput[2].querySelector('select').value == "other") 
+        {
+            if(step2OtherInput[3].querySelector('input[type="text"]').value != "" )
+            {
+                steps[1].classList.add('complete');
+                return true;
+            }else{
+                steps[1].classList.remove('complete');
+                if(withError){
+                    let html = '';
+                    step2OtherInput[2].querySelector('select').classList.add('error');
+                    step2OtherInput[3].querySelector('input[type="text"]').classList.add('error');
+                    html += `<p>- ${step2OtherInput[2].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+                    displayError(html);
+                    steps[1].scroll({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+                return false;
+            }
+        }else if(step2OtherInput[0].querySelector('select').value != "" && step2OtherInput[2].querySelector('select').value != ""){
+            steps[1].classList.add('complete');
+            return true;
+        }
+    }
+    else if(selectItem.id === 'step_2_1'){
+        if(step2OtherInput[0].querySelector('select').value != "" && step2OtherInput[0].querySelector('select').value != "other"){
+            steps[1].classList.add('complete');
+            return true;
+        }else {
+            if(step2OtherInput[1].querySelector('input[type="text"]').value != ""){
+                steps[1].classList.add('complete');
+                return true;
+            }else{
+                steps[1].classList.remove('complete');
+                if(withError){
+                    step2OtherInput[0].querySelector('select').classList.add('error');
+                    step2OtherInput[1].querySelector('input[type="text"]').classList.add('error');
+                    let html = `<p>- ${step2OtherInput[0].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+                    displayError(html);
+                    steps[1].scroll({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+                return false;
+            }
+        }
+    }
+    else if(selectItem.id === 'step_2_2') {
+        if(step2OtherInput[2].querySelector('select').value != "" && step2OtherInput[2].querySelector('select').value != "other"){
+            steps[1].classList.add('complete');
+            return true;
+        }else{
+            if(step2OtherInput[3].querySelector('input[type="text"]').value != ""){
+                steps[1].classList.add('complete');
+                return true;
+            }else{
+                steps[1].classList.remove('complete');
+                if(withError){
+                    step2OtherInput[2].querySelector('select').classList.add('error');
+                    step2OtherInput[3].querySelector('input[type="text"]').classList.add('error');
+                    let html = `<p>- ${step2OtherInput[2].querySelector('select').getAttribute('data-lbl')} est requis</p>`;
+                    displayError(html);
+                    steps[1].scroll({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                    });
+                }
+                return false;
+            }
+        }
+    }
+    else {
+        steps[1].classList.add('complete');
+        return true;
+    }
+}
+
+// Render Indication step 3 - 3
+function renderIndications() {
+    let html = ''
+    indications.forEach((indic, index) => {
+        html += `
+            <li class="newbcustomizeralienx_indication_list_item">
+                <span class="list_style_indic"></span>
+                <p>
+                    ${indic}
+                </p>
+                <span class="list_style_delete_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>                                      
+                </span>
+            </li>
+        `;
+    });
+    steps[4].querySelector('.newbcustomizeralienx_indication_list').innerHTML = html;
+    steps[4].querySelectorAll('.list_style_delete_btn')?.forEach((btn, index) => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            indications.splice(index, 1);
+            renderIndications();
+            verificationStep3_3();
+        });
+    });
+}
+
+// Preview Images function
+function previewImage(file) {
+    return URL.createObjectURL(file);
+}
+
+// Render Images step 3 - 3
+function renderImages() {
+    let html = ''
+    images.forEach((img, index) => {
+        html += `
+            <div class="list_cust_upload_item">
+                <span class="list_cust_upload_item_img">
+                    <img src="${previewImage(img)}" alt="">
+                </span>
+                <span class="list_cust_upload_item_delete_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg> 
+                </span>
+            </div>
+        `;
+    });
+    steps[4].querySelector('.list_cust_upload').innerHTML = html;
+    steps[4].querySelectorAll('.list_cust_upload_item_delete_btn')?.forEach((btn, index) => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            images.splice(index, 1);
+            steps[4].querySelector('.lbl_cust_upload').innerHTML = images.length > 0 ? `${images.length} images chargée(s)` : 'Charger des images (.jpg, .png,..)';
+            renderImages();
+        });
+    });
+}
+
+setPrice();
+
+async function addTocart() {
+    steps[7].querySelector('.newbcustomizeralienx_step_footer').classList.add('hide');
+    steps[7].querySelector('.loader').classList.remove('hide');
+    document.querySelector('#newbcustomizeralienx .newbcustomizeralienx_btn_close').disabled = true;
+
+    let color1 = step3_2CtnInput[0].querySelector('input[type="radio"]:checked').value;
+    let color2 = step3_2CtnInput[1].querySelector('input[type="radio"]:checked').value;
+    let color3 = step3_2CtnInput[1].querySelector('input[type="radio"]:checked').value;
+
+    
+    let fontFamily = step3_4InptSelect[1].querySelector('select').value.split('|')[0];
+    let fontSize = step3_4InptSelect[2].querySelector('select').value;
+
+    let carrenage = steps[1].querySelector('input[type="radio"]:checked');
+    let matiere = step4CtnInpt[0].querySelector('input[type="radio"]:checked');
+    let finition = step4CtnInpt[1].querySelector('input[type="radio"]:checked');
+    let bonus = step4CtnInpt[2].querySelectorAll('input[type="checkbox"]:checked');
+
+    const mainProduct = new FormData();
+    mainProduct.append("id", {{ product.variants[0].id }});
+    mainProduct.append("quantity", '1');
+    mainProduct.append("properties[Modele moto]", step1Input[0].value);
+    mainProduct.append("properties[Année moto]", step1Input[1].value);
+    mainProduct.append("properties[Prénom/Pseudo]", step3_1Input[0].value);
+    mainProduct.append("properties[Numéro course]", step3_1Input[1].value);
+    mainProduct.append("properties[Couleurs generale]", `(${color1}, ${color2}, ${color3})`);
+    indications.forEach((indic, i) => {
+        mainProduct.append(`properties[Indication ${i+1}]`, indic);
+    });
+    images.forEach((f, i) => {
+        mainProduct.append(`properties[Image ${i+1}]`, f);                     
+    });
+    sponsorInputs.forEach((sponsor, i) => {
+        if(sponsor.value != '') mainProduct.append(`properties[Sponsor ${i+1}]`, sponsor.value);
+    })
+    mainProduct.append("properties[Police]", `${fontFamily}, Taille: ${fontSize}`);
+
+    let productItems = [];
+
+    if(carrenage.value != 'no'){
+        productItems.push({
+            "id": carrenage.value,
+            "quantity": '1',
+            "properties": {
+                "Plaque phare": step2OtherInput[0].querySelector('select').value != "other" ? step2OtherInput[0].querySelector('select').value : step2OtherInput[1].querySelector('input[type="text"]').value,
+                "Garde boue": step2OtherInput[2].querySelector('select').value != "other" ? step2OtherInput[2].querySelector('select').value : step2OtherInput[3].querySelector('input[type="text"]').value,
+            }
+        })
+    }
+
+    productItems.push({"id": matiere.value,"quantity": '1',});
+    productItems.push({"id": finition.value,"quantity": '1',});
+    bonus.forEach((b, i) => {
+        productItems.push({"id": b.value,"quantity": '1',});
+    });
+
+    $.ajax({
+      url: '/cart/add.js',
+      type: 'POST',
+      data: mainProduct,
+      processData: false,
+      contentType: false,
+      success: function(response) {
+        console.log('Produit ajouté au panier !');
+        $.post("/cart/add.js", {
+            items: productItems
+         }, function(data) {
+            window.location.href = '/checkout';
+         }, "json");
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error('Erreur lors de l\'ajout du produit au panier : ' + textStatus, errorThrown);
+      }
+    });
+    
+}
+</script>

@@ -1,0 +1,744 @@
+<style>
+#shopify-section-{{ section.id }} #infotabsslider160323  {
+    width: 100%;
+    height: 100%;
+    padding: 60px 20px;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .container .header {
+    display: flex;
+    flex-direction: {% if section.settings.text_alignment == 'center' %}  column {% else %} row {% endif %};
+    justify-content: {% if section.settings.text_alignment == 'center' %} center {% else %} space-between {% endif %};
+    align-items: center;
+    text-align: {% if section.settings.text_alignment == 'center' %} center {% else %} left {% endif %};
+    padding-bottom: 50px;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .header .header_text {
+    display: flex;
+    flex-direction:  column ;
+    justify-content: {% if section.settings.text_alignment == 'center' %} center {% else %} flex-start {% endif %}; ;
+    align-items: {% if section.settings.text_alignment == 'center' %} center {% else %} flex-start {% endif %};;
+    text-align: {% if section.settings.text_alignment == 'center' %} center {% else %} left {% endif %};
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .header_title {
+    font-size: {% if section.settings.heading_size == 'large' %} calc(30px / 18 * 18 + 0px) {% else %} calc(18px / 16 * 16 + 0px) {% endif %} ;
+    font-weight: 700;
+    margin-bottom: 0px;
+    line-height: 1.1;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .header_text p {
+    font-size: calc(15px / 16 * 16 + 0px);
+    opacity: .62;
+    padding: 15px 0 0 !important;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    padding: 8px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    min-height: 55px;
+    min-width: 150px;
+    text-align: center;
+    justify-content: center;
+    transition: all 300ms;
+    margin-top: 1.125rem;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn:hover {
+    border: 1.5px solid {{ section.settings.text_color }};
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn:hover > .icon {
+    position: relative;
+    z-index: inherit;
+    opacity: 1;
+    visibility: visible;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn:hover > .text {
+    margin-right: 10px;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn  span {
+    display: block;
+    text-align: center;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn .text {
+    margin-right: 0;
+    transition: all 300ms;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn .icon {
+    position: absolute;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .head_btn .icon svg {
+    width: 30px;
+    height: 30px;
+    color:{{ section.settings.text_color }};
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .wrapper.left {
+    flex-direction: row-reverse !important;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .wrapper.left > .container_text_card {
+  margin-right: unset;
+  margin-left: 40px;
+}
+
+  #shopify-section-{{ section.id }} #infotabsslider160323  .wrapper.left > .container_image {
+  margin-left: unset;
+  margin-right: 40px;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .container_text_card {
+    width:  {% if section.settings.desktop_image_width == '75%' %} 75% {% elsif section.settings.desktop_image_width == '67%' %} 67% {% else %} 50% {% endif %};
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .container_text_card:hover > .text_card .loader .inner_loader {
+    animation-play-state: paused !important;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity .25s ease;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card.active {
+    opacity: 1;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card.active .content_title{
+    margin-bottom:0px;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card.active > .content_text_card .content .content_desc {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card.active > .loader .inner_loader {
+    animation-duration: {{ section.settings.autoplay_timer }}s;
+    animation-name: animateLoader;
+    animation-iteration-count: 1;
+    animation-fill-mode: fhiddenorwards;
+    animation-play-state: running;
+    animation-timing-function: linear;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .content_text_card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 1.375rem;
+    //padding-bottom: 1.375rem;
+    align-items: flex-start;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .prefix {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: calc(22px / 16 * 16 + 0px);
+    line-height: 1;
+    padding-top: 10px;
+    {% if section.settings.layout_style == 'icon' %} width: 60px; {% endif %}
+    margin-right: 30px;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card .content .content_title {
+    font-size: calc(36px / 16 * 16 + 0px);
+    width: 100%;
+    margin-top: 0px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .text_card .content .content_desc {
+    padding: 0.75rem 0;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: calc(16px / 16 * 16 + 0px);
+    margin-bottom: 20px;
+    z-index: -1;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: margin-bottom 300ms;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .loader {
+    width: 100%;
+    height: 1.5px;
+    background-color: #f2f2f2;
+    display: block ! important;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .inner_loader {
+    width: 0%;
+    height: 100%;
+    background-color: {{ section.settings.text_color }} !important;
+    display: block ! important;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .container_image {
+    margin-left: 40px;
+    width: {% if section.settings.desktop_image_width == '75%' %} 25% {% elsif section.settings.desktop_image_width == '67%' %} 33% {% else %} 50% {% endif %};
+    border-radius: {{ section.settings.image_border_radius }}px !important;
+    overflow: hidden;
+    position: relative;
+    background-color: #00000005;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .container_image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .container_image img.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323  .mobile_btn {
+    display: none;
+}
+
+#shopify-section-{{ section.id }} #infotabsslider160323 .icon_image {
+  max-width: 100%;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1000px) {
+    #shopify-section-{{ section.id }} #infotabsslider160323  .container_image {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .wrapper.left > .container_text_card {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .wrapper.left > .container_image {
+      margin-left: 0 !important;
+      margin-right: 0 !important
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .wrapper.left {
+        flex-direction: column-reverse !important;
+    }
+    
+    #shopify-section-{{ section.id }} #infotabsslider160323  .container_text_card {
+        width: 100%;
+        margin-right: 0px !important;
+        flex-direction: row;
+        overflow-x: scroll;
+        ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .container_text_card::-webkit-scrollbar {
+        display: none;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .text_card {
+        width: 60% !important;
+        flex: 0 0 auto;
+        padding-top: 1.375rem;
+        //padding-bottom: 1.375rem;
+        margin-inline-end: 25px;
+        scroll-snap-align: start;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .content_text_card {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .text_card .content .content_title {
+        font-size: calc(22px / 16 * 16 + 0px);
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #infotabsslider160323  .text_card .content .content_desc {
+        padding: 0.75rem 0;
+        width: 100%;
+        word-wrap: break-word;
+        font-size: calc(15px / 16 * 16 + 0px);
+        margin-bottom: 0;
+        z-index: initial;
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .header_title {
+        font-size: calc(22px / 18 * 18 + 0px);
+    }
+    
+    #shopify-section-{{ section.id }} #infotabsslider160323  .header_text p {
+        font-size: calc(13px / 16 * 16 + 0px);
+        opacity: .62;
+        padding: 9px 0 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .head_btn {
+        display: none;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .mobile_btn {
+        display: block;
+        padding-top: 40px;
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .mobile_btn .act_btn {
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        align-items: center;
+        border: 1.5px solid {{ section.settings.text_color }};
+        padding: 8px 30px;
+        border-radius: 30px;
+        font-size: 15px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #shopify-section-{{ section.id }} #infotabsslider160323  .container .header {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+}
+
+@keyframes animateLoader {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+</style>
+
+<section id="infotabsslider160323">
+    <div class="container">
+        <div class="header">
+            <div class="header_text">
+                {% if section.settings.heading != blank %}<h3 class="header_title">{{ section.settings.heading }}</h3>{% endif %}
+                {% if section.settings.sub_title != blank %}{{ section.settings.sub_title }}{% endif %}
+            </div>
+            {% if section.settings.button_label != "" %}
+                <a href="{{ section.settings.button_link }}" class="head_btn">
+                    <span class="text">{{ section.settings.button_label }}</span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                        </svg>                          
+                    </span>
+                </a>
+              {% endif %}
+        </div> 
+       <div class="wrapper {{ section.settings.image_position }}">
+          <div class="container_text_card" onMouseOver="onPause()" onMouseOut="onResume()">
+              {% for block in section.blocks %}
+                {% assign index = forloop.index %} 
+                  <div class="text_card {% if index == 1 %} active {% endif %}">
+                      <div class="content_text_card">
+                          {% if section.settings.layout_style != 'blank' %} 
+                              <div class="prefix">
+                                  {% if section.settings.layout_style == 'list' %} 
+                                      <span>
+                                        {% if index >= 10 %}} {{ index }} {% else %} 0{{ index }} {% endif %}
+                                      </span>
+                                  {% else %}
+                                      <span>
+                                          <img class="icon_image" src="{{ block.settings.icon | img_url:"master" }}" alt="Icone de {{ block.settings.title }}">
+                                      </span>
+                                  {% endif %}
+                              </div>
+                          {% endif %}
+                          <div class="content">
+                              <h3 class="content_title">{{ block.settings.title }}</h3>
+                              <span class="content_desc">
+                                  {{ block.settings.legende }}
+                              </p>
+                          </div>
+                      </div>
+                      <div class="loader">
+                          <div class="inner_loader"></div>
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+          <div class="container_image">
+            {% for block in section.blocks %}
+              {% assign index = forloop.index %}  
+                <img class="{% if index == 1 %}active{% endif %}" src="{{ block.settings.image | img_url:"master" }}" alt="{{ block.settings.title }}">
+             {% endfor %}
+          </div>
+       </div>
+        {% if section.settings.button_label != "" %}
+           <div class="mobile_btn">
+                <a href="{{ section.settings.button_link }}" class="act_btn">
+                    <span class="text">{{ section.settings.button_label }}</span>
+                </a>
+           </div>
+        {% endif %}
+    </div>
+</section>
+<script>
+const textCards = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #infotabsslider160323  .container_text_card .text_card'));
+const images = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #infotabsslider160323  .container_image img'));
+let isPaused = false;
+let time = 1;
+let currentIndex = document.querySelector('#shopify-section-{{ section.id }} #infotabsslider160323  .container_text_card .text_card.active') ? 0 : null;
+
+textCards.forEach((textCard, textCardIndex) => {
+    textCard.addEventListener('click', function(e){
+        textCards.forEach((currTextCard, currTextCardIndex) => {
+            if(textCard === currTextCard){
+                currTextCard.classList.add('active');
+                images[currTextCardIndex].classList.add('active');
+                time = 1;
+                currentIndex = currTextCardIndex;
+            }else{
+                currTextCard.classList.remove('active');
+                images[currTextCardIndex].classList.remove('active');
+            }
+        });
+    })
+});
+
+function play() {
+  if(currentIndex != null){
+      setInterval(() => {
+          if(!isPaused){
+              if(time === {{ section.settings.autoplay_timer }}){
+                  textCards[currentIndex].classList.remove('active');
+                  images[currentIndex].classList.remove('active');
+                  if(currentIndex === textCards.length - 1){
+                      textCards[0].classList.add('active');
+                      images[0].classList.add('active');
+                      currentIndex = 0;
+                  }else{
+                      textCards[currentIndex + 1].classList.add('active');
+                      images[currentIndex + 1].classList.add('active');
+                      currentIndex =  currentIndex + 1;
+                  }
+                  time = 1; 
+              }else{
+                  time = time + 1;
+              }
+          }
+      }, 1000);
+  }
+}
+
+function onPause() {
+    isPaused = true;
+}
+
+function onResume() {
+    isPaused = false;
+}
+
+if(window.innerWidth <= 1000){
+  play();
+}else{
+  {% if section.settings.enable_autoplay %}
+    play();
+  {% endif %}
+}
+
+</script>
+
+{% schema %}
+  {
+    "name": "Info Tab Slider",
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Contenu du texte"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre",
+            "default":"Réalisez votre diagnostic capillaire en 2 minutes."
+          },
+          {
+            "type": "richtext",
+            "id": "legende",
+            "label": "Légende"
+          },
+          {
+            "type":"image_picker",
+            "id":"image",
+            "label":"Image"
+          },
+          {
+            "type":"image_picker",
+            "id":"icon",
+            "label":"Icône personnalisée"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Parametre de couleur"
+      },
+      {
+        "type":"color",
+        "id":"bg_color",
+        "label":"Couleur de fond",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"text_color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      },
+      {
+        "type": "header",
+        "content": "Tête de section"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Rubrique",
+        "default":"Vous ne trouverez pas ça ailleurs"
+      },
+      {
+        "type": "richtext",
+        "id": "sub_title",
+        "label": "Sous titre",
+        "default":"<p>BeYours Paris plus qu'une simple marque</p> "
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "label": "Taille du titre",
+        "options": [
+          {
+            "value": "regular",
+            "label": "Régulier"
+          },
+          {
+            "value": "large",
+            "label": "Grand"
+          }
+        ],
+        "default": "large"
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Alignement du titre",
+        "options": [
+          {
+            "value": "left",
+            "label": "Gauche"
+          },
+          {
+            "value": "center",
+            "label": "Centré"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Libellé du bouton"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Lien du bouton"
+      },
+      {
+        "type": "header",
+        "content": "Mise en page"
+      },
+      {
+        "type": "select",
+        "id": "desktop_image_width",
+        "label": "Largeur de l'image sur Desktop",
+        "options": [
+          {
+            "value": "50%",
+            "label": "Un demi"
+          },
+          {
+            "value": "67%",
+            "label": "Un tier"
+          },
+          {
+            "value": "75%",
+            "label": "Un quart"
+          }
+        ],
+        "default": "50%"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Position de l'image",
+        "options": [
+          {
+            "value": "left",
+            "label": "A Gauche"
+          },
+          {
+            "value": "",
+            "label": "A Droite"
+          }
+        ],
+        "default": ""
+      },
+      {
+        "type": "range",
+        "id": "image_border_radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Rayon de la bordure de l'image",
+        "default": 20
+      },
+      {
+        "type": "select",
+        "id": "layout_style",
+        "label": "Style de mise en page",
+        "options": [
+          {
+            "value": "list",
+            "label": "Liste"
+          },
+          {
+            "value": "icon",
+            "label": "Icône"
+          },
+          {
+            "value": "blank",
+            "label": "Vide"
+          }
+        ],
+        "default": "list"
+      },
+      {
+        "type": "header",
+        "content": "Lecture automatique"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_autoplay",
+        "label": "Activer la lecture automatique",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "Seulement sur Desktop."
+      },
+      {
+        "type": "range",
+        "id": "autoplay_timer",
+        "min": 5,
+        "max": 15,
+        "step": 1,
+        "unit": "s",
+        "label": "minuterie de lecture automatique",
+        "default": 5
+      },
+      {
+        "type": "paragraph",
+        "content": "La lecture automatique s'interrompt lorsque l'utilisateur passe la souris sur l'onglet."
+      }
+    ],
+    "presets":[
+      {
+        "name":"Info Tab Slider"
+      }
+    ]
+  }
+{% endschema %}

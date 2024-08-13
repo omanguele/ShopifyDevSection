@@ -1,0 +1,138 @@
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    #shopify-section-{{ section.id }} #icontext250223{
+        margin: 10px 0;
+        border-top: 1px solid {{ section.settings.border-color }};
+        border-bottom: 1px solid {{ section.settings.border-color }};
+        background-color: {{ section.settings.bg-color }};
+    }
+    #shopify-section-{{ section.id }} #icontext250223 .page-width{
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    
+    #shopify-section-{{ section.id }} #icontext250223 .container-flex{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 15px 0;
+    }
+    #shopify-section-{{ section.id }} #icontext250223 .icons{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    #shopify-section-{{ section.id }} #icontext250223 .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 25%;
+        margin: 15px 0;
+        padding: 0 15px;
+    }
+    #shopify-section-{{ section.id }} #icontext250223 .icon img{
+        margin-bottom: 12px;
+    }
+    #shopify-section-{{ section.id }} #icontext250223 .icon p{
+        font-size: 18px;
+        text-align: center;
+        color: {{ section.settings.text-color }};
+    }
+    #shopify-section-{{ section.id }} #icontext250223 .container-flex .title{
+        font-size: 32px;
+        text-align: center;
+        color: {{ section.settings.title-color }};
+    }
+    @media screen and (max-width:768px) {
+        #shopify-section-{{ section.id }} #icontext250223 .container-flex .title{
+            font-size: 23px;
+        }
+        #shopify-section-{{ section.id }} #icontext250223 .icon{
+            width: 50%;
+        }
+    }
+</style>
+<section id="icontext250223">
+    <div class="page-width">
+        <div class="container-flex">
+            <h2 class="title">{{ section.settings.title }}</h2>
+            <div class="icons">
+                {% for block in section.blocks %}
+                  <div class="icon">
+                      <img width="50" height="50" src="{{ block.settings.icon | img_url:"master" }}"/>
+                      <p>{{ block.settings.title }}</p>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Icon Text Section",
+    "blocks": [
+      {
+        "type": "icon-text",
+        "name": "Icon Text",
+        "settings": [
+            {
+              "type": "image_picker",
+              "id": "icon",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre", 
+              "default":"Titre"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"border-color",
+        "label":"Couleur de bordure",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur du titre",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"desc-color",
+        "label":"Couleur du texte",
+        "default":"#000"
+      },
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Titre",
+        "default":"Pourquoi commander chez nous?"
+      }
+    ],
+    "presets":[
+      {
+        "name":"Icon Text Section"
+      }
+    ]
+  }
+{% endschema %}

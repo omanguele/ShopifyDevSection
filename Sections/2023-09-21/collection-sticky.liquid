@@ -1,0 +1,307 @@
+<style>
+     body {
+       overflow: initial !important;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 {
+       display: flex;
+       justify-content: center;
+       background-color: {{ section.settings.bg_color }};
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 a {
+       text-decoration: none;
+     }
+
+     #shopify-section-{{ section.id }} #glossy35501290 {
+       padding: 20px;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content {
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: space-around;
+       max-width: 1200px;
+       margin-left: auto;
+       margin-right: auto;
+       border-bottom: 1px solid {{ section.settings.text_color }};
+       padding-bottom: 24px;
+       padding-top: 50px;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text {
+       width: calc((100% - 32px) / 2);
+       line-height: 1.5;
+       height: fit-content;
+       transition: all ease-out 0.3s;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text a {
+       color: {{ section.settings.btn_text_color }};
+       background-color: {{ section.settings.btn_bg_color }};
+       padding: 12px 32px;
+       border-radius: 555px;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text p {
+       margin-top: 30px;
+       color: {{ section.settings.text_color }};
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text span {
+       font-size: 20px;
+       margin-left: 10px;
+       color: {{ section.settings.text_color }};
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text h2 {
+       font-size: 35px;
+       color: {{ section.settings.text_color }};
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_img_row {
+       width: calc((100% - 32px) / 2);
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       grid-gap: 10px;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_img_row .content_card {
+       height: auto;
+       width: auto;
+       object-fit: cover;
+       position: relative;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_img_row .content_card .another_img {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: auto;
+       object-fit: cover;
+       border-radius: 12px;
+       opacity: 0;
+       z-index: 5;
+       transition: all ease-out 0.3s;
+       cursor: pointer;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290
+       .section_content
+       .content_img_row
+       .content_card
+       .another_img.active {
+       opacity: 1;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290
+       .section_content
+       .content_img_row
+       .content_card
+       .content_card_title,
+  #shopify-section-{{ section.id }} #glossy35501290 .price{
+       margin-bottom: 5px;
+       display: inline-block;
+       color: {{ section.settings.text_color }};
+     }
+     #shopify-section-{{ section.id }} #glossy35501290
+       .section_content
+       .content_img_row
+       .content_card
+       .content_card_img {
+       border-radius: 12px;
+       width: 100%;
+       height: auto;
+       z-index: 3;
+
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .badge {
+       border-radius: 8px;
+       font-size: 11px;
+       padding: 5px;
+       display: inline-block;
+       margin-top: 10px;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .badge.blue {
+       border: solid 1px blue;
+       color: blue;
+     }
+     #shopify-section-{{ section.id }} #glossy35501290 .badge.yellow {
+       border: solid 1px #f1c80e;
+       color: #f1c80e;
+     }
+    #shopify-section-{{ section.id }} #glossy35501290 .sticky {
+       position: sticky;
+       top: 100px;
+     }
+
+     @media (max-width: 1075px) {
+       #shopify-section-{{ section.id }} #glossy35501290 .section_content {
+         display: flex;
+         justify-content: space-around;
+         max-width: 1300px;
+         margin-left: auto;
+         margin-right: auto;
+         padding-bottom: 24px;
+         padding-top: 50px;
+         flex-wrap: wrap;
+       }
+      #shopify-section-{{ section.id }} #glossy35501290 .sticky {
+         position: relative;
+         top: auto;
+       }
+
+       #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_img_row {
+         width: 100%;
+         display: grid;
+         padding-right: 15px;
+         grid-template-columns: 1fr 1fr 1fr 1fr;
+         grid-gap: 15px;
+         padding-top: 40px;
+       }
+       #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text {
+         width: 100%;
+         height: 100%;
+         line-height: 1.5;
+       }
+     }
+     @media (max-width: 770px) {
+       #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_img_row {
+         width: 100%;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         grid-gap: 15px;
+         padding-top: 40px;
+       }
+       #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text p {
+         margin-top: 20px;
+       }
+       #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text span {
+         font-size: 20px;
+         margin-left: 10px;
+       }
+       #shopify-section-{{ section.id }} #glossy35501290 .section_content .content_text h2 {
+         font-size: 28px;
+       }
+     }
+</style>
+
+<section id="glossy35501290">
+  <div class="container">
+    {% for collection in section.settings.collection_list %}
+      <div class="section_content">
+        <section class="content_text">
+          <h2>{{ collection.title }}</h2>
+          <p>
+            {{ collection.description }}
+          </p>
+          <p>
+            <a href="{{ collection.url }}">{{ section.settings.btn_text }}</a>
+          </p>
+        </section>
+        <section class="content_img_row">
+          {% for product in collection.products %}
+            <div class="content_card">
+              <a href="{{ product.url }}">
+                <img
+                  class="content_card_img"
+                  src="{{ product.images[0] | img_url: "master"  }}"
+                  alt=""
+                >
+                {% if product.images[1] != blank %}
+                  <img
+                    src="{{ product.images[1] | img_url: "master"  }}"
+                    alt=""
+                    class="another_img"
+                  >
+                {% endif %}
+              </a>
+              <a href="{{ product.url }}" class="content_card_title">{{ product.title }}</a>
+              <p class="price">{{ product.price | money }}</p>
+              <!--
+                <div class="stars">
+                  <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="12"
+                        height="12"
+                      >
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  4.9
+                </div>
+                <span class="badge blue">Best seller</span>
+              -->
+            </div>
+          {% endfor %}
+        </section>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  const observerx = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("sticky");
+      } else {
+        entry.target.classList.remove("sticky");
+      }
+    });
+  });
+  window.addEventListener("scroll", () => {
+    document.querySelectorAll("#shopify-section-{{ section.id }} #glossy35501290 .content_text")?.forEach((content_text) => {
+      observerx.observe(content_text);
+    });
+  });
+
+
+  document.querySelectorAll("#shopify-section-{{ section.id }} #glossy35501290 .another_img")?.forEach((content_card_img_) => {
+    content_card_img_.addEventListener("mouseenter", () => {
+      content_card_img_.classList.add("active");
+    });
+    content_card_img_.addEventListener("mouseleave", () => {
+      content_card_img_.classList.remove("active");
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "collection Sticky",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de Texte",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Couleur de fond du bouton",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur de Texte du bouton",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Texte du bouton",
+      "default": "buy in bundle"
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "collection Sticky"
+    }
+  ]
+}
+{% endschema %}

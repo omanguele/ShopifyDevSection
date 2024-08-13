@@ -1,0 +1,469 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    #shopify-section-{{ section.id }} #mission-20230217-2 .XW-image-text-target {
+        background: {{ section.settings.bg-color }};
+        padding: 80px 130px;
+    }
+    @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .XW-image-text-target {
+            background: {{ section.settings.bg-color }};
+            padding: 100px 50px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTexttargetMainBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTexttargetMainBox .ImageTextTargetTextblock {
+        width: 50%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .Imagetarhd h2 {
+        font-size: 70px;
+        line-height: 1;
+        color: {{ section.settings.title-color }};
+        font-weight: 700;
+        margin: 0 0 20px;
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .Imagetarhd h2{
+            font-size: 45px;
+        }
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .Imagetarhd h2{
+            font-size: 40px;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .Imagetarhd h2 {
+            letter-spacing: 0;
+        }
+    }
+    @media (max-width: 550px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .Imagetarhd h2{
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .TargetTextBlock {
+        display: flex;
+        align-items: center;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .TargetTexticon svg {
+        max-width: 20px;
+        height: auto;
+        width: 100%;
+        display: block;
+        margin-right: 25px;
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .TargetTexticon svg {
+            margin-right: 20px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .TargetTexticon svg path {
+        fill: {{ section.settings.desc-block-color }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .TargetTextBlock.active .TargetTexticon svg path {
+        fill: {{ section.settings.dots-color }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .tgtext p {
+        font-size: 24px;
+        line-height: 40px;
+        color: {{ section.settings.desc-block-color }};
+        font-weight: 400;
+        margin: 0;
+        cursor: pointer;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .TargetTextBlock.active .tgtext p {
+        color: {{ section.settings.desc-active-block-color }};
+        font-weight: 700;
+        text-decoration: underline;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .targetbottomtext p {
+        font-size: 24px;
+        line-height: 1;
+        color: {{ section.settings.desc-color }};
+        font-weight: 700;
+    }
+    @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .targetbottomtext p {
+            font-size: 22px;
+        }
+    }
+    @media (max-width: 550px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .targetbottomtext p {
+            font-size: 16px;
+            line-height: normal;
+        }
+    }
+
+
+    #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTexttargetMainBox .ImageTextTargetImageblock {
+        width: 50%;
+        text-align: center;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .imageTextImagesmn {
+        display: none;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .imageTextImagesmn .targetmg img {
+        display: block;
+        margin: auto;
+        max-width: 50%;
+        width: 100%;
+    }
+    @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .imageTextImagesmn .targetmg img {
+            max-width: 65%;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .imageTextImagesmn .targetmg img {
+            max-width: 70%;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .imageTextImagesmn .targetmg img {
+            max-width: 55%;
+            padding: 30px 0;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .imageTextImagesmn .targetmg img {
+            padding-left: 0;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .imageTextImagesmn.active {
+        display: block;
+    }   
+
+
+    #shopify-section-{{ section.id }} #mission-20230217-2 .mobile_viewport {
+        display: none!important;
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .desktop_viewport {
+            display: none!important;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .mobile_viewport {
+            display: block!important;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTexttargetMainBox .ImageTextTargetTextblock, 
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTexttargetMainBox .ImageTextTargetImageblock {
+            width: 100%;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt {
+            padding: 10px 0;
+        }
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .TargetTexticon svg {
+            margin: auto;
+            padding-bottom: 10px;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .TargetTexticon {
+            width: 13%;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .TargetTexticon {
+            width: inherit;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .tgtext {
+            width: 87%;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .tgtext {
+            width: 100%;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .slick-active .tgtext p {
+            font-weight: 700;
+            color: {{ section.settings.desc-active-block-color }};
+            text-decoration: underline;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .slick-initialized .slick-slide {
+        display: block;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .slick-slide {
+        height: inherit;
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .slick-active path {
+            fill: {{ section.settings.dots-color }}!important;
+        }
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTexttargetMainBox.mobile_struture_there.mobile_viewport ul.slick-dots li {
+            font-size: 0;
+            background: transparent;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTexttargetMainBox.mobile_struture_there.mobile_viewport ul.slick-dots li button {
+            font-size: 0;
+            background: transparent;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            padding: 0;
+            border: 2px solid {{ section.settings.dots-color }};
+            margin: 0 2px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 li.slick-active button {
+            background: #38b69d!important;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .slick-dots li.slick-active button:before,
+    #shopify-section-{{ section.id }} #mission-20230217-2 .slick-dots li button:before {
+        opacity: 0;
+        color: black;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-2 .slick-dots li {
+        margin: 0 -2px;
+     }
+     @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .tgtext p {
+           font-size: 18px;
+        }
+     }
+     @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .tgtext p {
+           font-size: 14px;
+           line-height: 44px;
+        }
+     }
+     @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217-2 .ImageTextBlockWrapctt .tgtext p {
+           font-size: 14px;
+           line-height: normal;
+        }
+     }
+</style>
+<section id="mission-20230217-2" style="overflow: hidden;">
+    <div class="XW-image-text-target" section="XW-image-text-target" bis_skin_checked="1">
+        <div class="ImageTexttargetMainBox desktop_viewport" bis_skin_checked="1">
+           <div class="ImageTextTargetTextblock" bis_skin_checked="1">
+              <div class="Imagetarhd" bis_skin_checked="1">
+                 <h2>{{ section.settings.title }}</h2>
+              </div>
+              <div class="ImageTextBlockWrapctt" maintargetwrap="" bis_skin_checked="1">
+                {% for block in section.blocks %}
+                 <div class="TargetTextBlock {% if forloop.index == 1 %} active {% endif %}" chaneimagetargetwithindex="" bis_skin_checked="1">
+                    <div class="TargetTexticon" bis_skin_checked="1">
+                       {{ block.settings.icon }}
+                    </div>
+                    <div class="tgtext" bis_skin_checked="1">
+                       <p>{{ block.settings.title }}</p>
+                    </div>
+                 </div>
+                {% endfor %}
+              </div>
+              <div class="targetbottomtext" bis_skin_checked="1">
+                 {{ section.settings.desc }}
+              </div>
+           </div>
+           <div class="ImageTextTargetImageblock" targetimagechangeactive="" bis_skin_checked="1">
+             {% for block in section.blocks %} 
+                <div class="imageTextImagesmn {% if forloop.index == 1 %} active {% endif %}" bis_skin_checked="1">
+                   <div class="targetmg" bis_skin_checked="1">
+                      <img src="{{ block.settings.img | img_url:'master' }}">
+                   </div>
+                </div>
+             {% endfor %}
+           </div>
+        </div>
+      
+        <div class="ImageTexttargetMainBox mobile_struture_there mobile_viewport" bis_skin_checked="1">
+           <div class="ImageTextTargetTextblock" bis_skin_checked="1">
+              <div class="Imagetarhd" bis_skin_checked="1">
+                 <h2>{{ section.settings.title }}</h2>
+              </div>
+              <div class="ImageTextTargetImageblock" targetmobileimagesslider="" bis_skin_checked="1">
+                {% for block in section.blocks %}  
+                   <div class="imageTextImagesmn">
+                      <div class="targetmg" bis_skin_checked="1">
+                         <img src="{{ block.settings.img | img_url:'master' }}">
+                      </div>
+                   </div>
+                {% endfor %}
+              </div>
+              <div class="ImageTextBlockWrapctt" targetmobilecontentslider="" bis_skin_checked="1">
+                 {% for block in section.blocks %}
+                   <div class="TargetTextBlock">
+                      <div class="TargetTexticon" bis_skin_checked="1">
+                         {{ block.settings.icon }}
+                      </div>
+                      <div class="tgtext" bis_skin_checked="1">
+                         <p>{{ block.settings.title }}</p>
+                      </div>
+                   </div>
+                {% endfor %}
+              </div>
+              <div class="targetbottomtext" bis_skin_checked="1">
+                 {{ section.settings.desc }}
+              </div>
+           </div>
+        </div>
+     </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    setInterval(() => {
+        slideText();
+        slideImage();
+    }, 1000);   
+
+    const slideText = () => {
+        const textes = document.querySelectorAll('#shopify-section-{{ section.id }} #mission-20230217-2 .desktop_viewport .ImageTextBlockWrapctt .TargetTextBlock');
+        const texte_active = document.querySelector('#shopify-section-{{ section.id }} #mission-20230217-2 .desktop_viewport .ImageTextBlockWrapctt .TargetTextBlock.active');
+
+        let j=0;
+
+        for (let i = 0; i < textes.length; i++) {
+            if (textes[i].classList.contains('active')) {
+                j = i+1;
+                j = (j < textes.length) ? j : 0;
+            }
+        }
+        texte_active.classList.remove('active');
+        textes[j].classList.add('active');
+    }
+
+    const slideImage = () => {
+        const images = document.querySelectorAll('#shopify-section-{{ section.id }} #mission-20230217-2 .desktop_viewport .ImageTextTargetImageblock .imageTextImagesmn');
+        const image_active = document.querySelector('#shopify-section-{{ section.id }} #mission-20230217-2 .desktop_viewport .ImageTextTargetImageblock .imageTextImagesmn.active');
+
+        let j=0;
+
+        for (let i = 0; i < images.length; i++) {
+            if (images[i].classList.contains('active')) {
+                j = i+1;
+                j = (j < images.length) ? j : 0;
+            }
+        }
+        image_active.classList.remove('active');
+        images[j].classList.add('active');
+    }
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#shopify-section-{{ section.id }} #mission-20230217-2 .mobile_viewport .ImageTextTargetImageblock').slick({
+      arrows:false,
+      infinite:true,
+      autoplay:true
+    });
+    $('#shopify-section-{{ section.id }} #mission-20230217-2 .mobile_viewport .ImageTextBlockWrapctt').slick({
+      dots: true,
+      arrows:false,
+      infinite:true,
+      autoplay:true
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Slider Image Text Section",
+    "blocks": [
+      {
+        "type": "image-text",
+        "name": "Image Text",
+        "settings": [
+            {
+              "type": "image_picker",
+              "id": "img",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre", 
+              "default":"Titre"
+            },
+            {
+              "type": "textarea",
+              "id": "icon",
+              "label": "SVG Icon"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#e2e3e3"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur de titre",
+        "default":"#010101"
+      },
+      {
+        "type":"color",
+        "id":"desc-color",
+        "label":"Couleur de texte",
+        "default":"#010101"
+      },
+      {
+        "type":"color",
+        "id":"desc-block-color",
+        "label":"Couleur de texte bloc",
+        "default":"#666"
+      },
+      {
+        "type":"color",
+        "id":"desc-active-block-color",
+        "label":"Couleur de texte actif bloc",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"dots-color",
+        "label":"Couleur de pagination slider",
+        "default":"#38b69d"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre", 
+        "default":"SYNCHRONISEZ AVEC VOTRE MOBILE !"
+      },
+      {
+        "type": "richtext",
+        "id": "desc",
+        "label": "Description", 
+        "default":"<p>Et encore plein d'autres fonctions...</p>"
+      }
+    ],
+    "presets":[
+      {
+        "name":"Slider Image Text Section"
+      }
+    ]
+  }
+{% endschema %}

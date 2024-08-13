@@ -1,0 +1,176 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    #shopify-section-{{ section.id }} #how-it-work230511 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      background-color: {{ section.settings.bg_color }} !important;
+      color: {{ section.settings.text_color }} !important;
+    }
+
+    #shopify-section-{{ section.id }} #how-it-work230511  h2{
+        font-family: Montserrat;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 1.4rem 0;
+      color: {{ section.settings.text_color }} !important;
+    }
+
+    #shopify-section-{{ section.id }} #how-it-work230511  .wrapper-tips{
+        display: grid;
+        text-transform: uppercase;
+        width: 100%;
+        font-family: Montserrat;
+        padding: 1.6rem 0;
+        margin-bottom: 1.4rem;
+        font-size: 12px;
+        font-weight: 600;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+  #shopify-section-{{ section.id }} #how-it-work230511   .wrapper-tips .tip{
+        text-align: center;
+        width: 100%;
+        max-width: 1400px;
+    }
+
+  #shopify-section-{{ section.id }} #how-it-work230511   .wrapper-tips p{
+        color: {{ section.settings.text_color }} !important;
+    }
+
+  #shopify-section-{{ section.id }} #how-it-work230511   .tip:nth-child(1),
+  #shopify-section-{{ section.id }} #how-it-work230511   .tip:nth-child(2),
+   #shopify-section-{{ section.id }} #how-it-work230511  .tip:nth-child(3){
+        border-right: 2px solid rgba(128, 128, 128, 0.151);
+    }
+
+  #shopify-section-{{ section.id }} #how-it-work230511   .wrapper-tips .tip span{
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    #shopify-section-{{ section.id }} #how-it-work230511  .action_btn{
+        font-size: 10px;
+        border-style: none;
+        font-family: Montserrat;
+        font-weight: 600;
+        color: {{ section.settings.btn_text_color }} !important;
+        letter-spacing: 2px;
+        padding: 1rem 2.4rem;
+        border-radius: 50px;
+        text-transform: uppercase;
+        background: {{ section.settings.btn_bg_color }} !important;
+      display: block;
+    }
+
+    @media screen and (max-width: 768px){
+
+        #shopify-section-{{ section.id }} #how-it-work230511 {
+            padding: 0px 20px;
+        }
+
+        #shopify-section-{{ section.id }} #how-it-work230511  .wrapper-tips{
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+      #shopify-section-{{ section.id }} #how-it-work230511   .wrapper-tips .tip{
+            margin-bottom: 0;
+        }
+
+      #shopify-section-{{ section.id }} #how-it-work230511   .tip:nth-child(1),
+      #shopify-section-{{ section.id }} #how-it-work230511   .tip:nth-child(2),
+      #shopify-section-{{ section.id }} #how-it-work230511   .tip:nth-child(3){
+            border: none;
+        }
+
+        #shopify-section-{{ section.id }} #how-it-work230511  .action_btn{
+            font-size: 9px;
+            padding: 1rem .96rem;
+        }
+    }
+</style>
+
+<div id="how-it-work230511">
+  <h2>{{ section.settings.title }}</h2>
+  <div class="wrapper-tips">
+    {% for block in section.blocks %}
+      <div class="tip">
+        <span>{{ forloop.index }}.</span>
+        <p>
+          {{ block.settings.text }}
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+  <a href="{{ section.settings.btn_url }}" class="action_btn">{{ section.settings.btn_label }}</a>
+</div>
+
+{% schema %}
+{
+   "name":"Simple Block",
+   "blocks":[
+      {
+         "type":"block",
+         "name":"BLock",
+         "limit":4,
+         "settings":[
+            {
+               "type":"text",
+               "id":"text",
+               "label":"Texte"
+            }
+         ]
+      }
+   ],
+   "settings":[
+      {
+         "type":"color",
+         "id":"bg_color",
+         "label":"Couleur fond",
+         "default":"#fff"
+      },
+      {
+         "type":"color",
+         "id":"text_color",
+         "label":"Couleur text",
+         "default":"#000"
+      },
+      {
+         "type":"color",
+         "id":"btn_text_color",
+         "label":"Couleur texte bouton",
+         "default":"#fff"
+      },
+      {
+         "type":"color_background",
+         "id":"btn_bg_color",
+         "label":"Couleur fond bouton",
+         "default":"linear-gradient(to top, #f3bfe2 0%, #fac4b7 100%) !important"
+      },
+      {
+         "type":"text",
+         "id":"title",
+         "label":"Titre"
+      },
+      {
+         "type":"text",
+         "id":"btn_label",
+         "label":"Libelle bouton",
+         "default":"lorem ipsum..."
+      },
+      {
+         "type":"url",
+         "id":"btn_url",
+         "label":"URL bouton"
+      }
+   ],
+   "presets":[
+      {
+         "name":"Simple Block"
+      }
+   ]
+}
+{% endschema %}

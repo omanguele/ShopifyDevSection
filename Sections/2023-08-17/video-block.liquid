@@ -1,0 +1,491 @@
+<style>
+   #shopify-section-{{ section.id }} #videoblockccb180632 {
+       width: 100%;
+       position: relative;
+       padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+       background-color: {{section.settings.bg_color}};
+       overflow: hidden;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_container {
+       margin-left: auto;
+       margin-right: auto;
+       width: 100%;
+       max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       gap: 40px;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_content {
+       max-width: 390px;
+       width: 100%;
+       text-align: center;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_heading {
+       font-size: 46px;
+       font-weight: 700;
+       margin-bottom: 10px;
+       margin-left: auto;
+       max-width: 320px;
+       margin-right: auto;
+       line-height: 1.1;
+       letter-spacing: 0;
+       color: {{section.settings.heading_color}};
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_subheading {
+       font-size: 28px;
+       font-style: italic;
+       margin-bottom: 20px;
+       line-height: 1.25;
+       letter-spacing: .01em;
+       color: {{section.settings.heading_color}};
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_actionbtn {
+       transition-duration: .4s;
+       text-decoration: none;
+       transition-property: color;
+       padding: 15px 40px;
+       position: relative;
+       color: {{ section.settings.btn_text_color }};
+       border:2px solid {{ section.settings.btn_border_color }};
+       z-index: 1;
+       border-width: 2px;
+       font-size: 14px;
+       line-height: 1;
+       letter-spacing: 1.6px;
+       font-weight: 700;
+       text-transform: uppercase;
+       transition-timing-function: cubic-bezier(.4,0,.2,1);
+       border-radius: 2px;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_actionbtn::after {
+       position: absolute;
+       content: "";
+       transition-duration: .4s;
+       transition-timing-function: cubic-bezier(.4,0,.2,1);
+       background-color: {{ section.settings.hover_btn_bg_color }};
+       transition-property: top,right,bottom,left;
+       top: 0;
+       right: 0;
+       bottom: 0;
+       left: 0;
+       z-index: -1;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_actionbtn:hover:after{
+       left: 100%;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_actionbtn:hover {
+        color: {{ section.settings.hover_btn_text_color }};
+   }
+  #shopify-section-{{ section.id }} #videoblockccb180632  .mobile_btn {
+       display: none;
+       margin-bottom: 20px;
+   }
+  #shopify-section-{{ section.id }} #videoblockccb180632  .desk_btn {
+       display: inline-block;
+       margin-top: 20px;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrapper {
+       width: 100%;
+       padding: 20px 20px 20px 30px;
+       text-align: left;
+       background-color: {{ section.settings.card_color }};
+       border-radius: 8px;
+       gap: 20px;
+       display: flex;
+       flex-direction: column;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrap_item {
+       display: flex;
+       align-items: center;
+       gap: 20px;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrapper_image {
+       width: 40px;
+       align-items: center;
+       justify-content: center;
+       flex-shrink: 0;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrapper_image img {
+       width: 34px;
+       height: auto;
+       max-width: 100%;
+       display: block;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrap_item_hd {
+       font-size: 18px;
+       line-height: 1.45;
+       letter-spacing: 0;
+       margin: 0;
+       color: {{ section.settings.text_color }};
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrap_item_pd {
+       color: {{ section.settings.text_color }};
+       opacity: .5;
+       margin: 0;
+       font-size: 13px;
+       line-height: 1.6;
+       letter-spacing: .02em;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_video {
+       width: 100%;
+       max-width: 475px;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_video video {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       object-position: center;
+       aspect-ratio: 9 / 10;
+       max-width: 100%;
+       display: block;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_rating {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 20px;
+       line-height: 1;
+       letter-spacing: 0;
+       margin-top: 15px;
+       color: {{ section.settings.star_color }};
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_stars {
+       display: flex;
+       align-items: center;
+       margin-left: 15px;
+   }
+   #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_stars svg {
+       height: 20px;
+       width: 20px;
+   }
+   @media only screen and (max-width: 780px) {
+       #shopify-section-{{ section.id }} #videoblockccb180632 {
+           padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_container {
+           flex-direction: column-reverse;
+       }
+      #shopify-section-{{ section.id }} #videoblockccb180632  .mobile_btn {
+           display: inline-block;
+       }
+      #shopify-section-{{ section.id }} #videoblockccb180632  .desk_btn {
+           display: none;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_video {
+           max-width: 275px;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_rating {
+           margin-top: 10px;
+           margin-right: 10px;
+           font-size: 14px;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_stars svg {
+           height: 15px;
+           width: 15px;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_heading {
+           font-size: 36px;
+           max-width: 280px;
+           line-height: 1.2;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_subheading {
+           font-size: 26px;
+           line-height: 1.2;
+           letter-spacing: 0;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrapper {
+           padding: 20px;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrap_item_hd {
+           font-size: 16px;
+       }
+       #shopify-section-{{ section.id }} #videoblockccb180632  .videoblockccb180632_wrap_item_pd {
+           font-size: 11px;
+       }
+   }
+</style>
+
+<section id="videoblockccb180632">
+  <div class="videoblockccb180632_container">
+    <div class="videoblockccb180632_content">
+      <h2 class="videoblockccb180632_heading">{{ section.settings.heading }}</h2>
+      <p class="videoblockccb180632_subheading">{{ section.settings.description }}</p>
+      <a href="{{ section.settings.url_btn }}" class="mobile_btn videoblockccb180632_actionbtn">
+        {{- section.settings.lbl_btn -}}
+      </a>
+      <div class="videoblockccb180632_wrapper">
+        {% for block in section.blocks %}
+          <div class="videoblockccb180632_wrap_item">
+            <div class="videoblockccb180632_wrapper_image">
+              <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+            </div>
+            <div class="videoblockccb180632_wrapper_text">
+              <p class="videoblockccb180632_wrap_item_hd">{{ block.settings.heading }}</p>
+              <p class="videoblockccb180632_wrap_item_pd">
+                {{ block.settings.description }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <a href="{{ section.settings.url_btn }}" class="desk_btn videoblockccb180632_actionbtn">
+        {{- section.settings.lbl_btn -}}
+      </a>
+    </div>
+    <div class="videoblockccb180632_video">
+      <video
+        playsinline="playsinline"
+        autoplay="autoplay"
+        loop="loop"
+        muted="muted"
+        preload="metadata"
+        poster="{{ section.settings.poster | img_url: "master" }}"
+      >
+        <source
+          src="{{ section.settings.video.sources[1].url }}"
+          type="video/mp4"
+        >
+        <img src="{{ section.settings.poster | img_url: "master" }}">
+      </video>
+      <div class="videoblockccb180632_rating">
+        <span>{{ section.settings.nb_star }}</span>
+        <div class="videoblockccb180632_stars">
+          {% for i in (1..section.settings.nb_star) %}
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+              </svg>
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Video Block",
+    "blocks": [
+    {
+    "type": "item",
+    "name": "item",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+],
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg_color",
+        "label":"Bg color",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"heading_color",
+        "label":"heading color",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"text_color",
+        "label":"Text color",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"card_color",
+        "label":"Card color",
+        "default":"#f2f2f2"
+      },
+      {
+        "type":"color",
+        "id":"star_color",
+        "label":"Star color",
+        "default":"#000"
+      },{
+    "type":"color",
+    "id":"btn_text_color",
+    "label":"Couleur btn text",
+    "default":"#f2f2f2"
+  },
+    {
+    "type":"color",
+    "id":"btn_border_color",
+    "label":"Couleur btn border",
+    "default":"#000"
+  },
+     {
+    "type":"color",
+    "id":"hover_btn_bg_color",
+    "label":"Hv Couleur btn fond",
+    "default":"#000"
+  },
+    {
+    "type":"color",
+    "id":"hover_btn_text_color",
+    "label":"Hv Couleur btn texte",
+    "default":"#fff"
+  },
+    {
+    "type":"video",
+    "id":"video",
+    "label":"Video"
+  },
+    {
+    "type":"image_picker",
+    "id":"poster",
+    "label":"poster"
+  },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+      },
+  {
+    "type": "range",
+    "id": "nb_star",
+    "min": 0,
+    "max": 5,
+    "step": 1,
+    "unit": "s",
+    "label": "Nb Star",
+    "default": 5
+  },
+  {
+    "type":"text",
+    "id":"lbl_btn",
+    "label":"Libelle bouton",
+    "default":"Tous les tatouages"
+  },
+  {
+    "type":"url",
+    "id":"url_btn",
+    "label":"URL bouton"
+  },
+  {
+    "type": "range",
+    "id": "desktop_top_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Top Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_bottom_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Bottom Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_left_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Left Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_right_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Right Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "mobile_top_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Top Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_bottom_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Bottom Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_left_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Left Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_right_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Right Spacing",
+    "default": 20
+  },
+  {
+    "type": "checkbox",
+    "id": "full_with",
+    "label": "Full Width",
+    "default": false
+  },
+  {
+    "type": "range",
+    "id": "max_width",
+    "min": 500,
+    "max": 2000,
+    "step": 100,
+    "unit": "px",
+    "label": "Max Width",
+    "default": 1400
+  }
+    ],
+    "presets": [
+      {
+        "name": "Video Block"
+      }
+    ]
+  }
+{% endschema %}

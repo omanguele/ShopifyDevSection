@@ -1,0 +1,82 @@
+<style>
+  #shopify-section-{{ section.id }} #bgimgtext  {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #bgimgtext  img {
+      max-width: 100%;
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+  }
+  #shopify-section-{{ section.id }} #bgimgtext  .text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: center;
+      top: 0;
+      left: 0;
+      padding-top: 120px;
+      padding-left: 140px !important;
+      padding-right: 140px !important;
+  }
+  #shopify-section-{{ section.id }} #bgimgtext  .title {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-size: 41px !important;
+      line-height: 1em !important;
+      letter-spacing: -.6px !important;
+      color: #fff !important;
+      font-weight: 700;
+  }
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #bgimgtext  {
+          height: 600px;
+      }
+      #shopify-section-{{ section.id }} #bgimgtext  img {
+          height: 100%;
+      }
+      #shopify-section-{{ section.id }} #bgimgtext  .text {
+          padding-left: 25px !important;
+          padding-right: 25px !important;
+          padding-top: 40px !important;
+      }
+      #shopify-section-{{ section.id }} #bgimgtext  .title {
+          font-size: 30px !important;
+      }
+  }
+</style>
+
+<section id="bgimgtext">
+  <img src="{{ section.settings.image | img_url: "master" }}" alt="">
+  <div class="text">
+    <h1 class="title">{{ section.settings.text }}</h1>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bg Image Text",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Texte"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bg Image Text"
+    }
+  ]
+}
+{% endschema %}

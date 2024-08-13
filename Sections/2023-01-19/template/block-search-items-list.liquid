@@ -1,0 +1,303 @@
+<style>
+    #shopify-section-{{ section.id }} #gridproductsection180123 div:empty{
+      display:block;
+    }
+    #shopify-section-{{ section.id }} #gridproductsection180123 {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      position: static;
+      color: {{ section.settings.text-color }};
+      font-family: AcherusGrotesque !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.3 !important;
+      letter-spacing: -.02em;
+      background-repeat: no-repeat;
+    }
+    #shopify-section-{{ section.id }} #gridproductsection180123 .container {
+      max-width: 100%;
+      margin: auto;
+    }
+    #shopify-section-{{ section.id }} #gridproductsection180123 .search-input {
+      background-color: {{ section.settings.bg-input-color }};
+      border-radius: 0.5em;
+      padding: 10px;
+      border-style: none;
+      margin-left: 20px;
+      width: calc(100% - 40px) !important;
+      margin-top: 1.5rem;
+      font: inherit;
+    }
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper {
+      position: relative;
+      margin: 1.5rem auto;
+      padding: 0 20px;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 auto;
+        margin: -12px;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card {
+        position: relative;
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 100%;
+        padding: 12px;
+        text-align: left;
+    
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card .card-limited-edition{
+        position: absolute;
+        background-color: {{ section.settings.bg-promo-color }};
+        border-radius: 4px;
+        color: {{ section.settings.text-promo-color }};
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 3px 6px;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card .card-link {
+        cursor: pointer;
+        text-decoration: none;
+        background-color: transparent;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper .wrapper  .card .card-image{
+        position: relative;
+        border-radius: .5rem;
+        overflow: hidden;
+        flex: 1 0 auto;
+        max-width: 100%;
+        color: {{ section.settings.text-color }};
+        display: flex;
+        z-index: 0;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card .card-image .gps-responsive-ctn {
+        flex: 1 0 0px;
+        max-width: 100%;
+        margin-left: -100%;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card .card-image .gps-image {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card .card-image  .gps-sizer {
+        padding-bottom: 100%;
+        transition: padding-bottom .2s cubic-bezier(.25,.8,.5,1);
+        flex: 1 0 0px;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card .card-title{
+        color: {{ section.settings.card-title-color }};
+        font-size: 18px;
+        font-weight: 900;
+        padding-top: 8px;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper  .wrapper  .card .card-level{
+        color: {{ section.settings.card-level-color }};
+        font-size: 16px;
+    }
+    
+    @media only screen and (min-width: 600px){
+        #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper   .wrapper  .card {
+            flex: 0 0 33.3333333333%;
+            max-width: 33.3333333333%;        
+        }
+    }
+    
+    @media only screen and (min-width: 768px) {
+        #shopify-section-{{ section.id }} #gridproductsection180123  .container {
+            max-width: 872px;
+            padding: 20px;
+        }
+    
+        #shopify-section-{{ section.id }} #gridproductsection180123  .search-input {
+            margin-left: 0px !important;
+            width: 100% !important;
+        }
+    
+        #shopify-section-{{ section.id }} #gridproductsection180123  .ctn-wrapper {
+            padding: 0;
+        }
+    }
+    
+    @media only screen and (min-width: 960px) {
+        #shopify-section-{{ section.id }} #gridproductsection180123   .ctn-wrapper   .wrapper  .card {
+            flex: 0 0 25%;
+            max-width: 25%;       
+        }
+    }
+  </style>
+  <section id="gridproductsection180123">
+    <div class="container">
+      <input type="text" class="search-input" placeholder="{{ section.settings.search-placeholder }}">
+      <div class="ctn-wrapper">
+          <div class="wrapper"></div>
+      </div>
+    </div>
+  </section>
+  <script>
+  
+    let data = [
+      {% for item in section.blocks %}
+        {
+            "image": "{{ item.settings.image | img_url:"master" }}",
+            "title": "{{ item.settings.title }}",
+            "level": "{{ item.settings.level }}",
+            "isLimited": "{{ item.settings.isLimited }}", 
+            "link": "{{ item.settings.link }}"
+        },
+      {% endfor %}
+    ];
+  
+    let wrapper = document.querySelector('#gridproductsection180123 .wrapper');
+    let search_input = document.querySelector('#gridproductsection180123 .search-input');
+    let html = '';
+           
+    function renderHtml (items) {
+        html = '';
+        items.forEach(item => {
+            html += `<div class="card">`
+            html +=  item.isLimited=='yes' ? `<div class="card-limited-edition">Limited Edition</div>`: ``;
+            html += `<a href="${item.link}" class="card-link"><div class="card-image"><div class="gps-sizer"></div>`;
+            html += `<div class="gps-image" style='background-image: url("${item.image}");'></div>`;
+            html += `<div class="gps-responsive-ctn"></div></div>`;
+            html += `<div class="card-title">${item.title}</div><div class="card-level">${item.level}</div>`
+            html += `</a></div>`;
+        });
+    
+        wrapper.innerHTML = html;
+    }
+    
+    renderHtml(data);
+    
+    search_input.addEventListener('input', function(e) {
+        e.preventDefault();
+        let filterArray = data.filter((item) => item.title.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+        renderHtml(filterArray);
+    })
+  </script>
+  {% schema %}
+    {
+      "name": "Search Items Section",
+      "blocks": [
+        {
+          "type": "item",
+          "name": "Item",
+          "settings": [
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "select",
+              "id": "isLimited",
+              "label": "Edition limitée ?",
+              "options": [
+                {
+                  "value": "no",
+                  "label": "Non"
+                },
+                {
+                  "value": "yes",
+                  "label": "Oui"
+                }
+              ],
+              "default": "no"
+            },
+            {
+              "type":"text",
+              "id":"title",
+              "label":"Titre",
+              "default":"test"
+            },
+            {
+              "type":"text",
+              "id":"level",
+              "label":"Niveau",
+              "default":"test"
+            },
+            {
+              "type":"url",
+              "id":"link",
+              "label":"Lien"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"color",
+          "id":"text-color",
+          "label":"Couleur du texte",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"bg-input-color",
+          "label":"Couleur de fond du champ de recherche",
+          "default":"#f4f4f4"
+        },
+        {
+          "type":"color",
+          "id":"bg-promo-color",
+          "label":"Couleur de fond promo",
+          "default":"#38ace0"
+        },
+        {
+          "type":"color",
+          "id":"text-promo-color",
+          "label":"Couleur de texte promo",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"card-title-color",
+          "label":"Couleur de titre de la carte",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"card-level-color",
+          "label":"Couleur de texte de la carte",
+          "default":"#000"
+        },
+        {
+          "type":"text",
+          "id":"search-placeholder",
+          "label":"Placeholder champ de recherche",
+          "default":"Find your Wooble..."
+        }
+      ],
+      "presets": [
+        {
+          "name": "Search Items Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

@@ -1,0 +1,136 @@
+<style>
+  #shopify-section-{{ section.id }} #fixedbar {
+      max-width: 100%;
+      background-color: {{ section.settings.bg_color }};
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding:  20px;
+  }
+
+  #shopify-section-{{ section.id }} #fixedbar  .fixedbar-items{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+  }
+
+
+  #shopify-section-{{ section.id }} #fixedbar  .action-btn{
+      background: rgb(76,65,250);
+      background: {{ section.settings.btn_bg_color }};
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: {{ section.settings.btn_text_color }};
+      display: block;
+      border-radius: 10px;
+      min-width: 300px;
+  }
+
+  #shopify-section-{{ section.id }} #fixedbar  .time {
+    color: {{ section.settings.subtitle_color }};
+    font-size: 16px;
+  }
+
+  #shopify-section-{{ section.id }} #fixedbar  .off{
+      color: {{ section.settings.title_color }};
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: bold;
+  }
+
+
+  @media only screen and (max-width: 996px) {
+      #shopify-section-{{ section.id }} #fixedbar  .reduction{
+          display: none;
+      }
+
+      #shopify-section-{{ section.id }} #fixedbar  .action-btn{
+          width: 100%;
+      }
+  }
+</style>
+
+<section id="fixedbar">
+  <div class="fixedbar-items">
+    <div class="reduction">
+      <h2 class="off">{{ section.settings.title }}</h2>
+      <p class="time">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <a class="action-btn" href="{{ section.settings.btn_url }}">{{ section.settings.btn_label }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fixed Bottom Bar",
+  "settings": [
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Couleur fond",
+          "default": "#fff"
+        },
+        {
+          "type": "color_background",
+          "id": "btn_bg_color",
+          "label": "Couleur fond bouton ",
+          "default": "linear-gradient(250deg,rgba(103,23,205,1) 0%,rgba(40,113,250,1) 100%)"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Couleur titre",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "subtitle_color",
+          "label": "Couleur sous titre",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "btn_text_color",
+          "label": "Couleur texte bouton",
+          "default": "#FFF"
+        },
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "Libelle bouton",
+          "default":"lorem ipsum..."
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "URL bouton"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default":"lorem ipsum..."
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sous titre",
+          "default":"lorem ipsum..."
+        }
+  ],
+"presets": [
+{
+  "name": "Fixed Bottom Bar"
+}
+]
+}
+{% endschema %}

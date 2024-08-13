@@ -1,0 +1,535 @@
+<style>
+    @media(min-width:768px){
+      #shopify-section-{{ section.id }} .padding_pc{
+        padding: {{ section.settings.padding-pc }} !important;
+      }
+      #shopify-section-{{ section.id }} .margin_pc{
+        margin: {{ section.settings.margin-pc }} !important;
+      }
+    }
+    @media(max-width:768px){
+      #shopify-section-{{ section.id }} .padding_mob{
+        padding: {{ section.settings.padding-mob }} !important;
+      }
+      #shopify-section-{{ section.id }} .margin_mob{
+        margin: {{ section.settings.margin-mob }} !important;
+      }
+    }
+  </style>
+  <style>
+    #shopify-section-{{ section.id }} #presentprdtsection100223 {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        background-color: {{ section.settings.bg-color }};
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: {{ section.settings.text-color }};
+        text-align: center;
+        letter-spacing: .02em;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container {
+        width: 100%;
+        padding-left: 22px;
+        padding-right: 22px;
+        border: 0;
+        margin: auto;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section {
+        padding-top: 4em;
+        padding-bottom: 4em;
+        margin: 0;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .title {
+        max-width: 14em;
+        margin-left: auto;
+        margin-right: auto;
+        color: {{ section.settings.title-color }};
+        font-size: 1.875em;
+        font-weight: 600;
+        letter-spacing: .02em;
+        line-height: 120%;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .subtext {
+        max-width: 22em;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 600;
+        font-size: 1.3em;
+        line-height: 1.3;
+        margin-top: 2.5em;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .prdt__ingrt__content {
+        max-width: 30em;
+        margin: 0 auto;
+        position: relative;
+        
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .prdt__ingrt__content  .content_image {
+        position: relative;
+        max-width: 15em;
+        margin: 0 auto;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .prdt__ingrt__content  .content_image img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .formula {
+        margin: 0 auto 2em;
+        max-width: 58em;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .formula p {
+        font-size: 1.15em;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 0.75em;
+    }
+    
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_elt {
+        width: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_elt .dropdown_trigger {
+        font-size: 1.15em;
+        font-weight: 500;
+        cursor: pointer;
+        margin-bottom: 1em;
+        display: inline-block;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_elt .dropdown_trigger p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_elt .dropdown_trigger .icons_wrapper {
+        width: 1em;
+        display: flex;
+        margin: 0 0.5em;
+        font-style: normal;
+        font-feature-settings: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: none;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_elt .dropdown_trigger .icons_wrapper svg {
+        transition: all ease 0.4s;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_elt.active  > .dropdown_trigger .icons_wrapper svg {
+        transform: rotate(180deg);
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_container {
+        overflow: hidden;
+        transition: all ease .3s;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_container .dropdown_container__content p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9em 0;
+        font-size: 0.95em;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_container .dropdown_container__content p span {
+        display: inline;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_container .dropdown__content__title {
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .tooltips {
+        position: absolute;
+        display: inline-block;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .tooltips.show > .tooltips_text {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .tooltips .circle{
+        width: 1.7em;
+        height: 1.7em;
+        border-radius: 2em;
+        background-color: {{ section.settings.bg-color-dot-tooltip }};
+        color: {{ section.settings.text-color-dot-tooltip }};
+        animation: pulse 2s infinite;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .tooltips .tooltips_text {
+        background-color: {{ section.settings.bg-color-tooltip }};
+        color: {{ section.settings.text-color-tooltip }};
+        text-align: left;
+        width: 20em;
+        padding: 2em;
+        border-radius: 1em;
+        font-size: .7em;
+        z-index: 5;
+        opacity: 0;
+        visibility: hidden;
+        transition: all ease .3s;
+        display: inline-block;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .tooltips .tooltips_text .name {
+        font-weight: 400;
+        font-size: 1.4em;
+        padding-bottom: 0.5em;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .tooltips .tooltips_text .arrow {
+        width: .6em;
+        height: .6em;
+        background: inherit;
+        visibility: hidden;
+        display: flex;
+        top: -3px;
+    }
+    
+    #shopify-section-{{ section.id }} #presentprdtsection100223 .tooltips .tooltips_text .arrow::before {
+        position: absolute;
+        width: .6em;
+        height: .6em;
+        background: inherit;
+        visibility: visible;
+        content: "";
+        transform: rotate(45deg);
+    }
+    
+    @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .subtext {
+            font-size: 0.95em;
+        }
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .formula p {
+            font-size: 1em;
+        }
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_container .dropdown_container__content p {
+            font-size: 0.85em;
+            text-align: left;
+            display: block;
+        }
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section  .dropdown_container .dropdown__content__title {
+            font-size: 1.1em;
+            display: inline;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container .inner_section .formula {
+            text-align: left;
+        }
+    }
+    
+    @media (min-width: 1200px){
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container {
+            max-width: 1140px;
+        }
+    }
+    
+    @media (min-width: 768px){
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container {
+            max-width: 722px;
+        }
+    }
+    
+    @media (min-width: 584px){
+        #shopify-section-{{ section.id }} #presentprdtsection100223 .container {
+            max-width: 540x;
+        }
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(0.85);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
+          }
+          70% {
+            transform: scale(0.88);
+            box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
+          }
+          100% {
+            transform: scale(0.85);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
+          }
+    }
+  </style>
+  <section id="presentprdtsection100223" class="margin_pc padding_pc margin_mob padding_mob ">
+    <div class="container" bis_skin_checked="1">
+        <div class="inner_section" bis_skin_checked="1">
+            <h3 class="title">{{ section.settings.title }}</h3>
+            <p class="subtext">{{ section.settings.desc-1 }}</p>
+            <div class="prdt__ingrt__content" bis_skin_checked="1">
+                <div class="image__container" bis_skin_checked="1">
+                    <div class="content_image" bis_skin_checked="1" style="padding-bottom:{{section.settings.font_size}}%;">
+                        <img alt="" sizes="240px" src="{{ section.settings.image | img_url:'master' }}">
+                    </div>
+                </div>
+                <div class="tooltips__container" bis_skin_checked="1">
+                    {% for block in section.blocks %}
+                      <div class="tooltips tooltips" style="left:{{block.settings.left}}%; top:{{block.settings.top}}%;" bis_skin_checked="1">
+                          <div class="circle" bis_skin_checked="1">+</div>
+                          <span class="tooltips_text" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: {{block.settings.transform}};">
+                              <h4 class="name">{{ block.settings.title }}</h4>
+                              <p class="desc">{{ block.settings.desc }}</p>
+                              <span class="arrow" style="position: absolute; left: 0px; transform: {{block.settings.transform-arrow }};"></span>
+                          </span>
+                      </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="formula" bis_skin_checked="1">
+                {{ section.settings.desc-2 }}
+            </div>
+            <div class="dropdown_elt" bis_skin_checked="1">
+                <div class="dropdown_trigger" bis_skin_checked="1">
+                    <p>
+                        <span>
+                            {{ section.settings.dropdown-title }}
+                        </span>
+                        <span class="icons_wrapper">
+                            <svg class="icon icon--chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+                            </svg>
+                        </span>
+                    </p>
+                </div>
+                <div class="dropdown_container" style="height: 0;" bis_skin_checked="1">
+                    <div class="dropdown_container__content" bis_skin_checked="1">
+                        {{ section.settings.dropdown-desc }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+        let dropdown = document.querySelector('#presentprdtsection100223 .dropdown_elt');
+        let tooltips = document.querySelectorAll('#presentprdtsection100223 .tooltips');
+  
+        dropdown.querySelector('.dropdown_trigger').addEventListener('click', function(e) {
+            e.preventDefault();
+            let dropContent = dropdown.querySelector('.dropdown_container');
+            if(dropdown.classList.contains('active')){
+                dropContent.style.height =  '0px';
+                dropdown.classList.remove('active');
+            }else{
+                dropContent.style.height = dropContent.scrollHeight + 'px';
+                dropdown.classList.add('active');
+            }
+        });
+  
+        tooltips.forEach((tooltip) => {
+            tooltip.addEventListener('mouseover', function(e) {
+                e.preventDefault();
+                tooltip.classList.add('show');
+            })
+        });
+  
+        tooltips.forEach((tooltip) => {
+            tooltip.addEventListener('mouseout', function(e) {
+                e.preventDefault();
+                tooltip.classList.remove('show');
+            })
+        });
+        tooltips.forEach((el, index) => {
+        
+        })
+    </script>
+  {% schema %}
+    {
+      "name": "Image Tooltips Section",
+      "max_blocks":6,
+      "blocks": [
+        {
+            "type": "tooltip",
+            "name": "Tooltip",
+            "settings": [
+              {
+                "type":"text",
+                "id":"title",
+                "label":"Titre tooltips",
+                "default":"Selenium"
+              },
+              {
+                "type":"text",
+                "id":"desc",
+                "label":"Description tooltips",
+                "default":"Contributes to the protection of cells from oxidative stress"
+              },
+              {
+                "type": "text",
+                "id": "transform",
+                "label": "Alignement du Tooltip",
+                "default":"translate(-86px, -23.6167px)"	
+              },
+              {
+                "type": "text",
+                "id": "transform-arrow",
+                "label": "Alignement du arrow Tooltip",
+                "default":"translate(95px)"	
+              },
+              {
+                "type": "range",
+                "id": "top",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "%",
+                "label": "Axe Y du Point",
+                "default": 10
+              },
+              {
+                "type": "range",
+                "id": "left",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "%",
+                "label": "Axe X du Point",
+                "default": 56
+              }
+            ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default": "#1f2021"
+        },
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du title",
+          "default": "#fff"
+        },
+        {
+          "type":"color",
+          "id":"text-color-dot-tooltip",
+          "label":"Couleur du texte de pastille",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "bg-color-dot-tooltip",
+          "label": "Couleur du fond de pastille",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "bg-color-tooltip",
+          "label": "Couleur du fond de pastille popup",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "text-color-tooltip",
+          "label": "Couleur du texte de pastille popup",
+          "default": "#000"
+        },
+        {
+          "type":"color",
+          "id":"text-color",
+          "label":"Couleur de texte",
+          "default": "#fff"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"27 ingredients"
+        },
+        {
+          "type":"text",
+          "id":"desc-1",
+          "label":"Description 1",
+          "default":"The SideKick is a daily supplement made specifically for your Beard Journey."
+        },
+        {
+          "type":"richtext",
+          "id":"desc-2",
+          "label":"Description 2"
+        },
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image du produit",
+          "info" : "Taille : 240 × 545 px"
+        },
+        {
+          "type":"text",
+          "id":"dropdown-title",
+          "label":"Titre dropdown",
+          "default":"Key components"
+        },
+        {
+          "type":"richtext",
+          "id":"dropdown-desc",
+          "label":"Description dropdown"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "min": 10,
+          "max": 500,
+          "step": 10,
+          "unit": "%",
+          "label": "Image Height",
+          "default": 280
+        },
+        {
+            "type": "select",
+            "id": "align_text",
+            "label": "Text alignment",
+            "default": "center",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Centered"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          }
+      ],
+      "presets":[
+        {
+          "name":"Image Tooltips Section",
+          "category":"Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

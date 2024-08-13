@@ -1,0 +1,320 @@
+<style>
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 {
+      position: relative;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_container {
+      margin: 0 auto;
+      padding: 0 40px;
+      max-width: 1300px;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_inner {
+      background-color: {{ section.settings.bg_color }};
+      border-radius: 25px;
+      padding: 60px 40px;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_wrapper {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      column-gap: 40px;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_video {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+      border-radius: 25px;
+      overflow: hidden
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_video video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_title {
+      padding-top: 20px;
+      font-style: normal;
+      font-size: 50px;
+      margin: 0 0 20px;
+      display: block;
+      letter-spacing: 0;
+      font-weight: 500;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_description p {
+      color: {{ section.settings.text_color }} !important;
+      margin-bottom: 20px;
+      font-style: normal;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_icon_text {
+      margin-bottom: 20px;
+      font-size: 12px;
+      text-align: center;
+      line-height: normal;
+      font-weight: 300;
+      display: flex;
+      flex-wrap: wrap;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_icon_text>div {
+      width: calc(100% / 6);
+      margin-bottom: 20px;
+      padding: 0 5px;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_icon_text>div img {
+      display: block;
+      margin: 0 auto 3px;
+      max-width: 100%;
+      border: 0 none;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq {
+      position: relative;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item {
+      position: relative;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item.active  .videoiconfastext23418322_accordion_faq_item_head::after {
+      content: "–";
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item.active .videoiconfastext23418322_accordion_faq_item_body {
+      padding: 20px 0 25px;
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item_head {
+      font-size: 22px;
+      line-height: 50px;
+      position: relative;
+      cursor: pointer;
+      border-bottom: 2px solid {{ section.settings.text_color }};
+      padding: 10px 0;
+      font-weight: 300;
+      color: #1F1E59 !important;
+      letter-spacing: 1px;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item_head::after {
+      font-size: 22px;
+      content: "+";
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      transition: content 150ms;
+      font-weight: 300;
+  }
+
+  #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item_body {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      padding: 0;
+      border-bottom: 2px solid {{ section.settings.text_color }};
+      margin-bottom: 5px;
+      transition: all .2s ease;
+      font-weight: 400;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  @media only screen and (max-width: 900px) {
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_title {
+          font-size: 30px;
+      }
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item_head {
+          font-size: 16px;
+          line-height: 30px;
+          border-width: 1px;
+          padding: 15px 0;
+          padding-right: 0px;
+          padding-right: 20px;
+      }
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item_head::after {
+          font-size: 18px;
+      }
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_description p {
+          margin-bottom: 18px;
+      }
+  }
+
+  @media screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_inner {
+          padding: 30px 20px;
+      }
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_wrapper {
+          display: flex;
+          flex-direction: column;
+          column-gap: unset;
+      }
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_icon_text>div {
+          width: calc(100% / 3);
+      }
+  }
+
+  @media only screen and (max-width: 590px) {
+      #shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_container {
+          padding: 0 20px;
+      }
+  }
+</style>
+
+<section id="videoiconfastext23418322">
+  <div class="videoiconfastext23418322_container">
+    <div class="videoiconfastext23418322_inner">
+      <div class="videoiconfastext23418322_wrapper">
+        <div>
+          <div class="videoiconfastext23418322_video">
+            <video autoplay="" loop="" muted="" playsinline="">
+              <source
+                src="{{ section.settings.video.sources[1].url }}"
+                type="video/mp4"
+              >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div class="videoiconfastext23418322_details">
+          <h2 class="videoiconfastext23418322_title">
+            {{ section.settings.heading }}
+          </h2>
+          <div class="videoiconfastext23418322_description">
+            <p>{{ section.settings.description }}</p>
+          </div>
+          <div class="videoiconfastext23418322_icon_text">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'icon_text' -%}
+                  <div>
+                    <img
+                      src="{{ block.settings.image | img_url: "master" }}"
+                      alt=""
+                    >
+                    <span>{{ block.settings.text }}</span>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+          <div class="videoiconfastext23418322_accordion_faq">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'faq' -%}
+                  <div class="videoiconfastext23418322_accordion_faq_item">
+                    <div class="videoiconfastext23418322_accordion_faq_item_head">{{ block.settings.label }}</div>
+                    <div class="videoiconfastext23418322_accordion_faq_item_body">
+                      {{ block.settings.text }}
+                    </div>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #videoiconfastext23418322 .videoiconfastext23418322_accordion_faq_item')).map((faq, i) => {
+      faq.querySelector('.videoiconfastext23418322_accordion_faq_item_head').addEventListener('click', function(e) {
+          faq.classList.toggle('active');
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Video Icon Faq",
+   "blocks": [
+  {
+  "type": "icon_text",
+  "name": "Icon Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+},
+  {
+  "type": "faq",
+  "name": "faq",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+}
+],
+  "settings": [
+    {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur du fond",
+    "default": "#C8E4EC"
+  },
+    {
+    "type": "color",
+    "id": "text_color",
+    "label": "Text Couleur",
+    "default": "#1F1E59"
+  },
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading"
+  },
+  {
+    "type": "textarea",
+    "id": "description",
+    "label": "Description"
+  },
+  {
+    "type":"video",
+    "id":"video",
+    "label":"Video"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Video Icon Faq"
+    }
+  ]
+}
+{% endschema %}

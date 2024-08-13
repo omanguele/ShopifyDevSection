@@ -1,0 +1,327 @@
+
+<style>  
+  #shopify-section-{{ section.id }} .slick-prev:before, .slick-next:before {display:none}
+  
+
+  #shopify-section-{{ section.id }} .avis-block{background-color: {{section.settings.color_bg}};padding: 50px 0;}
+  #shopify-section-{{ section.id }} .avis-block h2{
+    font-weight: bold!important;
+    font-style: normal!important;
+    text-align: center;
+    padding: 0 20px;
+    color: #2e2e2e!important;
+    margin-top: 2px !important;
+    margin-bottom: 15px !important;
+    font-size: 2.4rem !important;
+  }
+  #shopify-section-{{ section.id }} .widereview-subtitle {
+    font-weight: normal !important;
+    text-align: center;
+    font-style: normal !important;
+    line-height: 28px;
+    color: #2e2e2e !important;
+    padding: 0 20px;
+    margin-top: 14px !important;
+    margin-bottom: 30px !important;
+    font-size: 1.5rem !important;
+  }
+  
+  #shopify-section-{{ section.id }} .avisvalid{margin-left: 5px;background:{{section.settings.bf}};padding:2px 5px;color:#fff;font-size:10px;text-transform:initial;line-height:2!important;}
+  #shopify-section-{{ section.id }} .avisslider{min-width:200px;position:relative;overflow:hidden;border-radius:.375rem;background-color:#fff;-webkit-box-shadow:0 0.1875rem 0.375rem 0 hsla(0, 0%, 67.8%, .28);box-shadow:0 0.1875rem 0.375rem 0 hsla(0, 0%, 67.8%, .28);}
+  #shopify-section-{{ section.id }} .reviewAuthor{display:flex;align-items:center;flex-wrap:wrap;display:-webkit-flex;-webkit-align-items:center;-webkit-flex-wrap:wrap;padding:16px;}
+  #shopify-section-{{ section.id }} span.review-authorName{display:block;font-size:14px;font-weight:600;}
+  #shopify-section-{{ section.id }} .avistext{padding:0px 16px 10px;font-size:16px;}
+  #shopify-section-{{ section.id }} .avistext p{font-size:0.9em;margin:5px 0}
+  #shopify-section-{{ section.id }} .avisimg img{width:100%;{% unless section.settings.img_max_height_desktop == 0 %}max-height:{{ section.settings.img_max_height_desktop }}px;{% endunless %}display: block;width: 100%;object-fit: cover;object-position: 50% 50%;}
+  #shopify-section-{{ section.id }} .avisslidershow.slick-initialized {display:block}
+  #shopify-section-{{ section.id }} .avisslidershow .slick-slide{margin:5px 13px}
+
+  #shopify-section-{{ section.id }} .avisslidershow button.slick-prev{border-style:none;cursor:pointer;left:50px; position:absolute;top:50%;opacity:1;width:70px;height:70px;background-color:rgba(0, 0, 0, 0.35);transform:translateY(-50%);border-radius:50%;transition:opacity 0.15s ease-out 0s;font-size:0;z-index:1;}
+  #shopify-section-{{ section.id }} .avisslidershow button.slick-prev:after{content:"";position:absolute;width:25px;height:25px;border-left:3px solid #fff;display:inline-block;border-top:3px solid #fff;transform:rotate(-45deg);top:23px;left:27px;}
+  #shopify-section-{{ section.id }} .avisslidershow button.slick-next{border-style:none;cursor:pointer;right:50px;position:absolute;top:50%;opacity:1;width:70px;height:70px;background-color:rgba(0, 0, 0, 0.35);transform:translateY(-50%);border-radius:50%;transition:opacity 0.15s ease-out 0s;font-size:0;z-index:1;}
+  #shopify-section-{{ section.id }} .avisslidershow button.slick-next:after{content:"";position:absolute;width:25px;height:25px;border-right:3px solid #fff;display:inline-block;border-top:3px solid #fff;transform:rotate(45deg);top:23px;right:27px;}
+  #shopify-section-{{ section.id }} .avisslidershow button.slick-prev:focus,.avisslidershow button.slick-next:focus{outline:none;}
+  #shopify-section-{{ section.id }} .avisslidershow button.slick-prev:active,.avisslidershow button.slick-next:active{border-style:none}
+
+  @media (max-width:1000px){
+    #shopify-section-{{ section.id }} .avisslider{width: 60vw;}
+    #shopify-section-{{ section.id }} .avisimg img { {% unless section.settings.img_max_height_mobile == 0 %}max-height:{{ section.settings.img_max_height_mobile }}px{% endunless %};}
+    #shopify-section-{{ section.id }} .avis-block {padding:30px 0}
+    #shopify-section-{{ section.id }} .avis-block h2 {font-size:29px}
+    #shopify-section-{{ section.id }} .avisslidershow button.slick-next, .avisslidershow button.slick-prev{width:50px!important;height:50px!important;}
+    #shopify-section-{{ section.id }} .avisslidershow button.slick-prev{left:30px}
+    #shopify-section-{{ section.id }} .avisslidershow button.slick-next{right:30px}
+    #shopify-section-{{ section.id }} .avisslidershow button.slick-prev:after {top:15px;left:20px;width:20px;height:20px;}
+    #shopify-section-{{ section.id }} .avisslidershow button.slick-next:after {top:15px;right:20px;width:20px;height:20px;}
+  }
+
+  /* spacing */
+  #shopify-section-{{ section.id }} {
+    margin-top:{{ section.settings.spacing_top_mobile }}px;
+    margin-bottom:{{ section.settings.spacing_bottom_mobile}}px;
+  }
+  @media(min-width:750px) {
+    #shopify-section-{{ section.id }} .avisslidershow{padding:20px;}
+    #shopify-section-{{ section.id }} {
+      margin-top:{{ section.settings.spacing_top_desktop }}px;
+      margin-bottom:{{ section.settings.spacing_bottom_desktop }}px;
+    }
+  }
+  #shopify-section-{{ section.id }} .swiper-button-next::after,
+  #shopify-section-{{ section.id }} .swiper-button-prev::after{
+      margin: auto;
+      font-size: 15px !important;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+   }
+  
+  #shopify-section-{{ section.id }} .swiper-button-next,
+  #shopify-section-{{ section.id }} .swiper-button-prev{
+      height: 55px !important;
+      width: 55px !important;
+      text-align: center;
+      background: #000;
+      cursor: pointer;
+      opacity: 0.7;
+      border-radius: 50%;
+      padding: 8px !important;
+      box-shadow:  0 .1rem 0.5rem rgba(0, 0, 0, 0.504);
+  }
+</style>
+
+<div class="avis-block">
+  <h2 class="Heading u-h1">{{ section.settings.header }}</h2>
+  <p class="widereview-subtitle">{{ section.settings.sub }}</p>
+  <div class="swiper avisslidershow">
+    <div class=" swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="avisslider swiper-slide">
+          <div class="reviewReview">
+            <div class="avisimg">
+              <img src="{{ block.settings.image | img_url: '800x'}}">
+            </div>
+          </div>
+        </div>
+        <div class="avisslider swiper-slide">
+          <div class="reviewAuthor">
+            <div class="review-userdetail">
+              <span class="review-authorName">{{ block.settings.name }}<span class="avisvalid">{{section.settings.verifie}}</span></span>
+            </div>
+          </div>
+          <div class="avistext">
+            <b>{{ block.settings.title }}</b>
+            {{ block.settings.text }}
+          </div>
+        </div>
+      {% endfor %}
+     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+<script>
+    new Swiper("#shopify-section-{{ section.id }} .avisslidershow", {
+      slidesPerView:"auto",
+      grabCursor: true,
+      spaceBetween:20,
+      breakpoints: {
+        640: {
+          slidesPerView: "auto",
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
+        1224: {
+          slidesPerView: 6,
+          spaceBetween: 30,
+        },
+        1400: {
+          slidesPerView: 7,
+          spaceBetween: 30,
+        }
+      },
+      navigation: {
+        nextEl: "#shopify-section-{{ section.id }} .swiper-button-next",
+        prevEl: "#shopify-section-{{ section.id }} .swiper-button-prev",
+      },
+      speed:1000,
+      direction: 'horizontal',
+      zoom: false,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+      },
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+
+    });
+</script>
+  
+  {% schema %}
+  {
+	 "name":"Avis clients",
+	 "settings":[
+		{
+		   "type":"header",
+		   "content":"Paramètres principaux"
+		},
+		{
+		   "type":"text",
+		   "id":"header",
+		   "label":"Titre header",
+		   "default":"Rejoignez le Clan Max-Barber"
+		},
+        {
+		   "type":"text",
+		   "id":"sub",
+		   "label":"Sous-titre header",
+		   "default":"Vous êtes déjà plus de 15 000 guerriers à avoir bravés vents et tempêtes à bord de votre Drakkar pour tenter l'expérience Max-Barber."
+		},
+		{
+		   "type":"text",
+		   "id":"verifie",
+		   "label":"Badge",
+		   "default":"Verifié"
+		},
+		{
+		   "type":"color",
+		   "id":"color_bg",
+		   "label":"Couleur de fond",
+		   "default":"#F7FFFF"
+		},
+		{
+		   "type":"color",
+		   "id":"bf",
+		   "label":"Couleur de fond des pastilles",
+		   "default":"#00b77a"
+		},
+		{
+		   "type":"header",
+		   "content":"Paramètres bureau"
+		},
+		{
+		   "type":"range",
+		   "id":"img_max_height_desktop",
+		   "min":0,
+		   "max":1000,
+		   "step":25,
+		   "unit":"px",
+		   "label":"Hauteur maximum des images",
+		   "default":0,
+		   "info":"0 = paramètres par défaut"
+		},
+		{
+		   "type":"range",
+		   "id":"spacing_top_desktop",
+		   "min":-200,
+		   "max":200,
+		   "step":5,
+		   "unit":"px",
+		   "label":"Espacement haut",
+		   "default":0
+		},
+		{
+		   "type":"range",
+		   "id":"spacing_bottom_desktop",
+		   "min":-200,
+		   "max":200,
+		   "step":5,
+		   "unit":"px",
+		   "label":"Espacement bas",
+		   "default":0
+		},
+		{
+		   "type":"header",
+		   "content":"Paramètres mobile"
+		},
+		{
+		   "type":"range",
+		   "id":"img_max_height_mobile",
+		   "min":0,
+		   "max":1000,
+		   "step":25,
+		   "unit":"px",
+		   "label":"Hauteur maximum des images",
+		   "default":0,
+		   "info":"0 = paramètres par défaut"
+		},
+		{
+		   "type":"range",
+		   "id":"spacing_top_mobile",
+		   "min":-200,
+		   "max":200,
+		   "step":5,
+		   "unit":"px",
+		   "label":"Espacement haut",
+		   "default":0
+		},
+		{
+		   "type":"range",
+		   "id":"spacing_bottom_mobile",
+		   "min":-200,
+		   "max":200,
+		   "step":5,
+		   "unit":"px",
+		   "label":"Espacement bas",
+		   "default":0
+		}
+	 ],
+	 "blocks":[
+		{
+		   "type":"avis",
+		   "name":"Avis clients",
+		   "settings":[
+			  {
+				 "type":"image_picker",
+				 "id":"image",
+				 "label":"Image",
+				 "info":"Ratio 9:16"
+			  },
+			  {
+				 "type":"text",
+				 "id":"name",
+				 "label":"Nom du client",
+				 "default":"Elise N."
+			  },
+			  {
+				 "type":"text",
+				 "id":"title",
+				 "label":"Titre de l'avis",
+				 "default":"Bon produit !"
+			  },
+			  {
+				 "type":"richtext",
+				 "id":"text",
+				 "label":"Texte de l'avis",
+				 "default":"<p>Lorem ipsum dolor sit amet consectetur adipiscing elit risus ultricies ad, hendrerit torquent nibh phasellus enim sagittis sociis imperdiet erat faucibus ligula, cubilia mattis orci mi ornare dignissim dui cursus habitasse.</p>"
+			  }
+		   ]
+		}
+	 ],
+	 "presets":[
+		{
+		   "name":"Avis Client",
+		   "category":"Sections",
+		   "blocks":[
+			  {
+				 "type":"avis"
+			  }
+		   ]
+		}
+	 ]
+  }
+  {% endschema %}

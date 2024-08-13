@@ -1,0 +1,307 @@
+<style>
+  :root {
+    --sticky-timer-enabled: 1;
+  }
+
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+  
+</style>
+<style>
+    //#shopify-section-header{display:none !important;}
+  
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_wrapper_clbxmt97i2884961qvsxntn32b9 {
+      position: relative;
+      background: {{ section.settings.bg-color }};
+      z-index: 100;
+      display: flex !important;
+      width: 100%;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      column-gap: 26px;
+      row-gap: 10px;
+      position: sticky;
+    }
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_title_clbxmt97i2884961qvsxntn32b9.h2 {
+      font-weight: 500;
+      font-size: 17px;
+      color: {{ section.settings.heading-color }};
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-transform: none;
+      text-align: center;
+    }
+    @media only screen and (max-width: 780px)  {
+       #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_title_clbxmt97i2884961qvsxntn32b9.h2 {
+          margin: 0px;
+          padding: 0px;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 1.2;
+          text-align: center;
+          overflow: hidden;
+       }
+         #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_title_clbxmt97i2884961qvsxntn32b9.h2 span{display:none !important;}
+       #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_cta_clbxmt97i2884961qvsxntn32b9, 
+       #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_cta_clbxmt97i2884961qvsxntn32b9:visited {
+          font-size: 12px !important;
+       }
+      #shopify-section-{{ section.id }} #countdown250123 .countdown_time_clbxmt97i2884961qvsxntn32b9 {
+        color: {{ section.settings.countdown-color }};
+        font-weight: 500;
+        font-size: 17px !important;
+      }
+      #shopify-section-{{ section.id }} #countdown250123 .countdown_legend_clbxmt97i2884961qvsxntn32b9 {
+        color: {{ section.settings.l-countdown-color }};
+        font-size: 8px !important;
+      }
+    }
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_subheading_clbxmt97i2884961qvsxntn32b9 {
+        font-size: 14px;
+        color: {{ section.settings.subheading-color }};
+        line-height: 1.2;
+        letter-spacing: normal;
+        padding: 0;
+        margin: 0;
+    }
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_wrapper_clbxmt97i2884961qvsxntn32b9 {
+      display: grid;
+      grid-template-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
+      row-gap: 0;
+      justify-items: center;
+      align-items: center;
+      column-gap: 5px;
+      direction: ltr;
+      column-gap: 2px;
+    }
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_time_clbxmt97i2884961qvsxntn32b9 {
+      color: {{ section.settings.countdown-color }};
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1;
+      font-feature-settings: 'tnum';
+      font-variant-numeric: tabular-nums;
+      false: ;
+    }
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_legend_clbxmt97i2884961qvsxntn32b9 {
+        color: {{ section.settings.l-countdown-color }};
+        font-size: 10px;
+        padding-right: 10px;
+        grid-column: 2 span;
+        line-height: 1;
+    }
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_legend_clbxmt97i2884961qvsxntn32b9.last {
+        grid-column: auto;
+        padding-right: 0;
+    }
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_cta_clbxmt97i2884961qvsxntn32b9, 
+    #shopify-section-{{ section.id }} #countdown250123 .countdown_annoucement_bar_cta_clbxmt97i2884961qvsxntn32b9:visited {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        background: {{ section.settings.bg-btn-color }};
+        border: 0;
+        white-space: nowrap;
+        padding: 8px 16px;
+        line-height: 1.5;
+        border-radius: 4px;
+        font-size: 14px;
+        color: {{ section.settings.text-btn-color }};
+    }
+  </style>
+  <height-observer variable="timer">
+  <section id="countdown250123">
+    <div class="essential_countdown_annoucement_bar_wrapper countdown_annoucement_bar_wrapper_clbxmt97i2884961qvsxntn32b9" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <p class="countdown_annoucement_bar_title_clbxmt97i2884961qvsxntn32b9 h2"><span>{{ section.settings.offre }}</span>{{ section.settings.heading }}</p>
+        <p class="countdown_annoucement_bar_subheading_clbxmt97i2884961qvsxntn32b9">{{ section.settings.subheading }}</p>
+      </div>
+      <div bis_skin_checked="1">
+        <div class="countdown_wrapper_clbxmt97i2884961qvsxntn32b9 essential_countdown_timer">
+          <span class="countdown_time_clbxmt97i2884961qvsxntn32b9" id="days"></span>
+          <span class="countdown_time_clbxmt97i2884961qvsxntn32b9">:</span>
+          <span class="countdown_time_clbxmt97i2884961qvsxntn32b9" id="hours"></span>
+          <span class="countdown_time_clbxmt97i2884961qvsxntn32b9">:</span>
+          <span class="countdown_time_clbxmt97i2884961qvsxntn32b9" id="minutes"></span>
+          <span class="countdown_time_clbxmt97i2884961qvsxntn32b9">:</span>
+          <span class="countdown_time_clbxmt97i2884961qvsxntn32b9" id="seconds"></span>
+          <div class="countdown_legend_clbxmt97i2884961qvsxntn32b9">{{ section.settings.day-label }}</div>
+          <div class="countdown_legend_clbxmt97i2884961qvsxntn32b9">{{ section.settings.hour-label }}</div>
+          <div class="countdown_legend_clbxmt97i2884961qvsxntn32b9">{{ section.settings.minute-label }}</div>
+          <div class="countdown_legend_clbxmt97i2884961qvsxntn32b9 last">{{ section.settings.sec-label }}</div>
+        </div>
+      </div>
+      {% if section.settings.btn-url != blank %}<a class="countdown_annoucement_bar_cta_clbxmt97i2884961qvsxntn32b9" href="{{ section.settings.btn-url }}">{{ section.settings.btn-label }}</a> {% endif %}
+    </div>
+  </section>
+  </height-observer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+  (function () {
+    const second = 1000,
+          minute = second * 60,
+          hour = minute * 60,
+          day = hour * 24;
+  
+    //I'm adding this section so I don't have to keep updating this pen every year :-)
+    //remove this if you don't need it
+    let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+        nextYear = yyyy + 1,
+        dayMonth = "{{ section.settings.date_picker }}/",
+        birthday = dayMonth + yyyy;
+    
+    today = mm + "/" + dd + "/" + yyyy;
+    if (today > birthday) {
+      birthday = dayMonth + nextYear;
+    }
+    //end
+    
+    const countDown = new Date(birthday).getTime(),
+        x = setInterval(function() {    
+  
+          const now = new Date().getTime(),
+                distance = countDown - now;
+  
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        }, 0)
+    }());
+  </script>
+  {% schema %}
+    {
+      "name": "CountDown Section",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+            "type": "color",
+            "id": "bg-color",
+            "label": "BG Color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "heading-color",
+            "label": "Heading Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "subheading-color",
+            "label": "Subheading Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "countdown-color",
+            "label": "CountDown Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "l-countdown-color",
+            "label": "Legend countdown Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "bg-btn-color",
+            "label": "BG button Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "text-btn-color",
+            "label": "Text button Color",
+            "default": "#000"
+        },
+        {
+          "type": "header",
+          "content": "Title & Contents"
+        },
+        {
+            "type": "text",
+            "id": "offre",
+            "label": "Titre Offre",
+            "default":"Father’s Day Sale: "
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "FREE Recon with Orders Over $349"
+        },
+        {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+        },
+        {
+            "type": "text",
+            "id": "btn-label",
+            "label": "Button label",
+            "default": "Shop Now"
+        },
+        {
+            "type": "url",
+            "id": "btn-url",
+            "label": "Button URL"
+        },
+        {
+          "type": "header",
+          "content": "Time"
+        },
+        {
+          "type": "text",
+          "id": "date_picker",
+          "label": "Choose date",
+          "default": "01/26",
+          "info": "e.g. mm/dd"
+        },
+        {
+            "type": "text",
+            "id": "day-label",
+            "label": "Day label",
+            "default": "Days"
+        },
+        {
+            "type": "text",
+            "id": "hour-label",
+            "label": "Hour label",
+            "default": "Hrs"
+        },
+        {
+            "type": "text",
+            "id": "minute-label",
+            "label": "Minute label",
+            "default": "Mins"
+        },
+        {
+            "type": "text",
+            "id": "sec-label",
+            "label": "Second label",
+            "default": "Secs"
+        }
+      ],
+      "presets": [
+        {
+          "name": "CountDown Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

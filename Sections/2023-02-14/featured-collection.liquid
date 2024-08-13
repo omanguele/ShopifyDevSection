@@ -1,0 +1,751 @@
+{%- if section.settings.background != settings.background and section.settings.background != 'rgba(0,0,0,0)' -%}
+    {%- assign blends_with_background = false -%}
+  {%- else -%}
+    {%- assign blends_with_background = true -%}
+  {%- endif -%}
+  
+  <style>
+    .tabs-nav {
+        position: relative;
+        display: block;
+        margin-bottom: 32px;
+    }
+    .tabs-nav:not(:first-child) {
+        margin-top: 24px;
+    }
+    @media screen and (min-width: 741px){
+      .tabs-nav:not(:first-child) {
+          margin-top: 32px;
+      }
+    }
+    .hide-scrollbar {
+        scrollbar-width: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .tabs-nav__scroller {
+        display: block;
+    }
+    .tabs-nav__scroller-inner {
+        position: relative;
+        line-height: 1;
+    }
+    .tabs-nav--center .tabs-nav__scroller-inner {
+        max-width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tabs-nav__item-list {
+        display: inline-grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        justify-content: flex-start;
+        gap: 32px;
+        vertical-align: top;
+        box-shadow: 0 -1px rgb(227 226 226) inset;
+    }
+    @media screen and (min-width: 741px){
+      .tabs-nav__item-list {
+          gap: 54px;
+      }
+    }
+    .tabs-nav__item[aria-expanded=true] {
+        opacity: 1;
+        border-bottom: 2px solid rgb(0, 0, 0);
+    }
+    button, [type=submit] {
+        padding: 0;
+        overflow: visible;
+        background: none;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        touch-action: manipulation;
+    }
+    .tabs-nav__item {
+        padding-bottom: 18px;
+        opacity: .7;
+        transition: all .25s ease-in-out;
+  
+  }
+  
+    .tabs-nav__position {
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: currentColor;
+      transform: scaleX(0.106232) translate(0%);
+      transform-origin: left;
+    }
+    @supports (scale: 0){
+      .tabs-nav__position {
+          scale: var(--scale, 0) 1;
+          translate: calc(var(--translate, 0) * var(--scale, 0));
+          transform: none;
+      }
+    }
+    .tabs-nav__position {
+        left: 0;
+    }
+    .tabs-nav__position.is-initialized {
+        transition: transform .4s ease-in-out;
+    }
+    @supports (scale: 0){
+      .tabs-nav__position.is-initialized {
+          transition: scale .2s ease-in-out,translate .4s ease-in-out;
+      }
+    }
+    .button, .shopify-challenge__button, #shopify-product-reviews .spr-summary-actions-newreview, #shopify-product-reviews .spr-button {
+      position: relative;
+      display: inline-block;
+      -webkit-appearance: none;
+      appearance: none;
+      line-height: var(--button-height);
+      padding: 0 30px;
+      text-align: center;
+      text-decoration: none;
+      /*border-radius: 30px;*/
+      background: rgb(255,255,255);
+      color: rgb(56,56,56);
+    }
+  </style>
+  
+  <style>
+    .section {
+        display: block;
+        margin: 64px 0;
+    }
+    .section__color-wrapper {
+      display: flow-root;
+      background: rgb(255,255,255);
+    }
+    .container{
+      width: 100%;
+      max-width: 1600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 40px;
+      padding-right: 40px;
+      --container-outer-margin: 0px; /* Inside a container only the gutter remains as margin */
+    }
+    .section__header {
+        max-width: 1000px;
+        margin-bottom: min(32px,64px);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    @media screen and (min-width: 741px){
+      .section__header {
+          margin-bottom: min(40px,64px);
+      }
+    }
+    @media screen and (min-width: 1000px){
+      .section__header {
+          margin-bottom: min(48px,64px);
+      }
+    }
+    .heading{
+      display: block;
+    }
+    .heading--small{
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 1.4663636;
+      letter-spacing: 1px;
+    }
+    .heading--small {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    @media screen and (min-width: 741px){
+      .heading--small {
+          line-height: 1.2307692308;
+      }
+    }
+    h2:first-child{
+      margin-top: 0!important;
+    }
+    .heading:first-child {
+        margin-top: 0;
+    }
+    .text-container .heading--small{
+        margin: 16px 0;
+    }
+    .text-container .h2{
+      margin: 40px 0 16px;
+    }
+    .heading:last-child {
+        margin-bottom: 0;
+    }
+    .h2, .rte h2 {
+        font-size: 38px;
+        line-height: 1.13333333;
+        letter-spacing: -.6px;
+    }
+    @media screen and (min-width: 741px){
+      .h2, .rte h2 {
+          line-height: 1.1052631579;
+          letter-spacing: -1px;
+      }
+    }
+    @media screen and (min-width: 1000px){
+      .text-container .h2{
+        margin: 48px 0 24px;
+      }
+    }
+    .product-list {
+        --product-list-column-gap: 24px;
+    }
+    @media screen and (min-width: 1000px){
+      .product-list {
+          --item-width: calc((var(--container-max-width-minus-gutters) - 56px) / var(--section-products-per-row) - (var(--grid-gap) / var(--section-products-per-row) * (var(--section-products-per-row) - 1)));
+      }
+    }
+    @media screen and (min-width: 1000px){
+      @supports (width: max(1px,2px)){
+        .product-list {
+            --item-width: calc((min(100vw - var(--container-gutter) * 2, var(--container-max-width-minus-gutters)) - 56px) / var(--section-products-per-row) - (var(--grid-gap) / var(--section-products-per-row) * (var(--section-products-per-row) - 1)));
+        }
+      }
+    }
+    .product-list:not([hidden]) {
+        position: relative;
+        display: block;
+    }
+    .product-list__inner {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,calc(100% / var(--section-products-per-row) - var(--product-list-column-gap) * (var(--section-products-per-row) - 1) / var(--section-products-per-row)));
+        grid-gap: var(--product-list-block-spacing) var(--product-list-column-gap);
+        gap: var(--product-list-block-spacing) var(--product-list-column-gap);
+        overflow: hidden;
+    }
+    .product-list--center .product-list__inner {
+        justify-content: safe center;
+    }
+    [reveal] {
+        opacity: 0;
+    }
+    .product-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .product-item__image-wrapper {
+        position: relative;
+        display: block;
+        margin-bottom: 16px;
+        overflow: hidden;
+    }
+    .product-item__image-wrapper--placeholder {
+        fill: currentColor;
+    }
+    @media screen and (min-width: 1000px){
+      .product-item__image-wrapper {
+          margin-bottom: 24px;
+      }
+    }
+    .product-item__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .product-item-meta {
+        display: block;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .price-list--centered {
+        justify-content: center;
+    }
+    .price-list {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+    .visually-hidden {
+        position: absolute!important;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+    }
+    .product-item__aspect-ratio {
+        isolation: isolate;
+    }
+    @supports (aspect-ratio: 1 / 1){
+      .aspect-ratio {
+          padding-bottom: 0!important;
+          aspect-ratio: var(--aspect-ratio);
+      }
+    }
+    .aspect-ratio {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .product-item__primary-image, .product-item__secondary-image {
+        border-radius: 8px;
+    }
+    .aspect-ratio img, .aspect-ratio video, .aspect-ratio svg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+    }
+    .product-item__image-wrapper--multiple .product-item__primary-image, .product-item__image-wrapper--multiple .product-item__secondary-image {
+        transition: opacity .3s ease-in-out,visibility .3s ease-in-out;
+    }
+  
+    .product-item-meta__title {
+        display: block;
+        line-height: 1.6;
+        margin-bottom: 4px;
+    }
+    @media screen and (pointer: fine){
+      .product-item__image-wrapper--multiple:hover .product-item__primary-image {
+          visibility: hidden;
+          opacity: 0;
+      }
+    }
+    @media screen and (pointer: fine){
+      .product-item__image-wrapper--multiple:hover .product-item__secondary-image, .product-item__image-wrapper:hover .product-item__quick-form {
+          visibility: visible;
+          opacity: 1;
+      }
+    }
+    .product-item__quick-form {
+      position: absolute;
+      padding: 10px;
+      bottom: 0;
+      width: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility .2s ease-in-out,opacity .2s ease-in-out;
+    }
+    item__quick-form {
+        left: 0;
+    }
+    @media screen and (pointer: fine) and (prefers-reduced-motion: no-preference){
+      .product-item__quick-form {
+          transform: translateY(16px);
+          transition: visibility .2s ease-in-out,opacity .2s ease-in-out,transform .2s ease-in-out;
+      }
+    }
+    @media screen and (pointer: fine) and (prefers-reduced-motion: no-preference){
+      .product-item__image-wrapper:hover .product-item__quick-form {
+          transform: translateY(0);
+          visibility: visible;
+          opacity: 1;
+      }
+    }
+    .product-item__secondary-image {
+      position: absolute;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+      top: 50%!important;
+      left: 50%!important;
+      transform: translate(-50%,-50%)!important;
+      object-fit: contain;
+      object-position: center;
+    }
+    @media screen and (pointer: fine){
+      .product-item__secondary-image {
+          display: block;
+      }
+    }
+  
+    @media screen and (pointer: fine){
+      .button, .shopify-challenge__button, 
+      #shopify-product-reviews .spr-summary-actions-newreview, 
+      #shopify-product-reviews .spr-button, 
+      .shopify-payment-button__button {
+          background-image: linear-gradient(178deg,rgb(var(--button-background)),rgb(var(--button-background)) 10%,rgba(0,0,0,.07) 10%,rgba(0,0,0,.07) 100%),linear-gradient(rgb(var(--button-background)),rgb(var(--button-background)));
+          background-size: 100% 200%,100% 100%;
+          background-position: 100% -100%,100% 100%;
+          background-repeat: no-repeat;
+          transition: background-position .3s cubic-bezier(.215,.61,.355,1);
+          transform: translateZ(0);
+      }
+    }
+    .button--full {
+        width: 100%;
+    }
+    .button--outline {
+        --button-background: 255,255,255;
+        --button-text-color: 56,56,56;
+        border: 1px solid rgb(255,255,255);
+    }
+    .loader-button__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .loader-button__loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+    }
+    [hidden] {
+        display: none;
+    }
+    .product-item__quick-buy-button {
+        position: absolute;
+        bottom: 12px;
+        padding: 5px;
+        background: rgb(255,255,255);
+        color: rgb(56,56,56);
+        border: 1px solid rgb(255,255,255);
+    }
+    .product-item__quick-buy-button {
+        right: 12px;
+    }
+    .visually-hidden {
+        position: absolute!important;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+    }
+    .icon {
+        display: block;
+        vertical-align: middle;
+        background: none;
+        pointer-events: none;
+        overflow: visible;
+    }
+  </style>
+  <style>
+    #shopify-section-{{ section.id }} {
+      {%- if section.settings.background == 'rgba(0,0,0,0)' -%}
+        {%- assign section_background = settings.background -%}
+      {%- else -%}
+        {%- assign section_background = section.settings.background -%}
+      {%- endif -%}
+  
+      {%- if section.settings.text_color == 'rgba(0,0,0,0)' -%}
+        {%- assign heading_color = settings.heading_color -%}
+        {%- assign text_color = settings.text_color -%}
+      {%- else -%}
+        {%- assign heading_color = section.settings.text_color -%}
+        {%- assign text_color = section.settings.text_color -%}
+      {%- endif -%}
+  
+      {%- if section.settings.button_background == 'rgba(0,0,0,0)' -%}
+        {%- assign button_background = settings.primary_button_background -%}
+      {%- else -%}
+        {%- assign button_background = section.settings.button_background -%}
+      {%- endif -%}
+  
+      {%- if section.settings.button_text_color == 'rgba(0,0,0,0)' -%}
+        {%- assign button_text_color = settings.primary_button_text_color -%}
+      {%- else -%}
+        {%- assign button_text_color = section.settings.button_text_color -%}
+      {%- endif -%}
+  
+      --heading-color: {{ heading_color.red }}, {{ heading_color.green }}, {{ heading_color.blue }};
+      --text-color: {{ text_color.red }}, {{ text_color.green }}, {{ text_color.blue }};
+      --primary-button-background: {{ button_background.red }}, {{ button_background.green }}, {{ button_background.blue }};
+      --primary-button-text-color: {{ button_text_color.red }}, {{ button_text_color.green }}, {{ button_text_color.blue }};
+  
+      --prev-next-button-background: {{ settings.background.red }}, {{ settings.background.green }}, {{ settings.background.blue }};
+      --prev-next-button-color: {{ settings.text_color.red }}, {{ settings.text_color.green }}, {{ settings.text_color.blue }};
+  
+      --section-background: {{ section_background.red }}, {{ section_background.green }}, {{ section_background.blue }};
+      --section-products-per-row: 2;
+    }
+  
+    @media screen and (min-width: 741px) {
+      #shopify-section-{{ section.id }} {
+        --section-products-per-row: {{ section.settings.products_per_row | at_most: 3 }};
+      }
+    }
+  
+    @media screen and (min-width: 1000px) {
+      #shopify-section-{{ section.id }} {
+        --section-products-per-row: {{ section.settings.products_per_row | at_most: 4 }};
+      }
+    }
+  
+    @media screen and (min-width: 1200px) {
+      #shopify-section-{{ section.id }} {
+        --section-products-per-row: {{ section.settings.products_per_row }};
+      }
+    }
+  </style>
+  
+  <section class="section {% unless blends_with_background %}section--flush{% endunless %}">
+    <div class="section__color-wrapper">
+      <div class="container {% unless blends_with_background %}vertical-breather{% endunless %}">
+        {%- if section.blocks.size > 1 or section.settings.title != blank or section.settings.subheading != blank or section.settings.content != blank -%}
+          <header class="section__header {% if section.settings.content != blank %}section__header--tight{% endif %}">
+            {%- if section.settings.title != blank or section.settings.subheading != blank or section.settings.content != blank -%}
+              <div class="text-container">
+                {%- if section.settings.subheading != blank -%}
+                  <h2 class="heading heading--small">{{ section.settings.subheading }}</h2>
+                {%- endif -%}
+  
+                {%- if section.settings.title != blank -%}
+                  <h3 class="heading h2">{{ section.settings.title }}</h3>
+                {%- endif -%}
+  
+                {%- if section.settings.content != blank -%}
+                  {{- section.settings.content -}}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+  
+            {%- if section.blocks.size > 1 -%}
+              <tabs-nav class="tabs-nav tabs-nav--center tabs-nav--edge2edge">
+                <scrollable-content class="tabs-nav__scroller hide-scrollbar">
+                  <div class="tabs-nav__scroller-inner">
+                    <div class="tabs-nav__item-list">
+                      {%- for block in section.blocks -%}
+                        <button type="button" class="tabs-nav__item heading heading--small" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="block-{{ section.id }}-{{ block.id }}" {{ block.shopify_attributes }}>
+                          {{- block.settings.label | default: block.settings.collection.title -}}
+                        </button>
+                      {%- endfor -%}
+                    </div>
+                  </div>
+                </scrollable-content>
+              </tabs-nav>
+            {%- endif -%}
+          </header>
+        {%- endif -%}
+  
+        <div class="featured-collections">
+          {%- for block in section.blocks -%}
+            {%- assign collection = block.settings.collection -%}
+            {%- assign smallest_image_aspect_ratio = 0 -%}
+  
+            <product-list {% if settings.stagger_products_apparition %}stagger-apparition{% endif %} {% unless forloop.first %}hidden{% endunless %} id="block-{{ section.id }}-{{ block.id }}" class="product-list product-list--center">
+              <div {% unless section.settings.stack_products %}class="scroller"{% endunless %}>
+                <div class="product-list__inner {% unless section.settings.stack_products %}product-list__inner--scroller hide-scrollbar{% endunless %}">
+                  {%- assign number_of_products_minus_one = section.settings.products_per_row | minus: 1 -%}
+                  {%- assign gap_width = 24.0 | divided_by: section.settings.products_per_row | times: number_of_products_minus_one -%}
+                  {%- capture sizes_attribute -%}(max-width: 740px) 52vw, calc(min(100vw - 80px, 1520px) / {{ section.settings.products_per_row }} - {{ gap_width | ceil }}px){%- endcapture -%}
+  
+                  {%- for product in collection.products limit: section.settings.products_count -%}
+                    {%- if product.featured_media -%}
+                      {%- assign smallest_image_aspect_ratio = smallest_image_aspect_ratio | at_least: product.featured_media.aspect_ratio -%}
+                    {%- endif -%}
+  
+                    {%- render 'product-item', product: product, collection: collection, show_cta: section.settings.show_cta, block: block, sizes_attribute: sizes_attribute, reveal: settings.stagger_products_apparition -%}
+                  {%- else -%}
+                    {%- assign smallest_image_aspect_ratio = 1 -%}
+  
+                    {%- for i in (1..section.settings.products_count) -%}
+                      {%- capture product_image -%}product-{% cycle '1', '2', '3', '4', '5' %}{% endcapture %}
+                      {%- render 'product-item-placeholder', product_image: product_image, show_cta: section.settings.show_cta, reveal: settings.stagger_products_apparition -%}
+                    {%- endfor -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+  
+              {%- unless section.settings.stack_products -%}
+                {%- if collection.products_count == 0 -%}
+                  {%- assign products_shown = section.settings.products_count -%}
+                {%- else -%}
+                  {%- assign products_shown = collection.products_count | default: section.settings.products_count | at_most: section.settings.products_count -%}
+                {%- endif -%}
+  
+                {%- if products_shown > section.settings.products_per_row -%}
+                  {%- if smallest_image_aspect_ratio == 0 -%}
+                    {%- assign smallest_image_aspect_ratio = 1 -%}
+                  {%- endif -%}
+  
+                  <prev-next-buttons class="product-list__prev-next hidden-pocket" style="--smallest-image-aspect-ratio: {{ smallest_image_aspect_ratio }}">
+                    <button class="product-list__arrow prev-next-button prev-next-button--prev" disabled>
+                      <span class="visually-hidden">{{ 'general.accessibility.previous' | t }}</span>
+                      {%- include 'icon' with 'nav-arrow-left', block: true, direction_aware: true -%}
+                    </button>
+  
+                    <button class="product-list__arrow prev-next-button prev-next-button--next">
+                      <span class="visually-hidden">{{ 'general.accessibility.next' | t }}</span>
+                      {%- include 'icon' with 'nav-arrow-right', block: true, direction_aware: true -%}
+                    </button>
+                  </prev-next-buttons>
+                {%- endif -%}
+              {%- endunless -%}
+  
+              {%- if block.settings.button_text != blank -%}
+                <div class="section__footer">
+                  <a class="button button--primary" href="{{ block.settings.button_url | default: collection.url }}">{{ block.settings.button_text }}</a>
+                </div>
+              {%- endif -%}
+            </product-list>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">  
+      document.querySelectorAll(".tabs-nav__item").forEach((el, index) => {
+        
+        el.addEventListener('click', function(){
+          document.querySelectorAll(".tabs-nav__item").forEach(tab => {
+            tab.setAttribute('aria-expanded', 'false')
+          })
+          el.setAttribute('aria-expanded', 'true')
+  
+  
+          
+          document.querySelectorAll(".product-list").forEach(tab => {
+            tab.setAttribute('hidden', '')
+          })
+          document.querySelectorAll(".product-list").forEach((product, key) => {
+              if(index == key){
+                product.removeAttribute('hidden')
+              }
+          })
+        });
+    });
+  </script>
+  
+  {% schema %}
+  {
+    "name": "Featured collections",
+    "class": "shopify-section--featured-collections",
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Tab label",
+            "info": "Shown when more than 1 collection is featured. Collection title is used if none is set."
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button link",
+            "info": "If empty, the collection URL is used."
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Your title"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Collection"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "range",
+        "id": "products_count",
+        "label": "Products to show",
+        "min": 4,
+        "max": 50,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "products_per_row",
+        "label": "Products per row (desktop)",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "checkbox",
+        "id": "stack_products",
+        "label": "Stack products",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cta",
+        "label": "Show add to cart below info",
+        "info": "If enabled, we recommend using 4 products per row at maximum.",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "button_background",
+        "label": "Button background",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button text",
+        "default": "rgba(0,0,0,0)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "SS Featured collections",
+        "blocks": [
+          {
+            "type": "collection"
+          }
+        ],
+        "settings": {}
+      }
+    ]
+  }
+  {% endschema %}

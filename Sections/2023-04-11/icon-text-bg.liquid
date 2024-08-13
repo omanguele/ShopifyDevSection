@@ -1,0 +1,127 @@
+<style>
+  #icotxtbg230412 {
+      width: 100%;
+      height: 100%;
+      padding: 40px 20px;
+      color: {{ section.settings.text_color }};
+      background-color: {{ section.settings.bg_color }};
+  }
+  #icotxtbg230412 .container {
+      max-width: 90%;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  #icotxtbg230412 .wrapper {
+      margin-top: 50px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 50px;
+  }
+  #icotxtbg230412 .wrapper .card {
+      width: 100%;
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: {{ section.settings.card_color }};
+  }
+
+  #icotxtbg230412 .wrapper .card img {
+      max-width: 100%;
+      width: 90px;
+      object-fit: cover;
+  }
+  #icotxtbg230412 .card  .desc {
+      margin-top: 20px;
+      line-height: 1.5;
+      font-size: 16px;
+      font-weight: 500;
+      color: {{ section.settings.text_color }};
+      max-width: 80%;
+  }
+  @media only screen and (max-width: 780px) {
+      #icotxtbg230412 .wrapper {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+      #icotxtbg230412 .card .text .desc {
+          font-size: 13px;
+          max-width: 90%;
+      }
+      #icotxtbg230412 .wrapper .card img {
+          max-width: 100%;
+          width: 80px;
+          object-fit: cover;
+      }
+  }
+</style>
+
+<section id="icotxtbg230412">
+  <div class="container">
+    <div class="wrapper">
+      {% for block in section.blocks %}
+        <div class="card">
+          <img src="{{ block.settings.image | image_url: "master" }}" alt="">
+          <p class="desc">{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Icon Text Bg",
+  "blocks": [
+    {
+      "type": "icon-text-bg",
+      "name": "card",
+      "settings": [
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default":"Lorem ipsun..."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Couleur de card",
+      "default":"#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default":"#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon Text Bg"
+    }
+  ]
+}
+{% endschema %}

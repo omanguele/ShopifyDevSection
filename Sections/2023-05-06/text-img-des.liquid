@@ -1,0 +1,112 @@
+<style>
+  #shopify-section-{{ section.id }} #colorcompare  .content{
+      background-color: {{ section.settings.card_color }};
+      max-width: 1000px;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 93px 70px 67px 70px;
+  }
+
+  #shopify-section-{{ section.id }} #colorcompare {
+      background: {{ section.settings.bg_color }} ;
+      font-family: sans-serif;
+      padding: 20px;
+  }
+  #shopify-section-{{ section.id }} #colorcompare  .title{
+      padding-right: 150px !important;
+      font-size: 31px !important;
+      line-height: 1.1em !important;
+      letter-spacing: 0px !important;
+      color: {{ section.settings.title_color }} !important;
+      font-weight: 700;
+  }
+  #shopify-section-{{ section.id }} #colorcompare   .desc {
+      font-size: 16px;
+      margin-top: 20px !important;
+      line-height: 1.3em !important;
+      letter-spacing: -.1px !important;
+      color: {{ section.settings.desc_color }} !important;
+  }
+  #shopify-section-{{ section.id }} #colorcompare    img.desc_img {
+      max-width: 100%;
+      margin-top: 50px !important;
+      margin-bottom: 40px !important;
+  }
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #colorcompare    .title {
+          font-size: 24px !important;
+          padding-right: 20px !important;
+      }
+      #shopify-section-{{ section.id }} #colorcompare   img.desc_img  {
+          margin: 30px -80px 40px 0 !important;
+      }
+      #shopify-section-{{ section.id }} #colorcompare    .desc {
+          margin-top: 5px !important;
+      }
+      #shopify-section-{{ section.id }} #colorcompare    .content {
+          padding: 10px 41px 43px 20px !important;
+      }
+  }
+</style>
+
+<section id="colorcompare">
+  <div class="content">
+    <h1 class="title">{{ section.settings.title }}</h1>
+
+    <img src="{{ section.settings.image | img_url: "master" }}" class="desc_img" alt="">
+
+    <p class="desc">{{ section.settings.desc }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Title Image Desc",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Couleur fond",
+      "default": "linear-gradient(#1a1919,#1b1a1b)"
+    },
+    {
+      "type": "color_background",
+      "id": "card_color",
+      "label": "Couleur carte",
+      "default": "rgb(39, 37, 37)"
+    },
+    {
+      "type": "color_background",
+      "id": "title_color",
+      "label": "Couleur titre",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "desc_color",
+      "label": "Couleur titre",
+      "default": "#8e8e8ebf"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "desc",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title Image Desc"
+    }
+  ]
+}
+{% endschema %}

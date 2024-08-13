@@ -1,0 +1,224 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<style>
+  #shopify-section-{{ section.id }} #customizing23400290{
+      background-color:{{ section.settings.bg_color }};
+      display: flex;
+      height: 100%;
+      padding: 50px 20px;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .customizing23400290_container{
+      border-radius: 15px;
+      overflow: hidden;
+      border-radius: 15px ;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    background-color:{{ section.settings.card_color }};
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_template{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .swiper{
+      width: 100%;
+      height: 100%;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .swiper .swiper-slide img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 50px;
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card h3{
+      font-size: 28px;
+      margin-bottom: 20px;
+      color:{{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .customizing23400290-navigation{
+      position: relative;
+      top: initial;
+      left: initial;
+      width: 100%;
+      z-index: 10;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card .navigation_item{
+      border-bottom: solid 1px {{ section.settings.inactive_text_color }};
+      padding: 25px 0;
+      text-align: start;
+      color:{{ section.settings.inactive_text_color }};
+      cursor: pointer;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card .navigation_item.active{
+      color: {{ section.settings.text_color }};
+      border-color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card .navigation_item.active .navigation-description{
+      height: auto;
+      opacity: 1;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card .navigation_item span{
+      display: inline-flex;
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card .navigation-description{
+      font-size: 16px;
+      font-weight: 300;
+      color: {{ section.settings.inactive_text_color }};
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      text-align: justify;
+      transition: all ease-out 0.3s;
+  }
+
+  @media screen and (max-width: 780px){
+      #shopify-section-{{ section.id }} #customizing23400290 .container{
+          padding: 0 20px;
+      }
+      #shopify-section-{{ section.id }} #customizing23400290 .grid_template{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          border-radius: 15px;
+      }
+      #shopify-section-{{ section.id }} #customizing23400290 .grid_template{
+          grid-template-columns: auto;
+      }
+      #shopify-section-{{ section.id }} #customizing23400290 .grid_template .grid_card{
+          order: 2;
+      }
+      #shopify-section-{{ section.id }} #customizing23400290 .swiper{
+          height: 400px;
+      }
+      #shopify-section-{{ section.id }} #customizing23400290 .grid_card{
+          padding: 30px;
+      }
+      #shopify-section-{{ section.id }} #customizing23400290 .grid_card .navigation_item span{
+      font-size: 16px;
+  }
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card .navigation-description{
+  font-size: 14px;}
+  #shopify-section-{{ section.id }} #customizing23400290 .grid_card h3{
+      font-size: 20px;
+  }
+  }
+</style>
+
+<section id="customizing23400290">
+  <section class="customizing23400290_container">
+    <section class="grid_template">
+      <section class="grid_card">
+        <h3>{{ section.settings.heading }}</h3>
+        <section class="customizing23400290-navigation">
+          {% for block in section.blocks %}
+            <div class="navigation_item {% if forloop.index == 1 %}active{% endif %}">
+              <span>E{{ block.settings.heading }}</span>
+              <div class="navigation-description">
+                <p>
+                  {{ block.settings.message }}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+        </section>
+      </section>
+
+      <section class="swiper-customizing23400290 swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <img
+                src="{{ block.settings.image | img_url: "master" }}"
+                alt=""
+              >
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </section>
+  </section>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swipercustomizing23400290 = new Swiper('#shopify-section-{{ section.id }} #customizing23400290 .swiper-customizing23400290', {
+      slidesPerView: 1,
+      allowTouchMove: false
+  });
+
+  document.querySelectorAll("#shopify-section-{{ section.id }} #customizing23400290 .navigation_item")?.forEach((item, index, arr) => {
+      item.addEventListener("click", (e) => {
+          swipercustomizing23400290.slideTo(index);
+          arr.forEach((item2) => {
+              item2.classList.remove("active");
+          })
+          item.classList.add("active");
+      });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Tab Image",
+     "blocks": [
+    {
+    "type": "item",
+    "name": "item",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Titre"
+      },
+      {
+        "type": "textarea",
+        "id": "message",
+        "label": "Message"
+      }
+    ]
+  }
+],
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Couleur de fond de la section",
+        "default": "#f2f2f2"
+      },
+      {
+        "type": "color",
+        "id": "card_color",
+        "label": "Couleur des cartes",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Couleur de Texte",
+        "default": "#000"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Titre",
+        "default": "Lounge"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tab Image"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,243 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+<script src="https://unpkg.com/wavesurfer.js"></script>
+<style>
+  #slideaudio250423 {
+      width: 100%;
+      padding: 0px 20px 40px;
+      position: relative;
+      height: 100%;
+      background-color: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }};
+  }
+  #slideaudio250423 .stars {
+      display: flex;
+      align-items: center;
+  }
+  #slideaudio250423 .stars svg {
+      width: 20px;
+      height: 20px;
+      color: {{ section.settings.highlight_color }};
+  }
+  #slideaudio250423 .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+  }
+  #slideaudio250423 .card {
+      width: 100%;
+      background-color: {{ section.settings.card_bg_color }};
+      padding: 20px;
+      border-radius: 10px;
+  }
+  #slideaudio250423 .swiper {
+      width: 100%;
+  }
+  #slideaudio250423 .swiper-wrapper {
+      width: 100%;
+  }
+  #slideaudio250423 .swiper-slide {
+      width: 100%;
+  }
+  #slideaudio250423 .play_btn {
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      color: {{ section.settings.highlight_color }};
+  }
+  #slideaudio250423 .play_btn svg {
+      width: 50px;
+      height: 50px;
+  }
+  #slideaudio250423   .content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+  }
+  #slideaudio250423  .wave {
+      max-width: 90%;
+      width: 100%;
+  }
+  #slideaudio250423  .head {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  }
+  #slideaudio250423 .name {
+      font-weight: bold;
+      color: {{ section.settings.text_color }};
+      font-size: 18px;
+      font-style: normal;
+  }
+
+  @media only screen and (max-width: 780px) {
+      #slideaudio250423 .name {
+          font-size: 14px;
+      }
+      #slideaudio250423 .stars svg {
+          width: 15px;
+          height: 15px;
+      }
+      #slideaudio250423 .play_btn svg {
+          width: 35px;
+          height: 35px;
+      }
+  }
+</style>
+
+<section id="slideaudio250423">
+  <div class="wrapper">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {% assign i = 0 %}
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="head">
+                <h3 class="name">{{ block.settings.name }}</h3>
+                <div class="stars">
+                  {% for i in (1..block.settings.nb_stars) %}
+                    <span class="star">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="content">
+                <button type="button" id="play_{{ i }}" class="play_btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm14.024-.983a1.125 1.125 0 010 1.966l-5.603 3.113A1.125 1.125 0 019 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div id="waveform_{{ i }}" class="wave"></div>
+              </div>
+            </div>
+          </div>
+          {% assign i = i | plus: 1 %}
+        {% endfor %}
+      </div>
+  <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    grabCursor: true,
+navigation: {
+        nextEl: "#shopify-section-{{ section.id }} .swiper-button-next",
+        prevEl: "#shopify-section-{{ section.id }} .swiper-button-prev",
+      },
+    breakpoints: {
+    320: {
+      slidesPerView: 1,
+      slidesPerColumn: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerColumn: 3,
+      spaceBetween: 10
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+
+  }
+  });
+
+      {% assign y = 0 %}
+      {% for block in section.blocks %}
+        var wavesurfer{{y}} = WaveSurfer.create({
+            container: '#waveform_{{y}}',
+            waveColor: '#D9DCFF',
+            progressColor: '{{ section.settings.highlight_color }}',
+            cursorColor: '{{ section.settings.highlight_color }}',
+            barWidth: 1,
+            barRadius: 3,
+            cursorWidth: 1,
+            height: 40,
+            responsive: true,
+            barGap: 3
+        });
+        wavesurfer{{y}}.load('{{ block.settings.video }}');
+
+        wavesurfer{{y}}.on('ready', function () {
+            document.querySelector('#play_{{y}}').addEventListener('click', function(e) {
+                e.preventDefault();
+                wavesurfer{{y}}.isPlaying() ? wavesurfer{{y}}.pause() : wavesurfer{{y}}.play();
+            });
+        });
+      {% assign y = y | plus: 1 %}
+      {% endfor %}
+</script>
+
+{% schema %}
+{
+  "name": "Audio Slider",
+  "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Nom",
+            "default":"Marcelin S."
+          },
+          {
+            "type": "range",
+            "id": "nb_stars",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "unit": "⭐",
+            "label": "Nombre d'étoiles",
+            "default": 5
+          },
+          {
+            "type": "text",
+            "id": "video",
+            "label": "url video"
+          }
+        ]
+      }
+    ],
+  "settings": [
+    {
+        "type":"color",
+        "id":"bg_color",
+        "label":"Couleur de fond",
+        "default":"#ffffff"
+    },
+    {
+        "type":"color",
+        "id":"highlight_color",
+        "label":"Couleur mise en avant",
+        "default":"#4353FF"
+    },
+    {
+      "type":"color",
+      "id":"card_bg_color",
+      "label":"Couleur de fond des cartes",
+      "default":"#f2f2f2"
+    },
+    {
+      "type":"color",
+      "id":"text_color",
+      "label":"Couleur de texte",
+      "default":"#000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Audio Slider"
+    }
+  ]
+}
+{% endschema %}

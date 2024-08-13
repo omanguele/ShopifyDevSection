@@ -1,0 +1,253 @@
+<style>
+  #shopify-section-{{ section.id }} #mission270223  {
+  width: 100%;
+  background-color: {{ section.settings.bg-color }};
+  color: {{ section.settings.text-color }};
+}
+#shopify-section-{{ section.id }} #mission270223  .mission-section-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: auto;
+  padding: 50px 100px 50px 100px;
+}
+
+#shopify-section-{{ section.id }} #mission270223  .mission-header-text {
+  text-align: center;
+  color: {{ section.settings.title-color }};
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+#shopify-section-{{ section.id }} #mission270223  .mission-text-desc {
+  font-size: 20px;
+  color: {{ section.settings.subtitle-color }};
+  padding-top: 10px;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+#shopify-section-{{ section.id }} #mission270223  .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+}
+#shopify-section-{{ section.id }} #mission270223  .mission-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 100px;
+}
+
+#shopify-section-{{ section.id }} #mission270223  .anchor {
+  background-color: {{ section.settings.title-color }};
+  width: 50px;
+  height: 3px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+}
+
+#shopify-section-{{ section.id }} #mission270223  .mission-background {
+  display: flex;
+  flex: 1;
+}
+
+#shopify-section-{{ section.id }} #mission270223  .image-cover {
+  flex: 1;
+  align-items: center;
+  object-fit: fill;
+  width: 100%;
+  height: auto;
+}
+
+#shopify-section-{{ section.id }} #mission270223  .mission-background-main {
+  min-height: 100%;
+  background-color: {{ section.settings.card-bg-color }};
+  background-size: cover;
+  flex: 1;
+}
+#shopify-section-{{ section.id }} #mission270223  .mission-text {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #mission270223  .mission-grid-item {
+  height: auto;
+}
+
+#shopify-section-{{ section.id }} #mission270223  .mission-header-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+  /* Mission section */
+  #shopify-section-{{ section.id }} #mission270223  .mission-section-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+  }
+  #shopify-section-{{ section.id }} #mission270223  .mission-text-desc {
+    font-size: 17px;
+    color: {{ section.settings.subtitle-color }};
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    line-height: 30px;
+  }
+  #shopify-section-{{ section.id }} #mission270223  .row-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  #shopify-section-{{ section.id }} #mission270223  .mission-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 20px;
+  }
+
+  #shopify-section-{{ section.id }} #mission270223  .mission-text {
+    padding: 15px;
+  }
+  #shopify-section-{{ section.id }} #mission270223  .anchor {
+    margin-left: 15px;
+    margin-bottom: 5;
+  }
+
+  #shopify-section-{{ section.id }} #mission270223  #ordered-3 {
+    display: flex;
+    flex: 1;
+    order: 2;
+  }
+
+  #shopify-section-{{ section.id }} #mission270223  #ordered-4 {
+    order: 1;
+  }
+}
+</style>
+ 
+<section id="mission270223">
+  <div class="mission-section-container">
+    <span class="mission-header-text-wrapper">
+      <p class="mission-header-text">
+        {{ section.settings.title }}
+      </p>
+      <p class="mission-text-desc">
+        {{ section.settings.subtitle }}
+      </p>
+    </span>
+    <div class="mission-section-wrapper" id="mission-section-wrapper">
+      <div class="row-wrapper">
+        {% if section.settings.image-aligment == 'left' %}
+            <div class="mission-grid-item mission-background">
+              <img src="{{ section.settings.image | img_url:"master" }}" alt="" class="image-cover" />
+            </div>
+        {% endif %}
+        <div class="mission-grid-item mission-background-main">
+          <p class="mission-text">
+            {{ section.settings.description }}
+          </p>
+          <div class="anchor"></div>
+        </div>
+        {% if section.settings.image-aligment == 'right' %}
+            <div class="mission-grid-item mission-background">
+              <img src="{{ section.settings.image | img_url:"master" }}" alt="" class="image-cover" />
+            </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image Text Section",
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"card-bg-color",
+        "label":"Couleur de fond carte",
+        "default":"#f2f2f2"
+      },
+      {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "subtitle-color",
+        "label": "Couleur du sous titre", 
+        "default":"#000"
+      },
+      {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"Des sportifs en tout genre adepte du sujet"
+      },
+      {
+          "type":"text",
+          "id":"subtitle",
+          "label":"Sous titre",
+          "default":"Entrevue avec l'équipe derrière vos deux roues"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image"
+      },
+      {
+        "type": "radio",
+        "id": "image-aligment",
+        "label": "Alignement de l'image",
+        "options": [
+          {
+            "value": "left",
+            "label": "Gauche"
+          },
+          {
+            "value": "right",
+            "label": "Droite"
+          }
+        ],
+        "default": "right"
+      },
+      {
+          "type":"textarea",
+          "id":"description",
+          "label":"Description",
+          "default":"Sa simplicité d'utilisation fait du vélo Voltaire l'allié parfait..."
+      }
+    ],
+    "presets": [
+      {
+          "name": "Image Text Section"
+      }
+    ]
+  }
+{% endschema %}

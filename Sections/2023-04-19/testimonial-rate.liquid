@@ -1,0 +1,196 @@
+<style>
+   #shopify-section-{{ section.id }} #ratetestimonial190423  {
+       width: 100%;
+       background-color: {{ section.settings.bg_color }};
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .ratetestimonial190423stars  {
+       display: flex;
+       align-items: center;
+       margin-top: 1px;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .stars .star {
+       display: block;
+       color: {{ section.settings.star_color }};
+   }
+
+  #shopify-section-{{ section.id }} #ratetestimonial190423 .stars  {
+             display: flex;
+             align-items: center;
+             margin-top: 1px;
+         }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .stars .star svg {
+       width: 20px;
+       height: 20px;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .card_testimonial {
+       display: flex;
+       gap: 30px;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .card_testimonial .image {
+       width: 80px;
+       height: 80px;
+       overflow: hidden;
+       border-radius: 50%;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .text {
+       max-width: 70%;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .message {
+       font-size: 15px;
+       font-style: italic;
+       line-height: 1.7;
+       color: {{ section.settings.message_color }};
+       font-weight: 500;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .name {
+       margin-top: 10px;
+       font-weight: 600;
+     color: {{ section.settings.name_color }};
+       font-size: 15px;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .card_testimonial .image img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .footer_testimonial {
+       display: flex;
+       align-items: center;
+       margin-top: 20px;
+       gap: 20px;
+   }
+
+   #shopify-section-{{ section.id }} #ratetestimonial190423  .rate {
+       font-size: 15px;
+       font-weight: 500;
+     color: {{ section.settings.name_color }};
+   }
+
+    @media only screen and (max-width: 780px)  {
+             #shopify-section-{{ section.id }} #ratetestimonial190423  .rate {
+                 font-size: 12px;
+             }
+             #shopify-section-{{ section.id }} #ratetestimonial190423  .message {
+                 font-size: 12px;
+             }
+
+             #shopify-section-{{ section.id }} #ratetestimonial190423  .name {
+                 font-size: 12px;
+             }
+
+             #shopify-section-{{ section.id }} #ratetestimonial190423  .stars .star svg {
+                 width: 18px;
+                 height: 18px;
+             }
+
+             #shopify-section-{{ section.id }} #ratetestimonial190423  .card_testimonial {
+                 gap: 20px;
+             }
+
+             #shopify-section-{{ section.id }} #ratetestimonial190423  .card_testimonial .image {
+                 width: 70px;
+                 height: 70px;
+             }
+         }
+</style>
+
+<section id="ratetestimonial190423">
+  <div class="card_testimonial">
+    <div class="image">
+      <img
+        src="{{ section.settings.image  | img_url: "master" }}"
+        alt=""
+      >
+    </div>
+    <div class="text">
+      <p class="message">" {{ section.settings.message }} "</p>
+      <h4 class="name">{{ section.settings.name }}</h4>
+    </div>
+  </div>
+  <div class="footer_testimonial">
+    <div class="stars">
+      {% for i in (1..section.settings.nb_stars) %}
+        <span class="star">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      {% endfor %}
+    </div>
+    <p class="rate">4.8/5 | 1,200 avis</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonial Rate",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Couleur de nom",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "message_color",
+      "label": "Couleur de message",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Couleur de etoile",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Nom",
+      "default": "lorem ipsum.."
+    },
+    {
+      "type": "textarea",
+      "id": "message",
+      "label": "Message",
+      "default": "Welcome to my shop!"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "nb_stars",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "⭐",
+      "label": "Nombre d'étoiles",
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Rate"
+    }
+  ]
+}
+{% endschema %}

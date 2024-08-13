@@ -1,0 +1,374 @@
+<style>
+   #shopify-section-{{ section.id }} #slidervideo7261320132 {
+     padding: 40px 60px 60px 60px;
+     width: 100%;
+     position: relative;
+     overflow: hidden;
+     background-color: {{ section.settings.bg_color }};
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_container {
+     margin-left: auto;
+     margin-right: auto;
+     width: 100%;
+     max-width: 1440px;
+     position: relative;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_content {
+     gap: 50px;
+     display: grid;
+     align-items: center;
+     grid-template-columns: minmax(0, 315px) minmax(0, 1fr);
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_text {
+     font-size: 50px;
+     line-height: 1.05;
+     letter-spacing: 0;
+     max-width: 100%;
+     margin-bottom: 40px;
+     font-weight: 700;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_text h2 {
+     font-size: 50px;
+     line-height: 1.05;
+     letter-spacing: 0;
+     max-width: 100%;
+     margin-bottom: 40px;
+     font-weight: 700;
+     color: {{ section.settings.text_color }};
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_btns {
+     display: flex;
+     gap: 10px;
+     justify-content: center;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_btns button {
+     padding: 5px;
+     cursor: pointer;
+     text-transform: none;
+     display: block !important;
+     background: none;
+     border-radius: 9999px;
+     overflow: hidden;
+     border: none;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_btns button svg {
+     display: block;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slide {
+     position: relative;
+     width: 100%;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slide p {
+     font-size: 12px;
+     line-height: 1.6;
+     letter-spacing: 0.02em;
+     margin-top: 10px;
+     color: {{ section.settings.text_color }};
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slide_video {
+     position: relative;
+     width: 100%;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slide_video .play_btn {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: none;
+     border: none;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slide_video video {
+     max-width: 100%;
+     width: 100%;
+     object-fit: cover;
+     height: 100%;
+     border-radius: 15px;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slider {
+     position: relative;
+   }
+  #shopify-section-{{ section.id }} #slidervideo7261320132 .opacity-0 {
+     opacity: 0 !important;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .opacity-100 {
+     opacity: 1 !important;
+   }
+   #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slider  .slidervideo7261320132_btns {
+     display: none !important;
+   }
+   @media (max-width: 768px) {
+     #shopify-section-{{ section.id }} #slidervideo7261320132 {
+       padding: 60px 0px 60px 20px;
+     }
+     #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_content {
+       display: block;
+     }
+     #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_text h2 {
+       font-size: 36px;
+       line-height: 1.2;
+       letter-spacing: 0;
+     }
+     #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_text {
+       padding-right: 20px;
+     }
+     #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_text  .slidervideo7261320132_btns {
+       display: none !important;
+     }
+     #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slider  .slidervideo7261320132_btns {
+       display: flex !important;
+       justify-content: space-between;
+     }
+     #shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_slider  .slidervideo7261320132_btns {
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       z-index: 50;
+       width: 100%;
+     }
+   }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+>
+
+<section id="slidervideo7261320132">
+  <div class="slidervideo7261320132_container">
+    <div class="slidervideo7261320132_content">
+      <div class="slidervideo7261320132_text">
+        <h2>{{ section.settings.title }}</h2>
+        <div class="slidervideo7261320132_btns">
+          <button type="button" class="left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+            >
+              <circle cx="25" cy="25" r="25" fill="white"></circle>
+              <path
+                d="M28 19L22 25L28 31"
+                stroke="#1A2F5A"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </button>
+          <button type="button" class="right">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="25"
+                transform="rotate(-180 25 25)"
+                fill="white"
+              ></circle>
+              <path
+                d="M22 31L28 25L22 19"
+                stroke="#1A2F5A"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="slidervideo7261320132_slider">
+        <div class="slidervideo7261320132_swiper swiper">
+          <div class="slidervideo7261320132_btns">
+            <button type="button" class="left">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 50 50"
+                fill="none"
+              >
+                <circle cx="25" cy="25" r="25" fill="#000"></circle>
+                <path
+                  d="M28 19L22 25L28 31"
+                  stroke="{{ section.settings.btn_color }}"
+                  stroke-width="2"
+                ></path>
+              </svg>
+            </button>
+            <button type="button" class="right">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 50 50"
+                fill="none"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="25"
+                  transform="rotate(-180 25 25)"
+                  fill="#000"
+                ></circle>
+                <path
+                  d="M22 31L28 25L22 19"
+                  stroke="{{ section.settings.btn_color }}"
+                  stroke-width="2"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide">
+                <div class="slidervideo7261320132_slide">
+                  <div class="slidervideo7261320132_slide_video">
+                    <button class="play_btn" type="button">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="45"
+                        height="45"
+                        viewBox="0 0 45 45"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M22.5 45C34.9264 45 45 34.9264 45 22.5C45 10.0736 34.9264 0 22.5 0C10.0736 0 0 10.0736 0 22.5C0 34.9264 10.0736 45 22.5 45ZM18.8603 28.8041L29.7794 22.5L18.8603 16.1959V28.8041Z"
+                          fill="{{ section.settings.btn_color }}"
+                        ></path>
+                      </svg>
+                    </button>
+                    <video
+                      playsinline="playsinline"
+                      loop="loop"
+                      muted="muted"
+                      preload="metadata"
+                      poster="{{ block.settings.image | img_url: "master" }}"
+                    >
+                      <source
+                        src="{{ block.settings.video.sources[1].url }}"
+                        type="video/mp4"
+                      >
+                      <img
+                        src="{{ block.settings.image | img_url: "master" }}"
+                      >
+                    </video>
+                  </div>
+                  <p>{{ block.settings.text }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const howToSlider = new Swiper("#shopify-section-{{ section.id }} #slidervideo7261320132 .swiper", {
+    slidesPerView: 1.7,
+    loop: true,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+
+    navigation: {
+      nextEl: "#shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_btns .right",
+      prevEl: "#shopify-section-{{ section.id }} #slidervideo7261320132 .slidervideo7261320132_btns .left",
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      976: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+
+  howToSlider.el.addEventListener("click", (event) => {
+    const button = event.target.closest(".play_btn");
+
+    if (button) {
+      const activeButton = document.querySelector(".play_btn.opacity-0");
+      if (activeButton) {
+        activeButton.classList.add("opacity-100");
+        activeButton.classList.remove("opacity-0");
+        activeButton.parentElement.querySelector("video").pause();
+      }
+
+      button.classList.remove("opacity-100");
+      button.classList.add("opacity-0");
+      button.parentElement.querySelector("video").play();
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Slider video",
+      "blocks": [
+    {
+    "type": "item",
+    "name": "item",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "video",
+        "id": "video",
+        "label": "Video"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Texte"
+      }
+    ]
+  }
+],
+    "settings": [
+       {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur de fond de la section",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "btn_color",
+    "label": "Couleur de bouton",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Couleur de texte",
+    "default": "#000"
+  },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "shake up a smoothie in seconds"
+    }
+    ],
+  "presets": [
+    {
+      "name": "Slider video"
+    }
+  ]
+  }
+{% endschema %}

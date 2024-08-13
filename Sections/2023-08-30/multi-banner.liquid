@@ -1,0 +1,378 @@
+<style>
+  #shopify-section-{{ section.id }} #multibanner987352015 {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015 .multibanner987352015_container {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 0;
+      margin: 0;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0px;
+      position: relative;
+      display: grid;
+      width: 100%;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_images,
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_infos {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_image,
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_info {
+      display: none;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_image img {
+      margin: 0;
+      min-width: 0;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+      display: block;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_image.active
+   {
+      display: block;
+      height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_info.active {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_info_inner {
+      margin: 0;
+      max-width: 500px;
+      min-width: 0;
+      width: fit-content;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_heading {
+      font-weight: 700;
+      text-align: left;
+      line-height: 36px;
+      font-size: 30px;
+      letter-spacing: 0px;
+      margin-bottom: 20px;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015 .multibanner987352015_description {
+      text-align: left;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015 .multibanner987352015_description p {
+      font-weight: 400;
+      letter-spacing: 0px;
+      font-size: 15px;
+      line-height: 22px;
+  }
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_btn {
+      min-width: 180px;
+      max-height: 50px;
+      min-height: auto;
+      font-size: 12px;
+      letter-spacing: 2px;
+      line-height: 34px;
+      padding-left: 52px;
+      border-radius: 25px;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      padding-right: 52px;
+      padding-top: 0;
+      padding-bottom: 0;
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 32px;
+      text-decoration: none;
+      border: 1px solid {{ section.settings.text_color }};
+      background-color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav {
+      display: none;
+      border-radius: 40px;
+      transform: translateX(-50%);
+      min-width: 0px;
+      z-index: 2;
+      border-width: 1px;
+      border-style: solid;
+      border-image: none;
+      position: absolute;
+      left: 50%;
+      max-width: calc(100% - 30px);
+      overflow: scroll hidden;
+      scrollbar-width: none;
+      padding: 5px;
+      border: 1px solid {{ section.settings.banner_bg_color }};
+      background-color: {{ section.settings.banner_bg_color }};
+      width: 95%;
+      bottom: calc(100% - 60px);
+  }
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav_item {
+      cursor: pointer;
+      margin: 0px;
+      padding-left: 24px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      border-radius: 40px;
+      flex-shrink: 0;
+      text-align: center;
+      padding-right: 24px;
+      min-width: 0px;
+      color: {{ section.settings.banner_text_color }};
+  }
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav_item:not(.active) {
+      background: transparent !important;
+  }
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav_item span {
+      font-weight: 500;
+      text-align: center;
+      font-weight: 500;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 33px;
+  }
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav_item.active {
+      color: {{ section.settings.banner_bg_color }};
+  }
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav_mobile {
+      display: block;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav_mobile select {
+      width: 100%;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      font-weight: 500;
+      text-align: left;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 33px;
+      padding: 5px 10px;
+      border: none;
+      background: {{ section.settings.banner_bg_color }} url(https://www.liquid-iv.com/svg/union.svg) no-repeat right center;
+      background-size: 20px 20px;
+
+  }
+  @media only screen and (min-width: 768px)  {
+      #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav {
+          display: flex;
+      }
+      #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav_mobile {
+          display: none;
+      }
+  }
+
+  @media only screen and (min-width: 1024px)  {
+      #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_nav {
+          width: fit-content;
+          bottom: calc(100% - 85px);
+          margin-top: 52px;
+      }
+      #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_container {
+          grid-template-columns: repeat(2, 1fr);
+      }
+      #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_heading {
+          font-size: 45px;
+          line-height: 48px;
+      }
+      #shopify-section-{{ section.id }} #multibanner987352015  .multibanner987352015_btn {
+          font-size: 13px;
+          min-width: 240px;
+          min-height: 50px;
+          line-height: 48px;
+      }
+  }
+</style>
+
+<section id="multibanner987352015">
+  <div class="multibanner987352015_container">
+    <div class="multibanner987352015_images">
+      {%- for block in section.blocks -%}
+        <div class="multibanner987352015_image {% if forloop.index == 1 %} active {% endif %}">
+          <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+        </div>
+      {% endfor %}
+    </div>
+    <div class="multibanner987352015_nav_mobile">
+      <select>
+        {%- for block in section.blocks -%}
+          <option value="{{ forloop.index0 }}">
+            <span>{{ block.settings.tab_label }}</span>
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="multibanner987352015_infos">
+      {%- for block in section.blocks -%}
+        <div
+          class="multibanner987352015_info {% if forloop.index == 1 %} active {% endif %}"
+          style="background: {{ block.settings.color }};"
+        >
+          <div class="multibanner987352015_info_inner">
+            <h2 class="multibanner987352015_heading">{{ block.settings.heading }}</h2>
+            <div class="multibanner987352015_description">
+              {{ block.settings.description }}
+            </div>
+            <a
+              href="{{ block.settings.url }}"
+              class="multibanner987352015_btn"
+              style="color: {{ block.settings.color }};"
+            >
+              {{- block.settings.btn_lbl -}}
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="multibanner987352015_nav">
+      {%- for block in section.blocks -%}
+        <div
+          class="multibanner987352015_nav_item {% if forloop.index == 1 %} active {% endif %}"
+          style="background: {{ block.settings.color }};"
+        >
+          <span>{{ block.settings.tab_label }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  const navItems = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #multibanner987352015 .multibanner987352015_nav_item'));
+  const infoItems = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #multibanner987352015 .multibanner987352015_info'));
+  const imageItems = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #multibanner987352015 .multibanner987352015_image'));
+  const mobileSelect = document.querySelector('#shopify-section-{{ section.id }} #multibanner987352015 .multibanner987352015_nav_mobile select');
+
+  navItems.map((nav, i) => {
+      nav.addEventListener('click', () => {
+          setActiveItems(i);
+          mobileSelect.value = i;
+      });
+  });
+
+  mobileSelect.addEventListener('change', function(e) {
+      setActiveItems(parseInt(e.target.value));
+  });
+
+  function setActiveItems (i) {
+      navItems.map((nav, y) => {
+          if(y == i) {
+              navItems[y].classList.add('active');
+              infoItems[y].classList.add('active');
+              imageItems[y].classList.add('active');
+          }else{
+              navItems[y].classList.remove('active');
+              infoItems[y].classList.remove('active');
+              imageItems[y].classList.remove('active');
+          }
+      });
+  };
+</script>
+
+{% schema %}
+{
+  "name": "Multi Banner",
+  "blocks": [
+  {
+  "type": "item",
+  "name": "Item",
+  "settings": [
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Couleur",
+      "default": "#005DA5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "URL"
+    },
+    {
+      "type": "text",
+      "id": "btn_lbl",
+      "label": "Btn Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab Label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "description"
+    }
+  ]
+}
+],
+  "settings": [
+    {
+      "type": "color",
+      "id": "banner_bg_color",
+      "label": "Banner Bg Couleur",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "banner_text_color",
+      "label": "Heading Couleur",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Couleur",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multi Banner"
+    }
+  ]
+}
+{% endschema %}

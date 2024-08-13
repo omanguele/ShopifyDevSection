@@ -1,0 +1,245 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+
+<style>
+#shopify-section-{{ section.id }} #team200223  {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  background-color: {{ section.settings.bg-color }};
+  color: {{ section.settings.text-color }};
+}
+#shopify-section-{{ section.id }} #team200223  .team-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 50px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+#shopify-section-{{ section.id }} #team200223  .header-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+#shopify-section-{{ section.id }} #team200223  .header-text {
+  text-align: center;
+  color: {{ section.settings.title-color }};
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+#shopify-section-{{ section.id }} #team200223  .header-description {
+  font-size: 22px;
+  color: {{ section.settings.subtitle-color }};
+  padding-top: 20px;
+  padding-left: 270px;
+  padding-right: 270px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+#shopify-section-{{ section.id }} #team200223  .section-wrapper {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+#shopify-section-{{ section.id }} #team200223  .section-card {
+  grid-column: 1fr;
+}
+
+#shopify-section-{{ section.id }} #team200223  .cover-wrapper {
+  background-color: {{ section.settings.card-bg-color }};
+  overflow-y: hidden;
+  width: 100%;
+  display: flex;
+  height: auto;
+}
+
+#shopify-section-{{ section.id }} #team200223  .card-cover {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+  transition: ease 0.5s;
+}
+#shopify-section-{{ section.id }} #team200223  .card-cover:hover {
+  filter: grayscale(0);
+}
+#shopify-section-{{ section.id }} #team200223  .card-description {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+#shopify-section-{{ section.id }} #team200223  .card-description-header {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  color: {{ section.settings.text-color }};
+  margin: 0;
+}
+#shopify-section-{{ section.id }} #team200223  .card-description-text {
+  font-size: 12px;
+  color: {{ section.settings.text-color }};
+  margin: 0;
+}
+@media (max-width: 1100px) {
+  #shopify-section-{{ section.id }} #team200223  .team-container {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+  }
+  #shopify-section-{{ section.id }} #team200223  .header-description {
+    font-size: 22px;
+    color: {{ section.settings.subtitle-color }};
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+  }
+
+  #shopify-section-{{ section.id }} #team200223  .section-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #team200223  .card-description {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  #shopify-section-{{ section.id }} #team200223  .cover-wrapper {
+    background-color: {{ section.settings.card-bg-color }};
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow-y: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #team200223  .card-description-header {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  #shopify-section-{{ section.id }} #team200223  .card-description-text {
+    font-size: 10px;
+  }
+  #shopify-section-{{ section.id }} #team200223  .card-cover {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    object-position: 0 0;
+    transition: ease 0.5s;
+  }
+}
+</style>
+
+ <section id="team200223">
+  <div class="team-container">
+    <span class="header-wrapper">
+      <p class="header-text">{{ section.settings.title }}</p>
+      <p class="header-description">
+        {{ section.settings.subtitle }}
+      </p>
+    </span>
+    <section class="section-wrapper" id="section-wrapper">
+      {% for block in section.blocks %}
+        <div class="section-card">
+          <div class="cover-wrapper">
+            <img
+              src="{{ block.settings.image | img_url:"master" }}"
+              class="card-cover"
+              alt="{{ block.settings.name }}"
+            />
+          </div>
+  
+          <span class="card-description">
+            <h6 class="card-description-header">{{ block.settings.name }}</h1>
+            <p class="card-description-text">{{ block.settings.job }}</p>
+          </span>
+        </div>
+      {% endfor %}
+    </section>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Team Section",
+    "blocks": [
+      {
+        "type": "team",
+        "name": "Collaborateur",
+        "settings": [
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image collaborateur"
+            },
+            {
+              "type": "text",
+              "id": "name",
+              "label": "Nom collaborateur", 
+              "default":"Marcelin Sigha"
+            },
+            {
+              "type": "text",
+              "id": "job",
+              "label": "Poste collaborateur", 
+              "default":"Co-fondateur"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "subtitle-color",
+        "label": "Couleur du sous titre", 
+        "default":"#000"
+      },
+      {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"Des sportifs en tout genre adepte du sujet"
+      },
+      {
+          "type":"text",
+          "id":"subtitle",
+          "label":"Sous titre",
+          "default":"Entrevue avec l'équipe derrière vos deux roues"
+      }
+    ],
+    "presets": [
+      {
+          "name": "Team Section"
+      }
+    ]
+  }
+{% endschema %}

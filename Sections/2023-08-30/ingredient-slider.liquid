@@ -1,0 +1,252 @@
+<style>
+  #shopify-section-{{ section.id }} #ingredientslider932231 {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    background: {{ section.settings.bg_color }};
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231  .ingredientslider932231_container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      padding-left: 40px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      column-gap: 96px;
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_info {
+      width: 40vw;
+      max-width: 510px;
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_slide {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 16px;
+      line-height: 28px;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_image {
+      width: 195px;
+      height: 195px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_image img {
+      width: 105%;
+      height: 105%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .2s ease;
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_name {
+      font-size: 22px;
+      line-height: 26px;
+      margin-top: 23px;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_tags {
+      display: flex;
+      row-gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 3px;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231  .ingredientslider932231_tags span {
+      font-size: 13px;
+      line-height: 15px;
+      padding:0 8px;
+      border: 1px solid {{ section.settings.text_color }};
+      color: {{ section.settings.text_color }};
+      border-radius: 10px;
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_heading {
+      margin: 0;
+      font-size: 40px;
+      line-height: 120%;
+    color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_description {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 22px;
+    color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_btn {
+      border: 1px solid {{ section.settings.text_color }};
+      color: {{ section.settings.text_color }};
+      text-transform: uppercase;
+      margin-top: 45px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-weight: 500;
+      line-height: 18px;
+      border-radius: 150px;
+      appearance: none;
+      min-width: 120px;
+      min-height: 36px;
+      padding: 8px 15px;
+      white-space: nowrap;
+  }
+  #shopify-section-{{ section.id }} #ingredientslider932231   .swiper-slide {
+      width: auto !important;
+  }
+  @media screen and (max-width: 750px) {
+      #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_container {
+          display: block;
+          padding-top: 44px;
+          padding-bottom: 73px;
+          padding-left: 15px;
+      }
+      #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_info {
+          width: 100%;
+          max-width: 100%;
+          padding-right: 15px;
+      }
+      #shopify-section-{{ section.id }} #ingredientslider932231    .ingredientslider932231_heading {
+          font-size: 26px;
+      }
+      #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_btn {
+          font-size: 13px;
+      }
+      #shopify-section-{{ section.id }} #ingredientslider932231    .ingredientslider932231_slider {
+          margin-top: 50px;
+      }
+      #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_image {
+          width: 80vw;
+          height: 80vw;
+          max-width: 300px;
+          max-height: 300px;
+      }
+      #shopify-section-{{ section.id }} #ingredientslider932231   .ingredientslider932231_name {
+          font-size: 16px;
+          line-height: 22px;
+      }
+  }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+>
+
+<section id="ingredientslider932231">
+  <div class="ingredientslider932231_container">
+    <div class="ingredientslider932231_info">
+      <h2 class="ingredientslider932231_heading">{{ section.settings.heading }}</h2>
+      <div class="ingredientslider932231_description">{{ section.settings.description }}</div>
+      <a href="{{ section.settings.url }}" class="ingredientslider932231_btn">{{ section.settings.btn_lbl }}</a>
+    </div>
+    <div class="ingredientslider932231_slider">
+      <div class="swiper swiper-ingredientslider932231">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            <div class="swiper-slide">
+              <div class="ingredientslider932231_slide">
+                <div class="ingredientslider932231_number">{{ forloop.index }}.</div>
+                <div class="ingredientslider932231_image">
+                  <img src="{{- block.settings.image | img_url: "master" -}}" alt="">
+                </div>
+                <div class="ingredientslider932231_name">{{- block.settings.text -}}</div>
+                <div class="ingredientslider932231_tags">
+                  <span>{{- block.settings.tag -}}</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  new Swiper('#shopify-section-{{ section.id }} #ingredientslider932231 .swiper-ingredientslider932231', {
+      freeMode: true,
+      slidesPerView: 'auto',
+      spaceBetween: 36,
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Ingredient Slider",
+   "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Couleur",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "bg Couleur",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "URL"
+    },
+    {
+      "type": "text",
+      "id": "btn_lbl",
+      "label": "Btn Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient Slider"
+    }
+  ]
+}
+{% endschema %}

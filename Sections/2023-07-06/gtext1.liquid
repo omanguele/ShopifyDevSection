@@ -1,0 +1,290 @@
+<style>
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px;
+      background-color: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx * {
+      line-height: normal;
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+  }
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_container {
+      max-width: 1300px;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+      font-style: normal;
+      margin-bottom: 60px;
+      color: {{ section.settings.title_color }} !important;
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper {
+      display: grid;
+      grid-template-columns: repeat({{ section.settings.nb_col_desktop }}, minmax(0, 1fr));
+      row-gap: {{section.settings.row_gap_desktop}}px;
+      column-gap: {{section.settings.column_gap_desktop}}px;
+      align-items: flex-start;
+      width: 100%;
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper_item {
+      display: flex;
+      justify-content: {% if section.settings.alignment == 'center' %} center {% elsif section.settings.alignment == 'right' %} flex-end {% else %} flex-start {% endif %};
+      align-items: {% if section.settings.alignment == 'center' %} center {% elsif section.settings.alignment == 'right' %} flex-end {% else %} flex-start {% endif %};
+      text-align: {{ section.settings.alignment }};
+      flex-direction: column;
+      width: 100%;
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper_item_title {
+      margin-top: 0px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+    color: {{ section.settings.text_color }} !important;
+    text-align: {{ section.settings.alignment }};
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper_item_desc {
+      font-style: normal;
+      line-height: 1.5 !important;
+      font-weight: 500;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 16px;
+      color: {{ section.settings.text_color }} !important;
+    text-align: {{ section.settings.alignment }};
+  }
+
+  #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper_item_btn {
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: {{ section.settings.btn_bg_color }};
+      color: {{ section.settings.btn_text_color }};
+      padding: 10px 40px;
+      font-size: 12px;
+    text-algin: center;
+
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper {
+          grid-template-columns: repeat({{ section.settings.nb_col_mobile }}, minmax(0, 1fr));
+          row-gap: {{section.settings.row_gap_mobile}}px;
+      column-gap: {{section.settings.column_gap_mobile}}px;
+      }
+      #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_title {
+          font-size: 20px;
+          margin-bottom: 30px;
+      }
+      #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper_item_title {
+          font-size: 15px;
+      }
+
+      #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper_item_desc {
+          font-size: 13px;
+      }
+
+      #shopify-section-{{section.id}} #titlegridtextimgbtnx .titlegridtextimgbtnx_wrapper_item_btn {
+          font-size: 12px;
+          padding: 10px 20px;
+      }
+  }
+</style>
+
+<section id="titlegridtextimgbtnx">
+  <div class="titlegridtextimgbtnx_container">
+    {% if section.settings.title != blank %}
+      <h2 class="titlegridtextimgbtnx_title">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="titlegridtextimgbtnx_wrapper">
+      {% for block in section.blocks %}
+        <div class="titlegridtextimgbtnx_wrapper_item">
+          {% if block.settings.image != blank %}
+            <div class="titlegridtextimgbtnx_wrapper_item_img">
+              <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+            </div>
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <h3 class="titlegridtextimgbtnx_wrapper_item_title">{{ block.settings.title }}</h3>
+          {% endif %}
+          {% if block.settings.description != blank %}
+            <p class="titlegridtextimgbtnx_wrapper_item_desc">
+              {{ block.settings.description }}
+            </p>
+          {% endif %}
+          {% if block.settings.link_label != blank %}
+            <a href="{{ block.settings.link_url }}" class="titlegridtextimgbtnx_wrapper_item_btn">
+              {{- block.settings.link_label -}}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "GTitle 1 Img Text",
+    "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 4,
+      "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre",
+            "default":"Lorem ipsum"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Lien bouton"
+          },
+          {
+            "type": "text",
+            "id": "link_label",
+            "label": "libelle Bouton",
+            "default":"Voir"
+          }
+      ]
+    }
+  ],
+    "settings": [
+      {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur fond"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur de titre",
+      "default": "#000"
+    },
+      {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#000"
+    },
+      {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Couleur fond bouton",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur texte bouton",
+      "default": "#000"
+    },
+      {
+        "type": "number",
+        "id": "row_gap_desktop",
+        "label": "Espace entre ligne desktop",
+        "default": 40
+      },
+      {
+        "type": "number",
+        "id": "column_gap_desktop",
+        "label": "Espace entre colonne desktop",
+        "default": 40
+      },
+      {
+        "type": "number",
+        "id": "row_gap_mobile",
+        "label": "Espace entre ligne mobile",
+        "default": 40
+      },
+      {
+        "type": "number",
+        "id": "column_gap_mobile",
+        "label": "Espace entre colonne mobile",
+        "default": 40
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Alignment",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          },
+          {
+            "value": "left",
+            "label": "Left"
+          }
+        ],
+        "default": "center"
+      },
+      {
+  "type": "range",
+  "id": "nb_col_desktop",
+  "min": 1,
+  "max": 4,
+  "step": 1,
+  "unit": "col",
+  "label": "Nombre colonne desktop",
+  "default": 3
+},
+      {
+  "type": "range",
+  "id": "nb_col_mobile",
+  "min": 1,
+  "max": 4,
+  "step": 1,
+  "unit": "col",
+  "label": "Nombre colonne mobile",
+  "default": 1
+},
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre Section"
+          }
+    ],
+  "presets": [
+  {
+    "name": "GTitle 1 Img Text"
+  }
+]
+  }
+{% endschema %}

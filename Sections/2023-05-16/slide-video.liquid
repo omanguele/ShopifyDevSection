@@ -1,0 +1,475 @@
+{% comment %} Générer un identifiant unique pour une occurrence spécifique de la section  {% endcomment %}
+
+{% assign min = 1 %}
+{% assign max = 99999999 %}
+{% assign diff = max | minus: min %}
+{% assign randomNumber = 'now' | date: '%N' | modulo: diff | plus: min %}
+{% assign section_id = section.id | handleize | append: '-' | append: randomNumber | prepend: 'section-mv-' %}
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+>
+<link href="//unpkg.com/@ividjs/ivid@latest/dist/ivid.min.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+  #{{ section_id }} .swiper-pagination{
+    position: relative;
+    margin-top: 27px;
+  }
+  #{{ section_id }} .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, #{{ section_id }} .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    background:black !important;
+  }
+  #{{ section_id }}   {
+      background: {{section.settings.col_bg}};
+      color: #000;
+      position: relative;
+      width: 100%;
+      padding: 20px 0px;
+  }
+
+  #{{ section_id }}   .container {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  #{{ section_id }}    .title {
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: .02em;
+      font-size: 40px;
+  }
+
+  #{{ section_id }}    .slider {
+      width: 100%;
+  }
+
+  #{{ section_id }}    .swiper-wrapper {
+      width: 100%;
+      padding: 0 200px;
+  }
+
+  #{{ section_id }}    .card {
+      position: relative;
+      width: 100%;
+      display: block;
+      cursor: pointer;
+      background-color: #000;
+      color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+  }
+  #{{ section_id }}    .card .video {
+      width: 100%;
+  }
+  #{{ section_id }}    .card .video video {
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  #{{ section_id }}    .play_btn {
+      position: absolute;
+      top: 50% !important;
+      left: 50% !important;
+      bottom: auto !important;
+      right: auto !important;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #{{ section_id }}    .play_btn .inner_play_btn {
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+      background-color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  }
+
+  #{{ section_id }}    .play_btn svg {
+      color: #fff;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 50% !important;
+      left: 50% !important;
+      bottom: auto !important;
+      right: auto !important;
+      transform: translate(-50%, -50%);
+  }
+
+  #{{ section_id }}    .duration {
+      position: absolute;
+      z-index: 5;
+      bottom: 10px;
+      right: 10px;
+  }
+
+  #{{ section_id }}    .video_modal.open {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+      visibility: visible;
+  }
+
+  #{{ section_id }}    .video_modal {
+      z-index: -10;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 500ms;
+  }
+
+  #{{ section_id }}    .ivid__choice-button {
+      display: none !important;
+  }
+
+  #{{ section_id }}    .video_modal_navigate {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      position: absolute;
+      z-index: 99999;
+      min-height: 120px;
+      min-width: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+  }
+
+  #{{ section_id }}    .btn_video_modal {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 6px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+  }
+
+
+  #{{ section_id }}    .btn_video_modal:hover {
+      background: rgba(255, 255, 255, 0.6);
+  }
+
+  #{{ section_id }}    .btn_video_modal svg {
+      height: 100%;
+      width: 100%;
+      color: #fff;
+  }
+
+  #{{ section_id }}    .inner_video_modal {
+      height: 100%;
+      width: 100%;
+      background-color: #000;
+      position: relative;
+      will-change: transform;
+  }
+
+  #{{ section_id }}    #close_modal {
+      z-index: 60;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+  }
+
+  @media only screen and (max-width: 767px) {
+      #{{ section_id }}    .material-icons {
+          font-size: 24px !important;
+      }
+      #{{ section_id }}    .ivid_ctrls-time {
+          font-size: 18px !important;
+      }
+      #{{ section_id }}    .btn_video_modal {
+          height: 30px;
+          width: 30px;
+      }
+      #{{ section_id }}    .swiper-wrapper {
+          width: 100%;
+          padding: 0 30px;
+      }
+      #{{ section_id }}    .play_btn svg {
+          width: 70px;
+          height: 70px;
+      }
+      #{{ section_id }}    .video_modal_navigate {
+          top: 40px;
+          flex-direction: row;
+          min-height: auto;
+      }
+
+      #{{ section_id }}    .video_modal_navigate #prev_video {
+          transform: rotate(-90deg);
+      }
+      #{{ section_id }}    .video_modal_navigate #next_video {
+          transform: rotate(-90deg);
+      }
+      #{{ section_id }}     .title {
+          font-size: 30px;
+      }
+  }
+
+  @keyframes ping {
+     100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+</style>
+
+<section id="{{ section_id }}">
+  <div class="video_modal" style="display: none;">
+    <button type="button" class="btn_video_modal" id="close_modal">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="video_modal_navigate">
+      <button type="button" class="btn_video_modal" id="prev_video">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+      </button>
+      <button type="button" class="btn_video_modal" id="next_video">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="inner_video_modal">
+      <i-video id="ivid_{{ randomNumber }}" controls playsinline></i-video>
+    </div>
+  </div>
+  <h3 style="color:{{ section.settings.col_title }}" class="title">{{ section.settings.title }}</h3>
+  <div class="container">
+    <div class="swiper_{{ randomNumber }}">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="card" data-uuid="{{ forloop.index }}">
+              <div class="video">
+                <video
+                  src="{{ block.settings.preview_video.sources[1].url }}"
+                  style="width: 100%; height: 100%;"
+                  preload="auto"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  webkit-playsinline=""
+                  x5-playsinline=""
+                  autoplay="true"
+                ></video>
+              </div>
+              <div class="play_btn">
+                <div class="inner_play_btn"></div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+                </svg>
+              </div>
+              <div class="duration">{{ block.settings.duration }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="//unpkg.com/@ividjs/ivid@latest" type="module" async></script>
+<script>
+  const swiper_{{ randomNumber }} = new Swiper('.swiper_{{ randomNumber }}', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+  },
+  breakpoints: {
+      320: {
+      slidesPerView: 2.5,
+      spaceBetween: 10
+      },
+      480: {
+      slidesPerView: 3.5,
+      spaceBetween: 10
+      },
+      640: {
+      slidesPerView: 4.5,
+      spaceBetween: 20
+      }
+  }
+  });
+  const ivid_{{ randomNumber }} = document.getElementById("ivid_{{ randomNumber }}");
+  let cuurentUUID_{{ randomNumber }} = 1;
+  let videoModal_{{ randomNumber }} = document.querySelector('#{{ section_id }} .video_modal');
+  let cards_{{ randomNumber }} = Array.from(document.querySelectorAll('#{{ section_id }} .card'));
+
+  {% for block in section.blocks %}
+    let video_{{ randomNumber }}_{{ forloop.index }} = {
+        uid: {{ forloop.index }},
+        src: "{{ block.settings.video.sources[1].url }}"
+    };
+  {% endfor %}
+
+  {% for block in section.blocks %}
+    {% assign nextIndex = forloop.index | plus: 1 %}
+    video_{{ randomNumber }}_{{ forloop.index }}.options = {
+        fallback: {% if forloop.index == forloop.length %} video_{{ randomNumber }}_1.uid {% else %} video_{{ randomNumber }}_{{ nextIndex }}.uid {% endif %},
+    };
+  {% endfor %}
+
+  const model_{{ randomNumber }} = {
+    {% for block in section.blocks %}
+      [video_{{ randomNumber }}_{{ forloop.index }}.uid]: video_{{ randomNumber }}_{{ forloop.index }},
+    {% endfor %}
+  };
+
+  function mutationCallback_{{ randomNumber }}(mutationsList) {
+      mutationsList.forEach((mutation) => {
+          if (
+              mutation.type !== "attributes" ||
+              mutation.attributeName !== "current"
+          ) {
+          return
+          }
+          cuurentUUID_{{ randomNumber }} =  parseInt(mutation.target.getAttribute("current"));
+      });
+  }
+
+  ivid_{{ randomNumber }}.setAttribute("model", JSON.stringify(model_{{ randomNumber }}));
+  const observer_{{ randomNumber }} = new MutationObserver(mutationCallback_{{ randomNumber }});
+  observer_{{ randomNumber }}.observe(ivid_{{ randomNumber }}, { attributes: true });
+
+  cards_{{ randomNumber }}.forEach((card, index) => {
+      card.addEventListener('click', function(e) {
+          e.preventDefault();
+          cuurentUUID_{{ randomNumber }} = parseInt(card.getAttribute('data-uuid'));
+          videoModal_{{ randomNumber }}.style.display = 'block';
+          videoModal_{{ randomNumber }}.classList.add('open');
+          ivid_{{ randomNumber }}.setAttribute('current', cuurentUUID_{{ randomNumber }});
+          document.querySelector('#{{ section_id }} #ivid_{{ randomNumber }} video').play();
+      });
+  });
+
+  document.querySelector('#{{ section_id }} .video_modal #close_modal').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#{{ section_id }} #ivid_{{ randomNumber }} video').pause();
+      videoModal_{{ randomNumber }}.style.display = 'none';
+      videoModal_{{ randomNumber }}.classList.remove('open');
+
+  });
+
+  document.querySelector('#{{ section_id }} .video_modal #next_video').addEventListener('click', function(e) {
+      e.preventDefault();
+      let length =  Object.keys(model_{{ randomNumber }}).length;
+      ivid_{{ randomNumber }}.setAttribute('current', cuurentUUID_{{ randomNumber }} == length ? 1 : cuurentUUID_{{ randomNumber }} + 1 );
+      document.querySelector('#{{ section_id }} #ivid_{{ randomNumber }} video').play();
+  });
+
+  document.querySelector('#{{ section_id }} .video_modal #prev_video').addEventListener('click', function(e) {
+      e.preventDefault();
+      let length =  Object.keys(model_{{ randomNumber }}).length;
+      ivid_{{ randomNumber }}.setAttribute('current', cuurentUUID_{{ randomNumber }} == 1 ? length : cuurentUUID_{{ randomNumber }} - 1 );
+      document.querySelector('#{{ section_id }} #ivid_{{ randomNumber }} video').play();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Slide Video",
+  "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "video",
+            "id": "preview_video",
+            "label": "Preview Video"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "text",
+            "id": "duration",
+            "label": "Durée video",
+            "default":"00:30"
+          }
+        ]
+      }
+    ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "col_bg",
+      "label": "Couleur de fond",
+      "default":"#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre section",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "color",
+      "id": "col_title",
+      "label": "Couleur du titre",
+      "default":"#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slide Video"
+    }
+  ]
+}
+{% endschema %}

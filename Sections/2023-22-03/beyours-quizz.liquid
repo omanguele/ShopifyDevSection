@@ -1,0 +1,1769 @@
+<style>
+#shopify-section-{{ section.id }} #quizzpage280123  {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: {{ section.settings.highlight-color }} !important;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .container {
+    z-index: 4;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 600ms;
+    opacity: 1;
+    visibility: visible;
+    background-color: {{ section.settings.quizz-bg-color }};
+    display: none;
+    position: relative;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .container.hide ~ .ctn_logo {
+    background-color: #fff;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .ctn_logo {
+    background-color: {{ section.settings.quizz-bg-color }};
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .ctn_logo img {
+    width: 120px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .container.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .go-back {
+    transition: all 600ms;
+    z-index: 6;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    color: {{ section.settings.highlight-color }};
+    border: 1px solid {{ section.settings.highlight-color }};
+    border-radius: 20px;
+    pointer-events: auto !important;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    padding: 2px 10px;
+    font-size: 13px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .go-back:hover {
+    background-color: {{ section.settings.highlight-color }};
+    color: #fff;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .go-back svg {
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .go-back span {
+    display: block;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .go-back .indic {
+    display: block;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .next-btn {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-left: 0;
+    margin-top: 1em;
+    min-width: 300px;
+    height: auto;
+    padding: 10px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 0.5;
+    cursor:default ;
+    border-radius: 20px;
+    background-color: {{ section.settings.highlight-color }};
+    color: #fff;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .answers.complete ~ .ctn-btn .next-btn {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  #quizzform {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  #quizzform .form-item {
+    pointer-events: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  #quizzform .form-item.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  #quizzform .form-item .form-wrap {
+    height: 100%;
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 40px 20px;
+    padding-top: 50px;
+    transform: translateX(100vw);
+    transition: all 600ms;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  #quizzform .form-item.active .form-wrap {
+    transform: translateX(0);
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  #quizzform .form-wrap .question {
+    line-height: 1.5;
+    max-width: 100%;
+    pointer-events: none;
+    color: {{ section.settings.highlight-color }};
+    font-weight: 500;
+    font-size: 23px;
+    font-weight: 400;
+    text-align: center;
+    word-wrap: normal;
+    white-space: normal;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers {
+    width: 100%;
+    max-width: 400px;
+    display: grid;
+    padding: 10px 30px;
+    column-gap: 20px;
+    row-gap: 7px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-top: 10px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item {
+    transition: all 600ms;
+    border: 0;
+    outline: 0;
+    font-size: 13px;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item label {
+    color: {{ section.settings.highlight-color }};
+    padding: 12px;
+    border-radius: 20px;
+    width: 100%;
+    min-width: 100px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 600ms;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    vertical-align: middle;
+    position: relative;
+    background-color: #fff;
+  
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item label.ctn-ans-image {
+    flex-direction: column;
+} 
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item label .ico-info {
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    cursor: default;
+    z-index: 10;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item label .ico-info:hover ~ .info {
+    display: block;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item label .info {
+    position: absolute;
+    top: calc(100% + 5px);
+    background: rgb(70, 68, 68);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    white-space: normal;
+    word-break: break-all;
+    display: none;
+    z-index: 9999;
+    left: 0;
+    border-radius: 20px;
+    line-height: 1.1;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item label .ico-info svg {
+    height: 20px;
+    width: 20px;
+    color: {{ section.settings.highlight-color }};
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item input[type=checkbox], 
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item input[type=radio] {
+    display: none;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item input[type=checkbox]:checked ~  label, 
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item input[type=radio]:checked ~  label{
+    border: 1px solid {{ section.settings.highlight-color }};
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item input[type=radio]:checked ~  label.ctn-ans-image .ans-image {
+    border: 1px solid #f4ece3;
+    background-color: #f4ece3;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .ans-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #777777;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .ans-image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .ctn-progress-bar {
+    background-color: #f4ece3;
+    border: 1px solid {{ section.settings.highlight-color }};
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .ctn-progress-bar  .progress-bar {
+    color: #fff;
+    background-color: {{ section.settings.highlight-color }};
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 600ms;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 600ms;
+    position: relative;
+    display: none;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts .explain-text-1,
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts .explain-text-2{
+    border-radius: 10px;
+    min-height: 120px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts .explain-text-1 p,
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts .explain-text-2 p {
+    font-weight: 500;
+    font-weight: normal;
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts .explain-text-1 {
+    background: #F8FAFC;
+    margin: 40px 0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts .explain-text-1 .expl-tt,
+#shopify-section-{{ section.id }} #quizzpage280123   .ctn-diagnostic-prdts .explain-text-2 .expl-tt {
+    color: #000;
+    font-size: 18px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .ctn-price {
+    border: 2px solid {{ section.settings.highlight-color }};
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .ctn-price p{
+    color: {{ section.settings.highlight-color }};
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts p.comment {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .ctn-price p span.through {
+    text-decoration: line-through;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .ctn-diagnostic-prdts .explain-text-2 {
+    background: #f4ece3;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts .add-to-cart {
+    font-size: 15px;
+    padding: 12px 24px;
+    background: {{ section.settings.highlight-color }};
+    border-radius: 20px;
+    color: white;
+    box-shadow: none;
+    text-align: center;
+    transition: all .3s;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    min-width: 300px;
+    cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .wrap-prdts {
+    width: 100%;
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin: 30px 0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .wrap-prdts .ctn-prdt {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .wrap-prdts .ctn-prdt .prdt-image {
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #F8FAFC;
+    padding: 10px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .wrap-prdts .ctn-prdt .prdt-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .min-det-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .min-det-img p {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    width: 35%;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .min-det-img p.best {
+    text-align: right;
+    color: {{ section.settings.highlight-color }};
+    opacity:0.8;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .prdt-detail {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .prdt-detail .prdt-name {
+    width: 90%;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .prdt-detail .prdt-name p {
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .prdt-detail .prdt-name span {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .prdt-detail .prdt-price {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.09em;
+    padding: 15px 0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .prdt-selected {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .prdt-selected input {
+    margin-right: 10px;
+    cursor:pointer;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123   .prdt-selected label{
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .tt-gbl {
+    text-align: center;
+    max-width: 100%;
+    margin: 0px auto;
+    font-size: 22px;
+    font-weight: bold;
+    color: {{ section.settings.highlight-color }};
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .sub--tt-gbl {
+    text-align: center;
+    color: {{ section.settings.highlight-color }};
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+/* */
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 600ms;
+    opacity: 1;
+    visibility: visible;
+    background-color: #fff;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first__container {
+    width: 60%;
+    max-width: 100%;
+    display: flex;
+    height: 70%;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first__title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    line-height: 1.1;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first__title  span {
+    color: transparent;
+    -webkit-text-stroke: 1px {{ section.settings.highlight-color }};
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .start__btn {
+    border-radius: 20px;
+    background-color: {{ section.settings.highlight-color }};
+    color: #fff;
+    cursor: pointer;
+    min-width: 300px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 8px;
+    border: none;
+    margin-top: 1em;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_explain {
+    width: 50%;
+    min-height: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    margin-right: -20px;
+    padding: 40px 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_explain ol {
+    margin: 15px 0;
+    list-style: inherit !important;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_explain ol li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_explain p {
+    font-size: 12px;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen  .first_explain__title {
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1.1;
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+}
+
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_ctn_image {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_ctn_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 1024px) {
+    #shopify-section-{{ section.id }} #quizzpage280123   .ctn-diagnostic-prdts  .wrap-prdts {
+        width: 100%;
+        display: grid;
+        gap:10px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .tt-gbl {
+        font-size: 32px;
+    }
+    #shopify-section-{{ section.id }} #quizzpage280123   .answers {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        padding: 10px 100px;
+        column-gap: 20px;
+        row-gap: 25px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 30px;
+    }
+    
+    #shopify-section-{{ section.id }} #quizzpage280123  #quizzform .form-wrap .question {  
+        max-width: 100%;
+        font-size: 32px;
+    }
+  
+    #shopify-section-{{ section.id }} #quizzpage280123   .ans-image {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #777777;
+    }
+  
+    #shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item label .info {
+        position: absolute;
+        top: 0;
+        background: rgb(129, 127, 127);
+        color: white;
+        width: 200px;
+        padding: 10px 14px;
+        white-space: normal;
+        word-break: break-all;
+        display: none;
+        z-index: 9999;
+        left: calc(100% + 10px);
+        border-radius: 10px;
+        line-height: 1.2;
+        font-size: 13px;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts  .tt-gbl {
+        max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123   .answers .answer-item {
+        font-size: 100%;
+    }
+}
+
+#shopify-section-{{ section.id }} .img_illust {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 2px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+   #shopify-section-{{ section.id }} .img_illust {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123   .ctn-progress-bar {
+        height: 10px;
+    }
+    
+    #shopify-section-{{ section.id }} #quizzpage280123   .ctn-progress-bar  .progress-bar span {
+        display: none;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_ctn_image {
+        display: none;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123  .first-screen .first_explain {
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123  .go-back {
+        transition: all 600ms;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: {{ section.settings.highlight-color }};
+        border: 1px solid {{ section.settings.highlight-color }};
+        border-radius: 30px;
+        pointer-events: auto !important;
+        position: absolute;
+        top: 50px;
+        left: 5px;
+        padding:  1px;
+        font-size: 14px;
+        margin-left: unset;
+    }
+    
+    #shopify-section-{{ section.id }} #quizzpage280123  .go-back .indic {
+        display: none;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123  .container {
+        width: 100vw;
+        height: 100%;
+        min-height: 100vh;
+        padding-bottom: 10px;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123  .next-btn,  #shopify-section-{{ section.id }} #quizzpage280123  .start__btn{
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    #shopify-section-{{ section.id }} #quizzpage280123  .first-screen  .first_explain__title {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .load-screen {
+    transition: all 600ms;
+    opacity: 1;
+    visibility: visible;
+    display: none ;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .load-screen.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .load_text {
+    color: {{ section.settings.highlight-color }};
+    font-size: 16px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    margin-left: 113px;
+    margin-top: 150px;
+}
+
+#shopify-section-{{ section.id }} #quizzpage280123  .square-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -113px;
+  }
+
+  #shopify-section-{{ section.id }} #quizzpage280123 a {
+    text-decoration: none;
+    color: inherit !important;
+  }
+  
+#shopify-section-{{ section.id }} #quizzpage280123  .square {
+    position: absolute;
+    background-color: {{ section.settings.highlight-color }};
+    width: 3px;
+    height: 62px;
+    margin: 0 3px;
+    animation: sliding 3s ease infinite;
+      display: block !important;
+  }
+  
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(1n) {
+    animation-delay: 0.3s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(2n) {
+    animation-delay: 1s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(3n) {
+    animation-delay: 0.7s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(5n) {
+    animation-delay: 1.3s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(7n) {
+    animation-delay: 1.5s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(11n) {
+    animation-delay: 1.7s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(13n) {
+    animation-delay: 2s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(17n) {
+    animation-delay: 2.3s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(19n) {
+    animation-delay: 2.5s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(23n) {
+    animation-delay: 2.7s;
+  }
+  #shopify-section-{{ section.id }} #quizzpage280123  .square:nth-child(29n) {
+    animation-delay: 3s;
+  }
+  
+  @keyframes sliding {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(225px, 0);
+    }
+  }
+</style>
+
+<section id="quizzpage280123">
+    <div class="first-screen">
+        <h3 class="first__title">
+            <span>Votre</span> <br> Diagnostic Capillaire
+        </h3>
+        <div class="first__container">
+            <div class="first_explain">
+                <h3 class="first_explain__title">{{ section.settings.first-screen-avantage-title }} </h3>
+                <ol>
+                  {% for block in section.blocks %}
+                      {% if block.type == 'diagnostic-advantages' %}
+                          <li>{{ block.settings.text }}</li>
+                      {% endif %}
+                  {% endfor %}
+                    
+                </ol>
+                <p>{{ section.settings.first-screen-avantage-desc }}</p>
+                <button type="button" class="start__btn">{{ section.settings.first-screen-btn-text }}</button>
+            </div>
+            <div class="first_ctn_image">
+                <img src="{{ section.settings.first-screen-image | img_url:"master" }}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container hide">    
+        <form id="quizzform">    
+        </form>
+        <div class="ctn-progress-bar">
+            <div class="progress-bar" style="width:5%">
+                <span>0%</span>
+            </div>
+        </div> 
+    </div>
+    <div class="load-screen hide">
+            <div class="square-wrap">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <p class="load_text">Analyse de vos résultats</p>
+            </div>
+    </div>
+    <div class="ctn-diagnostic-prdts show">
+        <h1 class="tt-gbl">{{ section.settings.prdt-screen-title }}</h1>
+        <p class="sub--tt-gbl">{{ section.settings.prdt-screen-subtitle }}</p>
+
+        <div class="explain-text-1">
+            <h3 class="expl-tt">{{ section.settings.prdt-screen-desc-title-1 }}</h3>
+            <p>{{ section.settings.prdt-screen-desc-text-1 }}</p>
+        </div>
+
+        <h1 class="tt-gbl">Votre routine capillaire</h1>
+        <form>
+          <div class="wrap-prdts">
+          </div>
+        </form>
+
+        <div class="explain-text-2">
+            <h3 class="expl-tt">{{ section.settings.prdt-screen-desc-title-2 }}</h3>
+            <p>{{ section.settings.prdt-screen-desc-text-2 }}</p>
+        </div>
+        <div class="ctn-price">
+            <p class="true_price">
+                Total: 0€
+            </p>
+        </div>
+        <!-- <p class="comment">Plus vous elargissez votre routine moins le prix est élévé</p> -->
+        <button type="button" class="add-to-cart">Ajouter au panier</button>
+    </div>
+    <div class="ctn_logo">
+        <img src="{{ section.settings.logo | img_url:"master" }}" alt="logo" >
+    </div>
+</section>
+
+<script>
+ const data = [
+   {
+        "question_id": 'step-1',
+        "question": "{{ section.settings.title-step-1 }}",
+        "answer_type": "{{ section.settings.answer-type-step-1 }}",
+        "button_text": "{{ section.settings.btn-text-step-1 }}",
+        "answers": [
+          {% for block in section.blocks %}
+              {% if block.type == 'step-1' %}
+                {
+                  "type": "{{ block.settings.answer-type }}",
+                  "path": {% if block.settings.image != nil %} "{{ block.settings.image | img_url:"master" }}" {% else %} "" {% endif %},
+                  "value": "{{ block.settings.text }}",
+                  "info": "{{ block.settings.info }}",
+                  "associated_products": [],
+                },
+              {% endif %}
+          {% endfor %}
+        ],
+    },
+   {
+        "question_id": 'step-2',
+        "question": "{{ section.settings.title-step-2 }}",
+        "answer_type": "{{ section.settings.answer-type-step-2 }}",
+        "button_text": "{{ section.settings.btn-text-step-2 }}",
+        "answers": [
+          {% for block in section.blocks %}
+              {% if block.type == 'step-2' %}
+                {
+                  "type": "{{ block.settings.answer-type }}",
+                  "path": {% if block.settings.image != nil %} "{{ block.settings.image | img_url:"master" }}" {% else %} "" {% endif %},
+                  "value": "{{ block.settings.text }}",
+                  "info": "{{ block.settings.info }}",
+                  "associated_products": [],
+                },
+              {% endif %}
+          {% endfor %}
+        ],
+    },
+   {
+        "question_id": 'step-3',
+        "question": "{{ section.settings.title-step-3 }}",
+        "answer_type": "{{ section.settings.answer-type-step-3 }}",
+        "button_text": "{{ section.settings.btn-text-step-3 }}",
+        "answers": [
+          {% for block in section.blocks %}
+              {% if block.type == 'step-3' %}
+                {
+                  "type": "{{ block.settings.answer-type }}",
+                  "path": {% if block.settings.image != nil %} "{{ block.settings.image | img_url:"master" }}" {% else %} "" {% endif %},
+                  "value": "{{ block.settings.text }}",
+                  "info": "{{ block.settings.info }}",
+                  "associated_products": [],
+                },
+              {% endif %}
+          {% endfor %}
+        ],
+    },
+   {
+        "question_id": 'step-4',
+        "question": "{{ section.settings.title-step-4 }}",
+        "answer_type": "{{ section.settings.answer-type-step-4 }}",
+        "button_text": "{{ section.settings.btn-text-step-4 }}",
+        "answers": [
+          {% for block in section.blocks %}
+              {% if block.type == 'step-4' %}
+                {
+                  "type": "{{ block.settings.answer-type }}",
+                  "path": {% if block.settings.image != nil %} "{{ block.settings.image | img_url:"master" }}" {% else %} "" {% endif %},
+                  "value": "{{ block.settings.text }}",
+                  "info": "{{ block.settings.info }}",
+                  "associated_products": [],
+                },
+              {% endif %}
+          {% endfor %}
+        ],
+    },
+   {
+        "question_id": 'step-5',
+        "question": "{{ section.settings.title-step-5 }}",
+        "answer_type": "{{ section.settings.answer-type-step-5 }}",
+        "button_text": "{{ section.settings.btn-text-step-5 }}",
+        "answers": [
+          {% for block in section.blocks %}
+              {% if block.type == 'step-5' %}
+                {
+                  "type": "{{ block.settings.answer-type }}",
+                  "path": {% if block.settings.image != nil %} "{{ block.settings.image | img_url:"master" }}" {% else %} "" {% endif %},
+                  "value": "{{ block.settings.text }}",
+                  "info": "",
+                  "associated_products": [
+                    {% for p in block.settings.upsells %}
+                      {
+                        "id": "{{ p.id }}" ,
+                        "url": "{{ p.url }}" ,
+                        "name": "{{ p.title | escape }}" ,
+                        "image": "{{ p.featured_image | product_img_url: "medium"}}",
+                        "money": "{{ p.price | money }}",
+                        "price": {{ p.price | divided_by: 100 }}
+                      },
+                    {% endfor %}
+                  ],
+                },
+              {% endif %}
+          {% endfor %}
+        ],
+    },
+];
+
+let quizzform = document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  #quizzform');
+let step = 0;
+let html = '';
+
+data.forEach((item, index, arr) => {
+    let active = index == 0 ? 'active' : '';
+    html += `<div class="form-item ${active}">
+                <div class="form-wrap">
+                    <h1 class="question">${item.question}</h1>
+                    <div class="answers ">`;
+    
+    item.answers.forEach((answer, ansIndex) =>  {
+        html += `<div class="answer-item">`;
+        html +=  item.answer_type == 'single' ? 
+                `<input type="radio" name="${item.question_id}" id="${item.question_id}_${ansIndex+1}" value="${answer.value}">` : 
+                `<input type="checkbox" name="${item.question_id}" id="${item.question_id}_${ansIndex+1}" value="${answer.value}">`;
+        
+
+        if(answer.type == 'text') {
+          html += `<label for="${item.question_id}_${ansIndex+1}" class="${item.question_id}" data-id="${ansIndex}">`;
+          html += answer.info != '' ?
+                      `<span class="ico-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                                </svg>                                          
+                        </span>
+                        <span class="info">${answer.info}</span>
+                        ` : ``;
+          html += answer.path != '' ? 
+                      `<span>
+                            <img src="${answer.path}" class="img_illust"/>
+                        </span>` : ``;
+          html += `<span>${answer.value}</span>
+                    </label>`;
+          
+        }else{
+            html += `<label for="${item.question_id}_${ansIndex+1}" class="ctn-ans-image ${item.question_id}" data-id="${ansIndex}">
+                        <div class="ans-image">
+                            <img src="${answer.path}" alt="">
+                        </div>
+                        <span>${answer.value}</span>
+                    </label>
+                `;
+        }
+        html += `</div>`;
+    });
+
+    html += `</div><div class="ctn-btn">`;
+    html +=  index > 0 ?  `
+            <span class="go-back">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </span>
+                <span class="indic">Retour</span>
+            </span> ` : ``;
+            
+    html +=  `<span class="next-btn">${item.button_text}</span></div> `;
+
+    html += `</div></div>`;
+
+});
+quizzform.innerHTML = html;
+
+let selectedProducts = [];
+let price = 0; 
+const ansQuestStep5 = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123  label.step-5');
+const formItems = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123  .form-item');
+const nextBtns = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123  .next-btn');
+const prevBtns = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123  .go-back');
+const progressBar = document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .progress-bar');
+const containerForm = document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .container');
+const loadScreen = document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .load-screen');
+const ctnPrdts = document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .ctn-diagnostic-prdts');
+
+function renderProducts() {
+      let html = '';
+      selectedProducts.forEach((item, index) => {
+          html += `
+            <div class="ctn-prdt">
+                <a href="${item.url}" class="prdt-image">
+                    <img src="${item.image}" alt="${item.name}">
+                </a>
+                <a href="${item.url}" class="prdt-detail">
+                    <div class="prdt-name">
+                        <p>${item.name}</p>
+                    </div>
+                    <div class="prdt-price">
+                       ${item.money}
+                    </div>
+                </a>
+                <div class="prdt-selected">
+                    <input type="checkbox" name="" value="${item.price}" class="in_rslt_prdt" id="prdt_${index}">
+                    <label for="prdt_${index}">Sélectionnez ce produit</label>
+                </div>
+            </div>
+          `;
+      });
+      document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123 .wrap-prdts').innerHTML = html;
+      let inRsltPrdts = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123 .wrap-prdts .in_rslt_prdt');
+      const htmlPrice = document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123 .ctn-price .true_price');
+
+      inRsltPrdts.forEach((item, index) => {
+          item.addEventListener('click', function(e) {
+              if(e.target.checked){
+                 price = price  + parseFloat(e.target.value);
+                 htmlPrice.innerHTML = `Total: ${price}€`;
+              }else{
+                price = price  - parseFloat(e.target.value);
+                 htmlPrice.innerHTML = `Total: ${price}€`;
+              }
+          });
+      });
+    }
+
+ansQuestStep5.forEach((ans, index) => {
+    ans.addEventListener('click', function(e) {
+        selectedProducts = data[4].answers[index].associated_products;
+        renderProducts();
+    });
+});
+
+nextBtns.forEach((clickBtn, clickIndex) => {
+
+    clickBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        let isComplete = formItems[step].querySelector('.answers').classList.contains('complete');
+        if(step == (data.length - 1)) {
+            progressBar.style.display = 'none';
+            containerForm.classList.add('hide');
+            containerForm.style.display = 'none';
+
+            loadScreen.style.display = 'inherit';
+            setTimeout(() => {
+                loadScreen.classList.remove('hide');
+            }, 100);
+
+            setTimeout(() => {
+                loadScreen.classList.add('hide');
+                loadScreen.style.display = 'none';
+
+                ctnPrdts.style.display = 'flex';
+                setTimeout(() => {
+                    ctnPrdts.classList.add('show');
+                }, 100);
+
+            }, 5000);
+            
+        } else if(isComplete){
+            formItems[step].classList.remove('active');
+            formItems[step + 1].classList.add('active');
+            setSelectElts();
+            step = step + 1;
+            progressBar.style.width = Math.round((100/data.length ) * step  ) + '%' ;
+            progressBar.querySelector('span').innerHTML = Math.round((100/data.length ) * step ) + '%' ;
+        }
+    });
+
+});
+
+prevBtns.forEach((clickBtn, clickIndex) => {
+    clickBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        formItems[step].classList.remove('active');
+        formItems[step - 1].classList.add('active');
+        setSelectElts(); 
+        step = step - 1; 
+        progressBar.style.width = Math.round((100/data.length ) * step  ) + '%' ;
+        progressBar.querySelector('span').innerHTML = Math.round((100/data.length ) * step ) + '%' ;
+    })
+});
+
+function setSelectElts() {
+    let elts = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123  .form-item.active .answer-item label');
+    elts.forEach((elt) => {
+        elt.addEventListener('click', function(e) {
+            setTimeout(() => {
+                let isCompleteRadio = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123  .form-item.active .answer-item input[type="radio"]:checked');
+                let isCompleteChekbox = document.querySelectorAll('#shopify-section-{{ section.id }} #quizzpage280123  .form-item.active .answer-item input[type="checkbox"]:checked');
+                if(isCompleteRadio.length > 0 || isCompleteChekbox.length > 0){
+                    document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .form-item.active .answers').classList.add('complete');
+                }else{
+                    document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .form-item.active .answers').classList.remove('complete');
+                }
+            }, 100)
+            
+        })
+    })
+}
+
+const firstScreen = document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .first-screen');
+document.querySelector('#shopify-section-{{ section.id }} #quizzpage280123  .start__btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    firstScreen.classList.add('hide');
+    setTimeout(() => {
+        firstScreen.style.display = 'none';
+    }, 100);
+
+    containerForm.style.display = 'flex';
+    setTimeout(() => {
+        containerForm.classList.remove('hide');
+    }, 100);
+
+});
+
+setSelectElts();
+</script>
+
+{% schema %}
+  {
+    "name": "Beyours Quizz Section",
+    "blocks": [
+      {
+        "type": "diagnostic-advantages",
+        "name": "Avantage diagnostic",
+        "settings": [
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"C'est 100% gratuit"
+            }
+        ]
+      },
+      {
+        "type": "step-1",
+        "name": "Reponse etape 1",
+        "settings": [
+            {
+              "type": "select",
+              "id": "answer-type",
+              "label": "Type de réponse",
+              "options": [
+                {
+                  "value": "text",
+                  "label": "Texte"
+                },
+                {
+                  "value": "image",
+                  "label": "Image"
+                }
+              ],
+              "default": "text"
+            },
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Homme"
+            },
+            {
+              "type": "textarea",
+              "id": "info",
+              "label": "Description de la réponse"
+            }
+        ]
+      },
+      {
+        "type": "step-2",
+        "name": "Reponse etape 2",
+        "settings": [
+            {
+              "type": "select",
+              "id": "answer-type",
+              "label": "Type de réponse",
+              "options": [
+                {
+                  "value": "text",
+                  "label": "Texte"
+                },
+                {
+                  "value": "image",
+                  "label": "Image"
+                }
+              ],
+              "default": "text"
+            },
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Rapides"
+            },
+            {
+              "type": "textarea",
+              "id": "info",
+              "label": "Description de la réponse",
+              "default": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis aperiam unde explicabo"
+            }
+        ]
+      },
+      {
+        "type": "step-3",
+        "name": "Reponse etape 3",
+        "settings": [
+            {
+              "type": "select",
+              "id": "answer-type",
+              "label": "Type de réponse",
+              "options": [
+                {
+                  "value": "text",
+                  "label": "Texte"
+                },
+                {
+                  "value": "image",
+                  "label": "Image"
+                }
+              ],
+              "default": "text"
+            },
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Secs"
+            },
+            {
+              "type": "textarea",
+              "id": "info",
+              "label": "Description de la réponse",
+              "default": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis aperiam unde explicabo"
+            }
+        ]
+      },
+      {
+        "type": "step-4",
+        "name": "Reponse etape 4",
+        "settings": [
+            {
+              "type": "select",
+              "id": "answer-type",
+              "label": "Type de réponse",
+              "options": [
+                {
+                  "value": "text",
+                  "label": "Texte"
+                },
+                {
+                  "value": "image",
+                  "label": "Image"
+                }
+              ],
+              "default": "text"
+            },
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Hydrate"
+            },
+            {
+              "type": "textarea",
+              "id": "info",
+              "label": "Description de la réponse",
+              "default": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis aperiam unde explicabo"
+            }
+        ]
+      },
+      {
+        "type": "step-5",
+        "name": "Reponse etape 5",
+        "settings": [
+            {
+              "type": "select",
+              "id": "answer-type",
+              "label": "Type de réponse",
+              "options": [
+                {
+                  "value": "text",
+                  "label": "Texte"
+                },
+                {
+                  "value": "image",
+                  "label": "Image"
+                }
+              ],
+              "default": "image"
+            },
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Fraise"
+            },
+            {
+              "type": "product_list",
+              "id": "upsells",
+              "label": "Produits associés"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Parametre Couleur"
+      },
+      {
+        "type":"color",
+        "id":"quizz-bg-color",
+        "label":"Couleur de fond quizz",
+        "default":"#f4ece3"
+      },
+      {
+        "type":"color",
+        "id":"highlight-color",
+        "label":"Couleur mise en avant",
+        "default":"#000"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Premiere page"
+      },
+      {
+        "type": "text",
+        "id": "first-screen-avantage-title",
+        "label": "Titre avantage",
+        "default":"Pourquoi faire mon diagnostic cappillaire ?"
+      },
+      {
+        "type": "textarea",
+        "id": "first-screen-avantage-desc",
+        "label": "Description avantage",
+        "default":"Notre objectif n'est pas de vous pousser une routine complète mais de vous aider à mieux comprendre et prendre soin de vos cheveux"
+      },
+      {
+        "type":"image_picker",
+        "id":"logo",
+        "label":"Logo"
+      },
+      {
+        "type": "text",
+        "id": "first-screen-btn-text",
+        "label": "Libelle bouton",
+        "default":"Obtenir mon diagnostic"
+      },
+      {
+        "type":"image_picker",
+        "id":"first-screen-image",
+        "label":"Image demarrage"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etape 1"
+      },
+      {
+          "type":"text",
+          "id":"title-step-1",
+          "label":"Titre etape 1",
+          "default":"Choix du genre"
+      },
+      {
+          "type":"text",
+          "id":"btn-text-step-1",
+          "label":"Libellé bouton etape 1",
+          "default":"Confirmer"
+      },
+      {
+        "type": "select",
+        "id": "answer-type-step-1",
+        "label": "Type de réponse etape 1",
+        "options": [
+          {
+            "value": "single",
+            "label": "Choix unique"
+          },
+          {
+            "value": "multiple",
+            "label": "Choix multiple"
+          }
+        ],
+        "default": "single"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etape 2"
+      },
+      {
+          "type":"text",
+          "id":"title-step-2",
+          "label":"Titre etape 2",
+          "default":"Aspect du cheuveux"
+      },
+      {
+          "type":"text",
+          "id":"btn-text-step-2",
+          "label":"Libellé bouton etape 2",
+          "default":"Confirmer"
+      },
+      {
+        "type": "select",
+        "id": "answer-type-step-2",
+        "label": "Type de réponse etape 2",
+        "options": [
+          {
+            "value": "single",
+            "label": "Choix unique"
+          },
+          {
+            "value": "multiple",
+            "label": "Choix multiple"
+          }
+        ],
+        "default": "single"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etape 3"
+      },
+      {
+          "type":"text",
+          "id":"title-step-3",
+          "label":"Titre etape 3",
+          "default":"Structure des cheuveux"
+      },
+      {
+          "type":"text",
+          "id":"btn-text-step-3",
+          "label":"Libellé bouton etape 3",
+          "default":"Confirmer"
+      },
+      {
+        "type": "select",
+        "id": "answer-type-step-3",
+        "label": "Type de réponse etape 3",
+        "options": [
+          {
+            "value": "single",
+            "label": "Choix unique"
+          },
+          {
+            "value": "multiple",
+            "label": "Choix multiple"
+          }
+        ],
+        "default": "multiple"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etape 4"
+      },
+      {
+          "type":"text",
+          "id":"title-step-4",
+          "label":"Titre etape 4",
+          "default":"Je voudrais que mon produit"
+      },
+      {
+          "type":"text",
+          "id":"btn-text-step-4",
+          "label":"Libellé bouton etape 4",
+          "default":"Confirmer"
+      },
+      {
+        "type": "select",
+        "id": "answer-type-step-4",
+        "label": "Type de réponse etape 4",
+        "options": [
+          {
+            "value": "single",
+            "label": "Choix unique"
+          },
+          {
+            "value": "multiple",
+            "label": "Choix multiple"
+          }
+        ],
+        "default": "multiple"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etape 5"
+      },
+      {
+          "type":"text",
+          "id":"title-step-5",
+          "label":"Titre etape 5",
+          "default":"Ma senteur préféré"
+      },
+      {
+          "type":"text",
+          "id":"btn-text-step-5",
+          "label":"Libellé bouton etape 5",
+          "default":"J'obtiens mon diagnostic"
+      },
+      {
+        "type": "select",
+        "id": "answer-type-step-5",
+        "label": "Type de réponse etape 5",
+        "options": [
+          {
+            "value": "single",
+            "label": "Choix unique"
+          },
+          {
+            "value": "multiple",
+            "label": "Choix multiple"
+          }
+        ],
+        "default": "single"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Page Produit"
+      },
+      {
+          "type":"text",
+          "id":"prdt-screen-title",
+          "label":"Titre Page produit",
+          "default":"Resultats du diagnostic"
+      },
+      {
+          "type":"text",
+          "id":"prdt-screen-subtitle",
+          "label":"Sous Titre Page produit",
+          "default":"Vous venez d'effectuer votre diagnostic capillaire, découvrez votre recommandatation personnalisée"
+      },
+      {
+          "type":"text",
+          "id":"prdt-screen-desc-title-1",
+          "label":"Titre description 1",
+          "default":"Comment est la santé de vos cheuveux :"
+      },
+      {
+          "type":"textarea",
+          "id":"prdt-screen-desc-text-1",
+          "label":"Texte description 1",
+          "default":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, est? Voluptas eligendi nesciunt laboriosam non, aspernatur pariatur laborum sit nihil sint, at hic repudiandae amet rerum aut, voluptate corporis vero."
+      },
+      {
+          "type":"text",
+          "id":"prdt-screen-desc-title-2",
+          "label":"Titre description 1",
+          "default":"Quel routine à mettre en place :"
+      },
+      {
+          "type":"textarea",
+          "id":"prdt-screen-desc-text-2",
+          "label":"Texte description 1",
+          "default":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, est? Voluptas eligendi nesciunt laboriosam non, aspernatur pariatur laborum sit nihil sint, at hic repudiandae amet rerum aut, voluptate corporis vero."
+      }
+    ],
+    "presets": [
+      {
+          "name": "Beyours Quizz Section"
+      }
+    ]
+  }
+{% endschema %}

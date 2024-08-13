@@ -1,0 +1,367 @@
+ <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+<style>
+
+  
+#shopify-section-{{ section.id }} #avisclient231103 {
+  font-family: "Poppins", sans-serif;
+  background-color: {{ section.settings.bg-color }};
+  height: 100%;
+  width: 100%;
+}
+#shopify-section-{{ section.id }} #avisclient231103 p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+#shopify-section-{{ section.id }} #avisclient231103 .container {
+  max-width: 1300px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 50px;
+  position: relative;
+  margin: auto;
+}
+
+#shopify-section-{{ section.id }} #avisclient231103 .left {
+  gap: 10px;
+  width: 50%;
+  padding: 50px;
+}
+
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  top: 15%;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .title {
+  text-transform: uppercase;
+  color: {{ section.settings.text-color }};
+  letter-spacing: 2px;
+  margin: 0;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .subtitle {
+  font-size: 40px;
+  color: {{ section.settings.text-color }};
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .text-desc {
+  font-size: 12px;
+  color: {{ section.settings.text-color }};
+  opacity: 0.9;
+  padding: 10px 0 10px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .row p {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+#shopify-section-{{ section.id }} #avisclient231103 .icon{
+  font-size: 20px; color: {{ section.settings.icon-color }}
+}
+
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .btn {
+  margin: auto;
+  width: 60%;
+  padding: 8px;
+  background-color: #fff;
+  border: 1.5px solid #000;
+  text-align: center;
+  cursor: pointer;
+  color: #000;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .btn p {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+#shopify-section-{{ section.id }} #avisclient231103 .right {
+  gap: 20px;
+  width: 50%;
+  padding: 50px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .title {
+  margin: 0;
+  padding-bottom: 10px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .title span {
+  color: {{ section.settings.dist-color }};
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .box-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .box-wrapper .box {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #fff;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .box-wrapper .box .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .box-wrapper .box .header h4 {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .box-wrapper .box .header p {
+  color: gray;
+  font-size: 8px;
+  margin-top: 5px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .box-wrapper .box .star-wrapper {
+  padding: 10px 0 10px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .box-wrapper .box p {
+  font-size: 13px;
+}
+
+@media (max-width: 1100px) {
+  #shopify-section-{{ section.id }} #avisclient231103 .container {
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} #avisclient231103 .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 30px;
+  }
+  #shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .subtitle {
+    font-size: 30px;
+    color: {{ section.settings.text-color }};
+    margin-top: 2px;
+    margin-bottom: 0;
+  }
+  #shopify-section-{{ section.id }} #avisclient231103 .left .wrapper .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+  }
+
+  #shopify-section-{{ section.id }} #avisclient231103 .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 30px;
+  }
+  #shopify-section-{{ section.id }} #avisclient231103 .right .wrapper .title {
+    text-align: center;
+  }
+}
+
+
+</style>
+       <section id="avisclient231103">
+      <div class="container">
+        <div class="left">
+          <div class="wrapper">
+            <h6 class="title">{{ section.settings.title }}</h6>
+            <h1 class="subtitle">{{ section.settings.subtitle }}</h1>
+            <p class="text-desc">
+             {{ section.settings.text-desc }}
+            </p>
+            <span class="row">
+              <h4>4.4/5</h4>
+                <div class="star-wrapper">
+                  <i
+                    class="fa fa-star icon"
+                  ></i>
+                  <i
+                    class="fa fa-star icon"
+
+                  ></i>
+                  <i
+                    class="fa fa-star icon"
+
+                  ></i>
+                  <i
+                    class="fa fa-star icon"
+
+                  ></i>
+                  <i
+                    class="fa fa-star icon"
+
+                  ></i>
+                </div>
+              <p>54 789 avis</p>
+            </span>
+            <div class="btn">
+              <p>voir tout nos avis</p>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="wrapper">
+            <h3 class="title">
+              Avec <span> 54 367 </span> avis clients vérifiés
+            </h3>
+            <div class="box-wrapper">
+              {% for block in section.blocks %}
+                <div class="box">
+                  <div class="header">
+                    <h4>{{ block.settings.title }}</h4>
+                    <p>{{ block.settings.date }}</p>
+                  </div>
+                  <h3>{{ block.settings.comment }}</h3>
+                  <div class="star-wrapper">
+                    <i
+                      class="fa fa-star icon"
+                    ></i>
+                    <i
+                      class="fa fa-star icon"
+  
+                    ></i>
+                    <i
+                      class="fa fa-star icon"
+  
+                    ></i>
+                    <i
+                      class="fa fa-star icon"
+  
+                    ></i>
+                    <i
+                      class="fa fa-star icon"
+  
+                    ></i>
+                  </div>
+                  <p>
+                    {{ block.settings.description }}
+                  </p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% schema %}
+{
+  "name": "Section Avis",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Box",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "kit pro green-flash"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "26/02/2022"
+        },
+        {
+          "type": "text",
+          "id": "comment",
+          "label": "Commentaire",
+          "default": "Une révolution"
+        },
+         {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Les avis de nos client.e.s sont certifiés par la plateforme Yotpo, ce procédé de de récolte des avis garantit que seuls nos client.e.s réel.le.s soient en mesure de laisser un avis sur notre site après l'achat"
+        }
+        
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Couleur du texte",
+      "default": "rgb(47, 44, 44)"
+    },
+    {
+      "type": "color",
+      "id": "dist-color",
+      "label": "Couleur du texte avant",
+      "default": "rgb(47, 44, 44)"
+    },
+    {
+      "type": "color",
+      "id": "icon-color",
+      "label": "Couleur des icones",
+      "default": "rgb(207, 96, 122)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Avis clientes"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Elles ont testé, validé et adopté"
+    },
+    {
+      "type": "text",
+      "id": "text-desc",
+      "label": "Description",
+      "default": "Les avis de nos client.e.s sont certifiés par la plateforme Yotpo, ce procédé de de récolte des avis garantit que seuls nos client.e.s réel.le.s soient en mesure de laisser un avis sur notre site après l'achat"
+    }
+    
+  ],
+     "presets":[
+        {
+          "name":"Section FAQ"
+        }
+     ]
+}
+{% endschema %}

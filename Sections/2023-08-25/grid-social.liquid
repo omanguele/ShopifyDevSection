@@ -1,0 +1,211 @@
+<style>
+  #shopify-section-{{ section.id }} #gridsocial59291223 {
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} #gridsocial59291223 .gridsocial59291223_wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+  }
+
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_grid_4 {
+      width: 100%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      display: grid;
+  }
+
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_grid_1 {
+      width: 100%;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 0;
+      display: grid;
+  }
+
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item {
+      display: block;
+      width: 100%;
+      position: relative;
+  }
+
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item_img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+      height: auto;
+  }
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item_overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item_overlay:hover > svg,
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item_overlay:hover > img {
+      opacity: 1;
+      transform: translateY(0) scale(3);
+  }
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item:hover > .gridsocial59291223_item_img {
+      filter: brightness(.5);
+  }
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item_overlay svg,
+  #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_item_overlay img {
+      width: 8%;
+      color: white;
+      fill: currentColor;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: .2s linear;
+      object-fit: cover;
+  }
+  @media (max-width: 768px) {
+      #shopify-section-{{ section.id }} #gridsocial59291223  .gridsocial59291223_wrapper {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+      #shopify-section-{{ section.id }} #gridsocial59291223 .hide_mobile {
+          display: none !important;
+      }
+  }
+</style>
+
+<section id="gridsocial59291223">
+  <div class="gridsocial59291223_wrapper">
+    <div class="gridsocial59291223_grid_4">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'div_1' -%}
+            <a
+              href="{{ block.settings.url }}"
+              class="gridsocial59291223_item"
+              title="{{ block.settings.title }}"
+              target="_blank"
+            >
+              <img class="gridsocial59291223_item_img" src="{{ block.settings.image | img_url: "master" }}" alt="">
+              <div class="gridsocial59291223_item_overlay">
+                <img src="{{ section.settings.icon | img_url: "master" }}" alt="">
+              </div>
+            </a>
+        {%- endcase -%}
+      {% endfor %}
+    </div>
+    <div class="gridsocial59291223_grid_1 hide_mobile">
+      <a
+        href="{{ section.settings.url }}"
+        class="gridsocial59291223_item"
+        title="{{ section.settings.title }}"
+        target="_blank"
+      >
+        <img class="gridsocial59291223_item_img" src="{{ section.settings.image | img_url: "master" }}" alt="">
+        <div class="gridsocial59291223_item_overlay">
+          <img src="{{ section.settings.icon | img_url: "master" }}" alt="">
+        </div>
+      </a>
+    </div>
+    <div class="gridsocial59291223_grid_4 hide_mobile">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'div_2' -%}
+            <a
+              href="{{ block.settings.url }}"
+              class="gridsocial59291223_item"
+              title="{{ block.settings.title }}"
+              target="_blank"
+            >
+              <img class="gridsocial59291223_item_img" src="{{ block.settings.image | img_url: "master" }}" alt="">
+              <div class="gridsocial59291223_item_overlay">
+                <img src="{{ section.settings.icon | img_url: "master" }}" alt="">
+              </div>
+            </a>
+        {%- endcase -%}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Grid Social",
+    "blocks": [
+    {
+    "type": "div_1",
+    "name": "Div 1 Item",
+"limit": 4,
+ "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "url",
+        "label": "URL"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Tilte"
+      }
+    ]
+  },
+    {
+    "type": "div_2",
+    "name": "Div 2 Item",
+"limit": 4,
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "url",
+        "label": "URL"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Tilte"
+      }
+    ]
+  }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Principal Image"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "Principal Image URL"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Principal Image Tilte"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid Social"
+    }
+  ]
+}
+{% endschema %}

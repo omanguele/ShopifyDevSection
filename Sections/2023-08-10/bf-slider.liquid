@@ -1,0 +1,339 @@
+<style>
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 {
+      position: relative;
+      width: 100%;
+      background-color: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_slide img {
+      max-width: inherit !important;
+  }
+
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_container {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+      width: 100%;
+    padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_controls {
+      position: relative;
+      display: flex;
+      z-index: 1;
+      column-gap: 10px;
+      justify-content: end;
+      margin-bottom: 25px;
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_controls_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 45px;
+      min-height: 45px;
+      border-radius: 50%;
+      border: 1px solid {{ section.settings.btn_border_color }};
+      background: {{ section.settings.btn_bg_color }};
+      cursor: pointer;
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_controls_btn svg {
+      width: 15px;
+      color: {{ section.settings.btn_ico_color }};
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_controls_prev {
+      transform: rotate(180deg);
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_slide {
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 800px;
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .swiper {
+      width: 100%;
+      height: 100%;
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823  .swiper-wrapper {
+      justify-content: center;
+      align-items: center !important;
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823  .beforeaftersliderxb10823_pagination {
+      text-align: center;
+      padding-top: 20px;
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823  .beforeaftersliderxb10823_pagination .swiper-pagination-bullet {
+      background: none;
+      opacity: 1;
+      color: {{ section.settings.nb_color }};
+  }
+  #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_pagination .swiper-pagination-bullet-active {
+      font-weight: 700;
+      transform: scale(1.2);
+  }
+  @media screen and (max-width: 580px) {
+      #shopify-section-{{ section.id }} #beforeaftersliderxb10823  .beforeaftersliderxb10823_controls_btn {
+          min-width: 40px;
+          min-height: 40px;
+      }
+      #shopify-section-{{ section.id }} #beforeaftersliderxb10823  .swiper-wrapper {
+          justify-content: inherit !important;
+      }
+  }
+  @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_container {
+          padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+      }
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<section id="beforeaftersliderxb10823">
+  <div class="beforeaftersliderxb10823_container">
+    <div class="swiper beforeaftersliderxb10823-swiper">
+      <div class="beforeaftersliderxb10823_controls">
+        <div class="beforeaftersliderxb10823_controls_btn beforeaftersliderxb10823_controls_prev">
+          <svg
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon-arrow"
+          >
+            <path fill="CurrentColor" d="M9.88098 17.287L18.313 8.855L9.88098 0.391998L8.95098 1.353L15.864 8.235H0.828979V9.475H15.926L8.95098 16.388L9.88098 17.287Z" fill="black"></path>
+          </svg>
+        </div>
+        <div class="beforeaftersliderxb10823_controls_btn beforeaftersliderxb10823_controls_next">
+          <svg
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon-arrow"
+          >
+            <path fill="CurrentColor" d="M9.88098 17.287L18.313 8.855L9.88098 0.391998L8.95098 1.353L15.864 8.235H0.828979V9.475H15.926L8.95098 16.388L9.88098 17.287Z" fill="black"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="beforeaftersliderxb10823_slide">
+              <div class="cocoen">
+                <img src="{{ block.settings.before_image | img_url: "master" }}" alt="">
+                <img src="{{ block.settings.after_image | img_url: "master" }}" alt="">
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="beforeaftersliderxb10823_pagination"></div>
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/cocoen/dist/cocoen.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  
+  
+  
+        Cocoen.parse(document.body);
+
+        new Swiper(`#shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823-swiper`, {
+            loop: false,
+            allowTouchMove: false,
+            autoHeight: false,
+            navigation: {
+                nextEl: "#shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_controls_next",
+                prevEl: "#shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_controls_prev",
+            },
+            pagination: {
+                el: "#shopify-section-{{ section.id }} #beforeaftersliderxb10823 .beforeaftersliderxb10823_pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                }
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 16
+                },
+                480: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 24
+                },
+                640: {
+                    slidesPerView: 3,
+                    sliderPerGroup: 1,
+                    spaceBetween: 32
+                },
+                1024: {
+                    slidesPerView: 4,
+                    slidesPerGroup: 4,
+                    spaceBetween: 48
+                }
+            }
+        });
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "BF Slider",
+  "blocks": [
+      {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Image Avant"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "Image Apres"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg_color",
+      "label":"Couleur fond",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"btn_bg_color",
+      "label":"Couleur fond bouton",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"btn_border_color",
+      "label":"Couleur bordure bouton",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "id":"btn_ico_color",
+      "label":"Couleur icone bouton",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "id":"nb_color",
+      "label":"Couleur numero",
+      "default":"#000"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Top Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Bottom Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Left Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Right Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Top Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Bottom Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Left Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Right Spacing",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "full_with",
+      "label": "Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 500,
+      "max": 2000,
+      "step": 100,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1400
+    }
+  ],
+  "presets": [
+    {
+      "name": "BF Slider"
+    }
+  ]
+}
+{% endschema %}

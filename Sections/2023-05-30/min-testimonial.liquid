@@ -1,0 +1,186 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+<style>
+   #mintestimonial230530 {
+     background-color: {{ section.settings.bg_color }};
+       max-width: 400px;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       will-change: transform;
+     margin-bottom: 50px;
+   }
+   #mintestimonial230530  .swiper {
+       width: 100%;
+   }
+
+   #mintestimonial230530  .swiper-button-next,
+   #mintestimonial230530  .swiper-button-prev {
+       position: fixed !important;
+       top: unset !important;
+       bottom: -50px !important;
+   }
+
+   #mintestimonial230530  .swiper-button-prev {
+       left: unset !important;
+       right: 50px !important;
+   }
+
+   #mintestimonial230530  .swiper-button-next::after,
+   #mintestimonial230530  .swiper-button-prev::after {
+       font-size: 15px !important;
+       color: {{ section.settings.message_color }};
+   }
+
+   #mintestimonial230530  .mintestimonial230530_message {
+     color: {{ section.settings.message_color }};
+     font-weight: 900;
+     font-size: 20px;
+     line-height: 1.4;
+     text-align: left;
+     padding: 5px 16px;
+     position: relative;
+     width: 100%;
+   }
+
+   #mintestimonial230530  .cote_top {
+       position: absolute;
+       top: 0;
+       left: 0;
+   }
+
+   #mintestimonial230530  .cote_bottom {
+       position: absolute;
+       bottom: 0;
+       right: 0;
+   }
+
+  #mintestimonial230530  .mintestimonial230530_card {
+     width: 100%
+   }
+
+   #mintestimonial230530  .mintestimonial230530_rating {
+       padding: 0 16px;
+       margin-top: 10px;
+       display: flex;
+       align-items: center;
+       gap: 10px;
+     color: {{ section.settings.name_color }} !important;
+   }
+
+   #mintestimonial230530  .mintestimonial230530_stars {
+       display: flex;
+       align-items: center;
+       margin-top: 3px;
+   }
+   #mintestimonial230530  .mintestimonial230530_stars svg {
+       width: 18px;
+       height: 18px;
+       color: {{ section.settings.star_color }};
+   }
+</style>
+
+<section id="mintestimonial230530">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <div class="mintestimonial230530_card">
+            <p class="mintestimonial230530_message">
+              <span class="cote_top">“</span>
+              <span class="cote_bottom">”</span>
+              {{ block.settings.message }}
+            </p>
+            <div class="mintestimonial230530_rating">
+              <div class="mintestimonial230530_stars">
+                {% for i in (1..block.settings.nb_stars) %}
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                {% endfor %}
+              </div>
+              <div class="mintestimonial230530_name">{{ block.settings.name }}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".swiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+    });
+</script>
+
+{% schema %}
+{
+  "name": "Min Testimonial",
+  "blocks": [
+    {
+      "type": "block",
+      "name": "BLock",
+      "settings": [
+        {
+          "type": "textarea",
+          "id":"message",
+          "label": "Message",
+          "default":"Lorem ipsum"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom",
+          "default":"jean Luc"
+        },
+        {
+          "type": "range",
+          "id": "nb_stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "unit": "⭐",
+          "label": "Nombre d'étoiles",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Couleur de fond"
+    },
+    {
+      "type": "color_background",
+      "id": "message_color",
+      "label": "Couleur de message",
+      "default": "#182647"
+    },
+    { "type": "color_background", "id": "name_color", "label": "Couleur de nom", "default": "#000" },
+    {
+      "type": "color_background",
+      "id": "star_color",
+      "label": "Couleur étoile",
+      "default": "#00a651"
+    }
+  ],
+  "presets": [ { "name": "Min Testimonial" } ]
+}
+{% endschema %}

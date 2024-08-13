@@ -1,0 +1,360 @@
+<style>
+        #shopify-section-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+  }
+        #shopify-section-{{ section.id }} #herosliderxbos185023  {
+            width: 100%;
+            position: relative;
+            padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_slide {
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023    .herosliderxbos185023_image {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: block;
+            margin-bottom: 20px;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_image  img{
+            max-width: 100%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023  .herosliderxbos185023_info {
+            width: 100%;
+            text-align: center;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023    a {
+            text-decoration: none;
+            color: inherit;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023  .herosliderxbos185023_info button {
+            position: relative;
+            padding: 12px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-color: {{ section.settings.btn_bg_color }};
+            text-align: center;
+            color: {{ section.settings.btn_text_color }};
+            display: inline-block;
+            border: 1px solid {{ section.settings.btn_border_color }};
+            font-size: 11px;
+            margin: 20px 0;
+            transition: all 500ms;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023  .herosliderxbos185023_info button:hover {
+            background-color: {{ section.settings.hover_btn_bg_color }};
+            color: {{ section.settings.hover_btn_text_color }};
+            border: 1px solid {{ section.settings.hover_btn_border_color }};
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_title {
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: 325;
+            font-style: normal;
+          color: {{ section.settings.text_color }};
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_description {
+            display: none;
+          color: {{ section.settings.text_color }};
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023    .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+            bottom: 0 !important;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023   .swiper-pagination-bullet {
+            border-radius:  0 !important;
+            background-color: color: {{ section.settings.dot_color }}; !important;
+        }
+        #shopify-section-{{ section.id }} #herosliderxbos185023   .swiper {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 50px !important;
+        }
+        @media screen and (min-width: 1024px) {
+            #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_image {
+                    width: 54.4%;
+                    margin-bottom: 0;
+                }
+                #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_info {
+                    padding: 0 0 0 40px;
+                    width: 45.6%;
+                    text-align: left;
+                    align-items: flex-start;
+                }
+                #shopify-section-{{ section.id }} #herosliderxbos185023  {
+                    padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+            max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+                }
+              #shopify-section-{{ section.id }} #herosliderxbos185023  .herosliderxbos185023_title {
+                    font-size: 46px;
+                }
+                #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_description {
+                    margin: 17px 0 24px !important;
+                    font-size: 19px;
+                    line-height: 1.4;
+                    display: block;
+                }
+                #shopify-section-{{ section.id }} #herosliderxbos185023   .herosliderxbos185023_slide {
+                    flex-direction: row;
+                }
+                #shopify-section-{{ section.id }} #herosliderxbos185023  .herosliderxbos185023_info button {
+                    margin: 0;
+                    padding: 16px 40px;
+                }
+        }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<section id="herosliderxbos185023">
+  <div class="herosliderxbos185023_slider">
+    <div class="swiper herosliderxbos185023-swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="herosliderxbos185023_slide">
+              <a href="{{ block.settings.url }}" class="herosliderxbos185023_image">
+                <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+              </a>
+              <a href="{{ block.settings.url }}" class="herosliderxbos185023_info">
+                <h2 class="herosliderxbos185023_title">{{ block.settings.heading }}</h2>
+                <p class="herosliderxbos185023_description">
+                  {{ block.settings.description }}
+                </p>
+                <button type="button">{{ block.settings.btn_text }}</button>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  
+        new Swiper(`#shopify-section-{{ section.id }} #herosliderxbos185023  .herosliderxbos185023-swiper`, {
+            loop: true,
+            autoplay: {
+                delay: 2500,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+        });
+
+</script>
+
+{% schema %}
+{
+  "name": "Hero SLider",
+  "blocks": [
+  {
+    "type": "item",
+    "name": "Item",
+    "limit": 4,
+    "settings": [
+      {
+        "type":"url",
+        "id":"url",
+        "label":"URL"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading",
+        "default": "Jusqu'à 40 % de réduction"
+      },
+      {
+        "type":"textarea",
+        "id":"description",
+        "label":"Description",
+        "default": "Courez, ne marchez pas!"
+      },
+      {
+        "type":"text",
+        "id":"btn_text",
+        "label":"Btn Text",
+        "default": "Decouvrir"
+      }
+    ]
+  }
+],
+  "settings": [
+    {
+    "type":"color",
+    "id":"bg_color",
+    "label":"Couleur fond",
+    "default":"#fff"
+  },
+    {
+    "type":"color",
+    "id":"text_color",
+    "label":"Couleur texte",
+    "default":"#000"
+  },
+    {
+    "type":"color",
+    "id":"btn_bg_color",
+    "label":"Couleur btn fond",
+    "default":"#fff"
+  },
+    {
+    "type":"color",
+    "id":"btn_text_color",
+    "label":"Couleur btn texte",
+    "default":"#000"
+  },
+    {
+    "type":"color",
+    "id":"btn_border_color",
+    "label":"Couleur btn border",
+    "default":"#000"
+  },
+    {
+    "type":"color",
+    "id":"hover_btn_border_color",
+    "label":"Couleur btn border",
+    "default":"#000"
+  },
+     {
+    "type":"color",
+    "id":"hover_btn_bg_color",
+    "label":"Couleur btn fond",
+    "default":"#000"
+  },
+    {
+    "type":"color",
+    "id":"hover_btn_text_color",
+    "label":"Couleur btn texte",
+    "default":"#fff"
+  },
+
+    {
+    "type":"color",
+    "id":"dot_color",
+    "label":"Couleur dot",
+    "default":"#000"
+  },
+    {
+      "type": "range",
+      "id": "desktop_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Top Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Bottom Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Left Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Right Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Top Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Bottom Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Left Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Right Spacing",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "full_with",
+      "label": "Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 500,
+      "max": 2000,
+      "step": 100,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1400
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero SLider"
+    }
+  ]
+}
+{% endschema %}

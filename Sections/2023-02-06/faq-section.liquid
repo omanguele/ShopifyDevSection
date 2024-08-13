@@ -1,0 +1,285 @@
+<style>
+    #shopify-section-{{ section.id }} #faqsection050223{
+        width: 100%;
+        height: 100%;
+        font-family: sans-serif;
+        font-size: 25.6px;
+        line-height: 1.5;
+    }
+    #shopify-section-{{ section.id }} #faqsection050223 {
+        width: 100%;
+        height: auto;
+        position: relative;
+        background-color:{{ section.settings.bg-color }};
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .container {
+        display: flex;
+        flex-flow: row wrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        align-items: flex-start;
+        -webkit-box-align: start;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .container .title {
+        font-size: 33.6px;
+        font-weight: 700 !important;
+        color: {{ section.settings.title-color }};
+        margin: 0 0 20px;
+        word-break: break-word;
+        text-align: left;
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .container .faq__wrapper {
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item .faq__item__icons {
+        background: {{ section.settings.bg-color-icon }} !important;
+        width: 40px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item .faq__item__icons svg {
+        width: 20px;
+        height: 20px;
+        color: {{ section.settings.text-color-icon }} !important;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item .faq__item__icons .open {
+        display: none;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item.show > .faq__item_head .open {
+        display: block;
+    } 
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item.show > .faq__item_head .close {
+        display: none;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item .faq__item_head {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item .faq__item_head .faq__item__question {
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 100%;
+        width: 100%;
+        color: inherit;
+        background: {{ section.settings.bg-question-color }} !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: {{ section.settings.text-question-color }} !important;
+        display: block;
+        padding: 8px 30px 8px 20px;
+        margin: 0;
+    }
+
+    /*#shopify-section-{{ section.id }} #faqsection050223 .faq_item.show > .faq__item__body  {
+        max-height: 9999px;
+    }*/
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item  .faq__item__body {
+        display: block;
+        background: {{ section.settings.bg-response-color }};
+        font-size: 20.8px !important;
+        overflow: hidden;
+        height: 0;
+        transition: height 1s ease-in-out;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection050223 .faq_item  .faq__item__body .faq__item__answer {
+        padding: 10px 30px;
+        margin-left: 20px;
+        border-top: none;
+        font-size: 15px;
+        color: {{ section.settings.text-response-color }};
+        line-height: 28px;
+        letter-spacing: 1px;
+        font-weight: 400 !important;
+        line-height: 28px;
+        letter-spacing: 1px;
+    }
+    @media only screen and (max-width: 780px) {
+        #shopify-section-{{ section.id }} #faqsection050223 .faq_item  .faq__item__body .faq__item__answer {
+            font-size: 12px;
+            padding: 10px 30px;
+            margin-left: 30px;
+        }
+    
+        #shopify-section-{{ section.id }} #faqsection050223 .faq_item .faq__item_head .faq__item__question {
+            font-size: 12.8px;
+        }
+        #shopify-section-{{ section.id }} #faqsection050223 .container .title {
+            font-size: 19.2px;
+            font-weight: 600 !important;
+            word-break: break-word;
+            text-align: left;
+            width: 100%;
+        }
+    }
+</style>
+<section id="faqsection050223">
+<div class="container">
+    <div class="title">{{ section.settings.title }}</div>
+    <div class="faq__wrapper">
+    {% for block in section.blocks %}
+        <div class="faq_item">
+            <div class="faq__item_head">
+            <div class="faq__item__icons">
+                <span class="open">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>                                  
+                </span>
+                <span class="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>                                  
+                </span>
+            </div>
+            <div class="faq__item__question">
+                <sub>{{ block.settings.faq-title }}</sub>
+            </div>
+            </div>
+            <div class="faq__item__body">
+            <div class="faq__item__answer">
+                {{ block.settings.faq-desc }}
+            </div>
+            </div>
+        </div>               
+    {% endfor %}
+    </div>
+</div>
+</section>
+<script>
+    let faqs = document.querySelectorAll('#shopify-section-{{ section.id }} #faqsection050223 .faq__wrapper .faq_item');
+    
+    faqs.forEach((faq) => {
+        faq.addEventListener('click', function(e) {
+            e.preventDefault();
+            let elt = faq.querySelector('.faq__item__body');
+            if(faq.classList.contains('show')){
+                elt.style.height = '0px';
+                faq.classList.remove('show')
+            }else {
+                elt.style.height = elt.scrollHeight + 'px';
+                faq.classList.add('show')
+            }
+        });
+    });        
+</script>
+{% schema %}
+{
+    "name": "FAQ 1 Section",
+    "blocks": [
+    {
+        "type": "accordion",
+        "name": "Accordion",
+        "settings": [
+        {
+            "type":"text",
+            "id":"faq-title",
+            "label":"Titre",
+            "default":"OU PUIS-JE ME FAIRE LIVRER MA COMMANDE ?"
+        },
+        {
+            "type":"richtext",
+            "id":"faq-desc",
+            "label":"Description",
+            "default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        }
+        ]
+    }
+    ],
+    "settings": [
+    {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#fff"
+    },
+    {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur de titre",
+        "default":"#000"
+    },
+    {
+        "type":"color",
+        "id":"bg-color-icon",
+        "label":"Couleur de fond icône",
+        "default":"#323232"
+    },
+    {
+        "type":"color",
+        "id":"text-color-icon",
+        "label":"Couleur icône",
+        "default":"#fff"
+    },
+    {
+        "type":"color",
+        "id":"text-question-color",
+        "label":"Couleur question",
+        "default":"#000000"
+    },
+    {
+        "type":"color",
+        "id":"bg-question-color",
+        "label":"Couleur fond question",
+        "default":"#F7F7F7"
+    },
+    {
+        "type":"color",
+        "id":"text-response-color",
+        "label":"Couleur réponse",
+        "default":"#6f6f6f"
+    },
+    {
+        "type":"color",
+        "id":"bg-response-color",
+        "label":"Couleur fond réponse",
+        "default":"#F7F7F7"
+    },
+    {
+        "type":"text",
+        "id":"title",
+        "label":"Titre",
+        "default":"Livraison de ma commande"
+    }
+    ],
+    "presets": [
+    {
+        "name": "FAQ 1 Section",
+        "category": "Custom Ss"
+    }
+    ]
+}
+{% endschema %}

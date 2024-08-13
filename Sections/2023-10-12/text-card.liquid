@@ -1,0 +1,241 @@
+<style>
+  #shopify-section-{{ section.id }} #textcard7251110132 {
+      padding: 20px 60px 96px 60px;
+      position: relative;
+      width: 100%;
+      background-color: {{ section.settings.bg_color }};
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_head {
+      max-width: 100%;
+      width: 66.66666667%;
+      margin: 0 auto;
+      padding: 0 12px;
+      margin-bottom: 48px;
+      text-align: center !important;
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_title {
+      margin-bottom: 1.1111vw;
+      font-size: 3.75vw;
+      line-height: 3.75vw;
+      font-weight: 500;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_subtitle {
+      font-size: 24px;
+      line-height: 32px;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_wrapper {
+      width: 100%;
+      display: grid;
+      padding: 0 12px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 24px;
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border: 2px solid {{ section.settings.border_color }};
+      border-radius: 32px;
+      height: 100%;
+      background-color: {{ section.settings.card_color }};
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_image {
+      flex-shrink: 0;
+      border-bottom: 2px solid {{ section.settings.border_color }};
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_image img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+      height: auto;
+      border: 0 none;
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_text {
+      padding: 16px 15px;
+      flex: 1;
+      align-items: center;
+      display: flex;
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_text span {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      border: 2px solid {{ section.settings.border_color }};
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: {{ section.settings.icon_color }};
+      color: {{ section.settings.border_color }};
+  }
+  #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_text p {
+      color: {{ section.settings.text_color }};
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+  }
+  @media only screen and (max-width: 1024px)  {
+      #shopify-section-{{ section.id }} #textcard7251110132 {
+          padding: 80px 20px 64px 20px;
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_head {
+          width: 100%;
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_subtitle {
+          font-size: 16px;
+          line-height: 24px;
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_wrapper {
+          width: 83%;
+          margin: 0 auto;
+          padding: 24px;
+          gap: 16px;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_image {
+          display: none  !important;
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_text {
+          padding: 14px;
+      }
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_card_text span {
+          margin-right: 12px;
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_title {
+          margin-bottom: 4vw;
+          font-size: 9.6vw;
+          line-height: 9.6vw;
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_head {
+          margin-bottom: 26px;
+      }
+      #shopify-section-{{ section.id }} #textcard7251110132 .textcard7251110132_wrapper {
+          width: 100%;
+      }
+  }
+</style>
+
+<section id="textcard7251110132">
+  <div class="textcard7251110132_container">
+    <div class="textcard7251110132_head">
+      <h2 class="textcard7251110132_title">{{ section.settings.title }}</h2>
+      <p class="textcard7251110132_subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+    <div class="textcard7251110132_wrapper">
+      {% for block in section.blocks %}
+        <div class="textcard7251110132_card">
+          <div class="textcard7251110132_card_image">
+            <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+          </div>
+          <div class="textcard7251110132_card_text">
+            <span>
+              <svg
+                class="icon-check"
+                role="img"
+                aria-label="Check Icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8309 7.0834L8.74999 15.1643L4.00244 10.4167L5.41665 9.00252L8.74999 12.3359L15.4167 5.66919L16.8309 7.0834Z" fill="currentColor"></path>
+              </svg>
+            </span>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Texte - Carte",
+   "blocks": [
+      {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte"
+        }
+      ]
+    }
+  ],
+  "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Couleur de fond de la section",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "card_color",
+        "label": "Couleur de carte",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Couleur de texte",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Couleur de bordure",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "icon_color",
+        "label": "Couleur de l'icone",
+        "default": "#c5ff89"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "shake up a smoothie in seconds"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sous Titre",
+        "default": "How it works"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Texte - Carte(Image & Texte)"
+    }
+  ]
+}
+{% endschema %}

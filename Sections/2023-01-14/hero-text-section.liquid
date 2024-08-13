@@ -1,0 +1,175 @@
+<style>
+    #shopify-section-{{ section.id }} #herosection140123 div:empty{display:block;}
+    #shopify-section-{{ section.id }} #herosection140123 a{text-decoration:none}
+    #shopify-section-{{ section.id }} #herosection140123 {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+    
+    #shopify-section-{{ section.id }} #herosection140123 .bg-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+    }
+    
+    #shopify-section-{{ section.id }} #herosection140123 .ctn-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        background-image: url('{{ section.settings.bg-image | img_url:"master" }}');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: scroll;
+        background-size: cover;
+    
+    }
+    #shopify-section-{{ section.id }} #herosection140123 .bg-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: {{ section.settings.overlay-color }};
+        opacity: {{ section.settings.overlay-opacity }};
+    }  
+    
+    #shopify-section-{{ section.id }} #herosection140123 .ctn-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #shopify-section-{{ section.id }} #herosection140123 .ctn-text  .title {
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: .05em !important;
+        line-height: 1;
+        font-weight: 500 !important;
+        text-transform: uppercase;
+        color: {{ section.settings.title-color }} !important;
+    }
+    
+    #shopify-section-{{ section.id }} #herosection140123 .ctn-text  .action-btn {
+        text-transform: uppercase !important;
+        font-size: 15px !important;
+        padding: 16px 39px !important;
+        border-width: 1px;
+        letter-spacing: .2em !important;
+        margin-top: 30px;
+        outline: none;
+        white-space: pre-wrap;
+        display: inline-block;
+        font-style: normal !important;
+        text-align: center;
+        vertical-align: middle;
+        margin-bottom: 1px;
+        cursor: pointer;
+        background-image: none;
+        border-style: solid;
+        border-radius: 0 !important;
+        color: {{ section.settings.btn-color }} !important;
+        background-color: transparent !important;
+        border-color: {{ section.settings.btn-color }} !important;
+    }
+    
+    
+    @media only screen and (min-width: 700px){
+        #shopify-section-{{ section.id }} #herosection140123 .ctn-text  .title {
+            font-size: 35px;
+        }
+        #shopify-section-{{ section.id }} #herosection140123 .ctn-image {
+            background-image: url('{{ section.settings.bg-image-mb | img_url:"master" }}');
+        }
+        #shopify-section-{{ section.id }} #herosection140123 .ctn-text  .action-btn {
+          margin-top: 20px;
+        }
+    }
+  </style>
+  <section id="herosection140123">
+      <div class="bg-image">
+          <div class="ctn-image"></div>
+          <div class="bg-overlay"></div>
+      </div>
+      <div class="ctn-text">
+          <h1 class="title">{{ section.settings.title }}</h1>
+          <a href="{{ section.settings.btn-url }}" class="action-btn">{{ section.settings.btn-label }}</a>
+      </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Hero Text Section",
+      "settings": [
+        {
+          "type":"image_picker",
+          "id":"bg-image",
+          "label":"Image de fond"
+        },
+        {
+          "type":"image_picker",
+          "id":"bg-image-mb",
+          "label":"Image de fond mobile"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"Archive Sales"
+        },
+        {
+          "type":"text",
+          "id":"btn-label",
+          "label":"Libellé bouton",
+          "default":"Shop Now"
+        },
+        {
+          "type":"url",
+          "id":"btn-url",
+          "label":"Lien bouton",
+          "default":"/"
+        },
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"btn-color",
+          "label":"Couleur du bouton",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"overlay-color",
+          "label":"Couleur du fond",
+          "default":"#000"
+        },
+        {
+            "type": "text",
+            "id": "overlay-opacity",
+            "label": "Opacité fond",
+            "default": "0.05"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Hero Text Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

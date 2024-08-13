@@ -1,0 +1,506 @@
+<style>
+      .sh--1 {
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.7);
+    transition: 500ms ease box-shadow;
+  }
+  .sh--2 {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(246,246,246,0.2), 0px 0px 15px 0px rgba(246,246,246,0.2);
+    box-shadow: 0px 0px 15px 0px rgba(246,246,246,0.2), 0px 0px 15px 0px rgba(246,246,246,0.2);
+    transition: 500ms ease box-shadow;
+  }
+  .sh--3 {
+    transition: 500ms ease box-shadow;
+  }
+        #shopify-section-{{ section.id }} #textfaq4130910132 {
+             padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+            width: 100%;
+            position: relative;
+            background-color: {{ section.settings.bg_color }};
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_container {
+            max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 50px;
+            padding: 55px;
+            isolation: isolate;
+            border-radius: {{ section.settings.radius }}px;
+            background-color: {{ section.settings.card_color }};
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_content {
+            padding-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 0;
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_heading {
+            margin-bottom: 10px;
+            font-size: {{ section.settings.t_title }}px;
+            line-height: 42px;
+            letter-spacing: -0.02em;
+            font-style: normal;
+            font-weight: 600;
+            color: {{ section.settings.text_color }};
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_description {
+            word-spacing: .001em;
+            font-feature-settings: "kern" 1;
+            font-kerning: normal;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            color: {{ section.settings.text_color }};
+            font-size: {{ section.settings.t_text }}px;
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item {
+            width: 100%;
+            border-bottom: 1px solid {{ section.settings.border_color }};
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_head {
+            width: 100%;
+            list-style: none;
+            position: relative;
+            font-size: {{ section.settings.t_ftitle }}px;
+            line-height: 1.6;
+            font-weight: 500;
+            padding: 10px 40px 10px 0;
+            color: {{ section.settings.text_color }};
+            cursor: pointer;
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_head span {
+            display: inline-flex;
+            align-items: center;
+            transform-origin: center;
+            margin-left: 15px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 20px;
+            width: 14px;
+            z-index: 5;
+            margin-top: -10px;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+        }
+         #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_head svg {
+            transition: all .25s cubic-bezier(.104,.204,.492,1);
+            transform: rotateX(180deg);
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item.open > .textfaq4130910132_faq_item_head svg {
+            transform: rotateX(0);
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_text {
+            height: 0;
+            overflow: hidden;
+            transition: height 500ms ease-out;
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_text_inner {
+            padding: 0 0 15px;
+            font-size: 15px;
+        }
+        #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_text p {
+            word-spacing: .001em;
+            font-feature-settings: "kern" 1;
+            font-kerning: normal;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            color: {{ section.settings.text_color }};
+          font-size: {{ section.settings.t_ftext }}px;
+        }
+
+        @media only screen and (max-width: 780px)  {
+          #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_container {
+                grid-template-columns: 1fr;
+                grid-gap: 0px;
+                padding: 25px;
+            }
+            #shopify-section-{{ section.id }} #textfaq4130910132 {
+                padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+            }
+            #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_heading {
+                font-size: {{ section.settings.m_title }}px;
+                line-height: 30px;
+            }
+            #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_description {
+                font-size: {{ section.settings.m_text }}px;
+            }
+            #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_head {
+                font-size: {{ section.settings.m_ftitle }}px;
+            }
+            #shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item_text p {
+                font-size: {{ section.settings.t_mtext }}px;
+            }
+        }
+</style>
+
+<section
+  style="{% if section.settings.border_top %}border-top: 1px solid {{ section.settings.color_border }};{% endif %}{% if section.settings.border_bottom %}border-bottom: 1px solid {{ section.settings.color_border }};{% endif %}"
+  id="textfaq4130910132"
+>
+  <div class="textfaq4130910132_container {{ section.settings.sh_image }}">
+    <div class="textfaq4130910132_content">
+      <h3 class="textfaq4130910132_heading">{{ section.settings.title }}</h3>
+      <p class="textfaq4130910132_description">
+        {{ section.settings.subtitle }}
+      </p>
+    </div>
+    <div class="textfaq4130910132_faq">
+      {% for block in section.blocks %}
+        <div class="textfaq4130910132_faq_item">
+          <div class="textfaq4130910132_faq_item_head">
+            {{ block.settings.text }}
+            <span>
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 6.81818L7 0.818176L1 6.81818" stroke="{{ section.settings.icon_color }}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="textfaq4130910132_faq_item_text">
+            <div class="textfaq4130910132_faq_item_text_inner">
+              {{ block.settings.description }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  Array.from(document.querySelectorAll("#shopify-section-{{ section.id }} #textfaq4130910132 .textfaq4130910132_faq_item")).map((item, i) => {
+      item.querySelector(".textfaq4130910132_faq_item_head").addEventListener("click", () => {
+          const content = item.querySelector(".textfaq4130910132_faq_item_text");
+          if(item.classList.contains("open")) {
+              item.classList.remove("open");
+              content.style.height = "0px";
+          }else{
+              item.classList.toggle("open");
+              content.style.height = content.scrollHeight + "px";
+          }
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Texte - Faq",
+  "blocks": [
+    {
+    "type": "faq",
+    "name": "Faq",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Texte"
+      }
+    ]
+  }
+],
+"settings": [
+    {
+       "type":"header",
+       "content":"Section Codée par SkillsUp"
+    },
+    {
+       "type":"paragraph",
+       "content":"Pour toute demande d'information supplémentaire, veuillez [nous contacter](https://skills-up.co/)."
+    },
+    {
+       "type":"header",
+       "content":"CONFIGURATION DES COULEURS"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Couleur de carte",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Couleur de bordure",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur de l'icone",
+      "default": "#c5ff89"
+    },
+    {
+       "type":"header",
+       "content":"CONFIGURATION DU CONTENU"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "shake up a smoothie in seconds"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Bordure arrondie",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous Titre",
+      "default": "How it works"
+    },
+     {
+       "type":"header",
+       "content":"CONFIGURATION DES TAILLES DE TEXTES"
+    },
+    {
+       "type":"range",
+       "id":"t_title",
+       "label":"Taille du Titre de la section sur bureau",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":26
+    },
+    {
+       "type":"range",
+       "id":"t_text",
+       "label":"Taille du Texte sur bureau",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":14
+    },
+    {
+       "type":"range",
+       "id":"t_ftitle",
+       "label":"Taille du titre faq sur bureau",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":18
+    },
+    {
+       "type":"range",
+       "id":"t_ftext",
+       "label":"Taille du Texte faq sur bureau",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":14
+    },
+    {
+       "type":"range",
+       "id":"m_title",
+       "label":"Taille du Titre de la section sur mobile",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":26
+    },
+    {
+       "type":"range",
+       "id":"m_text",
+       "label":"Taille du Texte sur mobile",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":14
+    },
+    {
+       "type":"range",
+       "id":"m_ftitle",
+       "label":"Taille du bouton sur mobile",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":18
+    },
+    {
+       "type":"range",
+       "id":"m_ftext",
+       "label":"Taille du Texte faq sur mobile",
+       "min":0,
+       "max":40,
+       "unit":"px",
+       "default":14
+    },
+    {
+       "type":"header",
+       "content":"CONFIGURATION DES ESPACES"
+    },
+    {
+       "type":"range",
+       "id":"desktop_top_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement supérieur du bureau",
+       "default":40
+    },
+    {
+       "type":"range",
+       "id":"desktop_bottom_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement inférieur du bureau",
+       "default":40
+    },
+    {
+       "type":"range",
+       "id":"desktop_left_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement à gauche du bureau",
+       "default":40
+    },
+    {
+       "type":"range",
+       "id":"desktop_right_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement à droite du bureau",
+       "default":40
+    },
+    {
+       "type":"range",
+       "id":"mobile_top_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement supérieur mobile",
+       "default":20
+    },
+    {
+       "type":"range",
+       "id":"mobile_bottom_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement inférieur mobile",
+       "default":20
+    },
+    {
+       "type":"range",
+       "id":"mobile_left_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement mobile à gauche",
+       "default":20
+    },
+    {
+       "type":"range",
+       "id":"mobile_right_spacing",
+       "min":0,
+       "max":200,
+       "step":5,
+       "unit":"px",
+       "label":"Espacement droit mobile",
+       "default":20
+    },
+    {
+       "type":"checkbox",
+       "id":"full_with",
+       "label":"Pleine largeur",
+       "default":false
+    },
+    {
+       "type":"range",
+       "id":"max_width",
+       "min":500,
+       "max":2000,
+       "step":100,
+       "unit":"px",
+       "label":"Taille Maximale",
+       "default":1400
+    },
+    {
+      "type": "header",
+      "content": "CONFIGURATION DES OMBRES"
+    },
+    {
+      "type": "select",
+      "id": "sh_image",
+      "label": "Ombre sur l'image/vidéo",
+      "default": "",
+      "options": [
+        { "value": "", "label": "Pas d'ombres" },
+        { "value": "sh--1", "label": "Style 1" },
+        { "value": "sh--2", "label": "Style 2" },
+        { "value": "sh--3", "label": "Sytle 3" }
+      ]
+    },
+    {
+       "type":"header",
+       "content":"CONFIGURATION DES BORDURES"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "Afficher une bordure en haut"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_bottom",
+      "label": "Afficher une bordure en bas"
+    },
+    {
+      "type": "color",
+      "id": "color_border",
+      "label": "Couleur des bordures",
+      "info": "Fonctionne si les bordures sont sélectionnées ci-dessus.",
+      "default": "#000"
+    }
+],
+  "presets": [
+    {
+      "name": "Texte - Faq"
+    }
+  ]
+}
+{% endschema %}

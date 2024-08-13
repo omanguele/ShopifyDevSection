@@ -1,0 +1,305 @@
+<style>
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 .recommandationsectxb23108_container {
+      max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+      width: 100%;
+      padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+      margin: 0 auto;
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 .recommandationsectxb23108_content {
+      background-color: {{ section.settings.bg_color }};
+      border-radius: 10px;
+      display: flex;
+      padding: 30px;
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_content_features {
+      flex: 1;
+      padding: 50px 70px;
+      border-right: 1px solid {{ section.settings.fg_color }};
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 .recommandationsectxb23108_content_qna {
+      flex: 1;
+      padding: 50px 55px 50px 85px;
+      font-size: 14px;
+      line-height: 20px;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 .recommandationsectxb23108_content_qna details {
+      width: 100%;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid {{ section.settings.fg_color }};
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_content_qna details p {
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 20px;
+      color: {{ section.settings.fg_color }};
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_content_qna details summary {
+      text-transform: uppercase;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      font-size: 14px;
+      line-height: 20px;
+      color: {{ section.settings.fg_color }};
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 .recommandationsectxb23108_features_heading {
+      font-size: 26px;
+      line-height: 30px;
+      margin-bottom: 50px;
+      color: {{ section.settings.fg_color }};
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 .recommandationsectxb23108_features_list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(60px,1fr));
+      list-style: none;
+      padding: 0;
+      padding-right: 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      column-gap: 45px;
+      row-gap: 20px;
+      list-style: none;
+  }
+  #shopify-section-{{ section.id }} #recommandationsectxb23108 .recommandationsectxb23108_features_list_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      gap: 12px;
+      position: relative;
+      padding-bottom: 50px;
+      color: {{ section.settings.fg_color }};
+  }
+  @media screen and (max-width: 750px) {
+      #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_content {
+          display: block;
+      }
+      #shopify-section-{{ section.id }} #recommandationsectxb23108   .recommandationsectxb23108_content_features {
+          border-right: none;
+          padding: 0;
+          text-align: center;
+      }
+      #shopify-section-{{ section.id }} #recommandationsectxb23108   .recommandationsectxb23108_features_heading {
+          width: 70%;
+          margin: 25px auto;
+      }
+      #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_container{
+        padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+      }
+      #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_content {
+          padding: 15px;
+      }
+      #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_features_list{
+          margin-bottom: 30px;
+          padding: 0 30px;
+          margin-top: 15px;
+          justify-content: center;
+          row-gap: 0;
+      }
+      #shopify-section-{{ section.id }} #recommandationsectxb23108  .recommandationsectxb23108_content_qna {
+          padding: 0 0 40px;
+      }
+  }
+</style>
+
+<section id="recommandationsectxb23108">
+  <div class="recommandationsectxb23108_container">
+    <div class="recommandationsectxb23108_content">
+      <div class="recommandationsectxb23108_content_features">
+        <h2 class="recommandationsectxb23108_features_heading">
+          {{ section.settings.heading }}
+        </h2>
+        <ul class="recommandationsectxb23108_features_list">
+          {% for block in section.blocks %}
+            {% if block.type == 'picto' %}
+              <li class="recommandationsectxb23108_features_list_item">
+                <img src="{{ block.settings.picto | img_url: "master" }}" width="50" height="50" loading="lazy">
+                <span>
+                  {{ block.settings.text }}
+                </span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="recommandationsectxb23108_content_qna">
+        {% for block in section.blocks %}
+          {% if block.type == 'detail' %}
+            <details>
+              <summary>{{ block.settings.heading }}</summary>
+              {{ block.settings.text }}
+            </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Recommandation Section",
+  "blocks": [
+    {
+    "type": "detail",
+    "name": "detail",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ]
+  },
+  {
+  "type": "picto",
+  "name": "picto",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "picto",
+      "label": "Picto"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+}
+],
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg_color",
+      "label":"Bg color",
+      "default":"#f2f2f2"
+    },
+    {
+      "type":"color",
+      "id":"fg_color",
+      "label":"Fg color",
+      "default":"#000"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Top Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Bottom Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Left Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Right Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Top Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Bottom Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Left Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Right Spacing",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "full_with",
+      "label": "Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 500,
+      "max": 2000,
+      "step": 100,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1400
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recommandation Section"
+    }
+  ]
+}
+{% endschema %}

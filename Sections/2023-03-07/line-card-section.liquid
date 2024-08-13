@@ -1,0 +1,198 @@
+<style>
+
+#shopify-section-{{ section.id }} #linecardsection070323  {
+    width: 100%;
+    height: 100%;
+    background-color: {{ section.settings.bg-color }};
+    color: {{ section.settings.text-color }};
+    padding: 80px 20px;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323  .wrapper {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323  .wrapper .line_card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 500px;
+    height: 100%;
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 25%;
+    width: 100%;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323  .line_card .text {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323  .line_card .number {
+    color: {{ section.settings.number-color }};
+    position: absolute;
+    font-size: 24px;
+    line-height: 28px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323 .line_card .line_vertical.left {
+    left: -1px;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323 .line_card .line_vertical {
+    position: absolute;
+    height: 650px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 0;
+    border-left-width: 0.1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(147,147,147,1) 50%,rgba(0,0,0,0) 100%) 1;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323 .line_card .line_horizontal{
+    position: absolute;
+    width: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0;
+    border-top-width: 0.1px;
+    border-style: solid;
+    border-image: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(147,147,147,1) 50%,rgba(0,0,0,0) 100%) 1;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323 .line_card .line_horizontal.top {
+    top:0;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323 .line_card .line_horizontal.bottom {
+    bottom:0;
+}
+
+#shopify-section-{{ section.id }} #linecardsection070323 .line_card .line_vertical.right {
+    right: -1px;
+
+}
+
+  @media only screen and (max-width: 1024px) {
+    #shopify-section-{{ section.id }} #linecardsection070323  .line_card .text {
+        font-size: 20px;
+    }
+    
+    #shopify-section-{{ section.id }} #linecardsection070323  .line_card .number {
+        font-size: 20px;
+    }
+
+    #shopify-section-{{ section.id }} #linecardsection070323  .wrapper {
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #linecardsection070323  .wrapper .line_card {
+        max-width: 50%;
+        min-height: 400px;
+    }
+
+    #shopify-section-{{ section.id }} #linecardsection070323  .line_card .line_horizontal  {
+        width: 140%;
+    }
+
+    #shopify-section-{{ section.id }} #linecardsection070323  .line_card .line_vertical {
+        height: 520px;
+    }
+
+  }
+
+  @media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #linecardsection070323  .line_card .text {
+        font-size: 18px;
+    }
+    
+    #shopify-section-{{ section.id }} #linecardsection070323  .line_card .number {
+        font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} #linecardsection070323  .wrapper .line_card {
+        max-width: 100%;
+        min-height: 350px;
+    }
+
+    #shopify-section-{{ section.id }} #linecardsection070323  .line_card .line_vertical {
+        height: 455px;
+    }
+  }
+
+</style>
+
+<section id="linecardsection070323">
+    <div class="wrapper">
+      {% for block in section.blocks %}
+        <div class="line_card">
+            <div class="line_horizontal top" ></div>
+            <div class="line_horizontal bottom " ></div>
+            <div  class="line_vertical left" ></div>
+            <div class="line_vertical right" ></div>
+            <p class="text">
+                {{ block.settings.text }}
+            </p>
+            <p class="number">{{ forloop.index }}</p>
+        </div>
+      {% endfor %}
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Line Card Section",
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Element",
+        "settings": [
+            {
+              "type": "textarea",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Le vélo électrique au design intemporel"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg-color",
+        "label": "Couleur de fond", 
+        "default":"#232c3f"
+      },
+      {
+        "type": "color",
+        "id": "text-color",
+        "label": "Couleur de text", 
+        "default":"#fff"
+      },
+      {
+        "type": "color",
+        "id": "number-color",
+        "label": "Couleur de numero", 
+        "default":"#C43218"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Line Card Section"
+      }
+    ]
+  }
+{% endschema %}

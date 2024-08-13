@@ -1,0 +1,363 @@
+<style>
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 {
+      padding: 80px 0;
+      position: relative;
+      width: 100%;
+      background: {{ section.settings.bg_color_color }};
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_container {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_subtitle {
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 14px;
+      color:{{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_title {
+      margin: 8px 0 0;
+      font-size: 32px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: .25px;
+      color:{{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_wrapper {
+      margin-top: 40px;
+      justify-content: space-between;
+      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks {
+      flex: 1 1 auto;
+      margin-right: 56px;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_inner {
+      padding-bottom: 48px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_ico {
+      flex: 0 0 120px;
+      margin-right: 56px;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_ctn_img {
+      width: 100%;
+      flex: 0 0 50%;
+      max-width: 700px;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      z-index: 0;
+      top: 115px;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_image_inner {
+      flex: 1 0 calc(50% - 48px);
+      max-width: 680px;
+      padding: 0;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312  img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_count {
+      font-weight: 800;
+      font-size: 40px;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_text p{
+      margin: 6px 0 0;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: left;
+    color:{{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child  .blockimagesticky48421312_block {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 700ms;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child:not(.active):before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 120px;
+      position: absolute;
+      left: 0;
+      top: -120px;
+      background: linear-gradient(to top,#fff 0,#fff 33%,transparent 100%);
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child.active  .blockimagesticky48421312_block_btn {
+      transform: translateY(0);
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_btn {
+      transform: translateY(-24px);
+      align-items: center;
+      display: flex;
+      max-width: 300px;
+      justify-content: center;
+      padding: 0 40px;
+      height: 48px;
+      line-height: 48px;
+      border: 1px solid {{ section.settings.btn_border_color }};
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_btn:hover {
+      background-color: {{ section.settings.hover_btn_bg_color }};
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_btn:hover span {
+      color: {{ section.settings.hover_btn_text_color }};
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_btn span {
+      color: {{ section.settings.btn_text_color }};
+      line-height: 48px;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: .25px;
+      font-size: 18px;
+      transition: color .2s ease-in-out;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child.active  .blockimagesticky48421312_block_btn .less {
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child.active .blockimagesticky48421312_block_btn .more {
+      display: none;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_btn .less {
+      display: none;
+  }
+  #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child.active  .blockimagesticky48421312_block {
+      max-height: 1000px;
+  }
+  @media only screen and (max-width: 1500px) {
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_container {
+          max-width: 1140px;
+      }
+  }
+  @media only screen and (max-width: 1200px) {
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_container {
+          max-width: 960px;
+          padding: 0 16px;
+      }
+  }
+  @media only screen and (max-width: 1024px) {
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_wrapper {
+          justify-content: center;
+          align-items: center;
+          flex-direction: column-reverse;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks {
+          margin-right: 0;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_inner {
+          padding-bottom: 32px;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_ico {
+          flex: 0 0 90px;
+          margin-right: 40px;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_subtitle {
+          font-size: 12px;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_title {
+          font-size: 24px;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_image {
+          position: relative;
+          top: unset;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_image_inner{
+          margin-bottom: 24px;
+          max-width: 100%;
+          padding: 0 16px;
+          flex: unset;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_count {
+          font-size: 32px;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_text p{
+          font-size: 14px;
+          line-height: 18px;
+      }
+      #shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_btn span {
+          font-size: 14px;
+      }
+  }
+</style>
+
+<section id="blockimagesticky48421312">
+  <div class="blockimagesticky48421312_container">
+    <div class="blockimagesticky48421312_subtitle">{{ section.settings.description }}</div>
+    <h2 class="blockimagesticky48421312_title">{{ section.settings.heading }}</h2>
+    <div class="blockimagesticky48421312_wrapper">
+      <div class="blockimagesticky48421312_blocks">
+        <ul>
+          {%- for block in section.blocks -%}
+            <li>
+              <div class="blockimagesticky48421312_block">
+                <div class="blockimagesticky48421312_block_inner">
+                  <div class="blockimagesticky48421312_block_ico">
+                    <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+                  </div>
+                  <div class="blockimagesticky48421312_block_text">
+                    <span class="blockimagesticky48421312_count">
+                      {% if forloop.index < 10 %} 0{{ forloop.index }} {% else %} {{ forloop.index }} {% endif -%}
+                    </span>
+                    <p>{{ block.settings.text }}</p>
+                  </div>
+                </div>
+              </div>
+              {% if forloop.index == block.size %}
+                <div class="blockimagesticky48421312_block_btn">
+                  <span class="more">{{ section.settings.more_text }}</span>
+                  <span class="less">{{ section.settings.less_text }}</span>
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="blockimagesticky48421312_ctn_img">
+        <div class="blockimagesticky48421312_image">
+          <div class="blockimagesticky48421312_image_inner">
+            <img src="{{ section.settings.image | img_url: "master" }}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelector('#shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_block_btn')?.addEventListener('click', function(e) {
+      document.querySelector('#shopify-section-{{ section.id }} #blockimagesticky48421312 .blockimagesticky48421312_blocks ul li:last-child').classList.toggle('active');
+  })
+</script>
+
+{% schema %}
+  {
+    "name": "Block Img Sticky",
+     "blocks": [
+  {
+  "type": "icon_text",
+  "name": "Icon Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+}
+],
+    "settings": [
+      {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur du fond",
+    "default": "#fff"
+  },
+    {
+    "type": "color",
+    "id": "text_color",
+    "label": "Text Couleur",
+    "default": "#000"
+  },
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading"
+  },
+  {
+    "type": "textarea",
+    "id": "description",
+    "label": "Description"
+  },
+  {
+    "type":"image_picker",
+    "id":"image",
+    "label":"Image"
+  },
+       {
+    "type":"color",
+    "id":"btn_text_color",
+    "label":"Couleur btn text",
+    "default":"#f2f2f2"
+  },
+    {
+    "type":"color",
+    "id":"btn_border_color",
+    "label":"Couleur btn border",
+    "default":"#000"
+  },
+     {
+    "type":"color",
+    "id":"hover_btn_bg_color",
+    "label":"Hv Couleur btn fond",
+    "default":"#000"
+  },
+    {
+    "type":"color",
+    "id":"hover_btn_text_color",
+    "label":"Hv Couleur btn texte",
+    "default":"#fff"
+  },
+  {
+    "type": "text",
+    "id": "more_text",
+    "label": "More Text",
+    "default": "Lire Plus"
+  },
+  {
+    "type": "text",
+    "id": "less_text",
+    "label": "More Text",
+    "default": "Lire Moins"
+  }
+    ],
+    "presets": [
+      {
+        "name": "Block Img Sticky"
+      }
+    ]
+  }
+{% endschema %}

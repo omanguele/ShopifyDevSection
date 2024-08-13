@@ -1,0 +1,1352 @@
+<style>
+  @import url('https://fonts.cdnfonts.com/css/futura');
+</style>
+
+<style>
+  #shopify-section-{{ section.id }} #tabs-section-03052023{
+      background-color: {{ section.settings.bg-color }};
+      color: {{ section.settings.text-color }};
+      font-family: 'Futura', sans-serif;
+      width: 100%;
+      height: fit-content;
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023{
+          padding:0 25px;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .module-wrap,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_column {
+      position: relative;
+      z-index: 1;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 #m-1678809989856 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 #m-1678809989856 {
+          border-radius: 25px!important;
+          padding-top: 17px!important;
+          padding-bottom: 0!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 #m-1678809989856 {
+          border-radius: 25px!important;
+          padding-top: 19px!important;
+          padding-bottom: 0!important;
+          padding-left: 0!important;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_module-center {
+      text-align: center;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .module-wrap .module {
+      max-width: auto!important;
+      padding: 0!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      font-size: 0px;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>ul>li.gf_tab {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      font-size: 14px;
+      margin-left: -1px;
+      position: relative;
+      cursor: pointer!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>ul>li.gf_tab:first-child {
+      margin-left: 0;
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 #m-1678809989856>.gf_restabs>ul>li>span:first-child {
+          padding: 14px 15px!important;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>ul>li>span {
+      display: block;
+      text-decoration: none;
+      padding: 12px 20px;
+      cursor: pointer!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 #m-1678809989856>.gf_restabs>ul>li>span {
+      display: block;
+      text-decoration: none;
+      padding: 14px 20px;
+      cursor: pointer;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap {
+      position: relative;
+  }
+  @media (min-width: 768px) and (max-width: 991px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap .elm.gf-elm-left-sm {
+          text-align: left;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap[data-label="Text Block"] .text-edit{
+      display: block!important;
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .text-edit {
+          padding-bottom: 0!important;
+          font-size: 12px!important;
+          line-height: 1.8em!important;
+          letter-spacing: .6px!important;
+          color: {{ section.settings.text-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .text-edit {
+          padding-bottom: 0!important;
+          font-size: 12px!important;
+          line-height: 1.8em!important;
+          letter-spacing: .6px!important;
+          color: {{ section.settings.text-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>ul>li.gf_tab>.gf_tab-bottom {
+      margin: 0!important;
+      padding: 0!important;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 1px;
+      background:{{ section.settings.active-tabtitle-color }};
+      display: none!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>ul>li.gf_tab.gf_tab-active>.gf_tab-bottom {
+      display: block!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>.gf_tab-accordion-title {
+      display: none!important;
+  }
+
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>.gf_tab-panel {
+      display: none;
+      position: relative;
+      z-index: 1;
+      top: -1px;
+      float: left;
+      width: 100%;
+      padding: 20px;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_restabs>.gf_tab-panel.gf_tab-panel-active {
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row{
+      margin-left: auto!important;
+      margin-right: auto!important;
+      max-width: 1200px;
+      padding-top: 30px;
+   }
+   @media (min-width: 1200px){
+      #r-1678794657833 {
+          padding-top: 48px!important;
+          padding-left: 66px!important;
+          padding-right: 80px!important;
+      }
+  }
+   #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item{
+      padding-bottom: 10px;
+      width: 100%;
+   }
+   @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item {
+          max-width: 1200px!important;
+          padding: 20px 30px!important;
+      }
+  }
+   @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item {
+          max-width: 1200px!important;
+          padding: 8px 20px 20px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item {
+          max-width: 1200px!important;
+          padding-top: 6px!important;
+          padding-bottom: 9px!important;
+          padding-left: 0!important;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-xs-12,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-sm-12,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-md-12,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-lg-12{
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-xs-12{
+      float: left;
+  }
+  @media (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-sm-12{
+          width: 100%;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row>.gf_column {
+      margin: 0;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row>.gf_column {
+      min-height: 1px;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row-gap-0>.gf_column {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .title-button {
+          margin-top: 20px!important;
+          margin-left: 0!important;
+          margin-bottom: 0!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .title-button {
+          margin-top: 20px!important;
+          margin-left: 0!important;
+          margin-bottom: 0!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .title-button {
+          margin-top: 20px!important;
+          margin-left: 0!important;
+          margin-bottom: 0!important;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap .elm.gf-elm-center {
+      display: block!important;
+      text-align: center;
+      width: 100%;
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap .elm.gf-elm-left-lg {
+          text-align: left;
+      }
+  }
+  @media (min-width: 768px) and (max-width: 991px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap .elm.gf-elm-left-sm {
+          text-align: left;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap .elm.gf-elm-left-xs {
+          text-align: left;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .button{
+      border-radius: 11px;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font: inherit;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: rgb(253,251,247);
+      transition: box-shadow .1s ease;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: rgba(155,4,111,1);
+  }
+  /* #shopify-section-{{ section.id }} #tabs-section-03052023 .button{
+      min-width: calc(12rem + 1px * 2);
+      min-height: calc(4.5rem + 1px * 2);
+  } */
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .button {
+      font-size: 1.5rem;
+      letter-spacing: .1rem;
+      line-height: calc(1 + .2 / 1.0);
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_button {
+      white-space: normal!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .title-button .gf_button {
+      display: inline-flex;
+      align-items: center;
+      margin: 0!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .title-button .gf_button {
+      font-size: 15px!important;
+      text-transform: none!important;
+      font-weight: 400!important;
+  }
+
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab .text-edit{
+      color: {{ section.settings.tabtitle-color }} !important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab.gf_tab-active .text-edit{
+      color: {{ section.settings.active-tabtitle-color }} !important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab-panel{
+      top: -1px;
+      background-color: {{ section.settings.bg-color }};
+      border: none;
+  }
+
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1,
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_2 {
+          margin-top: 20px!important;
+          margin-left: 0!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 {
+          margin-top: 20px!important;
+          margin-left: 0!important;
+          margin-right: px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 {
+          margin-top: 20px!important;
+          margin-left: 0!important;
+          margin-right: px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_2 {
+          margin-top: 20px!important;
+          margin-left: 0!important;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 .text-edit {
+          padding-right: 200px!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 .text-edit {
+          padding-right: 120px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 .text-edit {
+          padding-right: 50px!important;
+      }
+  }
+
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 h1,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 h2{
+      text-align: inherit!important;
+      margin: 0!important;
+      padding: 0!important;
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 .text-edit h1 {
+          font-size: 36px!important;
+          line-height: 1.1em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.title-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 .text-edit h1 {
+          font-size: 29px!important;
+          line-height: 1.1em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.title-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_1 .text-edit h1 {
+          font-size: 24px!important;
+          line-height: 1.1em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.title-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_2 .text-edit h1 {
+          font-size: 18px!important;
+          line-height: 1.2em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.subtitle-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_2 .text-edit h1 {
+          font-size: 18px!important;
+          line-height: 1.2em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.subtitle-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab_item_title_2 .text-edit h1 {
+          font-size: 18px!important;
+          line-height: 1.2em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.subtitle-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_row {
+      padding-bottom: 10px;
+      width: 100%;
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_row {
+          max-width: 1200px!important;
+          padding-top: 10px!important;
+          padding-bottom: 19px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_row {
+          max-width: 1200px!important;
+          padding-top: 10px!important;
+          padding-bottom: 10px!important;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row-gap-0>.gf_column {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row>.gf_column {
+      margin: 0;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_row>.gf_column {
+      min-height: 1px;
+  }
+  @media (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-sm-12 {
+          width: 100%;
+          float: left;
+      }
+  }
+  @media (min-width: 992px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-md-4 {
+          width: 33.33333%;
+          float: left;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-lg-4 {
+          width: 33.33333%;
+          float: left;
+      }
+  }
+  @media (max-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_column {
+          display: block;
+      }
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-xs-12 {
+          width: 100%;
+      }
+  }
+
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_block {
+      padding-bottom: 10px;
+      width: 100%;
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_block {
+          padding-top: 7px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_block {
+          padding-top: 0!important;
+          max-width: 100%!important;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_heading {
+          margin-top: 20px!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_heading{
+          margin-top: 20px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_heading {
+          margin-top: 20px!important;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_heading .text-edit h1 {
+          font-size: 53px!important;
+          line-height: 1.2em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.number-heading-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_heading .text-edit h1 {
+          font-size: 53px!important;
+          line-height: 1.2em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.number-heading-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_heading .text-edit h1 {
+          font-size: 34px!important;
+          line-height: 1.2em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.number-heading-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_desc{
+          margin-left: 5px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_desc {
+          margin-left: 0!important;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_desc .text-edit {
+          font-size: 17px!important;
+          line-height: 1.3em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.number-desc-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_desc .text-edit {
+          font-size: 17px!important;
+          line-height: 1.3em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.number-desc-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_number_desc .text-edit {
+          font-size: 15px!important;
+          line-height: 1.3em!important;
+          letter-spacing: -.1px!important;
+          color: {{ section.settings.number-desc-color }}!important;
+          text-transform: none!important;
+          font-weight: 400!important;
+      }
+  }
+
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_list_row {
+      padding-bottom: 10px;
+      width: 100%;
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_list_row {
+          background-color: {{ section.settings.bg-color-details }}!important;
+          padding: 35px 40px 27px!important;
+          margin-top: 20px!important;
+          max-width: 1200px!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_list_row {
+          background-color: {{ section.settings.bg-color-details }}!important;
+          padding: 35px 40px 27px!important;
+          margin-top: 20px!important;
+          max-width: 1200px!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_list_row {
+          background-color: {{ section.settings.bg-color-details }}!important;
+          margin-top: 20px!important;
+          max-width: 1200px!important;
+          padding: 28px 10px 14px!important;
+      }
+  }
+  @media (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-sm-6 {
+          width: 50%;
+          float: left;
+      }
+  }
+  @media (min-width: 992px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-md-6 {
+          width: 50%;
+          float: left;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_col-lg-6 {
+          width: 50%;
+          float: left;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block {
+      padding-top: 45px;
+      padding-bottom: 30px;
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block {
+          padding-top: 0!important;
+          padding-bottom: 0!important;
+      }
+  }
+  @media (max-width: 991px) and (min-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block {
+          padding-top: 0!important;
+          padding-bottom: 0!important;
+      }
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block {
+          padding-top: 0!important;
+          padding-bottom: 0!important;
+      }
+  }
+  @media (min-width: 1200px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .module-wrap .module.gf_module-left-lg {
+          text-align: left;
+      }
+  }
+  @media (max-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_column {
+          display: block;
+      }
+  }
+
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .text-edit>p {
+      font-size: inherit!important;
+      font-family: inherit!important;
+      text-align: inherit!important;
+      color: inherit!important;
+      margin: 0!important;
+      padding: 0!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon-list {
+      list-style: none!important;
+      margin: 0!important;
+      padding: 0!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block .gf_icon-list {
+      display: inline-block;
+  }
+  @media (max-width: 768px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block .gf_icon-list {
+          display: inherit;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block .gf_icon-list>li {
+      clear: both;
+      position: relative;
+      width: 100%;
+      list-style: none;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block .gf-il-icon {
+      display: inline-block;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      min-height: auto!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .check-icon .elm {
+      line-height: 2em;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .check-icon .gf_icon-wrap {
+      display: inline-flex;
+      width: 16px;
+      height: auto;
+      line-height: inherit;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon {
+      line-height: 1em!important;
+      display: inline-block!important;
+      max-width: 100%;
+      transition: all 0s ease-in-out;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row:after {
+      clear: both;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row:after,
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_row:before {
+      content: " ";
+      display: table;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block .gf-il-content {
+      display: block;
+      min-height: auto!important;
+      padding-bottom: 10px;
+  }
+  @media (max-width: 767px){
+      #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block .gf-il-content {
+          padding-bottom: inherit;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .gf_icon_list_block .text-edit {
+      padding-left: 5px;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .element-wrap[data-label="Text Block"] .text-edit{
+      display: block!important;
+  }
+  #shopify-section-{{ section.id }} #tabs-section-03052023 .text-icon .text-edit>p {
+      font-size: inherit!important;
+      font-family: inherit!important;
+      text-align: inherit!important;
+      color: inherit!important;
+      margin: 0!important;
+      padding: 0!important;
+  }
+  .element-wrap .elm.gf-elm-left {
+      text-align: left;
+  }
+</style>
+<div id="tabs-section-03052023">
+  <div class="gf_row" id="r-1678794657833">
+    <div id="m-1678809989856" class="module-wrap">
+      <div class="gf_restabs module style3 gf_module-center  gf_restabs_accordion_0">
+        <ul>
+          {% for block in section.blocks %}
+            {% if block.type == 'tab' %}
+              <li class="gf_tab {% if forloop.first %}gf_tab-active{% endif %}" tabtitle-index="{{ forloop.index }}">
+                <span class="item-content">
+                  <div class="element-wrap">
+                    <div class="elm text-edit gf_gs-text-paragraph-1 gf-elm-left-lg gf-elm-left-md gf-elm-left-sm gf-elm-left-xs">
+                      <strong>{{ block.settings['tab-title'] }}</strong>
+                    </div>
+                  </div>
+                </span>
+                <span class="gf_tab-bottom"></span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+        {% for block in section.blocks %}
+          {% if block.type == 'tab' %}
+            {% assign tabTitle = block.settings['tab-title'] %}
+            <span class="gf_tab-accordion-title"><span></span></span>
+            <div
+              class="item-content gf_tab-panel {% if forloop.first %}gf_tab-panel-active{% endif %}"
+              tabpanel-index="{{ forloop.index }}"
+            >
+              <div class="gf_tab_item gf_row gf_row-gap-0">
+                <div class="gf_column gf_col-lg-12 gf_col-md-12 gf_col-sm-12 gf_col-xs-12">
+                  <div class="element-wrap title-button">
+                    <div class="elm gf-elm-center gf-elm-left-lg gf-elm-left-md gf-elm-left-sm gf-elm-left-xs">
+                      <a
+                        style="background-color: {{ block.settings.tab-title-bgcolor }}!important;color: {{ block.settings.tab-title-color }}!important;"
+                        class="button btn gf_button gf_gs-button-element gf_gs-button---large"
+                        href="#"
+                      >
+                        <span>{{ block.settings['tab-title'] }}</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gf_tab_item_title_1 element-wrap">
+                    <div
+                      class="elm text-edit gf-elm-center gf-elm-left-lg gf-elm-left-md gf-elm-left-xs gf-elm-left-sm"
+                      data-gemlang="en"
+                      data-exc=""
+                    >
+                      <h1 class="gf_gs-text-heading-2">
+                        <b>{{ block.settings.title }}</b>
+                      </h1>
+                    </div>
+                  </div>
+                  <div class="gf_tab_item_title_2 element-wrap">
+                    <div
+                      class="elm text-edit gf-elm-center gf-elm-left-lg gf-elm-left-md gf-elm-left-sm gf-elm-left-xs"
+                      data-gemlang="en"
+                      data-exc=""
+                    >
+                      <h1 class="gf_gs-text-heading-2">
+                        <b>{{ block.settings['subtitle-title'] }}</b>
+                      </h1>
+                    </div>
+                  </div>
+                  <div class="gf_number_row gf_row gf_row-gap-0">
+                    <div
+                      class="gf_column gf_col-lg-4 gf_col-md-4 gf_col-sm-12 gf_col-xs-12"
+                      id="c-1678810837959"
+                      data-id="1678810837959"
+                    >
+                      <div
+                        data-label="Row"
+                        data-key="row"
+                        data-atomgroup="row"
+                        id="r-1678810873840"
+                        class="gf_number_block gf_row gf_row-gap-0"
+                        data-icon="gpicon-row"
+                        data-id="1678810873840"
+                        data-row-gap="0px"
+                        data-extraclass=""
+                      >
+                        <div
+                          class="gf_column gf_col-lg-12 gf_col-md-12 gf_col-sm-12 gf_col-xs-12"
+                          id="c-1678810873879"
+                          data-id="1678810873879"
+                        >
+                          <div
+                            data-label="Heading"
+                            data-key="heading"
+                            data-atomgroup="element"
+                            id="e-1678810844903"
+                            class="gf_number_heading element-wrap"
+                            data-icon="gpicon-heading"
+                            data-ver="2"
+                            data-id="1678810844903"
+                          >
+                            <div
+                              class="elm text-edit gf-elm-center gf-elm-left-lg gf-elm-left-md gf-elm-left-sm gf-elm-left-xs"
+                              data-gemlang="en"
+                              data-exc=""
+                            >
+                              <h1 class="gf_gs-text-heading-2">
+                                <b>{{ block.settings['stat-1-number'] }}</b>
+                              </h1>
+                            </div>
+                          </div>
+                          <div
+                            data-label="Text Block"
+                            data-key="text-block"
+                            data-atomgroup="element"
+                            id="e-1678810398575"
+                            class="gf_number_desc element-wrap"
+                            data-icon="gpicon-textblock"
+                            data-ver="1"
+                            data-id="1678810398575"
+                          >
+                            <div
+                              class="elm text-edit gf-elm-left gf_gs-text-paragraph-1 gf-elm-left-md gf-elm-left-sm gf-elm-left-lg gf-elm-left-xs"
+                              data-gemlang="en"
+                              data-exc=""
+                            >
+                              <p>
+                                <b>{{ block.settings['stat-1-desc'] }}</b>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="gf_column gf_col-lg-4 gf_col-md-4 gf_col-sm-12 gf_col-xs-12"
+                      id="c-1678810841675"
+                      data-id="1678810841675"
+                    >
+                      <div
+                        data-label="Row"
+                        data-key="row"
+                        data-atomgroup="row"
+                        id="r-1678810899774"
+                        class="gf_number_block gf_row gf_row-gap-0"
+                        data-icon="gpicon-row"
+                        data-id="1678810899774"
+                        data-row-gap="0px"
+                        data-extraclass=""
+                      >
+                        <div
+                          class="gf_column gf_col-lg-12 gf_col-md-12 gf_col-sm-12 gf_col-xs-12"
+                          id="c-1678810873879"
+                          data-id="1678810873879"
+                        >
+                          <div
+                            data-label="Heading"
+                            data-key="heading"
+                            data-atomgroup="element"
+                            id="e-1678810899659"
+                            class="gf_number_heading element-wrap"
+                            data-icon="gpicon-heading"
+                            data-ver="2"
+                            data-id="1678810899659"
+                          >
+                            <div
+                              class="elm text-edit gf-elm-center gf-elm-left-lg gf-elm-left-md gf-elm-left-sm gf-elm-left-xs"
+                              data-gemlang="en"
+                              data-exc=""
+                            >
+                              <h1 class="gf_gs-text-heading-2">
+                                <b>{{ block.settings['stat-2-number'] }}</b>
+                              </h1>
+                            </div>
+                          </div>
+                          <div
+                            data-label="Text Block"
+                            data-key="text-block"
+                            data-atomgroup="element"
+                            id="e-1678810899693"
+                            class="gf_number_desc element-wrap"
+                            data-icon="gpicon-textblock"
+                            data-ver="1"
+                            data-id="1678810899693"
+                          >
+                            <div
+                              class="elm text-edit gf-elm-left gf_gs-text-paragraph-1 gf-elm-left-md gf-elm-left-sm gf-elm-left-lg gf-elm-left-xs"
+                              data-gemlang="en"
+                              data-exc=""
+                            >
+                              <p>
+                                <b>{{ block.settings['stat-2-desc'] }}</b>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="gf_column gf_col-lg-4 gf_col-md-4 gf_col-sm-12 gf_col-xs-12"
+                      id="c-1678810841651"
+                      data-id="1678810841651"
+                    >
+                      <div
+                        data-label="Row"
+                        data-key="row"
+                        data-atomgroup="row"
+                        id="r-1678810911995"
+                        class="gf_number_block gf_row gf_row-gap-0"
+                        data-icon="gpicon-row"
+                        data-id="1678810911995"
+                        data-row-gap="0px"
+                        data-extraclass=""
+                      >
+                        <div
+                          class="gf_column gf_col-lg-12 gf_col-md-12 gf_col-sm-12 gf_col-xs-12"
+                          id="c-1678810873879"
+                          data-id="1678810873879"
+                        >
+                          <div
+                            data-label="Heading"
+                            data-key="heading"
+                            data-atomgroup="element"
+                            id="e-1678810911984"
+                            class="gf_number_heading element-wrap"
+                            data-icon="gpicon-heading"
+                            data-ver="2"
+                            data-id="1678810911984"
+                          >
+                            <div
+                              class="elm text-edit gf-elm-center gf-elm-left-lg gf-elm-left-md gf-elm-left-sm gf-elm-left-xs"
+                              data-gemlang="en"
+                              data-exc=""
+                            >
+                              <h1 class="gf_gs-text-heading-2">
+                                <b>{{ block.settings['stat-3-number'] }}</b>
+                              </h1>
+                            </div>
+                          </div>
+                          <div
+                            data-label="Text Block"
+                            data-key="text-block"
+                            data-atomgroup="element"
+                            id="e-1678810911974"
+                            class="gf_number_desc element-wrap"
+                            data-icon="gpicon-textblock"
+                            data-ver="1"
+                            data-id="1678810911974"
+                          >
+                            <div
+                              class="elm text-edit gf-elm-left gf_gs-text-paragraph-1 gf-elm-left-md gf-elm-left-sm gf-elm-left-lg gf-elm-left-xs"
+                              data-gemlang="en"
+                              data-exc=""
+                            >
+                              <p>
+                                <b>{{ block.settings['stat-3-desc'] }}</b>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="gf_list_row gf_row">
+                    <div
+                      class="gf_column gf_col-lg-6 gf_col-md-6 gf_col-sm-6 gf_col-xs-12"
+                      id="c-1678795494954"
+                      data-id="1678795494954"
+                    >
+                      <div
+                        data-label="Icon List"
+                        data-key="icon-list"
+                        data-atomgroup="module"
+                        id="m-1678811254726"
+                        class="gf_icon_list_block module-wrap"
+                        data-icon="gpicon-iconlist"
+                        data-ver="1.0"
+                        data-id="1678811254726"
+                      >
+                        <div class="module gf_module-left gf_module-left-lg gf_module--md gf_module--sm gf_module--xs ">
+                          <ul class="gf_icon-list">
+                            {% assign i = 1 %}
+                            {% for block in section.blocks %}
+                              {% if block.type == 'items' and block.settings.tab == tabTitle %}
+                                {% if i < 6 %}
+                                  <li style="margin-bottom: 0px">
+                                    <span
+                                      class="gf-il-icon item-content"
+                                      data-index="1"
+                                      data-key="content"
+                                      style="width: 34px"
+                                    >
+                                      <div
+                                        data-label="Icon"
+                                        data-ver="2"
+                                        id="e-1678811254726-1"
+                                        class="check-icon element-wrap"
+                                        data-id="1678811254726-1"
+                                      >
+                                        <div class="elm gf-elm-center" data-exc="">
+                                          <div class="gf_icon-wrap">
+                                            <svg
+                                              fill="currentColor"
+                                              height="100%"
+                                              class="gf_icon"
+                                              icon-class="bootstrap-outline-check-lg"
+                                              width="100%"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 16 16"
+                                            >
+                                              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" fill="currentColor"></path>
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </span>
+                                    <div
+                                      class="gf-il-content item-content"
+                                      data-index="1"
+                                      data-key="content1"
+                                      style="padding-left: 34px"
+                                    >
+                                      <div
+                                        data-label="Text Block"
+                                        id="e-1678811254726-2"
+                                        class="element-wrap"
+                                        data-id="1678811254726-2"
+                                      >
+                                        <div class="elm text-edit gf_gs-text-paragraph-1 gf-elm-left">
+                                          <p style="text-align: inherit!important;">{{ block.settings.libelle }}</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                {% endif %}
+                                {% assign i = i | plus: 1 %}
+                              {% endif %}
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="gf_column gf_col-lg-6 gf_col-md-6 gf_col-sm-6 gf_col-xs-12"
+                      id="c-1678811278130"
+                      data-id="1678811278130"
+                    >
+                      <div
+                        data-label="Icon List"
+                        data-key="icon-list"
+                        data-atomgroup="module"
+                        id="m-1678811280212"
+                        class="gf_icon_list_block module-wrap"
+                        data-icon="gpicon-iconlist"
+                        data-ver="1.0"
+                        data-id="1678811280212"
+                      >
+                        <div class="module gf_module-left gf_module-left-lg gf_module--md gf_module--sm gf_module--xs ">
+                          <ul class="gf_icon-list">
+                            {% assign i = 1 %}
+                            {% for block in section.blocks %}
+                              {% if block.type == 'items' and block.settings.tab == tabTitle %}
+                                {% if i >= 6 %}
+                                  <li style="margin-bottom: 0px">
+                                    <span
+                                      class="gf-il-icon item-content"
+                                      data-index="1"
+                                      data-key="content"
+                                      style="width: 34px"
+                                    >
+                                      <div
+                                        data-label="Icon"
+                                        data-ver="2"
+                                        id="e-1678811280212-1"
+                                        class="check-icon element-wrap"
+                                        data-id="1678811280212-1"
+                                      >
+                                        <div class="elm gf-elm-center" data-exc="">
+                                          <div class="gf_icon-wrap">
+                                            <svg
+                                              fill="currentColor"
+                                              height="100%"
+                                              class="gf_icon"
+                                              icon-class="bootstrap-outline-check-lg"
+                                              width="100%"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 16 16"
+                                            >
+                                              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" fill="currentColor"></path>
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </span>
+                                    <div
+                                      class="gf-il-content item-content"
+                                      data-index="1"
+                                      data-key="content1"
+                                      style="padding-left: 34px"
+                                    >
+                                      <div
+                                        data-label="Text Block"
+                                        id="e-1678811280212-2"
+                                        class="text-icon element-wrap"
+                                        data-id="1678811280212-2"
+                                      >
+                                        <div class="elm text-edit gf_gs-text-paragraph-1 gf-elm-left">
+                                          <p style="text-align: inherit!important;">{{ block.settings.libelle }}</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                {% endif %}
+                                {% assign i = i | plus: 1 %}
+                              {% endif %}
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="gf_clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  const panels = document.querySelectorAll('#shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab-panel');
+  const tabs = document.querySelectorAll('#shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab');
+
+  tabs.forEach((el) => {
+      el.addEventListener('click', function(){
+          const clickTabTitleIndex = el.getAttribute('tabtitle-index');
+
+          document.querySelector("#shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab.gf_tab-active").classList.remove('gf_tab-active');
+          this.classList.add('gf_tab-active')
+
+          document.querySelector("#shopify-section-{{ section.id }} #tabs-section-03052023 .gf_tab-panel.gf_tab-panel-active").classList.remove('gf_tab-panel-active');
+          panels.forEach(panel => {
+              if(panel.getAttribute('tabpanel-index') == clickTabTitleIndex){
+                  panel.classList.add('gf_tab-panel-active')
+              }
+          });
+
+      })
+  });
+</script>
+{% schema %}
+{
+  "name": "Tabs Section",
+  "blocks":[
+    {
+      "type":"tab",
+      "name":"Onglet",
+      "settings":[
+        {
+          "type":"text",
+          "id":"tab-title",
+          "label":"Titre onglet",
+          "default":"Marketing"
+        },
+        {
+          "type":"color",
+          "id":"tab-title-bgcolor",
+          "label":"BG titre onglet",
+          "default":"#9bbded"
+        },
+        {
+          "type":"color",
+          "id":"tab-title-color",
+          "label":"Couleur titre onglet",
+          "default":"#000"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"Automate work for all the mundane marketing-related tasks"
+        },
+        {
+          "type":"text",
+          "id":"subtitle",
+          "label":"Sous-titre",
+          "default":"Included in Sintra Plus"
+        },
+        { "type": "header", "content": "Stat 1" },
+        {
+          "type":"text",
+          "id":"stat-1-number",
+          "label":"Valeur",
+          "default":"1352+"
+        },
+        {
+          "type":"text",
+          "id":"stat-1-desc",
+          "label":"Description",
+          "default":"marketing prompts"
+        },
+        { "type": "header", "content": "Stat 2" },
+        {
+          "type":"text",
+          "id":"stat-2-number",
+          "label":"Valeur",
+          "default":"220+"
+        },
+        {
+          "type":"text",
+          "id":"stat-2-desc",
+          "label":"Description",
+          "default":"tasks to automate"
+        },
+        { "type": "header", "content": "Stat 3" },
+        {
+          "type":"text",
+          "id":"stat-3-number",
+          "label":"Valeur",
+          "default":"354+"
+        },
+        {
+          "type":"text",
+          "id":"stat-3-desc",
+          "label":"Description",
+          "default":"tips & tricks"
+        }
+      ]
+    },
+    {
+      "type": "items",
+      "name": "Element",
+      "settings": [
+          {
+            "type": "text",
+            "id": "libelle",
+            "label": "Titre",
+            "default":"Facebook Ads"
+          },
+          {
+            "type": "text",
+            "id": "tab",
+            "label": "Titre onglet",
+            "default":"Marketing",
+            "info":"Entrer le nom de l'onglet auquel vous souhaitez assigner cet élement"
+          }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg-color",
+      "label":"Couleur de fond",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "id":"text-color",
+      "label":"Couleur de texte",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"active-tabtitle-color",
+      "label":"Couleur de titre onglet actif",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"tabtitle-color",
+      "label":"Couleur de titre onglet",
+      "default":"#8d8d8d"
+    },
+    {
+      "type":"color",
+      "id":"title-color",
+      "label":"Couleur de titre",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"subtitle-color",
+      "label":"Couleur de sous-titre",
+      "default":"#a5a5a5"
+    },
+    {
+      "type":"color",
+      "id":"number-heading-color",
+      "label":"Couleur de Stat",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"number-desc-color",
+      "label":"Couleur de desc Stat",
+      "default":"#a5a5a5"
+    },
+    {
+      "type":"color",
+      "id":"bg-color-details",
+      "label":"Couleur de fond details",
+      "default":"#191919"
+    }
+  ],
+  "presets": [
+    {
+      "name":"Tabs Section",
+      "category":"Custom Ss"
+    }
+  ]
+}
+{% endschema %}

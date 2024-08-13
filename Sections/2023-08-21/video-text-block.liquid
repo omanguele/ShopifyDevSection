@@ -1,0 +1,394 @@
+<style>
+      #shopify-section-{{ section.id }} #videotextblock2009210823 {
+          width: 100%;
+          position: relative;
+          background-color: {{ section.settings.bg_color }};
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_container {
+          padding: 40px;
+  padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+    margin: 0 auto;
+    max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_wrapper {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          position: relative;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_wrap_item {
+          width: 100%;
+          position: relative;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_btn {
+          display: inline-block;
+          text-align: center;
+          background: {{ section.settings.btn_bg_color }};
+          white-space: normal;
+          text-transform: uppercase;
+          text-align: center;
+          white-space: normal;
+          transition: color 0.05s ease-in-out, background 0.05s ease-in-out, filter 0.05s ease-in-out;
+          touch-action: manipulation;
+          border-radius: 10px;
+          color: {{ section.settings.btn_text_color }};
+          position: relative;
+          line-height: normal;
+          text-decoration: none;
+          font-weight: 600;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_btn.desk_btn {
+          display: none;
+          margin-top: 40px;
+          padding: 15px 40px;
+          font-size: 20px;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_btn.mobile_btn {
+          display: inherit;
+          margin-top: 30px;
+          width: 100%;
+          font-size: 15px;
+          padding: 10px 15px;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video {
+          width: 100%;
+          position: relative;
+          margin-top: 40px;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video_inner {
+          width: 80%;
+          margin: 0 auto;
+          cursor: pointer;
+          position: relative;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video_inner video {
+          width: 100%;
+          max-width: 100%;
+          object-fit: cover;
+          height: auto;
+          display: block;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video_play {
+          position: absolute;
+          background: transparent;
+          border: none;
+          border-radius: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          margin: 0 auto;
+          padding: 0;
+          color: {{ section.settings.text_color }};
+          height: 45px;
+          width: 45px;
+          top: 50%;
+          left: 0;
+          right: 0;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video_play svg {
+          height: auto;
+          fill: currentColor;
+          vertical-align: middle;
+          width: 100%;
+          display: inline-block;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_content {
+          width: 100%;
+          color: {{ section.settings.text_color }} !important;
+          line-height: 1.4 !important;
+          font-size: 14px !important;
+          text-align: left !important;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_title {
+          text-align: left;
+          margin-bottom: 30px;
+          font-size: 26px;
+          text-transform: uppercase;
+          line-height: 1;
+          word-break: break-word;
+          color: {{ section.settings.heading_color }};
+      }
+
+      @media screen and (min-width: 1024px) {
+          #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_btn.desk_btn {
+          display: inline-block !important;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_title {
+          text-align: center;
+          margin-bottom: 50px;
+          font-size: 40px;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_btn.mobile_btn {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_wrapper {
+          flex-direction: row;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_container {
+          padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_wrap_item {
+          width: 48%;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video {
+          margin-top: 0;
+          display: flex;
+          justify-content: flex-start;
+      }
+
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video_inner {
+          width: 90%;
+          margin: unset;
+      }
+      #shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_content {
+          font-size: 16px !important;
+      }
+      }
+</style>
+
+<section id="videotextblock2009210823">
+  <div class="videotextblock2009210823_container">
+    <h2 class="videotextblock2009210823_title">{{ section.settings.heading }}</h2>
+    <div class="videotextblock2009210823_wrapper">
+      <div class="videotextblock2009210823_wrap_item">
+        <div class="videotextblock2009210823_video">
+          <div class="videotextblock2009210823_video_inner">
+            <video
+              loop=""
+              muted=""
+              playsinline=""
+              preload="none"
+              poster="{{ section.settings.poster | img_url: "master" }}"
+            >
+              <source
+                src="{{ section.settings.video.sources[1].url }}"
+                type="video/mp4"
+              >
+              Your browser does not support the video tag.
+            </video>
+            <button class="videotextblock2009210823_video_play" type="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 700 700"
+                style="enable-background:new 0 0 700 700;"
+                xml:space="preserve"
+              >
+                <g id="play_button" data-name="Play button" transform="translate(-0.587)"
+                    fill="currentColor" stroke-miterlimit="10">
+                    <path
+                        d="M350,71.7C196.5,71.7,71.7,196.5,71.7,350S196.5,628.3,350,628.3S628.3,503.5,628.3,350S503.5,71.7,350,71.7L350,71.7z
+                         M350,111.4c132,0,238.6,106.6,238.6,238.6c0,132-106.6,238.6-238.6,238.6S111.4,482,111.4,350C111.4,218,218,111.4,350,111.4
+                         L350,111.4z M297.8,224.1c-14.4,0.3-27,12.6-27.3,30.2v191.1c0.5,23.4,22.7,37.7,42,26.5l155.7-95.9c8.5-5.2,14.3-14.9,14.3-26.1
+                         s-5.8-20.9-14.3-26.1L312.5,228C307.7,225.2,302.6,224,297.8,224.1L297.8,224.1z">
+                    </path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <a href="{{ section.settings.btn_url }}" class="videotextblock2009210823_btn mobile_btn">
+          <span>{{ section.settings.btn_label }}</span>
+        </a>
+      </div>
+      <div class="videotextblock2009210823_wrap_item">
+        <div class="videotextblock2009210823_content">
+          {{ section.settings.description }}
+        </div>
+        <a href="{{ section.settings.btn_url }}" class="videotextblock2009210823_btn desk_btn">
+          <span>J{{ section.settings.btn_label }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const video = document.querySelector('#shopify-section-{{ section.id }} #videotextblock2009210823 .videotextblock2009210823_video_inner');
+  video.addEventListener('click', function(e) {
+      video.querySelector('.videotextblock2009210823_video_play').style.display = 'none';
+      video.querySelector('video').play();
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Video Text Block",
+  "settings": [
+    {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur du fond de la section",
+    "default": "#fff"
+  },
+ {
+    "type": "color",
+    "id": "btn_bg_color",
+    "label": "Couleur btn fond",
+    "default": "#ff4444"
+  },
+    {
+    "type": "color",
+    "id": "btn_text_color",
+    "label": "Couleur btn texte",
+    "default": "#fff"
+  },
+    {
+        "type": "video",
+        "id": "video",
+        "label": "Video"
+      },
+    {
+        "type": "image_picker",
+        "id": "poster",
+        "label": "poster"
+      },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nous contacter !"
+    },
+
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description ",
+      "default": "➔ Je me <b>fixe une durée</b> pour me motiver&nbsp;!"
+    },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Couleur de texte",
+    "default": "#000"
+  },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Btn URL"
+    },
+
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Btn Label ",
+      "default": "Je me lance"
+    },
+    {
+  "type": "range",
+  "id": "desktop_top_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Desktop Top Spacing",
+  "default": 40
+},
+{
+  "type": "range",
+  "id": "desktop_bottom_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Desktop Bottom Spacing",
+  "default": 40
+},
+{
+  "type": "range",
+  "id": "desktop_left_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Desktop Left Spacing",
+  "default": 40
+},
+{
+  "type": "range",
+  "id": "desktop_right_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Desktop Right Spacing",
+  "default": 40
+},
+{
+  "type": "range",
+  "id": "mobile_top_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Mobile Top Spacing",
+  "default": 20
+},
+{
+  "type": "range",
+  "id": "mobile_bottom_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Mobile Bottom Spacing",
+  "default": 20
+},
+{
+  "type": "range",
+  "id": "mobile_left_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Mobile Left Spacing",
+  "default": 20
+},
+{
+  "type": "range",
+  "id": "mobile_right_spacing",
+  "min": 0,
+  "max": 200,
+  "step": 5,
+  "unit": "px",
+  "label": "Mobile Right Spacing",
+  "default": 20
+},
+{
+  "type": "checkbox",
+  "id": "full_with",
+  "label": "Full Width",
+  "default": false
+},
+{
+  "type": "range",
+  "id": "max_width",
+  "min": 500,
+  "max": 2000,
+  "step": 100,
+  "unit": "px",
+  "label": "Max Width",
+  "default": 1400
+}
+  ],
+"presets": [
+  {
+    "name": "Video Text Block"
+  }
+]
+}
+{% endschema %}

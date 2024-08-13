@@ -1,0 +1,81 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  #shopify-section-{{ section.id }} #specs230511 {
+      display: flex;
+      flex-direction: row;
+      text-transform: uppercase;
+      font-family: Montserrat;
+      background-color: {{ section.settings.bg_color }} !important;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #specs230511  .spec{
+      width: 100%;
+      padding: 1.6rem 0;
+      max-width: 1000px;
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} #specs230511  .spec p {
+    color: {{ section.settings.text_color }} !important;
+  }
+
+  @media screen and (max-width: 768px){
+      #shopify-section-{{ section.id }} #specs230511 {
+          flex-direction: column;
+      }
+
+      #shopify-section-{{ section.id }} #specs230511  .spec{
+          padding: .56rem 0;
+      }
+  }
+</style>
+
+<div id="specs230511">
+  <div class="spec box1">
+    <p>
+      {{ section.settings.text_1 }}
+    </p>
+  </div>
+  <div class="spec box2">
+    <p>
+      {{ section.settings.text_2 }}
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Simple Block 2",
+  "settings": [
+    {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur fond",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Couleur text",
+    "default": "#000"
+  },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Texte 1"
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "Texte 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Simple Block 2"
+    }
+  ]
+}
+{% endschema %}

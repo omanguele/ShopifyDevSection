@@ -1,0 +1,1259 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+#custdecosection210323 {
+    font-family: 'Poppins';
+    width: 100%;
+    height: 100%;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }} !important;
+    position: relative;
+    padding: 40px 20px;
+}
+
+#custdecosection210323 .container {
+    max-width: 1000px;
+    max-height: 80vh;
+    min-height: 80vh;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#custdecosection210323 .container .step {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: all 500ms;
+}
+
+#custdecosection210323  .container .step.active {
+    transform: translateX(0);
+    transition: all 500ms;
+}
+
+#custdecosection210323  .container .step.active.finish {
+    transform: translateX(-100%);
+    transition: all 500ms;
+}
+
+#custdecosection210323  .step.complete > .container_content  .step_footer .next_btn {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#custdecosection210323  .container .step .container_back_btn {
+    padding-right: 30px;
+}
+
+#custdecosection210323  .step .container_back_btn .back_btn {
+    background-color: #fff;
+    border: 1px solid {{ section.settings.highlight_color }};
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: {{ section.settings.highlight_color }};
+    cursor: pointer;
+}
+
+#custdecosection210323  .step .container_back_btn .back_btn svg {
+    width: 25px;
+    height: 25px;
+}
+
+#custdecosection210323  .container_content {
+    flex-grow: 1;
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+#custdecosection210323  .step_footer {
+    background-color: linear-gradient(transparent, #fff);;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#custdecosection210323  .step_footer .next_btn {
+    background-color: {{ section.settings.highlight_color }};
+    border: none;
+    color: #fff;
+    padding: 15px;
+    min-width: 300px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: default;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#custdecosection210323  .step_footer .next_btn span {
+    display: block;
+}
+
+#custdecosection210323  .step_footer .next_btn span.price{
+    margin: 0 10px;
+}
+
+#custdecosection210323  .step_footer .next_btn svg {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+}
+
+#custdecosection210323 .container_content .step_header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+}
+
+#custdecosection210323 .container_content .step_header .step_header_line {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: 1px;
+    background-color: {{ section.settings.highlight_color }};
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#custdecosection210323 .container_content .step_header .step_header_item {
+    background-color: #fff;
+    border: 1px solid {{ section.settings.highlight_color }};
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: {{ section.settings.highlight_color }};
+    font-weight: 900;
+    font-size: 18px;
+    z-index: 10;
+    text-align: center;
+    
+}
+
+#custdecosection210323 #step2_1_yes {
+    width: 100%;
+}
+
+#custdecosection210323 .container_content .step_header .step_header_item.active {
+    background-color: {{ section.settings.highlight_color }};
+    color: #fff;
+}
+
+#custdecosection210323 .step_title {
+    
+    text-align: center;
+    margin-top: 30px;
+    font-size: 38px;
+    text-transform: uppercase;
+    word-break: break-word;
+    line-height: 1;
+    color: #35373c;
+    font-weight: 800;
+    letter-spacing: 2px;
+    width: 100%;
+}
+
+#custdecosection210323 .hide {
+    display: none !important;
+}
+
+#custdecosection210323 .container_step_question {
+    margin-top: 40px;
+    padding-bottom: 80px;
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#custdecosection210323 .container_step_question .question {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+}
+
+#custdecosection210323 .container_step_question .question label {
+    display: block;
+    font-size: 22px;
+    color: #35373c;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    word-break: break-word;
+    margin-bottom: 20px;
+    
+}
+
+#custdecosection210323 .container_step_question .question input {
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd8d8;
+    font-size: 18px;
+    outline: none;
+}
+
+#custdecosection210323 p.desc {
+    
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#custdecosection210323 .container_step_question .question input[type=text]{
+    width: 60%;
+}
+
+#custdecosection210323 img {
+    max-width: 100%;
+    display: block;
+}
+
+#custdecosection210323 #step3_3_no {
+    width: 100%;
+    flex-direction: column;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#custdecosection210323 .container_image_answer {
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#custdecosection210323 .container_image_answer .image_answer {
+    max-width: 20%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#custdecosection210323 .container_image_answer .image_answer img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#custdecosection210323 .container_image_answer .image_answer label {
+    margin: 0;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#custdecosection210323 .container_image_answer input[type=checkbox] {
+    display: none;
+}
+
+#custdecosection210323 .container_image_answer input[type=checkbox]:checked + label {
+    border: 1px solid {{ section.settings.highlight_color }};
+}
+
+#custdecosection210323 #step3_3_yes {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#custdecosection210323 #step3_3_yes textarea {
+    resize: none;
+    width: 60%;
+    height: 300px;
+    border-radius: 20px;
+    border: 1px solid #ddd8d8;
+    outline: none;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#custdecosection210323 .container_sponsor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#custdecosection210323 .add_sponsor {
+    margin-top: 20px;
+    padding: 15px;
+    min-width: 150px;
+    font-size: 18px;
+    background-color: #fff;
+    border: 1px solid {{ section.settings.highlight_color }};
+    color: {{ section.settings.highlight_color }};
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#custdecosection210323 .container_sponsor .sponsor_item {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#custdecosection210323 .container_sponsor .sponsor_item input[type=text] {
+    width: 100%;
+    margin-right: 20px;
+}
+
+#custdecosection210323 .container_sponsor .sponsor_item:first-child input[type=text] {
+    margin-right: 0px;
+}
+
+#custdecosection210323 .container_sponsor .sponsor_item .remove_sponsor {
+    cursor: pointer;
+}
+
+#custdecosection210323 .container_sponsor .sponsor_item .remove_sponsor svg {
+    width: 30px;
+    height: 30px;
+    color: {{ section.settings.highlight_color }};
+}
+
+#custdecosection210323 .cust_radio_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#custdecosection210323 .cust_radio_container input[type=radio] {
+    display: none;
+}
+
+#custdecosection210323 .cust_radio_container input[type=radio]:checked + label {
+    border: 1px solid {{ section.settings.highlight_color }};
+    color: {{ section.settings.highlight_color }};
+}
+
+#custdecosection210323 .cust_radio_container input[type=radio]:checked  + label .cust_radio {
+    border-color: {{ section.settings.highlight_color }};
+}
+
+#custdecosection210323 .cust_radio_container input[type=radio]:checked  + label .cust_radio .inner_cust_radio {
+    display: block;
+}
+
+#custdecosection210323 .cust_radio_container label {
+    border: 1px solid #1A1A1A;
+    display: flex !important;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px !important;
+    margin-right: 20px;
+}
+
+#custdecosection210323 .cust_radio_container label span {
+    display: block;
+}
+
+#custdecosection210323 .cust_radio_container label .cust_radio {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 1px solid #1A1A1A;
+    margin-right: 10px;
+    margin-top: -2px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#custdecosection210323 .cust_radio_container label .cust_radio .inner_cust_radio {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: {{ section.settings.highlight_color }};
+    display: none;
+}
+
+@media only screen and (max-width: 780px) {
+    #custdecosection210323 .container_step_question .question {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    #custdecosection210323 .container_content .step_header {
+        padding: 0 10px;
+    }
+
+    #custdecosection210323 .container_content .step_header .step_header_line {
+        width: calc(100% - 20px);
+    }
+
+    #custdecosection210323 .container_image_answer .image_answer {
+        max-width: 40%;
+    }
+
+    #custdecosection210323 #step3_3_yes textarea {
+        width: 100%;
+        height: 200px;
+        padding: 15px;
+        font-size: 15px;
+    }
+
+    #custdecosection210323 .container_sponsor .sponsor_item {
+        width: 100%;
+    }
+    
+    #custdecosection210323 .container_sponsor .sponsor_item input[type=text] {
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    #custdecosection210323 .container_sponsor .sponsor_item .remove_sponsor svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    #custdecosection210323 .add_sponsor {
+        margin-top: 10px;
+        padding: 10px;
+        min-width: 150px;
+        font-size: 12px;
+    }
+
+    #custdecosection210323 .cust_radio_container label {
+        padding: 10px;
+        font-size: 12px !important;
+        margin-right: 10px;
+    }
+
+    #custdecosection210323 .container .step .container_back_btn {
+        padding: 0;
+        position: absolute;
+        bottom: 15px;
+        width: auto;
+        height: auto;
+        z-index: 10;
+    }
+
+    #custdecosection210323 .step .container_back_btn .back_btn {
+        height: 30px;
+        width: 30px;
+    }
+
+    #custdecosection210323 .step .container_back_btn .back_btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    #custdecosection210323 .step_footer .next_btn {
+        padding: 10px;
+        min-width: 200px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    #custdecosection210323 .step_footer {
+        height: 60px;
+    }
+
+    #custdecosection210323 .step_title {
+        font-size: 28px;
+    }
+
+    #custdecosection210323 .container_content .step_header .step_header_item {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        font-size: 16px;
+    }
+
+    #custdecosection210323 .container_step_question .question label {
+        display: block;
+        font-size: 16px;
+        color: #35373c;
+        font-weight: 600;
+        font-style: italic;
+        text-align: center;
+        word-break: break-word;
+        margin-bottom: 10px;
+        
+    }
+    
+    #custdecosection210323 .container_step_question .question input {
+        font-size: 18px;
+    }
+    
+    #custdecosection210323 p.desc {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    #custdecosection210323 .container_step_question .question input[type=text]{
+        width: 100%;
+    }
+
+    #custdecosection210323 .container_step_question .question input {
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+</style>
+
+<section id="custdecosection210323">
+    <div class="container">
+        <!-- Step 1 -->
+        <div class="step active" id="step1">
+            <div class="container_back_btn">
+                <button type="button" class="back_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+            </div>
+        
+            <div class="container_content">
+                <div class="step_header">
+                    <span class="step_header_line"></span>
+                    <div class="step_header_item active"><span>1</span></div>
+                    <div class="step_header_item"><span>2</span></div>
+                    <div class="step_header_item"><span>3</span></div>
+                    <div class="step_header_item"><span>4</span></div>
+                </div>
+
+                <div class="step_title">{{ section.settings.step_1_title }}</div>
+
+                <div class="container_step_question">
+                    <div class="question">
+                        <label for="step1_1">Quel est le modele de votre moto ?</label>
+                        <input type="text" id="step1_1" name="step1_1" placeholder="Exemple: Rieju MRT Pro">
+                    </div>
+
+                    <div class="question">
+                        <label for="step1_2">Quel est l'année de votre moto ?</label>
+                        <input type="text" id="step1_2" name="step1_2" placeholder="Exemple: 2020">
+                    </div>
+                </div>
+
+
+
+                <div class="step_footer">
+                    <button class="next_btn" type="button">
+                        <span>Continuer</span>
+                        <span class="price">| 0€</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                              </svg>                                  
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+            <div class="container_back_btn">
+                <button type="button" class="back_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+            </div>
+        
+            <div class="container_content">
+                <div class="step_header">
+                    <span class="step_header_line"></span>
+                    <div class="step_header_item"><span>1</span></div>
+                    <div class="step_header_item active"><span>2</span></div>
+                    <div class="step_header_item"><span>3</span></div>
+                    <div class="step_header_item"><span>4</span></div>
+                </div>
+
+                <div class="step_title">{{ section.settings.step_2_title }}</div>
+
+                <div class="container_step_question">
+                    <div class="question">
+                        <label for="step2_1">Avez-vous changer votre plaque phare ou garde boue ?</label>
+                        <div class="cust_radio_container">
+                            <input type="radio" value="{{ section.settings.step_2_product_1.id }}" data-price="{{ section.settings.step_2_product_1.price | money_without_currency }}" name="step2_1" id="step2_1_1"> 
+                            <label for="step2_1_1"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span>Plaque Phare (+{{ section.settings.step_2_product_1.price | money }})</span>
+                            </label>
+
+                            <input type="radio" value="{{ section.settings.step_2_product_2.id }}" data-price="{{ section.settings.step_2_product_2.price | money_without_currency }}" name="step2_1" id="step2_1_2"> 
+                            <label for="step2_1_2"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span>Garde Boue (+{{ section.settings.step_2_product_2.price | money }})</span>
+                            </label>
+
+                            <input type="radio" value="{{ section.settings.step_2_product_3.id }}" data-price="{{ section.settings.step_2_product_3.price | money_without_currency }}"  name="step2_1" id="step2_1_3"> 
+                            <label for="step2_1_3"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span>Les deux (+{{ section.settings.step_2_product_3.price | money }})</span>
+                            </label>
+
+                            <input type="radio" value="no" data-price="0"  name="step2_1" id="step2_1_4"> 
+                            <label for="step2_1_4"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span>NON</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="step2_1_plaque_phare"  class="question hide">
+                        <label for="step2_2">Modèle et année de votre plaque phare</label>
+                        <input type="text" id="step2_2" name="step2_2" placeholder="Exemple: XXXX">
+                    </div>
+
+                    <div id="step2_1_garde_boue" class="question hide">
+                        <label for="step2_3">Modèle et année de votre garde boue</label>
+                        <input type="text" id="step2_3" name="step2_3" placeholder="Exemple: XXXXX">
+                    </div>
+                    
+                </div>
+
+                <div class="step_footer">
+                    <button class="next_btn" type="button">
+                        <span>Continuer</span>
+                        <span class="price">| 0€</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                              </svg>                                  
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+            <div class="container_back_btn">
+                <button type="button" class="back_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+            </div>
+        
+            <div class="container_content">
+                <div class="step_header">
+                    <span class="step_header_line"></span>
+                    <div class="step_header_item"><span>1</span></div>
+                    <div class="step_header_item"><span>2</span></div>
+                    <div class="step_header_item active"><span>3</span></div>
+                    <div class="step_header_item"><span>4</span></div>
+                </div>
+
+                <div class="step_title">{{ section.settings.step_3_title }}</div>
+
+                <div class="container_step_question">
+
+                    <div class="question">
+                        <label for="step3_1">Prénom/Pseudo</label>
+                        <input type="text" id="step3_1" name="step3_1" placeholder="Exemple: TixSud">
+                    </div>
+
+                    <div class="question">
+                        <label for="step3_2">Numéro de course </label>
+                        <input type="text" id="step1_1" name="step1_1" placeholder="Exemple: 266">
+                    </div>
+
+                    <div class="question" id="step3_3">
+                        <label for="step3_3">Avez-vous une idée précise du style de kit déco que vous souhaitez?</label>
+                        <div class="cust_radio_container">
+                            <input type="radio" value="yes" name="step3_3" id="step3_3_1" checked> 
+                            <label for="step3_3_1"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span >OUI</span>
+                            </label>
+
+                            <input type="radio" value="no" name="step3_3" id="step3_3_2"> 
+                            <label for="step3_3_2"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span >NON</span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div id="step3_3_no" class="hide">
+                        <p class="desc">Selectionnez 3 images</p>
+                        <div class="container_image_answer">
+                          {% for block in section.blocks %}
+                              <div class="image_answer">
+                                  <input type="checkbox" value="{{ block.settings.text }}" id="step3_3_yes_{{ forloop.index }}">
+                                  <label for="step3_3_yes_{{ forloop.index }}">
+                                      <img src="{{ block.settings.image | image_url:"medium"  }}" alt="{{ block.settings.text }}">
+                                  </label>
+                              </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <div id="step3_3_yes" class="">
+                        <textarea name="" placeholder="Exemple: Je veux des têtes d'aliens, je veux que mon nom instagram @xxx soit inscrit sur la plaque de phare..."></textarea>
+                    </div>
+
+                    <div class="question">
+                        <label for="step3_4">Sponsor que vous voulez voir apparaitre sur le kit déco </label>
+                        <p class="desc">10 sponsors maximun</p>
+                        <div class="container_sponsor">
+                            <div class="sponsor_item">
+                                <input type="text" id="sponsor1" name="sponsor1" placeholder="">
+                            </div>  
+                        </div>
+                        <button type="button" class="add_sponsor">Ajouter un sponsor</button>
+                        
+                    </div>
+
+                </div>
+
+                <div class="step_footer">
+                    <button class="next_btn" type="button">
+                        <span>Continuer</span>
+                        <span class="price">| 0€</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                              </svg>                                  
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step" id="step4">
+            <div class="container_back_btn">
+                <button type="button" class="back_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+            </div>
+        
+            <div class="container_content">
+                <div class="step_header">
+                    <span class="step_header_line"></span>
+                    <div class="step_header_item"><span>1</span></div>
+                    <div class="step_header_item "><span>2</span></div>
+                    <div class="step_header_item"><span>3</span></div>
+                    <div class="step_header_item active"><span>4</span></div>
+                </div>
+
+                <div class="step_title">{{ section.settings.step_4_title }}</div>
+
+                <div class="container_step_question">
+                    <div class="question">
+                        <label for="step4_1">Matière de votre kit déco</label>
+                        <div class="cust_radio_container">
+
+                            <input type="radio" value="Classique" data-price="0" name="step4_1" id="step4_1_1">
+                            <label for="step4_1_1"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span >Classique</span>
+                            </label>
+
+                            {% for product in section.settings.step_4_products_1 %}
+                                <input type="radio" value="{{ product.id }}" data-price="{{ product.price | money_without_currency }}" name="step4_1" id="step4_1_{{ forloop.index | plus: 1 }}">
+                                <label for="step4_1_{{ forloop.index | plus: 1 }}"> 
+                                    <span class="cust_radio">
+                                        <span class="inner_cust_radio"></span>
+                                    </span>
+                                    <span>{{ product.title | escape }} (+{{ product.price | money }})</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label for="step4_2">Finition du kit déco</label>
+                        <div class="cust_radio_container">
+
+                            <input type="radio" value="Brillant" data-price="0" name="step4_2" id="step4_2_1">
+                            <label for="step4_2_1"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span >Brillant</span>
+                            </label>
+
+                            <input type="radio" value="Matte" data-price="0" name="step4_2" id="step4_2_2">
+                            <label for="step4_2_2"> 
+                                <span class="cust_radio">
+                                    <span class="inner_cust_radio"></span>
+                                </span>
+                                <span >Matte</span>
+                            </label>
+
+                            {% for product in section.settings.step_4_products_2 %}
+                                <input type="radio" value="{{ product.id }}" data-price="{{ product.price | money_without_currency }}" name="step4_2" id="step4_2_{{ forloop.index | plus: 2 }}">
+                                <label for="step4_2_{{ forloop.index | plus: 2 }}"> 
+                                    <span class="cust_radio">
+                                        <span class="inner_cust_radio"></span>
+                                    </span>
+                                    <span>{{ product.title | escape }} (+{{ product.price | money }})</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="step_footer">
+                    <button class="next_btn" type="button">
+                        <span>Terminer</span>
+                        <span class="price">| 0€</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  const steps = Array.from(document.querySelectorAll('#custdecosection210323 .step'));
+let currentStep = 0;
+const INIT_PRICE = 100;
+let carrenagePrice = 0;
+let kitMaterialPrice = 0;
+let kitFinishPrice = 0;
+
+// Set Navigation 
+steps.forEach((step, index) => {
+    step.querySelector('.next_btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        if((currentStep < steps.length - 1) && step.classList.contains('complete')){
+            currentStep = index + 1;
+            steps[index].classList.add('finish');
+            steps[currentStep].classList.add('active');
+            setPrice();
+        }
+    });
+
+    step.querySelector('.back_btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        if(currentStep > 0){
+            currentStep = index - 1;
+            steps[index].classList.remove('active');
+            steps[currentStep].classList.remove('finish');
+            setPrice();
+        }
+    });
+});
+
+function setPrice() {
+    steps[currentStep].querySelector('.step_footer .next_btn .price').innerHTML = `| ${(INIT_PRICE + carrenagePrice + kitMaterialPrice + kitFinishPrice).toFixed(2)} €`; 
+}
+
+// Verification for step 1
+const step1Input = Array.from(steps[0].querySelectorAll('input[type="text"]'));
+step1Input.forEach((input, index) => {
+    input.addEventListener('input', function(e) {
+        if(step1Input[0].value != "" && step1Input[1].value != ""){
+            steps[0].classList.add('complete');
+        }else{
+            steps[0].classList.remove('complete');
+        }
+    });
+});
+
+// Verification for step 2
+const step2Input = Array.from(steps[1].querySelectorAll('input[type="radio"]'));
+const step2ContainerPhare = steps[1].querySelector('#step2_1_plaque_phare');
+const step2ContainerGarde = steps[1].querySelector('#step2_1_garde_boue');
+const textinputsStep2 = Array.from(steps[1].querySelectorAll('input[type="text"]'));
+
+step2Input.forEach((input, index) => {
+    input.addEventListener('click', function(e) {
+        carrenagePrice = parseFloat(e.target.getAttribute('data-price'));
+        if(e.target.checked && e.target.id == 'step2_1_4'){
+            step2ContainerPhare.classList.add('hide');
+            step2ContainerGarde.classList.add('hide');
+        }else if(e.target.id == 'step2_1_1'){
+            step2ContainerGarde.classList.add('hide');
+            step2ContainerPhare.classList.remove('hide');
+        }else if(e.target.id == 'step2_1_2'){
+            step2ContainerPhare.classList.add('hide');
+            step2ContainerGarde.classList.remove('hide'); 
+        }else{
+            step2ContainerPhare.classList.remove('hide');
+            step2ContainerGarde.classList.remove('hide');
+        }
+        verificationStep2();
+        setPrice();
+    });
+});
+
+textinputsStep2.forEach((input, index) => {
+    input.addEventListener('input', function(e) {
+        verificationStep2();
+    });
+});
+
+function verificationStep2() {
+    let selectItem = steps[1].querySelector('input[type="radio"]:checked');
+    if(selectItem.id === 'step2_1_3'){
+        if(textinputsStep2[0].value != "" && textinputsStep2[1].value != ""){
+            steps[1].classList.add('complete');
+        }else{
+            steps[1].classList.remove('complete');
+        }
+        
+    }else if(selectItem.id === 'step2_1_1') {
+        if(textinputsStep2[0].value != "" ){
+            steps[1].classList.add('complete');
+        }else{
+            steps[1].classList.remove('complete');
+        }
+    }else if(selectItem.id === 'step2_1_2') {
+        if(textinputsStep2[1].value != "" ){
+            steps[1].classList.add('complete');
+        }else{
+            steps[1].classList.remove('complete');
+        }
+    }else {
+        steps[1].classList.add('complete');
+    }
+}
+
+
+
+// Verification for step 4
+const questionStep4 = Array.from(steps[3].querySelectorAll('.question'));
+questionStep4.forEach((question, index) => {
+    question.querySelectorAll('input[type="radio"]').forEach((input, index) => {
+        input.addEventListener('click', function(e) {
+            if(e.target.name == 'step4_1'){
+                kitMaterialPrice = parseFloat(e.target.getAttribute('data-price'));
+            }else{
+                kitFinishPrice = parseFloat(e.target.getAttribute('data-price'));
+            }
+
+            let quest1IsChecked = questionStep4[0].querySelector('input[type="radio"]:checked');
+            let quest2IsChecked = questionStep4[1].querySelector('input[type="radio"]:checked');
+            if(quest2IsChecked && quest1IsChecked ){
+                steps[3].classList.add('complete');
+            }else{
+                steps[3].classList.remove('complete');
+            }
+
+            setPrice();
+        });
+    });
+})
+
+
+// Verification for step 3
+const textInputStep3 = Array.from(steps[2].querySelectorAll('input[type="text"]'));
+const question3Inputs = Array.from(steps[2].querySelectorAll('#step3_3 input[type="radio"]'));
+const Quest3Yes = steps[2].querySelector('#step3_3_yes');
+const Quest3No = steps[2].querySelector('#step3_3_no');
+const inputQuest3No = Array.from(Quest3No.querySelectorAll('input[type="checkbox"]'));
+const containerSponsor = steps[2].querySelector('.container_sponsor');
+const btnAddSponsor = steps[2].querySelector('.add_sponsor');
+let isKnowStyle = true;
+const maxSponsor = 10;
+let sponsors = [""];
+
+textInputStep3.forEach((input, index) => {
+    input.addEventListener('input', function(e) {
+        verificationStep3();
+    });
+});
+
+Quest3Yes.children[0].addEventListener('input', function(e){
+    verificationStep3();
+});
+
+question3Inputs.forEach((input, index) => {
+    input.addEventListener('click', function(e) {
+        if(e.target.checked && e.target.value == 'no'){
+            Quest3Yes.classList.add('hide');
+            Quest3No.classList.remove('hide');
+            isKnowStyle = false;
+            verificationStep3();
+        }else if(e.target.value == 'yes'){
+            Quest3No.classList.add('hide');
+            Quest3Yes.classList.remove('hide');
+            isKnowStyle = true;
+            verificationStep3();
+        }
+    });
+});
+
+inputQuest3No.forEach((input, index) => {
+    input.addEventListener('change', function(e) {
+        let checkedLenght = Quest3No.querySelectorAll('input[type="checkbox"]:checked').length;
+        if(checkedLenght > 3){
+            e.target.checked = false;
+        }else if(verifySponsors() && textInputStep3[0].value != "" && textInputStep3[1].value != "" && checkedLenght == 3){
+            steps[2].classList.add('complete');
+        }else{
+            steps[2].classList.remove('complete');
+        }
+
+    });
+});
+
+btnAddSponsor.addEventListener('click', function(e){
+    if(sponsors.length < maxSponsor){
+        sponsors.push('');
+        renderSponsors();
+        setListnerSponsor();
+        verificationStep3();
+    }
+});
+
+function setListnerSponsor () {
+    let sponsorInputs = containerSponsor.querySelectorAll('input');
+    sponsorInputs.forEach((input, index) => {
+        input.addEventListener('input', function(e) {
+            sponsors[index] = e.target.value;
+            verificationStep3();
+        });
+    });
+
+    let removeBtns = containerSponsor.querySelectorAll('.remove_sponsor');
+    removeBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            sponsors.splice(index + 1, 1);
+            renderSponsors();
+            setListnerSponsor();
+            verificationStep3();
+        });
+    });
+}
+
+function renderSponsors() {
+    let html = ''
+        sponsors.forEach((sponsor, index) => {
+            html += `
+                    <div class="sponsor_item">
+                    <input type="text" id="sponsor${index+1}" name="sponsor${index+1}" value="${sponsor}" placeholder="">
+                `;
+
+            html += index > 0 ? `
+                    <div class="remove_sponsor">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                ` : ``;
+            
+            html += `</div>`;
+        });
+    containerSponsor.innerHTML = html;
+}
+
+function verifySponsors() {
+    let isComplete = true;
+    sponsors.forEach((sponsor, index) => {
+        if(sponsor == ""){
+            isComplete = false;
+            return isComplete;
+        }
+    });
+    return isComplete;
+}
+
+function verificationStep3 () {
+    if(isKnowStyle){
+        if(verifySponsors() && textInputStep3[0].value != "" && textInputStep3[1].value != "" && Quest3Yes.children[0].value != ""){
+            steps[2].classList.add('complete');
+        }else{
+            steps[2].classList.remove('complete');
+        }
+    }else{
+        let checkedLenght = Quest3No.querySelectorAll('input[type="checkbox"]:checked').length;
+        if(verifySponsors() && textInputStep3[0].value != "" && textInputStep3[1].value != "" && checkedLenght == 3){
+            steps[2].classList.add('complete');
+        }else{
+            steps[2].classList.remove('complete');
+        }
+    }
+}
+
+setPrice();
+setListnerSponsor();
+</script>
+
+{% schema %}
+  {
+    "name": "Cust Deco Section",
+    "blocks": [
+       {
+          "type": "kit_style",
+          "name": "Style de Kit",
+          "limit": 10,
+          "settings": 
+           [
+             {
+                "type":"image_picker",
+                "id":"image",
+                "label":"Image"
+              },
+              {
+                "type":"text",
+                "id":"text",
+                "label":"Texte"
+              }
+           ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Parametres de couleurs"
+      },
+      {
+          "type":"color",
+          "id":"bg_color",
+          "label":"Couleur de fond",
+          "default":"#FFF"
+      },
+      {
+          "type":"color",
+          "id":"text_color",
+          "label":"Couleur de texte",
+          "default":"#1A1A1A"
+      },
+      {
+          "type":"color",
+          "id":"highlight_color",
+          "label":"Couleur mise en avant",
+          "default":"#F5A025"
+      },
+      {
+        "type": "header",
+        "content": "Parametres étape 1"
+      },
+      {
+          "type":"text",
+          "id":"step_1_title",
+          "label":"Titre étape 1",
+          "default":"Votre Moto"
+      },
+      {
+        "type": "header",
+        "content": "Parametres étape 2"
+      },
+      {
+          "type":"text",
+          "id":"step_2_title",
+          "label":"Titre étape 2",
+          "default":"Carrénage"
+      },
+      {
+          "type":"product",
+          "id":"step_2_product_1",
+          "label":"Produit 1 associé (Plaque phare)"
+      },
+      {
+          "type":"product",
+          "id":"step_2_product_2",
+          "label":"Produit 2 associé (Garde boue)"
+      },
+      {
+          "type":"product",
+          "id":"step_2_product_3",
+          "label":"Produit 3 associé (Les deux)"
+      },
+      {
+        "type": "header",
+        "content": "Parametres étape 3"
+      },
+      {
+          "type":"text",
+          "id":"step_3_title",
+          "label":"Titre étape 3",
+          "default":"Personnalisation"
+      },
+      {
+        "type": "header",
+        "content": "Parametres étape 4"
+      },
+      {
+          "type":"text",
+          "id":"step_4_title",
+          "label":"Titre étape 4",
+          "default":"Options et finitions"
+      },
+      {
+          "type":"product_list",
+          "id":"step_4_products_1",
+          "label":"Produits associé question 1 (Matière Kit)"
+      },
+      {
+          "type":"product_list",
+          "id":"step_4_products_2",
+          "label":"Produits associé question 2 (Finition Kit)"
+      }
+    ],
+    "presets": [
+      {
+          "name": "Cust Deco Section"
+      }
+    ]
+  }
+{% endschema %}

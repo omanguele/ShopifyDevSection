@@ -1,0 +1,764 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper {
+        width:100%;
+        margin-top:0px !important;
+        padding-top:0px !important;
+        padding-bottom:0px !important;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .block {
+        max-width: 1200px;
+        margin: 80px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    @media (max-width: 991.98px){
+        #shopify-section-{{ section.id }} #testimonial_section_070123 .block {
+            margin: 30px 0;
+        }
+    }
+    @media (max-width: 991.98px){
+        #shopify-section-{{ section.id }} #testimonial_section_070123 .block.space-sides{
+            padding: 0 20px;
+        }
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .block__title {
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    @media (max-width: 991.98px){
+        #shopify-section-{{ section.id }} #testimonial_section_070123 .block__title {
+            padding: 0 50px;
+        }
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .block__link {
+        font-size: 14px;
+        color: {{ section.settings.btn-color }};
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        background: none;
+        border: 0;
+        position: absolute;
+        top: 10px;
+        right: 0;
+    }
+    @media (max-width: 991.98px){
+        #shopify-section-{{ section.id }} #testimonial_section_070123 .block__link {
+            position: relative;
+            top: 0;
+            margin: 12px 0 20px;
+        }
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .block__link:before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        box-sizing: border-box;
+        background-color: {{ section.settings.btn-border-color }};
+        transform-origin: left center;
+        transition: transform cubic-bezier(.785,.135,.15,.86) .4s;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .block__subtitle {
+        margin-bottom: 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews__stars {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews .block__subtitle {
+        margin-bottom: 48px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews .star {
+        height: 32px;
+        width: 32px;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath fill='none' d='M0 0h32v32H0z'/%3E%3Cpath d='M15.846 4.001l3.97 8.043 8.876 1.29-6.423 6.261 1.516 8.84-7.939-4.174-7.939 4.174 1.516-8.84L3 13.334l8.876-1.29z' fill='%23fddd3e'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 p {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews__stars p {
+        margin: 0 0 0 8px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 177px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review__title {
+        font-size: 13px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color:{{ section.settings.title-color }};
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review__content{
+      color:{{ section.settings.text-color }};
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review__author {
+        display: flex;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review__pic {
+        flex-shrink: 0;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        border-radius: 50%;
+        border: solid 1px {{ section.settings.border-card-color }};
+        margin-right: 10px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review svg {
+        width: 20px;
+        height: 20px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review__user {
+        align-self: center;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-review h5 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        margin-bottom: 0;
+        border-bottom: solid 1px {{ section.settings.border-author-color }};
+        color:{{ section.settings.author-color }};
+        font-weight: 700;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews__certify {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews__certify span {
+        font-size: 16px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews__certify img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-left: 15px;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-prev, 
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-next {
+        position: absolute;
+        top: 50%;
+        width: calc(44px / 44 * 27);
+        height: 44px;
+        margin-top: calc(0px - 44px / 2);
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: {{ section.settings.icon-color }};
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-next, 
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background: {{ section.settings.bg-icon-color }};
+        transition: transform cubic-bezier(.785,.135,.15,.86) .4s;
+        overflow: hidden;
+    }
+    /*#shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-next:before, 
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-prev:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform: scaleX(1);
+        transform-origin: left center;
+        transition: transform cubic-bezier(.785,.135,.15,.86) .4s;
+        border-radius: 100%;
+    }*/
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-prev:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f060";
+      font-size: 15px;
+      color: {{ section.settings.icon-color }};
+      font-style: normal;
+      display: inline-block
+      vertical-align: middle;
+      font-weight: 900;
+      transition: color cubic-bezier(.785,.135,.15,.86) .4s;
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition: transform cubic-bezier(.785,.135,.15,.86) .4s;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .swiper-button-next:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f061";
+      font-size: 15px;
+      color: {{ section.settings.icon-color }};
+      font-style: normal;
+      display: inline-block
+      vertical-align: middle;
+      font-weight: 900;
+      transition: color cubic-bezier(.785,.135,.15,.86) .4s;
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition: transform cubic-bezier(.785,.135,.15,.86) .4s;
+    }
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .home-reviews .swiper-slide {
+        border: solid 1px {{ section.settings.border-card-color }};
+        padding: 24px 24px 28px;
+    }
+  
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .btn-add-notice {
+      border: none;
+      background: transparent;
+      font-size: 15px;
+      display: block;
+      /*width: 100px;*/
+      text-decoration: underline;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 .ml-5 {
+      margin-left: 10px;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} {
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+      background: {{ section.settings.bg-form }};
+      height:0;
+      visibility:hidden;
+      opacity: 0;
+      -webkit-transition:.5s ease;
+      -moz-transition:.5s ease;
+      -ms-transition:.5s ease;
+      -o-transition:.5s ease;
+      transition:.9s ease;
+      overflow: hidden;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }}.show {
+      height: 610px;
+      border: 1px solid black;
+      padding: 15px;
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} input,
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} textarea {
+      display: block;
+      outline: none;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} p {
+      font-size: 15px;
+      font-weight: 500;
+      font-style: normal;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-1,
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-2 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-3,
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-4 {
+      margin-bottom: 15px;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-5 {
+      width: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-5 .submit-button {
+      padding: 10px 15px;
+      border: none;
+      background: {{ section.settings.bg-btn-form }};
+      color: {{ section.settings.textcolor-btn-form }};
+      font-size: 15px;
+      font-weight: 700;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-1 div {
+      width: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-text,
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 15px;
+      border: 1px solid {{ section.settings.border-input }};
+      background: {{ section.settings.bg-input }};
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .form-items-textarea {
+      height: 250px;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .ctn-radio {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .ctn-radio .radio-item {
+      display: flex;
+      align-items: center;
+      margin: 0 5px;
+      padding: 5px;
+      border: 1px solid {{ section.settings.border-input-radio }};
+      cursor: pointer;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .ctn-radio .radio-item:hover {
+      background-color: {{ section.settings.bg-active-input-radio }};
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .ctn-radio .radio-item.active {
+      background-color: {{ section.settings.bg-active-input-radio }};
+      border: 1px solid black;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .ctn-radio .radio-item input {
+      border: 1px solid {{ section.settings.border-input }};
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    
+    #shopify-section-{{ section.id }} #testimonial_section_070123 #form-add-notice-{{ section.id }} .ctn-radio .radio-item label {
+      margin-top: 3px;
+      font-size: 13px;
+    }
+</style>
+<section id="testimonial_section_070123">
+    <div class="block space-sides home-reviews">
+        <h2 class="block__title">{{ section.settings.title }}</h2>
+        <a href="#" id="btn-add-notice" class="block__link">{{ section.settings.btn-label }}</a>
+        <div class="block__subtitle home-reviews__stars">
+          {% for i in (1..section.settings.star-number) %}
+            <i class="star"></i>
+          {% endfor %}
+            <p>{{ section.settings.star-avg }} / 5</p>
+        </div>
+
+        <div style="width:100%">
+          {%- assign form_id = 'form-add-notice-' | append: section.id  -%}
+          {%- form 'contact', id: form_id -%}
+            {%- if form.posted_successfully? -%}
+              <p class="note note--success">
+                {{ 'contact.form.post_success' | t }}
+              </p>
+            {%- endif -%}
+      
+            {{ form.errors | default_errors }}
+            <div class="form-items-1">
+              <div>
+                <label for="name">Nom</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="contact[Nom]"
+                  class="form-items-text"
+                  placeholder="Nom"
+                />
+              </div>
+              <div class="ml-5">
+                <label for="name">E-mail</label>
+                <input
+                  type="email"
+                  id="name"
+                  name="contact[email]"
+                  class="form-items-text"
+                  placeholder="E-mail"
+                />
+              </div>
+            </div>
+            <div class="form-items-2">
+              <p>Note /5</p>
+              <div class="ctn-radio">
+                <div class="radio-item active">
+                  <input
+                    type="radio"
+                    name="contact[Note]"
+                    value="1"
+                    id="notice-note-1"
+                    checked="true"
+                  />
+                  <label for="notice-note-1">1/5</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    name="contact[Note]"
+                    value="2"
+                    id="notice-note-2"
+                  />
+                  <label for="notice-note-2">2/5</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    name="contact[Note]"
+                    value="3"
+                    id="notice-note-3"
+                  />
+                  <label for="notice-note-3">3/5</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    name="contact[Note]"
+                    value="4"
+                    id="notice-note-4"
+                  />
+                  <label for="notice-note-4">4/5</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    name="contact[Note]"
+                    value="5"
+                    id="notice-note-5"
+                  />
+                  <label for="notice-note-5">5/5</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-items-3">
+              <label for="notice-title">Titre de l'avis</label>
+              <input
+                type="text"
+                name="contact[Titre]"
+                id="notice-title"
+                class="form-items-text"
+                placeholder="Titre de l'avis"
+              />
+            </div>
+            <div class="form-items-4">
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                name="contact[Message]"
+                placeholder="Message"
+                class="form-items-textarea"
+              ></textarea>
+            </div>
+            <div class="form-items-5">
+              <button type="submit" class="submit-button">Envoyer</button>
+            </div>
+          {% endform %}
+        </div>
+      
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    <div class="swiper-slide">
+                        <div class="home-review" bis_skin_checked="1">
+                            <div bis_skin_checked="1">
+                              <h4 class="home-review__title">{{ block.settings.title }}</h4>
+                              <div class="home-review__content">
+                                {{ block.settings.desc }}
+                              </div>
+                            </div>
+                            <div class="home-review__author" bis_skin_checked="1">
+                              <div class="home-review__pic" bis_skin_checked="1">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="43.92" height="32.354" viewBox="0 0 43.92 32.354">
+                                      <path fill="#abc7dc" d="M11.149 37.006C11.149 34.029 5 33.59 5 26.27a9.013 9.013 0 0 1 9.223-9.37c5.71.049 9.467 5.173 9.467 10.59 0 9.37-8.784 21.765-14.25 21.765-1.366 0-3.855-.976-3.855-2.635s5.564-4.539 5.564-9.614z" transform="translate(20.23 -16.9)"></path>
+                                      <path fill="#feefb1" d="M62.749 37.106c0-2.977-6.149-3.416-6.149-10.736A9.013 9.013 0 0 1 65.823 17c5.758 0 9.516 5.124 9.516 10.541 0 9.37-8.784 21.765-14.25 21.765-1.366 0-3.855-.976-3.855-2.635s5.515-4.49 5.515-9.565z" transform="translate(-56.6 -17)"></path>
+                                  </svg>
+                              </div>
+                              <div class="home-review__user" bis_skin_checked="1">
+                                  <h5>{{ block.settings.author }}</h5>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".swiper", {
+        freeMode: true,
+        loop: true,
+        breakpoints: {
+            300: {
+              slidesPerView: 1,
+              spaceBetween: 15,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+</script>
+<script>
+  var radio = document.getElementsByClassName("radio-item");
+
+  for (let i = 0; i < radio.length; i++) {
+    radio[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      for (let y = 0; y < radio.length; y++) {
+        if (radio[y] === radio[i]) {
+          radio[y].classList.add("active");
+          radio[y].children[0].checked = true;
+        } else {
+          radio[y].classList.remove("active");
+          radio[y].children[0].checked = false;
+        }
+      }
+    });
+  }
+
+  document
+    .getElementById("btn-add-notice")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("form-add-notice-{{ section.id }}").classList.toggle("show");
+    });
+</script>
+{% schema %}
+  {
+    "name": "Section Temoignages",
+    "blocks": [
+      {
+        "type": "temoignage",
+        "name": "Temoignage",
+        "settings": [
+            {
+              "type": "text",
+              "id": "author",
+              "label": "Auteur", 
+              "default":"John Doe"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre", 
+              "default":"Titre"
+            },
+            {
+              "type": "richtext",
+              "id": "desc",
+              "label": "Temoignage", 
+              "default":"<p>Lorem ipsum</p>"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      { "type": "header", "content": "Thème couleur" },
+      {
+        "type": "color",
+        "id": "btn-color",
+        "label": "Couleur du bouton", 
+        "default":"#001e3a"
+      },
+      {
+        "type": "color",
+        "id": "btn-border-color",
+        "label": "Couleur de bordure du bouton", 
+        "default":"#001e3a"
+      },
+      {
+        "type": "color",
+        "id": "border-card-color",
+        "label": "Couleur de bordure de carte", 
+        "default":"#f1f1f1"
+      },
+      {
+        "type": "color",
+        "id": "title-color",
+        "label": "Couleur de titre de la carte", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "text-color",
+        "label": "Couleur de texte de la carte", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "author-color",
+        "label": "Couleur de l'auteur", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "border-author-color",
+        "label": "Couleur de bordure de texte auteur", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "icon-color",
+        "label": "Couleur des icônes", 
+        "default":"#fff"
+      },
+      {
+        "type": "color",
+        "id": "bg-icon-color",
+        "label": "Couleur de fond des icônes", 
+        "default":"#001e3a"
+      },
+      { 
+        "type": "color", 
+        "id": "color_button", 
+        "label": "couleur bouton", 
+        "default":"#C23030" 
+      },
+      {
+        "type":"color",
+        "id":"bg-card",
+        "label":"Couleur de fond de la carte",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"bg-form",
+        "label":"Couleur de fond du formulaire",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"input-bg",
+        "label":"Couleur de fond du champ saisi",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"border-input-radio",
+        "label":"Couleur de bordure du champ au choix",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"bg-active-input-radio",
+        "label":"Couleur de fond du champ au choix",
+        "default":"#e4e4e4"
+      },
+      {
+        "type":"color",
+        "id":"border-input",
+        "label":"Couleur de bordure du champ de saisi",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"bg-btn-form",
+        "label":"Couleur de fond du bouton formulaire",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"textcolor-btn-form",
+        "label":"Couleur de texte du bouton formulaire",
+        "default":"#fff"
+      },
+      { "type": "header", "content": "Autre" },
+      {
+        "type": "number",
+        "id": "star-number",
+        "label": "Nombre d'étoile", 
+        "default":5
+      },
+      {
+        "type": "text",
+        "id": "star-avg",
+        "label": "Moyenne étoile", 
+        "default":"4,7"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre de la section", 
+        "default":"Lorem ipsum"
+      },
+      {
+        "type": "text",
+        "id": "btn-label",
+        "label": "Libellé du bouton", 
+        "default":"Ajouter un avis"
+      },
+      {
+        "type": "url",
+        "id": "btn-url",
+        "label": "Lien du bouton"
+      },
+      
+      {
+        "type":"text",
+        "id":"show-btn-form",
+        "label":"Libellé bouton aperçu formulaire",
+        "default":"Ecrire un avis"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Temoignage",
+        "category": "Custom Ss"
+      }
+    ]
+  }
+{% endschema %}

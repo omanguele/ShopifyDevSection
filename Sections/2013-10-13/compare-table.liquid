@@ -1,0 +1,496 @@
+<style>
+  #shopify-section-{{ section.id }} #comparetable1002210132 {
+    position: relative;
+    width: 100%;
+    background-color: {{ section.settings.bg_color }};
+    padding: 56px 6px;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_heading {
+    text-align: center;
+    margin-bottom: 64px;
+    width: 100%;
+    font-size: 34px;
+    font-weight: 700;
+    color: {{ section.settings.title_color }};
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table {
+    display: grid;
+    grid-template-columns: repeat(3, 288px);
+    justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item {
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    display: flex;
+    font-weight: 400;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: {{ section.settings.border_color }};
+    text-align: center;
+    color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.foot {
+    border-bottom-width: 0;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.foot.el1 {
+    border-bottom-width: 1px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.compare {
+    font-weight: 700;
+    align-items: flex-start;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.head {
+    overflow: hidden;
+    font-weight: 700;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.head.el1 {
+    border-top-width: 1px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.el1 {
+    background-color: {{ section.settings.hl_color }};
+    border-right-width: 1px;
+    border-left-width: 1px;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_image {
+    width: 128px;
+    margin-bottom: 12px;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_link {
+    font-weight: 700;
+    text-decoration: none;
+    padding-bottom: 8px;
+    border-bottom: 2px solid {{ section.settings.link_color }};
+    color: {{ section.settings.link_color }};
+    background-color: transparent;
+    color: inherit;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_selectors {
+    display: none;
+    border-radius: 9999px;
+    background-color: {{ section.settings.hl_color }};
+    overflow: hidden;
+    width: fit-content;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_selectors_item {
+    height: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 9999px;
+    padding: 0 24px;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_selectors_item.active {
+    background-color: {{ section.settings.border_color }};
+    color: #fff;
+  }
+  #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_selectors_item span {
+    letter-spacing: 0.07em;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-size: 15px;
+  }
+  @media only screen and (max-width: 1024px) {
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.head {
+      padding: 20px 40px;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_image {
+      width: 100%;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_heading {
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item {
+      font-size: 14px;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.el1 {
+      background-color: transparent;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.el1,
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.el2 {
+      border-right-width: 0;
+      border-left-width: 1px;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.foot.el1 {
+      border-bottom-width: 0;
+      border-radius: 0 !important;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.head.el1 {
+      border-top-width: 0;
+      border-radius: 0 !important;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.hide_mobile {
+      display: none !important;
+    }
+    #shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_selectors {
+      display: flex;
+    }
+  }
+</style>
+
+<section id="comparetable1002210132">
+  <div class="comparetable1002210132_container">
+    <h2 class="comparetable1002210132_heading">
+      {{ section.settings.title }}
+    </h2>
+    <div class="comparetable1002210132_compare">
+      <div class="comparetable1002210132_selectors">
+        <div class="comparetable1002210132_selectors_item active">
+          <span>{{ section.settings.title_el1 }}</span>
+        </div>
+        <div class="comparetable1002210132_selectors_item">
+          <span>{{ section.settings.title_el2 }}</span>
+        </div>
+      </div>
+      <div class="comparetable1002210132_table">
+        <div class="comparetable1002210132_table_item head"></div>
+        <div class="comparetable1002210132_table_item head el1">
+          <div class="comparetable1002210132_image">
+            <img
+              src="{{ section.settings.image_el1 | img_url: "master" }}"
+              alt="{{ section.settings.title_el1 }}"
+            >
+          </div>
+          <span>{{ section.settings.title_el1 }}</span>
+        </div>
+        <div class="comparetable1002210132_table_item head el2 hide_mobile">
+          <div class="comparetable1002210132_image">
+            <img
+              src="{{ section.settings.image_el2 | img_url: "master" }}"
+              alt="{{ section.settings.title_el2 }}"
+            >
+          </div>
+          <span>{{ section.settings.title_el2 }}</span>
+        </div>
+        {% assign compare_labels = section.settings.compare_labels | split: ',' %}
+        {% assign compare_text_el1 = section.settings.compare_text_el1 | split: ',' %}
+        {% assign compare_text_el2 = section.settings.compare_text_el2 | split: ',' %}
+        {% for label in compare_labels %}
+          <div class="comparetable1002210132_table_item compare">{{ label }}</div>
+          <div class="comparetable1002210132_table_item el1">
+            {% if compare_text_el1[forloop.index0] == 'pass' %}
+              <svg
+                class="tw-w-5 tw-h-5"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="10" fill="{{ section.settings.pass_icon_color }}"></circle>
+                <path
+                  d="M7 10.6923L9.625 13L13 8"
+                  stroke="#041C2D"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+            {% elsif compare_text_el1[forloop.index0] == 'fail' %}
+              <svg
+                class="tw-w-5 tw-h-5 tw-text-blue"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="10" fill="{{ section.settings.fail_icon_color }}"></circle>
+                <path
+                  d="M12.8287 12.9706L7.17188 7.31372"
+                  stroke="white"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M7.17127 12.9706L12.8281 7.31372"
+                  stroke="white"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+            {% else %}
+              {{ compare_text_el1[forloop.index0] }}
+            {% endif %}
+          </div>
+          <div class="comparetable1002210132_table_item el2 hide_mobile">
+            {% if compare_text_el2[forloop.index0] == 'pass' %}
+              <svg
+                class="tw-w-5 tw-h-5"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="10" fill="{{ section.settings.pass_icon_color }}"></circle>
+                <path
+                  d="M7 10.6923L9.625 13L13 8"
+                  stroke="#041C2D"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+            {% elsif compare_text_el2[forloop.index0] == 'fail' %}
+              <svg
+                class="tw-w-5 tw-h-5 tw-text-blue"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="10" fill="{{ section.settings.fail_icon_color }}"></circle>
+                <path
+                  d="M12.8287 12.9706L7.17188 7.31372"
+                  stroke="white"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M7.17127 12.9706L12.8281 7.31372"
+                  stroke="white"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+            {% else %}
+              {{ compare_text_el2[forloop.index0] }}
+            {% endif %}
+          </div>
+        {% endfor %}
+
+        <div class="comparetable1002210132_table_item foot"></div>
+        <div class="comparetable1002210132_table_item foot el1">
+          <a href="{{ section.settings.url_el1 }}" class="comparetable1002210132_link">
+            {{- section.settings.link_label -}}
+          </a>
+        </div>
+        <div class="comparetable1002210132_table_item foot el2 hide_mobile">
+          <a href="{{ section.settings.url_el2 }}" class="comparetable1002210132_link">
+            {{- section.settings.link_label -}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const el1Items = Array.from(
+    document.querySelectorAll(
+      "#shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.el1"
+    )
+  );
+  const el2Items = Array.from(
+    document.querySelectorAll(
+      "#shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_table_item.el2"
+    )
+  );
+  const selectorItems = Array.from(
+    document.querySelectorAll(
+      "#shopify-section-{{ section.id }} #comparetable1002210132 .comparetable1002210132_selectors_item"
+    )
+  );
+
+  selectorItems.map((item, index, arr) => {
+    item.addEventListener("click", (e) => {
+      item.classList.add("active");
+      toogleItems(index);
+    });
+  });
+
+  function toogleItems(index) {
+    if (index == 0) {
+      selectorItems[1].classList.remove("active");
+    } else {
+      selectorItems[0].classList.remove("active");
+    }
+    el1Items.map((item, i) => {
+      if (index == 0) {
+        item.classList.remove("hide_mobile");
+      } else {
+        item.classList.add("hide_mobile");
+      }
+    });
+    el2Items.map((item, i) => {
+      if (index == 0) {
+        item.classList.add("hide_mobile");
+      } else {
+        item.classList.remove("hide_mobile");
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Tableau de comparaison",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Parametre de couleur"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur de titre",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Couleur de bordure",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Couleur de lien",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "hl_color",
+      "label": "Couleur mise en avant",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "pass_icon_color",
+      "label": "Couleur icone 'pass'",
+      "default": "#FFB800"
+    },
+    {
+      "type": "color",
+      "id": "fail_icon_color",
+      "label": "Couleur icone 'fail'",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Parametre de titre"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre de la section",
+      "default": "shake up a smoothie in seconds"
+    },
+    {
+      "type": "text",
+      "id": "title_el1",
+      "label": "Titre élément 1",
+      "default": "Percale"
+    },
+    {
+      "type": "text",
+      "id": "title_el2",
+      "label": "Titre élément 2",
+      "default": "Percale plus"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Libelle des liens",
+      "default": "En savoir plus"
+    },
+    {
+      "type": "header",
+      "content": "Parametre images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_el1",
+      "label": "Image élément 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_el2",
+      "label": "Image élément 2"
+    },
+    {
+      "type": "header",
+      "content": "Parametre de texte"
+    },
+    {
+      "type": "textarea",
+      "id": "compare_labels",
+      "label": "Elements de Comparaison",
+      "default": "Accuracy,Body Metrics Measured,Coaching & Feedback",
+      "info": "Separer chaque élément par une virgule Exemple: 'critere1,critere2,critere3'"
+    },
+    {
+      "type": "textarea",
+      "id": "compare_text_el1",
+      "label": "Textes comparatifs element 1",
+      "default": "Accuracy,pass,pass",
+      "info": "Separer chaque élément par une virgule. Ecrire 'pass' pour une icone check et 'fail' pour une icone 'x'. Exemple: 'critere1,pass,critere2,fail'"
+    },
+    {
+      "type": "textarea",
+      "id": "compare_text_el2",
+      "label": "Textes comparatifs element 2",
+      "default": "Accuracy,fail,fail",
+      "info": "Separer chaque élément par une virgule. Ecrire 'pass' pour une icone check et 'fail' pour une icone 'x'. Exemple: 'critere1,pass,critere2,fail'"
+    },
+    {
+      "type": "header",
+      "content": "Parametre de lien"
+    },
+    {
+      "type": "url",
+      "id": "url_el1",
+      "label": "Lien de l'element 1"
+    },
+    {
+      "type": "url",
+      "id": "url_el2",
+      "label": "Lien de l'element 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tableau de comparaison"
+    }
+  ]
+}
+{% endschema %}

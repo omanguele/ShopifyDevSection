@@ -1,0 +1,259 @@
+<style>
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 {
+    position: relative;
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    min-height: 20px;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    position: relative;
+    background: url({{ section.settings.bg_image | img_url: "master" }})
+      no-repeat scroll center center/cover;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left,
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right {
+    width: 50%;
+    z-index: 1;
+    outline-offset: -1px;
+    padding: 50px;
+    align-items: flex-start;
+    display: flex;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left_inner,
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_inner {
+    min-height: 555px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left_container,
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    position: relative;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_container {
+    justify-content: right;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_div_inner {
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 265px;
+    display: block;
+    position: relative;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left h2 {
+    font-size: 83px;
+    text-shadow: transparent 0px 0px 1px;
+    color: {{ section.settings.text_color }};
+    line-height: 1em;
+    letter-spacing: -3px;
+    font-weight: 400;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_text {
+    display: block;
+    margin: 27px 0 12px 0;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_text_inner {
+    font-weight: 400;
+    text-align: right;
+    font-size: 20px;
+    line-height: 28px;
+    color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_btn {
+    margin-top: 20px !important;
+    width: 100%;
+    display: block;
+    height: fit-content;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_btn_inner {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_btn_inner a {
+    font-style: normal;
+    text-decoration: none;
+    color: {{ section.settings.btn_text_color }};
+    background: {{ section.settings.btn_bg_color }};
+    border-radius: 30px;
+    gap: 26px;
+    padding: 12px 34px 12px 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_btn_inner span {
+    display: block;
+  }
+  #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_btn_inner a svg {
+    width: 18px;
+    height: auto;
+  }
+  @media only screen and (max-width: 1024px) {
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left h2 {
+      font-size: 58px;
+      line-height: 58px;
+    }
+  }
+  @media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left h2 {
+      font-size: 50px;
+      line-height: 55px;
+    }
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left_container {
+      align-content: flex-start;
+    }
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_text {
+      display: none;
+    }
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_div_inner {
+      margin-bottom: 0;
+    }
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left,
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right {
+      width: 100%;
+      padding: 25px;
+    }
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_left_inner,
+    #shopify-section-{{ section.id }} #bgtextbtn1161110132 .bgtextbtn1161110132_right_inner {
+      min-height: 238px;
+    }
+  }
+</style>
+
+<section id="bgtextbtn1161110132">
+  <div class="bgtextbtn1161110132_container">
+    <div class="bgtextbtn1161110132_inner">
+      <div class="bgtextbtn1161110132_left">
+        <div class="bgtextbtn1161110132_left_inner">
+          <div class="bgtextbtn1161110132_left_container">
+            <div class="bgtextbtn1161110132_div_inner">
+              <h2>
+                {{ section.settings.title }}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgtextbtn1161110132_right">
+        <div class="bgtextbtn1161110132_right_inner">
+          <div class="bgtextbtn1161110132_right_container">
+            <div class="bgtextbtn1161110132_right_text">
+              <div class="bgtextbtn1161110132_right_text_inner">
+                <p>
+                  {{ section.settings.description }}
+                </p>
+              </div>
+            </div>
+            <div class="bgtextbtn1161110132_right_btn">
+              <div class="bgtextbtn1161110132_right_btn_inner">
+                <a href="{{ section.settings.url_btn }}">
+                  <span>{{ section.settings.text_btn }}</span>
+                  <span>
+                    <svg
+                      version="1.1"
+                      id="lni_lni-arrow-right"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 64 64"
+                      style="enable-background: new 0 0 64 64"
+                      xml:space="preserve"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M61.5,28.5l-6.9-8.2c-0.6-0.7-1.7-0.8-2.5-0.2c-0.7,0.6-0.8,1.7-0.2,2.5l6.5,7.7H3c-1,0-1.8,0.8-1.8,1.8
+                                            c0,1,0.8,1.8,1.8,1.8h55.4l-6.5,7.7c-0.6,0.7-0.5,1.8,0.2,2.5c0.3,0.3,0.7,0.4,1.1,0.4c0.5,0,1-0.2,1.3-0.6l6.9-8.2
+                                            C63.2,33.5,63.2,30.5,61.5,28.5z"
+                      ></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image - Texte - Bouton",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Image de fond"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur de texte du bouton",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Couleur de fond du bouton",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Experience <br /> both"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "50/50 Pack <br /> The Duo"
+    },
+    {
+      "type": "text",
+      "id": "text_btn",
+      "label": "Texte du bouton",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "url_btn",
+      "label": "Lien du bouton"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image - Texte - Bouton"
+    }
+  ]
+}
+{% endschema %}

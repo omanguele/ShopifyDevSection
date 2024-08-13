@@ -1,0 +1,380 @@
+<style>
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background-color: {{ section.settings.bg_color_1 }};
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1340px;
+      padding-left: 45px;
+      padding-right: 45px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 500px;
+      background: {{ section.settings.bg_color_2 }};
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_slider {
+      width: 100%;
+      height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_slider:hover {
+      cursor: url({% if section.settings.next_btn != blank %} {{ section.settings.next_btn | img_url: "master" }} {% else %} https://itsitchy.com/cdn/shop/t/44/assets/icon-cursor-next.svg?v=166138709008840336291644871077 {% endif %}) 27.5 27.5, auto;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info {
+      left: 0;
+      max-width: 430px;
+      padding: 90px 30px 30px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_name {
+      margin-bottom: 15px;
+      max-width: 350px;
+      font-weight: 600;
+      line-height: 1;
+      font-size: 44px;
+      color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_description {
+      line-height: 1.4;
+      font-size: 14px;
+      padding-top: 15px;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info_area {
+      bottom: 0;
+      max-width: 400px;
+      padding: 30px;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info_area form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_btn {
+      width: 100%;
+      position: relative;
+      font-size: 12px !important;
+      background: {{ section.settings.btn_color }};
+      border: 1px solid {{ section.settings.btn_color }};
+      border-radius: 10px;
+      cursor: pointer;
+      font-stretch: normal;
+      font-weight: 700;
+      letter-spacing: .4px;
+      color: {{ section.settings.text_color }};
+      line-height: 1;
+      padding: 15px;
+      text-transform: uppercase;
+      transition: color .15s cubic-bezier(.55, .15, .92, .59), background .15s cubic-bezier(.55, .15, .92, .59), border-color .15s cubic-bezier(.55, .15, .92, .59);
+      justify-content: center;
+      font-style: normal;
+      height: 45px;
+      display: flex;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option {
+      width: 100%;
+      text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option label {
+      background: {{ section.settings.option_color }};
+      border: 1px solid {{ section.settings.option_border_color }};
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 13px 16px 13px 12px;
+      transition: all .25s ease;
+      display: flex;
+      align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option input[type="radio"] {
+      display: none;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option input[type="radio"]:checked+label,
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option label:hover,
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_btn:hover {
+      background: {{ section.settings.hl_color }};
+      border-color: {{ section.settings.hl_color }};
+      color: {{ section.settings.option_color }};
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option label:hover  .productsliderinfo26142123_option_price,
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option input[type="radio"]:checked+label  .productsliderinfo26142123_option_price {
+      color: {{ section.settings.option_color }};
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_fake_radio {
+      background: {{ section.settings.option_color }};
+      border: 1px solid {{ section.settings.option_border_color }};
+      border-radius: 50%;
+      display: block;
+      height: 16px;
+      margin-right: 15px;
+      min-width: 16px;
+      position: relative;
+      width: 16px;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_option input[type="radio"]:checked+label  .productsliderinfo26142123_fake_radio::before {
+      opacity: 1;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_fake_radio::before {
+      transform: translate(-50%, -50%);
+      transition: all .25s ease;
+      width: 10px;
+      background: {{ section.settings.hl_color }};
+      border-radius: 50%;
+      content: "";
+      height: 10px;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_option_price {
+      margin-left: auto;
+      text-align: right;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.15;
+      font-size: 14px;
+      color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_option_title {
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.15;
+      font-size: 14px;
+      color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123  .swiper-button-prev,
+  #shopify-section-{{ section.id }} #productsliderinfo26142123  .swiper-button-next {
+      display: none !important;
+      width: 40px !important;
+      height: 40px !important;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .swiper-button-next::after {
+      content: "" !important;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123  .swiper-button-next img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123  .swiper-slide {
+      height: unset !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} #productsliderinfo26142123  .swiper-slide img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+  }
+  #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info_area  .productsliderinfo26142123_prdt_description {
+      display: none;
+  }
+  @media (max-width: 834px) {
+      #shopify-section-{{ section.id }} #productsliderinfo26142123  .swiper-button-next {
+          display: inherit !important;
+      }
+      #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info_area {
+          position: relative;
+          background-color: {{ section.settings.bg_color_1 }};
+          padding: 20px 15px 15px 15px;
+      }
+      #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info {
+          position: relative;
+          padding: 20px 15px;
+          width: 100%;
+          text-align: left;
+      }
+      #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_prdt_name {
+          font-size: 28px;
+      }
+       #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info .productsliderinfo26142123_prdt_description {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_info_area  .productsliderinfo26142123_prdt_description {
+          display: block;
+      }
+      #shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_container {
+          padding-left: 0;
+          padding-right: 0;
+      }
+  }
+</style>
+
+<section id="productsliderinfo26142123">
+  <div class="productsliderinfo26142123_container">
+    <div class="productsliderinfo26142123_info">
+      <h2 class="productsliderinfo26142123_prdt_name">{{ product.title | escape }}</h2>
+      <div class="productsliderinfo26142123_prdt_description">
+        {{ product.description }}
+      </div>
+    </div>
+    <div class="productsliderinfo26142123_slider">
+      <div class="swiper productsliderinfo26142123-swiper">
+        <div class="swiper-wrapper">
+          {% for image in product.images %}
+            <div class="swiper-slide">
+              <img src="{{ image.src }}" alt="{{ image.alt }}">
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next">
+          <img
+            src="{% if section.settings.next_btn != blank %} {{ section.settings.next_btn | img_url: "master" }} {% else %} https://itsitchy.com/cdn/shop/t/44/assets/icon-cursor-next.svg?v=166138709008840336291644871077 {% endif %}"
+            alt=""
+          >
+        </div>
+      </div>
+    </div>
+    <div class="productsliderinfo26142123_info_area">
+      <div class="productsliderinfo26142123_prdt_description">
+        {{ product.description }}
+      </div>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="quantity" value="1">
+        {% for variant in product.variants %}
+          <div class="productsliderinfo26142123_prdt_option">
+            <input
+              type="radio"
+              name="id"
+              id="{{ variant.id }}"
+              value="{{ variant.id }}"
+              {% if forloop.index == 1 %}
+                checked
+              {% endif %}
+            >
+            <label for="{{ variant.id }}">
+              <span class="productsliderinfo26142123_fake_radio"></span>
+              <p class="productsliderinfo26142123_option_title">{{ variant.title | escape }}</p>
+              <div class="productsliderinfo26142123_option_price">{{ variant.price | money }}</div>
+            </label>
+          </div>
+        {% endfor %}
+        <button class="productsliderinfo26142123_btn" type="submit">{{ section.settings.btn_label }}</button>
+      </form>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const productsliderinfo26142123swiper =  new Swiper('#shopify-section-{{ section.id }} #productsliderinfo26142123  .productsliderinfo26142123-swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '#shopify-section-{{ section.id }} #productsliderinfo26142123 .swiper-button-next',
+            prevEl: '#shopify-section-{{ section.id }} #productsliderinfo26142123 .swiper-button-prev',
+        },
+    });
+    document.querySelector('#shopify-section-{{ section.id }} #productsliderinfo26142123 .productsliderinfo26142123_slider').addEventListener('click',
+        function (e) {
+            productsliderinfo26142123swiper.slideNext();
+        });
+</script>
+
+{% schema %}
+{
+  "name": "Product Main",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color_1",
+      "label": "Bg Couleur 1",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_2",
+      "label": "Bg Couleur 2",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Couleur",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Btn Couleur",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "option_color",
+      "label": "Option Couleur",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "option_border_color",
+      "label": "Option Border Couleur",
+      "default": "#cbd1c2"
+    },
+    {
+      "type": "color",
+      "id": "hl_color",
+      "label": "HL Couleur",
+      "default": "#f5d935"
+    },
+    {
+      "type": "image_picker",
+      "id": "next_btn",
+      "label": "Next Btn"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Btn Label",
+      "default": "Add To Cart"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Main"
+    }
+  ]
+}
+{% endschema %}

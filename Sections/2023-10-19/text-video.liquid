@@ -1,0 +1,393 @@
+<style>
+        .sh--1 {
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.7);
+    transition: 500ms ease box-shadow;
+  }
+  .sh--2 {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(246,246,246,0.2), 0px 0px 15px 0px rgba(246,246,246,0.2);
+    box-shadow: 0px 0px 15px 0px rgba(246,246,246,0.2), 0px 0px 15px 0px rgba(246,246,246,0.2);
+    transition: 500ms ease box-shadow;
+  }
+  .sh--3 {
+    transition: 500ms ease box-shadow;
+  }
+   .sh--4 {
+    box-shadow: 0 2px 2px #0003;
+  }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132 {
+            width: 100%;
+            position: relative;
+            padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+            background-color: {{ section.settings.bg_color }};
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_container {
+            max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_content {
+            margin-left: 0;
+            margin-right: -60px;
+            z-index: 1;
+            border-radius: {{ section.settings.radius }}px;
+            background-color: {{ section.settings.card_color }};
+            max-width: 350px;
+            width: 100%;
+            padding: 80px 30px;
+            transform: unset;
+            opacity: 1;
+            transition-property: transform;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            text-align: left;
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_heading {
+            font-style: italic;
+            letter-spacing: .33px;
+            line-height: 1;
+            margin-top: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+          color: {{ section.settings.text_color }};
+          font-size: {{ section.settings.t_title }}px;
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_description {
+            margin-top: 25px;
+            line-height: 1.7;
+            color: {{ section.settings.text_color }};
+          font-size: {{ section.settings.t_text }}px;
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_link {
+            font-weight: 700;
+            text-decoration: underline;
+            color: {{ section.settings.text_color }};
+          font-size: {{ section.settings.t_btn }}px;
+            cursor: pointer;
+            display: block;
+            margin-top: 30px;
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_video {
+            border-radius: {{ section.settings.radius }}px;
+            max-width: calc(100% - 290px);
+            width: 100%;
+            overflow: hidden;
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_video_container {
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+        #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_video_container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media only screen and (max-width: 780px)  {
+            #shopify-section-{{ section.id }} #textytnvideo9260810132 {
+                padding: 0;
+            }
+            #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_container {
+                flex-direction: column-reverse;
+                justify-content: center;
+            }
+            #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_content {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: -30px;
+                max-width: 440px;
+                text-align: center;
+                padding: 30px 20px 40px;
+                width: calc(100% - 30px);
+            }
+            #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_video {
+                border-radius: 0px;
+                max-width: 100%;
+                margin-bottom: -5px;
+            }
+            #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_video_container {
+                aspect-ratio: 4/5;
+            }
+            #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_heading {
+                font-size: {{ section.settings.m_title }}px;
+            }
+            #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_description {
+                padding-left: 15px;
+                padding-right: 15px;
+              font-size: {{ section.settings.m_text }}px;
+            }
+          #shopify-section-{{ section.id }} #textytnvideo9260810132  .textytnvideo9260810132_link {
+            font-size: {{ section.settings.m_btn }}px;
+        }
+        }
+</style>
+
+<section
+  style="{% if section.settings.border_top %}border-top: 1px solid {{ section.settings.color_border }};{% endif %}{% if section.settings.border_bottom %}border-bottom: 1px solid {{ section.settings.color_border }};{% endif %}"
+  id="textytnvideo9260810132"
+>
+  <div class="textytnvideo9260810132_container {{ section.settings.sh_image }}">
+    <div class="textytnvideo9260810132_content">
+      <h2 class="textytnvideo9260810132_heading">{{ section.settings.title }}</h2>
+      <p class="textytnvideo9260810132_description">
+        {{ section.settings.subtitle }}
+      </p>
+      <a href="{{ section.settings.url_link }}" class="textytnvideo9260810132_link">{{ section.settings.text_link }}</a>
+    </div>
+    <div class="textytnvideo9260810132_video">
+      <div class="textytnvideo9260810132_video_container">
+        <video
+          src="{{ section.settings.video.sources[1].url  }}"
+          autoplay=""
+          loop=""
+          muted="muted"
+          playsinline=""
+        ></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Texte - Video Link",
+    "settings": [
+      {
+       "type":"header",
+       "content":"Section Codée par SkillsUp"
+    },
+    {
+       "type":"paragraph",
+       "content":"Pour toute demande d'information supplémentaire, veuillez [nous contacter](https://skills-up.co/)."
+    },
+    {
+       "type":"header",
+       "content":"CONFIGURATION DES COULEURS"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Couleur de carte",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#000"
+    },
+    {
+       "type":"header",
+       "content":"CONFIGURATION DU CONTENU"
+    },
+      {
+  "type": "video",
+  "id": "video",
+  "label": "Video"
+
+},
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "shake up a smoothie in seconds"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Bordure arrondie",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous Titre",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "text_link",
+      "label": "Texte du Lien",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "url_link",
+      "label": "URL du Lien"
+    },
+       {
+         "type":"header",
+         "content":"CONFIGURATION DES TAILLES DE TEXTES"
+      },
+      {
+         "type":"range",
+         "id":"t_title",
+         "label":"Taille du Titre de la section sur bureau",
+         "min":0,
+         "max":40,
+         "unit":"px",
+         "default":26
+      },
+      {
+         "type":"range",
+         "id":"t_text",
+         "label":"Taille du Texte sur bureau",
+         "min":0,
+         "max":40,
+         "unit":"px",
+         "default":14
+      },
+      {
+         "type":"range",
+         "id":"t_btn",
+         "label":"Taille du bouton sur bureau",
+         "min":0,
+         "max":40,
+         "unit":"px",
+         "default":18
+      },
+      {
+         "type":"range",
+         "id":"m_title",
+         "label":"Taille du Titre de la section sur mobile",
+         "min":0,
+         "max":40,
+         "unit":"px",
+         "default":26
+      },
+      {
+         "type":"range",
+         "id":"m_text",
+         "label":"Taille du Texte sur mobile",
+         "min":0,
+         "max":40,
+         "unit":"px",
+         "default":14
+      },
+      {
+         "type":"range",
+         "id":"m_btn",
+         "label":"Taille du bouton sur mobile",
+         "min":0,
+         "max":40,
+         "unit":"px",
+         "default":18
+      },
+      {
+         "type":"header",
+         "content":"CONFIGURATION DES ESPACES"
+      },
+      {
+         "type":"range",
+         "id":"desktop_top_spacing",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Espacement supérieur du bureau",
+         "default":40
+      },
+      {
+         "type":"range",
+         "id":"desktop_bottom_spacing",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Espacement inférieur du bureau",
+         "default":40
+      },
+      {
+         "type":"range",
+         "id":"desktop_left_spacing",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Espacement à gauche du bureau",
+         "default":40
+      },
+      {
+         "type":"range",
+         "id":"desktop_right_spacing",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Espacement à droite du bureau",
+         "default":40
+      },
+      {
+         "type":"checkbox",
+         "id":"full_with",
+         "label":"Pleine largeur",
+         "default":false
+      },
+      {
+         "type":"range",
+         "id":"max_width",
+         "min":500,
+         "max":2000,
+         "step":100,
+         "unit":"px",
+         "label":"Taille Maximale",
+         "default":1400
+      },
+      {
+        "type": "header",
+        "content": "CONFIGURATION DES OMBRES"
+      },
+      {
+        "type": "select",
+        "id": "sh_image",
+        "label": "Ombre sur l'image/vidéo",
+        "default": "",
+        "options": [
+          { "value": "", "label": "Pas d'ombres" },
+          { "value": "sh--1", "label": "Style 1" },
+          { "value": "sh--2", "label": "Style 2" },
+          { "value": "sh--3", "label": "Sytle 3" },
+          { "value": "sh--4", "label": "Sytle 4" }
+        ]
+      },
+      {
+         "type":"header",
+         "content":"CONFIGURATION DES BORDURES"
+      },
+      {
+        "type": "checkbox",
+        "id": "border_top",
+        "label": "Afficher une bordure en haut"
+      },
+      {
+        "type": "checkbox",
+        "id": "border_bottom",
+        "label": "Afficher une bordure en bas"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Couleur des bordures",
+        "info": "Fonctionne si les bordures sont sélectionnées ci-dessus.",
+        "default": "#000"
+      }
+    ],
+  "presets": [
+    {
+      "name": "Texte - Video Link"
+    }
+  ]
+  }
+{% endschema %}

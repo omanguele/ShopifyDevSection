@@ -1,0 +1,446 @@
+<style>
+   #shopify-section-{{ section.id }} #prdtslider4320320132 {
+     width: 100%;
+     position: relative;
+     background-color: {{ section.settings.bg_color }};
+     overflow: hidden;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_container {
+     padding: 80px 0px 80px 60px;
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slider {
+     padding-right: 40px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide a{
+     text-decoration: none;
+     color: inherit;
+     display: block;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide button {
+     cursor: pointer;
+     margin-top: 8px;
+     padding: 10px 24px;
+     text-transform: none;
+     display: flex;
+     max-width: 180px;
+     justify-content: space-between;
+     align-items: center;
+     border-radius: 9999px;
+     column-gap: 12px;
+     background-color: {{ section.settings.hl_color }};
+     color: #fff;
+     border: none;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide button  span {
+     line-height: 1.5;
+     font-size: 16px;
+     gap: 8px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     white-space: pre-wrap;
+     max-width: 65ch;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide button svg {
+     height: 14px;
+     width: 14px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_content {
+     display: grid;
+     gap: 16px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_image {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: clip;
+     border-width: 0px;
+     will-change: transform;
+     aspect-ratio: 4/5;
+     border-radius: {{ section.settings.radius }}px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_image::before {
+     content: " ";
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 10;
+     display: block;
+     height: 100%;
+     width: 100%;
+     border-radius: {{ section.settings.radius }}px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_image img {
+     width: 100%;
+     -o-object-fit: cover;
+     object-fit: cover;
+     aspect-ratio: inherit !important;
+     height: 100%;
+     max-width: 100%;
+     display: block;
+     opacity: 0;
+     animation: fadeInAnimation ease .5s forwards;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_image_label {
+     background-color: {{ section.settings.hl_color }};
+     padding: 4px 8px 2px 8px;
+     color: #fff;
+     font-size: 14px;
+     text-transform: uppercase;
+     line-height: 20px;
+     position: absolute;
+     z-index: 10;
+     max-width: 65ch;
+     white-space: pre-wrap;
+     border-radius: 4px;
+     top: 10px;
+     right: 10px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_detail {
+     display: grid;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_detail_stars {
+     padding-top: 3px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_detail_name h2 {
+     font-size: 20px;
+     line-height: 20px;
+     padding-bottom: 2px;
+     white-space: pre-wrap;
+     max-width: 65ch;
+     width: 100%;
+     color: {{ section.settings.hl_color }};
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_detail_name p {
+     line-height: 1.25;
+     font-size: 14px;
+     white-space: pre-wrap;
+     max-width: 65ch;
+     width: 100%;
+     padding: 4px 0 9px 0;
+     color: {{ section.settings.hl_color }};
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_detail_price {
+     margin-top: 3px;
+     display: flex;
+     color: {{ section.settings.hl_color }};
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slide_detail_price span {
+     font-size: 18px;
+     line-height: 28px;
+     max-width: 65ch;
+     align-items: center;
+     display: flex;
+     column-gap: 8px;
+     white-space: pre-wrap;
+     color: {{ section.settings.hl_color }};
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_head {
+     padding-bottom: 40px;
+     padding-right: 40px;
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-end;
+   }
+
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_heading p {
+     line-height: 64px;
+     font-size: 60px;
+     text-align: left;
+     width: 75%;
+     display: block;
+     text-transform: uppercase;
+     font-weight: 700;
+     color: {{ section.settings.hl_color }};
+   }
+
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_head a {
+     padding: 8px 20px;
+     line-height: 24px;
+     font-size: 16px;
+     border-radius: 9999px;
+     display: inline-flex;
+     margin-top: 24px;
+     margin-bottom: 16px;
+     text-decoration: none;
+     border: 1px solid {{ section.settings.hl_color }};
+     background-color: {{  section.settings.bg_color }};
+     color: {{ section.settings.hl_color }};
+     align-items: center;
+     gap: 10px;
+   }
+
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .mobile_link {
+     display: none;
+     color: {{ section.settings.hl_color }};
+     align-items: center;
+     gap: 5px;
+     margin-top: 20px;
+     text-decoration: underline;
+     line-height: 24px;
+     font-size: 14px;
+   }
+
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .mobile_link svg {
+     width: 20px;
+   }
+
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_head a svg {
+     width: 20px;
+     height: 20px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .swiper-button-next::after,
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .swiper-button-prev::after {
+     content: "" !important;
+
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .swiper-button-next,
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .swiper-button-prev {
+     background-color: {{ section.settings.bg_color }};
+     border-radius: 9999px;
+     color: {{ section.settings.hl_color }};
+     padding: 10px !important;
+     height: 48px !important;
+     width: 48px !important;
+   }
+   @media (max-width: 768px) {
+     #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_container {
+     padding: 48px 0px 48px 16px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_head a {
+     display: none;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_heading p {
+     width: 100%;
+     font-size: 32px;
+     line-height: 36px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_head {
+     padding-bottom: 16px;
+     padding-right: 10px;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .prdtslider4320320132_slider {
+     padding-right: 0px;
+   }
+  #shopify-section-{{ section.id }} #prdtslider4320320132 .mobile_link {
+     display: flex;
+   }
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .swiper-button-next,
+   #shopify-section-{{ section.id }} #prdtslider4320320132 .swiper-button-prev {
+     display: none !important;
+   }
+   }
+
+   @keyframes fadeInAnimation {
+     0% {
+       opacity: 0;
+     }
+     100% {
+       opacity: 1;
+     }
+   }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+>
+
+<section id="prdtslider4320320132">
+  <div class="prdtslider4320320132_container">
+    <div class="prdtslider4320320132_head">
+      <div class="prdtslider4320320132_heading">
+        <p>{{ section.settings.title }}</p>
+      </div>
+      <a href="{{ section.settings.url_link }}">
+        <span>{{ section.settings.text_link }}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+        </svg>
+      </a>
+    </div>
+    <div class="prdtslider4320320132_slider">
+      <div class="swiper">
+        <div class="swiper-button-prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+          </svg>
+        </div>
+        <div class="swiper-wrapper">
+          {% for product in section.collection.products %}
+            <div class="swiper-slide">
+              <div class="prdtslider4320320132_slide">
+                <a href="{{ product.url }}">
+                  <div class="prdtslider4320320132_slide_content">
+                    <div class="prdtslider4320320132_slide_image">
+                      <div class="prdtslider4320320132_slide_image_label">{{ section.settings.label_text }}</div>
+                      <img
+                        src="{{ product.featured_image | product_img_url: "master" }}"
+                        alt="{{ product.title | escape }}"
+                      >
+                    </div>
+                    <div class="prdtslider4320320132_slide_detail">
+                      <div class="prdtslider4320320132_slide_detail_name">
+                        <h2>{{ product.title | escape }}</h2>
+                        <!-- <p>Gelée Nettoyante et Démaquillante Douce</p> -->
+                      </div>
+                      <div class="prdtslider4320320132_slide_detail_price">
+                        <span>{{ product.price | money }}</span>
+                      </div>
+                      <div class="prdtslider4320320132_slide_detail_stars"></div>
+                    </div>
+                  </div>
+                </a>
+                <form action="/cart" method="post">
+                  <input type="hidden" name="id" value="{{ product.id }}">
+                  <input type="hidden" name="quantity" value="1">
+                  <button type="submit">
+                    <span>{{ section.settings.text_btn_prdt }}</span>
+                    <svg
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="currentColor"
+                    >
+                      <title>Bag</title>
+                      <path
+                        d="M6 16C4.9 16 4.01 16.9 4.01 18C4.01 19.1 4.9 20 6 20C7.1 20 8 19.1 8 18C8 16.9 7.1 16 6 16ZM0 0V2H2L5.6 9.59L4.25 12.04C4.09 12.32 4 12.65 4 13C4 14.1 4.9 15 6 15H18V13H6.42C6.28 13 6.17 12.89 6.17 12.75L6.2 12.63L7.1 11H14.55C15.3 11 15.96 10.59 16.3 9.97L19.88 3.48C19.96 3.34 20 3.17 20 3C20 2.45 19.55 2 19 2H4.21L3.27 0H0ZM16 16C14.9 16 14.01 16.9 14.01 18C14.01 19.1 14.9 20 16 20C17.1 20 18 19.1 18 18C18 16.9 17.1 16 16 16Z"
+                        fill="white"
+                      ></path>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <a href="{{ section.settings.url_link }}" class="mobile_link">
+      <span>{{ section.settings.text_link }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+      </svg>
+    </a>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  new Swiper("#shopify-section-{{ section.id }} #prdtslider4320320132 .swiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+
+    navigation: {
+      nextEl: "#shopify-section-{{ section.id }} #prdtslider4320320132 .swpier-button-next",
+      prevEl: "#shopify-section-{{ section.id }} #prdtslider4320320132 .swpier-button-prev",
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Collection Product",
+  "settings": [
+     {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "hl_color",
+      "label": "Couleur mise en avant",
+      "default": "#000"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "shake up a smoothie in seconds"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Bordure arrondie",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Texte des etiquettes",
+      "default": "New"
+    },
+    {
+      "type": "text",
+      "id": "text_btn_prdt",
+      "label": "Textebouton produit",
+      "default": "Add"
+    },
+    {
+      "type": "text",
+      "id": "text_link",
+      "label": "Texte du Lien",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "url_link",
+      "label": "URL du Lien"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Product"
+    }
+  ]
+}
+{% endschema %}

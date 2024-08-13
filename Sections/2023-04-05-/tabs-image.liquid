@@ -1,0 +1,416 @@
+<style>
+  #tabssection090323 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+}
+
+#tabssection090323 .tabs_container {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#tabssection090323 .tabs_container .tabs_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid gray;
+    gap: 100px;
+    padding: 30px 0;
+}
+
+#tabssection090323 .tabs_header .tabs_header_item {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#tabssection090323 .tabs_header .tabs_header_item[aria-selected] {
+    text-decoration: underline;
+}
+
+#tabssection090323 .tabs_container .tabs_body {
+    width: 100%;
+    height: auto;
+    padding: 50px 0; 
+    overflow: hidden;
+}
+
+#tabssection090323 .tabs_body .tabs_body_item {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    transition: all .3s;
+    display: none;
+}
+
+#tabssection090323 .tabs_body .tabs_body_item[aria-selected] {
+    display: block;
+}
+
+#tabssection090323 .image_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 60px;
+}
+
+#tabssection090323 .image_text_item {
+  width: 100%;
+}
+
+#tabssection090323 .image_text_item .image_container{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff !important;
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+#tabssection090323 .image_container .title {
+  color: #fff;
+  text-transform: lowercase;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+}
+
+#tabssection090323 .image_container  .subtitle {
+  color: #fff;
+  text-transform: lowercase;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
+}
+
+#tabssection090323 .image_container .desc {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+#tabssection090323 .image_text_item .text_container {
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+}
+
+#tabssection090323 .image_text_item .text_container .type {
+  margin-bottom: 3px;
+  font-size: 14px;
+  color: {{ section.settings.collection_color }};
+}
+
+#tabssection090323 .image_text_item .text_container .link {
+  font-size: 16px;
+  color: {{ section.settings.text_color }};
+}
+
+@media only screen and (max-width: 1024px) {
+  #tabssection090323 .tabs_container .tabs_header {
+    gap: 60px;
+    max-width: 80%;
+    padding: 25px 0;
+  }
+
+  #tabssection090323 .image_wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px;
+  }
+
+  #tabssection090323 .image_container .title {
+    font-size: 40px;
+  }
+
+  #tabssection090323 .image_container  .subtitle {
+    font-size: 20px;
+  }
+  
+  #tabssection090323 .image_container .desc {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  #tabssection090323 .image_text_item .image_container{
+    min-height: 400px;
+  }
+
+}
+
+@media only screen and (max-width: 780px) {
+    #tabssection090323 .tabs_body .tabs_body_item {
+        font-size: 12px;
+    }
+    #tabssection090323 .tabs_header .tabs_header_item {
+        font-size: 12px;
+    }
+    #tabssection090323 .tabs_container .tabs_header {
+        gap: 40px;
+        max-width: 100%;
+        padding: 20px 0;
+    }
+    #tabssection090323 .image_wrapper {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 40px;
+    }
+    #tabssection090323 .image_text_item .text_container .type {
+      margin-bottom: 3px;
+      font-size: 11px;
+    }
+    
+    #tabssection090323 .image_text_item .text_container .link {
+      font-size: 13px;
+    }
+
+    #tabssection090323 .image_container .title {
+      font-size: 35px;
+    }
+  
+    #tabssection090323 .image_container  .subtitle {
+      font-size: 18px;
+    }
+    
+    #tabssection090323 .image_container .desc {
+      font-size: 10px;
+    }
+
+    #tabssection090323 .image_text_item .image_container{
+      min-height: 300px;
+    }
+}
+</style>
+
+<section id="tabssection090323">
+    <div class="tabs_container">
+       <div class="tabs_header" role="tablist">
+        <div class="tabs_header_item" aria-selected="true">All</div>
+       {% if section.settings.collection_1  != nil %}  <div class="tabs_header_item">{{ section.settings.collection_1.title | escape }}</div> {% endif %}
+       {% if section.settings.collection_2 != nil %}   <div class="tabs_header_item">{{ section.settings.collection_2.title | escape }}</div> {% endif %}
+       {% if section.settings.collection_3  != nil %} <div class="tabs_header_item">{{ section.settings.collection_3.title | escape }}</div> {% endif %}
+       </div>
+       <div class="tabs_body">
+        <div class="tabs_body_item" aria-selected="true">
+            <div class="image_wrapper">
+              {% for product in section.settings.collection_1.products %}
+                <div class="image_text_item">
+                    <div class="image_container" style="background-image: url('{{ product.featured_image | product_img_url: "master" }}')">
+                          <h2 class="title">{{ product.title | escape }}</h2>
+                          <h3 class="subtitle"></h3>
+                          <!-- <p class="desc"></p> -->
+                    </div>
+                    <div class="text_container">
+                        <p class="type">{{ section.settings.collection_1.title | escape }}</p>
+                        <a href="" class="link">{{ section.settings.prefix_1 }} {{ section.settings.collection_1.title | escape }}</a>
+                    </div>
+                </div>
+              {% endfor %}
+              {% for product in section.settings.collection_2.products %}
+                <div class="image_text_item">
+                    <div class="image_container" style="background-image: url('{{ product.featured_image | product_img_url: "master" }}')">
+                          <h2 class="title">{{ product.title | escape }}</h2>
+                          <h3 class="subtitle"></h3>
+                          <!-- <p class="desc"></p> -->
+                    </div>
+                    <div class="text_container">
+                        <p class="type">{{ section.settings.collection_2.title | escape }}</p>
+                        <a href="" class="link">{{ section.settings.prefix_2 }} {{ section.settings.collection_2.title | escape }}</a>
+                    </div>
+                </div>
+              {% endfor %}
+              {% for product in section.settings.collection_3.products %}
+                <div class="image_text_item">
+                    <div class="image_container" style="background-image: url('{{ product.featured_image | product_img_url: "master" }}')">
+                          <h2 class="title">{{ product.title | escape }}</h2>
+                          <h3 class="subtitle"></h3>
+                          <!-- <p class="desc"></p> -->
+                    </div>
+                    <div class="text_container">
+                        <p class="type">{{ section.settings.collection_3.title | escape }}</p>
+                        <a href="" class="link">{{ section.settings.prefix_3 }} {{ section.settings.collection_3.title | escape }}</a>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+        <div class="tabs_body_item">
+            <div class="image_wrapper">
+              {% for product in section.settings.collection_1.products %}
+                <div class="image_text_item">
+                    <div class="image_container" style="background-image: url('{{ product.featured_image | product_img_url: "master" }}')">
+                          <h2 class="title">{{ product.title | escape }}</h2>
+                          <h3 class="subtitle"></h3>
+                          <!-- <p class="desc"></p> -->
+                    </div>
+                    <div class="text_container">
+                        <p class="type">{{ section.settings.collection_1.title | escape }}</p>
+                        <a href="" class="link">{{ section.settings.prefix_1 }} {{ section.settings.collection_1.title | escape }}</a>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+        <div class="tabs_body_item">
+            <div class="image_wrapper">
+              {% for product in section.settings.collection_2.products %}
+                <div class="image_text_item">
+                    <div class="image_container" style="background-image: url('{{ product.featured_image | product_img_url: "master" }}')">
+                          <h2 class="title">{{ product.title | escape }}</h2>
+                          <h3 class="subtitle"></h3>
+                          <!-- <p class="desc"></p> -->
+                    </div>
+                    <div class="text_container">
+                        <p class="type">{{ section.settings.collection_2.title | escape }}</p>
+                        <a href="" class="link">{{ section.settings.prefix_2 }} {{ section.settings.collection_2.title | escape }}</a>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+         <div class="tabs_body_item">
+            <div class="image_wrapper">
+              {% for product in section.settings.collection_3.products %}
+                <div class="image_text_item">
+                    <div class="image_container" style="background-image: url('{{ product.featured_image | product_img_url: "master" }}')">
+                          <h2 class="title">{{ product.title | escape }}</h2>
+                          <h3 class="subtitle"></h3>
+                          <!-- <p class="desc"></p> -->
+                    </div>
+                    <div class="text_container">
+                        <p class="type">{{ section.settings.collection_3.title | escape }}</p>
+                        <a href="" class="link">{{ section.settings.prefix_3 }} {{ section.settings.collection_3.title | escape }}</a>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+       </div>
+    </div>
+</section>
+
+<script>
+  const tabsHeaderItems = Array.from(document.querySelectorAll('#tabssection090323 .tabs_header .tabs_header_item'));
+  const tabsBodyItems = Array.from(document.querySelectorAll('#tabssection090323 .tabs_body .tabs_body_item'));
+
+  tabsHeaderItems.forEach((hItem, hIndex) => {
+      hItem.addEventListener('click', (e) => {onItemHeaderClick(e, hIndex)});
+  });
+
+  function onItemHeaderClick(e, index) {
+        tabsHeaderItems.forEach((bItem, bIndex) => {
+            if(index === bIndex){
+                tabsHeaderItems[bIndex].setAttribute('aria-selected', 'true');
+                tabsBodyItems[bIndex].setAttribute('aria-selected', 'true');
+            }else{
+                tabsHeaderItems[bIndex].removeAttribute('aria-selected');
+                tabsBodyItems[bIndex].removeAttribute('aria-selected');
+            }
+        });
+}
+</script>
+
+{% schema %}
+  {
+    "name": "Tabs Image Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Parametre couleurs"
+      },
+      {
+          "type":"color",
+          "id":"bg_color",
+          "label":"Couleur de fond",
+          "default":"#fff"
+      },
+      {
+          "type":"color",
+          "id":"text_color",
+          "label":"Couleur du texte",
+          "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"collection_color",
+          "label":"Couleur du type",
+          "default":"#000"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Bloc 1"
+      },
+      {
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Collection Associé Bloc 1"
+      },
+      {
+          "type":"text",
+          "id":"prefix_1",
+          "label":"Prefix lien BLoc 1",
+          "default":"Voir le"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Bloc 2"
+      },
+      {
+        "type": "collection",
+        "id": "collection_2",
+        "label": "Collection Associé Bloc 2"
+      },
+      {
+          "type":"text",
+          "id":"prefix_2",
+          "label":"Prefix lien BLoc 2",
+          "default":"Voir le"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Bloc 3"
+      },
+      {
+        "type": "collection",
+        "id": "collection_3",
+        "label": "Collection Associé Bloc 3"
+      },
+      {
+          "type":"text",
+          "id":"prefix_3",
+          "label":"Prefix lien BLoc 3",
+          "default":"Voir le"
+      }
+    ],
+    "presets": [
+      {
+          "name": "Tabs Image Section"
+      }
+    ]
+  }
+{% endschema %}

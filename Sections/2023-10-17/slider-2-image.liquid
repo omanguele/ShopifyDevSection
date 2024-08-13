@@ -1,0 +1,509 @@
+<style>
+  #shopify-section-{{ section.id }} #slider2image4421610132 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: transform;
+    position: relative;
+    padding: 0 100px;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132 .slider2image4421610132_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+  }
+
+  #shopify-section-{{ section.id }} #slider2image4421610132  .swiper-slide {
+    transform: unset !important;
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto !important;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .swiper,
+  #shopify-section-{{ section.id }} #slider2image4421610132  .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide {
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+    width: 100%;
+    display: grid;
+    grid-auto-columns: 1fr;
+    height: auto;
+    grid-row: 2;
+    max-height: calc(909px - calc(80px + calc(13px * 1.3) + 9px) * 2);
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_image_inner {
+    max-height: 800px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-auto-rows: 100%;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_image img {
+    width: 100%;
+    height: 100%;
+    max-height: calc(909px - calc(80px + calc(13px * 1.3) + 9px) * 2);
+    object-fit: cover;
+    max-width: 100%;
+    object-position: right;
+    display: block;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-top: 50px;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_footer_desk a,
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_footer_mobile a {
+    font-size: 13px;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} #slider2image4421610132  .cust_pagination,
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_title {
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0 !important;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slider_mobile .swiper-pagination {
+    font-size: 13px;
+    font-weight: 300;
+    width: fit-content !important;
+    right: 10px !important;
+    top: 50% !important;
+    left: unset !important;
+    height: fit-content !important;
+    transform: translateY(-50%);
+  }
+
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slider_mobile .slider2image4421610132_slide,
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide.full {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_footer_mobile {
+    display: none !important;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slide_link,
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slide_link_desk {
+    display: none !important;
+  }
+
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slide_link_desk.active {
+    display: block !important;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slider_mobile {
+    display: none !important;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_footer_desk {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    bottom: 0;
+    align-items: flex-end;
+    padding: 20px 13px 10px 13px;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_footer_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_title_ctn {
+    display: flex;
+    align-items: flex-end;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slider_desk {
+    max-width: 1000px;
+    width:100%;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slider_desk .slider2image4421610132_slide {
+    opacity: 0;
+    transition: opacity 700ms;
+  }
+  #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slider_desk .slider2image4421610132_slide.active {
+    opacity: 1;
+  }
+  @media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #slider2image4421610132    .slider2image4421610132_slider_mobile {
+      display: block !important;
+    }
+    #shopify-section-{{ section.id }} #slider2image4421610132 {
+      padding: 0;
+      height: auto;
+    }
+    #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide {
+      align-self: flex-start;
+    }
+    #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_footer_mobile {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      padding: 10px 10px 30px 10px;
+    }
+    #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slide_footer_desk,
+    #shopify-section-{{ section.id }} #slider2image4421610132  .slider2image4421610132_slider_desk,
+    #shopify-section-{{ section.id }} #slider2image4421610132  .slide_link_desk.active {
+      display: none !important;
+    }
+    #shopify-section-{{ section.id }} #slider2image4421610132  .slide_link.active {
+      display: block !important;
+    }
+  }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+>
+
+<section id="slider2image4421610132">
+  <div class="slider2image4421610132_container">
+    <div class="slider2image4421610132_slider_desk">
+      {% for block in section.blocks %}
+        <div
+          style="display:{% if forloop.index0 > 0 %}none{% endif %}"
+          class="slider2image4421610132_slide {% if forloop.index0 == 0 %}active{% endif %} {% if block.settings.image_1 == blank or block.settings.image_2 == blank and block.settings.full_width == true %}full{% endif %}"
+        >
+          {% if block.settings.image_1 == blank
+            or block.settings.image_2 == blank
+            and block.settings.full_width == false
+          %}
+            <div>
+              <span></span>
+            </div>
+          {% endif %}
+          {% if block.settings.image_1 != blank %}
+            <div class="slider2image4421610132_slide_image">
+              <div class="slider2image4421610132_slide_image_inner">
+                <img
+                  src="{{ block.settings.image_1 | img_url: "master" }}"
+                  alt=""
+                >
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.image_2 != blank %}
+            <div class="slider2image4421610132_slide_image">
+              <div class="slider2image4421610132_slide_image_inner">
+                <img
+                  src="{{ block.settings.image_2 | img_url: "master" }}"
+                  alt=""
+                >
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="slider2image4421610132_slide_footer_desk">
+      <div class="slider2image4421610132_title_ctn">
+        <h2 class="slider2image4421610132_title"><a href="{{ section.settings.url }}">{{ section.settings.title }}</a></h2>
+      </div>
+      <div class="slider2image4421610132_slide_footer_info">
+        {% for block in section.blocks %}
+          <div class="slide_link_desk {% if forloop.index0 == 0 %}active{% endif %}" data-index="{{ forloop.index0 }}">
+            {% if block.settings.url_text_1 != '' %}
+              <a href="{{ block.settings.url_link_1 }}">
+                <span>{{ block.settings.url_text_1 }}</span>
+                <span>↗</span>
+              </a>
+            {% endif %}
+            {% if block.settings.url_text_2 != '' %}
+              <a href="{{ block.settings.url_link_2 }}">
+                <span>{{ block.settings.url_text_2 }}</span>
+                <span>↗</span>
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+        <div>
+          <span class="cust_pagination">1/1</span>
+        </div>
+      </div>
+    </div>
+    <div class="slider2image4421610132_slider_mobile swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.settings.image_1 != blank %}
+            <div class="swiper-slide">
+              <div class="slider2image4421610132_slide">
+                <div class="slider2image4421610132_slide_image">
+                  <div class="slider2image4421610132_slide_image_inner">
+                    <img
+                      src="{{ block.settings.image_1 | img_url: "master" }}"
+                      alt=""
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.image_2 != blank %}
+            <div class="swiper-slide">
+              <div class="slider2image4421610132_slide">
+                <div class="slider2image4421610132_slide_image">
+                  <div class="slider2image4421610132_slide_image_inner">
+                    <img
+                      src="{{ block.settings.image_2 | img_url: "master" }}"
+                      alt=""
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="slider2image4421610132_slide_footer_mobile">
+      <h2 class="slider2image4421610132_title">{{ section.settings.title }}</h2>
+      {% for block in section.blocks %}
+        {% if block.settings.image_1 != blank %}
+          <a
+            href="{{ block.settings.url_link_1 }}"
+            class="slide_link {% if forloop.index0 == 0 %}active{% endif %}"
+          >
+            {% if block.settings.url_text_1 != '' %}
+              <span>{{ block.settings.url_text_1 }}</span>
+              <span>↗</span>
+            {% endif %}
+          </a>
+        {% endif %}
+        {% if block.settings.image_2 != blank %}
+          <a
+            href="{{ block.settings.url_link_2 }}"
+            class="slide_link"
+          >
+            {% if block.settings.url_text_2 != '' %}
+              <span>{{ block.settings.url_text_2 }}</span>
+              <span>↗</span>
+            {% endif %}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  
+  
+  
+      let currSlideDeskIndex = 0;
+      const prevSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" /></svg>`;
+      const nextSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>`;
+      const ctn = document.querySelector("#shopify-section-{{ section.id }} #slider2image4421610132");
+      const slideLinks = Array.from(
+        document.querySelectorAll("#shopify-section-{{ section.id }} #slider2image4421610132 .slide_link")
+      );
+      const slideLinkDesks = Array.from(
+        document.querySelectorAll("#shopify-section-{{ section.id }} #slider2image4421610132 .slide_link_desk")
+      );
+      const slideDesks = Array.from(
+        document.querySelectorAll(
+          "#shopify-section-{{ section.id }} #slider2image4421610132 .slider2image4421610132_slider_desk .slider2image4421610132_slide"
+        )
+      );
+      const custPagination = document.querySelector('#shopify-section-{{ section.id }} #slider2image4421610132 .cust_pagination');
+      custPagination.innerText = `1/${slideDesks.length}`;
+      
+      const swiper = new Swiper("#shopify-section-{{ section.id }} #slider2image4421610132 .slider2image4421610132_slider_mobile", {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        pagination: {
+          el: "#shopify-section-{{ section.id }} #slider2image4421610132 .slider2image4421610132_slider_mobile .swiper-pagination",
+          type: "fraction",
+        },
+      });
+
+      ctn.addEventListener("mousemove", function (event) {
+        let screenWidth = window.innerWidth;
+        if(isFooter(event.target)){
+            document.body.style.cursor = "default";
+        }
+        else if (event.clientX > screenWidth / 2) {
+          document.body.style.cursor = "url('" + nextSvg + "'), auto";
+        } else {
+          document.body.style.cursor = "url('" + prevSvg + "'), auto";
+        }
+      });
+      ctn.addEventListener("click", function (event) {
+        let screenWidth = window.innerWidth;
+        if(!isFooter(event.target)){if (event.clientX > screenWidth / 2) {
+          if (screenWidth <= 780) {
+            if (swiper.activeIndex + 1 == swiper.slides.length) {
+              swiper.slideTo(0);
+            } else {
+              swiper.slideNext();
+            }
+            activeSlideLink(swiper.activeIndex)
+          } else {
+            if(currSlideDeskIndex + 1  == slideDesks.length){
+                currSlideDeskIndex = 0;
+            }else{
+                currSlideDeskIndex = currSlideDeskIndex + 1;
+            }
+            changeDeskSlide();
+          }
+        } else {
+          if (screenWidth <= 780) {
+            if (swiper.activeIndex == 0) {
+              swiper.slideTo(swiper.slides.length - 1);
+            } else {
+              swiper.slidePrev();
+            }
+            activeSlideLink(swiper.activeIndex);
+          } else {
+            if(currSlideDeskIndex == 0){
+                currSlideDeskIndex = slideDesks.length - 1;
+            }else{
+                currSlideDeskIndex = currSlideDeskIndex - 1;
+            }
+            changeDeskSlide();
+          }
+        }}
+      });
+      swiper.on("slideChange", function () {
+        activeSlideLink(swiper.activeIndex);
+      });
+      function activeSlideLink(index) {
+        slideLinks.forEach((link, i) => {
+          if (i === index) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+      function changeDeskSlide() {
+        slideDesks.forEach((slide, i) => {
+            if(i === currSlideDeskIndex){
+                slide.style.display = 'grid';
+                setTimeout(() => {
+                    slide.classList.add('active');
+                }, 300)
+            }else{
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            }
+        });
+        slideLinkDesks.forEach((link, i) => {
+          let trueIndex = parseInt(link.getAttribute("data-index"));
+          if (trueIndex === currSlideDeskIndex) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+        custPagination.innerText = `${currSlideDeskIndex+1}/${slideDesks.length}`;
+      }
+      function isFooter(target) {
+        if(
+            target.parentElement.classList.contains('slide_link') ||
+            target.parentElement.classList.contains('slider2image4421610132_slide_footer_desk') ||
+            target.parentElement.classList.contains('slider2image4421610132_slide_footer_info') ||
+            target.parentElement.classList.contains('slide_link_desk') ||
+            target.parentElement.classList.contains('slider2image4421610132_slide_footer_mobile') ||
+            target.classList.contains('slide_link') ||
+            target.classList.contains('slider2image4421610132_slide_footer_desk') ||
+            target.classList.contains('slider2image4421610132_slide_footer_info') ||
+            target.classList.contains('slide_link_desk') ||
+            target.classList.contains('slider2image4421610132_slide_footer_mobile')
+        ){
+            return true;
+        }else{
+            return false;
+        }
+      }
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Campaign Detail",
+  "blocks": [
+    {
+    "type": "item",
+    "name": "Detail",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Image 100%",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      },
+      {
+        "type": "text",
+        "id": "url_text_1",
+        "label": "Texte du lien 1"
+      },
+      {
+        "type": "text",
+        "id": "url_text_2",
+        "label": "Texte du lien 2"
+      },
+      {
+        "type": "url",
+        "id": "url_link_1",
+        "label": "lien 1"
+      },
+      {
+        "type": "url",
+        "id": "url_link_2",
+        "label": "lien 2"
+      }
+    ]
+  }
+],
+  "settings": [
+    {
+    "type": "text",
+    "id": "title",
+    "label": "Titre de la section",
+    "default": "Fall Winter 2022"
+  },
+    {
+          "type": "url",
+          "id": "url",
+          "label": "lien"
+        }
+  ],
+  "presets": [
+    {
+      "name": "Campaign Detail"
+    }
+  ]
+}
+{% endschema %}

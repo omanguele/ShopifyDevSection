@@ -1,0 +1,231 @@
+<style>
+  
+#shopify-section-{{ section.id }} #slidernotice  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: {{ section.settings.bg-colore }};
+  color: {{ section.settings.text-color }};
+}
+
+
+#shopify-section-{{ section.id }} #slidernotice  .container{
+    width: 100%;
+}
+
+#shopify-section-{{ section.id }} div#new-form-atc {
+    margin-bottom: 0px !important;
+}
+#shopify-section-{{ section.id }} #slidernotice   .swiper-wrapper{
+    width:100%;
+}
+
+#shopify-section-{{ section.id }} #slidernotice  .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+#shopify-section-{{ section.id }} #slidernotice   .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: {{ section.settings.card-bg-color }};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shopify-section-{{ section.id }} #slidernotice   .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#shopify-section-{{ section.id }} #slidernotice  .myslide {
+    position: relative;
+    width: 100%;
+}
+
+#shopify-section-{{ section.id }} #slidernotice  .slide {
+    border-radius: 1px;
+    width: 98%;
+    padding: 12px 50px;
+    position: relative;
+    box-shadow: 0 2px 7px -1px rgb(0 0 0 / 30%) !important;
+    text-align: left;
+    margin: 5px !important;
+}
+
+#shopify-section-{{ section.id }} #slidernotice   .slide .user{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+@media only screen and (min-width: 640px){
+  #shopify-section-{{ section.id }} #slidernotice  .slide img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 640px){
+  #shopify-section-{{ section.id }} #slidernotice  .slide img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+}
+#shopify-section-{{ section.id }} #slidernotice  .slide .user-info h3{
+    color: {{ section.settings.text-color }};
+    font-size: 13px;
+    margin-bottom:0px;
+    line-height: 16px;
+    text-align: left;
+}
+
+#shopify-section-{{ section.id }} #slidernotice   .slide .user-info .stars i{
+    color: {{ section.settings.star-color }};
+    font-size: 15px;
+}
+
+#shopify-section-{{ section.id }} #slidernotice   .slide .text {
+    color: {{ section.settings.text-color }};
+    margin-bottom: 0px;
+    font-size: 13px;
+    scroll-behavior: smooth;
+    padding-right: 10px;
+    line-height: 16px;
+    text-align: left;
+}
+
+#shopify-section-{{ section.id }} #slidernotice   .btn{
+
+    font-size: 11px;
+    color: {{ section.settings.btn-text-color }};
+    background: {{ section.settings.btn-bg-color }};
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 4px 12px;
+}
+
+#shopify-section-{{ section.id }} #slidernotice .scrool{
+  max-height: 68px;
+    overflow-y: auto;
+    margin-bottom: 6px;
+}
+
+#shopify-section-{{ section.id }} #slidernotice .swiper-button-next,#shopify-section-{{ section.id }} #slidernotice .swiper-button-prev {
+    position: absolute;
+    top: 25%;
+}
+  
+#shopify-section-{{ section.id }} #slidernotice  .btn:hover{
+    letter-spacing: .1rem;
+}
+
+#shopify-section-{{ section.id }} #slidernotice   .swiper-button-next::after,
+#shopify-section-{{ section.id }} #slidernotice   .swiper-button-prev::after{
+    margin: auto;
+    font-size: 15px !important;
+    color: #fff;
+    font-weight: bold;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+ }
+
+#shopify-section-{{ section.id }} #slidernotice   .swiper-button-next,
+#shopify-section-{{ section.id }} #slidernotice   .swiper-button-prev{
+    height: 35px !important;
+    width: 35px !important; 
+    text-align: center;
+    background: {{ section.settings.arrow-color }};
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 8px !important;
+    box-shadow:  0 .1rem 0.5rem rgba(0, 0, 0, 0.504);
+}
+
+#shopify-section-{{ section.id }} #slidernotice .stars{
+  display: flex;
+  margin-top: 3px;
+}
+
+#shopify-section-{{ section.id }} #slidernotice .swiper-button-prev::after,#shopify-section-{{ section.id }} #slidernotice .swiper-button-next::after{
+  border: 0px solid #1c1c1c;
+}
+
+#shopify-section-{{ section.id }} #slidernotice  .swiper-button-next{
+    right: 10px !important;
+}
+
+#shopify-section-{{ section.id }} #slidernotice  .swiper-button-prev{
+    left: 10px !important; 
+}
+</style>
+  
+<div id="slidernotice">
+  <div class="container">
+    <div class="swiper myslideree">
+        <div class=" swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'notice' %}
+              <div class=" swiper-slide">
+                  <div class="slide">
+                    <div class="user">
+                        <img src="{{ block.settings.image | img_url:"master" }}" alt="">
+                        <div class="user-info">
+                            <h3>{{ block.settings.name }}</h3>
+                            <div class="stars" >
+                              {% for i in (1..block.settings.star-number) %}
+                                <svg viewBox="0 0 52.916667 52.916667"><g transform="translate(0,-270.54165)"><path d="m 24.790494,270.53466 6.425597,17.29833 18.237351,0.18898 -14.552083,11.71727 5.197173,17.48139 L 24.790494,306.73179 9.4824609,317.22063 14.585139,299.55025 0.03305582,288.11647 18.55389,287.644 Z"></path></g></svg>
+                              {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrool"><p class="text">{{ block.settings.message }}</p></div>
+                    <a href="{{ block.settings.btn-url }}" class="btn">{{ block.settings.btn-label }}</a>
+                  </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.0/swiper-bundle.min.js" integrity="sha512-sR63/L3Slqn0OWMMafv7gmRGxkYJOcfgdN3jznwea9NYiett6R+cGdZ0t0TRHeH1gZogMyLE1oQpQ0Lc6ULKbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    new Swiper("#shopify-section-{{ section.id }} .myslideree", {
+      slidesPerView:1,
+      grabCursor: true,
+      spaceBetween:20,
+      navigation: {
+        nextEl: "#shopify-section-{{ section.id }} .swiper-button-next",
+        prevEl: "#shopify-section-{{ section.id }} .swiper-button-prev",
+      },
+      speed:1000,
+      direction: 'horizontal',
+      
+      zoom: false,
+      keyboard: 
+      {
+        enabled: true,
+        onlyInViewport: false,
+      },
+      mousewheel: 
+      {
+          invert: true,
+      },
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      });
+</script>

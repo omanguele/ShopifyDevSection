@@ -1,0 +1,148 @@
+<style>
+  #bomsbanner210423 {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+  }
+  #bomsbanner210423 img {
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+  #bomsbanner210423 .container_desktop,
+  #bomsbanner210423 .container_mobile {
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  #bomsbanner210423 .container_desktop {
+      padding: 120px 40px;
+  }
+  #bomsbanner210423 .container_mobile {
+      display: none;
+      padding: 80px 20px;
+  }
+  #bomsbanner210423 .content {
+      color: #fff;
+      max-width: 1400px;
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      z-index: 20;
+  }
+  #bomsbanner210423 .title{
+      font-size: 52px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1;
+  }
+  #bomsbanner210423 .description {
+      font-size: 20px;
+      text-transform: uppercase;
+      margin: 50px 0;
+  }
+  #bomsbanner210423 .link {
+      font-size: 20px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      color: {{ section.settings.text_color }};
+      display: block;
+  }
+  @media only screen and (max-width: 780px) {
+      #bomsbanner210423 .container_desktop {
+          display: none;
+      }
+      #bomsbanner210423 .container_mobile {
+          display: block;
+      }
+      #bomsbanner210423 .title{
+          font-size: 32px;
+      }
+      #bomsbanner210423 .description {
+          font-size: 14px;
+      }
+      #bomsbanner210423 .link {
+          font-size: 14px;
+      }
+  }
+</style>
+
+<section id="bomsbanner210423">
+  <div
+    class="container_desktop"
+    style="background-image: url('{{ section.settings.bg_desktop | img_url: 'master' }}');"
+  >
+    <div class="content">
+      <h3 class="title">{{ section.settings.title }}</h3>
+      <p class="description">
+        {{ section.settings.description }}
+      </p>
+      <a href="{{ section.settings.link_url }}" class="link">{{ section.settings.link_label }}</a>
+    </div>
+  </div>
+  <div class="container_mobile" style="background-image: url('{{ section.settings.bg_mobile | img_url: 'master' }}');">
+    <div class="content">
+      <h3 class="title">{{ section.settings.title }}</h3>
+      <p class="description">
+        {{ section.settings.description }}
+      </p>
+      <a href="{{ section.settings.link_url }}" class="link">{{ section.settings.link_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner Text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_desktop",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default":"Lorem ipsun..."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default":"Lorem ipsun..."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Libelle Lien",
+      "default":"Lorem ipsum"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "URL Lien"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Text"
+    }
+  ]
+}
+{% endschema %}

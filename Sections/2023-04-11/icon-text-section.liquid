@@ -1,0 +1,114 @@
+<style>
+  #shopify-section-{{ section.id }} #icontext110423  .container{
+    width: 100%;
+    padding: 40px 20px;
+}
+
+#shopify-section-{{ section.id }} #icontext110423  .icons-container{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+    background-color: {{ section.settings.bg_color }};
+    border-radius: 15px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+#shopify-section-{{ section.id }} #icontext110423  .icons-container .icons{
+    display: flex;
+    flex: 1 1 15rem;
+    gap: 1rem;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#shopify-section-{{ section.id }} #icontext110423  .icons-container .icons img{
+    max-width: 100%;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+#shopify-section-{{ section.id }} #icontext110423  .icons-container .icons span{
+  font-size: 1rem;
+  color: {{ section.settings.text_color }} !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  #shopify-section-{{ section.id }} #icontext110423  .icons-container{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  
+ #shopify-section-{{ section.id }} #icontext110423  .icons-container .icons{  
+    justify-content: flex-start;
+    padding: 10px 20px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+ #shopify-section-{{ section.id }} #icontext110423  .icons-container{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+</style>
+
+
+<section id="icontext110423">
+  <div class="container">
+          <div class="icons-container">
+            {% for block in section.blocks %}
+              <div class="icons">
+                  <img src="/{{ block.settings.image | image_url: "master" }}"/>
+                  <span>{{ block.settings.text }}</span>
+              </div>
+            {% endfor %}
+          </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Icon Text Section",
+    "blocks": [
+      {
+        "type": "icon-text",
+        "name": "icon",
+        "settings": [
+          {
+            "type":"image_picker",
+            "id":"image",
+            "label":"Image"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text", 
+            "default":"Lorem ipsun..."
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Couleur de texte", 
+        "default":"#18025a"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Couleur de fond", 
+        "default":"#DCF1E0"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Icon Text Section"
+      }
+    ]
+  }
+{% endschema %}

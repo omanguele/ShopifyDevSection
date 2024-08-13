@@ -1,0 +1,230 @@
+<style>
+    #shopify-section-{{ section.id }} #gridproduct120123 a,
+    #shopify-section-{{ section.id }} #gridproduct120123 a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+    #shopify-section-{{ section.id }} #gridproduct120123 div:empty{display:block}
+    #shopify-section-{{ section.id }} #gridproduct120123{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding: 0 1rem 3rem;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .wrapper {
+      width: 100%;
+      height: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      display: grid;
+      grid-gap: 1rem;
+      grid-row-gap: 3rem;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .card {
+      width: 100%;
+      position: relative;
+    }
+    #shopify-section-{{ section.id }} #gridproduct120123 .card a {
+      display: block;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .hd-card {
+      position: relative;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .hov-image {
+      display: none;
+    }
+    #shopify-section-{{ section.id }} #gridproduct120123 .init-image {
+      display: block;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .ctn-images {
+      position: relative;
+      width: 100%;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .ctn-images .ctn-images-items {
+      display: none;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .ctn-images .ctn-images-items.active {
+      display: block !important;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .card .sizes {
+      position: absolute;
+      z-index: 50;
+      opacity: 0;
+      bottom: 1rem;
+      display: flex;
+      list-style: none;
+      font-size: 12px;
+      left: 10px;
+      font-weight: 600;
+      flex-wrap: wrap;
+      overflow: hidden;
+      white-space: nowrap;
+      align-items: flex-start;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .colors {
+      position: absolute;
+      opacity: 0;
+      top: 1rem;
+      z-index: 10;
+      display: flex;
+      list-style: none;
+      font-size: 12px;
+      left: 10px;
+      font-weight: 600;
+      flex-wrap: wrap;
+      overflow: hidden;
+      white-space: nowrap;
+      align-items: flex-start;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .colors .color {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .card .sizes li {
+      margin-right: 6px;
+      cursor: pointer;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .card .sizes li:hover {
+      color: pink;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .ctn-images .ctn-images-items {
+      width: 100%;
+      height: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .ctn-images .ctn-images-items img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    #shopify-section-{{ section.id }} #gridproduct120123 .ctn-info {
+      text-transform: uppercase;
+      line-height: 130%;
+      font-size: 70%;
+      font-weight: 700;
+      margin-top: 0.7em;
+    }
+    
+    @media only screen and (min-width: 1020px) {
+      #shopify-section-{{ section.id }} #gridproduct120123 .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    
+      #shopify-section-{{ section.id }} #gridproduct120123 .card:hover > .hd-card .hov-image {
+        display: block;
+      }
+      #shopify-section-{{ section.id }} #gridproduct120123 .card:hover > .hd-card .init-image {
+        display: none;
+      }
+    
+      #shopify-section-{{ section.id }} #gridproduct120123 .card:hover > .hd-card .colors {
+        opacity: 1;
+      }
+    
+      #shopify-section-{{ section.id }} #gridproduct120123 .card:hover > .hd-card ul.sizes {
+        opacity: 1;
+      }
+    }
+    #shopify-section-{{ section.id }} #gridproduct120123 .title{
+      color: {{ section.settings.title-color }}
+    }
+    #shopify-section-{{ section.id }} #gridproduct120123 .price{
+      color: {{ section.settings.price-color }}
+    }
+  </style>
+  <section id="gridproduct120123">
+    <div id="wrapper" class="wrapper">
+      {% for block in section.blocks %}
+        <div class="card">
+          <div class="hd-card">
+            <div class="colors">
+              <div class="color" style="background-color: red;"></div>
+              <div class="color" style="background-color: black;"></div>
+              <div class="color" style="background-color: skyblue;"></div>
+            </div>
+            <a href="#">
+              <div class="ctn-images">
+                <div class="ctn-images-items active">
+                  <img src="{{ block.settings.product.images[0] | img_url:"master" }}" class="init-image" alt="" />
+                  <img src="{{ block.settings.product.images[1] | img_url:"master" }}" class="hov-image" alt="" />
+                </div>
+              </div>
+              <ul class="sizes">
+                <li>36</li>
+                <li>37</li>
+                <li>38</li>
+                <li>39</li>
+                <li>40</li>
+                <li>31</li>
+                <li>32</li>
+              </ul>
+            </a>
+          </div>
+          <a href="#">
+            <div class="ctn-info">
+              <p class="title">{{ block.settings.product.title }}</p>
+              <p class="price">{{ block.settings.product.price | money }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Grid Product List Section",
+      "blocks": [
+        {
+          "type": "item",
+          "name": "Item",
+          "settings": [
+            {
+              "type":"product",
+              "id":"product",
+              "label":"Produit"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"price-color",
+          "label":"Couleur du Prix",
+          "default":"#000"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Grid Product List Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

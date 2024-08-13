@@ -1,0 +1,469 @@
+<style>
+  #shopify-section-{{ section.id }} #footerboms232810 {
+      width: 100%;
+      position: relative;
+      background-color: {{ section.settings.bg_color }};
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_container {
+    padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+      margin: 0 auto;
+      max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+    width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item {
+      text-align: left;
+      padding: 0 16px;
+      margin-bottom: 26px;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_1,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_2,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_3 {
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item_inner {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item_inner.logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810  a {
+      color: inherit;
+      background-color: transparent;
+      text-decoration: none
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_logo {
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_logo img {
+      height: auto;
+      max-width: 80px;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_header {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_title {
+      font-size: 19px;
+      line-height: 1;
+      text-transform: uppercase;
+      text-align: left;
+      word-break: break-word;
+      margin-bottom: 16px;
+      color:{{ section.settings.heading_color }};
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_subheading,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_menu ul li {
+      font-size: 12px;
+      line-height: 1.4;
+      color:{{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_header + div {
+      margin-top: 16px;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810  ul {
+      list-style: none;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_contact_method ul li,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_social_media ul li,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_payment_method ul li {
+      display: inline-block;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_contact_method ul li:not(:last-child),
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_social_media ul li:not(:last-child),
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_payment_method ul li:not(:last-child) {
+      margin-right: 16px;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_contact_method ul li img,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_social_media ul li img,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_contact_method ul li svg,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_social_media ul li svg ,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_payment_method ul li img,
+  #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_payment_method ul li svg {
+      margin-bottom: 10px;
+      display: inline-block;
+      width: 25px;
+      height: auto;
+      fill: currentColor;
+      vertical-align: middle;
+  }
+  #shopify-section-{{ section.id }} #footerboms232810 img {
+      max-width: 100%;
+      height: auto;
+      border: 0;
+  }
+
+  @media screen and (min-width: 500px) {
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_1,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_2,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_3{
+          width: calc(100% / 2);
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item {
+          margin-bottom: 39px;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_title {
+          font-size: 22px;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_subheading,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_menu ul li {
+          font-size: 14px;
+      }
+  }
+  @media screen and (min-width: 1024px) {
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_container {
+          padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item {
+          margin-bottom: 52px;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_logo img {
+          max-width: 130px;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_1 {
+          width: 25%;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_2 {
+          width: 35%;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item.col_3 {
+          width: 40%;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_subheading,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_menu ul li {
+          font-size: 16px;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_contact_method ul li img,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_social_media ul li img,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_contact_method ul li svg,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_social_media ul li svg ,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_payment_method ul li img,
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_payment_method ul li svg {
+          width: 35px;
+      }
+      #shopify-section-{{ section.id }} #footerboms232810 .footerboms232810_item_inner.logo {
+          align-items: center;
+      }
+  }
+</style>
+
+<section id="footerboms232810">
+  <div class="footerboms232810_container">
+    <div class="footerboms232810_item col_1">
+      <div class="footerboms232810_item_inner logo">
+        <a href="/" class="footerboms232810_logo">
+          <img
+            src="{{ section.settings.image | img_url: "master" }}"
+            alt=""
+          >
+        </a>
+      </div>
+    </div>
+    <div class="footerboms232810_item col_2">
+      <div class="footerboms232810_item_inner">
+        <div class="footerboms232810_header">
+          <h2 class="footerboms232810_title">{{ section.settings.heading_1 }}</h2>
+          <div class="footerboms232810_subheading">
+            {{ section.settings.description_1 }}
+          </div>
+        </div>
+        <div class="footerboms232810_contact_method">
+          <ul>
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'contact_method' -%}
+                  <li>
+                    <a href="{{ block.settings.url }}" target="_blank">
+                      <img src="{{ block.settings.icon | img_url: "master" }}" target="_blank" alt="">
+                    </a>
+                  </li>
+              {%- endcase -%}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footerboms232810_item col_3">
+      <div class="footerboms232810_item_inner">
+        <div class="footerboms232810_header">
+          <h2 class="footerboms232810_title">{{ section.settings.heading_2 }}</h2>
+        </div>
+        <div class="footerboms232810_menu">
+          <ul>
+            {%- if section.settings.menu != blank -%}
+              {%- for link in section.settings.menu.links -%}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            {%- endif -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footerboms232810_item col_1">
+      <div class="footerboms232810_item_inner"></div>
+    </div>
+    <div class="footerboms232810_item col_2">
+      <div class="footerboms232810_item_inner">
+        <div class="footerboms232810_header">
+          <h2 class="footerboms232810_title">{{ section.settings.heading_3 }}</h2>
+        </div>
+        <div class="footerboms232810_social_media">
+          <ul>
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'social_media' -%}
+                  <li>
+                    <a href="{{ block.settings.url }}" target="_blank">
+                      <img src="{{ block.settings.icon | img_url: "master" }}" target="_blank" alt="">
+                    </a>
+                  </li>
+              {%- endcase -%}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footerboms232810_item col_3">
+      <div class="footerboms232810_item_inner">
+        <div class="footerboms232810_header">
+          <h2 class="footerboms232810_title">{{ section.settings.heading_4 }}</h2>
+        </div>
+        <div class="footerboms232810_payment_method">
+          <div
+            class="payment-methods-list payment-methods-list--auto"
+            style="width: 100%;justify-content: center;align-items: center;"
+          >
+            {% for type in shop.enabled_payment_types %}
+              {{ type | payment_type_svg_tag }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Custom Footer",
+    "blocks": [
+      {
+      "type": "social_media",
+      "name": "Social Media",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    },
+      {
+      "type": "contact_method",
+      "name": "Contact Method",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+    ],
+    "settings": [
+      {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur du fond de la section",
+      "default": "#fff"
+    },
+   {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur de titre",
+      "default": "#ff4444"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#000"
+    },
+      {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+      {
+  "type": "header",
+  "content": "Block 1"
+},
+      {
+        "type": "text",
+        "id": "heading_1",
+        "label": "Heading 1",
+        "default": "Nous contacter !"
+      },
+      {
+        "type": "textarea",
+        "id": "description_1",
+        "label": "Description 1"
+      },
+      {
+  "type": "header",
+  "content": "Block 2"
+},
+      {
+        "type": "text",
+        "id": "heading_2",
+        "label": "Heading 2",
+        "default": "Pour les curieux"
+      },
+      {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        },
+      {
+  "type": "header",
+  "content": "Block 3"
+},
+      {
+        "type": "text",
+        "id": "heading_3",
+        "label": "Heading 3",
+        "default": "Nos réseaux sociaux"
+      },
+      {
+  "type": "header",
+  "content": "Block 4"
+},
+      {
+        "type": "text",
+        "id": "heading_4",
+        "label": "Heading 4",
+        "default": "Moyens de paiement"
+      },
+  {
+    "type": "range",
+    "id": "desktop_top_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Top Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_bottom_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Bottom Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_left_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Left Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_right_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Right Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "mobile_top_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Top Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_bottom_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Bottom Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_left_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Left Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_right_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Right Spacing",
+    "default": 20
+  },
+  {
+    "type": "checkbox",
+    "id": "full_with",
+    "label": "Full Width",
+    "default": false
+  },
+  {
+    "type": "range",
+    "id": "max_width",
+    "min": 500,
+    "max": 2000,
+    "step": 100,
+    "unit": "px",
+    "label": "Max Width",
+    "default": 1400
+  }
+    ],
+  "presets": [
+    {
+      "name": "Custom Footer"
+    }
+  ]
+  }
+{% endschema %}

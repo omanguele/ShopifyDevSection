@@ -1,0 +1,581 @@
+<style>
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter{
+        background: url({{ section.settings.bg-image-1 | img_url:"master"}}) no-repeat 0 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .grey-default-background {
+        background-color: {{ section.settings.bg-color-2 }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .white-color{
+        color: {{ section.settings.text-color }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .text-17 {
+        font-size: 17px;
+        line-height: 21px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-.5 * var(--bs-gutter-x));
+        margin-left: calc(-.5 * var(--bs-gutter-x));
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .row>* {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-top: var(--bs-gutter-y);
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .col-auto {
+        flex: 0 0 auto;
+        width: auto;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .col {
+        flex: 1 0 0%;
+    }
+    @media (min-width: 992px){
+        #shopify-section-{{ section.id }} #mission-20230111 .col-lg-auto {
+            flex: 0 0 auto;
+            width: auto;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .align-items-center {
+        align-items: center!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .m-0 {
+        margin: 0!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .text-center {
+        text-align: center!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .green-background{
+        background-color: {{ section.settings.bg-color-1 }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .pt-10 {
+        padding-top: 10px!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .pb-10 {
+        padding-bottom: 10px!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 a {
+        color: {{ section.settings.text-contact }};
+        text-decoration: none;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 a:hover {
+        color: {{ section.settings.link-hover-color }};
+        text-decoration: none;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .prefooter a {
+        display: block;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .d-none {
+        display: none!important;
+    }
+    @media (min-width: 992px){
+        #shopify-section-{{ section.id }} #mission-20230111 .d-lg-block {
+            display: block!important;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .fst-italic {
+        font-style: italic!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .d-block {
+        display: block!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bold {
+        font-weight: 700;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .pfbague {
+        line-height: 1.1;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .text-24 {
+        font-size: 24px;
+    }
+    @media (min-width: 992px){
+        #shopify-section-{{ section.id }} #mission-20230111 .d-lg-none {
+            display: none!important;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .line-height-22 {
+        line-height: 22px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .img-fluid {
+        image-rendering: -webkit-optimize-contrast;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .position-relative {
+        position: relative!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .overflow-hidden {
+        overflow: hidden!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer{
+        background: url({{ section.settings.bg-image-2 | img_url:"master"}}) no-repeat 100% 0;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer .footer-bg1,
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer .footer-bg2{
+        background: url({{ section.settings.bg-image-3 | img_url:"master"}}) no-repeat 27% -211px;
+        background-size: 430px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer .footer-bg2 {
+        background-position: 84% 89px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .pt-40 {
+        padding-top: 40px!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .col-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer .footer-first{
+        padding: 0 3%;
+        z-index: 2;
+        position: relative;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .mb-20 {
+        margin-bottom: 20px;
+    }
+    @media (min-width: 576px){
+        #shopify-section-{{ section.id }} #mission-20230111 .col-sm-6 {
+            flex: 0 0 auto;
+            width: 50%;
+        }
+    }
+    @media (min-width: 992px){
+        #shopify-section-{{ section.id }} #mission-20230111 .col-lg-auto {
+            flex: 0 0 auto;
+            width: auto;
+        }
+    }
+    @media (min-width: 768px){
+        #shopify-section-{{ section.id }} #mission-20230111 .col-md-4 {
+            flex: 0 0 auto;
+            width: 33.33333333%;
+        }
+    }
+    @media (min-width: 992px){
+        #shopify-section-{{ section.id }} #mission-20230111 .col-lg-4 {
+            flex: 0 0 auto;
+            width: 33.33333333%;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .mb-5px {
+        margin-bottom: 5px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .mt-15 {
+        margin-top: 15px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .d-inline-block {
+        display: inline-block!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .white-background {
+        background-color: {{ section.settings.bg-contact }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer .footer-tel a{
+        border-radius: 30px;
+        padding: 3px;
+        overflow: hidden;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer .footer-tel a .footer-tel-icon{
+        border-radius: 50%;
+        padding: 5px;
+        overflow: hidden;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .bigfooter .footer .footer-tel a .footer-tel-num{
+        padding: 5px 20px 5px 10px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .text-20 {
+        font-size: 20px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .text-center {
+        text-align: center!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .pe-0 {
+        padding-right: 0!important;
+    }
+    @media (min-width: 768px){
+        #shopify-section-{{ section.id }} #mission-20230111 .col-md {
+            flex: 1 0 0%;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .green-color{
+        color: {{ section.settings.title-color }};
+    }
+    @media (min-width: 768px){
+        #shopify-section-{{ section.id }} #mission-20230111 .col-md-auto {
+            flex: 0 0 auto;
+            width: auto;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .mb-10 {
+        margin-bottom: 10px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .align-middle {
+        vertical-align: middle!important;
+    }
+
+    #shopify-section-{{ section.id }} #mission-20230111 .mb-20 {
+        margin-bottom: 20px;
+    }
+    @media (min-width: 992px){
+        #shopify-section-{{ section.id }} #mission-20230111 .mb-lg-0 {
+            margin-bottom: 0!important;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .h-100 {
+        height: 100%!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .mr-10 {
+        margin-right: 10px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111 .mb-15 {
+        margin-bottom: 15px;
+    }
+</style>
+<section id="mission-20230111">
+    <div class="bigfooter grey-default-background white-color text-17" bis_skin_checked="1">
+        <div class="prefooter row m-0 green-background text-center pt-10 pb-10 align-items-center" bis_skin_checked="1">
+            {% for block in section.blocks %}
+               {% if block.type == 'footer-text' %}
+                  <div class="col" bis_skin_checked="1">
+                      <a class="white-color" target="_blank" href="{{ block.settings.link }}" bis_skin_checked="1">
+                          <span class="d-none d-lg-block">
+                              <span class="pfbague bold fst-italic text-24 d-block">{{ block.settings.title }}</span>
+                              <span class="d-block d-lg-none d-xl-block line-height-22">{{ block.settings.desc }}</span>
+                          </span>
+                          <span class="d-block d-lg-none">
+                              <img alt="{{ block.settings.title }}" class="img-fluid" width="50" height="50" loading="lazy" data-src="{{ block.settings.icon | img_url:"master" }}">
+                          </span>
+                      </a>
+                  </div>
+               {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="footer position-relative overflow-hidden" bis_skin_checked="1">
+            <div class="footer-bg1" bis_skin_checked="1">
+                <div class="footer-bg2 row m-0 pt-40" bis_skin_checked="1">
+                    <div class="footer-content col-12" bis_skin_checked="1">
+                        <div class="footer-first" bis_skin_checked="1">
+                            <div class="row mb-20" bis_skin_checked="1">
+                                <div class="col-12 col-sm-6 col-lg-auto" bis_skin_checked="1">
+                                    <div class="mb-20" bis_skin_checked="1">
+                                        <div class="pfbague bold fst-italic text-24 green-color mb-10" bis_skin_checked="1"><a href="{{ section.settings.link-contact-footer }}" bis_skin_checked="1">{{ section.settings.title-contact-footer }}</a></div>
+                                        <p class="mb-5px">{{ section.settings.subtitle-contact-footer }}</p>
+                                        <p class="mb-5px">{{ section.settings.hours-contact-footer }}</p>
+                                        <div class="footer-tel mt-15" bis_skin_checked="1">
+                                            <a href="tel:{{ section.settings.tel-contact-footer }}" class="d-inline-block white-background" bis_skin_checked="1">
+                                                <span class="footer-tel-icon d-inline-block align-middle green-background"><img alt="Contact" class="img-fluid" width="30" height="30" loading="lazy" src="https://cdn.shopify.com/s/files/1/0664/0192/7457/files/{{ section.settings.icon-contact-footer }}"></span>
+                                                <span class="footer-tel-num d-inline-block align-middle text-20">{{ section.settings.tel-contact-footer }}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="col-12 col-sm-6 col-xl-3" bis_skin_checked="1">
+                                    <div class="mb-20" bis_skin_checked="1">
+                                        <a class="white-color" href="{{ section.settings.link-other-footer }}" bis_skin_checked="1">
+                                            <span class="row">
+                                                <span class="col-auto col-sm-12 col-md-auto col-xl-12 col-xxl-auto pe-0 text-center mb-10 order-xl-2 order-xxl-1">
+                                                    <img alt="other-footer" width="100" height="98" class="img-fluid" src="{{ section.settings.img-other-footer | img_url:"master" }}">
+                                                </span>
+                                                <span class="col col-sm-12 col-md col-xl-12 col-xxl mb-10 order-xl-1 order-xxl-2">
+                                                    <span class="d-block pfbague bold fst-italic text-24 green-color mb-10">{{ section.settings.title-other-footer }}</span>
+                                                    <span class="d-block">{{ section.settings.subtitle-other-footer }}</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                              
+                                {% for block in section.blocks %}
+                                   {% if block.type == 'footer-menu' %}
+                                      <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl" bis_skin_checked="1">
+                                          <div class="mb-20" bis_skin_checked="1">
+                                              <div class="pfbague bold fst-italic text-24 green-color mb-10" bis_skin_checked="1">{{ block.settings.title | escape }}</div>
+                                              {%- for link in block.settings.menu.links -%}
+                                                <p class="mb-5px"><a href="{{ link.url }}" class="white-color" bis_skin_checked="1">{{ link.title | escape }}</a></p>
+                                              {% endfor %}
+                                          </div>
+                                      </div>
+                                   {% endif %}
+                                {% endfor %}
+                              
+                                <div class="col-12" bis_skin_checked="1"></div>
+                                
+                                <!-- ok -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3" bis_skin_checked="1">
+                                    <div class="mb-20" bis_skin_checked="1">
+                                        <div class="pfbague bold fst-italic text-24 green-color mb-10" bis_skin_checked="1">{{ section.settings.title-icon-footer }}</div>
+                                        <p class="mb-15">{{ section.settings.subtitle-icon-footer }}</p>
+                                        <p>
+                                          {% for block in section.blocks %}
+                                            {% if block.type == 'footer-icons' %}
+                                              <a href="{{ block.settings.link }}" target="_blank" class="d-inline-block align-middle mr-10 mb-10" bis_skin_checked="1"><img alt="footer-icon" class="img-fluid" width="37" height="37" loading="lazy" src="https://cdn.shopify.com/s/files/1/0664/0192/7457/files/{{ block.settings.icon }}"></a>
+                                            {% endif %}
+                                          {% endfor %}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {% for block in section.blocks %}
+                                  {% if block.type == 'footer-logo' %}
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3" bis_skin_checked="1">
+                                        <div class="row h-100 align-items-center" bis_skin_checked="1">
+                                            <div class="col-12 mb-20 mb-lg-0" bis_skin_checked="1">
+                                                <a href="{{ block.settings.link }}" target="_blank" class="d-inline-block align-middle"><img alt="footer-logo" class="img-fluid" loading="lazy" width="290" height="106" src="{{ block.settings.logo | img_url:"master" }}"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Big Footer Section",
+    "blocks": [
+      {
+        "type": "footer-text",
+        "name": "Footer text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre bloc", 
+            "default":"Test"
+          },
+          {
+            "type": "text",
+            "id": "desc",
+            "label": "Description bloc", 
+            "default":"Test"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon bloc"
+          }
+        ]
+      },
+      {
+        "type": "footer-menu",
+        "name": "Footer menu",
+        "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre bloc", 
+              "default":"Test"
+            },
+            {
+              "type": "link_list",
+              "id": "menu",
+              "label": "Menu",
+              "default": "main-menu"
+            }
+        ]
+      },
+      {
+        "type": "footer-icons",
+        "name": "Footer Icons",
+        "settings": [
+            {
+              "type": "text",
+              "id": "icon",
+              "label": "Social icon"
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Link social icon"
+            }
+        ]
+      },
+      {
+        "type": "footer-logo",
+        "name": "Footer Logo",
+        "settings": [
+            {
+              "type": "image_picker",
+              "id": "logo",
+              "label": "Logo"
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Link logo"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"header",
+        "content":"Color Theme"
+      },
+      {
+        "type":"color",
+        "id":"bg-color-1",
+        "label":"Background color 1",
+        "default":"#33c15b"
+      },
+      {
+        "type":"color",
+        "id":"bg-color-2",
+        "label":"Background color 2",
+        "default":"#212529"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Title color",
+        "default":"#33c15b"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Text color",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"link-hover-color",
+        "label":"Link hover color",
+        "default":"#40e76f"
+      },
+      {
+        "type":"color",
+        "id":"text-contact",
+        "label":"Background contact",
+        "default":"#33c15b"
+      },
+      {
+        "type":"color",
+        "id":"bg-contact",
+        "label":"Background contact",
+        "default":"#fff"
+      },
+      {
+        "type":"header",
+        "content":"Contact Info"
+      },
+      {
+        "type":"text",
+        "id":"title-contact-footer",
+        "label":"Title contact footer",
+        "default":"Besoin d'un conseil ?"
+      },
+      {
+        "type":"text",
+        "id":"subtitle-contact-footer",
+        "label":"Subtitle contact footer",
+        "default":"Notre service client est à votre écoute"
+      },
+      {
+        "type":"text",
+        "id":"hours-contact-footer",
+        "label":"Hours contact footer",
+        "default":"Du lundi au vendredi de 8h30 à 17h30"
+      },
+      {
+        "type":"text",
+        "id":"tel-contact-footer",
+        "label":"Tel contact footer",
+        "default":"05 63 78 33 33"
+      },
+      {
+        "type":"url",
+        "id":"link-contact-footer",
+        "label":"Link contact footer",
+        "default":"/"
+      },
+      {
+        "type":"text",
+        "id":"icon-contact-footer",
+        "label":"Icon contact footer"
+      },
+      {
+        "type":"header",
+        "content":"Other"
+      },
+      {
+        "type":"text",
+        "id":"title-other-footer",
+        "label":"Title other footer",
+        "default":"Plus de 470 agences dans toute la France"
+      },
+      {
+        "type":"text",
+        "id":"subtitle-other-footer",
+        "label":"Subtitle other footer",
+        "default":"Trouvez votre agence la plus proche"
+      },
+      {
+        "type":"url",
+        "id":"link-other-footer",
+        "label":"Link other footer",
+        "default":"/"
+      },
+      {
+        "type":"image_picker",
+        "id":"img-other-footer",
+        "label":"Image other footer"
+      },
+      {
+        "type":"header",
+        "content":"Social Icons"
+      },
+      {
+        "type":"text",
+        "id":"title-icon-footer",
+        "label":"Title icons footer",
+        "default":"Nous suivre"
+      },
+      {
+        "type":"text",
+        "id":"subtitle-icon-footer",
+        "label":"Subtitle icons footer",
+        "default":"Retrouvez-nous sur les réseaux sociaux !"
+      },
+      {
+        "type":"image_picker",
+        "id":"bg-image-1",
+        "label":"Background image 1"
+      },
+      {
+        "type":"image_picker",
+        "id":"bg-image-2",
+        "label":"Background image 2"
+      },
+      {
+        "type":"image_picker",
+        "id":"bg-image-3",
+        "label":"Background image 3"
+      },
+      {
+        "type":"image_picker",
+        "id":"bg-image-4",
+        "label":"Background image 4"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Big Footer Section",
+        "category": "Custom ss"
+      }
+    ]
+  }
+{% endschema %}

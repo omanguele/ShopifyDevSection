@@ -1,0 +1,733 @@
+<style>
+
+  #shopify-section-{{ section.id }} #quizz060323  {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_modal_quizz {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: {{ section.settings.bg-color }};;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_modal_quizz.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 50;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_modal_quizz .modal_quizz {
+    width: 90%;
+    height: 90%;
+    background-color: {{ section.settings.modal-color }};;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .modal_quizz .body__modal_quizz {
+    width: 100%;
+    height: 93%;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .modal_quizz .body__modal_quizz .question {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    font-style: normal;
+    color: {{ section.settings.title-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .modal_quizz .body__modal_quizz .inner__body__modal_quizz {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .step {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: all 500ms;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .step.active {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_image_answer{
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_image_answer .image_answer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: all 500ms;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_image_answer .image_answer .libelle {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_image_answer .image_answer:hover {
+    transform: translateY(-10px);
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_image_answer .image_answer label {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #dfdbdb;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_image_answer .image_answer  img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_text_answer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_text_answer .text_answer {
+    margin: 20px 0;
+    transition: all 500ms;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_text_answer .text_answer:hover {
+    transform: translateY(-5px);
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_text_answer .text_answer  label {
+    padding: 15px;
+    background-color: {{ section.settings.card-bg-color }};
+    border-radius: 8px;
+    cursor: pointer;
+    color: {{ section.settings.text-color }};
+    font-size: 14px;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .modal_quizz  input[type=radio] {
+    display: none !important;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .modal_quizz .inner__body__modal_quizz input[type=radio]:checked + label {
+    border: 2px solid {{ section.settings.high-light-color }};
+} 
+
+#shopify-section-{{ section.id }} #quizz060323  a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_prdt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 30px auto;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .subquestion {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_prdt .prdt_card {
+    max-width: 30%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 10px;
+    margin-bottom: 20px;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_prdt .prdt_card .prdt_image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .prdt_name {
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 22px;
+    margin: 15px 0;
+    word-wrap: break-word;
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .prdt_price {
+    font-size: 14px;
+    text-align: center;
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .action_btn {
+    display: flex;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .action_btn button,
+  #shopify-section-{{ section.id }} #quizz060323  .action_btn a {
+    width: 100%;
+    display: block;
+    border: none;
+    background-color: {{ section.settings.high-light-color }};
+    margin: 15px 10px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .container_prdt .prdt_card img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .modal_quizz .footer__modal_quizz {
+    width: 100%;
+    height: 7%;
+    background-color: #fff;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .modal_quizz .footer__modal_quizz .percentage {
+    line-height: 1.6;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .container_progress_bar {
+    display: flex;
+    justify-content: center;
+    width: 93%;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+} 
+
+#shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .btn_container {
+    height: 100%;
+    width: 6%;
+    display: flex;
+    padding: 2px 0;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .btn_container button {
+    border: none;
+    background-color: {{ section.settings.high-light-color }};
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 2px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .btn_container button.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .progress_bar {
+    width: 100%;
+    height: 7px;
+    border-radius: 10px;
+    border: 0.5px solid #dfdbdb;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .progress_bar .innner__progres_bar {
+    height: 85%;
+    background-color: {{ section.settings.high-light-color }};
+    transition: all 500ms;
+}
+
+#shopify-section-{{ section.id }} #quizz060323   .close_modal {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #quizz060323   .close_modal svg {
+    width: 40px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #shopify-section-{{ section.id }} #quizz060323   .close_modal svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .container_modal_quizz .modal_quizz {
+        width: 95%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .container_progress_bar {
+        width: 80%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .footer__modal_quizz  .btn_container {
+        width: 18%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .container_prdt {
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .container_prdt .prdt_card {
+        max-width: 45%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .modal_quizz .body__modal_quizz .inner__body__modal_quizz {
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .container_image_answer{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #quizz060323  .container_prdt .prdt_card {
+        max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .container_modal_quizz .modal_quizz {
+        height: 95%;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .modal_quizz .body__modal_quizz .question {
+        font-size: 20px;
+    }
+
+    #shopify-section-{{ section.id }} #quizz060323  .container_image_answer .image_answer .libelle {
+        font-size: 14px;
+    }
+    
+    #shopify-section-{{ section.id }} #quizz060323  .container_image_answer .image_answer label {
+        display: block;
+        width: 150px;
+        height: 150px;
+    }
+    
+}
+  
+</style>
+
+
+<section id="quizz060323">
+    <div style="width: 100%; display: flex; justify-content: center; padding: 20px;">
+        <button type="button" id="openModal" style="border: none; background-color: black; color: white; padding: 10px; cursor: pointer;">open modal</button>
+    </div>
+    <div class="container_modal_quizz">
+        <span class="close_modal">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+        </span>
+        <div class="modal_quizz">
+            <div class="body__modal_quizz">
+                <div class="inner__body__modal_quizz">
+                    <div id="step_1" class="step active">
+                        <h3 class="question">{{ section.settings.title-step-1 }}</h3>
+                        <div class="container_image_answer">
+                          {% for block in section.blocks %}
+                              {% if block.type == 'step-1' %}
+                                {%- assign product1 = block.settings.product-1 -%}
+                                {%- assign product2 = block.settings.product-2 -%}
+                                <div class="image_answer answer">
+                                    <input type="radio" name="{{ block.type }}" value="{{ product1.id  }},{{ product2.id  }}" id="{{ forloop.index }}">
+                                    <label for="{{ forloop.index }}">
+                                        <img src="{{ block.settings.image | img_url:"master" }}" alt="">
+                                    </label>
+                                    <p class="libelle">{{ block.settings.text }}</p>
+                                </div>
+                          {% endif %}
+                          {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="step_2" class="step">
+                        <h3 class="question">{{ section.settings.title-step-2 }}</h3>
+                        <div class="container_text_answer">
+                          {% for block in section.blocks %}
+                              {% if block.type == 'step-2' %}
+                                {%- assign product1 = block.settings.product-1 -%}
+                                {%- assign product2 = block.settings.product-2 -%}
+                                <div class="text_answer answer">
+                                    <input type="radio" name="{{ block.type }}" value="{{ product1.id  }},{{ product2.id  }}" id="{{ forloop.index }}">
+                                    <label for="{{ forloop.index }}">
+                                        {{ block.settings.text }}
+                                    </label>
+                                </div>
+                             {% endif %}
+                          {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="step_3" class="step">
+                        <h3 class="question">{{ section.settings.title-prdt-step }}</h3>
+                        <p class="subquestion">{{ section.settings.subtitle-prdt-step }}</p>
+                        <div class="container_prdt">
+                            
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="footer__modal_quizz">
+                <div class="container_progress_bar">
+                    <p class="percentage">
+                        0% complete
+                    </p>
+                    <div class="progress_bar">
+                        <div class="innner__progres_bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="btn_container">
+                    <button type="button" class="prev_btn disabled">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 12l6-6v12z" /></svg>
+                    </button>
+                    <button type="button" class="next_btn disabled">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M16 12l-6 6V6z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const products = [
+      {% for p in collections.all.products %}
+        {
+          "id": "{{ p.id }}" ,
+          "url": "{{ p.url }}" ,
+          "name": "{{ p.title | escape }}" ,
+          "image": "/{{ p.featured_image | product_img_url: "medium"}}",
+          "price": "{{ p.price | money }}",
+        },
+      {% endfor %}
+    ];
+
+    let selectedProducts = [];
+    let stepIndex = 0;
+    let progressBar = document.querySelector('#shopify-section-{{ section.id }} #quizz060323  .innner__progres_bar');
+    let percentage = document.querySelector('#shopify-section-{{ section.id }} #quizz060323  .percentage');
+    let openModal = document.querySelector('#shopify-section-{{ section.id }} #quizz060323  #openModal');
+    let nextBtn = document.querySelector('#shopify-section-{{ section.id }} #quizz060323  .next_btn');
+    let prevBtn = document.querySelector('#shopify-section-{{ section.id }} #quizz060323  .prev_btn');
+    let closeModal = document.querySelector('#shopify-section-{{ section.id }} #quizz060323  .close_modal');
+    let steps = document.querySelectorAll('#shopify-section-{{ section.id }} #quizz060323  .step');
+    let containerModal = document.querySelector('#shopify-section-{{ section.id }} #quizz060323  .container_modal_quizz');
+
+    openModal.addEventListener('click', function(e) {
+        e.preventDefault();
+        containerModal.classList.add('open');
+    });
+
+    closeModal.addEventListener('click', function(e) {
+        e.preventDefault();
+        containerModal.classList.remove('open');
+    });
+
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if(stepIndex > 0){
+            steps[stepIndex].classList.remove('active');
+            steps[stepIndex - 1].classList.add('active');
+            stepIndex = stepIndex - 1;
+            verifBtnProgess();
+        }
+        
+    });
+
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if(((stepIndex + 1) < steps.length) && steps[stepIndex].classList.contains('complete')){
+            steps[stepIndex].classList.remove('active');
+            steps[stepIndex + 1].classList.add('active');
+            stepIndex = stepIndex + 1;
+            verifBtnProgess();
+        }
+    });
+
+    steps.forEach((step, index) => {
+        step.querySelectorAll('.answer').forEach((answer, ansIndex) => {
+            answer.addEventListener('click', function(e) {
+                selectedProducts = [];
+                steps.forEach((curStep, curStepIndex) => {
+                
+                    if(curStep == steps[index + 1]){
+                        curStep.classList.add('active');
+                        steps[curStepIndex -1].classList.add('complete');
+                        stepIndex = curStepIndex;
+                        verifBtnProgess();
+                    }else{
+                        curStep.classList.remove('active');
+                    }
+
+                    let elt = curStep.querySelector('input[type="radio"]:checked');
+                    if(elt) selectedProducts.push(...elt.value.split(','));
+                });
+                renderProducts();
+            });
+        });
+    });
+
+    containerModal.addEventListener("click", async function (e) {
+        let clickInside = containerModal.querySelector('.modal_quizz').contains(e.target)
+        if (!clickInside) {
+            containerModal.classList.remove('open');
+        }
+    });
+
+    function verifBtnProgess() {
+        if(stepIndex == 0){
+            prevBtn.classList.add('disabled')
+        }else {
+            prevBtn.classList.remove('disabled')
+        }
+
+        if(stepIndex + 1 == steps.length){
+            nextBtn.classList.add('disabled');
+        }
+        
+        if(steps[stepIndex].classList.contains('complete')){
+            nextBtn.classList.remove('disabled');
+        }
+        percentage.innerHTML =  Math.round((100 / steps.length) * (stepIndex+1)) + '% complete';
+        progressBar.style.width = Math.round((100 / steps.length) * (stepIndex+1)) + '%';
+    }
+
+    function renderProducts() {
+      let html = '';
+      selectedProducts.forEach((item) => {
+          let elt = filterProducts(item);
+          html += `
+            <div class="prdt_card">
+                <a href="${elt.url}" class="prdt_image">
+                    <img src="${elt.image}" alt="${elt.name}">
+                </a>
+                <a href="${elt.url}" class="prdt_name">${elt.name}</a>
+                <p class="prdt_price">${elt.price}</p>
+                <div class="action_btn">
+                    <a href="${elt.url}"> 
+                        View Product
+                    </a>
+                    <button type="button">Add to cart </button>
+                </div>
+            </div>
+          `;
+      });
+      document.querySelector('#shopify-section-{{ section.id }} #quizz060323 .container_prdt').innerHTML = html;
+    }
+
+    function filterProducts(id){
+      return products.filter((p) => p.id == id)[0];
+    }
+</script>
+
+
+
+
+{% schema %}
+  {
+    "name": "Cust Quizz Section",
+    "blocks": [
+      {
+        "type": "step-1",
+        "name": "Reponse etape 1",
+        "settings": [
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+           {
+              "type": "product",
+              "id": "product-1",
+              "label": "Produit 1 associé"
+            },
+          {
+              "type": "product",
+              "id": "product-2",
+              "label": "Produit 2 associé"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Blonde"
+            }
+        ]
+      },
+      {
+        "type": "step-2",
+        "name": "Reponse etape 2",
+        "settings": [
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"lorem ipsum..."
+            },
+          {
+              "type": "product",
+              "id": "product-1",
+              "label": "Produit 1 associé"
+            },
+          {
+              "type": "product",
+              "id": "product-2",
+              "label": "Produit 2 associé"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Parametre couleurs"
+      },
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#00ffff"
+      },
+      {
+          "type":"color",
+          "id":"modal-color",
+          "label":"Couleur du modal",
+          "default":"#f2f2f2"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"high-light-color",
+          "label":"Couleur mise en avant",
+          "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"card-bg-color",
+        "label":"Couleur de carte",
+        "default":"#fff"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etapes"
+      },
+      {
+          "type":"text",
+          "id":"title-step-1",
+          "label":"Titre etape 1",
+          "default":"What is your hair color?"
+      },
+      {
+          "type":"text",
+          "id":"title-step-2",
+          "label":"Titre etape 2",
+          "default":"What is your hair color?"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etape Produit"
+      },
+      {
+          "type":"text",
+          "id":"title-prdt-step",
+          "label":"Titre etape produit",
+          "default":"What is your hair color?"
+      },
+      {
+          "type":"text",
+          "id":"subtitle-prdt-step",
+          "label":"Sous Titre etape produit",
+          "default":"What is your hair color?"
+      }
+    ],
+    "presets": [
+      {
+          "name": "Cust Quizz Section"
+      }
+    ]
+  }
+{% endschema %}

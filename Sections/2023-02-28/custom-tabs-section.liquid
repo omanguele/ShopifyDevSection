@@ -1,0 +1,300 @@
+<style>
+#shopify-section-{{ section.id }} #customtabssection270223 {
+    width: 100%;
+    height: 100%;
+    background-color: {{ section.settings.bg-color }};
+    border: 2px solid {{ section.settings.border-color }};
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .wrapper {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item .wrap_text_head svg {
+    height: 18px;
+    width: 18px;
+    transition: all 500ms;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item {
+    border-left: 2px solid {{ section.settings.border-color }};
+    border-right: 2px solid {{ section.settings.border-color }};
+    border-bottom: none;
+    border-top: 2px solid {{ section.settings.border-color }};
+    padding: 100px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+  
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item.open > .wrap_text_head span {
+    text-decoration: underline;
+}
+
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item:first-child {
+    border-top: none;
+}
+  
+#shopify-section-{{ section.id }} #customtabssection270223 .wrapper span {
+    display: block;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item.open > .wrap_text_head .icon svg {
+    transform: rotate(90deg);
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_head {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    color: {{ section.settings.title-text-block }} !important;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: {{ section.settings.desc-color }};
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .subtitle {
+    color: {{ section.settings.title-color }};
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_body .inner_wrap_text {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    color: {{ section.settings.desc-text-block }} !important;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .left,
+#shopify-section-{{ section.id }} #customtabssection270223 .right {
+    width: 50%;
+}
+#shopify-section-{{ section.id }} #customtabssection270223 .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid {{ section.settings.border-color }};
+    border-right: 2px solid {{ section.settings.border-color }};
+    border-bottom: none;
+    border-top: none;
+    padding: 80px 20px;
+}
+
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item.open > .wrap_text_body {
+    margin-top: 10%;
+    opacity: 1;
+    transition: height 500ms;
+}
+  
+#shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_body {
+    height: 0;
+    overflow: hidden;
+   margin-top: 0;
+   opacity: 0;
+    transition: all 500ms;
+}
+@media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #customtabssection270223 .left,
+    #shopify-section-{{ section.id }} #customtabssection270223 .right {
+        width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item.open > .wrap_text_body {
+        margin-top: 30px;
+    }
+  
+    #shopify-section-{{ section.id }} #customtabssection270223 .wrapper {
+        flex-direction: column;
+    }
+    
+    #shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item {
+        padding: 40px 20px !important;
+        border: 1px solid {{ section.settings.border-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_head {
+        font-size: 16px;
+    }
+  
+    #shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_body .inner_wrap_text {
+        font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} #customtabssection270223 {
+        border: none !important;
+      }
+  
+    #shopify-section-{{ section.id }}  #customtabssection270223 .left {
+          border: 2px solid {{ section.settings.border-color }};
+      }
+  
+    #shopify-section-{{ section.id }} #customtabssection270223 .wrap_text_item:first-child {
+        border-top: none !important;
+    }
+}
+</style>
+  <section id="customtabssection270223">
+        <div class="wrapper">
+            <div class="left">
+                <h6 class="subtitle">{{ section.settings.title }}</h6>
+                <h4 class="title">{{ section.settings.desc }}</h4>
+            </div>
+            <div class="right">
+                {% for block in section.blocks %}
+                  <div class="wrap_text_item">
+                      <div class="wrap_text_head">
+                          <span>{{ block.settings.block-title }}</span>
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                              </svg>                              
+                          </span>
+                      </div>
+                      <div class="wrap_text_body">
+                          <div class="inner_wrap_text">
+                              {{ block.settings.block-description }}
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <script>
+        let hdElts = document.querySelectorAll('#customtabssection270223 .wrap_text_item');
+        let initLeftHeight  = document.querySelector('#customtabssection270223 .left').scrollHeight;
+
+        hdElts.forEach((hdElt) => {
+            hdElt.addEventListener('click', function(e) {
+                e.preventDefault();
+                let elt = null;
+                if(hdElt.classList.contains('open')){
+                    hdElts.forEach((curHdElt) => {
+
+                        elt = curHdElt.querySelector('.wrap_text_body');
+                        elt.style.height = '0px';
+                        curHdElt.style.display = 'inherit';
+                        if(window.innerWidth > 780 ){
+                            curHdElt.style.height = (initLeftHeight / hdElts.length) + 'px';
+                        }else{
+                            curHdElt.style.height = 'auto';
+                        }
+                        hdElt.classList.remove('open');
+                    });
+
+                }else {
+
+                    hdElts.forEach((curHdElt) => {
+
+                        elt = curHdElt.querySelector('.wrap_text_body');
+                        if(hdElt === curHdElt){
+                             if(window.innerWidth > 780 ){
+                                curHdElt.style.height = initLeftHeight + 'px';
+                            }else{
+                                curHdElt.style.height = 'auto';
+                            }
+                            elt.style.height = elt.scrollHeight + 'px';
+                            curHdElt.classList.add('open');
+                        }else{
+                            curHdElt.style.display = 'none';
+                            curHdElt.classList.remove('open');
+                        }
+
+                    });
+
+                }
+            })
+        });
+    </script>
+  {% schema %}
+    {
+      "name": "Custom Tab Section",
+      "blocks": [
+        {
+          "type": "text",
+          "name": "text",
+          "settings": [
+            {
+              "type": "text",
+              "id": "block-title",
+              "label": "Titre du block",
+              "default":"Durable et de haute qualité"
+            },
+            {
+              "type": "textarea",
+              "id": "block-description",
+              "label": "Description du block",
+              "default":"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"border-color",
+          "label":"Couleur des bordures",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur de titre",
+          "default":"#b62208"
+        },
+        {
+          "type":"color",
+          "id":"desc-color",
+          "label":"Couleur de description",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"title-text-block",
+          "label":"Couleur de titre bloc texte",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"desc-text-block",
+          "label":"Couleur description bloc texte",
+          "default":"#000"
+        },
+        {
+          "type":"text",
+          "default":"De Haute qualité",
+          "label":"Titre",
+          "id":"title"
+        },
+        {
+          "type":"textarea",
+          "id":"desc",
+          "label":"Description",
+          "default":"Un vélo durable"
+        }
+      ],
+      "presets":[
+        {
+          "name":"Custom Tab Section"
+        }
+      ]
+    }
+  {% endschema %}

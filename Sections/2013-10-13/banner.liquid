@@ -1,0 +1,199 @@
+<style>
+  #shopify-section-{{ section.id }} #banner41210132 {
+      padding: 0 50px;
+      position: relative;
+      width: 100%;
+      background-color: {{ section.settings.bg_color }};
+  }
+  #shopify-section-{{ section.id }} #banner41210132 .banner41210132_container {
+      width: 100%;
+      height: 550px;
+      overflow: hidden;
+      max-width: 1380px;
+      margin-right: auto;
+      margin-left: auto;
+      isolation: isolate;
+      border-radius: {{ section.settings.radius }}px;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #banner41210132 .banner41210132_container img {
+      display: block;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #banner41210132 .banner41210132_overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      z-index: 20;
+  }
+  #shopify-section-{{ section.id }} #banner41210132 .banner41210132_overlay_content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      text-align: left;
+      max-width: 640px;
+      padding: 50px;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #banner41210132  .banner41210132_heading {
+      font-weight: 600;
+      font-size: 54px;
+      line-height: 62px;
+      font-style: normal;
+      margin-bottom: 20px;
+      text-rendering: optimizeLegibility;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #banner41210132  .banner41210132_subheading {
+      font-style: normal;
+      margin-bottom: 20px;
+      text-rendering: optimizeLegibility;
+      word-spacing: .001em;
+      font-feature-settings: "kern" 1;
+      font-kerning: normal;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #banner41210132  .banner41210132_btn {
+      margin-top: 15px;
+      background-color: {{ section.settings.btn_bg_color }};
+      color: {{ section.settings.btn_text_color }};
+      display: inline-flex;
+      appearance: none;
+      text-align: center;
+      overflow: hidden;
+      border: 0;
+      border-radius: 25px;
+      cursor: pointer;
+      padding: 7px 30px;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+  }
+  @media only screen and (max-width: 1024px)  {
+      #shopify-section-{{ section.id }} #banner41210132 .banner41210132_overlay_content {
+          padding: 35px;
+      }
+      #shopify-section-{{ section.id }} #banner41210132  .banner41210132_heading {
+          font-size: 38px;
+          line-height: 46px;
+      }
+      #shopify-section-{{ section.id }} #banner41210132  .banner41210132_btn {
+          margin-top: 0;
+      }
+  }
+  @media only screen and (max-width: 780px)  {
+      #shopify-section-{{ section.id }} #banner41210132{
+          padding: 0 15px;
+      }
+      #shopify-section-{{ section.id }} #banner41210132 .banner41210132_overlay_content {
+          padding: 15px;
+      }
+      #shopify-section-{{ section.id }} #banner41210132  .banner41210132_heading {
+          font-size: 34px;
+          line-height: 42px;
+      }
+  }
+</style>
+
+<section id="banner41210132">
+  <div class="banner41210132_container">
+    <img src="{{ section.settings.image | img_url: "master" }}" alt="">
+    <div class="banner41210132_overlay">
+      <div class="banner41210132_overlay_content">
+        <h2 class="banner41210132_heading">{{ section.settings.title }}</h2>
+        <p class="banner41210132_subheading">
+          {{ section.settings.subtitle }}
+        </p>
+        <a href="{{ section.settings.url_btn }}" class="banner41210132_btn">{{ section.settings.text_btn }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banniere",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur de texte du bouton",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Couleur de fond du bouton",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "shake up a smoothie in seconds"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous Titre",
+      "default": "How it works"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "text_btn",
+      "label": "Texte du bouton",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "url_btn",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Bordure arrondie",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banniere"
+    }
+  ]
+}
+{% endschema %}

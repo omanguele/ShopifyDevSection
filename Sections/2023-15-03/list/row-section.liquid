@@ -1,0 +1,111 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+>
+<style>
+
+#shopify-section-{{ section.id }} #row150323 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Monserrat", sans-serif;
+}
+
+#shopify-section-{{ section.id }} #row150323 .container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1300px;
+  margin: auto;
+}
+#shopify-section-{{ section.id }} #row150323 .container .wrapper {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-between;
+  height: 0;
+  margin: auto;
+  padding: 50px;
+  gap: 25px;
+}
+
+#shopify-section-{{ section.id }} #row150323 .container .wrapper li {
+  list-style: none;
+  color: gray;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  text-transform: uppercase
+}
+#shopify-section-{{ section.id }} #row150323 .container .wrapper li.selected {
+  color: #000;
+}
+#shopify-section-{{ section.id }} #row150323 .container .wrapper li:first-child {
+  color: #000;
+}
+
+@media (max-width: 769px) {
+  #shopify-section-{{ section.id }} #row150323 .container {
+    display: flex;
+    flex-direction: row;
+  }
+  #shopify-section-{{ section.id }} #row150323 .container .wrapper {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+  
+</style>
+    <section id="row150323">
+      <div class="container">
+        <ul class="wrapper">
+           {% for block in section.blocks %}
+             <li class="item">{{ block.settings.item }}</li>
+           {% endfor %}
+        </ul>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $("ul > li").click(function () {
+        $(this).siblings().removeClass("selected");
+        $(this).addClass("selected");
+      });
+    </script>
+
+{% schema %}
+{
+  "name": "Section Avis",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Text",
+          "default": "Tous"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    }
+
+  ],
+     "presets":[
+        {
+          "name":"Section FAQ"
+        }
+     ]
+}
+{% endschema %}

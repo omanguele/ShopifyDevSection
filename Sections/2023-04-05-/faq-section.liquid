@@ -1,0 +1,224 @@
+<style>
+  #shopify-section-{{ section.id }} #faqsection060223 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: {{ section.settings.bg_color }};
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .container {
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-start;
+    -webkit-box-align: start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .container .faq__wrapper {
+    width: 100%;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item .faq__item__icons {
+    width: 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item .faq__item__icons svg {
+    width: 20px;
+    height: 20px;
+    color: {{ section.settings.title_color }} !important;
+    border-color: #F7F7F7 !important;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item .faq__item__icons .open {
+    display: none;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item.show > .faq__item_head .open {
+    display: block;
+} 
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item.show > .faq__item_head .close {
+    display: none;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item .faq__item_head {
+    color: #333;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item .faq__item_head .faq__item__question {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    width: 100%;
+    color: inherit;
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+    color: {{ section.settings.title_color }} !important;
+    display: block;
+    padding: 18px 0;
+    margin: 0;
+}
+
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item  .faq__item__body {
+    display: block;
+    font-size: 1.3rem !important;
+    color: {{ section.settings.message_color }} !important;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.8s ease-in-out;
+}
+
+#shopify-section-{{ section.id }} #faqsection060223  .faq_item  .faq__item__body .faq__item__answer {
+    padding: 10px 10px;
+    border-top: none;
+    font-size: 12px;
+    color: {{ section.settings.message_color }};
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-weight: 400 !important;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 780px) {
+    #shopify-section-{{ section.id }} #faqsection060223  .faq_item  .faq__item__body .faq__item__answer {
+        font-size: 13px;
+    }
+
+    #shopify-section-{{ section.id }} #faqsection060223  .faq_item .faq__item_head .faq__item__question {
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1rem;
+    }
+}
+</style>
+
+<section id="faqsection060223">
+    <div class="container">
+        <div class="faq__wrapper">
+          {% for block in section.blocks %}
+            <div class="faq_item">
+                <div class="faq__item_head">
+                    <div class="faq__item__question">
+                        {{ block.settings.title }}
+                    </div>
+                    <div class="faq__item__icons">
+                        <span class="open">  
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                            </svg> 
+                        </span>
+                        <span class="close">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="faq__item__body">
+                    <div class="faq__item__answer">
+                        {{ block.settings.message }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+  const faqs = document.querySelectorAll('#shopify-section-{{ section.id }} .faq__wrapper .faq_item');
+  faqs.forEach((faq) => {
+      faq.addEventListener('click', function(e) {
+          e.preventDefault();
+          let elt = faq.querySelector('.faq__item__body');
+          if(faq.classList.contains('show')){
+              elt.style.height = '0px';
+              faq.classList.remove('show')
+          }else {
+              elt.style.height = elt.scrollHeight + 'px';
+              faq.classList.add('show')
+          }
+      });
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Faq Section",
+    "blocks": [
+        {
+          "type": "notice",
+          "name": "Avis",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre",
+              "default":"lorem ipsum..."
+            },
+            {
+              "type":"textarea",
+              "id":"message",
+              "label":"Message",
+              "default":"lorem ipsum..."
+            }
+          ]
+        }
+      ],
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg_color",
+          "label":"Couleur de fond",
+          "default":"#fff"
+      },
+      {
+          "type":"color",
+          "id":"title_color",
+          "label":"Couleur du titre",
+          "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"message_color",
+          "label":"Couleur du message",
+          "default":"#6f6f6f"
+      }
+    ],
+    "presets": [
+      {
+          "name": "Faq Section"
+      }
+    ]
+  }
+{% endschema %}

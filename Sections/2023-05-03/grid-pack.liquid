@@ -1,0 +1,431 @@
+<style>
+  #shopify-section-{{ section.id }}  #section-container002  {
+      width: 100%;
+      position: relative;
+      background-color: {{ section.settings.bg_color }} !important;
+      padding: 40px 20px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002   .titre{
+      color: {{ section.settings.title_color }};
+      font-size: 28px;
+      letter-spacing: 0.1rem;
+      text-align: left;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  img {
+      max-width: 100%;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .descript{
+      font-size: 16px;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      margin-top: 10px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .action_btn{
+      width: 100%;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 12px;
+      display: block;
+      border-radius: 10px;
+      margin-top: 10px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .action_btn3{
+      background: rgb(237, 237, 237);
+      margin: 20px 0;
+      text-decoration: none;
+      padding: 12px 30px;
+      text-align: center;
+      font-size: 12px;
+      color: #000000;
+      display: inline-block;
+      min-width: 150px;
+      border-radius: 50px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .descpt{
+      font-size: 13px;
+      text-align: center;
+      margin: 15px 0;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .footer-detail{
+      margin-bottom: 15px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .footer-detail span {
+      display: block;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .footer-detail img {
+      width: 15px;
+      height: 15px;
+      object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .footer-detail svg {
+      width: 15px;
+      height: 15px;
+      margin-top: 5px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .footer-detail1{
+      margin-top: 20px;
+      font-size: 11px;
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .image {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .details_wrapper {
+      flex-direction: column;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      margin-top: 40px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .card {
+      padding: 30px 50px;
+      width: 100%;
+      border-radius: 20px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .card-text {
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .card .image {
+      position: relative;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .card .image a {
+      display: block;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .details {
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }}  #section-container002  .title-card{
+      font-size: 18px;
+      text-align: center;
+  }
+
+  @media only screen and (max-width: 1000px) {
+
+      #shopify-section-{{ section.id }}  #section-container002  .details_wrapper {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .action_btn{
+          font-size: 16px;
+          padding: 10px;
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .title-card{
+          font-size: 10px;
+          text-align: center;
+          width: 100%;
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .action_btn3{
+          background: rgb(237, 237, 237);
+          margin: 10px;
+          width: 100%;
+          padding: 10px;
+          font-size: 10px;
+          border-radius: 10px;
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .descpt{
+          font-size: 9px;
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .action_btn{
+          width: 100%;
+          padding: 10px;
+          font-size: 8px;
+          margin-top: 10px;
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .action_btn2{
+          width: 100%;
+          padding: 10px;
+          font-size: 8px;
+          margin-top: 10px;
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .footer-detail1{
+          font-size: 7px;
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .footer-detail{
+          font-size: 9px;
+      }
+
+  }
+
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }}  #section-container002  .details_wrapper {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      #shopify-section-{{ section.id }}  #section-container002  .action_btn{
+          font-size: 16px;
+          padding: 10px;
+      }
+
+  }
+
+  @media only screen and (max-width: 1000px) {
+      #shopify-section-{{ section.id }}  #section-container002  .title-card{
+          font-size: 15px;
+          text-align: center;
+      }
+  }
+</style>
+
+<section id="section-container002">
+  <div class="container">
+    <h1 class="titre">{{ section.settings.title }}</h1>
+    <div class="details_wrapper">
+      {% for block in section.blocks %}
+        <div
+          class="card"
+          style="color: {{ block.settings.text_color }} !important;background: {{ block.settings.bg_color }};"
+        >
+          <div class="image">
+            <a href="#">
+              <img
+                src="{{ block.settings.product.featured_image | product_img_url: "master" }}"
+                class=""
+                alt=""
+              >
+            </a>
+          </div>
+          <div class="card-text">
+            <div style="background-color: {{ block.settings.type_color }};" class="action_btn3">
+              {{ block.settings.type }}
+            </div>
+
+            <h1 class="title-card" style="color: {{ block.settings.title_color }} !important;">
+              {{ block.settings.product.title | escape }}
+            </h1>
+            <p class="descpt" style="color: {{ block.settings.text_color }}">{{ block.settings.description }}</p>
+
+            <p class="footer-detail" style="color: {{ block.settings.text_color }}">
+              <span>
+                <img src="{{ section.settings.ico_d_1 | img_url: "master" }}" alt="">
+              </span>
+              <span>{{ block.settings.detail_1 }}</span>
+            </p>
+            <p class="footer-detail" style="color: {{ block.settings.text_color }}">
+              <span>
+                <img src="{{ section.settings.ico_d_2 | img_url: "master" }}" alt="">
+              </span>
+              <span>{{ block.settings.detail_2 }}</span>
+            </p>
+          </div>
+
+          <a
+            class="action_btn"
+            style="color: {{ block.settings.btn1_text_color }};background: {{ block.settings.btn1_bg_color }};"
+            href="{{ block.settings.btn1_url }}"
+          >
+            {{- block.settings.btn1_label -}}
+          </a>
+
+          <a
+            class="action_btn"
+            style="color: {{ block.settings.btn2_text_color }};background: {{ block.settings.btn2_bg_color }};"
+            href="{{ block.settings.btn2_url }}"
+          >
+            {{- block.settings.btn2_label -}}
+          </a>
+
+          <p class="footer-detail1">{{ block.settings.foot_text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Grid Pack",
+  "blocks": [
+    {
+      "type": "pack",
+      "name": "Pack",
+      "settings": [
+          {
+            "type": "color_background",
+            "id": "bg_color",
+            "label": "Couleur fond carte",
+            "default": "#fff"
+          },
+          {
+            "type": "color",
+            "id": "title_color",
+            "label": "Couleur titre carte",
+            "default": "#000"
+          },
+          {
+            "type": "color_background",
+            "id": "text_color",
+            "label": "Couleur texte carte",
+            "default": "#000000bf"
+          },
+          {
+            "type": "color",
+            "id": "type_color",
+            "label": "Couleur du type",
+            "default": "#F5F5F5"
+          },
+          {
+            "type": "color_background",
+            "id": "btn1_bg_color",
+            "label": "Couleur fond bouton 1",
+            "default": "linear-gradient(250deg,rgba(103,23,205,1) 0%,rgba(40,113,250,1) 100%)"
+          },
+          {
+            "type": "color",
+            "id": "btn1_text_color",
+            "label": "Couleur texte bouton 1",
+            "default": "#FFF"
+          },
+          {
+            "type": "color_background",
+            "id": "btn2_bg_color",
+            "label": "Couleur fond bouton 2",
+            "default": "#f5F5F5"
+          },
+          {
+            "type": "color",
+            "id": "btn2_text_color",
+            "label": "Couleur texte bouton 2",
+            "default": "#000"
+          },
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Produit associé"
+          },
+          {
+            "type": "text",
+            "id": "type",
+            "label": "Type Pack",
+            "default":"lorem ipsum..."
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description Pack",
+            "default":"lorem ipsum..."
+          },
+          {
+            "type": "text",
+            "id": "detail_1",
+            "label": "Detail 1",
+            "default":"lorem ipsum..."
+          },
+          {
+            "type": "text",
+            "id": "detail_2",
+            "label": "Detail 2",
+            "default":"lorem ipsum..."
+          },
+          {
+            "type": "text",
+            "id": "btn1_label",
+            "label": "Libelle bouton 1",
+            "default":"lorem ipsum..."
+          },
+          {
+            "type": "url",
+            "id": "btn1_url",
+            "label": "URL bouton 1"
+          },
+          {
+            "type": "text",
+            "id": "btn2_label",
+            "label": "Libelle bouton 2",
+            "default":"lorem ipsum..."
+          },
+          {
+            "type": "url",
+            "id": "btn2_url",
+            "label": "URL bouton 2"
+          },
+          {
+            "type": "text",
+            "id": "foot_text",
+            "label": "Foot text",
+            "default":"lorem ipsum..."
+          }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur de titre",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre section",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "image_picker",
+      "id": "ico_d_1",
+      "label": "Icone detail 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "ico_d_2",
+      "label": "Icone detail 2"
+    }
+  ],
+  "presets": [
+  {
+    "name": "Grid Pack"
+  }
+]
+}
+{% endschema %}

@@ -1,0 +1,429 @@
+<style>
+  #shampoing230412 {
+      width: 100%;
+      height: 100%;
+      padding: 40px 20px;
+      background-color: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }};
+  }
+  #shampoing230412 .container {
+      max-width: 95%;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+  }
+  #shampoing230412 .title {
+      font-size: 32px;
+      font-weight: bold;
+      color: {{ section.settings.tilte_color }};
+      text-align: left;
+  }
+  #shampoing230412 .wrapper {
+      margin-top: 50px;
+      width: 100%;
+      will-change: transform;
+  }
+  #shampoing230412 .wrapper .card {
+      width: 100%;
+      border-radius: 20px;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 1px solid gray;
+      overflow: hidden;
+      background-color: {{ section.settings.card_color }};
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  #shampoing230412 .wrapper .card .image {
+      width: 100%;
+      height: 300px;
+      background-color: #f5f5f5;
+      overflow: hidden;
+      position: relative;
+  }
+  #shampoing230412 .wrapper .card img {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  #shampoing230412 .card .details {
+      padding: 20px;
+      width: 100%;
+  }
+  #shampoing230412 .card .details .desc {
+      margin-top: 10px;
+      line-height: 1.5;
+      font-size: 16px;
+      font-weight: 600;
+      color: {{ section.settings.text_color }};
+      width: calc(100% - 40px);
+  }
+  #shampoing230412 .stars {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      color: {{ section.settings.text_color }};
+  }
+  #shampoing230412 .stars svg{
+      width: 20px;
+      height: 20px;
+      color: {{ section.settings.star_color }};
+  }
+  #shampoing230412 .fav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+  }
+  #shampoing230412 .fav svg{
+      height: 30px;
+      width: 30px;
+  }
+  #shampoing230412 .icon_action {
+      text-decoration: none;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background-color: darkcyan;
+  }
+  #shampoing230412 .icon_action svg {
+      width: 30px;
+      height: 30px;
+  }
+  #shampoing230412 .end {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: calc(100% - 40px);
+  }
+  #shampoing230412 .end .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: {{ section.settings.text_color }};
+  }
+  #shampoing230412 .end .price .throught {
+      text-decoration: line-through;
+      font-weight: 500;
+      font-size: 16px;
+  }
+  #shampoing230412 .header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+  #shampoing230412 .link {
+      text-decoration: none;
+      color: {{ section.settings.text_color }};
+      font-size: 16px;
+  }
+  #shampoing230412 .swiper {
+      width: 100%;
+      padding: 10px;
+  }
+
+  #shampoing230412 .swiper-button-prev,
+  #shampoing230412 .swiper-button-next {
+      background-color: #fff;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      color: #000 !important;
+      position: fixed;
+  }
+  #shampoing230412 .swiper-button-prev::after,
+  #shampoing230412 .swiper-button-next::after {
+      content: "" !important;
+  }
+
+  #shampoing230412 .swiper-button-prev {
+      left: -50px;
+  }
+
+  #shampoing230412 .swiper-button-next {
+      right: -50px;
+  }
+
+  #shampoing230412 a {
+    text-decoation: none;
+    color: {{ section.settings.text_color }};
+  }
+
+  #shampoing230412 .swiper-button-prev svg,
+  #shampoing230412 .swiper-button-next svg{
+      width: 30px;
+      height: 30px;
+  }
+  @media only screen and (max-width: 780px) {
+      #shampoing230412 .swiper-button-prev {
+          left: 0;
+      }
+      #shampoing230412 .swiper-button-next {
+          right: 0;
+      }
+      #shampoing230412 .swiper-button-prev,
+      #shampoing230412 .swiper-button-next {
+          height: 40px;
+          width: 40px;
+      }
+      #shampoing230412 .swiper-button-prev svg,
+      #shampoing230412 .swiper-button-next svg{
+          width: 20px;
+          height: 20px;
+      }
+      #shampoing230412 .title {
+          font-size: 20px;
+      }
+      #shampoing230412 .card .details .desc {
+          font-size: 13px;
+      }
+      #shampoing230412 .stars svg{
+          width: 18px;
+          height: 18px;
+      }
+      #shampoing230412 .wrapper .card .image {
+          height: 200px;
+      }
+      #shampoing230412 .header {
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+      }
+      #shampoing230412 .link {
+          font-size: 14px;
+          margin-top: 10px;
+      }
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+<section id="shampoing230412">
+  <div class="container">
+    <div class="header">
+      <h3 class="title">{{ section.settings.title }}</h3>
+      <a href="{{ section.settings.link_url }}" class="link">{{ section.settings.link_lib }}</a>
+    </div>
+    <div class="wrapper">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="image">
+                  <img
+                    src="{{ block.settings.product.featured_image | product_img_url: "master" }}"
+                    alt="{{ block.settings.product.title | escape }}"
+                  >
+                  <span class="fav">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="details">
+                  <p class="desc">
+                    {{ block.settings.product.title | escape }}
+                  </p>
+                  <div class="stars">
+                    {% for i in (1..block.settings.nb_stars) %}
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="">
+                          <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                        </svg>
+                      </span>
+                    {% endfor %}
+
+                    <span>(4.5)</span>
+                  </div>
+                  <div class="end">
+                    <h3 class="price">
+                      {{ block.settings.product.price | money }}
+                      <span class="throught">{{ block.settings.product.price_max | money }}</span>
+                    </h3>
+                    <a href="#" class="icon_action">
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  const mySwiper = new Swiper('.swiper', {
+
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+      300: {
+          slidesPerView: 1,
+          spaceBetween: 50,
+      },
+      500: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+      },
+      780: {
+          slidesPerView: 2,
+          spaceBetween: 60,
+      },
+      1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+      },
+      1500: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+      },
+  },
+
+  scrollbar: {
+      el: '.swiper-scrollbar',
+  },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Slide product Section",
+  "blocks": [
+    {
+      "type": "card-product",
+      "name": "product",
+      "settings": [
+        {
+          "type":"product",
+          "id":"product",
+          "label":"Produit"
+        },
+         {
+          "type": "range",
+          "id": "nb_stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "unit": "⭐",
+          "label": "Nombre d'étoiles",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur de tire",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Couleur des étoiles",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Couleur de card",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default":"#fff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "text",
+      "id": "link_lib",
+      "label": "Libelle voir tout",
+      "default":"Voir tout"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Lien voir plus"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slide product Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,596 @@
+<style>
+  #shopify-section-{{ section.id }} #reviewslider919162320132 {
+    overflow: hidden;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} #reviewslider919162320132  img {
+    max-width: 100%;
+    border: 0;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .mm-section {
+    position: relative;
+    padding: 36px 80px;
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .mm-icon {
+    height: 32px;
+    width: 32px;
+    min-width: 32px;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .mm-avis-client-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-container-left {
+    flex-grow: 1;
+    display: flex;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .mm-avis-client-title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: skew(-7deg) rotate(-7deg);
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block-note {
+    background: {{ section.settings.color_1 }};
+    padding: 4px 24px;
+    display: flex;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block-note span:first-child {
+    color: #f3f8ff;
+    font-size: 48px;
+    line-height: 1.2;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block-note span:last-child {
+    color: #f3f8ff;
+    font-size: 20px;
+    line-height: 1.2;
+    opacity: 0.5;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132   .mm-avis-client-title-block h2 {
+    color: {{ section.settings.color_2 }};
+    font-size: 84px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 84px;
+    letter-spacing: -1.68px;
+    margin-top: -24px;
+    white-space: nowrap;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .mm-avis-client-title-block h2 strong {
+    font-size: 84px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 84px;
+    letter-spacing: -1.68px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: {{ section.settings.color_2 }};
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block p {
+    color: {{ section.settings.color_1 }};
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    transform: skew(7deg);
+    margin-top: -10px;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block p span {
+    color: {{ section.settings.color_1 }};
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block-stars {
+    transform: skew(7deg);
+    margin-top: -8px;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block-stars > svg {
+    transform: rotate(7deg);
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper {
+    width: 60% !important;
+    height: auto !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-scrollbar {
+    display: none !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-prev,
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-next {
+    width: 64px !important;
+    height: 64px !important;
+    padding: 10px !important;
+    border-radius: 107px !important;
+    border: 1.5px solid  {{ section.settings.color_2 }} !important;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-prev {
+    left: -40px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-button-next {
+    right: -40px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-prev:after,
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-next:after {
+    display: none;
+    content: "" !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-horizontal > .swiper-pagination-bullets,
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-pagination-custom,
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-pagination-fraction {
+    bottom: -22px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-pagination-bullet {
+    background: {{ section.settings.color_2 }} !important;
+    opacity: 0.3 !important;
+    width: 6px !important;
+    height: 6px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    width: 11px !important;
+    height: 11px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-pagination {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132 .mm-avis-client-slide {
+    border-radius: 10px;
+    border: 2px solid #dae3f3;
+    background: #fff;
+    box-shadow: 0 4px 20px #00000026;
+    display: flex !important;
+    align-items: center !important;
+    grid-gap: 24px !important;
+    overflow: hidden !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide > img {
+    min-width: 45%;
+    width: 45%;
+    min-height: 390px;
+    object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos {
+    flex: 1;
+    padding: 24px 24px 24px 0;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-stars {
+    display: flex;
+    align-items: center;
+    grid-gap: 4px;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-stars span {
+    color: {{ section.settings.color_1 }};
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-stars span strong {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-date {
+    color: #515ea9;
+    font-size: 11px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-text {
+    color: {{ section.settings.color_2 }} !important;
+    font-size: 36px !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    line-height: 40px !important;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-title {
+    color: {{ section.settings.color_2 }} !important;
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    line-height: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-name {
+    color: {{ section.settings.color_2 }} !important;
+    font-size: 11px !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 16px !important;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px !important;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .card_link {
+    text-decoration: underline;
+    color: {{ section.settings.color_1 }};
+    font-size: 13px;
+    display: flex;
+    gap: 5px;
+    font-style: italic;
+    align-items: flex-end;
+  }
+  #shopify-section-{{ section.id }} #reviewslider919162320132  .card_link svg {
+    height: 15px;
+  }
+  @media (max-width: 998px) {
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block-note span {
+      font-size: 28px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block h2,
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block h2 strong {
+      font-size: 70px;
+      line-height: 1.2;
+    }
+  }
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-section {
+      padding: 24px 16px;
+      padding-bottom: 24px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-container {
+      flex-direction: column;
+      padding-bottom: 36px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-container-left {
+      margin: 32px 0;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block-note span {
+      font-size: 32px !important;
+      line-height: normal;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block h2,
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block h2 strong {
+      font-size: 64px;
+      line-height: 87.894px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-title-block h2 {
+      margin-bottom: -12px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper {
+      width: calc(100% - 24px) !important;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide {
+      flex-direction: column;
+      grid-gap: 0;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide > img {
+      width: 100%;
+      height: 300px;
+      min-height: unset;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos {
+      padding: 8px 16px 16px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132 .mm-avis-client-slide-infos-stars svg {
+      width: 12px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-stars span strong {
+      font-size: 14px;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-prev,
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-next {
+      height: 100px !important;
+      width: 100px !important;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-prev {
+      left: -75px !important;
+      justify-content: flex-end !important;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-button-next {
+      right: -75px !important;
+      justify-content: flex-start !important;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-next svg,
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .swiper-button-prev svg {
+      height: 40px !important;
+      width: 40px !important;
+    }
+    #shopify-section-{{ section.id }} #reviewslider919162320132  .mm-avis-client-slide-infos-text {
+      font-size: 24px !important;
+      line-height: 32px !important;
+    }
+  }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+>
+
+<section id="reviewslider919162320132">
+  <div class="mm">
+    <div class="mm-section mm-avis-client-container">
+      <div class="mm-avis-client-title-container-left">
+        <div class="mm-avis-client-title-block">
+          <div class="mm-avis-client-title-block-note">
+            <span>{{ section.settings.nb_star }}</span><span>/5</span>
+          </div>
+          <h2>
+            {{ section.settings.title_1 -}}
+            <strong> {{ section.settings.title_2 }}</strong>
+          </h2>
+          <div class="mm-avis-client-title-block-stars">
+            {% for i in (1..section.settings.nb_star) %}
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.8586 4.71248C11.2178 3.60691 12.7819 3.60691 13.1412 4.71248L14.4246 8.66264C14.5853 9.15706 15.046 9.49182 15.5659 9.49182H19.7193C20.8818 9.49182 21.3651 10.9794 20.4247 11.6626L17.0645 14.104C16.6439 14.4095 16.4679 14.9512 16.6286 15.4456L17.912 19.3958C18.2713 20.5013 17.0059 21.4207 16.0654 20.7374L12.7052 18.2961C12.2846 17.9905 11.7151 17.9905 11.2945 18.2961L7.93434 20.7374C6.99388 21.4207 5.72851 20.5013 6.08773 19.3958L7.37121 15.4456C7.53186 14.9512 7.35587 14.4095 6.93529 14.104L3.57508 11.6626C2.63463 10.9794 3.11796 9.49182 4.28043 9.49182H8.43387C8.95374 9.49182 9.41448 9.15706 9.57513 8.66264L10.8586 4.71248Z"
+                  fill="#FF6A13"
+                ></path>
+              </svg>
+            {% endfor %}
+          </div>
+          <p>
+            {{ section.settings.text_star_1 -}}
+            <span>{{ section.settings.text_star_2 }}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide mm-avis-client-slide">
+              <img
+                src="{{ block.settings.image | img_url: "master" }}"
+                alt="Lys - Bol en verre saphir à oreilles 0.51L (lot de 6)"
+                width="500"
+                height="750"
+                loading="lazy"
+                class="mm-icon"
+              >
+
+              <div class="mm-avis-client-slide-infos">
+                <div class="mm-avis-client-slide-infos-top">
+                  <div class="mm-avis-client-slide-infos-stars">
+                    {% for i in (1..block.settings.nb_star) %}
+                      <svg
+                        width="20"
+                        height="18"
+                        viewBox="0 0 20 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.7903 18L9.99543 13.741L4.20057 18L6.42555 11.1218L0.633789 6.88989H7.78443L9.99543 0L12.2064 6.88989H19.3563L13.5653 11.1218L15.7903 18Z"
+                          fill="#FF6A13"
+                        ></path>
+                      </svg>
+                    {% endfor %}
+                    <span
+                      ><strong>{{ block.settings.nb_star }}</strong>/5</span
+                    >
+                  </div>
+                  <p class="mm-avis-client-slide-infos-date">{{ block.settings.date }}</p>
+                </div>
+                <p class="mm-avis-client-slide-infos-text">
+                  {{ block.settings.title }}
+                </p>
+                <p class="mm-avis-client-slide-infos-title">
+                  {{ block.settings.subtitle }}
+                </p>
+                <p class="mm-avis-client-slide-infos-name">{{ block.settings.name }}</p>
+                <a href="{{ block.settings.url }}" class="card_link">
+                  <span>{{ section.settings.text_link }}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev">
+          <svg
+            width="41"
+            height="40"
+            viewBox="0 0 41 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.3805 8.33331L5.71387 20M5.71387 20L17.3805 31.6666M5.71387 20L35.7139 20"
+              stroke="#0735B2"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="swiper-button-next">
+          <svg
+            width="41"
+            height="40"
+            viewBox="0 0 41 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.0472 31.6667L35.7139 20M35.7139 20L24.0472 8.33336M35.7139 20L5.71387 20"
+              stroke="#0735B2"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  new Swiper("#shopify-section-{{ section.id }} #reviewslider919162320132 .swiper", {
+    speed: 400,
+    spaceBetween: 100,
+    effect: "cards",
+    grabCursor: true,
+    navigation: {
+      nextEl: "#shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-button-next",
+      prevEl: "#shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-button-prev",
+    },
+    pagination: {
+      el: "#shopify-section-{{ section.id }} #reviewslider919162320132 .swiper-pagination",
+    },
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Slider Reviews",
+     "blocks": [
+    {
+    "type": "item",
+    "name": "item",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "date",
+        "label": "Date"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sous Titre"
+      },
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Nom"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Lien"
+      },
+      {
+        "type": "range",
+        "id": "nb_star",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "unit": "s",
+        "label": "Nombre d'étoiles",
+        "default": 5
+      }
+    ]
+  }
+],
+    "settings": [
+      {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur de fond de la section",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "color_1",
+    "label": "Couleur 1",
+    "default": "#000"
+  },
+  {
+    "type": "color",
+    "id": "color_2",
+    "label": "Couleur 2",
+    "default": "#000"
+  },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Titre 1",
+      "default": "Avis"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Titre 2",
+      "default": "Client"
+    },
+      {
+        "type": "range",
+        "id": "nb_star",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "unit": "s",
+        "label": "Nombre d'étoiles",
+        "default": 5
+      },
+    {
+      "type": "text",
+      "id": "text_star_1",
+      "label": "Texte Etoile 1",
+      "default": "Basé sur"
+    },
+    {
+      "type": "text",
+      "id": "text_star_2",
+      "label": "Texte Etoile 2",
+      "default": "250 avis"
+    },
+    {
+      "type": "text",
+      "id": "text_link",
+      "label": "Texte Lien",
+      "default": "Découvrir le produit"
+    }
+    ],
+  "presets": [
+    {
+      "name": "Slider Reviews"
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,296 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx {
+      font-family: 'Montserrat', sans-serif;
+      padding: 60px 20px;
+      background-color: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx img {
+      max-width: 100%;
+      display: block;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: row;
+      gap: 100px;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_left,
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_right {
+      max-width: 50%;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_right {
+      display: flex;
+      padding: 0;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_stitle1,
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_stitle2,
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_desc {
+      text-align: left;
+      font: normal normal normal 16px/24px;
+      letter-spacing: 0px;
+      color: {{ section.settings.text_color }};
+      margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_desc{
+      margin-top: 18px;
+      margin-bottom: 60px;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx   .imgtextpictbtnx_pictogramme {
+      display: flex;
+      align-items: center;
+      flex-direction: flex-start;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-top: 22px;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_pictogramme_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_pictogramme_item img {
+      height: 45px;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_pictogramme_item p {
+      text-align: center;
+      font: normal normal normal 15px/24px Montserrat;
+      letter-spacing: 0px;
+      color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_btn {
+      display: block;
+      background: {{ section.settings.btn_bg_color }} 0% 0% no-repeat padding-box;
+      border: 1px solid {{ section.settings.btn_bg_color }};
+      text-align: center;
+      font: normal normal normal 15px/19px Montserrat;
+      letter-spacing: 0px;
+      color: {{ section.settings.btn_text_color }};
+      cursor: pointer;
+      padding: 5px 20px;
+      margin-top: 100px;
+      text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_title {
+      text-align: center;
+      font: normal normal normal 30px/56px Montserrat;
+      letter-spacing: 0px;
+      color: {{ section.settings.title_color }};
+      text-transform: uppercase;
+      margin-bottom: 150px;
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_container {
+          flex-direction: column;
+          align-items: center;
+          gap: 35px;
+      }
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_left,
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_right {
+          max-width: 100%;
+      }
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_title {
+          font: normal normal normal 22px/56px Montserrat;
+          margin-bottom: 40px;
+      }
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_desc {
+          font-size: 14px !important;
+      }
+    #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_stitle1,
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_stitle2 {
+          font-size: 17px !important;
+      }
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_desc{
+          margin-bottom: 32px;
+           margin-top: 10px;
+      }
+
+      #shopify-section-{{ section.id }} #imgtextpictbtnx   .imgtextpictbtnx_pictogramme {
+          gap: 40px;
+          margin-top: 28px;
+      }
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_pictogramme_item p {
+          font: normal normal normal 14px/24px Montserrat;
+      }
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_btn {
+          font: normal normal normal 15px/19px Montserrat;
+          padding: 5px 20px;
+          margin-top: 55px;
+      }
+      #shopify-section-{{ section.id }} #imgtextpictbtnx    .imgtextpictbtnx_pictogramme_item img {
+          height: 32px;
+      }
+  }
+</style>
+
+<section id="imgtextpictbtnx">
+  {% if section.settings.title != blank %}
+    <h2 class="imgtextpictbtnx_title">{{ section.settings.title }}</h2>
+  {% endif %}
+  <div class="imgtextpictbtnx_container">
+    <div class="imgtextpictbtnx_left">
+      <img src="{{ section.settings.image | img_url: "master" }}" alt="">
+    </div>
+    <div class="imgtextpictbtnx_right">
+      <p class="imgtextpictbtnx_stitle1">{{ section.settings.subtitle1 }}</p>
+      <span class="imgtextpictbtnx_desc">
+        {{ section.settings.paragraphe }}
+      </span>
+      <p class="imgtextpictbtnx_stitle2">{{ section.settings.subtitle2 }}</p>
+      <div class="imgtextpictbtnx_pictogramme">
+        {% for block in section.blocks %}
+          <div class="imgtextpictbtnx_pictogramme_item">
+            <img src="{{ block.settings.image | img_url: "master" }}" alt="{{ block.settings.text }}">
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      {% if section.settings.btn_label != blank %}
+        <a
+          href="{{ section.settings.btn_url }}"
+          {% if section.settings.open_new_onglet == true %}
+            target="_blank"
+          {% endif %}
+          class="imgtextpictbtnx_btn"
+        >
+          {{- section.settings.btn_label -}}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Img Text Pict Btn",
+  "blocks": [
+  {
+    "type": "pictogramme",
+    "name": "Pictogramme",
+    "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+    ]
+  }
+],
+"settings": [
+  {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur fond Section",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "title_color",
+    "label": "Couleur titre",
+    "default": "#A5A5A5"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Couleur texte",
+    "default": "#707070"
+  },
+  {
+    "type": "color",
+    "id": "btn_bg_color",
+    "label": "Couleur fond bouton",
+    "default": "#6C6C6C"
+  },
+{
+    "type": "color",
+    "id": "btn_text_color",
+    "label": "Couleur texte bouton",
+    "default": "#fff"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Titre Section",
+    "default": "CHAMBRE CLASSIQUE"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  },
+  {
+    "type": "text",
+    "id": "subtitle1",
+    "label": "Sous titre 1",
+    "default": "A DECOUVRIR..."
+  },
+  {
+    "type": "text",
+    "id": "subtitle2",
+    "label": "Sous titre 2",
+    "default": "LES ÉQUIPEMENTS"
+  },
+  {
+    "type": "richtext",
+    "id": "paragraphe",
+    "label": "Paragraphe",
+    "default": "<p>Les deux chambres Classique sont parfaites pour vous accueillir en étape affaire, à quelques minutes de Valence. Après une longue journée sur les routes, des rendez-vous et des réunions, offrez-vous une halte à la Maison Chabran. Calme absolu, confort de votre chambre parfaitement équipée et plaisir d’une table gastronomique.</p>"
+  },
+  {
+    "type": "text",
+    "id": "btn_label",
+    "label": "Label Bouton",
+    "default": "Resever"
+  },
+  {
+    "type": "url",
+    "id": "btn_url",
+    "label": "URL Bouton"
+  },
+  {
+    "type": "checkbox",
+    "id": "open_new_onglet",
+    "label": "Ouvrir Nouvel Onglet",
+    "default": false
+  }
+],
+"presets": [
+  {
+    "name": "Img Text Pict Btn"
+  }
+]
+}
+{% endschema %}

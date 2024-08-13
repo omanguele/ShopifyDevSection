@@ -1,0 +1,237 @@
+<style>
+  html {
+      scroll-behavior: smooth;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  {
+      transition: opacity .6s cubic-bezier(.645,.045,.355,1);
+      color: {{ section.settings.text_color }};
+      font-size: 14px;
+      left: 0;
+      border-bottom: 1px solid #e6e6e6;
+      box-shadow: inset 0 4px 17px -5px #e3e1e1;
+      z-index: -1;
+      background: {{ section.settings.bg_color }};
+      position: fixed;
+      width: 100%;
+      padding: 15px 10px 15px 25px;
+      opacity: 0;
+      display: block;
+      top: 0
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar .open {
+      opacity: 1;
+      z-index: 99 !important;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left_rating_stars {
+      display: flex;
+      align-items: center;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left_rating_stars svg {
+      width: 20px;
+      height: 20px;
+      color: #000;
+  }
+
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left_rating {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 10px;
+  }
+
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_right{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: flex-end;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_right,
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left {
+      width: 50%;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_right_price {
+      font-weight: 600;
+      position: relative;
+      top: 2px;
+      text-align: right !important;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_right_action_btn {
+      cursor: pointer !important;
+      border-radius: 4px;
+      transition: ease .5s;
+      background-color: {{ section.settings.btn_bg_color }};
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      font-size: .8125em;
+      border: 1px solid transparent;
+      text-decoration: none;
+      text-align: center;
+      vertical-align: middle;
+      white-space: normal;
+      margin: 0;
+      width: auto;
+      line-height: 1.42;
+      color: {{ section.settings.btn_text_color }};
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_right_action_btn:hover {
+      background-color: {{ section.settings.hover_btn_bg_color }};
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left_title {
+      font-weight: 700;
+      color: {{ section.settings.text_color }};
+      font-size: 14px;
+      line-height: 1.563;
+  }
+  #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left_rating_rate {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: {{ section.settings.text_color }};
+  }
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_right_price {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left_rating {
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 0;
+      }
+      #shopify-section-{{ section.id }} #fixedscrollbar  .fixedscrollbar_left_title {
+          line-height: 1.5;
+          margin-bottom: 2px;
+      }
+      #shopify-section-{{ section.id }} #fixedscrollbar  {
+          top: unset;
+          bottom: 0;
+      }
+  }
+</style>
+
+<section id="fixedscrollbar">
+  <div class="fixedscrollbar_container">
+    <div class="fixedscrollbar_left">
+      <p class="fixedscrollbar_left_title">{{ product.title | escape }}</p>
+      <div class="fixedscrollbar_left_rating">
+        <div class="fixedscrollbar_left_rating_stars">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+            </svg>
+          </span>
+        </div>
+        <p class="fixedscrollbar_left_rating_rate">3000 Avis</p>
+      </div>
+    </div>
+    <div class="fixedscrollbar_right">
+      <p class="fixedscrollbar_right_price">Dès {{ product.price | money_with_currency }}</p>
+      <button class="fixedscrollbar_right_action_btn" type="button">
+        <span>{{ section.settings.btn_label }}</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('load', function(e) {
+      const fixedSBar = document.querySelector('#shopify-section-{{ section.id }} #fixedscrollbar ');
+
+      window.addEventListener('scroll', function(e) {
+          let heightMainPRoductContainer = document.querySelector('#main_product_container').scrollHeight;
+          /****
+              - il faut rajouter la taille du header à heightMainPRoductContainer si header statique | (heightMainPRoductContainer = heightMainPRoductContainer + taill_header)
+              - il faut retirer la taille du header à heightMainPRoductContainer si header sticky | (heightMainPRoductContainer = heightMainPRoductContainer - taill_header)
+          ****/
+
+          let scroll = this.scrollY;
+          if(scroll > heightMainPRoductContainer){
+              fixedSBar.classList.add('open');
+          }else{
+              fixedSBar.classList.remove('open');
+          }
+      });
+
+      fixedSBar.querySelector('.fixedscrollbar_right_action_btn').addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector('#main_product_container').scrollIntoView();
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Fixed Bar",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Couleur fond Bouton",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "hover_btn_bg_color",
+      "label": "Couleur fond Bouton",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur Texte Bouton",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Libelle bouton",
+      "default": "Commander"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fixed Bar"
+    }
+  ]
+}
+{% endschema %}

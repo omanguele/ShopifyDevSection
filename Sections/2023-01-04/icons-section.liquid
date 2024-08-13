@@ -1,0 +1,122 @@
+
+<style>
+
+#iconsrow2300104 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  position: relative;
+}
+#iconsrow2300104 .container {
+  max-width: 1300px;
+  padding: 50px;
+  display: flex;
+  margin: 0 auto;
+  background-color: {{ section.settings.bg-color }}
+}
+#iconsrow2300104 .container .icons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+#iconsrow2300104 .container .icons-wrapper .icon {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+}
+#iconsrow2300104 .container .icons-wrapper .icon img {
+  object-fit: cover;
+  width: 65px;
+  height: 65px;
+}
+#iconsrow2300104 .container .icons-wrapper .icon p {
+  display: flex;
+  width: 30%;
+  color: {{ section.settings.text-color }};
+  position: relative;
+  bottom: 15px
+}
+
+@media (max-width: 769px) {
+  #iconsrow2300104 .container {
+    padding: 20px;
+    display: flex;
+    margin: 0 auto;
+  }
+  #iconsrow2300104 .container .icons-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+    place-items: center;
+  }
+  #iconsrow2300104 .container .icons-wrapper .icon {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    margin: auto;
+  }
+}
+
+
+</style>
+
+  
+ <section id="iconsrow2300104">
+      <div class="container">
+        <div class="icons-wrapper">
+          {% for block in section.blocks %}
+          <div class="icon">
+            <img src="{{ block.settings.image | img_url: "master"}}" alt="" />
+            <p>{{ block.settings.text }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+{% schema %}
+  {
+    "name": "Icon section",
+    "blocks": [
+        {
+          "type": "notice",
+          "name": "Icone",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Icone"
+            },
+            {
+              "type":"text",
+              "id":"text",
+              "label":"Texte",
+              "default": "100% naturel"
+            }
+          ]
+        }
+      ],
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#ffffff"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur du texte",
+        "default":"#000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Icon section"
+      }
+    ]
+  }
+{% endschema %}

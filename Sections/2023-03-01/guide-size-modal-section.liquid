@@ -1,0 +1,462 @@
+<style>
+#shopify-section-{{ section.id }} #sizeguide010323  {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .modal_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: opacity 500ms, background-color 600ms;
+    overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .modal_container.open {
+    background-color: {{ section.settings.container-bg-color }};
+    z-index: 50;
+    opacity: 1;
+    visibility: visible;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .modal_container .size_guide_modal {
+    width: 60%;
+    height: 100%;
+    background-color: {{ section.settings.modal-bg-color }};
+    padding: 10px 50px 50px 50px;
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: all 600ms;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .modal_container.open > .size_guide_modal {
+    transform: translateX(0);
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_guide_modal .title_modal {
+    width: 100%;
+    text-align: right;
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: {{ section.settings.title-color }};
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_guide_modal .wrapper_modal {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .brand_container,
+#shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .size_container {
+    background-color: {{ section.settings.content-bg-color }};
+    height: 100%;
+    border-radius: 20px;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .brand_container {
+    width: 25%;
+    margin-right: 30px;
+    padding: 50px 10px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .size_container {
+    width: 75%;
+    margin-left: 30px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .brand_container .brand_list {
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    margin: 0 !important;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .brand_container .brand_list .brand_list_item {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: normal;
+    background-color: transparent;
+    color: {{ section.settings.brand-text-color }};
+    margin-bottom: 5px;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .brand_container .brand_list .brand_list_item.active {
+    color: {{ section.settings.brand-select-text-color }};
+    background-color: {{ section.settings.brand-select-bg-color }};
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container .size_container_header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid {{ section.settings.border-color }};
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container .size_container_body {
+    width: 100%;
+    height: 88%;
+    overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container .size_container_body .size_container_body_item.active {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container .size_container_body .size_container_body_item {
+    display: none;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .ico svg {
+    width: 30px;
+    height: 30px;
+    visibility: hidden;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container_header .size_container_header_left,
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container_header .size_container_header_right {
+    width: 50%;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container_header .size_container_header_left {
+    justify-content: flex-start;
+    border-right: 1px solid {{ section.settings.border-color }};
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container_header .size_container_header_right {
+    justify-content: flex-end;
+    border-left: 1px solid {{ section.settings.border-color }};
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container_body .size_container_body_left,
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container_body .size_container_body_right {
+    width: 50%;
+    padding: 0 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#shopify-section-{{ section.id }} #sizeguide010323  .size_container_body img {
+    max-width: 100% ;
+    display: block;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 1500px) {
+    #shopify-section-{{ section.id }} #sizeguide010323  .modal_container .size_guide_modal {
+        width: 95%;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .size_guide_modal .title_modal {
+        font-size: 28px;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .ico svg {
+        visibility: visible;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #sizeguide010323  .size_guide_modal .title_modal {
+        font-size: 20px;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .modal_container .size_guide_modal {
+        padding: 10px 20px 20px 20px;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .size_guide_modal .wrapper_modal {
+        flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .brand_container,
+    #shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .size_container {
+        margin: 0;
+        width: 100%;
+        height: 50%;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .brand_container{
+        margin-bottom: 10px;
+        padding: 20px 10px 20px 0px;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .wrapper_modal .size_container {
+        margin-top: 10px;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .brand_container .brand_list .brand_list_item {
+        font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .size_container_header .size_container_header_left,
+    #shopify-section-{{ section.id }} #sizeguide010323  .size_container_header .size_container_header_right {
+        font-size: 14px ;
+    }
+
+    #shopify-section-{{ section.id }} #sizeguide010323  .modal_container {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    #shopify-section-{{ section.id }} #sizeguide010323  .modal_container .size_guide_modal {
+         overflow-x: hidden;
+         overflow-y: auto;
+    }
+}
+</style>
+
+<section id="sizeguide010323">
+        <!-- Modal guide de taille -->
+        <div class="modal_container">
+            <div class="size_guide_modal">
+                <h3 class="title_modal">
+                    <span class="ico" id="closeSizeGuide">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>                          
+                    </span>
+                    <span>
+                        {{ section.settings.title }}
+                    </span>
+                </h3>
+                <div class="wrapper_modal">
+                    <div class="brand_container">
+                        <ul class="brand_list">
+                            {% for block in section.blocks %}
+                                <li class="brand_list_item">{{ block.settings.brand-name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                <div class="size_container">
+                    <div class="size_container_header">
+                        <div class="size_container_header_left">
+                            <span>{{ section.settings.male-label }}</span>
+                        </div>
+                        <div class="size_container_header_right">
+                            <span>{{ section.settings.female-label }}</span>
+                        </div>
+                    </div>
+                    <div class="size_container_body">
+                      {% for block in section.blocks %}
+                          <div class="size_container_body_item">
+                              <div class="size_container_body_left">
+                                  <img src="{{ block.settings.male-image | img_url:"master" }}" alt="{{ block.settings.brand-name }}">
+                              </div>
+                              <div class="size_container_body_right">
+                                  <img src="{{ block.settings.female-image | img_url:"master" }}" alt="{{ block.settings.brand-name }}">
+                              </div>
+                          </div>
+                      {% endfor %}
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouton d'ouverture du modal id=openSizeGuide -->
+        <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+            <button type="button" id="openSizeGuide" style="border: none; background: #000; color: #fff; padding: 10px; cursor: pointer;">open modal</button>
+        </div>
+    </section>
+
+    <script>
+        let body = document.querySelector('body');
+        let btnOpenModal = document.querySelector('#sizeguide010323 #openSizeGuide');
+        let btnCloseModal = document.querySelector('#sizeguide010323 #closeSizeGuide');
+        let sizeGuideModalContainer = document.querySelector('#sizeguide010323 .modal_container');
+        let sizeGuideModal = document.querySelector('#sizeguide010323 .size_guide_modal');
+        let bradListItem = document.querySelectorAll('#sizeguide010323 .brand_list .brand_list_item');
+        let bradSizeItem = document.querySelectorAll('#sizeguide010323 .size_container_body .size_container_body_item');
+
+        btnOpenModal.addEventListener('click', function(e) {
+            e.preventDefault();
+            sizeGuideModalContainer.classList.add('open');
+            body.style.overflow = 'hidden';
+        });
+
+        btnCloseModal.addEventListener('click', function(e) {
+            e.preventDefault();
+            sizeGuideModalContainer.classList.remove('open');
+            body.style.overflow = 'inherit';
+        });
+
+        bradListItem.forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                bradListItem.forEach((currItem, currIndex) => {
+                    if(item === currItem){
+                        bradListItem[currIndex].classList.add('active');
+                        bradSizeItem[currIndex].classList.add('active');
+                    }else{
+                        bradListItem[currIndex].classList.remove('active');
+                        bradSizeItem[currIndex].classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        sizeGuideModalContainer.addEventListener("click", async function (e) {
+            e.preventDefault();
+            let clickInside = sizeGuideModal.contains(e.target);
+            if (!clickInside) {
+                sizeGuideModalContainer.classList.remove('open');
+                body.style.overflow = 'inherit';
+            }
+        });
+    </script>
+
+  {% schema %}
+    {
+      "name": "Size Guide Section",
+      "blocks": [
+        {
+          "type": "sizeguide",
+          "name": "Guide de taille",
+          "settings": [
+            {
+              "type": "text",
+              "id": "brand-name",
+              "label": "Nom de la marque",
+              "default":"Adidas"
+            },
+            {
+              "type":"image_picker",
+              "id":"male-image",
+              "label":"Image Taille homme"
+            },
+            {
+              "type":"image_picker",
+              "id":"female-image",
+              "label":"Image Taille Femme"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"color",
+          "id":"container-bg-color",
+          "label":"Couleur du conteneur",
+          "default":"#272727"
+        },
+        {
+          "type":"color",
+          "id":"modal-bg-color",
+          "label":"Couleur du modal",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"content-bg-color",
+          "label":"Couleur de fond des contenants",
+          "default":"#f2f2f2"
+        },
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"text-color",
+          "label":"Couleur du texte",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"border-color",
+          "label":"Couleur des bordures",
+          "default":"#D8D8D8"
+        },
+        {
+          "type":"color",
+          "id":"brand-text-color",
+          "label":"Couleur marque",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"brand-select-text-color",
+          "label":"Couleur marque selectionner",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"brand-select-bg-color",
+          "label":"Couleur de fond marque selectionner",
+          "default":"#fff"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Titre de la section",
+          "default":"Guide des tailles"
+        },
+        {
+          "type":"text",
+          "id":"male-label",
+          "label":"Libelle Homme",
+          "default":"Homme"
+        },
+        {
+          "type":"text",
+          "id":"female-label",
+          "label":"Libelle Femme",
+          "default":"Femme"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Size Guide Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

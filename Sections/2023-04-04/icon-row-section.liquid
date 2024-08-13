@@ -1,0 +1,272 @@
+ <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alice&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+<style>
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#shopify-section-{{ section.id }} #infosrow230404 {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container {
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 50px;
+  font-family: "Montserrat", sans-serif;
+  background-color: {{ section.settings.bg-color }};
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .header h1 {
+  font-family: "Alice", serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: {{ section.settings.title-color}};
+  text-align: left;
+}
+
+#shopify-section-{{ section.id }} #infosrow230404 .container .header p {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: {{ section.settings.subtitle-color }};
+  margin-top: 3px;
+  text-align: left;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .header {
+  padding-bottom: 20px;
+  line-height: 20px;
+  text-align: left;
+  display: block;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .wrapper .col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0 20px 0;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .wrapper .col span h3 {
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: {{ section.settings.text-color }}
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .wrapper .col span h3 span {
+  text-decoration: underline;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .wrapper .col .row__icon {
+  display: flex;
+  gap: 10px;
+  line-height: 25px;
+  width: 80%;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .wrapper .col .row__icon .bold {
+  font-weight: bold;
+}
+#shopify-section-{{ section.id }} #infosrow230404 .container .wrapper .line__row{
+  height: 100%;
+  width: 0.5px;
+  padding: 0.7px;
+  background-color: #5c5c5c;
+}
+
+@media (max-width: 769px) {
+  #shopify-section-{{ section.id }} #infosrow230404 .container {
+    padding: 20px;
+  }
+  #shopify-section-{{ section.id }} #infosrow230404 .container .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} #infosrow230404 .container .wrapper .line__row {
+    width: 100%;
+    height: 0.5px;
+  }
+}
+
+</style>
+
+  
+ <section id="infosrow230404">
+      <div class="container">
+        <div class="header">
+          <h1>{{ section.settings.title }}</h1>
+          <p>{{ section.settings.subtitle }}</p>
+        </div>
+        <div class="wrapper">
+          <div class="col">
+            <span>
+              <h3>{{ section.settings.formule1 }}</h3>
+            </span>
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'left' %}
+                  <span class="row__icon">
+                    <span>
+                      <ion-icon
+                        name="checkmark-outline"
+                        style="font-size: {{ section.settings.icon-size }}px; 
+                        color: {{ section.settings.icon-color }}"
+                      ></ion-icon>
+                    </span>
+                    <p>
+                      {{ block.settings.text }}
+                    </p>
+                  </span>
+              {% endcase %}
+            {% endfor %}
+          </div>
+          <div class="line__row"> </div>
+          <div class="col">
+            <span>
+              <h3>{{ section.settings.formule2 }}</h3>
+            </span>
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'right' %}
+                  <span class="row__icon">
+                    <span>
+                      <ion-icon
+                        name="checkmark-outline"
+                        style="font-size: {{ section.settings.icon-size }}px;
+                        color: {{ section.settings.icon-color }}"
+                      ></ion-icon>
+                    </span>
+                    <p>
+                      {{ block.settings.text }}
+                    </p>
+                  </span>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+            
+        </div>
+      </div>
+    </section>
+{% schema %}
+  {
+    "name": "Row text section",
+    "blocks": [
+        {
+          "type": "left",
+          "name": "Ligne icone gauche",
+          "limit": 4,
+          "settings": [
+            {
+              "type":"textarea",
+              "id":"text",
+              "label":"Texte",
+              "default": "Sans engagement"
+            }
+          ]
+        },
+        {
+          "type": "right",
+          "name": "Ligne icone droite",
+          "limit": 4,
+          "settings": [
+            {
+              "type":"textarea",
+              "id":"text",
+              "label":"Texte",
+              "default": "Sans engagement"
+            }
+          ]
+        }
+      ],
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#ffffff"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur du titre",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"icon-color",
+        "label":"Couleur de l'icone",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"subtitle-color",
+        "label":"Couleur du sous-titre",
+        "default":"#5c5c5c"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur du texte",
+        "default":"#5c5c5c"
+      },
+      {
+        "type": "textarea",
+        "id": "formule1",
+        "label": "Premiere formule",
+        "default": "Formule 1 mois"
+      },
+      {
+        "type": "textarea",
+        "id": "formule2",
+        "label": "Deuxieme formule",
+        "default": "Formule 3 mois"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "abonnez vous et economisez !"
+      },
+      {
+        "type": "number",
+        "id": "icon-size",
+        "label": "Taille de l'icone",
+        "default": 23
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sous-titre",
+        "default": "Une cure de 3 mois est recommandee pour des resultats visibles"
+      }
+     
+    ],
+    "presets": [
+      {
+        "name": "Row text section"
+      }
+    ]
+  }
+{% endschema %}

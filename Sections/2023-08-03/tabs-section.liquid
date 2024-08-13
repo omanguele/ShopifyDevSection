@@ -1,0 +1,210 @@
+<style>
+
+  #shopify-section-{{ section.id }} #tabssection090323  {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: {{ section.settings.bg-color }};
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #tabssection090323  .tabs_container {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+}
+
+#shopify-section-{{ section.id }} #tabssection090323  .tabs_container .tabs_header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+
+#shopify-section-{{ section.id }} #tabssection090323  .tabs_header .tabs_header_item {
+    padding: 15px 20px 15px 0;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+    color: {{ section.settings.title-color }};
+}
+
+#shopify-section-{{ section.id }} #tabssection090323  .tabs_header .indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: {{ section.settings.indicator-color }};
+    width: 100px;
+    transform-origin: 0 0;
+}
+
+#shopify-section-{{ section.id }} #tabssection090323  .tabs_container .tabs_body {
+    width: 100%;
+    height: auto;
+    padding: 20px 0; 
+    overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} #tabssection090323  .tabs_body .tabs_body_item {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    transition: all .3s;
+    display: none;
+}
+
+#shopify-section-{{ section.id }} #tabssection090323  .tabs_body .tabs_body_item[aria-selected] {
+    display: block;
+}
+
+@media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #tabssection090323  .tabs_body .tabs_body_item {
+        font-size: 12px;
+    }
+    #shopify-section-{{ section.id }} #tabssection090323  .tabs_header .tabs_header_item {
+        font-size: 12px;
+    }
+}
+  
+</style>
+
+
+<section id="tabssection090323">
+    <div class="tabs_container">
+       <div class="tabs_header" role="tablist">
+          {% for block in section.blocks %}
+            {% assign index = forloop.index %}
+            <div class="tabs_header_item" {% if index == 1 %} aria-selected="true" {% endif %}>{{ block.settings.title }}</div>
+         {% endfor %}
+        <span class="indicator"></span>
+       </div>
+       <div class="tabs_body">
+          {% for block in section.blocks %}
+            {% assign index = forloop.index %}
+            <div class="tabs_body_item" {% if index == 1 %} aria-selected="true" {% endif %} >
+                {{ block.settings.description }}
+            </div>
+         {% endfor %}
+       </div>
+    </div>
+</section>
+
+
+<script>
+    const tabsHeader = document.querySelector('#shopify-section-{{ section.id }} #tabssection090323  .tabs_header');
+    const tabsHeaderItems = Array.from(tabsHeader.querySelectorAll('.tabs_header_item'));
+    const tabsBodyItems = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #tabssection090323  .tabs_body .tabs_body_item'));
+    const indicator = tabsHeader.querySelector('.indicator');
+    let activeHeaderItems = tabsHeader.querySelector('[aria-selected]');
+
+    if(activeHeaderItems){
+        indicator.style.setProperty('transform', getTransform(activeHeaderItems))
+    }
+
+   function onItemHeaderClick(e, index) {
+        if(e.currentTarget === activeHeaderItems){
+            return;
+        }
+
+        if(activeHeaderItems) {
+            activeHeaderItems.removeAttribute('aria-selected');
+            e.currentTarget.setAttribute('aria-selected', 'true')
+        
+
+            indicator.animate([
+                {transform: getTransform(e.currentTarget)}
+            ], {
+                fill: 'both',
+                duration: 600,
+                easing: 'cubic-bezier(.48,1.55,.28,1)'
+            });
+
+            activeHeaderItems = e.currentTarget;
+
+            tabsBodyItems.forEach((bItem, bIndex) => {
+                if(index === bIndex){
+                    bItem.setAttribute('aria-selected', 'true');
+                }else{
+                    bItem.removeAttribute('aria-selected');
+                }
+            });
+        }
+   }
+
+    function getTransform(element) {
+        const transform = {
+            x: element.offsetLeft,
+            scaleX: element.offsetWidth / 100,
+        };
+
+        return `translateX(${transform.x}px) scaleX(${transform.scaleX})`;
+    }
+  
+    tabsHeaderItems.forEach((hItem, hIndex) => {
+        hItem.addEventListener('click', (e) => {onItemHeaderClick(e, hIndex)});
+    }) 
+</script>
+
+
+{% schema %}
+  {
+    "name": "Tab Section",
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre du block",
+            "default":"Description"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description du block",
+            "default":"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"indicator-color",
+        "label":"Couleur indicateur",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur de titre",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      }
+    ],
+    "presets":[
+      {
+        "name":"Tab Section"
+      }
+    ]
+  }
+{% endschema %}

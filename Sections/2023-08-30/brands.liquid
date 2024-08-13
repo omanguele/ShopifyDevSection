@@ -1,0 +1,165 @@
+<style>
+    #shopify-section-{{ section.id }} #brandsggridtext25510332{
+      display: flex;
+      justify-content: center;
+      padding: 100px 10px;
+      background-color: {{ section.settings.bg_color }};
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #brandsggridtext25510332 .brands h2{
+      text-align: center;
+      font-weight: 650;
+      margin: 15px 0;
+      font-size: 35px;
+      color: {{ section.settings.heading_color }};
+  }
+
+  #shopify-section-{{ section.id }} #brandsggridtext25510332 .brands__grid{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 1000px;
+  }
+
+  #shopify-section-{{ section.id }} #brandsggridtext25510332 .brand__card{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: {{ section.settings.card_color }};
+      border-radius: 15px;
+      padding: 20px;
+      width: 300px;
+      height: 120px;
+      transition: all ease-out 0.3s;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #brandsggridtext25510332 .brand__card:hover{
+      transform: scale(1.05);
+      cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} #brandsggridtext25510332 .brand__img{
+      width: 100%;
+      height: auto;
+      padding: 10px;
+  }
+
+  @media (max-width:975px) {
+    #shopify-section-{{ section.id }} #brandsggridtext25510332   .brand__card{
+          width: 250px;
+          height: 100px;
+          padding: 10px;
+      }
+  }
+  @media (max-width:825px) {
+    #shopify-section-{{ section.id }} #brandsggridtext25510332   .brand__card{
+          width: 200px;
+          height: 80px;
+      }
+  }
+  @media (max-width:670px) {
+    #shopify-section-{{ section.id }} #brandsggridtext25510332   .brand__card{
+          width: 170px;
+          height: 60px;
+      }
+  }
+  @media (max-width:580px) {
+    #shopify-section-{{ section.id }} #brandsggridtext25510332   .brand__card{
+          width: 140px;
+          height: 50px;
+      }
+  }
+  @media (max-width:480px) {
+    #shopify-section-{{ section.id }} #brandsggridtext25510332   .brands__grid{
+          gap: 5px;
+      }
+    #shopify-section-{{ section.id }} #brandsggridtext25510332   .brand__card{
+          width: 130px;
+          height: 50px;
+      }
+  }
+  @media (max-width:412px) {
+   #shopify-section-{{ section.id }} #brandsggridtext25510332    .brand__card{
+          width: 110px;
+          padding: 5px;
+      }
+  }
+  @media (max-width:375px) {
+    #shopify-section-{{ section.id }} #brandsggridtext25510332   .brand__card{
+          width: 90px;
+      }
+  }
+  @media (max-width:355px) {
+   #shopify-section-{{ section.id }} #brandsggridtext25510332    .brand__card{
+          width: 70px;
+          padding: 0;
+      }
+  }
+</style>
+
+<section id="brandsggridtext25510332">
+  <section class="brands">
+    <h2>{{ section.settings.heading }}</h2>
+    <section class="brands__grid">
+      {%- for block in section.blocks -%}
+        <section class="brand__card">
+          <img class="brand__img" src="{{ block.settings.image | img_url: "master" }}">
+        </section>
+      {% endfor %}
+    </section>
+  </section>
+</section>
+
+{% schema %}
+{
+  "name": "Brands",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Card Couleur",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Couleur",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Bg Couleur",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Hast Du uns hier glänzen gesehen?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brands"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,365 @@
+<style>
+#shopify-section-{{ section.id }} #card200223 {
+  width: 100%;
+  background-color: {{ section.settings.bg-color }};
+}
+
+#shopify-section-{{ section.id }} #card200223 .section-container {
+  display: flex;
+  max-width: 1300px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+#shopify-section-{{ section.id }} #card200223 .row-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: 100%;
+}
+
+#shopify-section-{{ section.id }} #card200223 .card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:20px 0px;
+  text-align: center;
+  padding: 30px 0;
+  width: 100%;
+  height: auto;
+  background-color: {{ section.settings.bg-card-color }};
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #card200223 .header-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 10%;
+  width: 90%;
+}
+
+#shopify-section-{{ section.id }} #card200223 .ctn-action-btn {
+  width: 90%;
+  height: 10%;
+}
+
+#shopify-section-{{ section.id }} #card200223 .header-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 8px;
+  color: {{ section.settings.subtitle-card-color }};
+  margin: 0 !important;
+}
+
+#shopify-section-{{ section.id }} #card200223 .header-description {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: {{ section.settings.title-card-color }};
+  margin: 0 !important;
+}
+
+#shopify-section-{{ section.id }} #card200223 .image-container {
+  width: 90%;
+  height: {{ section.settings.desktop-image-height }}px;
+  overflow: hidden;
+  position: relative;
+  margin: 30px 0;
+}
+
+#shopify-section-{{ section.id }} #card200223 .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#shopify-section-{{ section.id }} #card200223 .card-container:hover > .image-container img.first-image {
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#shopify-section-{{ section.id }} #card200223 .card-container:hover > .image-container img.second-image {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  
+}
+
+#shopify-section-{{ section.id }} #card200223 .image-container img.first-image {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all 600ms;
+}
+
+#shopify-section-{{ section.id }} #card200223 .image-container img.second-image  {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 600ms;
+}
+
+#shopify-section-{{ section.id }} #card200223 .submit-btn {
+  padding: 10px;
+  width: 100%;
+  background-color: {{ section.settings.btn-card-color }};
+  color: {{ section.settings.btn-text-card-color }};
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 12px;
+  transition: ease 0.5s;
+  letter-spacing: 2px;
+  margin: 0px 0px 50px;
+  border:none;
+}
+
+#shopify-section-{{ section.id }} #card200223 .submit-btn:hover {
+  background-color: {{ section.settings.hover-btn-card-color }};
+  color: {{ section.settings.hover-btn-text-card-color }};
+}
+
+@media (max-width: 1200px) {
+  #shopify-section-{{ section.id }} #card200223 .section-container {
+    display: flex;
+    max-width: 100%;
+    padding: 20px 20px 20px;
+    flex-direction: column; 
+    margin: 0 auto;
+  }
+  #shopify-section-{{ section.id }} #card200223 .row-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #card200223 .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+    height: auto;
+  }
+  #shopify-section-{{ section.id }} #card200223 .image-container {
+    width: 90%;
+    height: {{ section.settings.mobile-image-height }}px;
+  }
+
+  #shopify-section-{{ section.id }} #card200223 .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} #card200223 .ctn-action-btn {
+    width: 90%;
+    height: 10%;
+  }
+
+  #shopify-section-{{ section.id }} #card200223 .submit-btn {
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 12px;
+    transition: ease 0.5s;
+    letter-spacing: 2px;
+    margin: 0px;
+  }
+
+}
+</style>
+    <section id="card200223">
+        <div class="section-container">
+        {% for block in section.blocks %}
+            <div class="row-wrapper">
+                <div class="card-container">
+                    <span class="header-wrapper">
+                        <h6 class="header-title"> {{ block.settings.subtitle-card-1 }} </h6>
+                        <h1 class="header-description"> {{ block.settings.title-card-1 }} </h3>
+                    </span>
+                    <div class="image-container">
+                        <img src="{{ block.settings.image-card-1 | img_url:"master" }}" class="first-image" alt="">
+                        <img src="{{ block.settings.image-hover-card-1 | img_url:"master" }}" alt="" class="second-image">
+                    </div>
+                    <div class="ctn-action-btn">
+                       <a href="{{ block.settings.btn-url-card-1 }}"> <button class="submit-btn">{{ block.settings.btn-label-card-1 }}</button> </a>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <span class="header-wrapper">
+                        <h6 class="header-title"> {{ block.settings.subtitle-card-2 }} </h6>
+                        <h1 class="header-description"> {{ block.settings.title-card-2 }} </h3>
+                    </span>
+                    <div class="image-container">
+                        <img src="{{ block.settings.image-card-2 | img_url:"master" }}" class="first-image" alt="">
+                        <img src="{{ block.settings.image-hover-card-2 | img_url:"master" }}" alt="" class="second-image">
+                    </div>
+                    <div class="ctn-action-btn">
+                        <a href="{{ block.settings.btn-url-card-2 }}"> <button class="submit-btn">{{ block.settings.btn-label-card-2 }}</button> </a>
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </section>
+
+{% schema %}
+  {
+    "name": "Card Section",
+    "blocks": [
+      {
+        "type": "line",
+        "name": "Ligne",
+        "settings": [
+            {
+              "type":"image_picker",
+              "id":"image-card-1",
+              "label":"Image carte 1"
+            },
+            {
+              "type":"image_picker",
+              "id":"image-hover-card-1",
+              "label":"Hover Image carte 1"
+            },
+            {
+              "type": "text",
+              "id": "title-card-1",
+              "label": "Titre Carte 1", 
+              "default":"Courcelle"
+            },
+            {
+              "type": "text",
+              "id": "subtitle-card-1",
+              "label": "Sous titre carte 1", 
+              "default":"Intemporel et connecté"
+            },
+            {
+              "type": "text",
+              "id": "btn-label-card-1",
+              "label": "Libellé du bouton carte 1", 
+              "default":"Decouvrir"
+            },
+            {
+              "type": "url",
+              "id": "btn-url-card-1",
+              "label": "Lien du bouton carte 1"
+            },
+          {
+              "type":"image_picker",
+              "id":"image-card-2",
+              "label":"Image carte 2"
+            },
+            {
+              "type":"image_picker",
+              "id":"image-hover-card-2",
+              "label":"Hover Image carte 2"
+            },
+            {
+              "type": "text",
+              "id": "title-card-2",
+              "label": "Titre Carte 2", 
+              "default":"Courcelle"
+            },
+            {
+              "type": "text",
+              "id": "subtitle-card-2",
+              "label": "Sous titre carte 2", 
+              "default":"Intemporel et connecté"
+            },
+            {
+              "type": "text",
+              "id": "btn-label-card-2",
+              "label": "Libellé du bouton carte 2", 
+              "default":"Decouvrir"
+            },
+            {
+              "type": "url",
+              "id": "btn-url-card-2",
+              "label": "Lien du bouton carte 2"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "color",
+        "id": "btn-card-color",
+        "label": "Couleur des boutons", 
+        "default":"#fff"
+      },
+      {
+        "type": "color",
+        "id": "hover-btn-card-color",
+        "label": "Couleur des boutons au survol", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "btn-text-card-color",
+        "label": "Couleur du texte des boutons", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "hover-btn-text-card-color",
+        "label": "Couleur du texte des boutons au survol", 
+        "default":"#fff"
+      },
+      {
+        "type": "color",
+        "id": "bg-card-color",
+        "label": "Couleur de fond des cartes", 
+        "default":"#EAEAEA"
+      },
+      {
+        "type": "color",
+        "id": "title-card-color",
+        "label": "Couleur de titre des cartes", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "subtitle-card-color",
+        "label": "Couleur de sous titre des cartes", 
+        "default":"#BD250A"
+      },
+      {
+        "type": "color",
+        "id": "bg-color",
+        "label": "Couleur de fond", 
+        "default":"#fff"
+      },
+      {
+        "type": "number",
+        "id": "desktop-image-height",
+        "label": "Taille image desktop", 
+        "default":300
+      },
+      {
+        "type": "number",
+        "id": "mobile-image-height",
+        "label": "Taille image mobile", 
+        "default":450
+      }
+    ],
+    "presets": [
+      {
+        "name": "Card Section",
+        "category": "Card"
+      }
+    ]
+  }
+{% endschema %}

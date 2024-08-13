@@ -1,0 +1,499 @@
+<style>
+  #shopify-section-{{ section.id }} #gridproduct150423  {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 80px 10px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .container {
+      max-width: 1400px;
+      margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .search_bar {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .search_bar input {
+      width: 100%;
+      border: 1px solid #999999;
+      padding: 15px 15px 15px 50px;
+      border-radius: 5px;
+      outline: none;
+      font-size: 16px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .mobile_filter_container {
+      display: block;
+      margin: 50px 0 10px 0;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .mobile_filter_container .filter_item {
+      list-style: none;
+      margin-top: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 8px;
+      width: 100%;
+      overflow: auto;
+      margin-bottom: 20px;
+  }
+
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .filter_item li {
+      color: #5f5f5f;
+      border-radius: 10px;
+      padding: 7px;
+      cursor: pointer;
+      width: max-content;
+      word-wrap: none;
+      font-size: 16px;
+      text-align: center;
+      line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .filter_item li:hover {
+      background-color: #000;
+      color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .filter_item li.active {
+      background-color: #000 !important;
+      color: #fff !important;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .product_grid {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .loader {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .no_result {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .load_item {
+      width: 100%;
+      height: 200px;
+      border: 2px solid #e6e6e6;
+      width: 100%;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.9) 90%, #F4F4F4 100%);
+      background-size: 75%;
+      animation: pulse 1s infinite ease-out;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .card:hover {
+      border: 2px solid #e6e6e6;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)!important;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .card_image {
+      width: 100%;
+      max-height: 150px;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .card_image img {
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .card_text {
+      padding: 10px;
+      gap: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423   .card_text_name {
+      font-weight: 500;
+      font-size: 16px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .card_text_size {
+      font-weight: 800;
+      font-size: 16px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .search_bar .ico {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .search_bar .ico svg {
+      height: 30px;
+      width: 30px;
+  }
+
+  #shopify-section-{{ section.id }} #gridproduct150423  .hide {
+      display: none !important;
+  }
+
+  @media only screen and (max-width: 1200px)  {
+      #shopify-section-{{ section.id }} #gridproduct150423   .product_grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423   .loader {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+  }
+
+  @media only screen and (max-width: 1000px)  {
+      #shopify-section-{{ section.id }} #gridproduct150423   .product_grid {
+          width: 100%;
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423   .loader {
+          width: 100%;
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423   .no_result {
+          width: 100%;
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423   .search_bar {
+          width: 100%;
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423   .card_text_name {
+          font-size: 14px;
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423  .card_text_size {
+          font-size: 14px;
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423   .search_bar input {
+          font-size: 14px;
+      }
+  }
+
+  @media only screen and (max-width: 900px)  {
+      #shopify-section-{{ section.id }} #gridproduct150423   .product_grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      #shopify-section-{{ section.id }} #gridproduct150423   .loader {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      #shopify-section-{{ section.id }} #gridproduct150423  .filter_item li {
+          font-size: 12px;
+      }
+      #shopify-section-{{ section.id }} #gridproduct150423  .filter_item li:hover {
+          background-color: transparent;
+          color: #000;
+      }
+      #shopify-section-{{ section.id }} #gridproduct150423  .filter_item li.active {
+          background-color: #000 !important;
+          color: #fff !important;
+      }
+  }
+
+  @media only screen and (max-width: 780px)  {
+      #shopify-section-{{ section.id }} #gridproduct150423   .product_grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      #shopify-section-{{ section.id }} #gridproduct150423   .loader {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+  }
+
+  @keyframes pulse {
+      0% {
+          background-position: -100px;
+        }
+      60%, 100% {
+      background-position: 140px;
+      }
+    }
+</style>
+
+<section id="gridproduct150423">
+  <div class="container">
+    <div class="search_bar">
+      <span class="ico">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </span>
+      <input type="search" name="" id="searchinput" disabled placeholder="Chercher un modèle, sku, taille...">
+    </div>
+
+    <div class="mobile_filter_container">
+      <ul class="filter_item">
+        {% for block in section.blocks %}
+          <li data-search="{{ block.settings.text }}">{{ block.settings.text }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="wrapper">
+      <div class="no_result hide">
+        <p>Pas de résultats trouvés pour votre recherche</p>
+      </div>
+      <div class="product_grid hide"></div>
+      <div class="loader">
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+        <div class="load_item"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script
+  src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+  crossorigin="anonymous"
+></script>
+<script type="module">
+  
+  
+  
+  
+
+  
+const productGrid = document.querySelector('#shopify-section-{{ section.id }} #gridproduct150423  .product_grid');
+const noResult = document.querySelector('#shopify-section-{{ section.id }} #gridproduct150423  .no_result');
+const loader = document.querySelector('#shopify-section-{{ section.id }} #gridproduct150423  .loader');
+const searchInput = document.querySelector('#shopify-section-{{ section.id }} #gridproduct150423  #searchinput');
+const categoryItems = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #gridproduct150423  .filter_item li'));
+let category = '';
+
+const airtableBaseId = '{{ section.id.base_id }}'; // Remplacez AIRTABLE_BASE_ID par l'ID de votre base Airtable
+const airtableApiKey = '{{ section.id.api_key }}'; // Remplacez AIRTABLE_API_KEY par votre clé API Airtable
+const airtableTable = '{{ section.id.table_name }}'; // Remplacez AIRTABLE_TABLE_NAME par le nom de votre table Airtable
+
+const results = [];
+let records = [];
+let offset = '';
+
+function fetchRecords() {
+$.ajax({
+    url: `https://api.airtable.com/v0/${airtableBaseId}/${airtableTable}`,
+    headers: {
+    'Authorization': `Bearer ${airtableApiKey}`
+    },
+    data: {
+    offset: offset
+    },
+    success: function(response) {
+        records = records.concat(response.records);
+        offset = response.offset;
+
+        if (offset) {
+            fetchRecords();
+        } else {
+            displayRecords();
+        }
+    },
+    error: function(error) {
+    console.log(error);
+    }
+});
+}
+
+function displayRecords() {
+    records.forEach((record) => {
+      if(record.fields['Taille site'] && record.fields.Photo){
+        let trueTailles = [];
+        record.fields['Taille site'].split(", ").forEach((t) => {
+            if(!trueTailles.includes(t)) trueTailles.push(t);
+        });
+        record.fields.sizes = trueTailles.sort();
+        results.push(record.fields)
+      }
+    });
+    searchInput.disabled = false;
+    loader.classList.add('hide');
+    renderHtml(results);
+    // Affichez vos enregistrements où vous le souhaitez dans la page web
+}
+
+fetchRecords();
+
+searchInput.addEventListener('input', function(e){
+    let filterData = search(e.target.value.toLowerCase());
+    renderHtml(filterData);
+});
+
+categoryItems.forEach((item, i) => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        if(loader.classList.contains('hide')){
+            categoryItems.forEach((cItem, y) => {
+                if((cItem === item)){
+                    cItem.classList.toggle('active');
+                    category = category === item.getAttribute('data-search') ? '' : item.getAttribute('data-search');
+                }else{
+                    cItem.classList.remove('active');
+                }
+            });
+            let filterData =  search(searchInput.value);
+            renderHtml(filterData);
+        }
+    });
+
+});
+
+function renderHtml(product) {
+    
+    if(product.length != 0){
+        let html = '';
+        product.forEach((d, i) => {
+
+            html += `
+                <a href="${d["Consulter la paire"].url}" class="card">
+                    <div class="card_image">
+                        <img src="${d.Photo[0].url}" alt="">
+                    </div>
+                    <div class="card_text">
+                        <h4 class="card_text_name">${d.Name}</h4>
+                        <p class="card_text_size">${d.Marque}</p>
+                        <p class="card_text_size">${d.sizes.join(' - ')}</p>
+                    </div>
+                </a>
+            `; 
+        });
+        productGrid.innerHTML = html;
+        noResult.classList.add('hide');
+        productGrid.classList.remove('hide');
+    }else{
+        productGrid.classList.add('hide');
+        noResult.classList.remove('hide');
+    }
+}
+
+function search(value) {
+    return results.filter((d, index) => {
+       
+        if(category != ''){
+                return  ((d.Marque?.toLowerCase()).includes(category.toLowerCase()))  && (
+                        (d.Name?.toLowerCase().includes(value.toLowerCase())) ||
+                        (d.SKU?.toLowerCase().includes(value.toLowerCase())) ||
+                        (d['Taille site'].includes(value.toLowerCase()))
+                );
+        }else{  
+            return   (
+                        (d.Name?.toLowerCase().includes(value.toLowerCase())) ||
+                        (d.SKU?.toLowerCase().includes(value.toLowerCase())) ||
+                        (d['Taille site'].includes(value.toLowerCase()))
+                    );
+        }
+        
+    });
+}
+
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Air Table",
+  "blocks": [
+    {
+      "type": "marque",
+      "name": "Marque",
+      "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Marque"
+          }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "base_id",
+      "label": "Base id",
+      "default":"appRefkYEGHNET1XG"
+    },
+    {
+      "type": "text",
+      "id": "api_key",
+      "label": "Api key",
+      "default":"key0joRJTOA6tycxi"
+    },
+    {
+      "type": "text",
+      "id": "table_name",
+      "label": "Table name",
+      "default":"Modèle"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Table"
+    }
+  ]
+}
+{% endschema %}

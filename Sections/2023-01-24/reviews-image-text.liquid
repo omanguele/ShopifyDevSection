@@ -1,0 +1,399 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<style>
+  #shopify-section-{{ section.id }} #testimonialsection230123 div:empty{display:block}
+  #shopify-section-{{ section.id }} #testimonialsection230123 {
+      width: 100%;
+      height: 100%;
+      color: {{ section.settings.text-color }};
+      background-color: {{ section.settings.bg-color }};
+      overflow: hidden;
+      /*padding: 2.1875rem 1.25rem 2.8125rem;*/
+      position: relative;
+  }
+  
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper {
+      width: 100%;
+      height: 100%;
+      padding: 30px 50px;
+  }
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+      margin-right: -20px;
+      padding: 30px;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper-slide {
+      overflow: hidden;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper-slide img {
+      display: block;
+      object-fit: cover;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .header {
+      text-align: center;
+      padding:0;
+      margin:0;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .header  .title {
+      font-size: 24px;
+      letter-spacing: 1px;
+      line-height: normal;
+      margin-bottom: 17px;
+      padding: 0;
+      display: block;
+      text-transform: uppercase;
+      width:100%;
+      color: {{ section.settings.title-color }};
+  }
+  
+  
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .slider-testimonial {
+      width: 100%;
+      display: none;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card-container {
+      display: flex;
+      width: 100%;
+      overflow-x: scroll;
+      gap: 30px;
+      height: 100%;
+      flex-wrap: nowrap;
+      padding: 10px;
+    }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card {
+      min-width: 25%;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card a {
+      text-decoration-line: none;
+      color: inherit;
+      display: block;
+     
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card a figure {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card a .ctn-image {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 100%;
+      position: relative;
+      width: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card a .ctn-image img {
+      height: auto;
+      max-width: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card .name-stars {
+      align-items: center;
+      display: flex;
+      margin-top: 18px;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card .name-stars .customer-name{
+      font-size: 14px;
+      margin: 0 8px 0 0;
+      padding: 0;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card .name-stars .ctn-stars {
+      display: inline-block;
+      position: relative;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card .name-stars .ctn-stars .star {
+      display: inline-block;
+      margin: 0;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card .message {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 18px;
+      margin: 8px 0 0;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card  .action-btn {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      line-height: 16px;
+      margin: 15px 0 0;
+      padding: 0;
+      position: relative;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      display: inline-block;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .card  .action-btn::after {
+      border-bottom: 1px solid;
+      bottom: -2px;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper-button-next {
+      color: inherit;
+      height: auto;
+      padding: 1px 6px;
+      position: absolute;
+      top: 7px !important ; 
+      width: auto;
+      margin-top: 0 !important;
+      right: 50px !important;
+      left: auto !important;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper-button-prev {
+      color: inherit;
+      height: auto;
+      padding: 1px 6px;
+      position: absolute;
+      top: 7px !important ;
+      width: auto;
+      margin-top: 0 !important;
+      right: 100px !important;
+      left: auto !important;
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper-button-next::after,
+  #shopify-section-{{ section.id }} #testimonialsection230123 .swiper-button-prev::after{
+      font-size: 20px !important;
+      color: {{ section.settings.btn-color }};
+  }
+  
+  #shopify-section-{{ section.id }} #testimonialsection230123. card {
+      min-width: 200px;
+  }
+  
+  @media only screen and (min-width: 1024px) {
+      #shopify-section-{{ section.id }} #testimonialsection230123 .header  .title {
+          font-size: 36px;
+          letter-spacing: .77px;
+          margin-bottom: 32px;
+          line-height: normal;
+          padding: 0;
+          display: block;
+          text-transform: uppercase;
+      }
+      #shopify-section-{{ section.id }} #testimonialsection230123 .slider-testimonial {
+          display: block;
+      }
+      #shopify-section-{{ section.id }} #testimonialsection230123 .card-container {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #testimonialsection230123 .card {
+          width: 100%;
+      }
+      #shopify-section-{{ section.id }} #testimonialsection230123 .card  .action-btn {
+          text-decoration: none;
+      }
+  }
+</style>
+
+<section id="testimonialsection230123">
+  <div class="header">
+      <h1 class="title">{{ section.settings.title }}</h1>
+  </div>
+  <div class="card-container">
+      {% for block in section.blocks %}
+        <div class="card">
+            <a href="{{ section.settings.testimonial-btn-url }}">
+                <figure>
+                    <div class="ctn-image">
+                        <img src="{{ block.settings.image | img_url:"master" }}" alt="">
+                    </div>
+                    <figcaption>
+                        <div class="name-stars">
+                            <p class="customer-name">{{ block.settings.customer-name }}</p>
+                            <div class="ctn-stars">
+                              {% for i in (1..block.settings.customer-notation) %}
+                                <svg class="star" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.4153 0.394985C9.5751 -0.0647551 10.2253 -0.0647554 10.3851 0.394985L12.2986 5.89999C12.3691 6.1028 12.5584 6.24031 12.7731 6.24468L18.5999 6.36343C19.0866 6.37334 19.2875 6.9917 18.8996 7.28576L14.2554 10.8068C14.0843 10.9365 14.012 11.159 14.0742 11.3645L15.7618 16.9429C15.9028 17.4088 15.3768 17.7909 14.9773 17.5129L10.1934 14.184C10.0172 14.0614 9.78322 14.0614 9.60698 14.184L4.82313 17.5129C4.42362 17.7909 3.89761 17.4088 4.03855 16.9429L5.72623 11.3645C5.78841 11.159 5.71611 10.9365 5.54501 10.8068L0.900759 7.28576C0.512902 6.9917 0.713819 6.37334 1.20044 6.36343L7.02732 6.24468C7.24199 6.24031 7.43126 6.1028 7.50176 5.89999L9.4153 0.394985Z" fill="#62554A"></path></svg>
+                              {% endfor %}
+                            </div>
+                        </div>
+                        <p class="message">{{ block.settings.customer-desc }}</p>
+                        <a href="{{ section.settings.testimonial-btn-url }}" class="action-btn">{{ section.settings.testimonial-btn-label }}</a>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+      {% endfor %}
+  </div>
+  <div class="slider-testimonial">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="card">
+                  <a href="{{ section.settings.testimonial-btn-url }}">
+                    <figure>
+                        <div class="ctn-image">
+                            <img src="{{ block.settings.image | img_url:"master" }}" alt="">
+                        </div>
+                        <figcaption>
+                            <div class="name-stars">
+                                <p class="customer-name">{{ block.settings.customer-name }}</p>
+                                <div class="ctn-stars">
+                                  {% for i in (1.. block.settings.customer-notation) %}
+                                    <svg class="star" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.4153 0.394985C9.5751 -0.0647551 10.2253 -0.0647554 10.3851 0.394985L12.2986 5.89999C12.3691 6.1028 12.5584 6.24031 12.7731 6.24468L18.5999 6.36343C19.0866 6.37334 19.2875 6.9917 18.8996 7.28576L14.2554 10.8068C14.0843 10.9365 14.012 11.159 14.0742 11.3645L15.7618 16.9429C15.9028 17.4088 15.3768 17.7909 14.9773 17.5129L10.1934 14.184C10.0172 14.0614 9.78322 14.0614 9.60698 14.184L4.82313 17.5129C4.42362 17.7909 3.89761 17.4088 4.03855 16.9429L5.72623 11.3645C5.78841 11.159 5.71611 10.9365 5.54501 10.8068L0.900759 7.28576C0.512902 6.9917 0.713819 6.37334 1.20044 6.36343L7.02732 6.24468C7.24199 6.24031 7.43126 6.1028 7.50176 5.89999L9.4153 0.394985Z" fill="#62554A"></path></svg>
+                                  {% endfor %}
+                                </div>
+                            </div>
+                            <p class="message">{{ block.settings.customer-desc }}</p>
+                            <a href="{{ section.settings.testimonial-btn-url }}" class="action-btn">{{ section.settings.testimonial-btn-label }}</a>
+                        </figcaption>
+                    </figure>
+                  </a>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+  </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+   var swiper = new Swiper(".mySwiper", {
+      grabCursor: true,
+      watchOverflow: true,
+      navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+      300: {
+          slidesPerView: 2,
+          slidesPerColumn: 3,
+          spaceBetween: 30,
+      },
+      768: {
+          slidesPerView: 2,
+          slidesPerColumn: 3,
+          spaceBetween: 30,
+      },
+      1024: {
+          slidesPerView: 3.2,
+          spaceBetween: 60,
+      },
+      1500: {
+          slidesPerView: 4.2,
+          spaceBetween: 60,
+      },
+      },
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Blocks Image Text Section",
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type":"image_picker",
+            "id":"image",
+            "label":"Image",
+            "info":"Taille : 377x377px"
+          },
+          {
+            "type":"text",
+            "id":"customer-name",
+            "label":"Auteur",
+            "default":"John Doe"
+          },
+          {
+            "type":"textarea",
+            "id":"customer-desc",
+            "label":"Description",
+            "default":"Smoothing and snatching. Fits and feels like a dream"
+          },
+          {
+            "type":"number",
+            "id":"customer-notation",
+            "label":"Notation",
+            "default":5
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#62554a"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur de titre",
+        "default":"#62554a"
+      },
+      {
+        "type":"color",
+        "id":"btn-color",
+        "label":"Couleur des boutons slider",
+        "default":"#62554a"
+      },
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Titre",
+        "default":"OUR CUSTOMERS SAY..."
+      },
+      {
+        "type":"text",
+        "id":"testimonial-btn-label",
+        "label":"Libellé bouton témoignage",
+        "default":"SHOP THIS STYLE"
+      },
+      {
+        "type":"url",
+        "id":"testimonial-btn-url",
+        "label":"Lien bouton témoignage",
+        "default":"/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blocks Image Text Section",
+        "category": "Custom Ss"
+      }
+    ]
+  }
+{% endschema %}

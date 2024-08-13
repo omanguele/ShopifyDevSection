@@ -1,0 +1,162 @@
+<style>
+   #shopify-section-{{ section.id }} #titlestileimgdesc   {
+      width: 100%;
+      position: relative;
+      background-color: {{ section.settings.bg_color }} !important;
+      overflow: hidden;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc    img {
+      max-width: 100%;
+      display: block;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc     .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc     .subtitle {
+      font-size: 35px !important;
+      line-height: 1.1em !important;
+      letter-spacing: -.2px !important;
+      color: {{ section.settings.title_color }} !important;
+      text-transform: none !important;
+      text-align: center;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc    .desc {
+      margin-top: 15px !important;
+      display: block;
+      font-size: 19px !important;
+      line-height: 1.3em !important;
+      letter-spacing: -.1px !important;
+      color: {{ section.settings.text_color }} !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      text-align: center;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc     .foot {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+      padding-bottom: 24px !important;
+      padding-top: 30px;
+      margin: 0 auto;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc     .head {
+      padding: 112px 20px 50px !important;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc     .title {
+      display: block !important;
+      text-align: center;
+      width: 100%;
+      font-size: 38px !important;
+      line-height: 1em !important;
+      letter-spacing: -.9px !important;
+      color: {{ section.settings.title_color }} !important;
+      text-transform: none !important;
+      font-weight: 700;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc    .image_desc {
+      margin-top: -11px !important;
+      margin-right: -50px !important;
+      margin-left: -50px !important;
+  }
+   #shopify-section-{{ section.id }} #titlestileimgdesc     .image_desc img {
+      width: 100%;
+  }
+  @media only screen and (min-width: 780px) {
+       #shopify-section-{{ section.id }} #titlestileimgdesc       .image_desc {
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          margin-top: -10px !important;
+  }
+  }
+  @media only screen and (min-width: 1200px) {
+       #shopify-section-{{ section.id }} #titlestileimgdesc      .image_desc {
+          margin-top: -11px !important;
+          margin-right: -207px !important;
+          margin-left: -256px !important;
+      }
+
+       #shopify-section-{{ section.id }} #titlestileimgdesc     .head {
+          padding: 112px 350px 50px !important;
+  }
+
+   #shopify-section-{{ section.id }} #titlestileimgdesc    .title {
+      font-size: 61px !important;
+      line-height: 1em !important;
+      letter-spacing: -.9px !important;
+  }
+  }
+</style>
+
+<section id="titlestileimgdesc">
+  <div class="container">
+    <div class="head">
+      <h2 class="title">{{ section.settings.title }}</h2>
+      <div class="image_desc">
+        <img src="{{ section.settings.image | img_url: "master" }}" alt="">
+      </div>
+    </div>
+    <div class="foot">
+      <h4 class="subtitle">{{ section.settings.subtitle }}</h4>
+      <span class="desc">
+        {{ section.settings.description }}
+      </span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Title Image Desc",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#000"
+    },
+    {
+      "type": "color_background",
+      "id": "title_color",
+      "label": "Couleur de titre",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#ffffffbf"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous titre",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image descriptive"
+    }
+  ],
+"presets": [
+{
+  "name": "Title Image Desc"
+}
+]
+}
+{% endschema %}

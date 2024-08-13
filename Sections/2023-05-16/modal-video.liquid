@@ -1,0 +1,945 @@
+{% comment %} Générer un identifiant unique pour une occurrence spécifique de la section  {% endcomment %}
+
+{% assign min = 1 %}
+{% assign max = 99999999 %}
+{% assign diff = max | minus: min %}
+{% assign randomNumber = 'now' | date: '%N' | modulo: diff | plus: min %}
+{% assign section_id = section.id | handleize | append: '-' | append: randomNumber | prepend: 'section-mv-' %}
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+>
+<link href="//unpkg.com/@ividjs/ivid@latest/dist/ivid.min.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+     #{{ section_id }}  {
+        color: #000;
+        position: relative;
+        width: 100%;
+        padding: 20px 0px;
+    }
+
+    #{{ section_id }}    .card {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 700px;
+        display: block;
+        margin:auto;
+        cursor: pointer;
+        background-color: #000;
+        color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    #{{ section_id }}   .card .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    #{{ section_id }}    .card {
+        position: relative;
+        width: 100%;
+
+        display: block;
+        cursor: pointer;
+        background-color: #000;
+        color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    #{{ section_id }}   .card .video {
+        width: 100%;
+    }
+    #{{ section_id }}    .card .video video {
+        max-width: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #{{ section_id }}   .play_btn {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        bottom: auto !important;
+        right: auto !important;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #{{ section_id }}   .play_btn .inner_play_btn {
+        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    #{{ section_id }}    .play_btn svg {
+        color: #fff;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        bottom: auto !important;
+        right: auto !important;
+        transform: translate(-50%, -50%);
+    }
+
+    #{{ section_id }}    .duration {
+        position: absolute;
+        z-index: 5;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #{{ section_id }}    .video_modal.open {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        z-index: 99999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #{{ section_id }}    .video_modal {
+        z-index: -10;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 500ms;
+    }
+
+    #{{ section_id }}    .ivid__choice-button {
+        display: none !important;
+    }
+
+    #{{ section_id }}  .video_modal_navigate {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        position: absolute;
+        z-index: 99999;
+        min-height: 120px;
+        min-width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #{{ section_id }}    .btn_video_modal {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.3);
+        padding: 6px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+    #{{ section_id }}  .ivid__ctrls-button.material-icons{
+      display:none;
+    }
+
+
+    #{{ section_id }}    .btn_video_modal:hover {
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    #{{ section_id }}   .btn_video_modal svg {
+        height: 100%;
+        width: 100%;
+        color: #fff;
+    }
+
+    #{{ section_id }}    .inner_video_modal {
+        height: 100%;
+        width: 100%;
+        background-color: #000;
+        position: relative;
+        will-change: transform;
+    }
+
+    #{{ section_id }}   #close_modal {
+        z-index: 60;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+
+  #{{ section_id }}  .inner_video_modal {
+      height: 100%;
+      width: 70%;
+      background-color: #000;
+      position: relative;
+      will-change: transform;
+  }
+
+  #{{ section_id }} .video_modal_detail.open {
+      transform: translate(0);
+  }
+
+  #{{ section_id }}  .video_modal_detail {
+      height: 100%;
+      width: 30%;
+      background-color: #fff;
+      position: relative;
+      will-change: transform;
+      overflow-y: auto;
+      transition: all 500ms;
+      transform: translateX(100%);
+  }
+
+  #{{ section_id }} #close_modal {
+      z-index: 60;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+  }
+
+  #{{ section_id }}  .content_detail_modal {
+      padding: 20px 20px 20px 20px;
+      color: #000 !important;
+      width: 100%;
+  }
+
+  #{{ section_id }}  .ctn_select {
+      width: 100%;
+  }
+
+  #{{ section_id }}  .ctn_select label {
+      display: block !important;
+      line-height: 16px !important;
+      color: #8f8f8f !important;
+      font-weight: normal !important;
+      margin: 0 0 5px !important;
+      padding: 0 !important;
+      font-style: normal !important;
+      border: 0 !important;
+      text-align: left !important;
+      box-shadow: none !important;
+      text-indent: 0 !important;
+      outline: none !important;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      font-size: 14px !important;
+      line-height: 20px !important;
+  }
+
+  #{{ section_id }}  .cust_select {
+      position: relative;
+      display: block;
+      border: 1px solid #ddd;
+      padding: 0;
+  }
+
+  #{{ section_id }}  .select_arrow{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px;
+      display: block;
+      line-height: 0 !important;
+      z-index: 0;
+      width: 14px;
+      height: 8px;
+  }
+
+  #{{ section_id }}  .ctn_select select {
+      background: none !important;
+      border: 0 !important;
+      width: 100% !important;
+      color: #000 !important;
+      display: block !important;
+      opacity: 1;
+
+      padding: 0 30px 0 12px !important;
+      margin: 0 !important;
+      -moz-appearance: none !important;
+      -webkit-appearance: none !important;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden !important;
+      min-height: 30px;
+      text-indent: 0 !important;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      outline: none !important;
+      position: relative !important;
+      z-index: 10 !important;
+      border-radius: 0 !important;
+  }
+
+  #{{ section_id }}  .ctn_btn {
+      width: 100%;
+      margin-top: 15px;
+  }
+
+  #{{ section_id }}  .detail_action_btn {
+      background: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      border-radius: 99px;
+      border: 0px none;
+      opacity: 1;
+      cursor: pointer;
+      font-size: 16px;
+      height: 56px;
+      box-sizing: border-box !important;
+      position: relative;
+      margin: 0 4px;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      transition: transform 150ms ease-in;
+      display: flex;
+      width: 100%;
+      line-height: 24px;
+      outline: none;
+      font-weight: bold;
+      padding: 12px;
+  }
+
+  #{{ section_id }}  .title_modal_detail {
+      margin-bottom: 12px;
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+      padding: 0;
+      border: 0;
+      display: block;
+      line-height: 24px;
+      text-transform: capitalize;
+      text-indent: 0;
+      text-align: left;
+      box-shadow: none;
+      font-weight: normal;
+  }
+
+  #{{ section_id }}  .modal_detail_price_wrapper {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      align-items: center;
+  }
+
+  #{{ section_id }}  .modal_detail_price_wrapper .old_price {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 16px;
+      color: #000;
+      opacity: .7;
+      text-decoration-line: line-through;
+      display: inline-block;
+      margin-right: 6px;
+  }
+
+  #{{ section_id }}  .modal_detail_price_wrapper .current_price {
+      font-size: 15px;
+      color: rgb(0, 0, 0);
+      font-style: normal;
+      font-weight: bold;
+      line-height: 16px;
+  }
+
+  #{{ section_id }}  .video_modal_accordion {
+      border-top: 4px solid #f2f2f2;
+      border-bottom: 4px solid #f2f2f2;
+      padding: 0 24px;
+  }
+
+  #{{ section_id }}  .accordion_title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      height: 36px;
+      color: #000;
+      position: relative;
+  }
+
+  #{{ section_id }}  .accordion_content {
+      opacity: 1;
+      font-size: 12px;
+      line-height: 16px;
+      overflow-y: hidden;
+      box-sizing: border-box;
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: ease;
+      height: 0;
+  }
+
+  #{{ section_id }}  .accordion_content .content_accordion_content {
+      padding-bottom: 8px;
+      margin-top: 5px;
+  }
+
+  #{{ section_id }}  img {
+      max-width: 100%;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  #{{ section_id }}  .accordion_title span {
+      display: block;
+  }
+
+  #{{ section_id }}  .swiper_modal_detail {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 10px;
+  }
+
+  #{{ section_id }}  .swiper-pagination-modal {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+  }
+
+  #{{ section_id }}  .swiper-pagination-bullet-active {
+      background-color: #000 !important;
+  }
+
+  #{{ section_id }}  .modal_product_mobile {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 80px;
+      z-index: 100;
+      display: none;
+      flex-direction: row;
+      width: 100%;
+      padding: 32px 16px 15px;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+  }
+
+  #{{ section_id }}  .inner_modal_product_mobile {
+      width: 100%;
+      transform: translateY(0.09766%) translateZ(0px);
+  }
+
+  #{{ section_id }}  .inner_modal_product_mobile  .card_product_mobile {
+      max-width: 100%;
+      backdrop-filter: saturate(180%) blur(100px);
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      border-radius: 12px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.16),0 2px 8px rgba(0,0,0,.3);
+      background-color: rgba(255,255,255,.3);
+      -webkit-backdrop-filter: saturate(180%) blur(100px);
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  #{{ section_id }}  .card_product_mobile  .card_price_old_label {
+      position: absolute;
+      min-width: 39px;
+      height: 20px;
+      left: 4px;
+      top: -8px;
+      padding: 2px 6px;
+      background: #000;
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 16px;
+      color: #fff;
+      box-sizing: border-box;
+      display: block;
+      text-transform: uppercase;
+      text-align: center;
+  }
+
+  #{{ section_id }}  .accordion_icon {
+      transition: all 500ms;
+  }
+
+  #{{ section_id }}  .card_product_mobile .card_image {
+      flex: 0 0 88px;
+      width: 88px;
+      height: 88px;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 12px 0 0 12px;
+  }
+
+  #{{ section_id }}  .card_product_mobile .card_body {
+      max-height: 88px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 88px;
+      box-sizing: border-box;
+      flex: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+  }
+
+  #{{ section_id }}  .card_product_mobile  .card_title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 8px;
+      white-space: initial;
+      max-height: 36px;
+      text-transform: capitalize;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      color: #fff;
+      filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.2));
+  }
+
+  #{{ section_id }}  .card_product_mobile  .card_price {
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: flex;
+      align-items: baseline;
+      color: #fff;
+      filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.2));
+  }
+
+  #{{ section_id }}  .card_product_mobile   .card_price_current {
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 20px;
+      margin-right: 6px;
+  }
+
+  #{{ section_id }}  .card_product_mobile   .card_price_old {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      opacity: .7;
+      text-decoration: line-through;
+  }
+
+  #{{ section_id }}  .ctn_back_btn {
+      display: none;
+      box-sizing: border-box;
+      background-color: #fff;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      padding: 20px;
+      width: 100%;
+      cursor: pointer;
+  }
+
+  #{{ section_id }}    .video_modal_navigate {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      position: absolute;
+      z-index: 60;
+      min-height: 120px;
+      min-width: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+      #{{ section_id }}    .inner_video_modal {
+          width: 80%;
+      }
+      #{{ section_id }}    .video_modal_detail {
+          width: 20%;
+      }
+  }
+
+    @media only screen and (max-width: 767px) {
+
+    #{{ section_id }}    .inner_video_modal {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+      }
+    #{{ section_id }}    .video_modal_detail {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 200;
+          transform: translateX(0);
+          transform: translateY(100%);
+      }
+    #{{ section_id }}  .ctn_back_btn {
+          display: block;
+      }
+   #{{ section_id }}   .detail_action_btn {
+          position: absolute;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+      }
+   #{{ section_id }}   .modal_product_mobile {
+          display: flex;
+      }
+        #{{ section_id }} .container{
+          padding: 20px 40px;
+        }
+        #{{ section_id }} .container .card{
+          height:500px;
+        }
+        #{{ section_id }}   .material-icons {
+            font-size: 24px !important;
+        }
+        #{{ section_id }}    .ivid_ctrls-time {
+            font-size: 18px !important;
+        }
+        #{{ section_id }}    .btn_video_modal {
+            height: 30px;
+            width: 30px;
+        }
+        #{{ section_id }}  .container  .swiper-wrapper {
+            width: 100%;
+            padding: 0 30px;
+        }
+        #{{ section_id }}   .play_btn svg {
+            width: 60px;
+            height: 60px;
+        }
+        #{{ section_id }}    .video_modal_navigate {
+            top: 40px;
+            flex-direction: row;
+            min-height: auto;
+        }
+
+        #{{ section_id }}   .video_modal_navigate #prev_video {
+            transform: rotate(-90deg);
+        }
+        #{{ section_id }}    .video_modal_navigate #next_video {
+            transform: rotate(-90deg);
+        }
+
+    }
+
+    @keyframes ping {
+       100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+</style>
+
+<section id="{{ section_id }}">
+  <div class="video_modal" style="display: none;">
+    <div class="modal_product_mobile">
+      <div class="inner_modal_product_mobile">
+        <div class="card_product_mobile">
+          <div class="card_image">
+            <img
+              src="{% for image in section.settings.product.images %}{{ image | product_img_url: "master" }}{% break %}{% endfor %}"
+              alt="{{ section.settings.product.title | escape }}"
+            >
+          </div>
+          <div class="card_body">
+            <div class="card_title">{{ section.settings.product.title | escape }}</div>
+            <div class="card_price">
+              <span class="card_price_current">{{ section.settings.product.price_min | money }}</span>
+              <span class="card_price_old">{{ section.settings.product.price_max | money }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inner_video_modal">
+      <button type="button" class="btn_video_modal" id="close_modal">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <i-video
+        id="ivid{{ randomNumber }}"
+        preload="auto"
+        loop=""
+        playsinline=""
+        webkit-playsinline=""
+        x5-playsinline=""
+      ></i-video>
+    </div>
+    <div class="video_modal_detail">
+      <div class="ctn_back_btn" id="modal_back_btn">
+        <span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12L12.0526 2M2 12L12.0526 22.0526M2 12H23" stroke="black" stroke-width="2"></path>
+          </svg>
+        </span>
+      </div>
+      <div class="swiper_modal_detail">
+        <div class="swiper-wrapper">
+          {% for image in section.settings.product.images %}
+            <div class="swiper-slide">
+              <img src="{{ image | product_img_url: "master" }}" alt="">
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination-modal"></div>
+      </div>
+      <form action="/cart/add" method="post" enctype="multipart/form-data" class="content_detail_modal">
+        <h4 class="title_modal_detail">{{ section.settings.product.title | escape }}</h4>
+        <div class="modal_detail_price_wrapper">
+          <div class="old_price">{{ section.settings.product.price_max | money }}</div>
+          <div class="current_price">{{ section.settings.product.price_min | money }}</div>
+        </div>
+        {%- unless product.has_only_default_variant -%}
+          <div class="ctn_select">
+            <label for="size">Variant</label>
+            <div class="cust_select">
+              <select name="id">
+                {% for variant in section.settings.product.variants %}
+                  {% if variant.available == true %}
+                    <option value="{{variant.id}}">{{ variant.title }}</option>
+                  {% else %}
+                    <option disabled="disabled">{{ variant.title }} - sold out!</option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+              <span class="select_arrow">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 1.5L7 6.5L12 1.5" stroke="#8F8F8F" stroke-width="1.5" stroke-linecap="square"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        {% endunless %}
+        {% if section.settings.product.has_only_default_variant %}
+          <input
+            type="hidden"
+            id="myid-special-{{ section.settings.product.id }}"
+            name="id"
+            data-productid="{{ section.settings.product.selected_or_first_available_variant.id }}"
+            value="{{ section.settings.product.selected_or_first_available_variant.id }}"
+          >
+        {% endif %}
+        <div class="ctn_btn">
+          <button class="detail_action_btn" name="add" id="add" type="submit">
+            <span style="line-height: 0; display: inline-block;margin-right: 10px;">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5  1.5H2.71922C3.17809 1.5 3.57807 1.8123 3.68937 2.25746L6.31063 12.7425C6.42193 13.1877 6.82191 13.5 7.28078 13.5H15.7792C16.2097 13.5 16.5918 13.2246 16.7279 12.8162L19.0613 5.81623C19.2771 5.16869 18.7951 4.5 18.1126 4.5H4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <circle cx="14.5" cy="18" r="1.5" stroke="currentColor" stroke-width="1.5"></circle><circle cx="8.5" cy="18" r="1.5" stroke="currentColor" stroke-width="1.5"></circle>
+              </svg>
+            </span>
+            <span>AJOUTER AU PANIER</span>
+          </button>
+        </div>
+      </form>
+      <div class="video_modal_accordion">
+        <div class="accordion_title">
+          <span>Details</span>
+          <span class="accordion_icon">
+            <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 1L7 7L1 1" stroke="currentColor" stroke-width="2"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="accordion_content">
+          <div class="content_accordion_content">
+            {{ section.settings.product.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="video">
+        <video
+          src="{{ section.settings.preview_video.sources[1].url }}"
+          style="width: 100%; height: 100%;"
+          preload="auto"
+          loop=""
+          muted=""
+          playsinline=""
+          webkit-playsinline=""
+          x5-playsinline=""
+          autoplay="true"
+        ></video>
+      </div>
+      <div class="play_btn">
+        <div class="inner_play_btn"></div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+        </svg>
+      </div>
+      <div class="duration">{{ section.settings.duration }}</div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="//unpkg.com/@ividjs/ivid@latest" type="module" async></script>
+<script>
+   /*** Changement */
+
+         const swiperModalDetail{{ randomNumber }} = new Swiper('.swiper_modal_detail', {
+         slidesPerView: 1.5,
+         spaceBetween: 10,
+             pagination: {
+                 el: '.swiper-pagination-modal',
+                 type: 'bullets',
+                 clickable: true,
+             },
+         });
+         let videoModalDetail{{ randomNumber }} = document.querySelector('#{{ section_id }}  .video_modal .video_modal_detail');
+         let videoModalBackBtn{{ randomNumber }} = document.querySelector('#{{ section_id }} .video_modal #modal_back_btn');
+         let accordion{{ randomNumber }} = document.querySelector('#{{ section_id }} .video_modal .video_modal_accordion');
+
+         videoModalBackBtn{{ randomNumber }}.addEventListener('click', function(e) {
+             e.preventDefault();
+             videoModalDetail{{ randomNumber }}.classList.remove('open');
+         });
+         document.querySelector('#{{ section_id }} .video_modal .modal_product_mobile').addEventListener('click', function(e) {
+             e.preventDefault();
+             videoModalDetail{{ randomNumber }}.classList.add('open');
+         });
+         accordion{{ randomNumber }}.querySelector('.accordion_title').addEventListener('click', function(e) {
+             let accBody = accordion{{ randomNumber }}.querySelector('.accordion_content');
+             let accIcon = e.currentTarget.querySelector('.accordion_icon');
+             if(accordion{{ randomNumber }}.classList.contains('open')){
+                 accIcon.style.transform = 'rotate(0deg)';
+                 accBody.style.height = '0px';
+                 accordion{{ randomNumber }}.classList.remove('open')
+             }else{
+                 accIcon.style.transform = 'rotate(180deg)';
+                 accBody.style.height = accBody.scrollHeight + 'px';
+                 accordion{{ randomNumber }}.classList.add('open');
+             }
+
+         });
+         /*** Fin Changement */
+     const ivid{{ randomNumber }} = document.getElementById("ivid{{ randomNumber }}");
+     const videoModal{{ randomNumber }} = document.querySelector('#{{ section_id }} .video_modal');
+
+     let video{{ randomNumber }} = {
+         uid: '{{ section_id }}',
+         src: "{{ section.settings.video.sources[1].url }}"
+
+     };
+
+   video{{ randomNumber }}.options = {
+         fallback:  '',
+         playsinline : '',
+         preload : 'auto',
+         controls:''
+     };
+
+     const model{{ randomNumber }} = {
+         [video{{ randomNumber }}.uid]: video{{ randomNumber }},
+     };
+
+     ivid{{ randomNumber }}.setAttribute("model", JSON.stringify(model{{ randomNumber }}));
+     document.querySelector('#{{ section_id }}  .card').addEventListener('click', function(e) {
+         e.preventDefault();
+         videoModal{{ randomNumber }}.style.display = 'flex';
+         videoModal{{ randomNumber }}.classList.add('open');
+         ivid{{ randomNumber }}.setAttribute('current', '{{ section_id }}');
+        // document.querySelector("#{{ section_id }} .ivid__video")?.attr("playsinline",true);
+         document.querySelector('#{{ section_id }} #ivid{{ randomNumber }} video').play();
+         if(window.innerWidth > 767){
+           setTimeout(() => {
+              videoModalDetail{{ randomNumber }}.classList.add('open');
+          }, 300);
+         }
+          
+     });
+
+   document.querySelector('#{{ section_id }} .video_modal #close_modal').addEventListener('click', function(e) {
+     e.preventDefault();
+     document.querySelector('#{{ section_id }} #ivid{{ randomNumber }} video').pause();
+     videoModal{{ randomNumber }}.style.display = 'none';
+     videoModal{{ randomNumber }}.classList.remove('open');
+     videoModalDetail{{ randomNumber }}.classList.remove('open');
+   });
+</script>
+
+{% schema %}
+{
+  "name": "Modal Video",
+
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit associe"
+    },
+    {
+      "type": "video",
+      "id": "preview_video",
+      "label": "Preview Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "text",
+      "id": "duration",
+      "label": "Durée video",
+      "default":"00:30"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Modal Video"
+    }
+  ]
+}
+{% endschema %}

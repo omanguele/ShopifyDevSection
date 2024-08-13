@@ -1,0 +1,454 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+
+<style>
+  #shopify-section-{{ section.id }} #avis200223 {
+  width: 100%;
+  background-color: {{ section.settings.bg-color }}; 
+}
+
+#shopify-section-{{ section.id }} #avis200223 .review-container {
+  display: flex;
+  padding: 50px 0px;
+  flex-direction: column;
+}
+#shopify-section-{{ section.id }} #avis200223 .swiper-wrapper {
+  display: none;
+
+}
+@media (min-width: 768px) {
+  #shopify-section-{{ section.id }} #avis200223 h6 , #shopify-section-{{ section.id }} #avis200223 h1  {
+    margin-left: 10% !important;
+  }
+  #shopify-section-{{ section.id }} #avis200223 a {
+    margin-left: 10% !important;
+  }
+}
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} #avis200223 h6 , #shopify-section-{{ section.id }} #avis200223 h1 {
+    margin:0px 20px !important;
+  }
+
+  #shopify-section-{{ section.id }} #avis200223 a {
+    margin:0px 20px !important;
+  }
+}
+
+#shopify-section-{{ section.id }} #avis200223 .submit-btn {
+  padding: 10px 30px;
+  width: fit-content;
+  border:2px solid {{ section.settings.btn-bg-color }};
+  color: {{ section.settings.btn-text-color }};
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 12px;
+  transition: ease 0.5s;
+  letter-spacing: 2px;
+  background-color: transparent;
+    outline: none;
+    min-width: 200px;
+    cursor: pointer;
+    transition: all 500ms ;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  left: 33%
+}
+
+#shopify-section-{{ section.id }} #avis200223 .submit-btn:hover {
+  border:2px solid {{ section.settings.hover-btn-bg-color }};
+  color: {{ section.settings.hover-btn-text-color }};
+}
+
+#shopify-section-{{ section.id }} #avis200223 .submit-btn .libelle {
+    color: {{ section.settings.btn-text-color }} ;
+    padding: 15px;
+    font-weight: 850;
+    text-transform: uppercase;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    background-color: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+   transition: all 500ms ;
+}
+
+#shopify-section-{{ section.id }} #avis200223 .submit-btn .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: {{ section.settings.hover-btn-bg-color }};
+    top: 0;
+    left: -100%;
+    transition: all 500ms ;
+}
+#shopify-section-{{ section.id }} #avis200223 .header-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0px;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: {{ section.settings.title-color }};
+  text-align: center;
+}
+#shopify-section-{{ section.id }} #avis200223 .header-description {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0px;
+  color: {{ section.settings.subtitle-color }};
+  text-align: center;
+}
+#shopify-section-{{ section.id }} #avis200223 .submit-btn:hover > .overlay  {
+    left: 0;
+}
+
+#shopify-section-{{ section.id }} #avis200223 .submit-btn:hover > .libelle  {
+   color: {{ section.settings.hover-btn-text-color }};
+}
+  #shopify-section-{{ section.id }} #avis200223 .row-wrapper {
+    padding: 20px;
+  }
+  #shopify-section-{{ section.id }} #avis200223 .submit-btn {
+    padding: 10px 30px;
+    border:2px solid {{ section.settings.btn-bg-color }};
+    color: {{ section.settings.btn-text-color }};
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+  
+#shopify-section-{{ section.id }} #avis200223 .item {
+  color: {{ section.settings.card-title-color }};
+  padding-left: 2px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#shopify-section-{{ section.id }} #avis200223 .card-footer {
+  padding: 10px 0 0px;
+  margin: 0px;
+  color: {{ section.settings.card-title-color }};
+  text-transform: uppercase;
+}
+
+
+  
+#shopify-section-{{ section.id }} #avis200223 .grid--content .column--wrapper {
+    display: column;
+    columns: 2;
+    gap: 20px;
+    break-inside: avoid;
+    justify-items:start;
+   
+}
+#shopify-section-{{ section.id }} #avis200223 .post--item {
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: {{ section.settings.card-bg-color }};
+    color: {{ section.settings.card-text-color }};
+    padding: 50px 20px 50px 20px;
+    margin: 20px;
+    
+}
+
+
+#shopify-section-{{ section.id }} #avis200223 .grid--content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px;
+    
+}
+   #shopify-section-{{ section.id }} #avis200223 p{
+    padding-bottom: 0px;
+    margin: 0;
+  }
+
+
+@supports (grid-template-rows: masonry) {
+    #shopify-section-{{ section.id }} #avis200223 .grid--content .column--wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: masonry;
+        grid-auto-flow: dense;
+        align-items: strech;
+        justify-items:start;
+    }
+}
+
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} #avis200223 .review-container {
+    
+  }
+  #shopify-section-{{ section.id }} #avis200223 .submit-btn {
+  padding: 10px 30px;
+  width: fit-content;
+  border:2px solid {{ section.settings.btn-bg-color }};
+  color: {{ section.settings.btn-text-color }};
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 12px;
+  transition: ease 0.5s;
+  letter-spacing: 2px;
+  background-color: transparent;
+    outline: none;
+    min-width: 200px;
+    cursor: pointer;
+    transition: all 500ms ;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  left: 0
+}
+
+  #shopify-section-{{ section.id }} #avis200223 .grid--content .column--wrapper {
+    display: none;
+}
+
+  #shopify-section-{{ section.id }} #avis200223 .header-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0px;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: {{ section.settings.title-color }};
+  text-align: left;
+}
+#shopify-section-{{ section.id }} #avis200223 .header-description {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0px;
+  color: {{ section.settings.subtitle-color }};
+  text-align: left;
+}
+#shopify-section-{{ section.id }} #avis200223 .swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#shopify-section-{{ section.id }} #avis200223 .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: {{ section.settings.card-bg-color }};
+  color: {{ section.settings.card-text-color }};
+  padding: 50px 20px 50px 20px;
+}
+/*#shopify-section-{{ section.id }} #avis200223 .swiper-slide:last-child {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px 30px 20px 30px;
+}*/
+ 
+
+
+  #shopify-section-{{ section.id }} #avis200223 .swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+}
+</style>
+
+  
+  <section id="avis200223">
+        <div class="review-container swiper">
+            <h6 class="header-title">{{ section.settings.title }}</h6>
+            <h1 class="header-description">{{ section.settings.subtitle }}</h1>
+            
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  <div class="swiper-slide">
+                      <p class="card-text"> <span class="item"> &laquo; </span> {{ block.settings.person-message }} <span class="item"> &raquo; </span> </p>
+                      <h4 class="card-footer"> {{ block.settings.person-name }} </h4>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="grid--content">
+                  <div class="column--wrapper">
+                      {% for block in section.blocks %}
+                          <div class="post--item">
+                            <p class="card-text"> <span class="item"> &laquo; </span> {{ block.settings.person-message }} <span class="item"> &raquo; </span> </p>
+                            <h4 class="card-footer"> {{ block.settings.person-name }} </h4>
+                          </div>
+                      {% endfor %}
+                    </div>
+                </div>
+            
+
+               <a href="{{ section.settings.btn-url }}" class="submit-btn"> 
+                     <span class="libelle">{{ section.settings.btn-label }} </span>  
+                    <span class="overlay"></span>
+               </a>
+            </button>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      $('.grid').masonry({
+    horizontalOrder: true
+});
+  const swiper = new Swiper('.review-container', {
+    grabCursor: true,
+    breakpoints: {
+    620: {
+      slidesPerView: 1,
+      slidesPerColumn: 3,
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    1024: {
+      slidesPerView: 3.2,
+      spaceBetween: 10
+    }
+
+  }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Avis Slider Section",
+    "blocks": [
+        {
+          "type": "notice",
+          "name": "Avis",
+          "settings": [
+            {
+              "type": "text",
+              "id": "person-name",
+              "label": "Nom de la personne",
+              "default":"Marcelin S."
+            },
+            {
+              "type":"textarea",
+              "id":"person-message",
+              "label":"Message de la personne",
+              "default":"Se vélo est une merveille et nous sommes heureux..."
+            }
+          ]
+        }
+      ],
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#ffffff"
+      },
+      {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"subtitle-color",
+        "label":"Couleur du sous titre texte",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"card-bg-color",
+        "label":"Couleur de fond des cartes",
+        "default":"#f2f2f2"
+      },
+      {
+        "type":"color",
+        "id":"card-text-color",
+        "label":"Couleur de message des cartes",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"card-title-color",
+        "label":"Couleur de titre des cartes",
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "btn-bg-color",
+        "label": "Bordure du bouton", 
+        "default":"#fff"
+      },
+      {
+        "type": "color",
+        "id": "hover-btn-bg-color",
+        "label": "Couleur du bouton", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "btn-text-color",
+        "label": "Couleur de bordure bouton Hover", 
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "hover-btn-text-color",
+        "label": "Couleur du texte du bouton Hover", 
+        "default":"#fff"
+      },
+      {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"Ils parlent de nous"
+      },
+      {
+          "type":"text",
+          "id":"subtitle",
+          "label":"Sous titre",
+          "default":"Nos meilleurs cyclistes"
+      },
+      {
+        "type": "text",
+        "id": "btn-label",
+        "label": "Libellé du bouton", 
+        "default":"Voir plus"
+      },
+      {
+        "type": "url",
+        "id": "btn-url",
+        "label": "Lien du bouton"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Avis Slider Section"
+      }
+    ]
+  }
+{% endschema %}

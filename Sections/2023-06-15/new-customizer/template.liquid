@@ -1,0 +1,786 @@
+{{ 'new_customizer.css' | asset_url | stylesheet_tag }}
+
+
+<div style="display: flex; justify-content: center; padding: 20px;">
+        <button id="newbcustomizeralienx_open_modalx" type="button" style="background-color: #000; color: #fff; border: 0; padding: 10px;">ouvrir</button>
+    </div>
+    <section id="newbcustomizeralienx">
+        <div class="newbcustomizeralienx_container">
+            <button type="button" class="newbcustomizeralienx_btn_close">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>                      
+                </span>
+            </button>
+            <div class="newbcustomizeralienx_content">
+                <div class="newbcustomizeralienx_step active" id="step_1">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 1/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_1_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_1_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+
+                            <div class="step_input">
+                                <label for="expl_font">{{ section.settings.step_1_lbl_1 }}</label>
+                                <input type="text" class="cust_input" placeholder="Reiji MRT Pro" data-lbl="{{ section.settings.step_1_lbl_1 }}">
+                            </div>
+
+                            <div class="step_input">
+                                <label for="expl_font">{{ section.settings.step_1_lbl_2 }}</label>
+                                <input type="text" class="cust_input" placeholder="2017" data-lbl="{{ section.settings.step_1_lbl_2 }}">
+                            </div>
+                    </div>
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev" style="display: none;">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Suivant</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="newbcustomizeralienx_step" id="step_2">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 2/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_2_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_2_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+                        <div class="newbcustomizeralienx_step-grid_inpt_rad">
+                            <input 
+                              type="radio" 
+                              name="step_2" 
+                              id="step_2_1" 
+                              value="{{ section.settings.step_2_product_1.variants[0].id }}"
+                              data-price="{{ section.settings.step_2_product_1.price | divided_by: 100.00 }}"
+                            >
+                            <label for="step_2_1" class="grid_inpt_rad_item">
+                                <img src="{{ section.settings.step_2_product_1.featured_image | product_img_url: "master" }}">
+                                <div class="grid_inpt_rad_item_overlay">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>                                          
+                                    </span>
+                                </div>
+                              </label>
+                            <input 
+                                type="radio" 
+                                name="step_2" 
+                                id="step_2_2" 
+                                value="{{ section.settings.step_2_product_2.variants[0].id }}"
+                              data-price="{{ section.settings.step_2_product_2.price | divided_by: 100.00 }}"
+                              >
+                            <label for="step_2_2" class="grid_inpt_rad_item">
+                                <img src="{{ section.settings.step_2_product_2.featured_image | product_img_url: "master" }}">
+                                <div class="grid_inpt_rad_item_overlay">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>                                          
+                                    </span>
+                                </div>
+                              </label>
+                            <input 
+                              type="radio" 
+                              name="step_2" 
+                              id="step_2_3" 
+                              value="{{ section.settings.step_2_product_3.variants[0].id }}"
+                              data-price="{{ section.settings.step_2_product_3.price | divided_by: 100.00 }}"
+                              >
+                            <label for="step_2_3" class="grid_inpt_rad_item">
+                                <img src="{{ section.settings.step_2_product_3.featured_image | product_img_url: "master" }}">
+                                <div class="grid_inpt_rad_item_overlay">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>                                          
+                                    </span>
+                                </div>
+                              </label>
+                            <input type="radio" name="step_2" id="step_2_4" data-price="0" value="no">
+                            <label for="step_2_4" class="grid_inpt_rad_item">
+                                <p>NON</p>
+                                <div class="grid_inpt_rad_item_overlay">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>                                          
+                                    </span>
+                                </div>
+                              </label>
+                        </div>
+
+                        <div class="step_input hide">
+                            <label for="plaque_phare">{{ section.settings.step_2_lbl_1 }}</label>
+                            <select name="plaque_phare" id="plaque_phare" class="cust_select" data-lbl="{{ section.settings.step_2_lbl_1 }}">
+                                {% for block in section.blocks %}
+                                    {% if block.type == 'plaque_phare' %}
+                                      {% assign models = block.settings.model  | split: ',' %}
+                                      <option value="{{ block.settings.brand }}" disabled>{{ block.settings.brand }}</option>
+                                      {% for mod in models %}
+                                          <option value="{{ block.settings.brand }} - {{ mod }}">{{ mod }}</option>
+                                      {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="step_input hide">
+                            <label for="expl_font">Autre {{ section.settings.step_2_lbl_1 }}</label>
+                            <input type="text" class="cust_input">
+                        </div>
+
+                        <div class="step_input hide">
+                            <label for="garde_boue">{{ section.settings.step_2_lbl_2 }}</label>
+                            <select name="garde_boue" id="garde_boue" class="cust_select" data-lbl="{{ section.settings.step_2_lbl_2 }}">
+                                {% for block in section.blocks %}
+                                    {% if block.type == 'garde_boue' %}
+                                      {% assign models = block.settings.model  | split: ',' %}
+                                      <option value="{{ block.settings.brand }}" disabled>{{ block.settings.brand }}</option>
+                                      {% for mod in models %}
+                                          <option value="{{ block.settings.brand }} - {{ mod }}">{{ mod }}</option>
+                                      {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="step_input hide">
+                            <label for="expl_font">Autre {{ section.settings.step_2_lbl_2 }}</label>
+                            <input type="text" class="cust_input">
+                        </div>
+                    </div>
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Suivant</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="newbcustomizeralienx_step" id="step_3_1">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 3/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_3_1_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_3_1_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+                            <div class="step_input">
+                                <label for="expl_font">{{ section.settings.step_3_1_lbl_1 }}</label>
+                                <input type="text" class="cust_input" placeholder="BetaBy Thomas" data-lbl="{{ section.settings.step_3_1_lbl_1 }}">
+                            </div>
+
+                            <div class="step_input">
+                                <label for="expl_font">{{ section.settings.step_3_1_lbl_2 }}</label>
+                                <input type="text" class="cust_input" placeholder="534" data-lbl="{{ section.settings.step_3_1_lbl_2 }}">
+                            </div>
+                    </div>
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Suivant</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="newbcustomizeralienx_step" id="step_3_2">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 3/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_3_2_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_3_2_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_3_2_lbl_1 }}: <span class="newbcustomizeralienx_h_description_color">Aucune</span></p>
+                        <div class="newbcustomizeralienx_step-flex_color">
+                          {% for block in section.blocks %}
+                            {% if block.type == 'color' %}
+                                <input type="radio" name="color_1" value="{{ block.settings.name }}[{{ block.settings.color }}]" id="color_1_{{ forloop.index }}" data-lbl="{{ block.settings.name }}">
+                                <label for="color_1_{{ forloop.index }}" class="lbl_color" style="background-color: {{ block.settings.color }};"></label>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+
+                        <p class="newbcustomizeralienx_h_description" style="margin-top: 30px;">{{ section.settings.step_3_2_lbl_2 }}: <span class="newbcustomizeralienx_h_description_color">Aucune</span></p>
+                        <div class="newbcustomizeralienx_step-flex_color">
+                            {% for block in section.blocks %}
+                            {% if block.type == 'color' %}
+                                <input type="radio" name="color_2" value="{{ block.settings.name }}[{{ block.settings.color }}]" id="color_2_{{ forloop.index }}" data-lbl="{{ block.settings.name }}">
+                                <label for="color_2_{{ forloop.index }}" class="lbl_color" style="background-color: {{ block.settings.color }};"></label>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+
+                        <p class="newbcustomizeralienx_h_description" style="margin-top: 30px;">{{ section.settings.step_3_2_lbl_3 }}: <span class="newbcustomizeralienx_h_description_color">Aucune</span></p>
+                        <div class="newbcustomizeralienx_step-flex_color">
+                            {% for block in section.blocks %}
+                            {% if block.type == 'color' %}
+                                <input type="radio" name="color_3" value="{{ block.settings.name }}[{{ block.settings.color }}]" id="color_3_{{ forloop.index }}" data-lbl="{{ block.settings.name }}">
+                                <label for="color_3_{{ forloop.index }}" class="lbl_color" style="background-color: {{ block.settings.color }};"></label>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                    </div>
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Suivant</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="newbcustomizeralienx_step" id="step_3_3">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 3/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_3_3_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_3_3_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+                        <p class="newbcustomizeralienx_h_description" style="font-weight: 700;">{{ section.settings.step_3_3_lbl_1 }}</p>
+                       <ul class="newbcustomizeralienx_indication_list">
+                       </ul>
+                       <form id="form_add_indic">
+                            <input type="text" class="in_add_indic" placeholder="Ajouter une indication">
+                            <input type="submit" class="btn_add_indic" value="Ajouter">
+                       </form>
+
+                       <p class="newbcustomizeralienx_h_description" style="font-weight: 700; margin-top: 30px;">{{ section.settings.step_3_3_lbl_2 }}</p>
+                       <input type="file" name="cust_upload" id="cust_upload" accept="image/*" multiple>
+                       <label for="cust_upload" class="lbl_cust_upload">
+                            Charger des images (.jpg, .png,..)
+                       </label>
+                       <div class="list_cust_upload">
+                       </div>
+                    </div>
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Suivant</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="newbcustomizeralienx_step complete" id="step_3_4">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 3/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_3_4_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_3_4_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+                        <div class="newbcustomizeralienx_step-flex_select">
+                            <div class="newbcustomizeralienx_step-flex_select_font">
+                                <label for="expl_font">Exemple</label>
+                                <input type="text" class="cust_input" value="Betaby Thomas 350">
+                            </div>
+                            <div class="newbcustomizeralienx_step-flex_select_font">
+                                <label for="expl_font">Police</label>
+                                <select name="" id="expl_font" class="cust_select">
+                                    <option value="Poppins|400,500,600,700,800" selected>Poppins</option>
+                                    <option value="Roboto|400,500,700,900">Roboto</option>
+                                    <option value="IBM Plex Mono|300,400,500,700">IBM Plex Mono</option>
+                                    <option value="DM Serif Display|400">DM Serif Display</option>
+                                </select>
+                            </div>
+                            <div class="newbcustomizeralienx_step-flex_select_font">
+                                <label for="weight_font">Taille</label>
+                                <select name="" id="weight_font" class="cust_select">
+                                    <option value="400">400</option>
+                                    <option value="500" selected>500</option>
+                                    <option value="600">600</option>
+                                    <option value="700">700</option>
+                                    <option value="800">800</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="newbcustomizeralienx_step-display_text" style="font-family: 'Poppins'; font-weight: 500;">
+                            <p class="big_text">Betaby Thomas 350</p>
+                            <p class="medium_text">Betaby Thomas 350</p>
+                            <p class="small_text">Betaby Thomas 350</p>
+                        </div>
+                    </div>
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Suivant</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="newbcustomizeralienx_step complete" id="step_3_5">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 3/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_3_5_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_3_5_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+                        <div class="ctn_img_pos_spons">
+                            <img src="{{ section.settings.step_3_5_image | img_url: "master" }}" alt="">
+                        </div>
+                        <div class="newbcustomizeralienx_step-grid_sponsor_in">
+                          {% for i in (1..12) %}
+                            <div>
+                                <label for="sponsor_in_{{ i }}">Sponsor {{ i }}</label>
+                                <div class="sponsor_in-container">
+                                    <input class="sponsor_in" type="text" id="sponsor_in_{{ i }}" placeholder="Ajouter le sponsor {{ i }}">
+                                    <button
+                                      class="sponsor_in-clear-button"
+                                      aria-label="Clear input"
+                                      title="Clear input"
+                                    >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                    </button>
+                                  </div> 
+                            </div>  
+                          {% endfor %}
+                        </div>
+                    </div>
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Suivant</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="newbcustomizeralienx_step" id="step_4">
+                    <div class="newbcustomizeralienx_step_header">
+                        <div class="newbcustomizeralienx_step_level">Etape 4/4</div>
+                        <h2 class="newbcustomizeralienx_h_heading">{{ section.settings.step_4_title }}</h2>
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_4_desc }}</p>
+                    </div>
+                    <div class="newbcustomizeralienx_step_error hide_error"></div>
+                    <div class="newbcustomizeralienx_step_content">
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_4_lbl_1 }}</p>
+                        <div class="newbcustomizeralienx_step-grid_inpt_rad">
+                         {% for product in section.settings.step_4_products_1 %}
+                            <input 
+                              type="radio" 
+                              name="step_4_1" 
+                              id="step_4_1_{{ forloop.index }}" 
+                              value="{{ product.variants[0].id }}"
+                              data-price=" {% if product.price > 0  %} {{ product.price | divided_by: 100.00 }} {% else %} 0 {% endif %}"
+                            >
+                            <label for="step_4_1_{{ forloop.index }}" class="grid_inpt_rad_item">
+                                <img src="{{ product.featured_image | product_img_url: "master" }}">
+                                <div class="grid_inpt_rad_item_overlay">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>                                          
+                                    </span>
+                                </div>
+                              </label>
+                          {% endfor %}
+                        </div>
+
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_4_lbl_2 }}</p>
+                        <div class="newbcustomizeralienx_step-grid_inpt_rad">
+                          {% for product in section.settings.step_4_products_2 %}
+                            <input 
+                              type="radio" 
+                              name="step_4_2" 
+                              id="step_4_2_{{ forloop.index }}" 
+                              value="{{ product.variants[0].id }}"
+                              data-price=" {% if product.price > 0  %} {{ product.price | divided_by: 100.00 }} {% else %} 0 {% endif %}"
+                            >
+                            <label for="step_4_2_{{ forloop.index }}" class="grid_inpt_rad_item">
+                                <img src="{{ product.featured_image | product_img_url: "master" }}">
+                                <div class="grid_inpt_rad_item_overlay">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>                                          
+                                    </span>
+                                </div>
+                              </label>
+                          {% endfor %}
+                        </div>
+
+                        <p class="newbcustomizeralienx_h_description">{{ section.settings.step_4_lbl_3 }}</p>
+                        <div class="newbcustomizeralienx_step-grid_inpt_rad">
+                          {% for product in section.settings.step_4_products_3 %}
+                            <input 
+                              type="checkbox" 
+                              name="step_4_3" 
+                              id="step_4_3_{{ forloop.index }}" 
+                              value="{{ product.variants[0].id }}"
+                              data-price=" {% if product.price > 0  %} {{ product.price | divided_by: 100.00 }} {% else %} 0 {% endif %}"
+                              {% if product.price == 0 %}
+                                checked
+                              {% endif %}
+                            >
+                            <label for="step_4_3_{{ forloop.index }}" class="grid_inpt_rad_item">
+                                <img src="{{ product.featured_image | product_img_url: "master" }}">
+                                <div class="grid_inpt_rad_item_overlay">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>                                          
+                                    </span>
+                                </div>
+                              </label>
+                          {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="newbcustomizeralienx_step_footer">
+                        <button class="action_btn prev">
+                            <span>Précedent</span>
+                        </button>
+                        <button class="action_btn next">
+                            <span>Terminer</span>
+                        </button>
+                    </div>
+                    <div class="loader hide">
+                        <svg
+                            aria-hidden="true"
+                            class="spinner"
+                            viewBox="0 0 100 101"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                        </svg>
+                    </div>
+                    <div class="newbcustomizeralienx_price">
+                     Total à payer: {{ product.price | money }}
+                    </div>
+                </div>
+            </div>
+            <div class="newbcustomizeralienx_footer">
+                Kit déco Builder par <span class="unbld">AlienArt</span>
+            </div>
+        </div>
+    </section>
+
+
+{% include 'new-customizer-js' %}
+
+{% schema %}
+{
+  "name": "New Customizer Deco",
+  "blocks": [
+	{
+      "type": "plaque_phare",
+      "name": "Marque(s) plaque phare",
+      "settings": [
+        {
+          "type": "text",
+          "id": "brand",
+          "label": "Marque",
+          "default": "Honda"
+        },
+		{
+          "type": "textarea",
+          "id": "model",
+          "label": "Modele(s)",
+          "info": "Modele de la marque (séparé par une virgule)"
+        }
+      ]
+	},
+    {
+      "type": "garde_boue",
+      "name": "Marque(s) Garde Boue",
+      "settings": [
+        {
+          "type": "text",
+          "id": "brand",
+          "label": "Marque",
+          "default": "Honda"
+        },
+        {
+          "type": "textarea",
+          "id": "model",
+          "label": "Modele(s)",
+          "info": "Modele de la marque (séparé par une virgule)"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "name": "Couleur",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Couleur",
+          "default": "#000"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom de la couleur",
+          "default": "Noir"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Parametres étape 1"
+    },
+    {
+        "type":"text",
+        "id":"step_1_title",
+        "label":"Titre",
+        "default":"Votre Moto"
+    },
+    {
+        "type":"text",
+        "id":"step_1_desc",
+        "label":"Description"
+    },
+    {
+        "type":"text",
+        "id":"step_1_lbl_1",
+        "label":"Libelle champ 1",
+        "default":"Quel est le modèle de votre moto ?"
+    },
+    {
+        "type":"text",
+        "id":"step_1_lbl_2",
+        "label":"Libelle champ 2",
+        "default":"Quel est l'année de votre moto ?"
+    },
+    {
+      "type": "header",
+      "content": "Parametres étape 2"
+    },
+    {
+        "type":"text",
+        "id":"step_2_title",
+        "label":"Titre",
+        "default":"Vos Carrénages"
+    },
+    {
+        "type":"text",
+        "id":"step_2_desc",
+        "label":"Description",
+        "default": "Avez-vous changé votre plaque phare ou garde boue ?"
+    },
+    {
+        "type":"text",
+        "id":"step_2_lbl_1",
+        "label":"Libelle champ 1",
+        "default":"Modèle et année de votre plaque phare"
+    },
+    {
+        "type":"text",
+        "id":"step_2_lbl_2",
+        "label":"Libelle champ 2",
+        "default":"Modèle et année de votre garde boue"
+    },
+    {
+        "type":"product",
+        "id":"step_2_product_1",
+        "label":"Produit 1 associé (Plaque phare)"
+    },
+    {
+        "type":"product",
+        "id":"step_2_product_2",
+        "label":"Produit 2 associé (Garde boue)"
+    },
+    {
+        "type":"product",
+        "id":"step_2_product_3",
+        "label":"Produit 3 associé (Les deux)"
+    },
+    {
+      "type": "header",
+      "content": "Parametres étape 3 - 1"
+    },
+    {
+        "type":"text",
+        "id":"step_3_1_title",
+        "label":"Titre",
+        "default":"Informations d'identité"
+    },
+    {
+        "type":"text",
+        "id":"step_3_1_desc",
+        "label":"Description"
+    },
+    {
+        "type":"text",
+        "id":"step_3_1_lbl_1",
+        "label":"Libelle champ 1",
+        "default":"Prénom/Pseudo "
+    },
+    {
+        "type":"text",
+        "id":"step_3_1_lbl_2",
+        "label":"Libelle champ 2",
+        "default":"Numéro de course"
+    },
+    {
+      "type": "header",
+      "content": "Parametres étape 3 - 2"
+    },
+    {
+        "type":"text",
+        "id":"step_3_2_title",
+        "label":"Titre",
+        "default":"Couleurs générale"
+    },
+    {
+        "type":"text",
+        "id":"step_3_2_desc",
+        "label":"Description"
+    },
+    {
+        "type":"text",
+        "id":"step_3_2_lbl_1",
+        "label":"Libelle champ 1",
+        "default":"La Couleur principale"
+    },
+    {
+        "type":"text",
+        "id":"step_3_2_lbl_2",
+        "label":"Libelle champ 2",
+        "default":"La couleur secondaire"
+    },
+    {
+        "type":"text",
+        "id":"step_3_2_lbl_3",
+        "label":"Libelle champ 3",
+        "default":"La couleur des details (facultatif)"
+    },
+    {
+      "type": "header",
+      "content": "Parametres étape 3 - 3"
+    },
+    {
+        "type":"text",
+        "id":"step_3_3_title",
+        "label":"Titre",
+        "default":"Description Générale"
+    },
+    {
+        "type":"text",
+        "id":"step_3_3_desc",
+        "label":"Description"
+    },
+    {
+        "type":"text",
+        "id":"step_3_3_lbl_1",
+        "label":"Libelle champ 1",
+        "default":"Indications *"
+    },
+    {
+        "type":"text",
+        "id":"step_3_3_lbl_2",
+        "label":"Libelle champ 2",
+        "default":"Ajouter vos inspirations :"
+    },
+    {
+      "type": "header",
+      "content": "Parametres étape 3 - 4"
+    },
+    {
+        "type":"text",
+        "id":"step_3_4_title",
+        "label":"Titre",
+        "default":"Choix de la police"
+    },
+    {
+        "type":"text",
+        "id":"step_3_4_desc",
+        "label":"Description"
+    },
+    {
+      "type": "header",
+      "content": "Parametres étape 3 - 5"
+    },
+    {
+        "type":"text",
+        "id":"step_3_5_title",
+        "label":"Titre",
+        "default":"Choix de la police"
+    },
+    {
+        "type":"text",
+        "id":"step_3_5_desc",
+        "label":"Description"
+    },
+    {
+        "type":"image_picker",
+        "id":"step_3_5_image",
+        "label":"Image"
+    },
+    {
+      "type": "header",
+      "content": "Parametres étape 4"
+    },
+    {
+        "type":"text",
+        "id":"step_4_title",
+        "label":"Titre étape 4",
+        "default":"Options et finitions"
+    },
+    {
+        "type":"text",
+        "id":"step_4_desc",
+        "label":"Description"
+    },
+    {
+        "type":"product_list",
+        "id":"step_4_products_1",
+        "label":"Produits associé question 1 (Matière Kit)"
+    },
+    {
+        "type":"product_list",
+        "id":"step_4_products_2",
+        "label":"Produits associé question 2 (Finition Kit)"
+    },
+    {
+        "type":"product_list",
+        "id":"step_4_products_3",
+        "label":"Produits associé question 3 (Bonus)"
+    },
+    {
+        "type":"text",
+        "id":"step_4_lbl_1",
+        "label":"Libelle champ 1",
+        "default":"Matiere de votre Kit déco"
+    },
+    {
+        "type":"text",
+        "id":"step_4_lbl_2",
+        "label":"Libelle champ 2",
+        "default":"Finition du Kit déco"
+    },
+    {
+        "type":"text",
+        "id":"step_4_lbl_3",
+        "label":"Libelle champ 3",
+        "default":"Choisissez vos bonus"
+    }
+  ],
+  "presets": [
+    {
+        "name": "New Customizer Deco"
+    }
+  ]
+}
+{% endschema %}

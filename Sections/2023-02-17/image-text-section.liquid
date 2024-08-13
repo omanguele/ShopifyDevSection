@@ -1,0 +1,366 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail {
+        background-color: {{ section.settings.bg-color }};
+        text-align: center;
+    }
+    .XW-icons-detail-main-wrap {
+        padding: 80px 130px;
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-main-wrap {
+            padding: 80px 130px 50px;
+        }
+    }
+    @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-bg-over-content .XQ-bg-image-main-wrap, 
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-main-wrap {
+            padding: 80px 50px 50px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .XW-icon-dt-hd h2 {
+        font-size: 70px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+        color: {{ section.settings.title-color }}
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icon-dt-hd h2 {
+            font-size: 45px;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icon-dt-hd h2 {
+            font-size: 40px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icon-dt-hd h2 {
+            font-size: 24px;
+            line-height: 30px;
+            padding: 0 22px;
+        }
+    }
+
+    #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0 0;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .XW-detail-IconsEach-main {
+        width: 25%;
+        padding: 10px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .XW-detail-icons-inner-each .icondtmg img {
+        height: 170px;
+        width: 170px;
+        display: block;
+        margin: auto;
+        object-fit: cover;
+    }
+    @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-detail-icons-inner-each .icondtmg img {
+            height: 130px;
+            width: 130px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds .icondtlabel h3 {
+        font-size: 30px;
+        line-height: normal;
+        color: {{ section.settings.title-block-color }};
+        font-weight: 700;
+        margin: 10px 0;
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds .icondtlabel h3 {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds .icondtlabel h3 {
+            font-size: 18px;
+        }
+    }
+
+    #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds .icondtds p {
+        font-size: 20px;
+        line-height: normal;
+        color: {{ section.settings.desc-block-color }};
+        font-weight: 400;
+        margin: 0;
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds .icondtds p {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds .icondtds p {
+            font-size: 13px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds .icondtds p {
+            font-size: 16px;
+        }
+    }
+
+    #shopify-section-{{ section.id }} #mission-20230217 .mobile_viewport {
+        display: none!important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0 0;
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .desktop_viewport {
+            display: none!important;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .mobile_viewport {
+            display: block!important;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v ul.slick-dots {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v button {
+            font-size: 0;
+            border: 0;
+            background: transparent;
+            display: block;
+            padding-top: 10px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 li.slick-active button {
+            background: {{ section.settings.dots-color }}!important;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v ul.slick-dots li button {
+            font-size: 0;
+            background: 0 0;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            padding: 0;
+            border: 2px solid {{ section.settings.dots-color }};
+            margin: 0 2px;
+        }   
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v button {
+            font-size: 0;
+            border: 0;
+            background: transparent;
+            display: block;
+            padding-top: 10px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v button.slick-prev.slick-arrow:before {
+            display: block;
+            content: "";
+            height: 15px;
+            width: 15px;
+            background: transparent;
+            border-top: 2px solid #000;
+            border-right: 2px solid #000;
+            transform: rotate(-135deg);
+            position: absolute;
+            top: 35%;
+            left: 13%;
+        }   
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v button.slick-next.slick-arrow:before {
+            display: block;
+            content: "";
+            height: 15px;
+            width: 15px;
+            background: transparent;
+            border-top: 2px solid #000;
+            border-right: 2px solid #000;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 35%;
+            right: 13%;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .slick-dots li.slick-active button:before,
+    #shopify-section-{{ section.id }} #mission-20230217 .slick-dots li button:before {
+        opacity: 0;
+        color: black;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .slick-dots li {
+       margin: 0 -2px;
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .icondtcombilelbds {
+          padding-top: 15px;
+          display: none;
+       }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217 .XW-icons-detail-inner-v .slick-active .icondtcombilelbds {
+          display: block;
+       }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217 .slick-initialized .slick-slide {
+       display: block;
+    }
+</style>
+<section id="mission-20230217" style="overflow: hidden;">
+    <div class="XW-icons-detail" section="XW-icons-detail" bis_skin_checked="1">
+        <div class="XW-icons-detail-main-wrap" bis_skin_checked="1">
+           <div class="XW-icon-dt-hd" bis_skin_checked="1">
+              <h2>{{ section.settings.title }}</h2>
+           </div>
+           <div class="XW-icons-detail-blocks-main desktop_viewport" bis_skin_checked="1">
+              <div class="XW-icons-detail-inner-v" bis_skin_checked="1">
+               {% for block in section.blocks %}
+                 <div class="XW-detail-IconsEach-main" bis_skin_checked="1">
+                    <div class="XW-detail-icons-inner-each" bis_skin_checked="1">
+                       <div class="icondtmg" bis_skin_checked="1">
+                          <img sizes="100vw" src="{{ block.settings.img | img_url:"master" }}" loading="lazy" alt="" width="331"> 
+                       </div>
+                       <div class="icondtcombilelbds" bis_skin_checked="1">
+                          <div class="icondtlabel" bis_skin_checked="1">
+                             <h3>{{ block.settings.title }}</h3>
+                          </div>
+                          <div class="icondtds" bis_skin_checked="1">
+                             {{ block.settings.desc }}
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+               {% endfor %}
+              </div>
+           </div>
+
+           <div class="XW-icons-detail-blocks-main MobileWrapStructureIconDetails mobile_viewport" bis_skin_checked="1">
+              <div class="XW-icons-detail-inner-v" mobilesliderwrapiconsdetails="" bis_skin_checked="1">
+                  {% for block in section.blocks %}
+                    <div class="XW-detail-IconsEach-main">
+                      <div class="XW-detail-icons-inner-each" bis_skin_checked="1">
+                         <div class="icondtmg" bis_skin_checked="1">
+                            <img sizes="100vw" src="{{ block.settings.img | img_url:"master" }}" loading="lazy" alt="" width="331"> 
+                         </div>
+                         <div class="icondtcombilelbds" bis_skin_checked="1">
+                            <div class="icondtlabel" bis_skin_checked="1">
+                               <h3>{{ block.settings.title }}</h3>
+                            </div>
+                            <div class="icondtds" bis_skin_checked="1">
+                               {{ block.settings.desc }}
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                {% endfor %}
+               </div>
+           </div>
+        </div>
+     </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#shopify-section-{{ section.id }} #mission-20230217 .mobile_viewport .XW-icons-detail-inner-v').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      adaptiveHeight: true
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Image Text Section",
+    "blocks": [
+      {
+        "type": "image-text",
+        "name": "Image Text",
+        "settings": [
+            {
+              "type": "image_picker",
+              "id": "img",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre", 
+              "default":"Titre"
+            },
+            {
+              "type": "richtext",
+              "id": "desc",
+              "label": "Temoignage", 
+              "default":"<p>Lorem ipsum</p>"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#e2e3e3"
+      },
+      {
+        "type":"color",
+        "id":"title-block-color",
+        "label":"Couleur de titre bloc",
+        "default":"#010101"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur de titre",
+        "default":"#010101"
+      },
+      {
+        "type":"color",
+        "id":"desc-block-color",
+        "label":"Couleur de texte bloc",
+        "default":"#010101"
+      },
+      {
+        "type":"color",
+        "id":"dots-color",
+        "label":"Couleur de pagination slider",
+        "default":"#38b69d"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre", 
+        "default":"SUIVEZ VOTRE SANTÉ AVEC PRÉCISION 🧬"
+      }
+    ],
+    "presets": [
+      {
+        "name":"Image Text Section"
+      }
+    ]
+  }
+{% endschema %}

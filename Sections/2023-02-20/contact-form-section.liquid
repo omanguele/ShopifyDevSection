@@ -1,0 +1,324 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+    
+    #shopify-section-{{ section.id }} #contactsection190223 {
+        width: 100%;
+        height: 100%;
+        background-color: {{ section.settings.bg-color }};
+        font-family: 'DM Sans', sans-serif;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .contact_title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: {{ section.settings.title-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container  .form_container {
+        width: 100%;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 40px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container  .left_form,
+    #shopify-section-{{ section.id }} #contactsection190223 .container .right_form {
+        background-color: {{ section.settings.card-bg-color }};
+        border-radius: 20px;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container  .left_form {
+        grid-column: span 2 / span 2;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .right_form {
+        grid-column: span 3 / span 3;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .form_container .form_subtitle {
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        text-align: left;
+        margin-bottom: 15px !important;
+        display: block;
+        color: {{ section.settings.contact-title-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .input_container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .input_container.ctn2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .input_container input, 
+    #shopify-section-{{ section.id }} #contactsection190223 .container .input_container select {
+        display: block;
+        width: 100%;
+        padding: 14px 10px;
+        font-size: 16px;
+        border-radius: 10px;
+        background-color: {{ section.settings.input-bg-color }};
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .right_form textarea {
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        height: 300px;
+        resize: none;
+        padding: 20px;
+        font-size: 16px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .mr-2 {
+        margin-right: 5px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .ml-2 {
+        margin-left: 5px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .info_container {
+        width: 100%;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 80px;
+        padding: 0 100px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .mt-5 {
+        margin-top: 50px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .action_btn_container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactsection190223 .container .action_btn_container button {
+        color: {{ section.settings.btn-text-color }};
+        border: none;
+        outline: none;
+        text-align: center;
+        padding: 14px 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        background-color: {{ section.settings.btn-bg-color }};
+        text-transform: uppercase;
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        #shopify-section-{{ section.id }} #contactsection190223 .container .info_container {
+            margin-top: 20px;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 40px;
+            padding: 0;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container  .left_form {
+            grid-column: span 1 / span 1;
+        }
+        
+        #shopify-section-{{ section.id }} #contactsection190223 .container .right_form {
+            grid-column: span 1 / span 1;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container  .form_container {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 20px;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .action_btn_container button {
+            font-size: 16px;
+            max-width: 100%;
+            width: 100%;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .info_container .card_info svg {
+            width: 40px;
+            height:40px;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .mt-5 {
+            margin-top: unset;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .mr-2 {
+            margin-right: unset;
+            margin-bottom: 20px;
+        }
+        
+        #shopify-section-{{ section.id }} #contactsection190223 .container .ml-2 {
+            margin-left: unset;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .input_container.ctn2 {
+            flex-direction: column;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .input_container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .contact_title {
+            font-size: 24px;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .right_form textarea {
+            height: 250px;
+            font-size: 14px;
+        }
+        
+        #shopify-section-{{ section.id }} #contactsection190223 .container .input_container input, 
+        #shopify-section-{{ section.id }} #contactsection190223 .container .input_container select {
+            font-size: 14px;
+        }
+    
+        #shopify-section-{{ section.id }} #contactsection190223 .container .form_container .form_subtitle {
+            font-size: 18px;
+        }
+    }
+  </style>
+  <section id="contactsection190223">
+     <div class="container" bis_skin_checked="1">
+        <h4 class="contact_title">{{ section.settings.title }}</h4>
+        <div class="form_container" bis_skin_checked="1">
+           <div class="left_form" bis_skin_checked="1">
+              <h5 class="form_subtitle">{{ section.settings.contact-input-title }}</h5>
+              <div class="input_container ctn2" bis_skin_checked="1">
+                 <input type="text" placeholder="nom" class="mr-2">
+                 <input type="text" placeholder="prénom" class="ml-2">
+              </div>
+              <div class="input_container mt-5" bis_skin_checked="1">
+                 <input type="email" placeholder="adresse email">
+              </div>
+              <div class="input_container" bis_skin_checked="1">
+                 <select name="" id="">
+                    <option value="">motif</option>
+                 </select>
+              </div>
+           </div>
+           <div class="right_form" bis_skin_checked="1">
+              <label for="message" class="form_subtitle">{{ section.settings.contact-msg-title }}</label>
+              <textarea name="" id="message"></textarea>
+           </div>
+        </div>
+        
+        {%- section 'contact-info-section' -%}
+        
+        <div class="action_btn_container" bis_skin_checked="1">
+           <button type="button">{{ section.settings.contact-btn }}</button>
+        </div>
+     </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Contact Form Section",
+      "settings": [
+        {
+          "type":"color",
+          "id":"card-bg-color",
+          "label":"Couleur de fond de la carte",
+          "default":"#f1f5f9"
+        },
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond ",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"contact-title-color",
+          "label":"Couleur Titre Information contact",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur Titre",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"input-bg-color",
+          "label":"Couleur de fond champ de saisir",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"btn-bg-color",
+          "label":"Couleur de fond bouton",
+          "default":"#3b82f6"
+        },
+        {
+          "type":"color",
+          "id":"btn-text-color",
+          "label":"Couleur de texte bouton",
+          "default":"#fff"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"Nous Contacter"
+        },
+        {
+          "type":"text",
+          "id":"contact-input-title",
+          "label":"Titre Information contact",
+          "default":"Tes informations"
+        },
+        {
+          "type":"text",
+          "id":"contact-msg-title",
+          "label":"Libellé champ message",
+          "default":"Message"
+        },
+        {
+          "type":"text",
+          "id":"contact-btn",
+          "label":"Libellé bouton",
+          "default":"Prennez un rendez-vous"
+        }
+      ],
+      "presets":[
+        {
+          "name":"Contact Form Section"
+        }
+      ]
+    }
+  {% endschema %}

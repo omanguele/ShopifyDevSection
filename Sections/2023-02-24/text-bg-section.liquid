@@ -1,0 +1,109 @@
+<style>
+    #shopify-section-{{ section.id }} #mission-240223 .container-fluid{
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: calc(var(--bs-gutter-x)*.5);
+        padding-right: calc(var(--bs-gutter-x)*.5);
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .px-0 {
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .py-2 {
+        padding-bottom: 0.5rem!important;
+        padding-top: 0.5rem!important;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .text-center {
+        text-align: center!important;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .text-white {
+        color: {{ section.settings.text-color }}!important;
+    }
+    @media (min-width: 768px){
+        #shopify-section-{{ section.id }} #mission-240223 .py-md-3 {
+            padding-bottom: 1rem!important;
+            padding-top: 1rem!important;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .col-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .px-1 {
+        padding-left: 0.25rem!important;
+        padding-right: 0.25rem!important;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .p-0 {
+        padding: 0!important;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .m-0 {
+        margin: 0!important;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .d-none {
+        display: none!important;
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .fs-2 {
+        font-size: calc(1.325rem + .9vw)!important;
+    }
+    @media (min-width: 768px){
+        #shopify-section-{{ section.id }} #mission-240223 .d-md-block {
+            display: block!important;
+        }
+    }
+
+    #shopify-section-{{ section.id }} #mission-240223 .fs-6 {
+        font-size: 1rem!important;
+    }
+    @media (min-width: 768px){
+        #shopify-section-{{ section.id }} #mission-240223 .d-md-none {
+            display: none!important;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-240223 .bg-purple {
+        background-color: {{ section.settings.bg-color }};
+    }
+</style>
+<section id="mission-240223">
+    <div class="bg-purple container-fluid px-0 py-2 py-md-3 text-center text-white" bis_skin_checked="1">
+        <div class="col-12 m-0 p-0 px-1" bis_skin_checked="1">
+           <div class="d-md-block d-none fs-2 m-0 p-0">
+             {{ section.settings.text }} 
+           </div>
+           <div class="d-md-none fs-6 m-0 p-0">
+             {{ section.settings.text }}
+           </div>
+        </div>
+     </div>
+</section>
+{% schema %}
+  {
+    "name": "Text BG Section",
+    "settings": [
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#5a4182"
+      },
+      {
+        "type":"richtext",
+        "id":"text",
+        "label":"Texte"
+      }
+    ],
+    "presets":[
+      {
+        "name":"Text BG Section"
+      }
+    ]
+  }
+{% endschema %}

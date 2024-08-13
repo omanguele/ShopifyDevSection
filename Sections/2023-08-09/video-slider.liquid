@@ -1,0 +1,296 @@
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+  #shopify-section-{{ section.id }} #videoslidercbo9823  {
+       width: 100%;
+       height: 100%;
+       position: relative;
+       background-color: {{ section.settings.bg_color }};
+       font-weight: 400;
+       font-style: normal;
+       font-size: 24px;
+       letter-spacing: 0.06rem;
+       line-height: 1.8;
+       overflow: hidden;
+   }
+  #shopify-section-{{ section.id }} #videoslidercbo9823    .videoslidercbo9823_container {
+       position: relative;
+       max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+      width: 100%;
+      padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+  #shopify-section-{{ section.id }} #videoslidercbo9823    .videoslidercbo9823_title {
+       font-family: 'Anton', sans-serif;
+       font-style: normal;
+       font-weight: 400;
+       color:  {{ section.settings.heading_color }};
+       text-transform: uppercase;
+   }
+  #shopify-section-{{ section.id }} #videoslidercbo9823    .videoslidercbo9823_slider {
+       width: 100%;
+       padding: 17px 0;
+       position: relative;
+   }
+  #shopify-section-{{ section.id }} #videoslidercbo9823    .swiper {
+       width: 100%;
+       height: 100%;
+   }
+  #shopify-section-{{ section.id }} #videoslidercbo9823   .videoslidercbo9823_slide {
+       width: 100%;
+       height: 380px;
+   }
+  #shopify-section-{{ section.id }} #videoslidercbo9823    .videoslidercbo9823_slide video {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+   }
+   @media only screen and (min-width: 1024px) {
+      #shopify-section-{{ section.id }} #videoslidercbo9823    .videoslidercbo9823_slide {
+           height: 505px;
+       }
+      #shopify-section-{{ section.id }} #videoslidercbo9823   .videoslidercbo9823_title {
+           font-size: calc(38px + .012*(100vw - 440px));
+           line-height: calc(38px + .012*(100vw - 440px));
+       }
+   }
+  @media only screen and (max-width: 750px) {
+      #shopify-section-{{ section.id }} #videoslidercbo9823    .videoslidercbo9823_container {
+        padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+      }
+   }
+   @media only screen and (min-width: 1440px) {
+      #shopify-section-{{ section.id }} #videoslidercbo9823    .videoslidercbo9823_title {
+           font-size: 50px;
+           line-height: 50px;
+       }
+   }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+>
+
+<div id="videoslidercbo9823">
+  <div class="videoslidercbo9823_container">
+    <h2 class="videoslidercbo9823_title">{{ section.settings.heading }}</h2>
+    <div class="videoslidercbo9823_slider">
+      <div class="swiper videoslidercbo9823-swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="videoslidercbo9823_slide">
+                <video
+                  playsinline="playsinline"
+                  muted="muted"
+                  controls="controls"
+                  preload="metadata"
+                  poster="{{ block.settings.poster | img_url: "master" }}"
+                >
+                  <source
+                    src="{{ block.settings.video.sources[1].url }}"
+                    type="video/mp4"
+                  >
+                  <img src="{{ block.settings.poster | img_url: "master" }}">
+                </video>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  new Swiper('.videoslidercbo9823-swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 15,
+
+      breakpoints: {
+          320: {
+              slidesPerView: 1.2,
+              spaceBetween: 15
+          },
+          540: {
+              slidesPerView: 1.5,
+              spaceBetween: 15
+          },
+          670: {
+              slidesPerView: 2,
+              spaceBetween: 20
+          },
+          720: {
+              slidesPerView: 2.2,
+              spaceBetween: 20
+          },
+          782: {
+              slidesPerView: 2.5,
+              spaceBetween: 20
+          },
+          979: {
+              slidesPerView: 3,
+              spaceBetween: 20
+          },
+          1024: {
+              slidesPerView: 3.5,
+              spaceBetween: 20
+          }
+      }
+  });
+  Array.from(document.querySelectorAll('#videoslidercbo9823 .videoslidercbo9823_slide'))
+  .map((el) => {
+      el.addEventListener('mouseover', (e) => {
+          el.querySelector('video').play();
+      });
+      el.addEventListener('mouseout', (e) => {
+          el.querySelector('video').pause();
+      })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Video Slider",
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video (MP4)"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg_color",
+      "label":"Couleur fond",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"heading_color",
+      "label":"Couleur titre",
+      "default":"#f27c22"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Titre",
+      "default":"ELLES ONT TESTÉ !"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Top Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Bottom Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Left Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop Right Spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Top Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Bottom Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_left_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Left Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_right_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Right Spacing",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "full_with",
+      "label": "Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 500,
+      "max": 2000,
+      "step": 100,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1400
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Slider"
+    }
+  ]
+}
+{% endschema %}

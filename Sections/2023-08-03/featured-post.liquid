@@ -1,0 +1,370 @@
+<style>
+  #shopify-section-{{ section.id }} #featuredblogpostxb {
+      overflow: hidden;
+      margin-top: 64px;
+      padding-left: 128px;
+      padding-right: 128px;
+      margin-bottom: 64px;
+      column-gap: 16px;
+      display: flex;
+      width: 100vw ;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+     background-color: {{ section.settings.bg_color }};
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb .featuredblogpostxb_container {
+      width: 100%;
+      position: relative;
+      padding: 24px;
+      border: 1px solid {{ section.settings.border_color }};
+      border-radius: 4px;
+      display: flex;
+      flex-direction: row;
+      column-gap: 16px;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb .featuredblogpostxb_card_first {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      position: relative;
+      flex-shrink: 0;
+      width: 18%;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb .featuredblogpostxb_libk-desk,
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_libk-mobile {
+      margin-top: 16px;
+      display: inline-flex;
+      color: {{ section.settings.btn_text_color }};
+      background-color: {{ section.settings.btn_bg_color }};
+      border: 1px solid {{ section.settings.btn_border_color }};
+      transition: background-color .2s linear,color .2s linear,border-color .2s linear;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      white-space: nowrap;
+      position: relative;
+      cursor: pointer;
+      box-sizing: border-box;
+      padding: 15px 18px;
+      font-weight: 500;
+      border-radius: 4px;
+      font-size: 13px;
+      text-decoration: none;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_libk-mobile {
+      width: 100%;
+      display: none;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_logo {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_logo img {
+      color: transparent;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb .featuredblogpostxb_post_wrapper {
+      width: 80%;
+      position: relative;
+      overflow: visible;
+      touch-action: pan-y;
+      display: flex;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_post_wrapper_inner {
+      flex-direction: row;
+      display: inline-flex;
+      will-change: transform;
+      transform: translateX(0px) translateZ(0px);
+      cursor: auto;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card {
+      cursor: pointer;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: border-color .4s linear;
+      background-color: {{ section.settings.card_color }};
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_thumbnail {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_thumbnail-desk {
+      display: block;
+      position: relative;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_thumbnail-desk  img {
+      color: transparent;
+      width: 100%;
+      min-height: 150px;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_thumbnail-categories {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 5px;
+      position: absolute;
+      top: 10px;
+      left: 0;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .post-category {
+      text-decoration: none;
+      padding: 4px 8px;
+      line-height: 1.3076923077;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-size: 13px;
+      user-select: none;
+      background-color: {{ section.settings.cat_bg_color }};
+      border-radius: 0 4px 4px 0;
+      color: {{ section.settings.cat_text_color }};
+      font-weight: 500;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_detail {
+      padding-bottom: 16px;
+      display: block;
+      padding-inline: 8px;
+      box-sizing: border-box;
+      padding-top: 16px;
+      padding-left: 12px;
+      flex-grow: 0;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb .featuredblogpostxb_card_date {
+      margin-bottom: 8px;
+      color: {{ section.settings.date_color }};
+      font-size: 11px;
+      line-height: 1.3076923077;
+      letter-spacing: 0;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_title {
+      color: {{ section.settings.text_color }};
+      font-size: 13px;
+      line-height: 1.3076923077;
+      letter-spacing: 0;
+      display: block;
+      text-decoration: none;
+  }
+  #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_link {
+      margin-top: 16px;
+      position: relative;
+      overflow: hidden;
+      text-decoration: underline currentColor;
+      transition: opacity .4s linear;
+      color: {{ section.settings.text_color }};
+      display: block;
+      font-weight: 500;
+      font-size: 13px;
+  }
+  @media only screen and (min-width: 1500px)  {
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_thumbnail-desk {
+          height: 300px;
+      }
+  }
+  @media screen and (max-width: 1100px) {
+      #shopify-section-{{ section.id }} #featuredblogpostxb {
+          padding-left: 48px;
+          padding-right: 48px;
+      }
+  }
+  @media screen and (max-width: 1000px) {
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_first {
+          width: 100%;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb .featuredblogpostxb_libk-desk,
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_link {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb {
+          padding-left: 30px;
+          padding-right: 30px;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_container {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb .featuredblogpostxb_libk-mobile {
+          display: block;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_card_thumbnail-desk {
+          height: 200px;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .featuredblogpostxb_post_wrapper {
+          width: 150%;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .swiper-wrapper {
+          padding-left:  20%;
+      }
+      #shopify-section-{{ section.id }} #featuredblogpostxb  .swiper {
+          width: 100%;
+          padding-right: 25% !important;
+      }
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+<section id="featuredblogpostxb">
+  <div class="featuredblogpostxb_container">
+    <div class="featuredblogpostxb_card_first">
+      <div class="featuredblogpostxb_logo">
+        <img src="{{ section.settings.logo | img_url: 'master' }}" alt="">
+      </div>
+      <a href="{{ section.settings.btn_url }}" class="featuredblogpostxb_libk-desk">
+        <span>{{ section.settings.btn_label }}</span>
+      </a>
+    </div>
+    <div class="featuredblogpostxb_post_wrapper">
+      <div class="swiper featuredblogpostxb_post_wrapper_inner">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="featuredblogpostxb_card">
+              <div class="featuredblogpostxb_card_thumbnail">
+                <div class="featuredblogpostxb_card_thumbnail-desk">
+                  <img
+                    src="https://a.storyblok.com/f/200283/1600x900/e691f0e511/rose-et-blanc-saint-valentin-jour-twitter-publication-1.png/m/1940x0/filters:quality(80)"
+                    alt=""
+                  >
+                </div>
+                <div class="featuredblogpostxb_card_thumbnail-categories">
+                  <a href="" class="post-category">cinéma</a>
+                </div>
+              </div>
+              <div class="featuredblogpostxb_card_detail">
+                <p class="featuredblogpostxb_card_date">05 Aug. 2023</p>
+                <a href="" class="featuredblogpostxb_card_title">Les sorties cinéma du mois d'août</a>
+                <a href="" class="featuredblogpostxb_card_link">Lire l'article</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="{{ section.settings.btn_url }}" class="featuredblogpostxb_libk-mobile">
+      <span>{{ section.settings.btn_label }}</span>
+    </a>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  new Swiper(".featuredblogpostxb_post_wrapper_inner", {
+       freeMode: true,
+       breakpoints: {
+           320: {
+           slidesPerView: 1.5,
+           spaceBetween: 15
+           },
+           1100: {
+           slidesPerView: 4,
+           spaceBetween: 15
+           }
+       }
+   });
+</script>
+{% schema %}
+{
+  "name": "Featured Post",
+  "settings": [
+    {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur de fond section",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "card_color",
+    "label": "Couleur de fond card",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "border_color",
+    "label": "Couleur de bordure",
+    "default": "#f2f2f2"
+  },
+    {
+    "type": "color",
+    "id": "cat_bg_color",
+    "label": "Couleur fond categorie",
+    "default": "#A37D5F"
+  },
+  {
+    "type": "color",
+    "id": "cat_text_color",
+    "label": "Couleur texte categorie",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "date_color",
+    "label": "Couleur de date",
+    "default": "#A37D5F"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Couleur de texte",
+    "default": "#A37D5F"
+  },
+  {
+    "type": "color",
+    "id": "btn_text_color",
+    "label": "Couleur texte bouton",
+    "default": "#000"
+  },
+  {
+    "type": "color",
+    "id": "btn_bg_color",
+    "label": "Couleur fond bouton",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "btn_border_color",
+    "label": "Couleur bordure bouton",
+    "default": "#000"
+  },
+  {
+    "type": "text",
+    "id": "btn_label",
+    "label": "libelle bouton",
+    "default":"Voir plus d'articles"
+  },
+  {
+    "type": "text",
+    "id": "btn_url",
+    "label": "url bouton"
+  },
+  {
+    "type":"image_picker",
+    "id":"logo",
+    "label":"Logo"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Featured Post"
+    }
+  ]
+}
+{% endschema %}

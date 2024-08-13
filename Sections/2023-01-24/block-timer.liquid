@@ -1,0 +1,116 @@
+<style>
+    #shopify-section-{{ section.id }} #timersection240123 p {
+        margin: 0 0 15px;
+        font-style: normal;
+        line-height: 1.6em;
+    }
+    #shopify-section-{{ section.id }} #timersection240123 .countdown_timer p {
+        text-align: center;
+        background: {{ section.settings.bg-color }};
+        color: {{ section.settings.text-color }};
+        padding: 2% 0;
+        font-weight: 500;
+        font-size: 12.5px;
+        margin: 10px 0;
+    }
+    #shopify-section-{{ section.id }} #timersection240123 .flip-clock-wrapper {
+        width: 318px!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+    #shopify-section-{{ section.id }} #timersection240123 .flip-clock-wrapper {
+        font-size: 11px;
+        -webkit-user-select: none;
+    }
+    #shopify-section-{{ section.id }} #timersection240123 .flip-clock-wrapper {
+        margin-bottom: 3em!important;
+    }
+    #shopify-section-{{ section.id }} #timersection240123 .flip-clock-wrapper {
+        text-align: center;
+        position: relative;
+        width: 100%;
+        margin: 1em;
+    }
+    #shopify-section-{{ section.id }} #timersection240123 .countdown.flip-clock-wrapper {
+        font-size: 12.5px !important;
+        font-weight: 500;
+        padding-left: 4px;
+    }
+</style>
+<section id="timersection240123">
+    <a href="#" class="action_button">Activation timer</a>
+    <div class="parent_counte_timer">
+        <div class="countdown_timer"> 
+            <p>
+                {{ section.settings.desc }} 
+                <span class="countdown flip-clock-wrapper"></span> {{ section.settings.unit }}
+            </p>
+        </div>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).one('click','.action_button',function(e){
+      var timer2 = "{{ section.settings.timer }}";
+      var interval = setInterval(function() {
+        var timer = timer2.split(':');
+        //by parsing integer, I avoid all extra string processing
+        var minutes = parseInt(timer[0], 10);
+        var seconds = parseInt(timer[1], 10);
+        --seconds;
+        minutes = (seconds <0) ? --minutes : minutes;
+        seconds = (seconds <0) ? 59 : seconds;
+        seconds = (seconds <10) ? '0' + seconds : seconds;
+        //minutes = (minutes <10) ?  minutes : minutes;
+        $('.countdown').html(minutes + ':' + seconds);
+        if (minutes <0) clearInterval(interval);
+        //check if both minutes and seconds are 0
+        if ((seconds <= 0) && (minutes <= 0)) clearInterval(interval);
+        timer2 = minutes + ':' + seconds;
+      }, 1000);      
+    });
+  
+</script>
+{% schema %}
+  {
+    "name": "Timer Section",
+    "settings": [
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#f96565"
+      },
+      {
+        "type":"text",
+        "id":"desc",
+        "label":"Description",
+        "default":"votre panier est réservé pendant"
+      },
+      {
+        "type":"text",
+        "id":"unit",
+        "label":"Unité de mesure",
+        "default":"minutes !"
+      },
+      {
+        "type":"text",
+        "id":"timer",
+        "label":"Temps initial",
+        "default":"10:01"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Timer Section",
+        "category": "Custom Ss"
+      }
+    ]
+  }
+{% endschema %}

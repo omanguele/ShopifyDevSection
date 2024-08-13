@@ -1,0 +1,129 @@
+<style>
+    :root{
+        --plyr-color-main: #444;
+        --plyr-video-control-background-hover:transparent;
+        --plyr-video-controls-background:transparent;
+        --plyr-badge-border-radius:20px !important;
+        --plyr-control-spacing: 20px !important;
+        --plyr-control-radius:8px !important;
+        --plyr-control-radius:8px;
+    }
+  #shopify-section-{{ section.id }} {
+      background-color: {{ section.settings.bg_color }};
+  }
+    #shopify-section-{{ section.id }} #video_banner7150509032{
+        display: block;
+        overflow: hidden;
+        margin: 60px auto;
+        border-radius: {{ section.settings.radius_section }}px;
+        transition: all ease-out 0.4s;
+        max-width: 1234px;
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #video_banner7150509032:hover{
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+  #shopify-section-{{ section.id }} #video_banner7150509032  #player{
+        display: block;
+        position: relative;
+        left: 0;
+        top: 0;
+        opacity: 1;
+        object-fit: cover;
+        max-height: 600px;
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #video_banner7150509032 .plyr__control--overlaid{
+        background-color: #202020 !important;
+        backdrop-filter: blur(5px) !important;
+        border-radius: 8px !important;
+        transition: all ease-out 0.4s !important;
+        padding: 15px !important;
+    }
+    #shopify-section-{{ section.id }} #video_banner7150509032 .plyr__control--overlaid:hover{
+        padding: 16px !important;
+    }
+    @media screen and (max-width: 1200px) {
+        #shopify-section-{{ section.id }} #video_banner7150509032{
+            display: block;
+            overflow: hidden;
+            margin: 60px 10px;
+            transition: all ease-out 0.4s;
+        }
+    }
+    @media screen and (max-width: 610px) {
+      #shopify-section-{{ section.id }} #video_banner7150509032  #player{
+            width: 100%;
+            height: 560px;
+            position: relative;
+        }
+        #shopify-section-{{ section.id }} #video_banner7150509032 .plyr__volume{
+            display: none;
+        }
+        #shopify-section-{{ section.id }} #video_banner7150509032 .plyr__control--overlaid{
+            top: 50px !important;
+            right: 5px !important;
+            left: auto !important;
+        }
+    }
+    @media screen and (max-width: 550px) {
+     #shopify-section-{{ section.id }} #video_banner7150509032   #player{
+            width: 100%;
+            height: 480px;
+        }
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+<section id="video_banner7150509032">
+  <video id="player" playsinline controls data-poster="{{ section.settings.image | img_url : "master" }}">
+    <source src="{{ section.settings.video.sources[1].url }}" type="video/mov">
+  </video>
+</section>
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script>
+  const player = new Plyr('#shopify-section-{{ section.id }} #video_banner7150509032 #player', {
+      title: 'Video Banner',
+      controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions','fullscreen'],
+      clickToPlay: true,
+      keyboard:{
+          focused: true,
+      },
+  });
+</script>
+
+{% schema %}
+{
+   "name": "Video Banner",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Bg Color",
+      "default": "#fff"
+    },
+    {
+      "type":"video",
+      "id":"video",
+      "label":"Video"
+    },
+    {
+      "type":"image_picker",
+      "id":"image",
+      "label":"Image"
+    },
+    {
+      "type": "number",
+      "id": "radius_section",
+      "label": "Radius Section",
+      "default": 20,
+      "info": "En Pixel"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Banner"
+    }
+  ]
+}
+{% endschema %}

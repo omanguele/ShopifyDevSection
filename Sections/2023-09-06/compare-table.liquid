@@ -1,0 +1,648 @@
+<style>
+  #shopify-section-{{ section.id }} #comp_tab63609032{
+      padding: 50px 0;
+      background-color: {{ section.settings.bg_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container h1{
+      font-size: 35px;
+      color: {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content{
+      display: flex;
+      justify-content: center;
+      margin-top: 140px;
+      margin-bottom: 50px;
+      margin-right: 15px;
+      margin-left: 15px;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content h3{
+      font-size: 15px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid {{ section.settings.hl_color }};
+      font-weight: 500;
+    color: {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content h2{
+     font-size: 15px;
+     height: 80px;
+     display: flex;
+     align-items: center;
+     font-weight: 500;
+      color: {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content #benefits{
+     font-size: 25px;
+     height: fit-content;
+     margin-top: 50px;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content img{
+      position: absolute;
+      top: -55px;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      max-width: 100%;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content1{
+      position: relative;
+      flex: 24.6%;
+      color: {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content1 h2{
+      justify-content: start;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content1 h3{
+      justify-content: start;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content2{
+      position: relative;
+      flex: 24.6%;
+      padding-top: 10px;
+      padding-bottom: 40px;
+      color: #222;
+      background-color: {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content2 h2{
+      justify-content: center;
+    color: {{ section.settings.hl_text_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content2 h3{
+      justify-content: center;
+      width: 250px;
+    color: {{ section.settings.hl_text_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content3{
+      position: relative;
+      flex: 26.4%;
+      color: {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content3 h2{
+      justify-content: center;
+      align-items: center;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content3 h3{
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content4{
+      position: relative;
+      flex: 26.4%;
+      color: {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content4 h2{
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content4 h3{
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .bouton{
+      color: {{ section.settings.btn_text_color }};
+      background-color: {{ section.settings.btn_bg_color }};
+      border-radius: 555px;
+      padding: 14px 32px;
+      font-size: 20px;
+      text-decoration: none;
+      margin-top: 50px;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper{
+      display: none;
+  }
+
+  #shopify-section-{{ section.id }} #comp_tab63609032 .controls{
+      display: none;
+  }
+
+  @media screen and (max-width:715px) {
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content h2{
+          font-size: 10px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 svg{
+          width: 30px;
+          height: 30px;
+      }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content h3{
+      font-size: 10px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid {{ section.settings.hl_color }};
+      font-weight: 500;
+  }
+  #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content h2,
+    #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content #benefits{
+     font-size: 10px;
+     height: 70px;
+     display: flex;
+     align-items: center;
+     font-weight: 500;
+  }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content3 {
+          color: {{ section.settings.hl_color }};
+          z-index: 2;
+          flex: 25%;
+          margin-top: 10px;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content4 {
+          color: {{ section.settings.hl_color }};
+          z-index: 2;
+          flex: 25%;
+          margin-top: 10px;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content2{
+          position: relative;
+          flex: 24.6%;
+          padding-top: 10px;
+          padding-bottom: 15px;
+          color: #222;
+          background-color: {{ section.settings.hl_color }};
+      }
+  }
+  @media screen and (max-width:650px) {
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content1{
+          position: relative;
+          flex: 25%;
+          color: {{ section.settings.hl_color }};
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 svg{
+          width: 25px;
+          height: 25px;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper .tabcontent1 img{
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translate(-50%,-50%);
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper .tabcontent2 img{
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translate(-50%,-50%);
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .tab_content_swiper{
+          flex: 50%;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .tab_content_swiper .swiper-slide .tabcontent1{
+          position: relative;
+          display: block;
+          flex: 25%;
+          padding-top: 10px;
+          color: {{ section.settings.hl_text_color }};
+          background-color: {{ section.settings.hl_color }};
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .tab_content_swiper .swiper-slide {
+          display: flex;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content2{
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content3{
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content4{
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper{
+          display: block;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper .tabcontent2{
+          z-index: 2;
+          flex: 25%;
+          margin-top: 10px;
+        position: relative;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper .tabcontent1 h3{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        color: {{ section.settings.hl_text_color }};
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper .tabcontent1 h2{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        color: {{ section.settings.hl_text_color }};
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper .tabcontent2 h3{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: {{ section.settings.hl_color }};
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .container .tab_content .tab_content_swiper .tabcontent2 h2{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: {{ section.settings.hl_color }};
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper{
+          overflow-y: visible;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper-pagination{
+          bottom: -70px;
+          left: 250px;
+          width: auto;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper-pagination .swiper-pagination-bullet-active{
+          background-color: {{ section.settings.hl_color }};
+      }
+
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper-pagination .swiper-pagination-bullet{
+          margin: 0 5px !important;
+          border: solid 2px {{ section.settings.hl_color }};
+          padding: 5px;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper-pagination{
+          left: auto;
+          bottom: auto;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper-button-next::after, .swiper-button-prev::after{
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .controls{
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          width: 200px;
+      }
+
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper-button-next{
+          position: absolute;
+          font-size: 35px;
+          color: {{ section.settings.hl_color }};
+      }
+      #shopify-section-{{ section.id }} #comp_tab63609032 .swiper-button-prev{
+          position: absolute;
+          font-size: 35px;
+          color: {{ section.settings.hl_color }};
+      }
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<section id="comp_tab63609032">
+  <section class="container">
+    <h1>{{ section.settings.heading }}</h1>
+    <section class="tab_content">
+      <div class="tab_content1">
+        <h2 id="benefits">{{ section.settings.heading_compare }}</h2>
+        {% assign compare_labels = section.settings.compare_labels | split: ',' %}
+        {% for label in compare_labels %}
+          <h3>{{ label }}</h3>
+        {% endfor %}
+      </div>
+      <div class="tab_content2">
+        <img src="{{ section.settings.image_dhl | img_url: "master" }}" alt="">
+        <h2>{{ section.settings.heading_dhl }}</h2>
+        {% assign compare_text_dhl = section.settings.compare_text_dhl | split: ',' %}
+        {% for text in compare_text_dhl %}
+          <h3>
+            {% if text == 'pass' %}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                width="40px"
+                height="40px"
+                fill="{{ section.settings.check_icon_color }}"
+                style="height:100%;"
+              >
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+              </svg>
+            {% elsif text == 'fail' %}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                width="40px"
+                height="40px"
+                fill="currentColor"
+                style="height:100%; "
+              >
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+              </svg>
+            {% else %}
+              {{ text }}
+            {% endif %}
+          </h3>
+        {% endfor %}
+      </div>
+      {% for block in section.blocks %}
+        <div class="tab_content{{ forloop.index | plus: 2 }}">
+          <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+          <h2>{{ block.settings.heading }}</h2>
+          {% assign compare_text = block.settings.compare_text | split: ',' %}
+          {% for text in compare_text %}
+            <h3>
+              {% if text == 'pass' %}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="40px"
+                  height="40px"
+                  fill="{{ section.settings.check_icon_color }}"
+                  style="height:100%;"
+                >
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                </svg>
+              {% elsif text == 'fail' %}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="40px"
+                  height="40px"
+                  fill="currentColor"
+                  style="height:100%; "
+                >
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                </svg>
+              {% else %}
+                {{ text }}
+              {% endif %}
+            </h3>
+          {% endfor %}
+        </div>
+      {% endfor %}
+      <div class="tab_content_swiper swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="tabcontent1">
+                <img src="{{ block.settings.image_hl | img_url: "master" }}" alt="">
+                <h2>{{ block.settings.heading_hl }}</h2>
+                {% assign compare_text_hl = block.settings.compare_text_hl | split: ',' %}
+                {% for text in compare_text_hl %}
+                  <h3>
+                    {% if text == 'pass' %}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        width="40px"
+                        height="40px"
+                        fill="{{ section.settings.check_icon_color }}"
+                        style="height:100%;"
+                      >
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                      </svg>
+                    {% elsif text == 'fail' %}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        width="40px"
+                        height="40px"
+                        fill="currentColor"
+                        style="height:100%; "
+                      >
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                      </svg>
+                    {% else %}
+                      {{ text }}
+                    {% endif %}
+                  </h3>
+                {% endfor %}
+              </div>
+              <div class="tabcontent2">
+                <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+                <h2>{{ block.settings.heading }}</h2>
+                {% assign compare_text = block.settings.compare_text | split: ',' %}
+                {% for text in compare_text %}
+                  <h3>
+                    {% if text == 'pass' %}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        width="40px"
+                        height="40px"
+                        fill="{{ section.settings.check_icon_color }}"
+                        style="height:100%;"
+                      >
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                      </svg>
+                    {% elsif text == 'fail' %}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        width="40px"
+                        height="40px"
+                        fill="currentColor"
+                        style="height:100%; "
+                      >
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                      </svg>
+                    {% else %}
+                      {{ text }}
+                    {% endif %}
+                  </h3>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <div class="controls">
+      <div class="swiper-button-prev">
+        <span>&larr;</span>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next">
+        <span>&rarr;</span>
+      </div>
+    </div>
+    {% if section.settings.lbl_btn != blank %}
+      <a href="{{ section.settings.url_btn }}" class="bouton">{{ section.settings.lbl_btn }}</a>
+    {% endif %}
+  </section>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('#shopify-section-{{ section.id }} #comp_tab63609032 .tab_content_swiper', {
+      slidesPerView: 'auto',
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '#shopify-section-{{ section.id }} #comp_tab63609032 .swiper-button-next',
+          prevEl: '#shopify-section-{{ section.id }} #comp_tab63609032 .swiper-button-prev',
+      },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Compare Table",
+  "blocks": [
+  {
+    "type": "tab",
+    "name": "Tab",
+    "limit": 2,
+    "settings": [
+      {
+        "type": "header",
+        "content": "HighLight Tab Settings"
+      },
+      {
+        "type":"image_picker",
+        "id":"image_hl",
+        "label":"Image HighLight Tab"
+      },
+      {
+        "type": "text",
+        "id": "heading_hl",
+        "label": "Heading HighLight Tab",
+        "default": "Benefits"
+      },
+      {
+        "type": "textarea",
+        "id": "compare_text_hl",
+        "label": "Compare Text HighLight Tab",
+        "default": "Accuracy,pass,pass",
+        "info": "Separer chaque élément par une virgule. Ecrire 'pass' pour une icone check et 'fail' pour une icone 'x'. Exemple: 'critere1,pass,critere2,fail'"
+      },
+      {
+        "type": "header",
+        "content": "Tab Settings"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image Tab"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading Tab",
+        "default": "Benefits"
+      },
+      {
+        "type": "textarea",
+        "id": "compare_text",
+        "label": "Compare Text Tab",
+        "default": "Accuracy,fail,fail",
+        "info": "Separer chaque élément par une virgule. Ecrire 'pass' pour une icone check et 'fail' pour une icone 'x'. Exemple: 'critere1,pass,critere2,fail'"
+      }
+    ]
+  }
+],
+  "settings": [
+      {
+        "type": "header",
+        "content": "Color Settings"
+      },
+       {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Bg Color",
+        "default": "#245348"
+      },
+      {
+        "type": "color",
+        "id": "hl_color",
+        "label": "High Color",
+        "default": "#fff"
+      },
+      {
+        "type":"color",
+        "id":"btn_text_color",
+        "label":"Color btn text",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"btn_bg_color",
+        "label":"Color btn bg",
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "hl_text_color",
+        "label": "Gight Light Text Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "check_icon_color",
+        "label": "Check Icon Color",
+        "default": "#008fa0"
+      },
+      {
+        "type": "header",
+        "content": "Heading Settings"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading Section",
+        "default": "Compare Table"
+      },
+      {
+        "type": "text",
+        "id": "heading_compare",
+        "label": "Heading Compare",
+        "default": "Benefits"
+      },
+      {
+        "type": "textarea",
+        "id": "compare_labels",
+        "label": "Compare Labels",
+        "default": "Accuracy,Body Metrics Measured,Coaching & Feedback",
+        "info": "Separer chaque élément par une virgule Exemple: 'critere1,critere2,critere3'"
+      },
+      {
+        "type": "header",
+        "content": "Button Settings"
+      },
+      {
+        "type":"text",
+        "id":"lbl_btn",
+        "label":"Libelle bouton",
+        "default":"Shop"
+      },
+      {
+        "type":"url",
+        "id":"url_btn",
+        "label":"URL bouton"
+      },
+      {
+        "type": "header",
+        "content": "Default HighLight Tab Settings"
+      },
+      {
+        "type":"image_picker",
+        "id":"image_dhl",
+        "label":"Image Default HighLight Tab"
+      },
+      {
+        "type": "text",
+        "id": "heading_dhl",
+        "label": "Heading Default HighLight Tab",
+        "default": "Benefits"
+      },
+      {
+        "type": "textarea",
+        "id": "compare_text_dhl",
+        "label": "Compare Text Default HighLight Tab",
+        "default": "Accuracy,pass,pass",
+        "info": "Separer chaque élément par une virgule. Ecrire 'pass' pour une icone check et 'fail' pour une icone 'x'. Exemple: 'critere1,pass,critere2,fail'"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Compare Table"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,95 @@
+<style>
+  #gridimgtext {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
+  #gridimgtext img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+  }
+  #gridimgtext .gridimgtext_container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      width: 100%;
+  }
+  #gridimgtext .gridimgtext_container_item {
+      position: relative;
+      width: 100%;
+  }
+  #gridimgtext .gridimgtext_container_item .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: {{ section.settings.text_color }};
+      text-transform: uppercase;
+      word-wrap: break-word;
+      word-break: keep-all;
+      width: 100%;
+      text-align: center;
+      font-weight: 700;
+      font-size: 16px;
+  }
+  @media only screen and (min-width: 780px) {
+      #gridimgtext .gridimgtext_container_item .text {
+          font-size: 25px;
+      }
+      #gridimgtext .gridimgtext_container {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+  }
+</style>
+
+<section id="gridimgtext">
+  <div class="gridimgtext_container">
+    {% for block in section.blocks %}
+      <div class="gridimgtext_container_item">
+        <div class="text">{{ block.settings.text }}</div>
+        <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Grid Img Text",
+  "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Texte",
+            "default":"Lorem ipsum"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+  "settings": [
+    {
+      "type":"color",
+      "id":"text_color",
+      "label":"Couleur de texte",
+      "default":"#fff"
+    }
+  ],
+"presets": [
+  {
+    "name": "Grid Img Text"
+  }
+]
+}
+{% endschema %}

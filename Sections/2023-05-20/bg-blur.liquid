@@ -1,0 +1,169 @@
+<style>
+  #blurbgtext {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  #blurbgtext .container {
+      backdrop-filter: blur(10px);
+      width: 100%;
+      padding: 200px 80px 80px 80px;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #blurbgtext  .c_btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 200px;
+  }
+
+  #blurbgtext  .c_text {
+      width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+
+  #blurbgtext  .title {
+      font-style: italic;
+      font-weight: 700;
+      font-size: 50px;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #blurbgtext  .c_btn  a {
+      text-decoration: none;
+      color: {{ section.settings.btn_text_color }};
+      background: {{ section.settings.btn_bg_color }};
+      display: block;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 16px;
+  }
+
+  #blurbgtext .s_title {
+      text-transform: uppercase;
+      font-size: 18px;
+      margin-top: 10px;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #blurbgtext .d_title {
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 30px;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  @media only screen and (max-width: 767px) {
+    #blurbgtext  .c_text {
+      align-items: flex-start;
+    }
+      #blurbgtext .container {
+          padding: 150px 20px 40px 20px;
+      }
+      #blurbgtext  .c_btn  a {
+          font-size: 12px;
+      }
+      #blurbgtext  .title {
+          font-size: 35px;
+      }
+      #blurbgtext .s_title {
+          font-size: 14px;
+      }
+      #blurbgtext  .c_btn {
+          margin-top: 150px;
+      }
+      #blurbgtext .d_title {
+          font-size: 14px;
+      }
+  }
+</style>
+<section id="blurbgtext" style="background-image: url('{{ section.settings.image | img_url : "master" }}');">
+  <div class="container">
+    <div class="c_text">
+      <h3 class="title">{{ section.settings.title }}</h3>
+      <p class="s_title">{{ section.settings.s_title }}</p>
+      <p class="d_title">{{ section.settings.d_title }}</p>
+    </div>
+
+    <div class="c_btn">
+      <a href="{{ section.settings.btn_url }}" class="action_btn">{{ section.settings.btn_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bg Blur",
+  "settings": [
+  {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Couleur fond Bouton",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur Texte Bouton",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Most Wanted"
+    },
+    {
+      "type": "text",
+      "id": "s_title",
+      "label": "Sous Titre",
+      "default": "Gotyu period beachwear launching on sunday 23th of may at 6PM"
+    },
+    {
+      "type": "text",
+      "id": "d_title",
+      "label": "Description",
+      "default": "Limited stock"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "URL bouton"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Libelle bouton",
+      "default": "join the waiting list now"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bg Blur"
+    }
+  ]
+}
+{% endschema %}

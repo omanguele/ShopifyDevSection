@@ -1,0 +1,240 @@
+<style>
+    #shopify-section-{{ section.id }} #faqsection240123 {
+        width: 100%;
+        height: 100%;
+        transition: opacity .25s ease-in-out;
+        min-height: 30px;
+        font-family: 'Circular Std Book', sans-serif;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container {
+        max-width: 1120px;
+        width: 100%;
+        padding: 2.5rem 1.5rem;
+        background-color: {{ section.settings.bg-color }};
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .title {
+        margin-bottom: 2rem;
+        margin-top: 0;
+        line-height: 1.5;
+        font-weight: 300;
+        font-size: 1.1rem;
+        color: {{ section.settings.title-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item {
+        border-top: 1px solid {{ section.settings.border-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details {
+        display: block;
+        overflow: hidden;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details summary {
+        list-style: none;
+        display: block;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details summary::after {
+        display: block;
+        list-style: none;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details summary::-webkit-details-marker {
+        display: none;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item .faq-item-head {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-item .faq-item-head .question {
+        cursor: pointer;
+        padding: 1.5rem 0;
+        margin: 0;
+        color: {{ section.settings.question-color }};
+        line-height: 1.5;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-item .faq-item-head .open, 
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-item .faq-item-head .close {
+        font-size: 1.5rem;
+        line-height: 1;
+        padding-left: .6rem;
+        display: inline-block;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-item .faq-item-head .open {
+        display: none;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-item .faq-item-body .response {
+        padding-bottom: 1.5rem;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-item .faq-item-body .response p {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.5;
+        font-weight: 400;
+        font-size: 1rem;
+        color: {{ section.settings.response-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details[open] {
+        overflow: inherit;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details[open] summary ~ *{
+        animation: sweep .6s ease-in-out;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details.closing  summary ~ *{
+        animation: unsweep .6s ease-in-out;
+    }
+    
+    @keyframes sweep {
+        0%    {opacity: 0;}
+        100%  {opacity: 1;}
+    }
+    
+    @keyframes unsweep {
+        0%    {opacity: 1;}
+        100%  {opacity: 0;}
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details[open] > summary .faq-item-head  .open {
+        display: inherit;
+    }
+    
+    #shopify-section-{{ section.id }} #faqsection240123 .faq-container .faq-item details[open] > summary .faq-item-head  .close {
+        display: none;
+    }
+    
+    @media only screen and (min-width: 991px) {
+        #shopify-section-{{ section.id }} #faqsection240123 .faq-container .title {
+            font-size: 1.5rem;
+        }
+    }
+  </style>
+  <section id="faqsection240123">
+      <div class="faq-container">
+          <h3 class="title">{{ section.settings.title }}</h3>
+          {% for block in section.blocks %}
+            <div class="faq-item">
+                <details>
+                    <summary>
+                        <div class="faq-item-head">
+                                <div class="question">{{ block.settings.faq-title }}</div>
+                                <span class="open">−</span>
+                                <span class="close">+</span>
+                        </div>
+                    </summary>
+                    <div class="faq-item-body">
+                        <div class="response">
+                            <p>
+                                {{ block.settings.faq-desc }}
+                            </p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+          {% endfor %}
+      </div>
+  </section>
+  
+  <script>
+      const details = document.querySelectorAll("#shopify-section-{{ section.id }} #faqsection240123 details");
+      details.forEach((detail) => {
+          detail.addEventListener("click", function(e) {
+              if (detail.hasAttribute("open")) { 
+                  e.preventDefault(); 
+                  detail.classList.add("closing"); 
+                  setTimeout(() => { 
+                      detail.removeAttribute("open"); 
+                      detail.classList.remove("closing");
+                  }, 400);
+              }
+          });
+      })
+  
+  </script>
+  {% schema %}
+    {
+      "name": "FAQ Section",
+      "blocks": [
+        {
+          "type": "accordion",
+          "name": "Accordion",
+          "settings": [
+            {
+              "type":"text",
+              "id":"faq-title",
+              "label":"Titre",
+              "default":"What’s the difference between the VIO405™ Teeth Whitening Kit and PAP+ Strips?"
+            },
+            {
+              "type":"textarea",
+              "id":"faq-desc",
+              "label":"Description",
+              "default":"The VIO405 Teeth Whitening Kit offers a higher percentage of PAP, Hydroxyapatite, and Potassium Citrate for greater results with the addition of an LED Light activator. The PAP+ Strips are a clean and convenient on-the-go whitening solution for whitening wherever you are."
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur de titre",
+          "default":"#1c1c1e"
+        },
+        {
+          "type":"color",
+          "id":"question-color",
+          "label":"Couleur de question",
+          "default":"#1c1c1e"
+        },
+        {
+          "type":"color",
+          "id":"response-color",
+          "label":"Couleur de réponse",
+          "default":"#636366"
+        },
+        {
+          "type":"color",
+          "id":"border-color",
+          "label":"Couleur de bordure",
+          "default":"#f2f2f7"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Titre",
+          "default":"Got questions? We’ve got answers"
+        }
+      ],
+      "presets": [
+        {
+          "name": "FAQ Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

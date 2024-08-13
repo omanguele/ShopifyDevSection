@@ -1,0 +1,153 @@
+<style>
+    #shopify-section-{{ section.id }} #iconsection080323_2 {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding: 40px;
+      background-color: {{ section.settings.bg-color }}
+  }
+
+  #shopify-section-{{ section.id }} #iconsection080323_2  .wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 50px;
+      padding: 30px 20px;
+  }
+
+  #shopify-section-{{ section.id }} #iconsection080323_2  .wrapper .wrap_item {
+      overflow: hidden;
+      display: flex;
+      justify-content: center ;
+      flex-direction: column;
+      align-self: flex-start;
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} #iconsection080323_2 .wrap_item .item_image {
+      width: 100%;
+      height: 150px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} #iconsection080323_2 .wrap_item .item_image img {
+      max-width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} #iconsection080323_2 .wrap_item .item_title {
+      font-size: 22px;
+      font-weight: bold;
+      font-style: normal;
+      line-height: 1.5;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: {{ section.settings.text-color }}
+  }
+
+  #shopify-section-{{ section.id }} #iconsection080323_2 .wrap_item .item_desc {
+      font-size: 16px;
+      font-weight: 300;
+      font-style: normal;
+      color: {{ section.settings.text-color }}
+  }
+
+  @media only screen and (max-width: 1200px) {
+      #shopify-section-{{ section.id }} #iconsection080323_2  .wrapper {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          padding: 30px 10px;
+      }
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #iconsection080323_2  .wrapper {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          padding: 30px 0;
+      }
+
+      #shopify-section-{{ section.id }} #iconsection080323_2 {
+          padding: 40px 20px;
+      }
+
+      #shopify-section-{{ section.id }} #iconsection080323_2 .wrap_item .item_title {
+          font-size: 18px;
+      }
+      #shopify-section-{{ section.id }} #iconsection080323_2 .wrap_item .item_desc {
+          font-size: 14px;
+      }
+
+      #shopify-section-{{ section.id }} #iconsection080323_2 .wrap_item .item_image {
+          height: 130px;
+      }
+
+  }
+</style>
+
+<section id="iconsection080323_2">
+  <div class="wrapper">
+    {% for block in section.blocks %}
+      <div class="wrap_item">
+        <div class="item_image">
+          <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+        </div>
+        <h3 class="item_title">{{ block.settings['item-title'] }}</h3>
+        <p class="item_desc">{{ block.settings['item-desc'] }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Section Icone",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "item-desc",
+          "label": "Description",
+          "default": "Retrait garantie en 2h"
+        },
+        {
+          "type": "text",
+          "id": "item-title",
+          "label": "Titre",
+          "default": "Lorem ipsum dolor sit amet consectetur."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Couleur du texte",
+      "default": "#000"
+    }
+  ],
+     "presets":[
+        {
+          "name":"Icone section"
+        }
+     ]
+}
+{% endschema %}

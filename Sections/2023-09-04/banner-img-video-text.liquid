@@ -1,0 +1,265 @@
+<style>
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 {
+      background-color: {{ section.settings.bg_color }};
+      position: relative;
+      width: 100%;
+      padding: 15px 30px;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_container {
+      max-width: 1234px;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: {{ section.settings.radius_section }}px;
+      box-shadow: 0 0 #0000,0 0 #0000,0 25px 50px -12px rgba(0,0,0,.25);
+      overflow: hidden;
+      transform: translateZ(0);
+      transition: transform 1s cubic-bezier(0,.51,.25,1);
+      background-color: {{ section.settings.bg_color }};
+      max-height: 700px;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_container video {
+      object-fit: cover;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay {
+      max-width: 90%;
+      width: 600px;
+      z-index: 2;
+      position: absolute;
+      color: {{ section.settings.text_color }};
+      padding: 40px;
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+      bottom: 0;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay.left {
+      left: 0;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left !important;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay.right {
+      right: 0;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: right !important;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay.center {
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: center;
+      align-items: center;
+      text-align: center !important;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay h2 {
+      font-size: clamp(22px,3vw,35px);
+      line-height: 100%;
+      max-width: 40rem;
+      text-shadow: .8rem .8rem 1.2rem rgba(0,0,0,.08);
+      text-transform: uppercase;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay p {
+      font-size: 13px;
+      max-width: 400px;
+      text-shadow: 0 0 .8rem rgba(0,0,0,.08);
+      line-height:    19.5px;
+      margin: 5px 0;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay a {
+      backdrop-filter: saturate(180%) blur(1rem);
+      background-color: {{ section.settings.btn_bg_color }};
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: {{ section.settings.radius_btn }}px;
+      box-shadow: 0 0 20px hsla(0,0%,5%,.3);
+      font-size: clamp(10px,3vw,15px);
+      text-transform: uppercase;
+      padding: 9px 18px;
+      transition: all .2s ease-out;
+      color: {{ section.settings.btn_text_color }};
+      margin-bottom: 5px;
+  }
+  #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay a:hover {
+      transform: translateY(-.5rem) !important;
+      background-color: {{ section.settings.hover_btn_bg_color }} !important;
+      color: {{ section.settings.hover_btn_text_color }};
+  }
+      #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_container:hover  {
+          transform: translateZ(0) scale(1.02);
+      }
+      @media (max-width: 599px) {
+          #shopify-section-{{ section.id }} #bannerimgvideo7282409031 {
+              padding: 10px 20px;
+          }
+      }
+      @media (max-width: 1023px) {
+          #shopify-section-{{ section.id }} #bannerimgvideo7282409031 .bannerimgvideo7282409031_overlay {
+              padding: 30px;
+              gap: 5px;
+          }
+      }
+</style>
+
+<section id="bannerimgvideo7282409031">
+  <div class="bannerimgvideo7282409031_container">
+    <div class="bannerimgvideo7282409031_overlay {{ section.settings.overlay_alignment }}">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+      {% if section.settings.lbl_btn_1 != blank %}
+        <a href="{{ section.settings.url_btn_1 }}">
+          <span>{{ section.settings.lbl_btn_1 }}</span>
+        </a>
+      {% endif %}
+      {% if section.settings.lbl_btn_2 != blank %}
+        <a href="{{ section.settings.url_btn_2 }}">
+          <span>{{ section.settings.lbl_btn_2 }}</span>
+        </a>
+      {% endif %}
+    </div>
+    <video
+      poster="{{ section.settings.image | img_url : "master" }}"
+      playsinline=""
+      loop=""
+      muted=""
+      autoplay=""
+      src="{{ section.settings.video.sources[1].url }}"
+    ></video>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner Img Video",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Bg Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type":"color",
+      "id":"btn_text_color",
+      "label":"Color btn text",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"btn_bg_color",
+      "label":"Color btn bg",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"hover_btn_bg_color",
+      "label":"Hv Color btn bg",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"hover_btn_text_color",
+      "label":"Hv Color btn text",
+      "default":"#000"
+    },
+    {
+      "type":"video",
+      "id":"video",
+      "label":"Video",
+      "info": "Ne pas renseigner la video pour afficher l'image"
+    },
+    {
+      "type":"image_picker",
+      "id":"image",
+      "label":"Image",
+      "info": "Sert de poster au cas ou la video est renseignée"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Lounge"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Comfort. All Day. Every Day."
+    },
+    {
+      "type":"text",
+      "id":"lbl_btn_1",
+      "label":"Libelle bouton 1",
+      "default":"Shop women"
+    },
+    {
+      "type":"url",
+      "id":"url_btn_1",
+      "label":"URL bouton 1"
+    },
+    {
+      "type":"text",
+      "id":"lbl_btn_2",
+      "label":"Libelle bouton 2",
+      "default":"Shop men"
+    },
+    {
+      "type":"url",
+      "id":"url_btn_2",
+      "label":"URL bouton 2"
+    },
+    {
+      "type": "number",
+      "id": "radius_section",
+      "label": "Radius Section",
+      "default": 20,
+      "info": "En Pixel"
+    },
+    {
+      "type": "number",
+      "id": "radius_btn",
+      "label": "Radius Btn",
+      "default": 60,
+      "info": "En Pixel"
+    },
+    {
+      "type": "select",
+      "id": "overlay_alignment",
+      "label": "Overlay alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Img Video"
+    }
+  ]
+}
+{% endschema %}

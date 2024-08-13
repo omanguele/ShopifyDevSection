@@ -1,0 +1,141 @@
+<style>
+  #shopify-section-{{section.id}} #incrementnumber {
+      width: 100%;
+  }
+  #shopify-section-{{section.id}} #incrementnumber .incrementnumber_container *{
+    margin: 0!important;
+    line-height: normal!important;
+  }
+  #shopify-section-{{section.id}} #incrementnumber .incrementnumber_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+  }
+  #shopify-section-{{section.id}} #incrementnumber .incrementnumber_container_item {
+      width: 33.333%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px 5px;
+  }
+  #shopify-section-{{section.id}} #incrementnumber .incrementnumber_container_item_heading {
+      font-size: 40px;
+      font-weight: 600;
+      color: {{ section.settings.text_color }};
+  }
+  #shopify-section-{{section.id}} #incrementnumber  .incrementnumber_container_item_desc{
+      font-size: 21px;
+      margin-top: 10px;
+      font-weight: 300;
+      text-align: center;
+      color: {{ section.settings.text_color }};
+  }
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{section.id}} #incrementnumber .incrementnumber_container_item_heading {
+          font-size: 20px;
+      }
+      #shopify-section-{{section.id}} #incrementnumber  .incrementnumber_container_item_desc{
+          font-size: 13px;
+          margin-top: 5px;
+      }
+  }
+</style>
+
+<section id="incrementnumber">
+  <div class="incrementnumber_container">
+    {% for block in section.blocks %}
+      <div class="incrementnumber_container_item">
+        <h2 class="incrementnumber_container_item_heading">
+          {{ block.settings.prefix -}}
+          <span class="increment_value" data-increment="{{ block.settings.value }}">0</span> {{ block.settings.sufix }}
+        </h2>
+        <p class="incrementnumber_container_item_desc">{{ block.settings.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+   let box = document.querySelector('#shopify-section-{{section.id}} #incrementnumber');
+   let options = {
+     rootMargin: '0px',
+     threshold: 0.5
+   };
+
+   let observer = new IntersectionObserver(function(entries) {
+     entries.forEach(function(entry) {
+       if (entry.isIntersecting) {
+           increment();
+         observer.unobserve(entry.target);
+       }
+     });
+   }, options);
+
+  observer.observe(box);
+
+   function increment() {
+       const incrementValues = document.querySelectorAll('#shopify-section-{{section.id}} .increment_value');
+       incrementValues.forEach(incrementValue => {
+           let incrementValueNumber = parseInt(incrementValue.getAttribute('data-increment'));
+           let initValue = parseInt(incrementValue.innerHTML);
+           let incrementIntval = setInterval(() => {
+               incrementValue.innerHTML = initValue;
+               if (initValue >= incrementValueNumber) clearInterval(incrementIntval);
+               initValue++;
+           }, 30)
+       })
+   }
+</script>
+
+{% schema %}
+{
+  "name": "Increment Number",
+  "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "prefix",
+            "label": "Prefixe",
+            "default":"+"
+          },
+          {
+            "type": "number",
+            "id": "value",
+            "label": "Valeur",
+            "default":80
+          },
+          {
+            "type": "text",
+            "id": "sufix",
+            "label": "Suffixe",
+            "default":"%"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description",
+            "default":"Réussitte"
+          }
+        ]
+      }
+    ],
+  "settings": [
+    {
+      "type":"color",
+      "id":"text_color",
+      "label":"Couleur de texte",
+      "default":"#000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Increment Number"
+    }
+  ]
+}
+{% endschema %}

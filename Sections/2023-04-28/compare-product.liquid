@@ -1,0 +1,440 @@
+<style>
+  #shopify-section-{{ section.id }} #section-container001  {
+      width: 100%;
+      position: relative;
+    background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }} !important;
+      padding: 40px 20px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001   .titre{
+      color: black;
+      font-size: 22px!important;
+      margin: 0px !important;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      text-align: center;
+    color: {{ section.settings.title_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  img {
+      max-width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .descript{
+      font-size: 14px !important;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      margin-top: 10px;
+      margin: 0px !important;
+    color: {{ section.settings.subtitle_color }} !important;
+
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .select{
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #000;
+      padding: 10px 0;
+      font-size: 14px !important;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+  }
+
+
+  #shopify-section-{{ section.id }} #section-container001  .action_btn{
+      background-color: black;
+      width: 100%;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 16px !important;
+      color: #FFF;
+      display: block;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .action_btn:hover {
+      background-color: {{ section.settings.highlight_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .image {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .image.see_back > a .back_image {
+      display: block;
+  }
+
+
+  #shopify-section-{{ section.id }} #section-container001  .image.see_back > a .front_image {
+      display: none;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .back_image {
+      display: none;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 20px;
+      gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .wrapper .wrap_item {
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .details_wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 30px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .card {
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .card .image {
+      position: relative;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .card .image a {
+      display: block;
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .card .image .see_back,
+  #shopify-section-{{ section.id }} #section-container001  .card .image .see_front {
+      position: absolute;
+      padding: 5px;
+      font-size: 14px !important;
+      top: 5px;
+      right: 5px;
+      background-color: rgba(255,255,255,.3);
+      font-weight: 700 !important;
+      color: {{ section.settings.text_color }} !important !important;
+      width: auto !important;
+      cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .card .image .see_back:hover,
+  #shopify-section-{{ section.id }} #section-container001  .card .image .see_front:hover {
+      background-color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .image.see_back > .see_front  {
+      display: block !important;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .image.see_back > .see_back  {
+      display: none;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .card .image .see_front {
+      display: none;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .details {
+      width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .details .detail_item {
+      width: 100%;
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .detail_item_title {
+      font-weight: 500;
+      font-size: 16px !important;
+      text-transform: uppercase;
+      color: {{ section.settings.highlight_color }} !important;
+      margin-bottom: 10px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .detail_item_value {
+      margin: 0;
+      font-weight: 700;
+      font-size: 14px !important;
+  }
+
+  #shopify-section-{{ section.id }} #section-container001  .details .detail_item:nth-child(even) {
+      background-color: #f5F5F5;
+  }
+
+  @media screen and (min-width: 591px){
+    #shopify-section-{{ section.id }} #section-container001 .wrapper {
+        padding: 0px 0px;
+    }
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #section-container001 .wrapper {
+          padding: 0px;
+      }
+      #shopify-section-{{ section.id }} #section-container001  .wrap_item:last-child {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #section-container001  .details:last-child {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #section-container001  .wrapper {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+      }
+
+      #shopify-section-{{ section.id }} #section-container001  .details_wrapper {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #shopify-section-{{ section.id }} #section-container001  .action_btn{
+          font-size: 14px !important;
+          padding: 10px;
+      }
+
+      #shopify-section-{{ section.id }} #section-container001  .details .detail_item {
+          padding: 15px;
+      }
+  }
+</style>
+
+<section id="section-container001">
+  <div class="container">
+    <h1 class="titre">{{ section.settings.title }}</h1>
+    <p class="descript">{{ section.settings.subtitle }}</p>
+
+    <div class="wrapper"></div>
+
+    <div class="details_wrapper"></div>
+  </div>
+</section>
+
+<script>
+  
+  
+  
+  
+  
+        const wrapper = document.querySelector('#shopify-section-{{ section.id }} #section-container001 .wrapper');
+        const detailWrapper = document.querySelector('#shopify-section-{{ section.id }} #section-container001 .details_wrapper');
+        let selectedItem = [];
+        const data = [
+          {% for product in section.settings.products %}
+            {
+                id: "{{ product.id }}",
+                name: "{{product.title | escape}}",
+                url: "{{ product.url }}",
+                front_image: "{{ product.media[0] | img_url: "800x800" }}",
+                back_image: "{{ product.media[1] | img_url: "800x800" }}",
+                details: [
+                    {
+                        "name": "Hauteur de la culotte",
+                        "value" : "{{ product.metafields.custom.hauteur_de_la_culotte_ }}",
+                    },
+                    {
+                        "name": "Dos Echancré",
+                        "value" : "{{ product.metafields.custom.dos_echancr_ }}",
+                    },
+                    {
+                        "name": "Couverture des fesses",
+                        "value" : "{{ product.metafields.custom.couverture_des_fesses }}",
+                    },
+                    {
+                        "name": "Décolleté",
+                        "value" : "{{ product.metafields.custom.d_collet_ }}",
+                    },
+                    {
+                        "name": "Longueur",
+                        "value" : "{{ product.metafields.custom.longueur }}",
+                    },
+                    {
+                        "name": "Bretelles",
+                        "value" : "{{ product.metafields.custom.bretelles }}",
+                    },
+                    {
+                        "name": "Soutien gorge",
+                        "value" : "{{ product.metafields.custom.soutien_gorge }}",
+                    },
+                    {
+                        "name": "Tailles de bonnet",
+                        "value" : "{{ product.metafields.custom.tailles_de_bonnet }}",
+                    }
+                ]
+            },
+            {% endfor  %}
+        ];
+
+        let cardHtml = '';
+        let detailHtml = '';
+        limit = data.length < 3 ? data.length : 3
+        for(let i = 0; i < limit; i++){
+            cardHtml += setCard(data[i]);
+            detailHtml += setDetail(data[i]);
+            selectedItem.push(data[i].id);
+        }
+        wrapper.innerHTML = cardHtml;
+        detailWrapper.innerHTML = detailHtml;
+
+        function changeSelected() {
+            let cardHtml = '';
+            let detailHtml = '';
+            selectedItem.forEach((id, i) => {
+                let item = data.filter((d, y) => d.id === id);
+                cardHtml += setCard(item[0]);
+                detailHtml += setDetail(item[0]);
+            });
+            wrapper.innerHTML = cardHtml;
+            detailWrapper.innerHTML = detailHtml;
+            handleSelect();
+        }
+
+        function handleSelect() {
+            const selects = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #section-container001 .select'));
+            selects.forEach((select, index) => {
+                select.addEventListener('change', function(e) {
+                 
+                        selectedItem[index] = e.target.value;
+                    
+                    changeSelected();
+                    setBtn();
+                });
+            });
+        }
+
+        function setBtn() {
+            const wrapItems = Array.from(document.querySelectorAll('#shopify-section-{{ section.id }} #section-container001 .wrap_item'));
+            wrapItems.forEach((wrapItem, index) => {
+                wrapItem.querySelector('.see_back').addEventListener('click', function(e) {
+                    wrapItem.querySelector('.image').classList.add('see_back');
+                });
+
+                wrapItem.querySelector('.see_front').addEventListener('click', function(e) {
+                    wrapItem.querySelector('.image').classList.remove('see_back');
+                });
+            });
+        }
+        function setSelect(id) {
+            let selectHtml = '<select class="select" >';
+            data.forEach((d, i) => {
+                let selected = d.id == id ? 'selected' : '';
+                selectHtml += `
+                    <option value="${d.id}" ${selected}>${d.name}</option>
+                `;
+            });
+            selectHtml += '</select>';
+
+            return selectHtml;
+        }
+        function setCard(item) {
+            return `
+            <div class="wrap_item">
+                ${setSelect(item.id)}
+                <div class="card">
+                    <div class="image">
+                        <a href="${item.url}">
+                            <img src="${item.back_image}"  class="back_image"  alt="">
+                            <img src="${item.front_image}" class="front_image" alt="">
+                        </a>
+                        <span class="see_back">Vue Arrière</span>
+                        <span class="see_front">Vue Avant</span>
+                    </div>
+                    <a class="action_btn" href="${item.url}">ACHETER MAINTENANT</a>
+                </div>
+            </div>   
+            `;
+        }
+        function setDetail(item) {
+            let html = '<div class="details">';
+            for(let y = 0; y < item.details.length; y++){
+                html += `
+                        <div class="detail_item">
+                            <h5 class="detail_item_title">${item.details[y].name}</h5>
+                            <p class="detail_item_value">${item.details[y].value}</p>
+                        </div>
+            `;
+            }
+            html += '</div>';
+
+            return html;
+        }
+        handleSelect();
+        setBtn();
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Compare Product",
+  "settings": [
+    {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Couleur de fond",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "title_color",
+    "label": "Couleur de titre",
+    "default": "#000"
+  },
+    {
+    "type": "color",
+    "id": "subtitle_color",
+    "label": "Couleur de sous titre",
+    "default": "#000"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Couleur de texte",
+    "default": "#000"
+  },
+  {
+    "type": "color",
+    "id": "highlight_color",
+    "label": "Couleur mise en avant",
+    "default": "#FF4444"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Titre section",
+    "default":"lorem ipsum..."
+  },
+  {
+    "type": "textarea",
+    "id": "subtitle",
+    "label": "Sous titre section",
+    "default":"lorem ipsum..."
+  },
+    {
+    "type": "product_list",
+    "id": "products",
+    "label": "Produits à comparer"
+  }
+  ],
+"presets": [
+  {
+    "name": "Compare Product"
+  }
+]
+}
+{% endschema %}

@@ -1,0 +1,102 @@
+ <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+<style>
+
+  
+#shopify-section-{{ section.id }} #avisclient231103 {
+  font-family: "Poppins", sans-serif;
+  background-color: {{ section.settings.bg-color }};
+  height: 100%;
+  width: 100%;
+}
+#shopify-section-{{ section.id }} #avisclient231103 p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+#shopify-section-{{ section.id }} #avisclient231103 .container {
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  position: relative;
+  margin: auto;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .container h3 {
+  font-weight: bold;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .container .wrapper {
+  padding: 5px 10px 5px;
+  gap: 5px;
+}
+#shopify-section-{{ section.id }} #avisclient231103 .container .wrapper li {
+  list-style-type: square;
+  color: {{ section.settings.text-color }};
+  font-size: 13px;
+}
+
+
+</style>
+       <section id="avisclient231103">
+          <div class="container">
+            <h3> {{ section.settings.title }}</h3>
+            <ul class="wrapper">
+              {% for block in section.blocks %}
+              <li> <p> {{ block.settings.text }} </p>  </li>
+              {% endfor %}
+            </ul>
+          </div>
+    </section>
+
+{% schema %}
+{
+  "name": "Section Avis",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Benefice",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Renforce l'émail et soulage les gencives"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Couleur du texte",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Bénéfices :"
+    }
+    
+  ],
+     "presets":[
+        {
+          "name":"Section FAQ"
+        }
+     ]
+}
+{% endschema %}

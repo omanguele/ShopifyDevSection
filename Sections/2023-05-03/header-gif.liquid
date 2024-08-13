@@ -1,0 +1,205 @@
+<style>
+  #shopify-section-{{ section.id }} #headeargif  {
+      width: 100%;
+      background: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }} !important;
+      padding-top: 2px !important;
+      padding-bottom: 55px !important;
+      overflow: hidden;
+      padding-right: 40px;
+      padding-left: 30px;
+  }
+  #shopify-section-{{ section.id }} #headeargif  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+  #shopify-section-{{ section.id }} #headeargif   .tag {
+      display: none;
+  }
+  #shopify-section-{{ section.id }} #headeargif   .head_image {
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #headeargif   .head_image img {
+      max-width: 100%;
+  }
+  #shopify-section-{{ section.id }} #headeargif  .title {
+      font-size: 30px !important;
+      line-height: 1em !important;
+      letter-spacing: -.9px !important;
+      color: {{ section.settings.text_color }} !important;
+      text-transform: none !important;
+  }
+  #shopify-section-{{ section.id }} #headeargif  .desc {
+      font-size: 14px !important;
+      line-height: 1.8em !important;
+      letter-spacing: .3px !important;
+      color: {{ section.settings.text_color }} !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 10px;
+  }
+  #shopify-section-{{ section.id }} #headeargif   .action_btn {
+      display: block;
+      margin-top: 20px !important;
+      width: 100%;
+      font-size: 15px !important;
+      text-transform: none !important;
+      font-weight: 600 !important;
+      background-color: {{ section.settings.btn_bg_color }} !important;
+      color: {{ section.settings.btn_text_color }} !important;
+      width: 100% !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      height: 55px !important;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 1px;
+      border-radius: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+      #shopify-section-{{ section.id }} #headeargif   .head_text {
+          padding: 51px 320px 18px !important;
+      }
+      #shopify-section-{{ section.id }} #headeargif   .title {
+      font-size: 37px !important;
+  }
+  #shopify-section-{{ section.id }} #headeargif   .tag {
+          background: {{ section.settings.tag_bg_color }};
+          font-weight: bold;
+          text-decoration: none;
+          padding: 15px;
+          text-align: center;
+          font-size: 14px;
+          color: {{ section.settings.tag_text_color }};
+          display: inline-block;
+          border-radius: 10px;
+          min-width: 250px;
+          margin-bottom: 20px;
+      }
+      #shopify-section-{{ section.id }} #headeargif   .desc {
+      font-size: 16px !important;
+      }
+      #shopify-section-{{ section.id }} #headeargif   .head_image {
+          margin-top: -80px !important;
+          padding-top: -100px !important;
+          padding-left: 0 !important;
+          padding-right: 200px !important;
+          padding-left: 200px !important;
+      }
+  }
+</style>
+
+<section id="headeargif">
+  <div class="container">
+    <div class="head_image">
+      <img src="{{ section.settings.image | img_url: "master" }}" alt="">
+    </div>
+    <div class="head_text">
+      <div class="tag">{{ section.settings.tag_label }}</div>
+      <h3 class="title">{{ section.settings.title }}</h3>
+      <p class="desc">{{ section.settings.subtitle }}</p>
+      <a href="{{ section.settings.btn_url }}" class="action_btn">{{ section.settings.btn_label }}</a>
+      <p class="desc">
+        <span>{{ section.settings.description }}</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Header Gif",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "linear-gradient(180deg,rgba(103,23,205,1) 0%,rgba(0,0,0,1) 100%)"
+    },
+    {
+      "type": "color_background",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "btn_bg_color",
+      "label": "Couleur fond bouton",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur texte bouton",
+      "default": "#000"
+    },
+    {
+      "type": "color_background",
+      "id": "tag_bg_color",
+      "label": "Couleur fond Tag",
+      "default": "linear-gradient(90deg, rgba(76,65,250,1) 0%, rgba(126,23,190,1) 53%, rgba(70,5,124,1) 100%)"
+    },
+    {
+      "type": "color",
+      "id": "tag_text_color",
+      "label": "Couleur texte Tag",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image descriptive"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous titre",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Libelle bouton",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "URL bouton"
+    },
+    {
+      "type": "text",
+      "id": "tag_label",
+      "label": "Libelle Tag",
+      "default":"lorem ipsum..."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header Gif"
+    }
+  ]
+}
+{% endschema %}

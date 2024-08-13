@@ -1,0 +1,166 @@
+<style>
+  #shopify-section-{{ section.id }} #section-container004  {
+      position: relative;
+      background-color: {{ section.settings.bg_color }};
+      padding: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container004  .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container004   .detail{
+      width: 50%;
+      padding-right: 100px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container004   .image{
+      max-width: 50%;
+      width: 100%;
+
+  }
+
+  #shopify-section-{{ section.id }} #section-container004  img{
+      max-width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #section-container004  .titre{
+      color: {{ section.settings.title_color }};
+      font-size: 2rem;
+  }
+
+  #shopify-section-{{ section.id }} #section-container004  .description{
+      font-size: 17px;
+      color: {{ section.settings.subtitle_color }};
+  }
+
+  #shopify-section-{{ section.id }} #section-container004  .description2{
+      font-size: 17px;
+      color: {{ section.settings.description_color }};
+      padding-top: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #section-container004  .im-icon {
+      width: 100%;
+      margin-bottom: 5px;
+  }
+
+
+  #shopify-section-{{ section.id }} #section-container004  .icon {
+      width: 12%;
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #section-container004  .container {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+      }
+      #shopify-section-{{ section.id }} #section-container004   .image {
+          max-width: 100%;
+      }
+      #shopify-section-{{ section.id }} #section-container004   .detail{
+          width: 100%;
+      }
+      #shopify-section-{{ section.id }} #section-container004  .titre{
+          font-size: 1.5rem;
+      }
+
+      #shopify-section-{{ section.id }} #section-container004  .description{
+          font-size: 14px;
+      }
+
+      #shopify-section-{{ section.id }} #section-container004  .description2{
+          font-size: 14px;
+      }
+  }
+</style>
+
+<section id="section-container004">
+  <div class="container">
+    <div class="detail">
+      <div class="im-icon">
+        <img class="icon" src="{{ section.settings.icon | img_url: "master" }}" alt="">
+      </div>
+
+      <p class="description">{{ section.settings.subtitle }}</p>
+
+      <h1 class="titre">{{ section.settings.title }}</h1>
+      <p class="description description2 ">{{ section.settings.description }}</p>
+    </div>
+
+    <div class="image">
+      <img class="flyer" src="{{ section.settings.image | img_url: "master" }}" alt="">
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Text Ico Image",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#000"
+    },
+    {
+      "type": "color_background",
+      "id": "title_color",
+      "label": "Couleur titre",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "subtitle_color",
+      "label": "Couleur sous titre",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "description_color",
+      "label": "Couleur description",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous titre",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icone"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+      {
+        "name": "Text Ico Image"
+      }
+  ]
+}
+{% endschema %}

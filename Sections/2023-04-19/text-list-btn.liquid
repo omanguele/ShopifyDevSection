@@ -1,0 +1,220 @@
+<style>
+    #amtlistbfirst {
+        width: 100%;
+        font-size: 16px;
+  background-color: {{ section.settings.bg_color }};
+  color: {{ section.settings.text_color }} !important;
+        padding: 80px 20px;
+    }
+
+    #amtlistbfirst .icon-svg01{
+        height: 25px;
+        width: 25px;
+       color: {{ section.settings.highlight_color }}
+    }
+
+    #amtlistbfirst .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #amtlistbfirst  .icontext02{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    #amtlistbfirst .buttonsection02{
+       text-align: center;
+       margin-top: 50px;
+       width: 100%;
+    }
+
+    #amtlistbfirst .title{
+        font-weight: 900;
+        font-size: 35px;
+        text-transform: uppercase;
+        font-style: italic;
+      color: {{ section.settings.title_color }} !important;
+    }
+
+    #amtlistbfirst .subtitle{
+        margin: 30px 0;
+    }
+
+    #amtlistbfirst .button001{
+        background-color: {{ section.settings.highlight_color }} !important;;
+        padding: 16px 35px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 12px;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 900;
+        display: inline-block;
+    }
+
+    #amtlistbfirst .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    #amtlistbfirst .text001 {
+        max-width: 90%;
+    }
+
+
+    @media only screen and (max-width: 780px) {
+        #amtlistbfirst .list {
+            font-size: 13px;
+        }
+        #amtlistbfirst  .icontext02{
+            gap: 10px;
+        }
+        #amtlistbfirst .icon-svg01{
+            height: 20px;
+            width: 20px;
+        }
+
+        #amtlistbfirst .container {
+            text-align: left;
+        }
+        #amtlistbfirst {
+            font-size: 13px;
+            padding: 40px 25px;
+        }
+
+        #amtlistbfirst .title{
+            font-size: 25px;
+        }
+        #amtlistbfirst .button001{
+        padding: 10px;
+        font-size: 13px;
+        width: 100%;
+        display: block;
+    }
+    }
+</style>
+
+<section id="amtlistbfirst">
+  <div class="container">
+    <h1 class="title">{{ section.settings.title }}</h1>
+    <p class="subtitle">{{ section.settings.subtitle }}</p>
+
+    <div class="list">
+      {% for block in section.blocks %}
+        <div class="icontext02">
+          <div class="icon-svg01">
+            <svg
+              id="chek06"
+              class="check0006"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+
+          <div class="text001">
+            <p>{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="buttonsection02">
+      <a href="{{ section.settings.btn_url }}" class="button001">{{ section.settings.btn_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Text List Btn",
+  "blocks": [
+    {
+      "type": "line",
+      "name": "Ligne",
+      "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Texte",
+            "default":"Lorem ipsum"
+          }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur de titre",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Couleur mise en avant",
+      "default": "#FF4444"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre section",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous titre section",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Libelle bouton",
+      "default":"Je me lance"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Lien bouton"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text List Btn"
+    }
+  ]
+}
+{% endschema %}

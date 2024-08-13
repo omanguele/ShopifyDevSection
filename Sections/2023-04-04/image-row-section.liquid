@@ -1,0 +1,194 @@
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#shopify-section-{{ section.id }} #imagerow230405 {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+#shopify-section-{{ section.id }} #imagerow230405 .container {
+  display: flex;
+  width: 100%;
+  margin: 10px auto;
+  padding-top: 20px;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+#shopify-section-{{ section.id }} #imagerow230405 .container .header__section {
+  padding: 20px 0 20px;
+  width: 100%;
+  display: flex;
+  margin: auto
+}
+#shopify-section-{{ section.id }} #imagerow230405 .container .header__section h2 {
+  padding: 20px 0 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: {{ section.settings.title-color }}
+}
+#shopify-section-{{ section.id }} #imagerow230405 .container .footer {
+  padding: 30px 0 30px;
+}
+#shopify-section-{{ section.id }} #imagerow230405 .container .footer h3 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: {{ section.settings.text-color }}
+  font-size: 15px;
+}
+#shopify-section-{{ section.id }} #imagerow230405 .container .swiper-container {
+  width: 100%;
+  height: 270px;
+}
+#shopify-section-{{ section.id }} #imagerow230405 .swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+#shopify-section-{{ section.id }} #imagerow230405 .swiper-slide {
+  width: 1000px;
+  display: flex;
+}
+#shopify-section-{{ section.id }} #imagerow230405 .swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+</style>
+
+  
+ <section id="imagerow230405">
+      <div class="container">
+        <div class="header__section"><h2>{{ section.settings.title }}</h2></div>
+        <div class="swiper-container swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide">
+                <img src="{{ block.settings.image | img_url: "master" }}" alt="" />
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="footer">
+          <h3>Envie de rejoindre la communatute ecume ?
+          <br />
+          Enoyez-nous vos temoignages afin de partager vos experiences</h3>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper-container", {
+        grabCursor: true,
+        autoplay: {
+          delay: {{ section.settings.delay }},
+        },
+        loop: true,
+        speed: 300,
+        centeredSlides: true,
+        roundLengths: true,
+        coverflowEffect: {
+          rotate: 30,
+          slideShadows: true,
+        },
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1.2,
+            slidesPerColumn: 3,
+            spaceBetween: 10,
+          },
+          // when window width is >= 480px
+          768: {
+            slidesPerView: 2.8,
+            spaceBetween: 10,
+          },
+          // when window width is >= 640px
+          1024: {
+            slidesPerView: 3.6,
+            spaceBetween: 10,
+          },
+        },
+      });
+    </script>
+{% schema %}
+  {
+    "name": "Image row section",
+    "blocks": [
+        {
+          "type": "image",
+          "name": "Image",
+          "settings": [
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            }
+          ]
+        }
+    
+      ],
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#ffffff"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur du titre",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur du texte",
+        "default":"#5c5c5c"
+      },
+      {
+        "type":"number",
+        "id":"delay",
+        "label":"Duree de l'animation",
+        "default": 3000
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "abonnez vous et economisez !"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sous-titre",
+        "default": "Une cure de 3 mois est recommandee pour des resultats visibles"
+      }
+     
+    ],
+    "presets": [
+      {
+        "name": "Image row section"
+      }
+    ]
+  }
+{% endschema %}

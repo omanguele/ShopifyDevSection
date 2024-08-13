@@ -1,0 +1,488 @@
+<style>
+  #shopify-section-{{ section.id }} #loginsection180123 div:empty{
+    display:block;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 {
+    width: 100%;
+    height: 100vh;
+    font-family: AcherusGrotesque !important;
+    flex: 1 1 auto;
+    max-width: 100%;
+    position: static;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3 !important;
+    text-align: center;
+    letter-spacing: -.02em;
+    color: {{ section.settings.text-color }};
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container {
+      background: {{ section.settings.bg-color }};
+      position: relative;
+      width: 100%;
+      height: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .go-back {
+      top: 40px;
+      left: 30px;
+      position: absolute;
+      z-index: 1000;
+      background-color: transparent;
+      text-decoration: none;
+      cursor: pointer;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .go-back svg {
+     height: 24px;
+      width: 24px;
+      color: black;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .ctn-login {
+      max-width: 320px;
+      margin: auto;
+      top: 88px;
+      padding-top: 22px;
+      padding-bottom: 32px;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .ctn-image {
+      position: relative;
+      overflow: hidden;
+      flex: 1 0 auto;
+      max-width: 100%;
+      display: flex;
+      z-index: 0;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .ctn-image .ls-sizer {
+      padding-bottom: 100%;
+      transition: padding-bottom .2s cubic-bezier(.25,.8,.5,1);
+      flex: 1 0 0px;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .ctn-image  .ls-responsive-ctn{
+      width: 750px;
+      margin-left: -100%;
+      flex: 1 0 0px;
+      max-width: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .ctn-image .ls-image {
+      background-image: url("{{ section.settings.image | img_url:"master" }}");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} #loginsection180123  .container .lost-pass {
+      color: {{ section.settings.btn-lost-color }};
+      text-decoration: underline;
+      cursor: pointer;
+      background-color: transparent;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+   }
+
+
+ #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input {
+    position: relative;
+    margin-top: 20px;
+    min-height: 48px;
+    border-radius: 30px;
+    display: flex;
+    background: {{ section.settings.input-bg-color }};
+ }
+
+ #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input input {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border:none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    background: {{ section.settings.input-bg-color }};
+ }
+
+ #shopify-section-{{ section.id }} #loginsection180123 .send-btn {
+    background: {{ section.settings.btn-bg-color }};
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+ }
+
+ #shopify-section-{{ section.id }} #loginsection180123 .send-btn  svg {
+    width: 24px;
+    height: 24px;
+    color: {{ section.settings.btn-text-color }};
+ }
+
+ #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input input:focus {
+    border-top: 2px solid {{ section.settings.focus-border-color }};
+    border-left: 2px solid {{ section.settings.focus-border-color }};
+    border-bottom: 2px solid {{ section.settings.focus-border-color }};
+ }
+
+ #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input input:focus::placeholder {
+    color: transparent;
+ }
+
+ #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input input:focus ~ .send-btn  {
+    border-top: 2px solid {{ section.settings.focus-border-color }};
+    border-right: 2px solid {{ section.settings.focus-border-color }};
+    border-bottom: 2px solid {{ section.settings.focus-border-color }};
+ }
+
+ #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input input:focus ~ .send-btn  svg {
+    color: {{ section.settings.focus-border-color }};
+ }
+ #shopify-section-{{ section.id }} #loginsection180123 #lsb180123 {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s, opacity 1s linear;
+ }
+ #shopify-section-{{ section.id }} #loginsection180123 #lsb180123.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 1s linear;
+  }
+ #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123 .title {
+    font-size: 28.8px;
+    font-weight: 700;
+    font-style: normal;
+    color: rgba(0,0,0,.87);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123 .desc {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  @media only screen and (min-width: 960px){
+    #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123 .desc {
+        max-width: 50%;
+    }
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123 .ctn-video {
+    margin-top: 20px;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123 .ctn-video iframe {
+    height: 380px;
+    width: 100%;
+    border-radius: 30px;
+  }
+  @media only screen and (min-width: 960px){
+    #shopify-section-{{ section.id }} #loginsection180123 #cvsb180123 .ctn-video iframe {
+        height: 500px;
+        width: 900px;
+        border-radius: 50px;
+    }
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 .container .ctn-login .errors {
+    padding: 0 8px;
+    color: #ff5252;
+    text-align: left;
+    font-size: 12px;
+    line-height: 12px;
+    word-break: break-word;
+    margin-top: 8px;
+    word-wrap: break-word;
+    font-weight: 500;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: -1;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input input.active-errors {
+    border-top: 2px solid #ff5252 !important;
+    border-left: 2px solid #ff5252 !important;
+    border-bottom: 2px solid #ff5252 !important;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 .container .ctn-login .errors.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all .5s ease-in-out;
+  }
+  #shopify-section-{{ section.id }} #loginsection180123 .ctn-pass-input input.active-errors ~ .send-btn {
+    border-top: 2px solid #ff5252 !important;
+    border-right: 2px solid #ff5252 !important;
+    border-bottom: 2px solid #ff5252 !important;
+  }
+</style>
+<section id="loginsection180123">
+    <div class="container" bis_skin_checked="1">
+      <a class="go-back" href="{{ section.settings.back-url-btn }}">
+          <span>
+            {{ section.settings.back-icon-btn }}
+          </span>
+      </a>
+      <div id="lsb180123">
+        <div class="ctn-login" bis_skin_checked="1">
+          <div class="ctn-image" bis_skin_checked="1">
+              <div class="ls-sizer" bis_skin_checked="1"></div>
+              <div class="ls-image" bis_skin_checked="1"></div>
+              <div class="ls-responsive-ctn" bis_skin_checked="1"></div>
+          </div>
+          <span>{{ section.settings.desc }}</span>
+          <form id="pass-form">
+              <div class="ctn-pass-input" bis_skin_checked="1">
+                  <input type="text" id="pass-input" placeholder="{{ section.settings.input-placeholder }}">
+                  <button type="submit" class="send-btn">
+                    {{ section.settings.send-icon-btn }}
+                  </button>
+              </div>
+          </form>
+          <div class="errors" id="errors" bis_skin_checked="1">
+              {{ section.settings.error-msg }}
+          </div>
+        </div>
+      </div>
+      <div class="hide" id="cvsb180123" bis_skin_checked="1">
+          <h1 class="title">{{ section.settings.title-video }}</h1>
+          <p class="desc">{{ section.settings.desc-video }}</p>
+          <div class="ctn-video" bis_skin_checked="1">
+              <iframe src="{{ section.settings.url-video }}" title='{{ section.settings.title-video }}' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+          </div>
+      </div>
+      <a href="{{ section.settings.btn-url }}" id="lost-pass" class="lost-pass">{{ section.settings.btn-label }}</a>
+    </div>
+</section>
+<script type="text/javascript">
+  function createCookie(name, value, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = '; expires=' + date.toGMTString();
+    } else var expires = '';
+    document.cookie = name + '=' + value + expires + '; path=/';
+  }
+</script>
+<script type="text/javascript">
+   function getCookie(name) {
+      // Split cookie string and get all individual name=value pairs in an array
+      var cookieArr = document.cookie.split(";");
+
+      // Loop through the array elements
+      for(var i = 0; i < cookieArr.length; i++) {
+          var cookiePair = cookieArr[i].split("=");
+
+          /* Removing whitespace at the beginning of the cookie name
+          and compare it with the given string */
+          if(name == cookiePair[0].trim()) {
+              // Decode the cookie value and return
+              return decodeURIComponent(cookiePair[1]);
+          }
+      }
+
+      // Return null if not found
+      return null;
+  }
+</script>
+<script type="text/javascript">
+    var codeoutput = getCookie("input-form");
+    if ( codeoutput != "{{ section.settings.valid-pwd }}" ){
+      let passForm = document.querySelector('#shopify-section-{{ section.id }} #pass-form');
+      let passInput = document.querySelector('#shopify-section-{{ section.id }} #pass-input');
+      let errors = document.querySelector('#shopify-section-{{ section.id }} #loginsection180123 #errors');
+      const goodPass = "{{ section.settings.valid-pwd }}";
+
+      passForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          errors.classList.remove('active');
+          if(passInput.value === goodPass){
+              createCookie("input-form", goodPass , 1);
+              document.querySelector('#shopify-section-{{ section.id }} #loginsection180123 #lsb180123').classList.add('hide');
+              document.querySelector('#shopify-section-{{ section.id }} #loginsection180123 #cvsb180123').classList.remove('hide');
+          }else{
+              errors.classList.add('active');
+              passInput.classList.add('active-errors');
+          }
+      });
+    }
+    else{
+      document.querySelector('#shopify-section-{{ section.id }} #loginsection180123 #lsb180123').classList.add('hide');
+      document.querySelector('#shopify-section-{{ section.id }} #loginsection180123 #lost-pass').classList.add('hide');
+      document.querySelector('#shopify-section-{{ section.id }} #loginsection180123 #cvsb180123').classList.remove('hide');
+    }
+    
+</script>
+{% schema %}
+  {
+    "name": "Input Form Section",
+    "settings": [
+      {
+        "type":"header",
+        "content":"Thème Couleur"
+      },
+      {
+        "type":"color",
+        "id":"bg-color",
+        "label":"Couleur de fond",
+        "default":"#fece08"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"input-bg-color",
+        "label":"Couleur de fond du champ de saisir",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"btn-bg-color",
+        "label":"Couleur de fond du bouton",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"btn-text-color",
+        "label":"Couleur de texte du bouton",
+        "default":"#808080"
+      },
+      {
+        "type":"color",
+        "id":"focus-border-color",
+        "label":"Couleur de bordure au focus",
+        "default":"#1976d6"
+      },
+      {
+        "type":"color",
+        "id":"btn-lost-color",
+        "label":"Couleur du lien",
+        "default":"#000"
+      },
+      {
+        "type":"header",
+        "content":"Partie 1"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image"
+      },
+      {
+        "type":"textarea",
+        "id":"desc",
+        "label":"Description",
+        "default":"Pour démarrer wooblin', saisissez le mot de passe qui se trouve au dos de la carte de votre kit."
+      },
+      {
+        "type":"text",
+        "id":"input-placeholder",
+        "label":"Placeholder champ de saisir",
+        "default":"Entrer le mot de passe"
+      },
+      {
+        "type":"text",
+        "id":"btn-label",
+        "label":"Libellé bouton",
+        "default":"Mot de passe perdu ?"
+      },
+      {
+        "type":"text",
+        "id":"btn-url",
+        "label":"Lien bouton",
+        "default":"mailto:help+shortcake@thewoobles.com"
+      },
+      {
+        "type":"textarea",
+        "id":"send-icon-btn",
+        "label":"Icône bouton d'envoi"
+      },
+      {
+        "type":"text",
+        "id":"error-msg",
+        "label":"Message d'erreur",
+        "default":"Hum, ce n'est pas vrai. Vérifiez le mot de passe et réessayez."
+      },
+      {
+        "type":"text",
+        "id":"valid-pwd",
+        "label":"Mot de passe",
+        "default":"freecoder"
+      },
+      {
+        "type":"header",
+        "content":"Partie 2"
+      },
+      {
+        "type":"text",
+        "id":"title-video",
+        "label":"Titre vidéo",
+        "default":"Ces 7 Habitudes Toxiques Détruiront Votre Cerveau | H5 Motivation"
+      },
+      {
+        "type":"textarea",
+        "id":"desc-video",
+        "label":"Description vidéo",
+        "default":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsa in iure perferendis magnam nisi, aliquid ut autem suscipit nobis sed sequi quia similique corporis expedita voluptatem itaque hic veniam."
+      },
+      {
+        "type":"text",
+        "id":"url-video",
+        "label":"Lien vidéo",
+        "default":"https://www.youtube.com/embed/T68W3YBxEJ8"
+      },
+      {
+        "type":"header",
+        "content":"Autre"
+      },
+      {
+        "type":"textarea",
+        "id":"back-icon-btn",
+        "label":"Icône bouton retour"
+      },
+      {
+        "type":"url",
+        "id":"back-url-btn",
+        "label":"Lien bouton retour"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Input Form Section",
+        "category": "Custom Ss"
+      }
+    ]
+  }
+{% endschema %}

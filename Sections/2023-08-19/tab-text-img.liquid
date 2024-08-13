@@ -1,0 +1,486 @@
+<style>
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 20px 40px;
+      position: relative;
+      margin: 0 auto;
+      width: calc(100% - 20px);
+      max-width: 900px;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_heading {
+      font-style: normal;
+      font-weight: 750;
+      font-size: 55px;
+      line-height: 100.5%;
+      letter-spacing: .05em;
+      margin-bottom: 14px;
+      padding: 0;
+      word-break: break-word;
+      text-shadow: 3px 3px 0px {{ section.settings.border_color }};
+      -webkit-text-stroke: 1px {{ section.settings.border_color }};
+      color: {{ section.settings.heading_color }};
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_subheading {
+      color: {{ section.settings.heading_color }};
+      line-height: 1.2;
+      letter-spacing: 0;
+      padding: 0;
+      margin-bottom: 25px;
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_subheading p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 122%;
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header {
+      display: flex;
+      grid-gap: 15px;
+      margin-bottom: 20px;
+      align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item {
+      background: {{ section.settings.card_color }};
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      box-shadow: 4px 4px {{ section.settings.card_color }};
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item p {
+      line-height: 122%;
+      text-align: center;
+      margin: 0;
+      color: {{ section.settings.text_color }};
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item p:last-child {
+      font-size: 20px;
+      font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item.active {
+      border: solid 3px {{ section.settings.border_color }};
+      box-shadow: 4px 4px {{ section.settings.border_color }};
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body {
+      width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_item{
+      width: 100%;
+      margin: auto;
+      flex-direction: row-reverse;
+      padding: 10px 0;
+      text-align: center;
+      display: none;
+      position: relative;
+      animation: fadeIn .5s;
+      background-color: {{ section.settings.card_color }};
+      border: 3px solid {{ section.settings.border_color }};
+      box-shadow: 9px 9px 0 -5px {{ section.settings.border_color }};
+      border-radius: 22px;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_item.active {
+      display: flex;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_elt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_elt_item {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .img_head {
+      height: 200px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920  .img_subhead {
+      height: 70px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_elt_item p {
+      font-size: 40px;
+      font-weight: 750;
+      line-height: 100%;
+      padding: 0;
+      font-style: normal;
+      text-align: center;
+      margin: 0;
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_elt_item span {
+      font-size: 30px;
+      font-weight: 750;
+      line-height: 100%;
+      padding: 0;
+      font-style: normal;
+      text-align: center;
+      margin: 0;
+  }
+  @media (max-width: 768px) {
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_heading {
+          font-size: 35px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_container {
+          padding: 20px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_subheading {
+          margin-bottom: 10px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header {
+          padding: 0 10px 10px;
+          margin-bottom: 0;
+          width: 600px;
+          max-width: 100%;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item {
+          width: calc(50% - 8px);
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item p {
+          font-size: 13px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item p:last-child {
+          font-size: 18px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_item {
+          padding: 5px;
+          margin: 0;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .img_head {
+          height: auto;
+          width: 100%;
+          max-width: 150px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920  .img_subhead {
+          height: auto;
+          width: 100%;
+          max-width: 100px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_elt_item p {
+          font-size: 24px;
+      }
+      #shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_elt_item span {
+          font-size: 18px;
+      }
+  }
+  #shopify-section-{{ section.id }} #tabstextimgboms182920  hr {
+      background-color: {{ section.settings.border_color }};
+      width: 3px;
+      height: auto;
+      margin: 90px 0 0;
+  }
+  @keyframes fadeIn {
+      0% {
+          opacity: 0;
+          top: 40px;
+      }
+      100% {
+          opacity: 1;
+          top: 0px;
+      }
+  }
+</style>
+
+<section id="tabstextimgboms182920">
+  <div class="tabstextimgboms182920_container">
+    <div class="tabstextimgboms182920_head">
+      <h2 class="tabstextimgboms182920_heading">{{ section.settings.heading }}</h2>
+      <div class="tabstextimgboms182920_subheading">
+        {{ section.settings.subheading }}
+      </div>
+    </div>
+    <div class="tabstextimgboms182920_tabs_header">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'tab' -%}
+            <div class="tabstextimgboms182920_tabs_header_item {% if forloop.index == 1 %} active {% endif %}">
+              <p>{{ section.settings.head_text }}</p>
+              <p>{{ block.settings.tab_label }}</p>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    <div class="tabstextimgboms182920_tabs_body">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'tab' -%}
+            <div class="tabstextimgboms182920_tabs_body_item {% if forloop.index == 1 %} active {% endif %}">
+              <div class="tabstextimgboms182920_tabs_body_elt">
+                <div class="tabstextimgboms182920_tabs_body_elt_item">
+                  <img
+                    src="{{ block.settings.image_1_2 | img_url : "master"}}"
+                    alt=""
+                    class="img_head"
+                  >
+                </div>
+                <div class="tabstextimgboms182920_tabs_body_elt_item">
+                  <img
+                    src="{{ block.settings.image_2_2 | img_url : "master"}}"
+                    alt=""
+                    class="img_subhead"
+                  >
+                </div>
+                {%- for subblock in section.blocks -%}
+                  {% if subblock.type == 'text' %}
+                    {% assign subblocktab_label = subblock.settings.tab_label | downcase %}
+                    {% assign blocktab_label = block.settings.tab_label | downcase %}
+                    {% if subblocktab_label == blocktab_label and subblock.settings.div == '2' %}
+                      <div class="tabstextimgboms182920_tabs_body_elt_item">
+                        <p style="color: {{ block.settings.text_color_1_2 }};">{{ subblock.settings.text_1 }}</p>
+                        <span style="color: {{ block.settings.text_color_2_2 }};">{{ subblock.settings.text_2 }}</span>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <hr>
+              <div class="tabstextimgboms182920_tabs_body_elt">
+                <div class="tabstextimgboms182920_tabs_body_elt_item">
+                  <img
+                    src="{{ block.settings.image_1_1 | img_url : "master"}}"
+                    alt=""
+                    class="img_head"
+                  >
+                </div>
+                <div class="tabstextimgboms182920_tabs_body_elt_item">
+                  <img
+                    src="{{ block.settings.image_2_1 | img_url : "master"}}"
+                    alt=""
+                    class="img_subhead"
+                  >
+                </div>
+                {%- for subblock in section.blocks -%}
+                  {% if subblock.type == 'text' %}
+                    {% assign subblocktab_label = subblock.settings.tab_label | downcase %}
+                    {% assign blocktab_label = block.settings.tab_label | downcase %}
+                    {% if subblocktab_label == blocktab_label and subblock.settings.div == '1' %}
+                      <div class="tabstextimgboms182920_tabs_body_elt_item">
+                        <p style="color: {{ block.settings.text_color_1_1 }};">{{ subblock.settings.text_1 }}</p>
+                        <span style="color: {{ block.settings.text_color_2_1 }};">{{ subblock.settings.text_2 }}</span>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabheads = document.querySelectorAll('#shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_header_item');
+  const tabbodys = document.querySelectorAll('#shopify-section-{{ section.id }} #tabstextimgboms182920 .tabstextimgboms182920_tabs_body_item');
+  tabheads.forEach((tab, i) => {
+      tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          tab.classList.add('active');
+          tabbodys[i].classList.add('active');
+          tabheads.forEach((otab, y) => {
+              if (y !== i) {
+                  otab.classList.remove('active');
+                  tabbodys[y].classList.remove('active');
+              }
+          });
+      });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Tab Text Img",
+    "blocks": [
+    {
+    "type": "tab",
+      "name": "Tab",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab Label"
+        },
+        {
+          "type":"image_picker",
+          "id":"image_1_1",
+          "label":"Image 1 Div 1"
+        },
+        {
+          "type":"image_picker",
+          "id":"image_2_1",
+          "label":"Image 2 Div 1"
+        },
+        {
+          "type":"color",
+          "id":"text_color_1_1",
+          "label":"text color 1 Div 1",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"text_color_2_1",
+          "label":"text color 2 Div 1",
+          "default":"#000"
+        },
+        {
+          "type":"image_picker",
+          "id":"image_1_2",
+          "label":"Image 1 Div 2"
+        },
+        {
+          "type":"image_picker",
+          "id":"image_2_2",
+          "label":"Image 2 Div 2"
+        },
+        {
+          "type":"color",
+          "id":"text_color_1_2",
+          "label":"text color 1 Div 1",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"text_color_2_2",
+          "label":"text color 2 Div 1",
+          "default":"#000"
+        }
+      ]
+  },
+      {
+    "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab Label"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "text 1"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "text 2"
+        },{
+    "type": "select",
+    "id": "div",
+    "label": "Div",
+    "options": [
+      {
+        "value": "1",
+        "label": "1"
+      },
+      {
+        "value": "2",
+        "label": "2"
+      }
+    ],
+    "default": "1"
+  }
+      ]
+  }
+],
+    "settings": [
+      {
+      "type":"color_background",
+      "id":"bg_color",
+      "label":"Bg color",
+      "default":"linear-gradient(180deg, rgba(255, 145, 129, 1), rgba(254, 91, 124, 1) 49%, rgba(254, 91, 124, 1) 100%)"
+    },
+    {
+      "type":"color",
+      "id":"heading_color",
+      "label":"heading color",
+      "default":"#fff"
+    },
+    {
+      "type":"color",
+      "id":"text_color",
+      "label":"text color",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "id":"border_color",
+      "label":"border color",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "id":"card_color",
+      "label":"card color",
+      "default":"#fff"
+    },
+        {
+          "type": "text",
+          "id": "head_text",
+          "label": "head Text",
+          "default": "Comparer"
+        },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Sub Heading"
+    }
+    ],
+    "presets": [
+      {
+        "name": "Tab Text Img"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,316 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    #shopify-section-{{ section.id }} #mission-20230217-1 .XW-bg-over-images-heading {
+        position: relative;
+        z-index:2;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .XW-bg-over-images-heading:before {
+        background: url(https://cdn.shopify.com/s/files/1/0517/2409/1549/files/bg_2.png?v=1635227063);
+        display: block;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position: absolute;
+        z-index: -1;
+        background-repeat: round;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .XW-bg-over-image-heading-wrap {
+        padding: 130px 130px 100px;
+        text-align: center;
+        color: {{ section.settings.text-color }};
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .XW-bg-over-image-heading-wrap {
+            padding: 100px 130px;
+        }
+    }
+    @media (max-width: 1024px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .XW-bg-over-image-heading-wrap {
+            padding: 100px 50px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .XW-bg-over-image-heading-wrap {
+            padding: 100px 0 50px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimageshd h2 {
+        font-size: 70px;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0 0 20px;
+        color: {{ section.settings.title-color }};
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimageshd h2 {
+            font-size: 45px;
+            margin: 0 0 15px;
+        }
+    }
+    @media (max-width: 850px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimageshd h2 {
+            font-size: 40px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimageshd h2 {
+            font-size: 24px;
+            line-height: 30px;
+            margin: 0 0 10px;
+            padding: 0 22px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimageshd p {
+        font-size: 24px;
+        margin: 0;
+        line-height: normal;
+    }
+    @media (max-width: 1440px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimageshd p, 
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimagesBlockText p {
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimageshd p {
+            font-size: 16px;
+            padding: 0 22px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .BgOverImagesInner {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 0;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .overmgmn {
+        width: 25%;
+    }
+    @media (max-width: 749px){
+        .overmgmn {
+            width: auto;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .overmg img {
+        max-width: 50%;
+        width: 100%;
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .overmg img {
+            max-width: 65%;
+            margin: auto;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .BgOverImagesInner .slick-active .overmg img {
+            max-width: 80%;
+        }
+    }
+
+    #shopify-section-{{ section.id }} #mission-20230217-1 .mobile_viewport {
+        display: none!important;
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .desktop_viewport {
+            display: none!important;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .mobile_viewport {
+            display: block!important;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverImagesBlockEachmain.MobileViewBgIconsThere.mobile_viewport ul.slick-dots {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverImagesBlockEachmain.MobileViewBgIconsThere.mobile_viewport ul.slick-dots {
+            padding-top: 50px;
+        }
+    }
+
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .BgOverImagesInner .slick-active button {
+            background: {{ section.settings.dots-color }}!important;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverImagesBlockEachmain.MobileViewBgIconsThere.mobile_viewport button {
+            font-size: 0;
+            border: 0;
+            background: transparent;
+            display: block;
+            padding-top: 10px;
+        }
+    }
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverImagesBlockEachmain.MobileViewBgIconsThere.mobile_viewport ul.slick-dots li button {
+            font-size: 0;
+            background: 0 0;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            padding: 0;
+            border: 2px solid {{ section.settings.dots-color }};
+            margin: 0 2px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .slick-dots li.slick-active button:before,
+    #shopify-section-{{ section.id }} #mission-20230217-1 .slick-dots li button:before {
+        opacity: 0;
+        color: black;
+    }
+    #shopify-section-{{ section.id }} #mission-20230217-1 .slick-initialized .slick-slide{display: block;}
+    @media (max-width: 749px){
+        #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverimagesBlockText p {
+         display: none;
+      }
+   }
+   #shopify-section-{{ section.id }} #mission-20230217-1 .slick-dots li {
+      margin: 0 -2px;
+   }
+   @media (max-width: 749px){
+    #shopify-section-{{ section.id }} #mission-20230217-1 .BgOverImagesInner.slick-initialized.slick-slider.slick-dotted {
+         display: block;
+      }
+   }
+   @media (max-width: 749px){
+    #shopify-section-{{ section.id }} #mission-20230217-1 .bgOverImagesBlockEachmain.MobileViewBgIconsThere.mobile_viewport .slick-list.draggable {
+         padding: 0 90px!important;
+      }
+   }
+   @media (max-width: 749px){
+    #shopify-section-{{ section.id }} #mission-20230217-1 .BgOverImagesInner .slick-track {
+         display: flex;
+         align-items: center;
+      }
+   }
+   #shopify-section-{{ section.id }} #mission-20230217-1 .slick-dots {
+    position: initial;
+   }
+</style>
+<section id="mission-20230217-1" style="overflow: hidden;">
+    <div class="XW-bg-over-images-heading" section="XW-bg-over-images-heading" bis_skin_checked="1">
+        <div class="XW-bg-over-image-heading-wrap" bis_skin_checked="1">
+           <div class="bgOverimageshd" bis_skin_checked="1">
+              <h2>{{ section.settings.title }}</h2>
+              <p style="color:{{ section.settings.subtitle-color }}">{{ section.settings.subtitle }}</p>
+           </div>
+           <div class="bgOverImagesBlockEachmain desktop_viewport" bis_skin_checked="1">
+              <div class="BgOverImagesInner" bis_skin_checked="1">
+                {% for block in section.blocks %}
+                   <div class="overmgmn" bis_skin_checked="1">
+                      <div class="overmg" bis_skin_checked="1">
+                         <img sizes="100vw" src="{{ block.settings.img | img_url:"master" }}" loading="lazy" alt="" width="522">
+                      </div>
+                   </div>
+                {% endfor %}
+              </div>
+           </div>
+           <div class="bgOverImagesBlockEachmain MobileViewBgIconsThere mobile_viewport" bis_skin_checked="1">
+              <div class="BgOverImagesInner" bgovericonssliderwrapmobile="" bis_skin_checked="1">
+                  {% for block in section.blocks %}
+                    <div class="overmgmn" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide50" aria-describedby="slick-slide-control50" bis_skin_checked="1">
+                        <div class="overmg" bis_skin_checked="1">
+                        <img sizes="100vw" src="{{ block.settings.img | img_url:"master" }}" loading="lazy" alt="" width="522">
+                        </div>
+                    </div>
+                  {% endfor %}
+              </div>
+           </div>
+           <div class="bgOverimagesBlockText" bis_skin_checked="1">
+              {{ section.settings.desc }}
+           </div>
+        </div>
+     </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#shopify-section-{{ section.id }} #mission-20230217-1 .mobile_viewport .BgOverImagesInner').slick({
+      dots: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      centerPadding: '40px',    
+      centerMode: true,
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Image Text Section 1",
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+            {
+              "type": "image_picker",
+              "id": "img",
+              "label": "Image"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur de titre",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"subtitle-color",
+        "label":"Couleur de sous-titre",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"dots-color",
+        "label":"Couleur de pagination slider",
+        "default":"#fff"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre", 
+        "default":"4 STYLES DE MENUS DIFFÉRENTS"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sous-titre", 
+        "default":"Changez et personnalisez votre menu selon votre humeur du jour."
+      },
+      {
+        "type": "richtext",
+        "id": "desc",
+        "label": "Description", 
+        "default":"<p>Retrouvez toutes vos applications préférés avec la Xwatch Pro Élite</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name":"Image Text Section 1"
+      }
+    ]
+  }
+{% endschema %}

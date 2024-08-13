@@ -1,0 +1,263 @@
+<style>
+  #shopify-section-{{ section.id }} #sintavis {
+      width: 100%;
+      background-color: {{ section.settings.bg_color }} !important;
+      color: {{ section.settings.text_color }} !important;
+      padding: 60px 20px;
+  }
+  #shopify-section-{{ section.id }} #sintavis  .title {
+      font-size: 37px !important;
+      line-height: 1.1em !important;
+      letter-spacing: -.6px !important;
+      color: {{ section.settings.text_color }} !important;
+      text-transform: none !important;
+      font-weight: 700 !important;
+      text-align: center;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .container {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 30px;
+      margin-top: 50px;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .card {
+      background-color: {{ section.settings.card_color }} !important;
+      padding: 29px 40px 51px !important;
+      border-radius: 15px !important;
+      color: {{ section.settings.text_color }} !important;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #sintavis  .content {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 32px !important;
+      padding-bottom: 4px !important;
+      width: 100%;
+  }
+  #shopify-section-{{ section.id }} #sintavis  .stars {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .star  svg {
+      width: 20px;
+      height: 20px;
+      color: {{ section.settings.star_color }};
+  }
+  #shopify-section-{{ section.id }} #sintavis   .dat {
+      font-size: 14px !important;
+      line-height: 1.6em !important;
+      letter-spacing: .1px !important;
+      color: #383838bf !important;
+      text-transform: none !important;
+      font-weight: 500 !important;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .dat strong {
+      text-decoration: underline;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .dat span {
+      letter-spacing: 0.63px;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .message {
+      margin-top: 25px !important;
+      font-size: 17px !important;
+      line-height: 1.5em !important;
+      letter-spacing: .2px !important;
+      color: {{ section.settings.text_color }} !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .u_info {
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .image {
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      border-radius:50%;
+  }
+  #shopify-section-{{ section.id }} #sintavis   .image img {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} #sintavis  .name {
+      font-size: 18px !important;
+      line-height: 1.2em !important;
+      letter-spacing: .1px !important;
+      color: {{ section.settings.text_color }} !important;
+      text-transform: none !important;
+      font-weight: 700 !important;
+  }
+  #shopify-section-{{ section.id }} #sintavis  .post {
+      font-size: 16px !important;
+      line-height: 1.5em !important;
+      letter-spacing: .2px !important;
+      color: {{ section.settings.text_color }} !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      margin-top: 5px;
+  }
+  @media (max-width: 767px) {
+      #shopify-section-{{ section.id }} #sintavis     .card {
+          padding: 29px 10px 51px !important;
+          border-radius: 15px !important;
+      }
+      #shopify-section-{{ section.id }} #sintavis     .message {
+          font-size: 15px !important;
+      }
+      #shopify-section-{{ section.id }} #sintavis     .image {
+          width: 40px;
+          height: 40px;
+      }
+      #shopify-section-{{ section.id }} #sintavis     .u_info {
+          gap: 15px;
+      }
+      #shopify-section-{{ section.id }} #sintavis     .title {
+          font-size: 29px !important;
+      }
+  }
+</style>
+
+<section id="sintavis">
+  <h3 class="title">{{ section.settings.title }}</h3>
+  <div class="container">
+    {% for block in section.blocks %}
+      <div class="card">
+        <div class="content">
+          <div class="stars">
+            {% for i in (1..block.settings.nb_stars) %}
+              <span class="star">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            {% endfor %}
+          </div>
+          <p class="dat">
+            <strong>{{ block.settings.arobase }}</strong>
+            <span>•</span>
+            <span>{{ block.settings.date }}</span>
+          </p>
+          <p class="message">
+            {{ block.settings.message }}
+          </p>
+          <div class="u_info">
+            <div class="image">
+              <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+            </div>
+            <div class="text">
+              <h4 class="name">{{ block.settings.name }}</h4>
+              <p class="post">{{ block.settings.post }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sin Avis",
+  "blocks": [
+  {
+    "type": "block",
+    "name": "BLock",
+    "settings": [
+        {
+          "type": "range",
+          "id": "nb_stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "unit": "⭐",
+          "label": "Nombre d'étoiles",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "arobase",
+          "label": "@",
+          "default":"Loremipsum"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default":"Jan 25, 2023"
+        },
+        {
+          "type": "textarea",
+          "id": "message",
+          "label": "Message",
+          "default":"Lorem ipsum"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom",
+          "default":"Lorem ipsum"
+        },
+        {
+          "type": "text",
+          "id": "post",
+          "label": "Poste",
+          "default":"Dev"
+        }
+    ]
+  }
+],
+  "settings": [
+    {
+    "type": "color_background",
+    "id": "bg_color",
+    "label": "Couleur de fond",
+    "default": "#fff"
+  },
+  {
+    "type": "color_background",
+    "id": "card_color",
+    "label": "Couleur de carte",
+    "default": "#faf4e4a6"
+  },
+  {
+    "type": "color_background",
+    "id": "text_color",
+    "label": "Couleur de texte",
+    "default": "#0e0e0ebf"
+  },
+  {
+    "type": "color_background",
+    "id": "star_color",
+    "label": "Couleur étoile",
+    "default": "#ffcf0fbf"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Titre section",
+    "default":"lorem ipsum..."
+  }
+  ],
+  "presets": [
+    {
+      "name": "Sin Avis"
+    }
+  ]
+}
+{% endschema %}

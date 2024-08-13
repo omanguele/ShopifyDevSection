@@ -1,0 +1,210 @@
+<style>
+    #shopify-section-{{ section.id }} #videotextsection230224 {
+        width: 100%;
+        height: 100%;
+        font-size: 1rem;
+        color: {{ section.settings.text-color }};
+        padding: 30px 20px;
+        border: 5px solid {{ section.settings.border-color }};
+        border-right: 0 !important;
+        border-left: 0 !important;
+        background-color: {{ section.settings.bg-color }};
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+    
+    #shopify-section-{{ section.id }} #videotextsection230224 .container {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #shopify-section-{{ section.id }} #videotextsection230224 .container.reverse{
+        flex-direction: column-reverse;
+    }
+    
+    #shopify-section-{{ section.id }} #videotextsection230224 .container .video_container {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #videotextsection230224 .container .video_container  .content_video {
+        overflow: hidden;
+        padding: 0;
+        border: .5rem solid {{ section.settings.border-color-v }};
+        background-color: {{ section.settings.bg-color-v }};
+        height: auto;
+        max-width: 100%;
+        border-radius: 20px;
+        margin: 1.5rem 0;
+    }
+    
+    #shopify-section-{{ section.id }} #videotextsection230224 .container .video_container  .content_video  video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+    
+    #shopify-section-{{ section.id }} #videotextsection230224 .container .text_container {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #shopify-section-{{ section.id }} #videotextsection230224 .container .text_container p {
+        margin-bottom: 10px;
+        line-height: 1.25 !important;
+        font-size: {{ section.settings.fs-mobile }}px;
+    }
+    
+    #shopify-section-{{ section.id }} #videotextsection230224 .container .text_container p strong {
+        font-weight: 700;
+    }
+    
+    @media (min-width: 768px)
+    {
+        #shopify-section-{{ section.id }} #videotextsection230224 .container.reverse{
+            flex-direction: row-reverse;
+        }
+    
+        #shopify-section-{{ section.id }} #videotextsection230224 .container .video_container {
+            width: auto;
+        }
+    
+        #shopify-section-{{ section.id }} #videotextsection230224 .container .video_container  .content_video  {
+            max-width: 500px;
+        }
+    
+        #shopify-section-{{ section.id }} #videotextsection230224 .container .text_container {
+            width: 33.33333333%;
+            max-width: auto;
+        }
+    
+        #shopify-section-{{ section.id }} #videotextsection230224 .container .text_container p {
+            font-size: {{ section.settings.fs-desktop }}px;
+        }
+    }
+  </style>
+  <section id="videotextsection230224">
+      <div class="container {{ section.settings.video-position }}">
+          <div class="video_container">
+              <div class="content_video">
+                  <video class=" lazyloaded " controls="" autoplay="autoplay" loop="" muted="" playsinline="" poster="{{ section.settings.video-poster }}" preload="auto" data-expand="-10">
+                    {% if section.settings.video-url-webm != blank %}
+                      <source src="{{ section.settings.video-url-webm }}" type="video/webm">
+                    {% endif %}
+                    {% if section.settings.video-url-mp4 != blank %}
+                      <source src="{{ section.settings.video-url-mp4 }}" type="video/mp4">
+                    {% endif %}
+                  </video>
+              </div>
+          </div>
+          <div class="text_container">
+              {{ section.settings.desc }}
+          </div>
+      </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Text Video Section",
+      "settings": [
+        {
+            "type":"color",
+            "id":"bg-color",
+            "label":"Couleur de fond",
+            "default":"#5a4182"
+        },
+        {
+            "type":"color",
+            "id":"text-color",
+            "label":"Couleur de texte",
+            "default":"#fff"
+        },
+        {
+            "type":"color",
+            "id":"border-color",
+            "label":"Couleur de bordure section",
+            "default":"#c1a7e2"
+        },
+        {
+          "type":"number",
+          "id":"fs-desktop",
+          "label":"Taille de texte Desktop",
+          "default":23
+        },
+        {
+          "type":"number",
+          "id":"fs-mobile",
+          "label":"Taille de texte Mobile",
+          "default":18
+        },
+        {
+          "type":"richtext",
+          "id":"desc",
+          "label":"Description"
+        },
+        {
+          "type":"header",
+          "content":"Vidéo"
+        },
+        {
+            "type":"color",
+            "id":"bg-color-v",
+            "label":"Couleur de fond vidéo",
+            "default":"#fff"
+        },
+        {
+            "type":"color",
+            "id":"border-color-v",
+            "label":"Couleur de bordure vidéo",
+            "default":"#fff"
+        },
+        {
+            "type": "select",
+            "id": "video-position",
+            "label": "Position vidéo",
+            "options": [
+            {
+                "value": "",
+                "label": "Avant le Texte"
+            },
+            {
+                "value": "reverse",
+                "label": "Après le Texte"
+            }
+            ],
+            "default": ""
+        },
+        {
+          "type":"text",
+          "id":"video-poster",
+          "label":"Poster video",
+          "default":"https://cdn.musthaveideas.co.uk/videos/open-sesame/main-video/main-video.png"
+        },
+        {
+          "type":"text",
+          "id":"video-url-webm",
+          "label":"Video URL webm",
+          "default":"https://cdn.musthaveideas.co.uk/videos/open-sesame/main-video/main-video.webm"
+        },
+        {
+          "type":"text",
+          "id":"video-url-mp4",
+          "label":"Video URL mp4",
+          "default":"https://cdn.musthaveideas.co.uk/videos/open-sesame/main-video/main-video.mp4"
+        }
+      ],
+      "presets": [
+        {
+          "name":"Text Video Section"
+        }
+      ]
+    }
+  {% endschema %}

@@ -1,0 +1,243 @@
+<style>
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 {
+      padding: 80px 40px;
+      width: 100%;
+      position: relative;
+      background-color: {{section.settings.bg_color}};
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_container {
+      max-width: 1300px;
+      margin: 0 auto;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_box {
+      box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+      display: flex;
+      flex-wrap: wrap;
+      background-color: {{section.settings.box_color}};
+      padding: 50px 30px 80px 70px;
+      align-items: center;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_box > div {
+      width: 50%;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_title {
+      font-weight: 500;
+      font-size: 26px;
+      color: {{section.settings.title_color}};
+      margin: 0 0 20px;
+      display: block;
+      letter-spacing: 0em;
+      line-height: 1.2;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_desc,
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_item {
+      font-weight: 400;
+      letter-spacing: .025em;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      font-size: 15px;
+      color: {{section.settings.text_color}};
+      text-rendering: optimizeSpeed;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_box_right {
+      display: flex;
+      justify-content: flex-end;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare {
+      width: 25vw;
+      height: 25vw;
+      max-width: 100%;
+      position: relative;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare input[type="range"] {
+      -moz-appearance: none;
+      position: relative;
+      top: 10px;
+      left: 0;
+      background-color: #D8D8D8;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      line-height: 1.2;
+      border-radius: 2px;
+      font-size: 15px;
+      height: 5px;
+      cursor: pointer;
+      max-width: 100%;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare_image {
+      background-image: url("{{ section.settings.after_image | img_url: "master" }}");
+      background-size: cover;
+      position: relative;
+      font-size: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare_divisor {
+      overflow: hidden;
+      background-size: cover;
+      width: 50%;
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      border-right: 2px solid #fff;
+      background-image: url("{{ section.settings.before_image | img_url: "master" }}");
+  }
+
+  @media only screen and (max-width: 1200px) {
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 {
+          padding: 80px 15px;
+      }
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_container {
+          max-width: 97%;
+      }
+
+  }
+
+  @media only screen and (max-width: 780px) {
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_box {
+          flex-direction: column-reverse;
+          padding:  30px ;
+      }
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_box > div {
+          width: 100%;
+          text-align: center;
+      }
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_box_right {
+          justify-content: center;
+          margin-bottom: 49px;
+      }
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare {
+          width: 400px;
+          height: 400px;
+      }
+  }
+  @media only screen and (max-width: 480px) {
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare {
+          width: 300px;
+          height: 300px;
+      }
+  }
+
+  @media only screen and (max-width: 375px) {
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare {
+          width: 270px;
+          height: 270px;
+      }
+  }
+
+  @media only screen and (max-width: 350px) {
+      #shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare {
+          width: 80%;
+          height: 270px;
+      }
+  }
+</style>
+
+<div id="afterbeforedesc020111">
+  <div class="afterbeforedesc020111_container">
+    <div class="afterbeforedesc020111_box">
+      <div class="afterbeforedesc020111_box_left">
+        <h3 class="afterbeforedesc020111_title">{{ section.settings.title }}</h3>
+        <p class="afterbeforedesc020111_desc">
+          <em>{{ section.settings.subtitle }}</em>
+        </p>
+        {% for block in section.blocks %}
+          <p class="afterbeforedesc020111_item">❍ {{ block.settings.text }}</p>
+        {% endfor %}
+      </div>
+      <div class="afterbeforedesc020111_box_right">
+        <div class="afterbeforedesc020111_compare">
+          <div class="afterbeforedesc020111_compare_image">
+            <div class="afterbeforedesc020111_compare_divisor"></div>
+          </div>
+          <input type="range" min="0" max="100" value="50">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let compare = document.querySelector("#shopify-section-{{ section.id }} #afterbeforedesc020111 .afterbeforedesc020111_compare");
+  let divisor = compare.querySelector('.afterbeforedesc020111_compare_divisor');
+  let input = compare.querySelector('input[type="range"]');
+  input.addEventListener('input', function(e) {
+      divisor.style.width = e.target.value + '%';
+  });
+</script>
+
+{% schema %}
+{
+  "name": "After Before Desc",
+  "blocks": [
+      {
+      "type": "text",
+      "name": "Texte",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "2x plus rapide"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "box_color",
+      "label": "Couleur du box",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur de Titre",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de Texte",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "10x plus efficace qu'un coton jetable !"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous Titre",
+      "default": "Swipe de droite à gauche&nbsp;"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Image Avant"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "Image Apres"
+    }
+  ],
+  "presets": [
+    {
+      "name": "After Before Desc"
+    }
+  ]
+}
+{% endschema %}

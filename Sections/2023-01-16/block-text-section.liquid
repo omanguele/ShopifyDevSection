@@ -1,0 +1,48 @@
+<style>
+    #shopify-section-{{ section.id }} #blocktextsection160123 .joud-box {
+      background-color:{{ section.settings.bg-color }};
+      text-align:left;
+      padding:15px;
+      border-radius:15px;
+    }
+   
+    #shopify-section-{{ section.id }} #blocktextsection160123 .joud-box p{
+      font-family: "DIN Neuzeit Grotesk", sans-serif;
+      color:{{ section.settings.text-color }};
+    }
+  </style>
+  <section id="blocktextsection160123">
+    <div class="joud-box">
+      {{ section.settings.description }}
+    </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Block Text Section",
+      "settings": [
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#F6B7AB"
+        },
+        {
+          "type":"color",
+          "id":"text-color",
+          "label":"Couleur du texte",
+          "default":"#fff"
+        },
+        {
+          "type":"richtext",
+          "id":"description",
+          "label":"Description"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Block Text Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

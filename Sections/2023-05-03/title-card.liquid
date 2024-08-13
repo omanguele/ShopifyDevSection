@@ -1,0 +1,300 @@
+<style>
+   #shopify-section-{{ section.id }}  #titlecard3   {
+      width: 100%;
+      position: relative;
+      background-color: {{ section.settings.bg_color }} !important;
+      overflow: hidden;
+      padding: 80px 20px;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3   .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .title {
+      padding-left: 0 !important;
+      padding-right: 450px !important;
+      text-align: left;
+      width: 100%;
+      font-size: 30px !important;
+      line-height: 1em !important;
+      letter-spacing: -.3px !important;
+      color: {{ section.settings.title_color }}  !important;
+      text-transform: none !important;
+      font-weight: 700 !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3   img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3  .wrapper {
+      display: flex;
+      align-items: stretch;
+      flex-direction: row;
+      margin-top: 60px;
+      gap: 30px;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3  .card {
+      background-color: {{ section.settings.card_color }}  !important;
+      border-radius: 25px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3  .left {
+      width: 60%;
+      padding: 63px 30px 0 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .right {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3  .top_card {
+      padding: 42px 30px 0 !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3  .bottom_card {
+      padding: 42px 30px 44px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3 .left_tilte {
+      text-align: center;
+      font-size: 30px !important;
+      line-height: 1.23em !important;
+      letter-spacing: -.1px !important;
+      color: {{ section.settings.title_color }}  !important;
+      text-transform: none !important;
+      font-weight: 700;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3  .left_desc {
+      text-align: center;
+      margin-top: 15px !important;
+      font-size: 16px !important;
+      line-height: 1.2em !important;
+      letter-spacing: .3px !important;
+      color: {{ section.settings.text_color }}  !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      padding-top: 0 !important;
+      padding-left: 79px !important;
+      padding-right: 80px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3  .left_image{
+      margin-top: 30px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3 .right_tile {
+      text-align: left;
+      font-size: 23px !important;
+      line-height: 1.23em !important;
+      letter-spacing: -.1px !important;
+      color: {{ section.settings.title_color }}  !important;
+      text-transform: none !important;
+      font-weight: 700;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .right_desc {
+      margin-top: 10px !important;
+      font-size: 15px !important;
+      line-height: 1.2em !important;
+      letter-spacing: .3px !important;
+      color: {{ section.settings.text_color }}  !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 20px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3     .top_card_image {
+      margin-top: 30px !important;
+  }
+  @media only screen and (max-width: 780px) {
+       #shopify-section-{{ section.id }}  #titlecard3   {
+          padding: 100px 20px;
+      }
+       #shopify-section-{{ section.id }}  #titlecard3       .title {
+          padding-left: 40px !important;
+          padding-right: 90px !important;
+          font-size: 22px !important;
+          line-height: 1em !important;
+          letter-spacing: -.3px !important;
+          text-transform: none !important;
+          font-weight: 700 !important;
+      }
+       #shopify-section-{{ section.id }}  #titlecard3     .wrapper {
+          align-items: center;
+          flex-direction: column;
+          margin-top: 30px;
+          gap: 30px;
+      }
+       #shopify-section-{{ section.id }}  #titlecard3     .left {
+      width: 100%;
+      padding: 63px 20px 0 !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .right {
+      width: 100%;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .left_tilte {
+      text-align: left;
+      font-size: 32px !important;
+      line-height: 1.1em !important;
+      letter-spacing: -.1px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .left_desc {
+      font-size: 14px !important;
+      line-height: 1.2em !important;
+      letter-spacing: .3px !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 20px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .right_desc {
+      font-size: 14px !important;
+      line-height: 1.2em !important;
+      letter-spacing: .3px !important;
+      text-transform: none !important;
+      font-weight: 400 !important;
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 20px !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .top_card {
+      padding: 42px 20px 0 !important;
+  }
+   #shopify-section-{{ section.id }}  #titlecard3    .bottom_card {
+      padding: 42px 30px 44px !important;
+  }
+  }
+</style>
+
+<section id="titlecard3">
+  <div class="container">
+    <h2 class="title">
+      {{ section.settings.title }}
+    </h2>
+    <div class="wrapper">
+      <div class="left card">
+        <h3 class="left_tilte">{{ section.settings.title_card_1 }}</h3>
+        <p class="left_desc">{{ section.settings.desc_card_1 }}</p>
+        <img src="{{ section.settings.image_card_1 | img_url: "master" }}" alt="" class="left_image">
+      </div>
+      <div class="right">
+        <div class="top_card card">
+          <h3 class="right_tile">{{ section.settings.title_card_2 }}</h3>
+          <p class="right_desc">{{ section.settings.desc_card_2 }}</p>
+          <img src="{{ section.settings.image_card_2 | img_url: "master" }}" alt="" class="top_card_image">
+        </div>
+        <div class="bottom_card card">
+          <h3 class="right_tile">{{ section.settings.title_card_3 }}</h3>
+          <p class="right_desc">{{ section.settings.desc_card_3 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Title Card",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#000"
+    },
+    {
+      "type": "color_background",
+      "id": "card_color",
+      "label": "Couleur de carte",
+      "default": "#141414"
+    },
+    {
+      "type": "color_background",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#ffffffbf"
+    },
+    {
+      "type": "color_background",
+      "id": "title_color",
+      "label": "Couleur de texte",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre section",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "header",
+      "content": "Carte 1"
+    },
+    {
+      "type": "text",
+      "id": "title_card_1",
+      "label": "Titre Carte 1",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "textarea",
+      "id": "desc_card_1",
+      "label": "Description Carte 1",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_card_1",
+      "label": "Image Carte 1"
+    },
+    {
+      "type": "header",
+      "content": "Carte 2"
+    },
+    {
+      "type": "text",
+      "id": "title_card_2",
+      "label": "Titre Carte 2",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "textarea",
+      "id": "desc_card_2",
+      "label": "Description Carte 2",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_card_2",
+      "label": "Image Carte 2"
+    },
+    {
+      "type": "header",
+      "content": "Carte 3"
+    },
+    {
+      "type": "text",
+      "id": "title_card_3",
+      "label": "Titre Carte 3",
+      "default":"lorem ipsum..."
+    },
+    {
+      "type": "textarea",
+      "id": "desc_card_3",
+      "label": "Description Carte 3",
+      "default":"lorem ipsum..."
+    }
+  ],
+  "presets": [
+  {
+    "name": "Title Card"
+  }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,135 @@
+<style>
+    #icon-text-20230109 .product-single__more-info.product-single__more-info--bottom {
+      /*margin: 20px auto !important;*/
+      margin: 0 !important;
+    }
+    #icon-text-20230109 .product-single__more-info {
+      display: flex;
+      align-items: center;
+      font-size: .9em;
+      line-height: 1.2em;
+      padding: 5px 0;
+      margin-bottom: 10px;
+      overflow: auto;
+      max-width:440px
+    }
+    #icon-text-20230109 .product-single__more-info {
+      border: none!important;
+      padding: 0;
+      margin: 15px 0 0;
+      flex-direction: column;
+      align-items: flex-start!important;
+    }
+    @media screen and (max-width: 749px){
+      #icon-text-20230109 .product-single__more-info {
+          margin: 8px 0 10px!important;
+      }
+    }
+    @media screen and (max-width: 749px){
+      #icon-text-20230109 .product-single__more-info.product-single__more-info--bottom {
+          margin: 13px 0 0!important;
+      }
+    }
+  
+    #icon-text-20230109 .new-customer-info.product-risk-free {
+        background: {{ section.settings.bg-color }};
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        padding: 16px 30px;
+        margin: 0 0 20px!important;
+    }
+    #icon-text-20230109 .product-single__more-info .new-customer-info {
+        margin-top: 15px;
+        width: 100%;
+    }
+    @media screen and (max-width: 749px){
+      #icon-text-20230109 .new-customer-info.product-risk-free {
+          margin: 0 0 15px!important;
+      }
+    }
+  
+    #icon-text-20230109 a {
+        color: #111;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+    #icon-text-20230109 a {
+        color: #444;
+        text-decoration: none;
+    }
+    #icon-text-20230109 .new-customer-info.product-risk-free a {
+        align-items: center;
+        display: flex!important;
+        justify-content: center;
+    }
+    #icon-text-20230109 img {
+        max-width: 100%;
+        border: 0;
+    }
+    #icon-text-20230109 .new-customer-info.product-risk-free img {
+        max-width: 39px;
+        height: auto;
+    }
+    #icon-text-20230109 .product-single__more-info .new-customer-info a img {
+        width: 100%;
+        height: 100%;
+    }
+    #icon-text-20230109 .new-customer-info.product-risk-free span {
+        margin-left: 24px;
+        font-size: 15px;
+        font-weight: 700;
+        color: {{ section.settings.text-color }};
+    }
+  </style>
+  <section id="icon-text-20230109">
+    <div class="product-single__more-info product-single__more-info--bottom" bis_skin_checked="1">
+       <div class="new-customer-info product-risk-free" bis_skin_checked="1">
+          <a href="{{ section.settings.link }}" target="_blank" rel="noopener" aria-describedby="a11y-new-window-message">
+            <img src="{{ section.settings.icon | img_url:"master" }}">
+            <span>{{ section.settings.title }}</span>
+          </a>
+       </div>
+    </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Icon Text Section",
+      "settings": [
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#F8D3CD"
+        },
+        {
+          "type":"color",
+          "id":"text-color",
+          "label":"Couleur de texte",
+          "default":"#111"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Libellé",
+          "default":"New customers can try Modibodi risk free for 60 days"
+        },
+        {
+          "type":"image_picker",
+          "id":"icon",
+          "label":"Icône"
+        },
+        {
+          "type":"url",
+          "id":"link",
+          "label":"Lien"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Icon Text Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

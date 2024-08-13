@@ -1,0 +1,555 @@
+<style>
+    #shopify-section-{{ section.id }} #mission-20230111-1 footer {
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 footer#colophon {
+        display: table-row;
+        height: 1px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .style-color-xsdn-bg {
+        background-color: {{ section.settings.bg-footer }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container {
+        position: relative;
+        clear: both;
+        border: 0;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        position: relative;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row {
+        width: 100%;
+        table-layout: fixed;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .row-parent {
+        padding: 36px 36px 36px 36px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .single-h-padding {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .double-top-padding {
+        padding-top: 72px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .double-bottom-padding {
+        padding-bottom: 72px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-inner {
+        display: table-row;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-inner {
+        position: relative;
+        display: table;
+        table-layout: fixed;
+        height: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    @media (min-width: 960px){
+        #shopify-section-{{ section.id }} #mission-20230111-1 .row-inner {
+            margin-left: -36px;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .col-double-gutter > .row-inner {
+        margin-left: -72px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .col-lg-3{
+        padding: 36px 36px 36px 36px;
+        display: block;
+        height: auto;
+        width: 100%;
+        vertical-align: top;
+        position: relative;
+    }
+    @media (min-width: 960px){
+        #shopify-section-{{ section.id }} #mission-20230111-1 .col-lg-3{
+            display: table-cell;
+            height: 100%;
+        }
+    }
+    @media (min-width: 960px){
+        #shopify-section-{{ section.id }} #mission-20230111-1 .col-lg-3 {
+            width: 25%;
+        }
+    }
+    @media (min-width: 960px){
+        #shopify-section-{{ section.id }} #mission-20230111-1 .col-lg-3{
+            height: 0;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row .column_parent{
+        clear: both;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row div[class*=col-lg-].pos-top{
+        vertical-align: top;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-inner > div:not(.vc_helper) {
+        padding: 0px 0px 0px 36px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .col-double-gutter > .row-inner > div:not(.vc_helper) {
+        padding-left: 72px;
+        padding-right: 0px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .style-light {
+        color: #000000;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row .uncol {
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row .uncol {
+        overflow: visible;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row .uncoltable {
+        display: table;
+        table-layout: fixed;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    @media (min-width: 960px){
+        #shopify-section-{{ section.id }} #mission-20230111-1 .row .uncoltable {
+            min-height: 0 !important;
+        }
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row .uncell {
+        display: table-cell;
+        position: relative;
+        height: 100%;
+        vertical-align: inherit;
+        border: 0;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row .uncell.no-block-padding {
+        padding: 0px 0px 0px 0px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row div[class*=col-lg-].pos-top .uncell {
+        vertical-align: top;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row div[class*=col-lg-].align_left > .uncol > .uncoltable > .uncell > .uncont{
+        text-align: left;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row div[class*=col-lg-].pos-left > .uncol > .uncoltable > .uncell > .uncont {
+        margin: 0px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row .uncont > * {
+        position: relative;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .row-parent .half-internal-gutter .uncont > *{
+        margin-top: 18px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .row-parent .uncont > *:first-child{
+        margin-top: 0px !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .row-container .row-parent .uncont > *:first-child:not(.divider-wrapper):not(.edit-account) > *:first-child:not(.isotope-wrapper):not(.justified-wrapper):not(.index-wrapper):not(.edit-account){
+        margin-top: 0px !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .el-text {
+        clear: both;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .heading-text.el-text > *:last-child {
+        margin-bottom: 0 !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .heading-text.el-text > *:first-child {
+        margin-top: 0 !important;
+        display: inline-block;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .style-light h5{
+        color: {{ section.settings.title-color }};
+        font-weight: 600;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .fontspace-123956 {
+        letter-spacing: .05em !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .fontsize-191542 {
+        font-size: 13px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .text-uppercase {
+        text-transform: uppercase;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .el-text + .clear {
+        margin-top: 0 !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .text-accent-color {
+        color: #000000 !important;
+        fill: #000000 !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 footer p, 
+    #shopify-section-{{ section.id }} #mission-20230111-1 footer li {
+        line-height: 1.7 !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 p{
+        font-size: 15px;
+        margin: 18px 0px 0px 0px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .uncode_text_column > *:first-child {
+        margin-top: 0px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .style-light a,
+    #shopify-section-{{ section.id }} #mission-20230111-1 .style-light p{
+        color: {{ section.settings.text-color }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 a {
+        outline: 0;
+        border: 0;
+        text-decoration: none;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 a {
+        background: transparent;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 ul {
+        list-style: none;
+    }
+
+    #shopify-section-{{ section.id }} #mission-20230111-1 .ge-flag-show {
+        display: block;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7 .screen-reader-response {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        word-wrap: normal !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .empty-space.empty-single {
+        padding-top: 36px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper.wpcf7-input-group {
+        display: flex;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper .wpcf7-inline-field {
+        width: 50%;
+        display: table-cell;
+        vertical-align: top;
+        padding: 0px 9px 0px 9px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper.wpcf7-input-group p {
+        padding: 0;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 form .wpcf7-inline-wrapper:nth-child(2) p {
+        margin-top: 0px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper .wpcf7-inline-field:first-child {
+        padding-left: 0px;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper.wpcf7-input-group .wpcf7-inline-field-text {
+        width: 99%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wrapper.wpcf7-input-group .wpcf7-inline-field-text {
+        padding-right: 3px;
+        width: calc(99% - 3px);
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper .wpcf7-inline-field > * {
+        margin-top: 0px !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-form-control-wrap {
+        position: relative;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7 input[type="email"]{
+        direction: ltr;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .input-underline input[type="email"]{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        background: none !important;
+        border-color: {{ section.settings.input-border-color }};
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .input-background input[type="email"]{
+        border-color: transparent;
+        box-shadow: none;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .form-no-labels .wpcf7-inline-wrapper input{
+        margin-top: 0;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper .wpcf7-inline-field input {
+        text-align: left;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper .wpcf7-inline-field input:not([type="checkbox"]), 
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper .wpcf7-inline-field input:not([type="radio"]) {
+        width: 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper.wpcf7-input-group .wpcf7-inline-field-text input {
+        height: 100%;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper.wpcf7-input-group > *:first-child input:not(.btn){
+        padding: 10px 15px 10px 15px
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper.wpcf7-input-group > *:first-child input:not(.btn-inset):not(.inset-input) {
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .wpcf7-inline-wrapper.wpcf7-input-group > *:first-child input:not(.btn):not(.inset-input) {
+        border-right: none !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .btn-accent {
+        color: {{ section.settings.btn-text-color }} !important;
+        background-color: {{ section.settings.btn-bg-color }} !important;
+        border-color: {{ section.settings.btn-border-color }} !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .btn {
+        padding: 13px 31px !important;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 input[type="submit"], 
+    #shopify-section-{{ section.id }} #mission-20230111-1 button[type="submit"] {
+        display: inline-block;
+        transition: color 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out;
+        text-align: center !important;
+        vertical-align: middle;
+        border-radius: 2px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-text-stroke: 0px;
+        width: auto;
+        box-shadow: none;
+        cursor: pointer;
+        -webkit-font-smoothing: antialiased;
+    }
+    #shopify-section-{{ section.id }} #mission-20230111-1 .btn:not(.btn-custom-typo):not(.btn-inherit){
+        font-weight: 500 !important;
+        letter-spacing: .02em;
+        text-transform: uppercase;
+    }
+    @media (max-width: 569px){
+        #shopify-section-{{ section.id }} #mission-20230111-1 .row-inner > div:not(.vc_helper) {
+            padding: 36px 0px 0px 0px;
+        }
+    }
+</style>
+<section id="mission-20230111-1">
+    <footer id="colophon" class="site-footer">
+        <div data-parent="true" class="vc_row style-color-xsdn-bg row-container" id="row-unique-10" data-section="9" bis_skin_checked="1">
+           <div class="row col-double-gutter double-top-padding double-bottom-padding single-h-padding full-width row-parent" data-imgready="true" bis_skin_checked="1">
+              <div class="wpb_row row-inner" bis_skin_checked="1">
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when "footer-text" %}
+                       <div class="wpb_column pos-top pos-left align_left column_parent col-lg-3 half-internal-gutter" bis_skin_checked="1">
+                          <div class="uncol style-light" bis_skin_checked="1">
+                             <div class="uncoltable" bis_skin_checked="1">
+                                <div class="uncell no-block-padding" bis_skin_checked="1">
+                                   <div class="uncont" bis_skin_checked="1">
+                                      <div class="vc_custom_heading_wrap " bis_skin_checked="1">
+                                         <div class="heading-text el-text" bis_skin_checked="1">
+                                            <h5 class="font-805234 fontsize-191542 fontspace-123956 text-uppercase"><span>{{ block.settings.title }}</span></h5>
+                                         </div>
+                                         <div class="clear" bis_skin_checked="1"></div>
+                                      </div>
+                                      <div class="uncode_text_column text-accent-color" bis_skin_checked="1">
+                                         <p><a href="mailto:{{ block.settings.email-address }}">{{ block.settings.email-address }}</a><br>
+                                            {{ block.settings.copyright }}
+                                         </p>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+
+                    {% when "footer-menu" %}
+                       <div class="wpb_column pos-top pos-left align_left column_parent col-lg-3 half-internal-gutter" bis_skin_checked="1">
+                          <div class="uncol style-light" bis_skin_checked="1">
+                             <div class="uncoltable" bis_skin_checked="1">
+                                <div class="uncell no-block-padding" bis_skin_checked="1">
+                                   <div class="uncont" bis_skin_checked="1">
+                                      <div class="vc_custom_heading_wrap " bis_skin_checked="1">
+                                         <div class="heading-text el-text" bis_skin_checked="1">
+                                            <h5 class="font-805234 fontsize-191542 fontspace-123956 text-uppercase"><span>{{ block.settings.title }}</span></h5>
+                                         </div>
+                                         <div class="clear" bis_skin_checked="1"></div>
+                                      </div>
+                                      <div class="uncode-wrapper uncode-list" bis_skin_checked="1">
+                                         <ul>
+                                            {%- for link in block.settings.menu.links -%}
+                                              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                                            {% endfor %}
+                                         </ul>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+
+                    {% when "footer-newsletter" %}
+                       <div class="wpb_column pos-top pos-left align_left column_parent col-lg-3 half-internal-gutter" bis_skin_checked="1">
+                          <div class="uncol style-light" bis_skin_checked="1">
+                             <div class="uncoltable" bis_skin_checked="1">
+                                <div class="uncell no-block-padding" bis_skin_checked="1">
+                                   <div class="uncont" bis_skin_checked="1">
+                                      <div class="vc_custom_heading_wrap " bis_skin_checked="1">
+                                         <div class="heading-text el-text" bis_skin_checked="1">
+                                            <h5 class="font-805234 fontsize-191542 fontspace-123956 text-uppercase"><span>{{ block.settings.title }}</span></h5>
+                                         </div>
+                                         <div class="clear" bis_skin_checked="1"></div>
+                                      </div>
+                                      <div class="wpcf7 js" id="wpcf7-f324-o1" lang="en-US" dir="ltr" bis_skin_checked="1">
+                                         <form action="/#wpcf7-f324-o1" method="post" class="wpcf7-form init input-underline form-no-labels mailchimp-ext-0.5.63" aria-label="Contact form" novalidate="novalidate" data-status="init">
+                                            <div class="wpcf7-inline-wrapper wpcf7-input-group" bis_skin_checked="1">
+                                               <p class="wpcf7-inline-field wpcf7-inline-field-text"><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="{{ block.settings.placeholder }}" value="" type="email" name="your-email"></span>
+                                               </p>
+                                               <p class="wpcf7-inline-field wpcf7-inline-field-btn"><input class="wpcf7-form-control has-spinner wpcf7-submit btn btn-accent btn-flat" type="submit" value="{{ block.settings.btn-label }}"><span class="wpcf7-spinner"></span>
+                                               </p>
+                                            </div>
+                                         </form>
+                                      </div>
+                                      <div class="empty-space empty-single desktop-hidden" bis_skin_checked="1"><span class="empty-space-inner"></span></div>
+                                      <div class="empty-space empty-half desktop-hidden" bis_skin_checked="1"><span class="empty-space-inner"></span></div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+
+                  {% endcase %}
+                {% endfor %}
+              </div>
+           </div>
+        </div>
+    </footer>
+</section>
+{% schema %}
+  {
+    "name": "Footer Section",
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "footer-text",
+        "name": "Footer text",
+        "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre bloc", 
+              "default":"Test"
+            },
+            {
+              "type": "text",
+              "id": "email-address",
+              "label": "Email address", 
+              "default":"test@test.com"
+            },
+            {
+              "type": "text",
+              "id": "copyright",
+              "label": "Copyright", 
+              "default":"© 2023 All rights reserved"
+            }
+        ]
+      },
+      {
+        "type": "footer-menu",
+        "name": "Footer menu",
+        "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre bloc", 
+              "default":"Test"
+            },
+            {
+              "type": "link_list",
+              "id": "menu",
+              "label": "Menu",
+              "default": "main-menu"
+            }
+        ]
+      },
+      {
+        "type": "footer-newsletter",
+        "name": "Footer Newsletter",
+        "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Titre bloc", 
+              "default":"Test"
+            },
+            {
+              "type": "text",
+              "id": "placeholder",
+              "label": "Placeholder",
+              "default":"YOUR EMAIL"
+            },
+            {
+              "type": "text",
+              "id": "btn-label",
+              "label": "Libellé bouton",
+              "default":"Sign Up"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type":"header",
+        "content":"Thème couleur"
+      },
+      {
+        "type":"color",
+        "id":"bg-footer",
+        "label":"Couleur de fond footer",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur de titre",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"input-border-color",
+        "label":"Couleur de bordure input",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"btn-text-color",
+        "label":"Couleur de texte bouton",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"btn-bg-color",
+        "label":"Couleur de fond bouton",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"btn-border-color",
+        "label":"Couleur de bordure bouton",
+        "default":"#000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer Section",
+        "category": "Custom ss"
+      }
+    ]
+  }
+{% endschema %}

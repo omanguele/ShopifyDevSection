@@ -1,0 +1,116 @@
+
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#shopify-section-{{ section.id }} #headerimagesection230405 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: {{ section.settings.bg-color }};
+}
+#shopify-section-{{ section.id }} #headerimagesection230405 .container {
+  width: 700px;
+  display: flex;
+  margin: 10px auto;
+  padding: 50px;
+  flex-direction: column;
+}
+#shopify-section-{{ section.id }} #headerimagesection230405 .container .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto;
+}
+#shopify-section-{{ section.id }} #headerimagesection230405 .container .wrapper .image {
+  width: 100%;
+}
+#shopify-section-{{ section.id }} #headerimagesection230405 .container .wrapper .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+#shopify-section-{{ section.id }} #headerimagesection230405 .container .wrapper span h4 {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px 0 20px;
+  color: {{ section.settings.text-color}};
+}
+#shopify-section-{{ section.id }} #headerimagesection230405 .container .wrapper span a {
+  text-decoration: none;
+  color: {{ section.settings.text-color }};
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  padding: 50px 0 20px;
+}
+
+
+</style>
+
+  
+<section id="headerimagesection230405">
+      <div class="container">
+        <div class="wrapper">
+          <span class="image"> <img src="{{ section.settings.image | img_url: "master" }}" alt="" /></span>
+          <span>
+            <h4>
+              {{ section.settings.title }}
+            </h4></span
+          >
+          <span>
+            <a href="{{ section.settings.link-url }}"> <p>{{ section.settings.link-text }}</p> </a></span
+          >
+        </div>
+      </div>
+    </section>
+{% schema %}
+  {
+    "name": "Image header section",
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#faebd8"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur du texte",
+        "default":"#5b5b5b"
+      },
+      {
+        "type": "url",
+        "id": "link-url",
+        "label": "Lien"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "Ici vous trouverez les temoignages de nos clients, nos astuces et nos conseils beaute, nos recettes originales et bien plus"
+      },
+      {
+        "type": "text",
+        "id": "link-text",
+        "label": "Texte du lien",
+        "default": "Rejoignez la e-communaute"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+     
+    ],
+    "presets": [
+      {
+        "name": "Image header section"
+      }
+    ]
+  }
+{% endschema %}

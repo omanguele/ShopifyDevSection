@@ -1,0 +1,140 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+    
+    #shopify-section-{{ section.id }} #contactinfosection190223 {
+        width: 100%;
+        height: 100%;
+        font-family: 'DM Sans', sans-serif;
+    }
+    
+    #shopify-section-{{ section.id }} #contactinfosection190223 .container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    #shopify-section-{{ section.id }} #contactinfosection190223 .container .info_container .card_info {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border: 1px solid {{ section.settings.card-border-color }};
+        border-radius: 10px;
+        min-height: 160px;
+        text-align: center;
+    }
+    
+    #shopify-section-{{ section.id }} #contactinfosection190223 .container .info_container .card_info svg {
+        width: 45px;
+        height: 45px;
+        color: {{ section.settings.svg-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #contactinfosection190223 .container .info_container .card_info p {
+        font-size: 14px;
+        color: {{ section.settings.card-desc-color }};
+    }
+    
+    #shopify-section-{{ section.id }} #contactinfosection190223 .container .info_container .card_info h6 {
+        margin: 8px 0;
+        font-size: 13px;
+        color: {{ section.settings.card-title-color }};
+    }
+    
+    @media only screen and (max-width: 767px) {
+        #shopify-section-{{ section.id }} #contactinfosection190223 .container .info_container {
+            margin-top: 20px;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 40px;
+            padding: 0;
+        }
+    
+        #shopify-section-{{ section.id }} #contactinfosection190223 .container .info_container .card_info svg {
+            width: 40px;
+            height:40px;
+        }
+    }
+  </style>
+  <section id="contactinfosection190223">
+     <div class="container" bis_skin_checked="1">
+        <div class="info_container" bis_skin_checked="1">
+          {% for block in section.blocks %}
+             <div class="card_info" bis_skin_checked="1">
+                <span>
+                   {{ block.settings.icon }}
+                </span>
+                <h6>{{ block.settings.title }}</h6>
+                <a style="text-decoration:none" href="{{ block.settings.url }}" target="_blank">{{ block.settings.value }}</a>
+             </div>
+          {% endfor %}
+        </div>
+     </div>
+  </section>
+  {% schema %}
+    {
+      "name": "Contact Info Section",
+      "blocks": [
+        {
+          "type": "info",
+          "name": "Info",
+          "settings": [
+            {
+              "type": "textarea",
+              "id": "icon",
+              "label": "Icone"
+            },
+            {
+              "type": "text",
+              "id": "titre",
+              "label": "Titre",
+              "default":"appel"
+            },
+            {
+              "type": "text",
+              "id": "url",
+              "label": "URL"
+            },
+            {
+              "type": "text",
+              "id": "value",
+              "label": "Valeur",
+              "default":"01.80.50.23.16"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"color",
+          "id":"card-border-color",
+          "label":"Couleur de bordure",
+          "default":"#3b82f6"
+        },
+        {
+          "type":"color",
+          "id":"svg-color",
+          "label":"Couleur de SVG",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"card-desc-color",
+          "label":"Couleur description carte",
+          "default":"#6b7280"
+        },
+        {
+          "type":"color",
+          "id":"card-title-color",
+          "label":"Couleur titre carte",
+          "default":"#000"
+        }
+      ],
+      "presets":[
+        {
+          "name":"Contact Info Section"
+        }
+      ]
+    }
+  {% endschema %}

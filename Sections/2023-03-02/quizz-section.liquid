@@ -1,0 +1,380 @@
+<style>
+  #shopify-section-{{ section.id }} #quizz040323  {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: {{ section.settings.bg-color }};
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 30px;
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .container .step {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .step .question_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .step .question_container a {
+    display: block;
+    text-decoration: none;
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .question_container .question_item {
+    border: 1px solid {{ section.settings.border-color }};
+    border-radius: 20px;
+    margin: 0 20px;
+    height: 200px;
+    width: 100%;
+    max-width: 30%;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+    background-color: {{ section.settings.card-bg-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .question_item__image {
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .question_item__image img {
+    height: 100%;
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .question_item__text {
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid {{ section.settings.border-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .question_item__text p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .step_title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    font-style: normal;
+    color: {{ section.settings.title-color }};
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .hide {
+    display: none !important;
+}
+
+#shopify-section-{{ section.id }} #quizz040323  .go_back {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    background-color: {{ section.settings.btn-color }};
+    color: {{ section.settings.btn-text-color }};
+    font-size: 16px;
+    max-width: 150px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+@media only screen and (max-width: 780px) {
+    #shopify-section-{{ section.id }} #quizz040323  .go_back {
+        font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} #quizz040323  .step_title {
+        font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} #quizz040323  .question_item__text p {
+        font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} #quizz040323  .question_container .question_item {
+        margin: 0;
+        height: 150px;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+</style>
+
+<section id="quizz040323">
+    <div class="container">
+        <div id="step_1" class="step">
+            <h3 class="step_title">{{ section.settings.title-step-1 }}</h3>
+            <div class="question_container">
+                <div class="question_item">
+                    <div class="question_item__image">
+                        <img src="{{ section.settings.image-opt-1 | img_url:"master" }}" alt="">
+                    </div>
+                    <div class="question_item__text">
+                        <p>{{ section.settings.title-1 }}</p>
+                    </div>
+                </div>
+                <div class="question_item">
+                    <div class="question_item__image">
+                        <img src="{{ section.settings.image-opt-2 | img_url:"master" }}" alt="">
+                    </div>
+                    <div class="question_item__text">
+                        <p>{{ section.settings.title-2 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="step_2_1" class="step hide">
+            <h3 class="step_title">{{ section.settings.title-step-2 }}</h3>
+            <div class="question_container">
+                {% for block in section.blocks %}
+                  {% if block.type == 'step-2-1' %}
+                    <a href="{{ block.settings.url }}" class="question_item">
+                        <div class="question_item__image">
+                            <img src="{{ block.settings.image | img_url:"master" }}" alt="">
+                        </div>
+                        <div class="question_item__text">
+                            <p>{{ block.settings.text }}</p>
+                        </div>
+                    </a>
+                  {% endif %}
+                {% endfor %}
+            </div>
+            <button type="button" class="go_back">{{ section.settings.return-btn-text }}</button>
+        </div>
+        <div id="step_2_2" class="step hide">
+            <h3 class="step_title">{{ section.settings.title-step-2 }}</h3>
+            <div class="question_container">
+                {% for block in section.blocks %}
+                  {% if block.type == 'step-2-2' %}
+                    <a href="{{ block.settings.url }}" class="question_item">
+                        <div class="question_item__image">
+                            <img src="{{ block.settings.image | img_url:"master" }}" alt="">
+                        </div>
+                        <div class="question_item__text">
+                            <p>{{ block.settings.text }}</p>
+                        </div>
+                    </a>
+                  {% endif %}
+                {% endfor %}
+            </div>
+            <button type="button" class="go_back">{{ section.settings.return-btn-text }}</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    let step1 = document.querySelector('#shopify-section-{{ section.id }} #quizz040323  #step_1');
+    let step2_1 = document.querySelector('#shopify-section-{{ section.id }} #quizz040323  #step_2_1');
+    let step2_2 = document.querySelector('#shopify-section-{{ section.id }} #quizz040323  #step_2_2');
+    let returnBtn = document.querySelectorAll('#shopify-section-{{ section.id }} #quizz040323  .go_back');
+    let questionsStep1 = step1.querySelectorAll('.question_item');
+
+    questionsStep1[0].addEventListener('click', function(e) {
+        e.preventDefault();
+        step1.classList.add('hide');
+        step2_1.classList.remove('hide');
+    });
+
+    questionsStep1[1].addEventListener('click', function(e) {
+        e.preventDefault();
+        step1.classList.add('hide');
+        step2_2.classList.remove('hide');
+    });
+
+    returnBtn.forEach((elt) => {
+        elt.addEventListener('click', function(e) {
+            e.preventDefault();
+            step2_1.classList.add('hide');
+            step2_2.classList.add('hide');
+            step1.classList.remove('hide');
+        })
+    })
+</script>
+
+{% schema %}
+  {
+    "name": "Quizz Section",
+    "blocks": [
+      {
+        "type": "step-2-1",
+        "name": "Element option 1",
+        "settings": [
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Coaching en ligne"
+            },
+             {
+              "type": "url",
+              "id": "url",
+              "label": "Lien de redirection"
+            }
+        ]
+      },
+      {
+        "type": "step-2-2",
+        "name": "Element option 2",
+        "settings": [
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Texte", 
+              "default":"Coaching en ligne"
+            },
+             {
+              "type": "url",
+              "id": "url",
+              "label": "Lien de redirection"
+            }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Parametre couleurs"
+      },
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur de texte",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"card-bg-color",
+        "label":"Couleur de fond carte",
+        "default":"#fff"
+      },
+      {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"border-color",
+          "label":"Couleur bordures",
+          "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"btn-color",
+          "label":"Couleur bouton",
+          "default":"#000"
+      },
+      {
+          "type":"color",
+          "id":"btn-text-color",
+          "label":"Couleur texte bouton",
+          "default":"#fff"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Etapes"
+      },
+      {
+          "type":"text",
+          "id":"title-step-1",
+          "label":"Titre etape 1",
+          "default":"Apprenons à Nous connaître. êtes-vous:"
+      },
+      {
+          "type":"text",
+          "id":"title-step-2",
+          "label":"Titre etape 2",
+          "default":"Apprenons à Nous connaître. êtes-vous:"
+      },
+      {
+        "type": "header",
+        "content": "Parametre Options"
+      },
+      {
+          "type":"text",
+          "id":"title-1",
+          "label":"Titre option 1",
+          "default":"Coaching en ligne"
+      },
+      {
+          "type":"image_picker",
+          "id":"image-opt-1",
+          "label":"Image option 1"
+        },
+      {
+          "type":"text",
+          "id":"title-2",
+          "label":"Titre option 2",
+          "default":"Coaching à domicile"
+      },
+      {
+        "type":"image_picker",
+        "id":"image-opt-2",
+        "label":"Image option 2"
+      },
+      {
+          "type":"text",
+          "id":"return-btn-text",
+          "label":"Titre bouton retour",
+          "default":"Retour"
+      }
+    ],
+    "presets": [
+      {
+          "name": "Quizz Section"
+      }
+    ]
+  }
+{% endschema %}

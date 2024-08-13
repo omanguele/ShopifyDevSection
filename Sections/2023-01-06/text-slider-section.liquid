@@ -1,0 +1,124 @@
+{%- if section.blocks.size > 0 -%}
+  <style>
+    #mission-20230106-3 {
+      background: {{ section.settings.bg-color }}
+      ;
+      color: {{ section.settings.text-color }}
+      ;
+    }
+    #mission-20230106-3.announcement-slider {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      z-index: 1000;
+    }
+    #mission-20230106-3 .scroll-text {
+      display: inline-block;
+      animation: Scroll 20s forwards linear infinite;
+      display: flex;
+      padding-block: 2px;
+    }
+    #mission-20230106-3 .product--title {
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+    }
+    #mission-20230106-3 .text__uppercase {
+      text-transform: uppercase;
+    }
+    #mission-20230106-3 .phu--1 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media screen and (min-width: 768px) {
+      #mission-20230106-3 .phu--1 {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+    #mission-20230106-3 .scroll-text p {
+      white-space: nowrap;
+    }
+    #mission-20230106-3 p:first-child {
+      margin-top: auto !important;
+    }
+    @keyframes Scroll {
+      0% {
+        transform: translate(0)
+      }
+      to {
+        transform: translate(-100%)
+      }
+    }
+  </style>
+  <div
+    id="mission-20230106-3"
+    class="announcement-slider"
+    bis_skin_checked="1">
+    <div class="scroll-text" bis_skin_checked="1">
+      {% for block in section.blocks %}
+        <p class="phu--1 product--title text__uppercase text-slide" style="opacity: 1;">{{ block.settings.title }}</p>
+      {% endfor %}
+
+    </div>
+    <div class="scroll-text" bis_skin_checked="1">
+      {% for block in section.blocks %}
+        <p class="phu--1 product--title text__uppercase text-slide" style="opacity: 1;">{{ block.settings.title }}</p>
+      {% endfor %}
+    </div>
+    <div class="scroll-text" bis_skin_checked="1">
+      {% for block in section.blocks %}
+        <p class="phu--1 product--title text__uppercase text-slide" style="opacity: 1;">{{ block.settings.title }}</p>
+      {% endfor %}
+    </div>
+    <div class="scroll-text" bis_skin_checked="1">
+      {% for block in section.blocks %}
+        <p class="phu--1 product--title text__uppercase text-slide" style="opacity: 1;">{{ block.settings.title }}</p>
+      {% endfor %}
+    </div>
+    <div class="scroll-text" bis_skin_checked="1">
+      {% for block in section.blocks %}
+        <p class="phu--1 product--title text__uppercase text-slide" style="opacity: 1;">{{ block.settings.title }}</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Text Slider Section",
+    "blocks": [
+      {
+        "type": "item",
+        "name": "item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre",
+            "default": "paiement en 4X"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg-color",
+        "label": "Couleur de fond",
+        "default": "#fdf8f7"
+      }, {
+        "type": "color",
+        "id": "text-color",
+        "label": "Couleur de texte",
+        "default": "#545454"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text Slider Section",
+        "category": "Custom Ss"
+      }
+    ]
+  }
+{% endschema %}

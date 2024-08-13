@@ -1,0 +1,121 @@
+<style>
+    #shopify-section-{{ section.id }} #aboutsection120123  {
+      width: 100%;
+      float: left;
+      height: auto;
+    }
+    
+    #shopify-section-{{ section.id }} #aboutsection120123  .ctn-image {
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      height: 480px;
+    }
+    
+    #shopify-section-{{ section.id }} #aboutsection120123  .ctn-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(0);
+      transition: opacity 0.15s, filter 0.15s;
+      display: block;
+    }
+    
+    #shopify-section-{{ section.id }} #aboutsection120123  .ctn-text {
+      padding: 16px;
+      width: 100%;
+    }
+    
+    #shopify-section-{{ section.id }} #aboutsection120123  .ctn-text p {
+      margin-bottom: 1em;
+    }
+    
+    @media only screen and (min-width: 1020px) {
+      #shopify-section-{{ section.id }} #aboutsection120123  .ctn-image {
+        top: 0;
+        position: sticky;
+        width: 50%;
+        overflow: hidden;
+        height: 100vh;
+      }
+    
+      #shopify-section-{{ section.id }} #aboutsection120123  .ctn-text {
+        width: 50%;
+        float: left;
+        height: 100%;
+      }
+      #shopify-section-{{ section.id }} #aboutsection120123  .ctn-text h1 {
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 1.2em;
+        color:{{ section.settings.title-color }};
+      }
+      #shopify-section-{{ section.id }} #aboutsection120123  .ctn-text p {
+        font-size: 28.8px;
+        margin-bottom: 3.5em;
+        color:{{ section.settings.desc-color }};
+      }
+    }
+  </style>
+  <section id="aboutsection120123">
+      <div class="ctn-image">
+        <img src="{{ section.settings.img | img_url:"master" }}" alt="" />
+      </div>
+  
+      <div class="ctn-text">
+        {% for block in section.blocks %}
+          <h1>{{ block.settings.title }}</h1>
+          <div>
+            {{ block.settings.desc }}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% schema %}
+    {
+      "name": "Sticky Image Text Section",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "name": "Paragraph",
+          "settings": [
+            {
+              "type":"text",
+              "id":"title",
+              "label":"Titre"
+            },
+            {
+              "type":"richtext",
+              "id":"desc",
+              "label":"Description"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "type":"image_picker",
+          "id":"img",
+          "label":"Image"
+        },
+        {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"desc-color",
+          "label":"Couleur de texte",
+          "default":"#000"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Sticky Image Text Section",
+          "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

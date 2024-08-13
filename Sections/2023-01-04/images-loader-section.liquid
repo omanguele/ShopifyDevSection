@@ -1,0 +1,310 @@
+
+<style>
+
+#shopify-section-{{ section.id }} #imagesection230104 {
+  width: 100%;
+  position: relative;
+}
+
+#shopify-section-{{ section.id }} #imagesection230104 .container {
+  margin: 0 auto;
+  background-color: {{ section.settings.bg-color }};
+  width: 100%;
+  height: 95vh;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  transition: ease-in 0.5s;
+  opacity: 0;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper h1 {
+  position: absolute;
+  right: 50%;
+  top: 10%;
+  transform: translate(50%, -50%);
+  font-size: 20px;
+  color: {{ section.settings.title-color }};
+  text-transform: uppercase;
+  z-index: 100;
+  transition: linear 0.5s;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  transition: ease-in 0.5s;
+  opacity: 0;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover {
+  height: 100%;
+  width: 50%;
+  position: relative;
+  transition: ease-in 2s;
+}
+
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover .left {
+  position: absolute;
+  height: 100%;
+  width: 92%;
+  object-fit: cover;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .shrink-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  transition: width 0.5s;
+  top: 0;
+  left: 0;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .shrink-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+  transition: width 0.5s;
+  top: 0;
+  right: 0;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover .right {
+  position: absolute;
+  height: 100%;
+  width: 92%;
+  object-fit: cover;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover p {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+  color: {{ section.settings.text-color }};
+  cursor: pointer;
+  transition: ease-in 0.5s;
+}
+
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover p:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover p:hover:after {
+  width: 100%;
+  left: 0;
+}
+#shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover p:hover {
+  letter-spacing: 2px;
+  transition: ease-in 0.5s;
+}
+
+#shopify-section-{{ section.id }} #imagesection230104 .container .heading {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  font-size: 80px;
+  color: {{ section.settings.heading-color}}
+  text-transform: uppercase;
+  transition: ease-in 0.5s;
+}
+
+@media (max-width: 769px) {
+  #shopify-section-{{ section.id }} #imagesection230104 .container {
+    margin: 0 auto;
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .container .heading {
+    font-size: 50px;
+    top: 40%;
+    transform: translate(50%, -50%);
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: ease-in 0.5s;
+  }
+
+  #shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover .left {
+    position: relative;
+    height: 92%;
+    width: 100%;
+    object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .shrink-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    transition: height 0.5s;
+    bottom: 0;
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .shrink-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: height 0.5s;
+    bottom: 0;
+    left: 0;
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover .right {
+    position: relative;
+    height: 92%;
+    width: 100%;
+    object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper .cover p {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease-in 0.5s;
+  }
+  #shopify-section-{{ section.id }} #imagesection230104 .container .cover-wrapper h1 {
+    position: absolute;
+    right: 50%;
+    top: 40%;
+    transform: translate(50%, -50%);
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 100;
+    transition: linear 0.5s;
+  }
+}
+
+</style>
+
+  
+ <section id="imagesection230104">
+      <div class="container">
+        <h1 class="heading">{{ section.settings.title }}</h1>
+        <div class="cover-wrapper">
+          <h1 >{{ section.settings.header }}</h1>
+          <div class="cover">
+            <img src="{{ section.settings.left-image | img_url: "master" }}" class="left" alt="" />
+            <p>{{ section.settings.text-left }}</p>
+          </div>
+          <div class="cover">
+            <img src="{{ section.settings.right-image | img_url: "master" }}" class="right" alt="" />
+            <p>{{ section.settings.text-right }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      let heading = document.querySelector(".heading");
+      let cover_wrapper = document.querySelector(".cover-wrapper");
+      let cover_left = document.querySelector(".left");
+      let cover_right = document.querySelector(".right");
+
+      setTimeout(() => {
+        heading.style.opacity = "0";
+        cover_wrapper.style.opacity = "1";
+      }, 1000);
+      setTimeout(() => {
+        cover_left.className = "shrink-1";
+        cover_right.className = "shrink-2";
+      }, 1500);
+    </script>
+
+{% schema %}
+  {
+    "name": "Image Loader Section",
+
+    "settings": [
+      {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Couleur de fond",
+          "default":"#ffffff"
+      },
+      {
+          "type":"color",
+          "id":"title-color",
+          "label":"Couleur du titre",
+          "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"text-color",
+        "label":"Couleur du texte",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"heading-color",
+        "label":"Couleur du grand titre",
+        "default":"#000"
+      },
+      {
+          "type":"text",
+          "id":"title",
+          "label":"Libelle",
+          "default":"Asphalte"
+      },
+      {
+          "type":"text",
+          "id":"header",
+          "label":"Titre",
+          "default":"Asphalte"
+      },
+      {
+          "type":"text",
+          "id":"text-left",
+          "label":"Texte Gauche",
+          "default":"Hommes"
+      },
+      {
+        "type": "text",
+        "id": "text-right",
+        "label": "Texte Droite", 
+        "default":"Femmes"
+      },
+      {
+        "type": "image_picker",
+        "id": "left-image",
+        "label": "Image Gauche"
+      },
+      {
+        "type": "image_picker",
+        "id": "right-image",
+        "label": "Image Droite"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Loader Section"
+      }
+    ]
+  }
+{% endschema %}

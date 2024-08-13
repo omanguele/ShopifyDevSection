@@ -1,0 +1,201 @@
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+  <style>
+      #shopify-section-{{ section.id }} #mission-23062022{
+          background-color: {{ section.settings.bg-color }};
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      #shopify-section-{{ section.id }} #mission-23062022 .swiper {
+          width: 70%;
+          height: 400px;
+      }
+      #shopify-section-{{ section.id }} #mission-23062022 .swiper-slide .inside-card {
+          background-color: {{ section.settings.card-bg-color }};
+          border: 1px solid {{ section.settings.card-border-color }};
+          border-radius: 20px;
+          box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+          margin: 0 auto 3em;
+          height: 350px;
+          overflow: hidden;
+      }
+      #shopify-section-{{ section.id }} #mission-23062022 .text--center, 
+      #shopify-section-{{ section.id }} #mission-23062022 .text--middle {
+          text-align: center;
+      }
+      
+      @media (min-width: 1024px){
+          #shopify-section-{{ section.id }} #mission-23062022 .inside-card__heading {
+              font-size: 18px;
+              line-height: 25px;
+          }
+      }
+      #shopify-section-{{ section.id }} #mission-23062022 .inside-card__heading {
+          font-size: 15px;
+          line-height: 19px;
+          font-weight: 700;
+          margin-bottom: 0.6em;
+          color: {{ section.settings.title-color }};
+      }
+      @media (min-width: 1024px){
+          #shopify-section-{{ section.id }} #mission-23062022 .inside-card__text {
+              font-size: 16px;
+              padding: 0 1em;
+              line-height: 25px;
+          }
+      }
+      #shopify-section-{{ section.id }} #mission-23062022 .inside-card__text {
+          font-size: 15px;
+          line-height: 19px;
+          padding: 0 1em;
+          color: {{ section.settings.text-color }};
+      }
+  
+      @media screen and (max-width:540px) {
+          #shopify-section-{{ section.id }} #mission-23062022{
+              height: 100%;
+          }
+          #shopify-section-{{ section.id }} #mission-23062022 .swiper {
+              width: 100%;
+          }
+          #shopify-section-{{ section.id }} #mission-23062022 .swiper-slide {
+              width: 70%;
+          }
+  
+          #shopify-section-{{ section.id }} #mission-23062022 .swiper-slide:nth-child(2n) {
+              width: 70%;
+          }
+  
+          #shopify-section-{{ section.id }} #mission-23062022 .swiper-pagination-bullet {
+              border: 1px solid {{ section.settings.dot-slider-color }};
+              background-color: transparent;
+          }
+          #shopify-section-{{ section.id }} #mission-23062022 .swiper-pagination-bullet-active {
+              background-color: {{ section.settings.dot-active-slider-color }};
+          }
+      }
+  </style>
+  
+  <div id="mission-23062022">
+      <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+              <!-- Slides -->
+              {% for block in section.blocks %}
+                <div class="swiper-slide">
+                    <div class="inside-card text--center">
+                        <div class="inside-card__image">
+                            <div class="Image--container Ratio_container">
+                                <img class="lazyautosizes lazyloaded" alt="" src="{{ block.settings.image | img_url:"master" }}">
+                            </div>
+                        </div>
+                        <h3 class="inside-card__heading">{{ block.settings.title }}</h3>
+                        <p class="inside-card__text">{{ block.settings.content }}</p>
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+  
+          <div class="swiper-pagination"></div>
+  
+      </div>
+  </div>
+  
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+  
+      const swiper = new Swiper('.swiper', {
+          slidesPerView: (window.screen.width <= 540) ? "auto" : 4,
+          spaceBetween:25,
+          centeredSlides: (window.screen.width <= 540) ? true : false,
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+      });
+  </script>
+  
+  {% schema %}
+    {
+      "name": "Image Text Slider Section",
+      "blocks": [
+        {
+            "type": "item",
+            "name": "Item",
+            "settings": [
+              {
+                "type":"image_picker",
+                "id":"image",
+                "label":"Image"
+              },
+              {
+                  "type":"text",
+                  "id":"title",
+                  "label":"Titre",
+                  "default":"Lorem ipsum dolor sit amet"
+              },
+              {
+                  "type":"textarea",
+                  "id":"content",
+                  "label":"Contenu",
+                  "default":"Lorem ipsum dolor sit amet, consectetur adipiscing elitore magna aliqua."
+              }
+            ]
+        }
+      ],
+      "settings": [
+        {
+            "type":"color",
+            "id":"bg-color",
+            "label":"Couleur de fond",
+            "default":"#efefef"
+        },
+        {
+            "type":"color",
+            "id":"card-bg-color",
+            "label":"Couleur de fond de la carte",
+            "default":"#fff"
+        },
+        {
+          "type":"color",
+          "id":"card-border-color",
+          "label":"Couleur de bordure de la carte",
+          "default":"#d8d8d8"
+        },
+        {
+          "type":"color",
+          "id":"dot-slider-color",
+          "label":"Couleur de bordure de pagination",
+          "default":"#000"
+        },
+        {
+          "type":"color",
+          "id":"dot-active-slider-color",
+          "label":"Couleur de pagination active",
+          "default":"#202020"
+        },
+        {
+            "type":"color",
+            "id":"title-color",
+            "label":"Couleur de titre",
+            "default":"#000"
+        },
+        {
+            "type":"color",
+            "id":"text-color",
+            "label":"Couleur de texte",
+            "default":"#000"
+        }
+      ],
+      "presets": [
+        {
+            "name": "Image Text Slider Section",
+            "category": "Custom Ss"
+        }
+      ]
+    }
+  {% endschema %}

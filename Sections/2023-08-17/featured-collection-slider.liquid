@@ -1,0 +1,779 @@
+<style>
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 {
+      width: 100%;
+      position: relative;
+      padding: {{ section.settings.desktop_top_spacing }}px {{ section.settings.desktop_left_spacing }}px {{ section.settings.desktop_bottom_spacing }}px {{ section.settings.desktop_right_spacing }}px;
+      overflow: hidden;
+      background: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_container {
+      width: 100%;
+      max-width: {% if section.settings.full_with %} 100% {% else %} {{ section.settings.max_width }}px {% endif %};
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 .featuredtabcollectionsliderxb25318_title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: {{ section.settings.heading_color }};
+      margin-bottom: 32px;
+      display: block;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_tab_header {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      gap: 30px;
+      padding-bottom: 15px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .indicator {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      color: {{ section.settings.text_color }};
+      width: 100px;
+      transform-origin: 0 0;
+      z-index: 2;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_tab_header_item {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: {{ section.settings.text_color }};
+      border-bottom: none;
+      cursor: pointer;
+      vertical-align: bottom;
+      white-space: normal;
+      display: inline-block;
+      opacity: .5;
+      flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_tab_header_item[aria-selected] {
+      opacity: 1;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .scrollbottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background-color: {{ section.settings.text_color }};
+    opacity: .5;
+      width: 100px;
+      transform-origin: 0 0;
+      width: 100%;
+      z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  a {
+      text-decoration: none;
+      color: inherit;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_tab_body {
+      width: 100%;
+      margin-top: 40px;
+
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper.featuredtabcollectionsliderxb25318_tab_body_item[aria-selected] {
+      display: inherit;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper.featuredtabcollectionsliderxb25318_tab_body_item {
+      width: 100%;
+      position: relative;
+      display: none;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_tab_container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-slide.featuredtabcollectionsliderxb25318_slide {
+      min-width: 340px;
+      width: calc(((100vw - (20px * 2)) - (20px * 3))/4);
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-slide.featuredtabcollectionsliderxb25318_slide.featured {
+      height: 100%;
+      text-align: left;
+      width: calc(((100vw - (20px * 2)) - (20px * 2))/3);
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_ft_slide_inner {
+      padding: 24px 24px 92px;
+      height: 100%;
+      min-height: 562px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  img {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: no-repeat center center/cover;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: #000;
+      opacity: .3;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 .featuredtabcollectionsliderxb25318_featured_prdt_count {
+      font-style: normal;
+      position: absolute;
+      z-index: 5;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #fff;
+      top: 24px;
+      left: 24px;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318   .featuredtabcollectionsliderxb25318_featured_ctn_btn {
+      bottom: 24px;
+      position: absolute;
+      right: 40px;
+      z-index: 5;
+      left: 24px;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: {{ section.settings.btn_text_color }};
+      padding: 14px 24px;
+      background: {{ section.settings.hover_btn_bg_color }};
+      pointer-events: auto;
+      cursor: pointer;
+      border: none;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn::before {
+      content: "";
+      background: {{ section.settings.btn_bg_color }};
+      transition: transform .3s cubic-bezier(.7, 0, .2, 1);
+      transform-origin: 100% 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn:hover::before{
+      transform: scaleX(0);
+      transform-origin: 0% 50%;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn>span {
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn>span>span {
+      overflow: hidden;
+      mix-blend-mode: difference;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn:hover >span>span {
+      animation: MoveUpInitial .2s forwards,MoveUpEnd .2s forwards .2s;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn span {
+      display: block;
+      position: relative;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_prdt_image {
+      max-height: 440px;
+      margin-bottom: 16px;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      transform: translate(0);
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_prdt_image img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .prdt_badge {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 100%;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      margin: 12px;
+      justify-items: start;
+      transition: transform .2s ease;
+      pointer-events: none;
+      height: auto;
+      transition: opacity .15s ease;
+      text-align: left;
+      background-color: {{ section.settings.badge_bg_color }};
+      color: {{ section.settings.badge_text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_prdt_info {
+      width: 100%;
+      text-align: center;
+  }
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper {
+      width: 100%;
+      height: 100%;
+  }
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+  }
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .prdt_title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: -.03em;
+      margin-bottom: 8px;
+      display: block;
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .prdt_price {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: -.03em;
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .prdt_price s {
+      opacity: .5;
+      margin-left: 5px;
+  }
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-button-prev,
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-button-next {
+      background-color: {{ section.settings.nav_bg_color }};
+      border-radius: 50% !important;
+      height: 50px !important;
+      width: 50px !important;
+  }
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318   .swiper-button-prev::after,
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318   .swiper-button-next::after {
+      font-size: 12px !important;
+      color: {{ section.settings.nav_ico_color }} !important;
+  }
+  #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-button-disabled {
+      display: none !important;
+  }
+  @media screen and (max-width: 475px) {
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-slide.featuredtabcollectionsliderxb25318_slide {
+          min-width: 260px !important;
+          padding: 0;
+          width: 260px !important;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-slide.featuredtabcollectionsliderxb25318_slide.featured {
+          padding: 0;
+          width: 260px !important;
+          min-width: unset;
+      }
+  }
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 {
+      padding: {{ section.settings.mobile_top_spacing }}px {{ section.settings.mobile_left_spacing }}px {{ section.settings.mobile_bottom_spacing }}px {{ section.settings.mobile_right_spacing }}px;
+    }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_prdt_image  {
+          max-height: 280px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-slide.featuredtabcollectionsliderxb25318_slide {
+          min-width: 340px;
+          padding: 0;
+          width: 340px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-slide.featuredtabcollectionsliderxb25318_slide.featured {
+          height: 400px;
+          min-height: unset;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .swiper-slide.featuredtabcollectionsliderxb25318_slide.featured {
+          max-width: 415px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_ft_slide_inner  {
+          min-height: unset;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_prdt_count {
+          font-size: 14px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_featured_btn {
+          font-size: 14px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318   .prdt_badge {
+          font-size: 8px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .prdt_title {
+          font-size: 14px;
+      }
+
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .prdt_price {
+          font-size: 12px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_tab_header_item {
+          font-size: 12px;
+      }
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_title {
+          font-size: 24px;
+      }
+  }
+  @media screen and (max-width: 1367px) {
+      #shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318  .featuredtabcollectionsliderxb25318_prdt_image  {
+      max-height: 340px;
+      }
+  }
+  @keyframes MoveUpInitial {
+      100% {
+          transform: translate3d(0,-105%,0);
+      }
+  }
+  @keyframes MoveUpEnd {
+      0% {
+          transform: translate3d(0,100%,0);
+      }
+      100% {
+          transform: translateZ(0);
+      }
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<section id="featuredtabcollectionsliderxb25318">
+  <div class="featuredtabcollectionsliderxb25318_container">
+    <h2 class="featuredtabcollectionsliderxb25318_title">{{ section.settings.heading }}</h2>
+    <div class="featuredtabcollectionsliderxb25318_tab_container">
+      <div class="featuredtabcollectionsliderxb25318_tab_header" role="tablist">
+        {% for block in section.blocks %}
+          <div
+            class="featuredtabcollectionsliderxb25318_tab_header_item"
+            {% if forloop.index == 1 %}
+              aria-selected="true"
+            {% endif %}
+          >
+            {{ block.settings.tab_label }}
+          </div>
+        {% endfor %}
+        <span class="indicator"></span>
+        <span class="scrollbottom"></span>
+      </div>
+      <div class="featuredtabcollectionsliderxb25318_tab_body">
+        {% for block in section.blocks %}
+          <div
+            {% if forloop.index == 1 %}
+              aria-selected="true"
+            {% endif %}
+            class="swiper featuredtabcollectionsliderxb25318_tab_body_item featuredtabcollectionsliderxb25318_tab_body_item_1"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide featuredtabcollectionsliderxb25318_slide featured">
+                <div class="featuredtabcollectionsliderxb25318_ft_slide_inner">
+                  <div class="featuredtabcollectionsliderxb25318_featured_overlay"></div>
+                  <div class="featuredtabcollectionsliderxb25318_featured_prdt_count">
+                    {{ block.settings.collection.products.size }}
+                    {{ block.settings.count_suffix }}
+                  </div>
+                  <div class="featuredtabcollectionsliderxb25318_featured_ctn_btn">
+                    <a href="{{ block.settings.btn_url }}" class="featuredtabcollectionsliderxb25318_featured_btn">
+                      <span>
+                        <span>{{ block.settings.btn_label }}</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    class="featuredtabcollectionsliderxb25318_featured_image"
+                    style="background-image: url({{ block.settings.image | img_url : "master" }});"
+                  ></div>
+                </div>
+              </div>
+              {% for product in block.settings.collection.products %}
+                <div class="swiper-slide featuredtabcollectionsliderxb25318_slide">
+                  <a href="{{ product.url }}" class="featuredtabcollectionsliderxb25318_slide_inner">
+                    <div class="featuredtabcollectionsliderxb25318_prdt_image">
+                      <div class="prdt_badge">limited</div>
+                      <img
+                        src="{{ product.featured_image | product_img_url: "master" }}"
+                        alt=""
+                      >
+                    </div>
+                    <div class="featuredtabcollectionsliderxb25318_prdt_info">
+                      <p class="prdt_title">{{ product.title | escape }}</p>
+                      <p class="prdt_price">
+                        {{ product.price_min | money }}
+                        <s>{{ product.price_max | money }}</s>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  
+  
+  
+  
+        const tabsHeader = document.querySelector(
+            '#shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 .featuredtabcollectionsliderxb25318_tab_header');
+        const tabsHeaderItems = Array.from(tabsHeader.querySelectorAll(
+            '.featuredtabcollectionsliderxb25318_tab_header_item'));
+        const tabsBodyItems = Array.from(document.querySelectorAll(
+            '#shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 .featuredtabcollectionsliderxb25318_tab_body .featuredtabcollectionsliderxb25318_tab_body_item'
+        ));
+        const indicator = tabsHeader.querySelector('.indicator');
+        let activeHeaderItems = tabsHeader.querySelector('[aria-selected]');
+
+        if (activeHeaderItems) {
+            indicator.style.setProperty('transform', getTransform(activeHeaderItems))
+        }
+
+ 
+        function onItemHeaderClick(e, index) {
+            if (e.currentTarget === activeHeaderItems) {
+                return;
+            }
+
+            if (activeHeaderItems) {
+                activeHeaderItems.removeAttribute('aria-selected');
+                e.currentTarget.setAttribute('aria-selected', 'true')
+
+
+                indicator.animate([{
+                    transform: getTransform(e.currentTarget)
+                }], {
+                    fill: 'both',
+                    duration: 600,
+                    easing: 'cubic-bezier(.48,1.55,.28,1)'
+                });
+
+                activeHeaderItems = e.currentTarget;
+
+                tabsBodyItems.forEach((bItem, bIndex) => {
+                    if (index === bIndex) {
+                        bItem.setAttribute('aria-selected', 'true');
+                    } else {
+                        bItem.removeAttribute('aria-selected');
+                    }
+                });
+            }
+        }
+
+
+        function getTransform(element) {
+            const transform = {
+                x: element.offsetLeft,
+                scaleX: element.offsetWidth / 100,
+            };
+
+            return `translateX(${transform.x}px) scaleX(${transform.scaleX})`;
+        }
+
+        tabsHeaderItems.forEach((hItem, hIndex) => {
+            new Swiper(`#shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 .featuredtabcollectionsliderxb25318_tab_body_item_${hIndex+1}`, {
+                slidesPerView: 'auto',
+                spaceBetween: 24,
+                freeMode: true,
+                grab: true,
+                navigation: {
+                    nextEl: `#shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 .featuredtabcollectionsliderxb25318_tab_body_item_${hIndex+1} .swiper-button-next`,
+                    prevEl: `#shopify-section-{{ section.id }} #featuredtabcollectionsliderxb25318 .featuredtabcollectionsliderxb25318_tab_body_item_${hIndex+1} .swiper-button-prev`,
+                },
+            });
+            hItem.addEventListener('click', (e) => {
+                onItemHeaderClick(e, hIndex)
+            });
+        })
+
+
+
+
+</script>
+
+{% schema %}
+  {
+    "name": "Featured Col Slider",
+     "blocks": [
+    {
+    "type": "item",
+    "name": "item",
+    "settings": [
+      {
+        "type": "text",
+        "id": "tab_label",
+        "label": "Tab Label"
+      },
+      {
+        "type": "text",
+        "id": "btn_label",
+        "label": "Btn Label"
+      },
+      {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Btn URL"
+      },
+      {
+        "type": "text",
+        "id": "count_suffix",
+        "label": "Count Suffix",
+        "default": "Product"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+],
+    "settings": [
+        {
+    "type":"color",
+    "id":"bg_color",
+    "label":"Couleur Bg",
+    "default":"#fff"
+  },
+  {
+    "type":"color",
+    "id":"heading_color",
+    "label":"Couleur titre",
+    "default":"#313131"
+  },
+  {
+    "type":"color",
+    "id":"text_color",
+    "label":"Couleur texte",
+    "default":"#313131"
+  },
+  {
+    "type":"color",
+    "id":"btn_bg_color",
+    "label":"Couleur fond bouton",
+    "default":"#313131"
+  },
+  {
+    "type":"color",
+    "id":"hover_btn_bg_color",
+    "label":"Couleur fond btn survol",
+    "default":"#fff"
+  },
+  {
+    "type":"color",
+    "id":"btn_text_color",
+    "label":"Couleur texte bouton",
+    "default":"#fff"
+  }
+      ,
+  {
+    "type":"color",
+    "id":"nav_bg_color",
+    "label":"Couleur fond nav",
+    "default":"#fff"
+  },
+  {
+    "type":"color",
+    "id":"nav_ico_color",
+    "label":"Couleur ico nav",
+    "default":"#000"
+  },
+       {
+    "type":"color",
+    "id":"badge_bg_color",
+    "label":"Couleur badge Bg",
+    "default":"#fff"
+  },
+  {
+    "type":"color",
+    "id":"badge_text_color",
+    "label":"Couleur badge text",
+    "default":"#313131"
+  },
+  {
+    "type":"text",
+    "id":"heading",
+    "label":"Titre",
+    "default":"Tatouages éphémères"
+  },
+  {
+    "type": "range",
+    "id": "desktop_top_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Top Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_bottom_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Bottom Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_left_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Left Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "desktop_right_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Desktop Right Spacing",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "mobile_top_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Top Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_bottom_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Bottom Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_left_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Left Spacing",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "mobile_right_spacing",
+    "min": 0,
+    "max": 200,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Right Spacing",
+    "default": 20
+  },
+  {
+    "type": "checkbox",
+    "id": "full_with",
+    "label": "Full Width",
+    "default": false
+  },
+  {
+    "type": "range",
+    "id": "max_width",
+    "min": 500,
+    "max": 2000,
+    "step": 100,
+    "unit": "px",
+    "label": "Max Width",
+    "default": 1400
+  }
+    ],
+    "presets": [
+      {
+        "name": "Featured Col Slider"
+      }
+    ]
+  }
+{% endschema %}

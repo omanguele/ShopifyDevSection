@@ -1,0 +1,274 @@
+<style>
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 {
+          position: relative;
+          width: 100%;
+          padding: 40px 60px;
+          background-color: {{ section.settings.bg_color }};
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_container {
+          max-width: 1416px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          color: {{ section.settings.box_color }};
+          border-radius: 25px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+          padding-top: 32px;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-grow: 1;
+          padding: 40px;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_content_container {
+          max-width: 512px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          flex-direction: column;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_image {
+          max-width: 512px;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_image img {
+          max-width: 100%;
+          width: 100%;
+          object-fit: cover;
+          height: 100%;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_mob_img {
+          display: none;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_heading {
+          color: {{ section.settings.text_color }};
+          margin-bottom: 24px;
+          line-height: 1.1;
+          letter-spacing: -.01em;
+          font-size: 47px;
+          font-weight: 600;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_subheading {
+          color: {{ section.settings.text_color }};
+          text-align: center;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 1.3;
+          letter-spacing: -.01em;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_btn {
+          margin-top: 48px;
+          background-color: {{ section.settings.btn_bg_color }};
+  color: {{ section.settings.btn_text_color }};
+          padding: 16px 32px;
+          line-height: 1.3;
+          letter-spacing: -.01em;
+          border-radius: 9999px;
+          font-size: 14px;
+          text-align: center;
+          font-weight: 600;
+          transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+          transition-timing-function: cubic-bezier(.4,0,.2,1);
+          transition-duration: .15s;
+          align-items: center;
+          justify-content: center;
+          width: auto;
+          text-decoration: none;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_btn svg {
+          width: auto;
+          height: 12px;
+          margin-left: 12px;
+      }
+      #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_btn:hover svg{
+          animation: button-icon-bounce 1.5s infinite;
+      }
+
+      @media only screen and (max-width: 1204px)  {
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_container {
+              max-width: 100%;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_heading {
+              font-size: 34px
+          }
+      }
+
+      @media only screen and (max-width: 1024px)  {
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_container {
+              gap: 0px;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_content {
+              padding: 20px;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_btn {
+              margin-top: 16px;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 {
+              padding: 40px 32px;
+          }
+      }
+
+      @media only screen and (max-width: 740px)  {
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_container {
+              flex-direction: column;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_desk_img {
+              display: none;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_mob_img {
+              display: block;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 {
+              padding: 40px 12px;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_content {
+              padding: 0 12px;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_heading {
+              margin-bottom: 12px;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_subheading {
+              font-size: 14px;
+          }
+          #shopify-section-{{ section.id }} #textbtnimage9161210132 .textbtnimage9161210132_image {
+              max-width: 100%;
+              width: 100%;
+              margin-top: 30px;
+          }
+      }
+
+      @keyframes button-icon-bounce {
+          0%, 100% {
+              transform: translate(75%);
+              animation-timing-function: cubic-bezier(.8,0,1,1);
+          }
+          50% {
+              transform: translate(0);
+              animation-timing-function: cubic-bezier(0,0,.2,1);
+          }
+      }
+</style>
+
+<section id="textbtnimage9161210132">
+  <div class="textbtnimage9161210132_container">
+    <div class="textbtnimage9161210132_content">
+      <div class="textbtnimage9161210132_content_container">
+        <h2 class="textbtnimage9161210132_heading">
+          {{ section.settings.title }}
+        </h2>
+        <p class="textbtnimage9161210132_subheading">
+          {{ section.settings.subtitle }}
+        </p>
+        <a href="{{ section.settings.url_btn }}" class="textbtnimage9161210132_btn">
+          <span>{{ section.settings.text_btn }}</span>
+          <svg
+            class="button-icon tw-h-3 tw-w-auto tw-text-current"
+            width="23"
+            height="14"
+            viewBox="0 0 23 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M22.3676 7.61761C22.7087 7.27652 22.7087 6.72348 22.3676 6.38239L16.8091 0.823864C16.468 0.482766 15.915 0.482766 15.5739 0.823864C15.2328 1.16496 15.2328 1.71799 15.5739 2.05909L20.5148 7L15.5739 11.9409C15.2328 12.282 15.2328 12.835 15.5739 13.1761C15.915 13.5172 16.468 13.5172 16.8091 13.1761L22.3676 7.61761ZM0.25 7.87344H21.75V6.12656H0.25V7.87344Z" fill="currentColor"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="textbtnimage9161210132_image">
+      <img src="{{ section.settings.image_desk | img_url: "master" }}" alt="" class="textbtnimage9161210132_desk_img">
+      <img src="{{ section.settings.image_mobile | img_url: "master" }}" alt="" class="textbtnimage9161210132_mob_img">
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Texte - Image - Bouton",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "box_color",
+      "label": "Couleur de Box",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Couleur de texte du bouton",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Couleur de fond du bouton",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "shake up a smoothie in seconds"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous Titre",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "text_btn",
+      "label": "Texte du bouton",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "url_btn",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Bordure arrondie",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Texte - Image - Bouton - 2"
+    }
+  ]
+}
+{% endschema %}

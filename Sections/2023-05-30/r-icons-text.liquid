@@ -1,0 +1,124 @@
+<style>
+    #containner0012 {
+      background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }};
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+  }
+
+  #containner0012 .containner0012_container{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      gap: 120px;
+      flex-direction: row;
+  }
+
+  #containner0012 .containner0012_image img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+  }
+
+  #containner0012  .containner0012_icons{
+      gap: 20px;
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+  }
+
+  #containner0012  .text{
+      display: block;
+  }
+
+  #containner0012 .icon-tilte {
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: {{ section.settings.text_color }};
+      margin-bottom: 7px;
+  }
+
+  #containner0012 .icon-subtitle {
+      font-size: 14px;
+      color: {{ section.settings.text_color }};
+      font-weight: 500;
+  }
+
+  @media only screen and (max-width: 1000px) {
+      #containner0012 .containner0012_container{
+          flex-direction: column;
+          gap: 30px;
+      }
+  }
+</style>
+
+<section id="containner0012">
+  <div class="containner0012_container">
+    {% for block in section.blocks %}
+      <div class="containner0012_icons">
+        <div class="containner0012_image">
+          <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+        </div>
+        <div class="containner0012_text">
+          <p class="icon-tilte">{{ block.settings.title }}</p>
+          <p class="icon-subtitle">{{ block.settings.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "R Icon text",
+  "blocks": [
+    {
+      "type": "block",
+      "name": "BLock",
+      "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre",
+            "default":"Lorem ipsum"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description",
+            "default":"Lorem ipsum"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#eee"
+    },
+    {
+      "type": "color_background",
+      "id": "text_color",
+      "label": "Couleur de texte",
+      "default": "#232323"
+    }
+  ],
+  "presets": [
+  {
+    "name": "R Icon text"
+  }
+]
+}
+{% endschema %}
+ 

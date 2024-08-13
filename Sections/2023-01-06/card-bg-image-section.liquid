@@ -1,0 +1,152 @@
+<style>
+    #mission-20230106-2{
+        background-image: url("{{ section.settings.bg | img_url:"master" }}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-items: start;
+        align-items: center;
+    }
+    #mission-20230106-2 .wrapper{
+        padding-left: 90px;
+        width: 100%;
+    }
+    @media screen and (max-width:480px) {
+        #mission-20230106-2 .wrapper{
+            padding-left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }  
+    }
+    #mission-20230106-2 div,
+    #mission-20230106-2 p {
+        width: 100%;
+        margin: 25px 0;
+    }
+    #mission-20230106-2 .card {
+        width: 350px;
+        background-color: {{ section.settings.card-bg-color }};
+        padding: 45px !important;    
+        box-shadow: 1px 1px 5px 5px #67858d4c;
+    }
+    #mission-20230106-2 .title {
+        font-size: 38px;
+        line-height: 32px;
+        color: {{ section.settings.title-color }}
+    }
+    #mission-20230106-2 .subtitle {
+        font-size: 22px;
+        margin-top: 35px;
+        color: {{ section.settings.subtitle-color }};
+    }
+    #mission-20230106-2 .button {
+        border-radius: 25px;
+        width: 250px;
+        background-color: {{ section.settings.btn-bg-color }};
+        color: {{ section.settings.btn-text-color }};
+        text-decoration: none;
+        padding: 10px 20px;
+        margin-top: 35px;
+        align-self: center;
+        text-align: center;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+</style>
+<section id="mission-20230106-2">
+    <div class="wrapper">
+        <div class="card">
+            <h5 class="title">{{ section.settings.title }}</h5>
+            <p class="subtitle">{{ section.settings.subtitle }}</p>
+            <div>
+                <a class="button" href="{{ section.settings.btn-url }}">
+                    <span>{{ section.settings.btn-label }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <line x1="15" y1="16" x2="19" y2="12"></line>
+                        <line x1="15" y1="8" x2="19" y2="12"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Card Section",
+    "settings": [
+      {
+        "type":"color",
+        "id":"card-bg-color",
+        "label":"Couleur de fond de la carte",
+        "default":"#fff"
+      },
+      {
+        "type":"color",
+        "id":"title-color",
+        "label":"Couleur du titre",
+        "default":"#000"
+      },
+      {
+        "type":"color",
+        "id":"subtitle-color",
+        "label":"Couleur du sous-titre",
+        "default":"#009688"
+      },
+      {
+        "type":"color",
+        "id":"btn-bg-color",
+        "label":"Couleur de fond du bouton",
+        "default":"#009688"
+      },
+      {
+        "type":"color",
+        "id":"btn-text-color",
+        "label":"Couleur de texte du bouton",
+        "default":"#fff"
+      },
+      {
+        "type":"image_picker",
+        "id":"bg",
+        "label":"Image de fond"
+      },
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Titre",
+        "default":"Buy a set for the ultimate Dreamzy experience"
+      },
+      {
+        "type":"text",
+        "id":"subtitle",
+        "label":"Sous-titre",
+        "default":"Save up top $300"
+      },
+      {
+        "type":"text",
+        "id":"btn-label",
+        "label":"Libellé du bouton",
+        "default":"Shop now"
+      },
+      {
+        "type":"url",
+        "id":"btn-url",
+        "label":"Lien du bouton",
+        "default":"/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Card Section",
+        "category": "Custom Ss"
+      }
+    ]
+  }
+{% endschema %}

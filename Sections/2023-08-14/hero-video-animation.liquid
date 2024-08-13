@@ -1,0 +1,148 @@
+<style>
+  body,
+  html {
+      overflow-x: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380 {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380  .panel_inner {
+      height: 100vh;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380 .pannel_ctn_video {
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380   .panel_overlay {
+      color: {{ section.settings.text_color }};
+      max-width: 550px;
+      position: absolute;
+      text-align: left;
+      top: 50%;
+      transform: translateY(-50%);
+      will-change: transform;
+      z-index: 2;
+      line-height: 1.5 !important;
+      font-size: 20px !important;
+      width: 100%;
+      left: 0;
+      padding: 20px;
+  }
+  #shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380   .video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+  }
+  @media (min-width: 1200px) {
+      #shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380  .panel_overlay {
+          left: 10%;
+          font-size: 28px !important;
+          padding: 0;
+      }
+      #shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380  .video {
+          object-fit: cover;
+      }
+  }
+</style>
+
+<section id="herobannervideoscrollanimationxb124380">
+  {% for block in section.blocks %}
+    <div
+      class="panel"
+      style="
+        background-image: url({{ block.settings.poster | img_url: "master" }});
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        overflow: hidden;
+      "
+    >
+      <div class="panel_inner">
+        <div class="pannel_ctn_video">
+          <video
+            src="{{ block.settings.video.sources[1].url }}"
+            preload="auto"
+            loop=""
+            muted=""
+            playsinline=""
+            webkit-playsinline=""
+            x5-playsinline=""
+            autoplay="true"
+            class="video"
+            poster="{{ block.settings.poster | img_url: "master" }}"
+          ></video>
+        </div>
+        <div class="panel_overlay">
+          {{ block.settings.text }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray("#shopify-section-{{ section.id }} #herobannervideoscrollanimationxb124380 .panel")
+  .forEach((panel, i) => {
+      ScrollTrigger.create({
+          trigger: panel,
+          start: () => panel.offsetHeight < window.innerHeight ? "top top" :
+          "bottom bottom",
+          pin: true,
+          pinSpacing: false
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Hero Video Animation",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video (MP4)"
+        },
+        {
+          "type":"richtext",
+          "id":"text",
+          "label":"Texte"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type":"color",
+      "id":"text_color",
+      "label":"Couleur texte",
+      "default":"#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Video Animation"
+    }
+  ]
+}
+{% endschema %}

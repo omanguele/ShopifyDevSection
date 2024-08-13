@@ -1,0 +1,746 @@
+<script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+<style>
+#shopify-section-{{ section.id }} #product-grid-230803 {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  max-width: 1300px;
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .container {
+  padding: 50px 200px 50px 200px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .header-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .header-wrapper .title {
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: {{ section.settings.title-color }};
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .header-wrapper .subtitle {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: {{ section.settings.text-color }};
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .header-wrapper .dash {
+  width: 30px;
+  height: 2px;
+  background-color: #BA2605;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  gap: 40px;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+  background-color: {{ section.settings.card-color }};
+  cursor: pointer;
+  transition: ease 1s;
+  position: relative;
+  transition-duration: 1s;
+  z-index: 100;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item {
+  display: none;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: {{ section.settings.card-color }};
+  transition: ease 1s;
+  transition-duration: 1s;
+  z-index: 100;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item:hover .big-image {
+  transform: scale(1.1);
+  transition: ease-in-out 0.5s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow:hover .big-image {
+  transform: scale(1.1);
+  transition: ease-in-out 0.5s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item:hover .big-image {
+  transform: scale(1.1);
+  transition: ease-in-out 0.5s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .body .big-image {
+  display: flex;
+  object-fit: cover;
+  width: 400px;
+  padding: 30px;
+  margin: auto;
+  transition: ease-in-out 0.5s;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item .close {
+  display: none;
+  transition: ease-in 1s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .close {
+  display: block;
+  transition: ease-in 1s;
+  position: absolute;
+  right: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .image {
+  display: flex;
+  object-fit: cover;
+  width: 105px;
+  height: auto;
+  margin: auto;
+  padding: 5px;
+  transition: ease-in-out 0.5s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item .footer {
+  display: flex;
+
+  flex-direction: row;
+  width: 85%;
+  position: absolute;
+  bottom: 40px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .footer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  width: 90%;
+  position: absolute;
+  bottom: 40px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .footer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  width: 90%;
+  position: absolute;
+  bottom: 40px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item .body {
+  padding: 10px 10px 50px 10px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .body {
+  padding: 10px 10px 50px 10px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .body {
+  padding: 10px 10px 50px 10px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item .infos-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .infos-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: ease 0.5s;
+  margin-top: 50px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .infos-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: ease 0.5s;
+  margin-top: 10px;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item .ball-wrapper {
+  display: none;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .ball-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .ball-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item .btn-add {
+  display: flex;
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  bottom: 10px;
+  outline: none;
+  border: solid #000;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 30px 10px 30px;
+  letter-spacing: 3px;
+  font-size: 12px;
+  transition: ease-in 0.2s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .btn-add {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  bottom: 10px;
+  outline: none;
+  border: solid #000;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 30px 10px 30px;
+  letter-spacing: 3px;
+  font-size: 12px;
+  box-shadow: inset 0 0 0 0 #000000;
+  -webkit-transition: ease-out 1s;
+  -moz-transition: ease-out 1s;
+  transition: ease-out 1s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .btn-add:hover {
+  box-shadow: inset 400px 0 0 0 #000000;
+  color: #fff;
+  transition: ease-out 1s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .btn-add {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  bottom: 10px;
+  outline: none;
+  border: solid #000;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 30px 10px 30px;
+  letter-spacing: 3px;
+  font-size: 12px;
+  box-shadow: inset 0 0 0 0 #000000;
+  -webkit-transition: ease-out 0.6s;
+  -moz-transition: ease-out 0.6s;
+  transition: ease-out 0.6s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .btn-add:hover {
+  box-shadow: inset 400px 0 0 0 #000000;
+  color: #fff;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803
+  .col-1-wrapper
+  .grow
+  .footer
+  .infos-wrapper
+  .ball-wrapper
+  .color-ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: {{ section.settings.ball-color }};
+  border: 2px solid #f3f3f3cc;
+  margin-left: 3px;
+  cursor: pointer;
+  transition: ease-in 0.5s;
+}
+#shopify-section-{{ section.id }} #product-grid-230803
+  .col-1-wrapper
+  .grow-item
+  .footer
+  .infos-wrapper
+  .ball-wrapper
+  .color-ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: {{ section.settings.ball-color }};
+  border: 2px solid #f3f3f3cc;
+  margin-left: 3px;
+  cursor: pointer;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item .footer {
+  display: flex;
+  flex-direction: row;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow .footer {
+  display: flex;
+  flex-direction: row;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .footer {
+  display: flex;
+  flex-direction: row;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .product-name {
+  font-weight: bold;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .big-item .product-name {
+  font-weight: bold;
+  transform: translateY(100%);
+  position: relative;
+  bottom: 20px;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .grow .product-name {
+  font-weight: bold;
+  transition: ease 0.5s;
+  position: relative;
+  top: 30px;
+  transform: translateY(-100%);
+  margin-left: 3px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .grow-item .product-name {
+  font-weight: bold;
+  margin-left: 3px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .big-item .price {
+  transition: ease 0.5s;
+  transform: translateX(70%);
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .grow .price {
+  transition: ease 0.5s;
+  transform: translateX(0%);
+  margin-left: 3px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .grow-item .price {
+  transition: ease 0.5s;
+  transform: translateX(0%);
+  margin-left: 3px;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .item-wrapper-col {
+  display: flex;
+  flex-direction: column;
+  transition: ease 1s;
+  position: absolute;
+  right: 0px;
+  gap: 20px;
+  width: 35%;
+  z-index: 0;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .item-wrapper-col .item {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: {{ section.settings.card-color }};
+  cursor: pointer;
+  height: 100%;
+}
+#shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .item-wrapper-col .item:hover .image {
+  transition: ease-in-out 0.5s;
+  transform: scale(1.1);
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-2-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  justify-content: space-between;
+  position: relative;
+  gap: 40px;
+  width: 100%;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-2-wrapper .item {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: {{ section.settings.card-color }};
+  width: 30%;
+  cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} #product-grid-230803 .col-2-wrapper .item:hover .image {
+  transform: scale(1.1);
+  transition: ease-in-out 0.5s;
+}
+@media (max-width: 1100px) {
+  #shopify-section-{{ section.id }} #product-grid-230803 .container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+  }
+
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .big-item {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow {
+    display: none;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: {{ section.settings.card-color }};
+    position: relative;
+    flex: 1;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .body .big-image {
+    display: flex;
+    object-fit: cover;
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    transition: ease-in-out 0.5s;
+  }
+
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .grow-item .footer {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+  }
+
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .item-wrapper-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    gap: 20px;
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-1-wrapper .item-wrapper-col .item {
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .image {
+    display: flex;
+    object-fit: cover;
+    width: 80%;
+    padding: 30px;
+    margin: auto;
+    transition: ease-in-out 0.5s;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .product-name {
+    font-size: 13px;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .price {
+    font-size: 13px;
+  }
+
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-2-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  #shopify-section-{{ section.id }} #product-grid-230803 .col-2-wrapper .item {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: {{ section.settings.card-color }};
+    width: 100%;
+  }
+}
+
+
+</style>
+    <section id="product-grid-230803">
+      <div class="container">
+        <div class="header-wrapper">
+          <div class="title"><p>{{ section.settings.title }}</p></div>
+          <div class="subtitle"><p>{{ section.settings.subtitle }}</p></div>
+          <div class="dash"></div>
+        </div>
+        
+            <div class="col-1-wrapper">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'big-block' %}
+                <div class="big-item">
+                  <div class="close">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                  </div>
+                  <div class="body">
+                    <img
+                      src="{{ block.settings.image | img_url: "master" }}"
+                      class="big-image"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer">
+                    <div class="infos-wrapper" id="infos-wrapper">
+                      <p class="product-name">{{ block.settings.title }}</p>
+                      <div class="ball-wrapper" id="ball-wrapper">
+                        <div class="color-ball"></div>
+                        <div class="color-ball"></div>
+                        <div class="color-ball"></div>
+                      </div>
+                      <p class="price" id="price">{{ block.settings.price }} $</p>
+                    </div>
+                    <button class="btn-add">Ajouter</button>
+                  </div>
+                </div>
+                <div class="grow-item">
+                  <div class="close">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                  </div>
+                  <div class="body">
+                    <img
+                      src="{{ block.settings.image | img_url: "master" }}"
+                      class="big-image"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer">
+                    <div class="infos-wrapper" id="infos-wrapper">
+                      <p class="product-name">{{ block.settings.title }}</p>
+                      <div class="ball-wrapper" id="ball-wrapper">
+                        <div class="color-ball"></div>
+                        <div class="color-ball"></div>
+                        <div class="color-ball"></div>
+                      </div>
+                      <p class="price" id="price">{{ block.settings.price }} $</p>
+                    </div>
+                    <button class="btn-add">Ajouter</button>
+                  </div>
+                </div>
+              {% endcase %}
+            {% endfor %}
+              <div class="item-wrapper-col" id="item-wrapper-col">
+                {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'second-block' %}
+                <div class="item">
+                  <div class="body">
+                    <img
+                      src="{{ block.settings.image | img_url: "master" }}"
+                      class="image"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer">
+                    <p class="product-name">{{ block.settings.title }}</p>
+                    <p class="price">{{ block.settings.price }} $</p>
+                  </div>
+                </div>
+                  {% endcase %}
+            {% endfor %}
+            </div>
+                   
+        </div>
+        <div class="col-2-wrapper">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'third-block' %}
+                <div class="item">
+                  <div class="body">
+                    <img src="{{ block.settings.image | img_url: "master" }}" class="image" alt="" />
+                  </div>
+                  <div class="footer">
+                    <p class="product-name">{{ block.settings.title }}</p>
+                    <p class="price">{{ block.settings.price }} $</p>
+                  </div>
+                </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+             
+      </div>
+    </section>
+    <script type="text/javascript">
+      let big_item = document.querySelector(".big-item");
+      let grow_item = document.querySelector(".body");
+      let close_item = document.querySelector(".close");
+      if (big_item.classList.toString() !== "grow") {
+        grow_item.addEventListener("click", () => {
+          grow();
+        });
+      }
+
+      close_item.addEventListener("click", () => {
+        default_layout();
+      });
+
+      function grow() {
+        big_item.className = "grow";
+      }
+      function default_layout() {
+        big_item.className = "big-item";
+      }
+    </script>
+{% schema %}
+{
+  "name": "Section Grille Image",
+  "blocks": [
+    {
+      "type": "big-block",
+      "name": "Gros bloc",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Casque"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Prix",
+          "default": "99"
+        }
+      ]
+    },
+    {
+      "type": "second-block",
+      "name": "Bloc de cote",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Casque"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Prix",
+          "default": "99"
+        }
+      ]
+    },
+    {
+      "type": "third-block",
+      "name": "Bloc du bas",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Casque"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Prix",
+          "default": "99"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Couleur de fond",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "card-color",
+      "label": "Couleur de la carte",
+      "default": "#EFEFEF"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Couleur du texte",
+      "default": "#0e0e0e"
+    },
+    {
+      "type": "color",
+      "id": "title-color",
+      "label": "Couleur du titre",
+      "default": "#BA2605"
+    },
+    {
+      "type": "color",
+      "id": "ball-color",
+      "label": "Couleur des boules",
+      "default": "#0e0e0e"
+    },
+    {
+      "type":"text",
+      "id":"title",
+      "label":"Titre",
+      "default":"Chapitre un"
+    },
+    {
+      "type":"text",
+      "id":"subtitle",
+      "label":"Sous-titre",
+      "default":"En vedette"
+    }
+   
+  ],
+  "presets": [
+    {
+      "name": "Section Grille Image",
+      "category": "Custom Ss"
+    }
+  ]
+}
+{% endschema %}

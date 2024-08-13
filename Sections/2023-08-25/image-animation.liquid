@@ -1,0 +1,435 @@
+<style>
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103 {
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_container {
+      width: 100%;
+      flex-direction: row;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103  .imageanimationbomsx552103_item {
+      flex: 1;
+      height: 720px;
+      max-height: 720px;
+      transition: flex 1s;
+      overflow: hidden;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      color: inherit;
+      font-size: inherit;
+      margin: 0;
+      outline: none;
+      padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item.active {
+      flex: 3;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item.active .imageanimationbomsx552103_item_image {
+      height: 720px;
+      max-height: unset;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_image {
+      height: 720px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 1s;
+      max-height: unset;
+      padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_image img {
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      object-position: 50.0% 50.0%;
+      font-family: "object-fit: cover;";
+      object-fit: cover;
+      top: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103  .imageanimationbomsx552103_item.active .imageanimationbomsx552103_item_title {
+      opacity: 0;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_title {
+      bottom: 40px;
+      color: {{ section.settings.heading_color }};
+      position: absolute;
+      z-index: 2;
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      line-height: 1.25;
+      display: flex;
+      left: 43%;
+      top: auto;
+      transform: scale(-1);
+      transition: opacity 1s;
+      white-space: nowrap;
+      writing-mode: vertical-lr;
+  }
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item.active .imageanimationbomsx552103_plus {
+      display: none;
+  }
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_plus {
+      display: none;
+      color: {{ section.settings.heading_color }} !important;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+  }
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_plus   svg {
+      height: 30px;
+      width: 30px;
+  }
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_info {
+      background-color: {{ section.settings.card_color }};
+      color: {{ section.settings.text_color }} !important;
+      padding: 40px 20px;
+      bottom: 40px;
+      position: absolute;
+      width: 430px;
+      z-index: 1;
+      opacity: 0;
+      text-align: center;
+      transition: transform 1s;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103  .imageanimationbomsx552103_item.active .imageanimationbomsx552103_item_info_inner h4,
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103  .imageanimationbomsx552103_item.active .imageanimationbomsx552103_item_info_inner .description {
+      opacity: 1;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103  .imageanimationbomsx552103_item_info_inner {
+      width: 100%;
+      text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_info_inner h4 {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 32px;
+      margin-bottom: 12px;
+      line-height: 1.25;
+      letter-spacing: .01em;
+      opacity: 0;
+      transition: opacity 1.5s;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103  .imageanimationbomsx552103_item_info_inner .description {
+      opacity: 0;
+      transition: opacity 1.8s;
+      margin-bottom: 20px;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 20px;
+      color: {{ section.settings.text_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #imageanimationbomsx552103    .imageanimationbomsx552103_item_info_inner a {
+      background-color: {{ section.settings.btn_bg_color }};
+      color: {{ section.settings.btn_text_color }};
+      min-width: 158px;
+      padding-left: 20px;
+      align-items: center;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px;
+      opacity: 1;
+      text-transform: uppercase;
+      display: inline-flex;
+      height: 44px;
+      justify-content: center;
+      padding-right: 20px;
+      text-align: center;
+      text-decoration: none;
+  }
+  @media (max-width: 1200px) {
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103  .imageanimationbomsx552103_item {
+          max-height: 200px;
+          position: relative;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_image {
+          height: 200px;
+          max-height: 200px;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_container {
+          flex-direction: column;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_plus {
+          display: block;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_title {
+          left: 20px;
+          transform: translateY(-50%);
+          writing-mode: unset;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: .01em;
+          line-height: 1.29;
+          top: 50%;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item.active  {
+          max-height: 3000px;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item.active .imageanimationbomsx552103_item_image {
+          height: 768px;
+          max-height: 768px;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_info {
+          transform: unset !important;
+          left: 0 !important;
+          width: 100% !important;
+          bottom: 0 !important;
+          position: relative;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_info_inner {
+          text-align: center;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_info_inner h4 {
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: .01em;
+          line-height: 1.29;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_info_inner .description  {
+          font-size: 14px;
+          letter-spacing: 0;
+          line-height: 18px;
+      }
+  }
+  @media (max-width: 768px) {
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item {
+          max-height: 100px;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item_image {
+          height: 100px;
+          max-height: 100px;
+      }
+      #shopify-section-{{ section.id }} #imageanimationbomsx552103   .imageanimationbomsx552103_item.active .imageanimationbomsx552103_item_image {
+          height: 375px;
+          max-height: 375px;
+      }
+  }
+</style>
+
+<section id="imageanimationbomsx552103">
+  <div class="imageanimationbomsx552103_container">
+    {%- for block in section.blocks -%}
+      <div class="imageanimationbomsx552103_item {% if forloop.index == 1 %} active {% endif %}">
+        <div class="imageanimationbomsx552103_item_image">
+          <img
+            src="{{ block.settings.image | img_url: "master" }}"
+            alt=""
+          >
+          <span class="imageanimationbomsx552103_item_title">{{ block.settings.heading }}</span>
+          <span class="imageanimationbomsx552103_plus">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="imageanimationbomsx552103_item_info"
+          style="left: 40px; transform: translateX(0); z-index: 3; opacity: 1;"
+        >
+          <div class="imageanimationbomsx552103_item_info_inner">
+            <h4>{{ block.settings.card_heading }}</h4>
+            <div class="description">{{ block.settings.description }}</div>
+            <a href="{{ block.settings.url }}">{{ block.settings.btn_lbl }}</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  
+  
+  
+        const cards = Array.from(document.querySelectorAll(
+            '#shopify-section-{{ section.id }} #imageanimationbomsx552103 .imageanimationbomsx552103_item'));
+        let activeIndex = 0;
+
+        cards.map((card, i) => {
+            card.addEventListener('click', function (e) {
+                if (window.innerWidth >= 1200) {
+                    if (i > activeIndex) {
+                            calculatePosition(card, 1, i);
+                    } else if (activeIndex == i) {
+                         i > 0 ?
+                            calculatePosition(cards[0], 0, 0) :
+                            calculatePosition(card, 0, i);
+                    } else {
+                            calculatePosition(card, -1, i);
+                    }
+                }
+                activeIndex = i;
+                if (card.classList.contains('active')) {
+                    i > 0 ? setActiveCard(0) : setActiveCard(i);
+                } else {
+                    setActiveCard(i);
+                }
+            });
+        });
+
+
+        function setActiveCard(i) {
+            cards.map((card, y) => {
+                let cardInfo = card.querySelector('.imageanimationbomsx552103_item_info');
+                if (y == i) {
+                    card.classList.add('active');
+                    cardInfo.style.zIndex = "3";
+                    cardInfo.style.opacity = "1";
+                } else {
+                    card.classList.remove('active');
+                    cardInfo.style.removeProperty('z-index');
+                    cardInfo.style.removeProperty('opacity');
+                    cardInfo.style.removeProperty('transform');
+                    cardInfo.style.removeProperty('left');
+                }
+            });
+        }
+
+        function calculatePosition(card, position, i) {
+            let cardInfo = card.querySelector('.imageanimationbomsx552103_item_info');
+            const width = document.querySelector(
+                '#shopify-section-{{ section.id }} #imageanimationbomsx552103 .imageanimationbomsx552103_item:not(.active)').offsetWidth;
+            if (position == 1) {
+                cardInfo.style.transform = `translateX(${width}px)`;
+                cardInfo.style.left = `${i > 1 ? (width * (i -1) + 40) : '40' }px`;
+            } else if (position == 0) {
+                cardInfo.style.transform = `translateX(0px)`;
+                cardInfo.style.left = `${i > 1 ? (width * (i -1) + 40) : '40' }px`;
+            } else {
+                cardInfo.style.transform = `translateX(-${width}px)`;
+                cardInfo.style.left = `${(width + 40) + (width * i)}px`;
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 1200) {
+                calculatePosition(cards[0], 0, 0);
+                activeIndex = 0;
+                setActiveCard(0);
+            }
+        });
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Image Animation",
+  "blocks": [
+    {
+    "type": "item",
+    "name": "Item",
+      "limit": 4,
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "url",
+        "label": "URL"
+      },
+      {
+        "type": "text",
+        "id": "btn_lbl",
+        "label": "Btn Label"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "card_heading",
+        "label": "Card Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "description"
+      }
+    ]
+  }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Card Couleur",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Couleur",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Couleur",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Btn bg Couleur",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Btn text Couleur",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Animation"
+    }
+  ]
+}
+{% endschema %}

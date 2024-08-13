@@ -1,0 +1,378 @@
+<style>
+    #shopify-section-{{ section.id }} #reviewyoutube {
+        background-color: {{ section.settings.bg_color }};
+        padding: 64px 0;
+        height: auto;
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube img {
+        max-width: 100%;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_head {
+        margin: 0px auto;
+        margin-bottom: 64px;
+        max-width: 1000px;
+        width: 100%;
+        padding: 0 15px;
+      text-align: center;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_title {
+        color: {{ section.settings.title_color }};
+        font-weight: 700 !important;
+        font-size: 40px;
+        line-height: 1.25;
+        width: 100%;
+        text-align: center;
+    }
+    .youtubereviewsliderx_headlink {
+        padding: 14px 24px;
+      font-size: 16px;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: underline;
+      margin-top: 10px;
+      display:block;
+       font-weight: 700 !important;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .morpheatwosectslidex_container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        will-change: transform;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .swiper,
+    #shopify-section-{{ section.id }} #reviewyoutube  .swiper-wrapper,
+    #shopify-section-{{ section.id }} #reviewyoutube  .swiper-slide {
+        width: 100%;
+    }
+
+  #shopify-section-{{ section.id }} #reviewyoutube  .swiper {
+      padding: 10px 10% !important;
+  }
+
+    #shopify-section-{{ section.id }} #reviewyoutube .reviewyoutube_card {
+        display: flex !important;
+        background-color: transparent;
+        overflow: hidden;
+        width: 100%;
+        flex-direction: column;
+    }
+    .reviewyoutube_card_head {
+      display: flex !important;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .reviewyoutube_subtitle {
+      color: {{ section.settings.subtitle_color }} !important;
+      font-size: 16px;
+      line-height: 1.143;
+      text-align:center;
+      font-weight: 600 !important;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_text {
+        width: 100%;
+      margin-top: 20px;
+    }
+
+  #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_text .text {
+    font-size: 16px;
+    line-height: 1.143;
+    font-weight: 500 !important;
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_text .author {
+    font-size: 14px;
+    line-height: 1.143;
+    font-weight: 500 !important;
+    color: {{ section.settings.author_color }};
+    margin-top: 8px;
+  }
+
+    #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_card_video {
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_card_video iframe {
+        width: 100%;
+         height: 400px;
+        object-fit: cover;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .pagination_container {
+        margin-top: 40px;
+        display: flex;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .swiper-pagination-bullet {
+        background-color: {{ section.settings.dot_color }} !important;
+        opacity: 1 !important;
+        height: 10px !important;
+        width: 10px !important;
+        transition: all 500ms !important;
+        margin: 0 7px !important;
+    }
+    #shopify-section-{{ section.id }} #reviewyoutube  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background-color: {{ section.settings.dot_active_color }} !important;
+        width: 30px !important;
+      height: 8px !important;
+      border-radius: 10px !important;
+    }
+
+
+    @media only screen and (max-width: 768px) {
+        #shopify-section-{{ section.id }} #reviewyoutube {
+            padding: 50px 0;
+        }
+        #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_title {
+            font-size: 24px;
+        }
+        #shopify-section-{{ section.id }} #reviewyoutube  .pagination_container {
+            margin-top: 50px;
+        }
+      #shopify-section-{{ section.id }} #reviewyoutube  .swiper-pagination-bullet ,
+    #shopify-section-{{ section.id }} #reviewyoutube  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 10px !important;
+        height: 10px !important;
+    }
+    .reviewyoutube_subtitle {
+      font-size: 14px;
+    }
+    .youtubereviewsliderx_headlink {
+      font-size: 12px;
+    }
+       #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_card_video iframe {
+        width: 100%;
+         height: 200px;
+        object-fit: cover;
+    }
+       #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_text .text {
+    font-size: 12px;
+    line-height: 1.143;
+    font-weight: 500 !important;
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_text .author {
+    font-size: 10px;
+  }
+  #shopify-section-{{ section.id }} #reviewyoutube  .reviewyoutube_head {
+        margin: 0px auto;
+        margin-bottom: 40px;
+    }
+    }
+</style>
+
+<section id="reviewyoutube">
+  <div class="reviewyoutube_head">
+    <h2 class="reviewyoutube_title">{{ section.settings.title }}</h2>
+    <h3 class="reviewyoutube_subtitle">{{ section.settings.subtitle }}</h3>
+    <a href="{{ section.settings.link_url }}" class="youtubereviewsliderx_headlink">
+      {{- section.settings.link_label -}}
+    </a>
+  </div>
+  <div class="morpheatwosectslidex_container">
+    <div class="swiper reviewyoutube-swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="reviewyoutube_card">
+              <div class="reviewyoutube_card_head">
+                <div class="reviewyoutube_card_video">
+                  <iframe
+                    src="{{ block.settings.video_url }}"
+                    title="{{ block.settings.video_title }}"
+                    frameborder="0"
+
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+              </div>
+
+              <div class="reviewyoutube_text">
+                <p class="text">
+                  {{ block.settings.text }}
+                </p>
+                <p class="author">{{ block.settings.author }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="pagination_container">
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const youtubeReviewSlide = () => {
+      new Swiper('.reviewyoutube-swiper', {
+          {% if section.settings.free %}
+            freeMode: true,
+          {% endif %}
+          {% if section.settings.loop %}
+            loop: true,
+          {% endif %}
+          {% if section.settings.autoplay == true %}
+            autoplay: {
+                delay: {{ section.settings.speed }},
+                disableOnInteraction: false,
+            },
+          {% endif %}
+          lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2
+          },
+          preloadImages: false,
+          mousewheel: {
+            forceToAxis: true,
+          },
+        grabCursor: true,
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+              type: 'bullets'
+          },
+          slidesPerView: 1,
+          spaceBetween: 10,
+          breakpoints: {
+            320: { slidesPerView: 1.5, spaceBetween: 15 },
+            590: { slidesPerView: 1.5, spaceBetween: 15 },
+            780: { slidesPerView: 1.5, spaceBetween: 20 }
+          },
+        {% if section.settings.center %}
+            centeredSlides: true,
+          {% endif %}
+      });
+  }
+  youtubeReviewSlide();
+</script>
+
+{% schema %}
+{
+   "name":"Reviews Youtube slider",
+   "settings":[
+      {
+         "type":"color",
+         "id":"bg_color",
+         "label":"Couleur fond",
+         "default":"#f7f7f9"
+      },
+      {
+         "type":"color",
+         "id":"title_color",
+         "label":"Couleur titre",
+         "default":"#55576f"
+      },
+     {
+         "type":"color",
+         "id":"subtitle_color",
+         "label":"Couleur sous titre",
+         "default":"#55576f"
+      },
+      {
+         "type":"color",
+         "id":"text_color",
+         "label":"Couleur text",
+         "default":"#2e2f3c"
+      },
+     {
+         "type":"color",
+         "id":"author_color",
+         "label":"Couleur author",
+         "default":"#2e2f3c"
+      },
+      {
+         "type":"color_background",
+         "id":"dot_color",
+         "label":"Couleur dot",
+         "default":"rgb(209 213 219/1)"
+      },
+      {
+         "type":"color_background",
+         "id":"dot_active_color",
+         "label":"Couleur dot active",
+         "default":"#FF9838"
+      },
+     {"type": "color","id": "link_color","label": "Couleur link", "default": "#FF9838"},
+      {
+         "type":"text",
+         "id":"title",
+         "label":"Titre",
+         "default":"Et chez vous, c'est confortable ?"
+      },
+      {
+         "type":"text",
+         "id":"subtitle",
+         "label":"Sous Titre",
+         "default":"Et chez vous, c'est confortable ?"
+      },
+      {"type": "text","id": "link_label","label": "Link Label", "default": "Read all reviews"},
+    {"type": "url","id": "link_url","label": "Link URL"},
+      {
+         "type":"checkbox",
+         "id":"autoplay",
+         "label":"Autoplay",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"loop",
+         "label":"Loop",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"free",
+         "label":"Free Mode",
+         "default": true
+      },
+     {
+         "type":"checkbox",
+         "id":"center",
+         "label":"Center",
+         "default": true
+      },
+      {
+         "type":"number",
+         "id":"speed",
+         "label":"Vitesse (ms)",
+         "default":2500
+      }
+   ],
+   "blocks":[
+      {
+         "type":"slide",
+         "name":"Slide",
+         "settings":[
+            {"type": "textarea","id": "text","label": "Texte", "default": "“We were quite impressed overall with the design, controls, software and its performance. It is a great value for the money.”"},
+          {"type": "text","id": "author","label": "Auteur", "default": "@David Berkowitz via Youtube"},
+          {
+            "type": "text",
+            "id": "video_url",
+            "label": "YouTube video URL"
+          },
+          {
+            "type": "text",
+            "id": "video_title",
+            "label": "YouTube video Title"
+          }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Reviews Youtube slider"
+      }
+   ]
+}
+{% endschema %}

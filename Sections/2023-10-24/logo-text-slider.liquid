@@ -1,0 +1,282 @@
+<style>
+  #shopify-section-{{ section.id }} #bomssilder832142420132 img {
+    max-width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} #bomssilder832142420132 {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    width: 100%;
+    position: relative;
+    background: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .bomssilder832142420132_container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    width: 100%;
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} #bomssilder832142420132 {
+      padding-top: 30px;
+      padding-bottom: 0px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .tabs-buttons .swiper-slide {
+    height: auto;
+    padding: 0 24px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+    display: flex;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-wrapper-buttons {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .tabs-buttons {
+    height: auto;
+    box-shadow: inset 0 -1px #e6e6e6;
+    max-width: fit-content;
+    margin: 0 auto;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .tabs-buttons .active-tab {
+    opacity: 1;
+    border-bottom: 3px solid {{ section.settings.hl_color }};
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-logo-container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    min-height: 3em;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-logo-container img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-slide-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 blockquote.swiper-slide-quote {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 blockquote.swiper-slide-quote p {
+    color: {{ section.settings.text_color }} !important;
+    letter-spacing: 0em;
+    font-size: 40px;
+    line-height: 1.1;
+    font-family: Cooper BT, serif;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-pagination-bullet {
+    width: 4px !important;
+    height: 4px !important;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-pagination-bullet-active {
+    background: black !important;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-pagination {
+    position: relative;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-button-next,
+  .swiper-button-prev {
+    border: 1px solid #eee !important;
+    background: white !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 100px !important;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 16px !important;
+    color: gray !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+  }
+  #shopify-section-{{ section.id }} #bomssilder832142420132
+    .tabs-buttons
+    .active-tab
+    .swiper-logo-container
+    img {
+    filter: unset;
+  }
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} #bomssilder832142420132 .bomssilder832142420132_sliders {
+      margin: 0;
+      padding: 0;
+      max-width: 100vw;
+      width: 100%;
+    }
+    #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-wrapper-buttons {
+      display: flex;
+      justify-content: flex-start;
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+      scrollbar-width: none; /* Firefox */
+    }
+    #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-wrapper-buttons::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+    #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-button-next,
+    #shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-button-prev {
+      display: none !important;
+    }
+
+    #shopify-section-{{ section.id }} #bomssilder832142420132 .tabs-buttons .swiper-slide {
+      padding: 0 8px;
+    }
+    #shopify-section-{{ section.id }} #bomssilder832142420132 blockquote.swiper-slide-quote {
+      max-width: 320px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px 0;
+    }
+    #shopify-section-{{ section.id }} #bomssilder832142420132 blockquote.swiper-slide-quote p {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<section id="bomssilder832142420132">
+  <div class="bomssilder832142420132_container">
+    <div class="bomssilder832142420132_sliders">
+      <div class="swiper tabs-buttons">
+        <div class="swiper-wrapper swiper-wrapper-buttons">
+          {% for block in section.blocks %}
+            <div class="swiper-slide active-tab">
+              <div class="swiper-logo-container">
+                <img src="{{ block.settings.image | img_url: "master" }}" alt="">
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="swiper tabs-content">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide swiper-slide-content">
+              <blockquote class="swiper-slide-quote">
+                <p>
+                  <em>"{{ block.settings.text }}"</em>
+                </p>
+              </blockquote>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const tabButtons = new Swiper("#shopify-section-{{ section.id }} #bomssilder832142420132 .tabs-buttons", {
+    slidesPerView: 5,
+    breakpoints: {
+      320: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 5,
+      },
+    },
+  });
+  const tabContent = new Swiper("#shopify-section-{{ section.id }} #bomssilder832142420132 .tabs-content", {
+    direction: "horizontal",
+    loop: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    thumbs: {
+      swiper: tabButtons,
+      slideThumbActiveClass: "active-tab",
+    },
+
+    pagination: {
+      el: "#shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-pagination",
+    },
+
+    navigation: {
+      nextEl: "#shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-button-next",
+      prevEl: "#shopify-section-{{ section.id }} #bomssilder832142420132 .swiper-button-prev",
+    },
+  });
+  tabButtons.on("tap", function (swiper, event) {
+    if (
+      event.target.classList.contains("swiper-slide") &&
+      !event.target.classList.contains("active-tab")
+    ) {
+      event.target.parentElement
+        .querySelector(".active-tab")
+        .classList.remove("active-tab");
+      event.target.classList.add("active-tab");
+      tabContent.slideTo(swiper.clickedIndex);
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Logo - Text - Slider",
+    "blocks": [
+      {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte"
+        }
+      ]
+    }
+  ],
+    "settings": [
+      {
+  "type": "color",
+  "id": "bg_color",
+  "label": "Couleur de fond de la section",
+  "default": "#fff"
+},
+{
+  "type": "color",
+  "id": "text_color",
+  "label": "Couleur de texte",
+  "default": "#000"
+},
+{
+  "type": "color",
+  "id": "hl_color",
+  "label": "Couleur de logo actif",
+  "default": "#000"
+}
+    ],
+"presets": [
+  {
+    "name": "Logo - Text - Slider"
+  }
+]
+  }
+{% endschema %}

@@ -1,0 +1,501 @@
+<style>
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_container {
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      flex-direction: column;
+      -webkit-box-pack: justify;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      align-items: center;
+      -webkit-box-align: center;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 100%;
+      padding: 40px 0;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_rate_head {
+      margin-top: 10px;
+      position: relative;
+      justify-content: space-between;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_stars {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_rate_head .testimonialsliderxb12380_star {
+      width: 30px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slider .testimonialsliderxb12380_star {
+      width: 25px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_head {
+      max-width: 80%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: {{ section.settings.text_color }} !important;
+  }
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_title {
+      color: {{ section.settings.text_color }} !important;
+      text-shadow: 1px 1px 1px #fff;
+      font-size: 40px;
+      width: 100%;
+      margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_description {
+      font-size: 24px;
+      color: {{ section.settings.text_color }} !important;
+      line-height: 32px;
+        margin: 0;
+      margin-top: 10px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_rate_head p {
+      font-weight: 600;
+      font-size: 20px;
+    color: {{ section.settings.text_color }} !important;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slider {
+      position: relative;
+      height: 100%;
+      padding: 0 0 20px;
+      width: 100%;
+      margin-top: 30px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper {
+      width: 100%;
+      height: 100%;
+      padding: 0 120px !important;
+  }
+
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slide {
+      width: 100%;
+      position: relative;
+      background: {{ section.settings.card_color }};
+      border-radius: 25px;
+      min-height: 100%;
+      padding: 30px 20px;
+      color: {{ section.settings.text_card_color }} !important;
+  }
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slide_message {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      margin: 15px 0;
+    color: {{ section.settings.text_card_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slide_prdt {
+      text-decoration: underline;
+      font-size: 12px;
+      text-align: left;
+      line-height: 1.7;
+      color: #005050;
+      margin: 0;
+      text-align: left;
+      display: block;
+  }
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_text_icon {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 5px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_text_icon span {
+      font-size: 16px;
+      font-weight: 600;
+      color: {{ section.settings.text_card_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_text_icon svg {
+      height: 25px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slide_head {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 15px;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slide_head p {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+    color: {{ section.settings.text_card_color }} !important;
+  }
+
+  #shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-prev,
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-next {
+          color: #fff !important;
+      }
+
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-prev {
+          left: 70px !important;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-next {
+          right: 70px !important;
+      }
+
+  @media screen and (max-width: 767px) {
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_head{
+          max-width: 100%;
+          padding: 0 20px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380   .swiper {
+          padding: 0 20px 50px 20px !important;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-prev,
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-next {
+          display: none !important;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_title {
+          font-size: 20px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_stars  {
+          gap: 0;
+          margin-right: 5px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_rate_head .testimonialsliderxb12380_star {
+          width: 20px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slider .testimonialsliderxb12380_star {
+          width: 18px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slide_message {
+          font-size: 14px;
+          line-height: 24px;
+          margin: 10px 0 15px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_description {
+          font-size: 16px;
+          line-height: 24px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_rate_head p {
+          font-size: 14px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_slide_head p {
+          font-size: 18px;
+          line-height: 24px;
+      }
+      #shopify-section-{{ section.id }} #testimonialsliderxb12380 .testimonialsliderxb12380_text_icon span {
+          font-size: 13px;
+      }
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<section id="testimonialsliderxb12380">
+  <div class="testimonialsliderxb12380_container">
+    <div class="testimonialsliderxb12380_head">
+      <h2 class="testimonialsliderxb12380_title">
+        {{ section.settings.title }}
+      </h2>
+      <p class="testimonialsliderxb12380_description">
+        {{ section.settings.subtitle }}
+      </p>
+      <div class="testimonialsliderxb12380_rate_head">
+        <p>{{ section.settings.text_star_1 }}</p>
+        <div class="testimonialsliderxb12380_stars">
+          {% for i in (1..section.settings.nb_star) %}
+            <div class="testimonialsliderxb12380_star">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 30 28"
+                fill="none"
+                style="color:{{ section.settings.star_active_color }};"
+              >
+                <path
+                    d="M14.67 0.125L18.6898 9.77315L29.0819 10.6231L21.1613 17.438L23.5732 27.608L14.67 22.1651L5.75185 27.608L8.16376 17.438L0.243164 10.6231L10.6501 9.77315L14.67 0.125Z"
+                    fill="currentColor"></path>
+              </svg>
+            </div>
+          {% endfor %}
+          {% assign rs = 5 | minus: section.settings.nb_star %}
+          {% if rs > 0 %}
+            {% for i in (1..rs) %}
+              <div class="testimonialsliderxb12380_star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 28"
+                  fill="none"
+                  style="color:{{ section.settings.star_inactive_color }};"
+                >
+                  <path
+                      d="M14.67 0.125L18.6898 9.77315L29.0819 10.6231L21.1613 17.438L23.5732 27.608L14.67 22.1651L5.75185 27.608L8.16376 17.438L0.243164 10.6231L10.6501 9.77315L14.67 0.125Z"
+                      fill="currentColor"></path>
+                </svg>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <p>{{ section.settings.text_star_2 }}</p>
+      </div>
+    </div>
+    <div class="testimonialsliderxb12380_slider">
+      <div class="swiper testimonialsliderxb12380-swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="testimonialsliderxb12380_slide">
+                <div class="testimonialsliderxb12380_slide_inner">
+                  <div class="testimonialsliderxb12380_slide_head">
+                    <p>{{ block.settings.name }}</p>
+                    <div class="testimonialsliderxb12380_stars">
+                      {% for i in (1..block.settings.nb_star) %}
+                        <div class="testimonialsliderxb12380_star">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 30 28"
+                            fill="none"
+                            style="color:{{ section.settings.star_active_color }};"
+                          >
+                            <path
+                                d="M14.67 0.125L18.6898 9.77315L29.0819 10.6231L21.1613 17.438L23.5732 27.608L14.67 22.1651L5.75185 27.608L8.16376 17.438L0.243164 10.6231L10.6501 9.77315L14.67 0.125Z"
+                                fill="currentColor"></path>
+                          </svg>
+                        </div>
+                      {% endfor %}
+                      {% assign rs = 5 | minus: block.settings.nb_star %}
+                      {% if rs > 0 %}
+                        {% for i in (1..rs) %}
+                          <div class="testimonialsliderxb12380_star">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 30 28"
+                              fill="none"
+                              style="color:{{ section.settings.star_inactive_color }};"
+                            >
+                              <path
+                                  d="M14.67 0.125L18.6898 9.77315L29.0819 10.6231L21.1613 17.438L23.5732 27.608L14.67 22.1651L5.75185 27.608L8.16376 17.438L0.243164 10.6231L10.6501 9.77315L14.67 0.125Z"
+                                  fill="currentColor"></path>
+                            </svg>
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  <div class="testimonialsliderxb12380_text_icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      style="color:{{ section.settings.icon_color }};"
+                    >
+                      <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                    </svg>
+
+                    <span>{{ section.settings.text_icon_1 }}</span>
+                  </div>
+                  <p class="testimonialsliderxb12380_slide_message">“{{ block.settings.message }}”</p>
+                  <div class="testimonialsliderxb12380_text_icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      style="color:{{ section.settings.icon_color }};"
+                    >
+                      <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                    </svg>
+                    <span>{{ section.settings.text_icon_2 }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+        new Swiper(`#shopify-section-{{ section.id }} #testimonialsliderxb12380  .testimonialsliderxb12380-swiper`, {
+                navigation: {
+                    nextEl: `#shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-next`,
+                    prevEl: `#shopify-section-{{ section.id }} #testimonialsliderxb12380 .swiper-button-prev`,
+                },
+                
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.1,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 50
+                    }
+                }
+            });
+</script>
+
+{% schema %}
+  {
+    "name": "Testimonial Slider",
+    "blocks": [
+    {
+    "type": "item",
+    "name": "item",
+    "settings": [
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Nom",
+        "default": "- Marc Jean"
+      },
+      {
+        "type": "textarea",
+        "id": "message",
+        "label": "Message",
+        "default": "Action cou, bras & poitrine"
+      },
+      {
+        "type": "range",
+        "id": "nb_star",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "unit": "S",
+        "label": "Nombre d'étoiles",
+        "default": 4
+      }
+    ]
+  }
+],
+    "settings": [
+      {
+  "type": "color",
+  "id": "bg_color",
+  "label": "Couleur de fond de la section",
+  "default": "#fff"
+},
+{
+  "type": "color",
+  "id": "card_color",
+  "label": "Couleur de carte",
+  "default": "#fff"
+},
+{
+  "type": "color",
+  "id": "text_color",
+  "label": "Couleur de texte",
+  "default": "#000"
+},
+{
+  "type": "color",
+  "id": "text_card_color",
+  "label": "Couleur de texte de carte",
+  "default": "#000"
+},
+{
+  "type": "color",
+  "id": "star_inactive_color",
+  "label": "Couleur de etoile inactive",
+  "default": "#f2f2f2"
+},
+{
+  "type": "color",
+  "id": "star_active_color",
+  "label": "Couleur de etoile inactive",
+  "default": "#000"
+},
+{
+  "type": "color",
+  "id": "icon_color",
+  "label": "Couleur icone",
+  "default": "#000"
+},
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Titre",
+    "default": "shake up a smoothie in seconds"
+  },
+  {
+    "type": "text",
+    "id": "subtitle",
+    "label": "Sous Titre",
+    "default": "How it works"
+  },
+      {
+        "type": "range",
+        "id": "nb_star",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "unit": "S",
+        "label": "Nombre d'étoiles",
+        "default": 4
+      },
+  {
+    "type": "text",
+    "id": "text_star_1",
+    "label": "Texte étoile 1",
+    "default": "Excellent"
+  },
+  {
+    "type": "text",
+    "id": "text_star_2",
+    "label": "Texte étoile 2",
+    "default": "129 avis"
+  },
+  {
+    "type": "text",
+    "id": "text_icon_1",
+    "label": "Texte icone 1",
+    "default": "avis vérifé"
+  },
+  {
+    "type": "text",
+    "id": "text_icon_2",
+    "label": "Texte icone 2",
+    "default": "Je recommande ce produit"
+  }
+    ],
+    "presets": [
+      {
+        "name": "Testimonial Slider"
+      }
+    ]
+  }
+{% endschema %}
